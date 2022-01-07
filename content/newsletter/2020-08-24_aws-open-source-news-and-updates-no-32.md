@@ -113,9 +113,9 @@ A couple of blog posts from Michael Ferguson this week.
 
 [5 Things ROS2 Needs in 2020](https://www.robotandchisel.com/2020/07/29/five-things-ros2/) this is an excellent post from Michael where he shares his thoughts on what is holding back ROS2 from being production ready. Michael lists the five things he thinks are essential before this can happen, so take a look and let him know your thoughts.
 
-[Mapping and Localization in ROS2](http://www.robotandchisel.com/2020/08/19/slam-in-ros2/) another post from Michael, this time covering mapping and localisation in ROS2.
+[Mapping and Localization in ROS2](https://www.robotandchisel.com/2020/08/19/slam-in-ros2/) another post from Michael, this time covering mapping and localisation in ROS2.
 
-![ros2](http://www.robotandchisel.com/assets/images/2020-08-10-rviz2.png)
+![ros2](https://www.robotandchisel.com/assets/images/2020-08-10-rviz2.png)
 
 
 **MLOps with Cortex**
