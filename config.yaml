@@ -1,4 +1,5 @@
-baseURL: https://vibrant-morse-7b2e84.netlify.app/
+#baseURL: https://vibrant-morse-7b2e84.netlify.app/
+baseURL: https://blog.beachgeek.co.uk/
 languageCode: en-us
 defaultContentLanguage: en
 title: Beachgeek blog - a refuge for pineapple on pizza lovers
