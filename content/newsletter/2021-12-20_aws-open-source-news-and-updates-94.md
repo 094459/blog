@@ -177,7 +177,7 @@ Suranjan Choudhury and Anil Sharma have come together to write [Using an Amazon 
 
 Loved this video, and now have ideas of how I can use my DeepRacer to do something similar. Searching for a humane way to scare mice out of his kitchen, Martin Paradesi modified an autonomous DeepRacer model car, and its open source code, to come up with a RoboCat that could scare mice away in the dark. Find out how his young sons contributed to the project.
 
-{% youtube H_lRlI6DnVg %}
+{{< youtube H_lRlI6DnVg >}}
 
 ### Events for your diary
 
