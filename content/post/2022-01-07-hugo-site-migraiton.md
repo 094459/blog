@@ -88,10 +88,11 @@ So the new workflow is more work than before, but I have the advantage of the co
 
 >**new workflow**
 
+> ```
 > [Write content locally in markdown]   ---> [Commit to GitHub]  ---> [Auto build site on Netlify]
 > 
 >                                       ---> [Publish on dev.to]
->  
+> ``` 
 
 #### Thats all folks
 
