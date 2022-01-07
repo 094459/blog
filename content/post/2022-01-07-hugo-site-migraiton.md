@@ -1,8 +1,9 @@
 ---
 title: 'Running my dev.to blog using Hugo on Netlify'
-date: '2022-01-7'
-tags: [dev.to, blog, Netlify, Hugo]
+date: '2022-01-07'
+tags: [ blog, Netlify, Hugo]
 ---
+
 ### Running my dev.to blog using Hugo on Netlify
 
 I am a big fan of dev.to, and the work that the team are doing to foster a great community of builders is something that keeps me here. However, I have always maintained another blog (running on Netlify, which is also super awesome), kind of like a mirror, which has the same content, but runs on a different stack.
