@@ -1,0 +1,7 @@
+{{ if .Site.Params.indieauth }}
+    {{ with .Site.Params.twitter }}<link href="https://twitter.com/{{ . }}" rel="me">{{ end }}
+    {{ with .Site.Params.gitlab }}<link href="https://gitlab.com/{{ . }}" rel="me">{{ end }}
+    {{ with .Site.Params.github }}<link href="https://github.com/{{ . }}" rel="me">{{ end }}
+    {{ with .Site.Params.linkedin }}<link href="https://www.linkedin.com/in/{{ . }}" rel="me">{{ end }}
+    {{ with .Site.Params.email }}<link href="mailto:{{.}}" rel="me">{{ end }}
+{{ end }}

@@ -1,0 +1,45 @@
+<li>
+  <h2 class="blog-roll-title">
+    <a href="{{ .Permalink }}">
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+        <use xlink:href="#bookmark"></use>
+      </svg>
+      {{ .Title }}
+    </a>
+  </h2>
+  <div class="blog-roll-meta-data">
+    <p style="margin-top: 0;">
+    {{ partial "ikonate/svg/calendar.svg" }}
+    {{ $dateFormat := $.Site.Params.dateFormat | default "Jan 2, 2006" }}
+    {{ .PublishDate.Format $dateFormat }}
+    {{ if .Site.Params.readingTime }}
+    <span style="margin-top: 0;">
+      |&nbsp;{{ partial "ikonate/svg/stopwatch.svg" }}&nbsp;{{ i18n "readingTime"}}{{ .ReadingTime }}&nbsp;{{ i18n "readTime" }}minute read
+    </span>
+    {{ end }}
+    </p>
+    <p class="blog-description">
+      {{ if .Description  }}
+        {{ .Description }}
+      {{ else }}
+        {{ .Summary }}
+      {{ end }}
+    </p>
+    {{ with .Params.tags }}
+      <div class="tags">
+        <ul class="blog-roll-tags" aria-label="tags">
+          {{ range . }}
+            <li>
+              <a href="{{ "/tags/" | absLangURL }}{{ . | urlize }}">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                {{ . }}
+              </a>
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+    {{ end }}
+  </div>
+</li>        

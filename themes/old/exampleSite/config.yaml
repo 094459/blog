@@ -1,11 +1,10 @@
 baseURL: https://example.com
 languageCode: en-us
 defaultContentLanguage: en
-title: Beachgeek blog - a refuge for pineapple on pizza lovers
+title: Cupper
 theme: cupper-hugo-theme
-enableGitInfo: false
+enableGitInfo: true
 enableEmoji: true
-googleAnalytics: UA-160626931-1
 
 taxonomies:
   tag: tags
@@ -17,12 +16,11 @@ imaging:
   quality: 99
 
 params:
-  author: "Ricardo Sueiras"
+  author: "Your name"
   iconTitle: "My site icon"
-  navTitleText: Beachgeek Blog
-  description: Technologist and Maker specialising in Cloud, Open Source and Innovation & Emerging Technologies.
-  homeMetaContent: Technologist and Maker specialising in Cloud, Open Source and Innovation & Emerging Technologies.
-  footer: Made with [Hugo](https://gohugo.io/). Themed by [Cupper](https://github.com/zwbetz-gh/cupper-hugo-theme). 
+  description: An accessibility-friendly Hugo theme, ported from the [original Cupper](https://github.com/ThePacielloGroup/cupper) project.
+  homeMetaContent: An accessibility-friendly Hugo theme, ported from the original Cupper project.
+  footer: Made with [Hugo](https://gohugo.io/). Themed by [Cupper](https://github.com/zwbetz-gh/cupper-hugo-theme). Deployed to [Netlify](https://www.netlify.com/).
   # For more date formats see https://gohugo.io/functions/format/
   dateFormat: Jan 2, 2006
   codePenUser: someUser
@@ -43,32 +41,48 @@ params:
   #   - css/foo.css # relative path starting from static/
   #- css/bar.css
   social:
-    twitter: "094459"
-    github: "094459"
-    linkedin: "ricardosueiras"
-    email: "ricsue@amazon.com"
-    reddit: "aws"
+    twitter: "TwitterName"
+    gitlab: "GitLabName"
+    github: "GitHubName"
+    linkedin: "LinkedinName"
+    email: "myemail@address.com"
+    pinterest: "PinterestName"
+    instagram: "InstagramName"
+    reddit: "RedditSubreddit"
+    slackinvite:
+      name: "technottingham"
+      code: "enQtNTgxNTYxMTExOTU5LTgxMDVjODUxYWI3MzNjOTJlMWUyMTYxNGEyNzYxNGYxNTExMWU0MmFkYjc5ZjI5MzY4ZmQ3MDdjZjdkNDg0ZDA"
+    slackworkspace:
+      name: "technottingham"
+    facebook: "FacebookName"
+    tiktok: "TikTokName"
+    telephone: "0123456789"
+    misc:
+      - name: "Discord"
+        url: "https://www.discord.com/"
+        icon: "super-tiny-icons/discord.svg"
+      - name: "YouTube"
+        url: "https://youtube.com"
+        icon: "super-tiny-icons/youtube.html"
+
 
 menu:
   nav:
     - name: Home
       url: /
       weight: 1
-    - name: Blog posts
+    - name: Blog
       url: /post/
       weight: 2
-    - name: Newsletter
-      url: /newsletter/
-      weight: 3
     - name: Tags
       url: /tags/
-      weight: 4
+      weight: 3
     - name: About
       url: /about/
-      weight: 5
+      weight: 4
     - name: RSS
       url: /index.xml
-      weight: 6
+      weight: 5
 
 markup:
   defaultMarkdownHandler: goldmark
