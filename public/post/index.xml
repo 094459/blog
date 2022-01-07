@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://example.com/post/</link>
+    <description>Recent content in Posts on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting up MWAA to use a KMS key</title>
+      <link>https://example.com/2021-12-14_setting-up-mwaa-to-use-a-kms-key/</link>
+      <pubDate>Tue, 14 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-12-14_setting-up-mwaa-to-use-a-kms-key/</guid>
+      <description>Introduction In a previous post, I shared how you can using AWS CDK to provision your Apache Airflow environments using the Managed Workflows for Apache Airflow service (MWAA).
+I was contacted this week by Michael Grabenstein, who flagged an issue with the code in that post. The post used code that configured a kms key for the MWAA environment, but when trying to deploy the app it would fail with the following error:</description>
+    </item>
+    
+    <item>
+      <title>Integrating Amazon Timestream in your Amazon Managed Workflows for Apache Airflow v2.x</title>
+      <link>https://example.com/2021-09-23_integrating-amazon-timestream-in-your-amazon-managed-workflows-for-apache-airflow-v2x/</link>
+      <pubDate>Thu, 23 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-09-23_integrating-amazon-timestream-in-your-amazon-managed-workflows-for-apache-airflow-v2x/</guid>
+      <description>Integrating with Amazon Timestream in your Apache Airflow DAGs
+Amazon Timestream is a fast, scalable, and serverless time series database service perfect for use cases that generate huge amounts of events per day, optimised to make it faster and more cost effective that using relational databases.
+I have been playing around with Amazon Timestream to prepare for a talk I am doing with some colleagues, and wanted to see how I could integrate it with other AWS services in the context of leveraging some of the key capabilities of Amazon Timestream.</description>
+    </item>
+    
+    <item>
+      <title>Reading and writing data across different AWS accounts with Amazon Managed Workflows for Apache Airflow v2.x</title>
+      <link>https://example.com/2021-09-07_reading-and-writing-data-across-different-aws-accounts-with-amazon-managed-workflows-for-apache-airflow-v2x/</link>
+      <pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-09-07_reading-and-writing-data-across-different-aws-accounts-with-amazon-managed-workflows-for-apache-airflow-v2x/</guid>
+      <description>Reading and writing data across different AWS accounts in you Apache Airflow DAGs
+As regular readers will know, I sometimes lurk in the Apache Airflow slack channel to see what is going on. If you are new to Apache Airflow, or want to get a deeper understanding then I highly recommend spending some time here. The community is super welcoming and eager to help new participants.
+It was during a recent session I came across an interesting problem that one of the builders was having, which was how to access (read/write) data in an S3 bucket which was in a different account to the one hosting Amazon Managed Workflows for Apache Airflow (MWAA).</description>
+    </item>
+    
+    <item>
+      <title>Working with parameters and variables in Amazon Managed Workflows for Apache Airflow</title>
+      <link>https://example.com/2021-07-27_working-with-parameters-and-variables-in-amazon-managed-workflows-for-apache-airflow/</link>
+      <pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-07-27_working-with-parameters-and-variables-in-amazon-managed-workflows-for-apache-airflow/</guid>
+      <description>Maximising the re-use of your DAGs in MWAA
+During some recently conversations with customers, one of the topics that they were interested in was how to create re-usable, parameterised Apache Airflow workflows (DAGs) that could be executed dynamically through the use variables and/or parameters (either submitted via the UI or the command line). This makes a lot of sense, as you may find that you repeat similar tasks in your workflows, and so this approach allows you to maximise the re-use of that work.</description>
+    </item>
+    
+    <item>
+      <title>Creating a multi architecture CI/CD solution with Amazon ECS and ECS Anywhere</title>
+      <link>https://example.com/2021-07-16_creating-a-multi-architecture-cicd-solution-with-amazon-ecs-and-ecs-anywhere/</link>
+      <pubDate>Fri, 16 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-07-16_creating-a-multi-architecture-cicd-solution-with-amazon-ecs-and-ecs-anywhere/</guid>
+      <description>Please let me know how I can improve posts such as this one, by completing this very short survey. $25 AWS credits will be provided for the first 20 completed - take the survey
+Organisations are moving their workloads to the cloud as quickly as they can. While most applications can be easily migrated to the cloud, some applications need to remain on-premises due to low-latency or data sovereignty requirements.</description>
+    </item>
+    
+    <item>
+      <title>Working with Amazon EKS and Amazon Managed Workflows for Apache Airflow v2.x</title>
+      <link>https://example.com/2021-06-10_working-with-amazon-eks-and-amazon-managed-workflows-for-apache-airflow-v2x/</link>
+      <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-06-10_working-with-amazon-eks-and-amazon-managed-workflows-for-apache-airflow-v2x/</guid>
+      <description>Introduction The Apache Airflow slack channel is a vibrant community of open source builders that is a great source of feedback, knowledge and answers to problems and use cases you might have when trying to do stuff with Apache Airflow. This week I picked up on someone seeing errors with Amazon EKS, and so I thought what better time to try out the new Apache Airflow 2.x version that was recently launched in Amazon Managed Workflows for Apache Airflow (MWAA).</description>
+    </item>
+    
+    <item>
+      <title>Working with the RedshiftToS3Transfer operator and Amazon Managed Workflows for Apache Airflow</title>
+      <link>https://example.com/2021-05-15_working-with-the-redshifttos3transfer-operator-and-amazon-managed-workflows-for-apache-airflow/</link>
+      <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-05-15_working-with-the-redshifttos3transfer-operator-and-amazon-managed-workflows-for-apache-airflow/</guid>
+      <description>Introduction Inspired by a recent conversation within the Apache Airflow open source slack community, I decided to channel the inner terrier within me to tackle this particular issue, around getting an Apache Airflow operator (the protagonist for this post) to work.
+I found the perfect catalyst in the way of the original launch post of Amazon Managed Workflows for Apache Airflow (MWAA). As is often the way, diving into that post (creating a workflow to take some source files, transform them and then move them into Amazon Redshift) led me down some unexpected paths to here, this post.</description>
+    </item>
+    
+    <item>
+      <title>Using AWS CDK to deploy your Amazon Managed Workflows for Apache Airflow environment</title>
+      <link>https://example.com/2021-04-28_using-aws-cdk-to-deploy-your-amazon-managed-workflows-for-apache-airflow-environment/</link>
+      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-04-28_using-aws-cdk-to-deploy-your-amazon-managed-workflows-for-apache-airflow-environment/</guid>
+      <description>update I am grateful to Michael Grabenstein for spotting some mistakes in the original post/code. I hope these have now been rectified in this post.
+ Using AWS CDK to deploy your Amazon Managed Workflows for Apache Airflow environment What better way to celebrate CDK Day than to return to a previous blog where I wrote about automating the installation and configuration of Amazon Managed Workflows for Apache Airflow (MWAA), and take a look at doing the same thing but this time using AWS CDK.</description>
+    </item>
+    
+    <item>
+      <title>Automating your ELT Workflows with Managed Workflows for Apache Airflow - Part One</title>
+      <link>https://example.com/2021-04-21_automating-your-elt-workflows-with-managed-workflows-for-apache-airflow-part-one/</link>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-04-21_automating-your-elt-workflows-with-managed-workflows-for-apache-airflow-part-one/</guid>
+      <description>update: I have changed the post to use standard Apache Airflow variables rather than using AWS Secrets Manager.
+Part One - Automating Amazon Athena As part of an upcoming DevDay event, I have been working on how you can use Apache Airflow to help automate your Extract, Load and Transform (ELT) Workflows. Amazon Athena and Amazon EMR are two AWS services that help customers who have existing SQL skills/expertise and are looking at tools such as Presto or Apache Hive when undertaking those transformations.</description>
+    </item>
+    
+    <item>
+      <title>Automating your ELT Workflows with Managed Workflows for Apache Airflow - Part Two</title>
+      <link>https://example.com/2021-04-21_automating-your-elt-workflows-with-managed-workflows-for-apache-airflow-part-two/</link>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-04-21_automating-your-elt-workflows-with-managed-workflows-for-apache-airflow-part-two/</guid>
+      <description>Part Two - Automating Amazon EMR In Part One, we automated an example ELT workflow on Amazon Athena using Apache Airflow. In this post, Part Two, we will do the same thing but automate the same example ELT workflow using Amazon EMR.
+Make sure you recap the setup from Part One. All the code so you can reproduce this yourself can be found in the GitHub repository here.
+Automating Amazon EMR</description>
+    </item>
+    
+    <item>
+      <title>Monitoring and logging with Amazon Managed Workflows for Apache Airflow</title>
+      <link>https://example.com/2021-02-09_monitoring-and-logging-with-amazon-managed-workflows-for-apache-airflow/</link>
+      <pubDate>Tue, 09 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-02-09_monitoring-and-logging-with-amazon-managed-workflows-for-apache-airflow/</guid>
+      <description>Part of a series of posts to support an up-coming online event, the Innovate AI/ML on February 24th, from 9:00am GMT - you can sign up here
+ Part 1 - Installation and configuration of Managed Workflows for Apache Airflow Part 2 - Working with Permissions Part 3 - Accessing Amazon Managed Workflows for Apache Airflow Part 4 - Interacting with Amazon Managed Workflows for Apache Airflow via the command line Part 5 - A simple CI/CD system for your development workflow Part 6 - Monitoring and logging &amp;lt;- this post Part 7 - Automating a simple AI/ML pipeline with Apache Airflow  In this post I will be covering Part 6, where to find logs to help you understand and troubleshoot your Apache Airflow workflows, and how you can monitor your Apache Airflow environments.</description>
+    </item>
+    
+    <item>
+      <title>A simple CI/CD system for your Amazon Managed Workflows for Apache Airflow development workflow</title>
+      <link>https://example.com/2021-02-03_a-simple-cicd-system-for-your-amazon-managed-workflows-for-apache-airflow-development-workflow/</link>
+      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-02-03_a-simple-cicd-system-for-your-amazon-managed-workflows-for-apache-airflow-development-workflow/</guid>
+      <description>updated Feb 19th
+Part of a series of posts to support an up-coming online event, the Innovate AI/ML on February 24th, from 9:00am GMT - you can sign up here
+ Part 1 - Installation and configuration of Managed Workflows for Apache Airflow Part 2 - Working with Permissions Part 3 - Accessing Amazon Managed Workflows for Apache Airflow Part 4 - Interacting with Amazon Managed Workflows for Apache Airflow via the command line Part 5 - A simple CI/CD system for your development workflow &amp;lt;- this post Part 6 - Monitoring and logging Part 7 - Automating a simple AI/ML pipeline with Apache Airflow  In this post I will be covering Part 5, how you can setup a very simple CI/CD setup to enable faster development of your Apache Airflow DAGs.</description>
+    </item>
+    
+    <item>
+      <title>Interacting with Amazon Managed Workflows for Apache Airflow via the command line</title>
+      <link>https://example.com/2021-02-01_interacting-with-amazon-managed-workflows-for-apache-airflow-via-the-command-line/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-02-01_interacting-with-amazon-managed-workflows-for-apache-airflow-via-the-command-line/</guid>
+      <description>Part of a series of posts to support an up-coming online event, the Innovate AI/ML on February 24th, from 9:00am GMT - you can sign up here
+ Part 1 - Installation and configuration of Managed Workflows for Apache Airflow Part 2 - Working with Permissions Part 3 - Accessing Amazon Managed Workflows for Apache Airflow environments Part 4 - Interacting with Amazon Managed Workflows for Apache Airflow via the command line &amp;lt; this post Part 5 - A simple CI/CD system for your development workflow Part 6 - Monitoring and logging Part 7 - Automating a simple AI/ML pipeline with Apache Airflow  In this post I will be covering Part 4, how you can interact and access the Apache Airflow via the command line.</description>
+    </item>
+    
+    <item>
+      <title>Accessing your Amazon Managed Workflows for Apache Airflow environments</title>
+      <link>https://example.com/2021-01-28_accessing-your-amazon-managed-workflows-for-apache-airflow-environments/</link>
+      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-01-28_accessing-your-amazon-managed-workflows-for-apache-airflow-environments/</guid>
+      <description>Part of a series of posts to support an up-coming online event, the Innovate AI/ML on February 24th, from 9:00am GMT - you can sign up here
+ Part 1 - Installation and configuration of Managed Workflows for Apache Airflow Part 2 - Working with Permissions Part 3 - Accessing Amazon Managed Workflows for Apache Airflow environments &amp;lt; this post Part 4 - Interacting with Amazon Managed Workflows for Apache Airflow via the command line Part 5 - A simple CI/CD system for your development workflow Part 6 - Monitoring and logging Part 7 - Automating a simple AI/ML pipeline with Apache Airflow  In this post I will be covering Part 3, how you can interact and access the Apache Airflow environments.</description>
+    </item>
+    
+    <item>
+      <title>Working with permissions in Amazon Managed Workflows for Apache Airflow</title>
+      <link>https://example.com/2021-01-27_working-with-permissions-in-amazon-managed-workflows-for-apache-airflow/</link>
+      <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-01-27_working-with-permissions-in-amazon-managed-workflows-for-apache-airflow/</guid>
+      <description>Part of a series of posts to support an up-coming online event, the Innovate AI/ML on February 24th, from 9:00am GMT - you can sign up here
+ Part 1 - Installation and configuration of Managed Workflows for Apache Airflow Part 2 - Working with Permissions &amp;lt;- this post Part 3 - Accessing Amazon Managed Workflows for Apache Airflow environments Part 4 - Interacting with Amazon Managed Workflows for Apache Airflow via the command line Part 5 - A simple CI/CD system for your development workflow Part 6 - Monitoring and logging Part 7 - Automating a simple AI/ML pipeline with Apache Airflow  In this post I will be covering Part 2, how to ensure that you control access to Apache Airflow following best practices such as default no access/least privilege.</description>
+    </item>
+    
+    <item>
+      <title>Automating the installation and configuration of Amazon Managed Workflows for Apache Airflow</title>
+      <link>https://example.com/2021-01-26_automating-the-installation-and-configuration-of-amazon-managed-workflows-for-apache-airflow/</link>
+      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-01-26_automating-the-installation-and-configuration-of-amazon-managed-workflows-for-apache-airflow/</guid>
+      <description>updated, August 25th Thanks to Philip T for spotting a typo in the cloudformation code below - it is ok in the GitHub repo, but I have fixed it now below.
+Part of a series of posts to support an up-coming online event, the Innovate AI/ML on February 24th, from 9:00am GMT - you can sign up here
+ Part 1 - Installation and configuration of Managed Workflows for Apache Airflow &amp;lt;- this post Part 2 - Working with Permissions Part 3 - Accessing Amazon Managed Workflows for Apache Airflow environments Part 4 - Interacting with Amazon Managed Workflows for Apache Airflow via the command line Part 5 - A simple CI/CD system for your development workflow Part 6 - Monitoring and logging Part 7 - Automating a simple AI/ML pipeline with Apache Airflow  In this post I will be covering Part 1, automating the installation and configuration of Managed Workflows for Apache Airflow (MWAA).</description>
+    </item>
+    
+    <item>
+      <title>TIL: Testing an Amazon Cloudwatch alarm</title>
+      <link>https://example.com/2021-01-07_til-testing-an-amazon-cloudwatch-alarm/</link>
+      <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-01-07_til-testing-an-amazon-cloudwatch-alarm/</guid>
+      <description>Today I was setting up an application load balancer that sits in front of a test application I have put together. Setting this up was super easy, and very quickly I had my domain pointing to the alias and serving requests.
+As part of the setup, I wanted to monitor the application load balancer to let me know when requests were failing to the downstream application (anything other than an HTTP 200) and so I set this up super easily in Amazon Cloudwatch.</description>
+    </item>
+    
+    <item>
+      <title>Job opportunity: Developer Advocate in the UK</title>
+      <link>https://example.com/2020-12-17_job-opportunity-developer-advocate-in-the-uk/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2020-12-17_job-opportunity-developer-advocate-in-the-uk/</guid>
+      <description>A little under a year ago I wrote this post:
+{% link https://dev.to/aws/celebrate-the-new-year-with-a-new-job-1ba5 %}
+As 2020 comes to a close, and you reflect on how your year has been it is often a good opportunity to take a look about your year ahead and possibly start to explore new opportunities or your next challenge.
+As you think about next year and where you want to go, I wanted to share an exciting opportunity that has opened up in my team, the UK Developer Advocate team.</description>
+    </item>
+    
+    <item>
+      <title>Amazon Aurora - setting up and configuration, four ways</title>
+      <link>https://example.com/2020-10-15_amazon-aurora-setting-up-and-configuration-four-ways/</link>
+      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2020-10-15_amazon-aurora-setting-up-and-configuration-four-ways/</guid>
+      <description>In this post I want to share four different approaches to installing and configuring your Amazon Aurora database clusters.
+Everything in this post is covered in detail in the embedded video, but I wanted to share some additional information that I did not include in the video that was easier done in this blog.
+{% youtube wZfh9PurE9E %}
+Why four ways? The approach in the video was to look at the journey you might take when learning a new technology and then how you move to productise that technology.</description>
+    </item>
+    
+    <item>
+      <title>Long running data import jobs with AWS Session Manager</title>
+      <link>https://example.com/2020-09-10_long-running-data-import-jobs-with-aws-session-manager/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2020-09-10_long-running-data-import-jobs-with-aws-session-manager/</guid>
+      <description>Yesterday I was looking to import the TPC-H dataset (some 600 or so million rows) into Amazon Aurora from a workstation that I connect to using AWS Session Manager.
+AWS Session Manager is a great way to simplify your life by allowing you to connect to a machine via the AWS console and not worry about having to manage ssh keys or remembering to lock down external public access from the net.</description>
+    </item>
+    
+    <item>
+      <title>Building a culture of security in open source software development</title>
+      <link>https://example.com/2020-07-15_building-a-culture-of-security-in-open-source-software-development/</link>
+      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2020-07-15_building-a-culture-of-security-in-open-source-software-development/</guid>
+      <description>According to a number of recent studies, the use and adoption of open source software continues to rise. From studies such as the State of Enterprise Open Source by Red Hat (in which nearly 70% of respondents stated that open source software is either extremely or very important) or TideLift’s April 2019 survey report (that found more than 90% of professional developers use open source in building their applications) it is clear that developers from startups to highly regulated enterprises have embraced open source solutions.</description>
+    </item>
+    
+    <item>
+      <title>Automating AWS SSO and G-Suite synchronisation with SSO Sync</title>
+      <link>https://example.com/2020-06-03_automating-aws-sso-and-g-suite-synchronisation-with-sso-sync/</link>
+      <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2020-06-03_automating-aws-sso-and-g-suite-synchronisation-with-sso-sync/</guid>
+      <description>update-July 28th  The ssosync tool has had a lot of interest and the community has updated the tool. This means that you should refer to the project home page https://github.com/awslabs/ssosync and check out the README.md for what changes you might need to make to get this tool working.
+ Next level ssosync In a previous post, I talked about setting up AWS Single Sign On (AWS SSO) with G-Suite, and then using an open source project called ssosync to syncronise users and groups from G-Suite into AWS SSO.</description>
+    </item>
+    
+    <item>
+      <title>Setting up G-Suite, AWS SSO and ssosync</title>
+      <link>https://example.com/2020-05-27_setting-up-g-suite-aws-sso-and-ssosync/</link>
+      <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2020-05-27_setting-up-g-suite-aws-sso-and-ssosync/</guid>
+      <description>update-July 28th  The ssosync tool has had a lot of interest and the community has updated the tool. This means that you should refer to the project home page https://github.com/awslabs/ssosync and check out the README.md for what changes you might need to make to get this tool working.
+ Enabling AWS SSO with Google G-Suite Many customers have existing directory technologies where they manage their users, and then use this central identity store as a way to simplify the way they authenticate and provide access to applications and other resources.</description>
+    </item>
+    
+    <item>
+      <title>Making the most of mentoring</title>
+      <link>https://example.com/2020-05-08_making-the-most-of-mentoring/</link>
+      <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2020-05-08_making-the-most-of-mentoring/</guid>
+      <description>Some recent experiences mentoring has provided the motivation for this piece. It is not intended to be right or wrong, but just my personal opinion and experience and I hope it is read that way. I have put this together to share what I think are the critical things that make a mentoring relationship work for both the mentor and mentee. So with that out of the way, I invite you to read on&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Event in London 10th Feb - Hiring in startups</title>
+      <link>https://example.com/2020-01-15_event-in-london-10th-feb-hiring-in-startups/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2020-01-15_event-in-london-10th-feb-hiring-in-startups/</guid>
+      <description>Take a look at this event on 10th Feb in London if you are interested how startups approach hiring and retaining talent. If you fancy joining a startup, or want to know more about what they look for, then why not pop along learn something and make some new friends.
+Not to be missed. Register using the link below.
+https://hirelikeaunicorn.splashthat.com</description>
+    </item>
+    
+    <item>
+      <title>We are hiring</title>
+      <link>https://example.com/2020-01-14_we-are-hiring/</link>
+      <pubDate>Tue, 14 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2020-01-14_we-are-hiring/</guid>
+      <description>Do you have a passion and unending enthusiasm for technology and cloud? Do you love learning and are you curious by nature? If so, then have a look here - we are hiring, and aside from being part of a great team, you will get to work with amazing customers. Work hard, have fun and make history.
+Check out more here.
+https://aws-devrel-jobs.splashthat.com/
+Use the comments to ask me anything about the role, the team or working at AWS.</description>
+    </item>
+    
+    <item>
+      <title>Mentoring and reverse mentoring</title>
+      <link>https://example.com/2019-12-29_mentoring-and-reverse-mentoring/</link>
+      <pubDate>Sun, 29 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2019-12-29_mentoring-and-reverse-mentoring/</guid>
+      <description>As I reflect on 2019, one of the common themes whilst engaging with builders at the start of their career, has been how do those of us who have deep experience working in the IT industry and technology help bring those who are just starting out?
+Some common themes when talking that have come up include;
+ How do I get started on Cloud or AWS? What tools and languages should I learn?</description>
+    </item>
+    
+    <item>
+      <title>Celebrate the new year with a new job</title>
+      <link>https://example.com/2019-12-23_celebrate-the-new-year-with-a-new-job/</link>
+      <pubDate>Mon, 23 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2019-12-23_celebrate-the-new-year-with-a-new-job/</guid>
+      <description>As it is the time of year that many are now beginning to reflect on where they have been and what they have achieved and look towards the future. For some this might mean looking for new opportunities and so I wanted to share some thoughts I had on this based on my own experience as well as the experience from mentoring others, that I hope will be helpful as you look to deciding what your new year might look like.</description>
+    </item>
+    
+    <item>
+      <title>reInvent 2019 workshop list</title>
+      <link>https://example.com/2019-12-09_reinvent-2019-workshop-list/</link>
+      <pubDate>Mon, 09 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2019-12-09_reinvent-2019-workshop-list/</guid>
+      <description>So here is a list scraped from Twitter and following various other folk, of just a small taster of the workshops that ran during reInvent. As I find more I will update, and feel free to add yours in the comments (oh, and let me know if any of these are dead links)
+Serverless - https://github.com/aws-samples/aws-serverless-workshop-innovator-island/ Serverless image process workshop - https://image-processing.serverlessworkshops.io/ Amplify preductions workshop - https://github.com/mlabieniec/IonicPredictions Full stack serverless Amplify lab - https://github.</description>
+    </item>
+    
+    <item>
+      <title>Make your business more resilient in the digital age</title>
+      <link>https://example.com/2019-10-17_make-your-business-more-resilient-in-the-digital-age/</link>
+      <pubDate>Thu, 17 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2019-10-17_make-your-business-more-resilient-in-the-digital-age/</guid>
+      <description>Very humbled to write a guest post on Adrian Hornsby excellent blog where he provides guidance to help customers build resilient architecture and champions operational excellence.
+In this post I talk about what you need to think about to build a more resilient business fit for the digital age.
+Here is the link: https://medium.com/@adhorn/make-your-business-more-resilient-in-the-digital-age-888da3f5deaf</description>
+    </item>
+    
+    <item>
+      <title>Innovate Machine Learning and AI - learn how to kick start your journey</title>
+      <link>https://example.com/2019-10-04_innovate-machine-learning-and-ai-learn-how-to-kick-start-your-journey/</link>
+      <pubDate>Fri, 04 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2019-10-04_innovate-machine-learning-and-ai-learn-how-to-kick-start-your-journey/</guid>
+      <description>On October 17th we have a free, online event covering several tracks on Machine Learning. Whether you are a complete beginner or seasoned data scientist, we have gentle introductions to deep dives.
+What I am most excited about however, is that we will have an AWS DeepRacer racing challenge. You will learn how to create your first reinforcement learning model that will race a virtual car, with prizes for the fastest times.</description>
+    </item>
+    
+  </channel>
+</rss>

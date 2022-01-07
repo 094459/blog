@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="generator" content="Hugo 0.91.2" />
+  <link rel="canonical" href="https://example.com/newsletter/2020-04-27_aws-open-source-news-and-updates-instalment-no-17/">
+
+  
+
+  
+    
+    
+    
+    
+    
+
+  
+    <link rel="webmention" href="https://webmention.io/username.co.uk/webmention" />
+    <link rel="pingback" href="https://webmention.io/username.co.uk/xmlrpc" />
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://example.com/css/syntax.css" media="none" onload="this.media='all';">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://example.com/css/styles.css">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://example.com/style.main.css">
+
+  
+
+  <link rel="alternate" rel="canonical" href="https://example.com/index.xml" >
+  
+  <style id="inverter" media="none">
+    .intro-and-nav, .main-and-footer { filter: invert(100%) }
+    * { background-color: inherit }
+    img:not([src*=".svg"]), .colors, iframe, .demo-container { filter: invert(100%) }
+  </style>
+
+  
+  
+  <title>AWS open source news and updates - Instalment No. 17 | Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="AWS open source news and updates - Instalment No. 17"/>
+<meta name="twitter:description" content="April 27th - Instalment #17 Episode 17, and as we leave April and head into May, we have a bumper edition with some very interesting new open source projects that AWS launched this week, TorchServe and Amazon Keyspaces as well as the usual round up of interesting projects, blog posts and other essential reading materials to keep you up to speed with the world of AWS and open source.
+Celebrate open source contributors The articles posted in this series are only possible thanks to contributors and project maintainers and so I would like to shout out and thank those folks who really do power open source and enable us all to build on top of what they have created."/>
+
+  <meta name="twitter:card" content="summary" />
+</head>
+
+  <body>
+    <a href="#main">skip to content</a>
+    <svg style="display: none">
+  <symbol id="bookmark" viewBox="0 0 40 50">
+   <g transform="translate(2266 3206.2)">
+    <path style="stroke:currentColor;stroke-width:3.2637;" d="m-2262.2-3203.4-.2331 42.195 16.319-16.318 16.318 16.318.2331-42.428z"/>
+   </g>
+  </symbol>
+
+  <symbol id="w3c" viewBox="0 0 127.09899 67.763">
+   <text font-size="83" style="font-size:83px;font-family:Trebuchet;letter-spacing:-12;fill-opacity:0" letter-spacing="-12" y="67.609352" x="-26.782778">W3C</text>
+   <text font-size="83" style="font-size:83px;font-weight:bold;font-family:Trebuchet;fill-opacity:0" y="67.609352" x="153.21722" font-weight="bold">SVG</text>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m33.695.377 12.062 41.016 12.067-41.016h8.731l-19.968 67.386h-.831l-12.48-41.759-12.479 41.759h-.832l-19.965-67.386h8.736l12.061 41.016 8.154-27.618-3.993-13.397h8.737z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m91.355 46.132c0 6.104-1.624 11.234-4.862 15.394-3.248 4.158-7.45 6.237-12.607 6.237-3.882 0-7.263-1.238-10.148-3.702-2.885-2.47-5.02-5.812-6.406-10.022l6.82-2.829c1.001 2.552 2.317 4.562 3.953 6.028 1.636 1.469 3.56 2.207 5.781 2.207 2.329 0 4.3-1.306 5.909-3.911 1.609-2.606 2.411-5.738 2.411-9.401 0-4.049-.861-7.179-2.582-9.399-1.995-2.604-5.129-3.912-9.397-3.912h-3.327v-3.991l11.646-20.133h-14.062l-3.911 6.655h-2.493v-14.976h32.441v4.075l-12.31 21.217c4.324 1.385 7.596 3.911 9.815 7.571 2.22 3.659 3.329 7.953 3.329 12.892z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.21 0 1.414 8.6-5.008 9.583s-1.924-4.064-5.117-6.314c-2.693-1.899-4.447-2.309-7.186-1.746-3.527.73-7.516 4.938-9.258 10.13-2.084 6.21-2.104 9.218-2.178 11.978-.115 4.428.58 7.043.58 7.043s-3.04-5.626-3.011-13.866c.018-5.882.947-11.218 3.666-16.479 2.404-4.627 5.954-7.404 9.114-7.728 3.264-.343 5.848 1.229 7.841 2.938 2.089 1.788 4.213 5.698 4.213 5.698l4.94-9.837z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.82 48.674s-2.208 3.957-3.589 5.48c-1.379 1.524-3.849 4.209-6.896 5.555-3.049 1.343-4.646 1.598-7.661 1.306-3.01-.29-5.807-2.032-6.786-2.764-.979-.722-3.486-2.864-4.897-4.854-1.42-2-3.634-5.995-3.634-5.995s1.233 4.001 2.007 5.699c.442.977 1.81 3.965 3.749 6.572 1.805 2.425 5.315 6.604 10.652 7.545 5.336.945 9.002-1.449 9.907-2.031.907-.578 2.819-2.178 4.032-3.475 1.264-1.351 2.459-3.079 3.116-4.108.487-.758 1.276-2.286 1.276-2.286l-1.276-6.644z"/>
+  </symbol>
+
+  <symbol id="tag" viewBox="0 0 177.16535 177.16535">
+    <g transform="translate(0 -875.2)">
+     <path style="fill-rule:evenodd;stroke-width:0;fill:currentColor" d="m159.9 894.3-68.79 8.5872-75.42 77.336 61.931 60.397 75.429-76.565 6.8495-69.755zm-31.412 31.835a10.813 10.813 0 0 1 1.8443 2.247 10.813 10.813 0 0 1 -3.5174 14.872l-.0445.0275a10.813 10.813 0 0 1 -14.86 -3.5714 10.813 10.813 0 0 1 3.5563 -14.863 10.813 10.813 0 0 1 13.022 1.2884z"/>
+    </g>
+  </symbol>
+
+  <symbol id="balloon" viewBox="0 0 141.73228 177.16535">
+   <g transform="translate(0 -875.2)">
+    <g>
+     <path style="fill:currentColor" d="m68.156 882.83-.88753 1.4269c-4.9564 7.9666-6.3764 17.321-5.6731 37.378.36584 10.437 1.1246 23.51 1.6874 29.062.38895 3.8372 3.8278 32.454 4.6105 38.459 4.6694-.24176 9.2946.2879 14.377 1.481 1.2359-3.2937 5.2496-13.088 8.886-21.623 6.249-14.668 8.4128-21.264 10.253-31.252 1.2464-6.7626 1.6341-12.156 1.4204-19.764-.36325-12.93-2.1234-19.487-6.9377-25.843-2.0833-2.7507-6.9865-7.6112-7.9127-7.8436-.79716-.20019-6.6946-1.0922-6.7755-1.0248-.02213.0182-5.0006-.41858-7.5248-.22808l-2.149-.22808h-3.3738z"/>
+     <path style="fill:currentColor" d="m61.915 883.28-3.2484.4497c-1.7863.24724-3.5182.53481-3.8494.63994-2.4751.33811-4.7267.86957-6.7777 1.5696-.28598 0-1.0254.20146-2.3695.58589-5.0418 1.4418-6.6374 2.2604-8.2567 4.2364-6.281 7.6657-11.457 18.43-12.932 26.891-1.4667 8.4111.71353 22.583 5.0764 32.996 3.8064 9.0852 13.569 25.149 22.801 37.517 1.3741 1.841 2.1708 2.9286 2.4712 3.5792 3.5437-1.1699 6.8496-1.9336 10.082-2.3263-1.3569-5.7831-4.6968-21.86-6.8361-33.002-.92884-4.8368-2.4692-14.322-3.2452-19.991-.68557-5.0083-.77707-6.9534-.74159-15.791.04316-10.803.41822-16.162 1.5026-21.503 1.4593-5.9026 3.3494-11.077 6.3247-15.852z"/>
+     <path style="fill:currentColor" d="m94.499 885.78c-.10214-.0109-.13691 0-.0907.0409.16033.13489 1.329 1.0675 2.5976 2.0723 6.7003 5.307 11.273 14.568 12.658 25.638.52519 4.1949.24765 14.361-.5059 18.523-2.4775 13.684-9.7807 32.345-20.944 53.519l-3.0559 5.7971c2.8082.76579 5.7915 1.727 8.9926 2.8441 11.562-11.691 18.349-19.678 24.129-28.394 7.8992-11.913 11.132-20.234 12.24-31.518.98442-10.02-1.5579-20.876-6.7799-28.959-.2758-.4269-.57803-.86856-.89617-1.3166-3.247-6.13-9.752-12.053-21.264-16.131-2.3687-.86369-6.3657-2.0433-7.0802-2.1166z"/>
+     <path style="fill:currentColor" d="m32.52 892.22c-.20090-.13016-1.4606.81389-3.9132 2.7457-11.486 9.0476-17.632 24.186-16.078 39.61.79699 7.9138 2.4066 13.505 5.9184 20.562 5.8577 11.77 14.749 23.219 30.087 38.74.05838.059.12188.1244.18052.1838 1.3166-.5556 2.5965-1.0618 3.8429-1.5199-.66408-.32448-1.4608-1.3297-3.8116-4.4602-5.0951-6.785-8.7512-11.962-13.051-18.486-5.1379-7.7948-5.0097-7.5894-8.0586-13.054-6.2097-11.13-8.2674-17.725-8.6014-27.563-.21552-6.3494.13041-9.2733 1.775-14.987 2.1832-7.5849 3.9273-10.986 9.2693-18.07 1.7839-2.3656 2.6418-3.57 2.4409-3.7003z"/>
+     <path style="fill:currentColor" d="m69.133 992.37c-6.2405.0309-12.635.76718-19.554 2.5706 4.6956 4.7759 9.935 10.258 12.05 12.625l4.1272 4.6202h11.493l3.964-4.4516c2.0962-2.3541 7.4804-7.9845 12.201-12.768-8.378-1.4975-16.207-2.6353-24.281-2.5955z"/>
+     <rect style="stroke-width:0;fill:currentColor" ry="2.0328" height="27.746" width="22.766" y="1017.7" x="60.201"/>
+    </g>
+   </g>
+  </symbol>
+
+  <symbol id="info" viewBox="0 0 41.667 41.667">
+   <g transform="translate(-37.035 -1004.6)">
+    <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m76.25 1030.2a18.968 18.968 0 0 1 -23.037 13.709 18.968 18.968 0 0 1 -13.738 -23.019 18.968 18.968 0 0 1 23.001 -13.768 18.968 18.968 0 0 1 13.798 22.984"/>
+    <g transform="matrix(1.1146 0 0 1.1146 -26.276 -124.92)">
+     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m75.491 1039.5v-8.7472"/>
+     <path style="stroke-width:0;fill:currentColor" transform="scale(-1)" d="m-73.193-1024.5a2.3719 2.3719 0 0 1 -2.8807 1.7142 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
+    </g>
+   </g>
+  </symbol>
+
+  <symbol id="warning" viewBox="0 0 48.430474 41.646302">
+    <g transform="translate(-1.1273 -1010.2)">
+     <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:4.151;fill:none" d="m25.343 1012.3-22.14 37.496h44.28z"/>
+     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:4.1512;fill:none" d="m25.54 1027.7v8.7472"/>
+     <path style="stroke-width:0;fill:currentColor" d="m27.839 1042.8a2.3719 2.3719 0 0 1 -2.8807 1.7143 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
+    </g>
+  </symbol>
+
+  <symbol id="menu" viewBox="0 0 50 50">
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="0" x="0"/>
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="20" x="0"/>
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="40" x="0"/>
+   </symbol>
+
+   <symbol id="link" viewBox="0 0 50 50">
+    <g transform="translate(0 -1002.4)">
+     <g transform="matrix(.095670 0 0 .095670 2.3233 1004.9)">
+      <g>
+       <path style="stroke-width:0;fill:currentColor" d="m452.84 192.9-128.65 128.65c-35.535 35.54-93.108 35.54-128.65 0l-42.881-42.886 42.881-42.876 42.884 42.876c11.845 11.822 31.064 11.846 42.886 0l128.64-128.64c11.816-11.831 11.816-31.066 0-42.9l-42.881-42.881c-11.822-11.814-31.064-11.814-42.887 0l-45.928 45.936c-21.292-12.531-45.491-17.905-69.449-16.291l72.501-72.526c35.535-35.521 93.136-35.521 128.64 0l42.886 42.881c35.535 35.523 35.535 93.141-.001 128.66zm-254.28 168.51-45.903 45.9c-11.845 11.846-31.064 11.817-42.881 0l-42.884-42.881c-11.845-11.821-11.845-31.041 0-42.886l128.65-128.65c11.819-11.814 31.069-11.814 42.884 0l42.886 42.886 42.876-42.886-42.876-42.881c-35.54-35.521-93.113-35.521-128.65 0l-128.65 128.64c-35.538 35.545-35.538 93.146 0 128.65l42.883 42.882c35.51 35.54 93.11 35.54 128.65 0l72.496-72.499c-23.956 1.597-48.092-3.784-69.474-16.283z"/>
+      </g>
+     </g>
+    </g>
+  </symbol>
+
+  <symbol id="doc" viewBox="0 0 35 45">
+   <g transform="translate(-147.53 -539.83)">
+    <path style="stroke:currentColor;stroke-width:2.4501;fill:none" d="m149.38 542.67v39.194h31.354v-39.194z"/>
+    <g style="stroke-width:25" transform="matrix(.098003 0 0 .098003 133.69 525.96)">
+     <path d="m220 252.36h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+     <path style="stroke:currentColor;stroke-width:25;fill:none" d="m220 409.95h200"/>
+     <path d="m220 488.74h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+     <path d="m220 331.15h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+    </g>
+   </g>
+ </symbol>
+
+ <symbol id="tick" viewBox="0 0 177.16535 177.16535">
+  <g transform="translate(0 -875.2)">
+   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="155" width="40" y="702.99" x="556.82"/>
+   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="40" width="90.404" y="817.99" x="506.42"/>
+  </g>
+ </symbol>
+</svg>
+
+    <div class="wrapper">
+      <header class="intro-and-nav" role="banner">
+  <div>
+    <div class="intro">
+      <a class="logo" href="https://example.com" aria-label="Beachgeek blog - a refuge for pineapple on pizza lovers home page">
+        <img src="https://example.com/images/logo.svg" alt="My site icon">
+      </a>
+      <p class="library-desc">
+         Technologist and Maker specialising in Cloud, Open Source and Innovation &amp; Emerging Technologies. 
+      </p>
+    </div>
+    <nav id="patterns-nav" class="patterns" role="navigation">
+  <h2 class="vh">Main navigation</h2>
+  <button id="menu-button" aria-expanded="false">
+    <svg viewBox="0 0 50 50" aria-hidden="true" focusable="false">
+      <use xlink:href="#menu"></use>
+    </svg>
+    Menu
+  </button>
+  
+  <ul id="patterns-list">
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Home</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/newsletter/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Newsletter</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/tags/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Tags</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/about/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">About</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/index.xml" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">RSS</span>
+      </a>
+    </li>
+  
+  </ul>
+</nav>
+  </div>
+</header>
+
+      <div class="main-and-footer">
+        <div>
+          
+  <main id="main">
+    <h1>AWS open source news and updates - Instalment No. 17</h1>
+    <h2 id="april-27th---instalment-17">April 27th - Instalment #17</h2>
+<p>Episode 17, and as we leave April and head into May, we have a bumper edition with some very interesting new open source projects that AWS launched this week, TorchServe and Amazon Keyspaces as well as the usual round up of interesting projects, blog posts and other essential reading materials to keep you up to speed with the world of AWS and open source.</p>
+<h3 id="celebrate-open-source-contributors">Celebrate open source contributors</h3>
+<p>The articles posted in this series are only possible thanks to contributors and project maintainers and so I would like to shout out and thank those folks who really do power open source and enable us all to build on top of what they have created.</p>
+<p>So thank you to Romain Decker (@woueb), Nader Dabit (@dabit3), Ben Ellerby, Nimrod Kor and Bridgecrew (@KorNimrod, @bridgecrewio), Vigya Sharma, Julien Simon, Shashank Prasanna, Jon Handler, Mike Stefaniak, Jiaxin Shanthen,  Viji Sarathy, Francis Ginther, Kai Herings, Matt Asay, the folks at Strudel and Gregor Hohpe.</p>
+<h3 id="latest-from-open-source-projects">Latest from open source projects</h3>
+<p><strong>Migrate from Wordpress to Hugo</strong></p>
+<p>If you are currently hosting sites on Wordpress and perhaps looking at your options, then you might find this post and walkthrough interesting from Romain Decker. Hugo is a very popular open source static site generator, and Romain talks about how he approached moving from Wordpress to using Hugo in his post, <a href="https://cloudmaniac.net/wordpress-to-hugo-migration-2-hosting/">Wordpress to Hugo migration - hosting</a>.</p>
+<p><img src="https://cloudmaniac.net/uploads/2020/04/aws-static-website-s3-cloudfront-lambda-workflow-terraform-github.png" alt="wordpress to hugo architecture"></p>
+<p>Stay tuned for the third post where he will outline the migration from Wordpress to Hugo. Thanks for putting this together Romain.</p>
+<p><strong>JAMstack CMS</strong></p>
+<p>Have you heard about <a href="https://jamstack.org/">JAMstack</a>? If not, take time to read that link but TL;RL JAMstack is where you take &ldquo;J&quot;avascript code, us &ldquo;A&quot;PI&rsquo;s and use &ldquo;M&quot;arkup. The thing that they all have in common is that they don’t depend on a web server.</p>
+<p>My colleague Nader Dabit put together this <a href="https://github.com/jamstack-cms/jamstack-cms/blob/master/README.md">JAMstack CMS</a> project for your enjoyment. It is an end to end serverless blogging &amp; CMS system,  built with GraphQL, Gatsby &amp; AWS Amplify.</p>
+<p><strong>Serverless open source tools</strong></p>
+<p>Post from Ben Ellerby that highlights a number of open source tools to improve the developer experience for serverless developers and when building serverless solutions. I have to say that a couple of these were new to me, so I suspect you will find something new in this post too.</p>
+<p>From tool to help you with your IAM permissions, a tool to help you ensure that you keep your AWS Lambda functions clean and focused on just the business logic you need to a couple of general purpose tools and libraries that all serverless developers should be aware of, check out <a href="https://medium.com/serverless-transformation/5-open-source-tools-to-improve-your-serverless-development-experience-8f2eaa89a2b5">5 Open Source Tools to Improve Your Serverless Development Experience</a>.</p>
+<p><strong>Security</strong></p>
+<p>I seem to post lots of really cool open source security related projects, and this week is no exception.</p>
+<p><strong>AirIAM</strong></p>
+<p>If you are using Terraform, then this project will allow you to take your existing IAM usage patterns and migrates these to produce least privileged code that you can deploy in your Terraform deployments.</p>
+<p><img src="https://github.com/bridgecrewio/AirIAM/raw/master/images/ComponentDiagram.png" alt="AirIAM diagram"></p>
+<p>Check out the <a href="https://github.com/bridgecrewio/AirIAM">AirIAM GitHub repository</a>. They provide great documentation, tutorials and examples to get you started. They posted a video where you can also deep dive on this project, so check out the YouTube <a href="https://www.youtube.com/watch?v=nFD0e9BNQRg&amp;feature=youtu.be">clip here</a>.</p>
+<p>Why AirIAM? From the tweet that I read that made me aware of this project</p>
+<blockquote>
+<p>The first name was - &ldquo;AWS IAM Security engineering-as a service-as a code as-an open source&rdquo;.  But AirIAM was a bit more catchy.</p>
+</blockquote>
+<p>Thanks Nimrod Kor and Bridgecrew.</p>
+<h3 id="aws-open-source-projects">AWS Open Source projects</h3>
+<p><strong>PyTorch model serving with TorchServe</strong></p>
+<p>One of the big announcements this week was the launch of TorchServe - an open-source model serving library for PyTorch. The official <a href="https://aws.amazon.com/about-aws/whats-new/2020/04/introducing-torchserve/">Introducing Torchserve post</a> is where you should start.</p>
+<p>A more detailed post from Julien Simon, <a href="https://aws.amazon.com/blogs/aws/announcing-torchserve-an-open-source-model-server-for-pytorch/">Torchserve - An open source model server for PyTorch</a>, walks you through installing this and getting started as well as covering some customers who are already enjoying the benefits of TorchServe.</p>
+<p>Shashank Prasanna did another technical walk though to get you started on how you can <a href="https://aws.amazon.com/blogs/machine-learning/deploying-pytorch-models-for-inference-at-scale-using-torchserve/">Deploy your PyTorch models at scale using TorchServe</a>.</p>
+<p><img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2020/04/20/deploying-pytorch-torchserve-1-2.gif" alt="TorchServe diagram"></p>
+<p>If that was not enough, Mike Stefaniak and Jiaxin Shanthen posted on a collaboration between the Kubernetes team at AWS and the PyTorch team at Facebook, helping customers to understand how you can <a href="https://aws.amazon.com/blogs/containers/fault-tolerant-distributed-machine-learning-training-with-the-torchelastic-controller-for-kubernetes/">Build fault tolerant, distributed machine learning training with a new project, TorchElastic Controller for Kubernetes</a>.</p>
+<p><strong>General availability of managed Cassandra - Amazon Keyspaces</strong></p>
+<p>When it was announced at reInvent 2019, Amazon Managed Apache Cassandra Service (MCS) generated a lot of interest and <a href="https://twitter.com/shawnbice/status/1253463491345670144">this week</a>, together with a brand new name, <a href="https://aws.amazon.com/blogs/aws/new-amazon-keyspaces-for-apache-cassandra-is-now-generally-available/">we launched the general availability of Amazon Keyspaces (for Apache Cassandra)</a>.</p>
+<p>Amazon Keyspaces is built on Apache Cassandra, and you can use it as a fully managed, serverless database. Your applications can read and write data from Amazon Keyspaces using your existing Cassandra Query Language (CQL) code, with little or no changes. For each table, you can select the best configuration depending on your use case:</p>
+<ul>
+<li>With on-demand, you pay based on the actual reads and writes you perform. This is the best option for unpredictable workloads.</li>
+<li>With provisioned capacity, you can reduce your costs for predictable workloads by configuring capacity settings up front. You can also further optimise costs by enable auto scaling, which updates your provisioned capacity settings automatically as your traffic changes throughout the day.</li>
+</ul>
+<p>Check out the <a href="https://aws.amazon.com/blogs/aws/new-amazon-keyspaces-for-apache-cassandra-is-now-generally-available/">launch post from Danilo</a> where he walks you through a quick example to get you started.</p>
+<p><strong>related</strong></p>
+<p>You might also find this project, <a href="https://github.com/aws-samples/aws-sigv4-auth-cassandra-java-driver-examples">AWS Sigv4 Auth Cassandra java driver example</a>, when creating credentials to access Amazon Keyspaces programatically. You can find more details in the docs <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/programmatic.credentials.html#signaturev4">here</a> and <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/programmatic.drivers.html#using_java_driver">here</a>.</p>
+<p><strong>Open Distro for Elasticsearch</strong></p>
+<p>This week we had a super deep dive from Vigya Sharma and Jon Handler, in the published <a href="https://opendistro.github.io/for-elasticsearch/blog/odfe-updates/2020/04/The-Elasticsearch-Weight-Function/">blog post on the Open Distro for Elasticsearch weight function</a>.</p>
+<p>From the post:</p>
+<blockquote>
+<p>Distributed systems scale by coordinating and distributing their workloads horizontally, across several machines. In Elasticsearch, this is done by partitioning indexes into shards and distributing them across data nodes in the cluster.</p>
+<p>In this post, I will dive into the default weight function implementation to weigh the pros and cons of the default algorithm and look at some of the considerations in making shard allocation more responsive to transient signals. You will gain a deeper understanding of shard placement in your clusters, why Elasticsearch chose a particular node for a shard, and how future placement decisions will be evaluated. Knowing this will help you design for future workloads and scaling requirements.</p>
+</blockquote>
+<h3 id="other-quick-updates-from-aws">Other quick updates from AWS</h3>
+<p><strong>AWS CDK Public Roadmap</strong></p>
+<p>Big news over in CDK Land with the <a href="https://aws.amazon.com/blogs/developer/introducing-the-aws-cdk-public-roadmap/">announcement of the AWS CDK public roadmap</a></p>
+<p><img src="https://d2908q01vomqb2.cloudfront.net/0716d9708d321ffb6a00818614779e779925365c/2020/04/10/CDKRoadmap.png" alt="CDK roadmap">.</p>
+<p>One thing that is worth knowing that you may not know, is that there are a number of related open source projects. You may know about aws-cdk repo (the CDK core framework) and the AWS Construct Library. But there’s also the aws/jsii repo, the technology that enables the CDK to deliver polyglot libraries from a single codebase. And last but not least, the aws/aws-cdk-rfcs repo where we conduct our feature design in the open, and request comments from customers like you.</p>
+<p>Never a better time to check it out.</p>
+<p><strong>Amazon SageMaker NEO</strong></p>
+<p>Amazon SageMaker Neo enables developers to train machine learning models once and run them anywhere in the cloud and at the edge. Amazon SageMaker Neo optimises models to run up to twice as fast, with less than a tenth of the memory footprint, with no loss in accuracy.</p>
+<p>DLR is a compact, common runtime for deep learning models and decision tree models compiled by AWS SageMaker Neo, TVM, or Treelite. DLR uses the TVM runtime, Treelite runtime, NVIDIA TensorRT™, and can include other hardware-specific runtimes. DLR provides unified Python/C++ APIs for loading and running compiled models on various devices. DLR currently supports platforms from Intel, NVIDIA, and ARM, with support for Xilinx, Cadence, and Qualcomm coming soon.</p>
+<p><a href="https://github.com/neo-ai/neo-ai-dlr">v1.1.0 of Neo AI DLR was released</a>, so if you are working with machine learning and IoT or edge devices, check out this project out.</p>
+<p><strong>Managing secrets in your Kubernetes clusters</strong></p>
+<p>Check out the blog post, <a href="https://aws.amazon.com/blogs/opensource/managing-secrets-deployment-in-kubernetes-using-sealed-secrets/">Managing secrets deployment in Kubernetes using sealed secrets.</a> where Viji Sarathy walks through using tools from the Sealed Secrets open source project to manage the deployment of sensitive information to their Kubernetes clusters, and to store them securely in a Git repository and to integrate them into their continuous delivery pipelines.</p>
+<p>Sealed Secrets open source project addresses this challenge by providing a mechanism to encrypt a Secret object so that it is safe to store in a private or public repository. These encrypted Secrets can also be deployed to a Kubernetes cluster using normal workflows with tools such as kubectl.</p>
+<p><img src="https://d2908q01vomqb2.cloudfront.net/ca3512f4dfa95a03169c5a670a4c91a19b3077b4/2020/04/09/Screen-Shot-2020-04-09-at-6.54.55-PM.png" alt="managing secrets"></p>
+<h3 id="time-machine---the-retro-projects-that-you-might-not-know-about">Time machine - the retro projects that you might not know about</h3>
+<p>One of the cool things about my job is that in speaking with developers and architects, I often unearth open source projects that I was not aware of but might be super interesting for people to know about.</p>
+<p>This week whilst chatting with folk about build hybrid applications and how open source software plays in this space, I found an AWS project called <a href="https://github.com/awslabs/aws-servicebroker/">AWS Service Broker</a>.</p>
+<p>The AWS Service Broker allows native AWS services to be exposed directly through application platforms that implement the Open Service Broker API, and provides simple integration of AWS Services directly within the application platform.</p>
+<p><img src="https://github.com/awslabs/aws-servicebroker/raw/master/docs/images/architecture.png" alt="AWS Service Broker"></p>
+<p>I would love to hear from anyone who is using this project to integrate AWS services from within their own platform, either using one of the providers listed or their own customer service platforms.</p>
+<h3 id="roundup-of-the-latest-open-source-blog-posts">Roundup of the latest open source blog posts</h3>
+<p>I have been running Ubuntu at home (and pretty much everywhere else) for many years, and this is still my day to day distro of choice. This week in a <a href="https://ubuntu.com/blog/introducing-the-ubuntu-aws-rolling-kernel-2">blog post called, Introducing the Ubuntu AWS rolling kernel</a>, Francis Ginther talked about Ubuntu 18.04 LTS moving to a rolling kernel model. What is a rolling kernel model? Well, I am glad you asked, as the blog post covers this:</p>
+<blockquote>
+<p>A rolling kernel model transitions the default linux-aws kernel from one base version to the next as part of its regular patching cycle</p>
+</blockquote>
+<p>If you are using Ubuntu on AWS, make sure you read the post which provides further details and how you can prepare for this change.</p>
+<p><strong>AWS RoboMaker</strong></p>
+<p>In an excellent blog post, <a href="https://blog.codecentric.de/en/2020/04/thermomix-physical-regression-testing/">Kai Herings writes about how you apply and automate the process of regression testing with physical products using computer vision  and robotics</a>.</p>
+<p>What I love about this post is that it shows how increasingly the mechanisms used in software development are increasingly cross the physical boundary with technologies such as computer vision, robotics and the supporting open source software such as ROS. It is great that customers are using AWS RobotMaker to get started with ROS, so thanks for sharing this post Kai.</p>
+<p><img src="https://blog.codecentric.de/files/2020/03/Bildschirmfoto-2020-03-27-um-13.43.20-1536x756.png" alt="testing physical products"></p>
+<h3 id="startups-love-open-source">Startups love open source</h3>
+<p>Startups love open source software, and in this short video, meet one startup, Alluxio, who are powering innovation with an open sourced data orchestration product.</p>
+<p><a href="https://www.youtube.com/watch?v=3RzTktCZMNE">You can watch the video here.</a></p>
+<p><strong>Securing open source</strong></p>
+<p>In this guest post by by <a href="https://aws.amazon.com/blogs/startups/hackerone-ceo-on-innovation-by-community/">Marten Mickos, CEO of HackerOne, talks about innovation by community</a>. It will only take you 5 minutes to read, but could be the best use of five minutes today.</p>
+<h3 id="online-events-for-your-diary">Online events for your diary</h3>
+<p>I posted this last week, so just a reminder to take a look and put this event in your diary.</p>
+<p><strong>May 12th, Tuesday</strong></p>
+<p><a href="https://opensource101.com/events/at-home/">https://opensource101.com/events/at-home/</a></p>
+<p>Let me know if you have any events you want me to share, please drop me a mail or add it to the comments - I watch these so will be sure to add it in the following roundup.</p>
+<h3 id="some-posts-to-make-your-grey-cells-work">Some posts to make your grey cells work</h3>
+<p>So, these posts are outside the normal selection for this blog, but I wanted to share them as I found them very thought provoking and useful if you are working day to day with open source.</p>
+<p>Now this first post is not a new one, but came up again on the social media recycling round that tosses up the good posts from time to time. A detailed assessment of open source in the context of lock in, plenty to think about. Read on in D<a href="https://martinfowler.com/articles/oss-lockin.html">on&rsquo;t get locked up into avoiding lock-in</a>.</p>
+<p>Following that is an empirical study of donations in open source. This research paper, which is well worth reading, opens up with &ldquo;we also find no clear evidence that donations influence the activity level of a project..&rdquo; (my edit) so, no spoilers and check out the paper over <a href="https://cmustrudel.github.io/papers/overney20donations.pdf">here</a>. Brought to you by <a href="https://cmustrudel.github.io/">Strudel</a>, make sure you check out their other projects and research papers for a data driven assessment of all things around distributed software development.</p>
+<p>Finally, Matt Asay has been on fire this month, with plenty of activity but I love this post on the topic of competing in the open, with a detailed look at Instaclustr, a company that offers a managed Open Distro for Elasticsearch service, competing with Amazon&rsquo;s Elasticsearch service. Read the post, <a href="https://aws.amazon.com/blogs/opensource/the-instaclustr-sign-of-open-source-success/">The instraclustr sign of open success</a>.</p>
+<hr>
+<h3 id="do-you-use-aws-and-love-open-source">Do you use AWS and love open source?</h3>
+<p>Do you have some content you want to share with a broader audience? We are always looking for guest content for the AWS Open blog. Please get in touch (via comments below) and I would love to speak with you about what you are doing in open source. We are always looking for interesting new content.</p>
+<h3 id="we-are-hiring">We are hiring</h3>
+<p>We are hiring, so if you love open source, then why not check out the current openings. We would love to hear from you and if you want to chat and ask me anything, connect to me via LinkedIn or Twitter and always happy to talk.</p>
+<p><a href="https://aws.amazon.com/opensource/?opensource-all.sort-by=item.additionalFields.startDate&amp;opensource-all.sort-order=asc">Open Source jobs at Amazon and AWS</a> - scroll to bottom, on left.</p>
+<h3 id="stay-in-touch-with-open-source-at-aws">Stay in touch with open source at AWS</h3>
+<p>I hope this summary has been useful. I have looked for all the session videos that have been uploaded to date, but if I have missed anything, please get in touch and I will update this summary. Remember to check out the <a href="https://aws.amazon.com/opensource/?opensource-all.sort-by=item.additionalFields.startDate&amp;opensource-all.sort-order=asc">Open Source homepage</a> to keep up to date with all our activity in open source by following us on @AWSOpen.</p>
+
+  </main>
+
+          <div class="social-heading">
+            <div class="footer-social">
+  
+    <div class="social-icon">
+      <a href="https://twitter.com/094459" target="_blank" title="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Twitter" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://github.com/094459" target="_blank" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="GitHub" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+      </a>
+    </div>
+  
+  
+    <div class="social-icon">
+      <a href="https://www.linkedin.com/in/ricardosueiras" target="_blank" title="Linkedin">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="LinkedIn" role="img"
+viewBox="0 0 512 512"
+fill="#fff"><rect
+width="512" height="512"
+rx="15%"
+fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://www.reddit.com/r/aws" target="_blank" title="Reddit">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Reddit" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+      </a>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="social-icon">
+      <a href="mailto:ricsue@amazon.com" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Email" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="teal"/><rect width="356" height="256" x="78" y="128" fill="#fff" rx="8%"/><path fill="none" stroke="teal" stroke-width="20" d="M434 128L269 292c-7 8-19 8-26 0L78 128m0 256l129-128m227 128L305 256"/></svg>
+      </a>
+    </div>
+  
+  
+</div>
+
+          </div>
+          <footer role="contentinfo">
+  <div class="social-footer">
+    <div class="footer-social">
+  
+    <div class="social-icon">
+      <a href="https://twitter.com/094459" target="_blank" title="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Twitter" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://github.com/094459" target="_blank" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="GitHub" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+      </a>
+    </div>
+  
+  
+    <div class="social-icon">
+      <a href="https://www.linkedin.com/in/ricardosueiras" target="_blank" title="Linkedin">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="LinkedIn" role="img"
+viewBox="0 0 512 512"
+fill="#fff"><rect
+width="512" height="512"
+rx="15%"
+fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://www.reddit.com/r/aws" target="_blank" title="Reddit">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Reddit" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+      </a>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="social-icon">
+      <a href="mailto:ricsue@amazon.com" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Email" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="teal"/><rect width="356" height="256" x="78" y="128" fill="#fff" rx="8%"/><path fill="none" stroke="teal" stroke-width="20" d="M434 128L269 292c-7 8-19 8-26 0L78 128m0 256l129-128m227 128L305 256"/></svg>
+      </a>
+    </div>
+  
+  
+</div>
+
+    <label for="themer">
+      dark theme: <input type="checkbox" id="themer" class="vh">
+      <span aria-hidden="true"></span>
+    </label>
+  </div>
+  
+    <p class="margin-top-none">Copyright &copy; <span id="copyright-year"></span> - Ricardo Sueiras</p>
+  
+  
+    <p class="margin-top-none">
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cupper-hugo-theme">Cupper</a>.
+    </p>
+  
+</footer>
+<script>
+    var year = new Date().getFullYear()
+    document.getElementById("copyright-year").innerHTML = year;
+</script>
+
+        </div>
+      </div>
+    </div>
+    <script src="https://example.com/js/prism.js"></script>
+
+
+
+<script src="https://example.com/js/dom-scripts.js"></script>
+
+
+
+<script src="/js/search.7aef046a0cc8b0c532f1d20087b920459bc868c936bb48a6ae221eceefca2d07.js"></script>
+
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  </body>
+</html>

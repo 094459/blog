@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>issue on Beachgeek blog</title>
+    <link>http://example.com/tags/issue/</link>
+    <description>Recent content in issue on Beachgeek blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Aug 2020 21:05:05 -0500</lastBuildDate><atom:link href="http://example.com/tags/issue/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cmd Test</title>
+      <link>http://example.com/cmd-test/</link>
+      <pubDate>Tue, 04 Aug 2020 21:05:05 -0500</pubDate>
+      
+      <guid>http://example.com/cmd-test/</guid>
+      <description>Testing out GitHub issue https://github.com/zwbetz-gh/cupper-hugo-theme/issues/42
+Line 1 Line 2 Line 3  </description>
+    </item>
+    
+    <item>
+      <title>Multiple Expandable Test</title>
+      <link>http://example.com/multiple-expandable-test/</link>
+      <pubDate>Wed, 17 Jun 2020 22:01:14 -0500</pubDate>
+      
+      <guid>http://example.com/multiple-expandable-test/</guid>
+      <description>Testing out GitHub issue https://github.com/zwbetz-gh/cupper-hugo-theme/issues/36 &amp;ndash; Multiple expandable shortcodes do not work if they have the same inner text.
+ expandable 1     Same inner text.    expandable 2     Same inner text.    expandable 3     Different inner text.   </description>
+    </item>
+    
+    <item>
+      <title>Special Character Test</title>
+      <link>http://example.com/special-character-test/</link>
+      <pubDate>Tue, 10 Sep 2019 20:26:08 -0500</pubDate>
+      
+      <guid>http://example.com/special-character-test/</guid>
+      <description>Testing out GitHub issue https://github.com/zwbetz-gh/cupper-hugo-theme/issues/16
+Cette phrase prononcée par Greta Thunberg</description>
+    </item>
+    
+  </channel>
+</rss>

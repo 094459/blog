@@ -1,0 +1,1342 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://example.com/</link>
+    <description>Recent content in Home on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 26 Jun 2017 18:27:58 +0100</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source news and updates #94</title>
+      <link>https://example.com/newsletter/2021-12-20_aws-open-source-news-and-updates-94/</link>
+      <pubDate>Mon, 20 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-12-20_aws-open-source-news-and-updates-94/</guid>
+      <description>December 20th, 2021 - Instalment #94 Newsletter #94.
+This will be the last newsletter of 2021 before I break for Christmas and New Year. I hope you have found this newsletter a useful resource for finding out about new or interesting open source projects, both from what AWS contributes to, but also from the wider builder and open source developer communities.
+To finish up for 2021 we have more new open source projects, covering Amazon Location Services, AWS Fault Injection Simulator (FIS) experiment templates that are AWS CDK ready, Media Replay Engine (MRE)a really nice project to help you automate the creation of replays, a transcribe, post call analytics solution and more.</description>
+    </item>
+    
+    <item>
+      <title>Setting up MWAA to use a KMS key</title>
+      <link>https://example.com/2021-12-14_setting-up-mwaa-to-use-a-kms-key/</link>
+      <pubDate>Tue, 14 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-12-14_setting-up-mwaa-to-use-a-kms-key/</guid>
+      <description>Introduction In a previous post, I shared how you can using AWS CDK to provision your Apache Airflow environments using the Managed Workflows for Apache Airflow service (MWAA).
+I was contacted this week by Michael Grabenstein, who flagged an issue with the code in that post. The post used code that configured a kms key for the MWAA environment, but when trying to deploy the app it would fail with the following error:</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #93</title>
+      <link>https://example.com/newsletter/2021-12-13_aws-open-source-news-and-updates-93/</link>
+      <pubDate>Mon, 13 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-12-13_aws-open-source-news-and-updates-93/</guid>
+      <description>December 13th, 2021 - Instalment #93 Newsletter #93. We took a week off last week to recover from re:Invent, so this week we have extensive coverage of the open source related news and announcements so be sure to check those out. This week we have some great new open source projects, from a project that will help you get started with data meshes, an alternative way to provide internet connectivity to those private subnets, a nice new CDK construct to quickly deploy single page applications and a cool IoT simulator solution which I know I am going to try out.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates 92</title>
+      <link>https://example.com/newsletter/2021-11-29_aws-open-source-news-and-updates-92/</link>
+      <pubDate>Mon, 29 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-11-29_aws-open-source-news-and-updates-92/</guid>
+      <description>November 29th, 2021 - Instalment #92 Newsletter #92. This is the re:Invent edition of the weekly newsletter, and whilst I am not there this year, I will still be covering all the announcements and topics of interest in this and next weeks newsletter.
+Outside of re:Invent, this weeks letter also brings you lots more new open source projects including something for DynamoDB fans, a serverless GraalVM project, a very nice AWS SSO project, new Grafana recipes and more.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #91</title>
+      <link>https://example.com/newsletter/2021-11-22_aws-open-source-news-and-updates-91/</link>
+      <pubDate>Mon, 22 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-11-22_aws-open-source-news-and-updates-91/</guid>
+      <description>November 22nd, 2021 - Instalment #91 Newsletter #91.
+This week I feature eleven new open source projects, covering a diverse array of use cases. From securing your Kubernetes clusters, a couple of nifty Amazon Neptune tools, a Python library that provides state-of-the-art distributed hyper parameter optimising, a sample NFT marketplace and more. This weeks AWS community and AWS content features topics including AWS SAM, Bottlerocket, Babelfish, Apache Airflow, PartiQL, Suricata, Slurm, Apache Kafka, AWS Amplify, PHP and more.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #90</title>
+      <link>https://example.com/newsletter/2021-11-15_aws-open-source-news-and-updates-90/</link>
+      <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-11-15_aws-open-source-news-and-updates-90/</guid>
+      <description>November 15th, 2021 - Instalment #90 Newsletter #90.
+Another packed edition of his newsletter, with some great new open source projects such as ploomber (a project to help you build production pipelines for your notebooks), slic-starter (a complete starter project for production-grade serverless applications) and many more interesting projects covering RStudio, Spring Boot, a serverless software vending solution, Kubernetes on the edge and more. AWS and Community content this week covers AWS CDK, Steampipe, AWS Distro for OpenTelemetry, Dask, Flagger, Cortex, Apache Airflow, Apache Flink, OpenSearch, Reddis, RabbitMQ and more.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #89</title>
+      <link>https://example.com/newsletter/2021-11-08_aws-open-source-news-and-updates-89/</link>
+      <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-11-08_aws-open-source-news-and-updates-89/</guid>
+      <description>November 8th, 2021 - Instalment #89 Newsletter #89. This week we have another selection of great new projects for you to take a look at. Kicking things off with the latest open source project from Airbnb, ottr, a Public Key Infrastructure framework that handles end-to-end certificate rotations, the other projects include cloudkey, clock-bound, aws-recon, cdk-dia and more. Make sure you check these out.
+As always, we have a wide selection of new blog posts from the AWS and Community bloggers covering topics from Alphafold, BayerCLAW, and Babelfish to OpenSearch, AWS CDK, ffmpeg, Amazon Corretto, Spring Boot, Bottlerocket, Snyk, MariaDB and GitHub actions.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #88</title>
+      <link>https://example.com/newsletter/2021-11-01_aws-open-source-news-and-updates-88/</link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-11-01_aws-open-source-news-and-updates-88/</guid>
+      <description>November 1st, 2021 - Instalment #88 Newsletter #88.
+Number 88 symbolises fortune and good luck in Chinese culture (I hope that is correct, so please let me know if that is not) and I hope you will feel you are all the luckier for chancing upon this weeks selection of open source projects and posts.
+This week, the big news was the publishing of the Babelfish repository. Check out the launch post as well as additional content and links to this interesting open source project.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #87</title>
+      <link>https://example.com/newsletter/2021-10-25_aws-open-source-news-and-updates-87/</link>
+      <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-10-25_aws-open-source-news-and-updates-87/</guid>
+      <description>October 25th, 2021 - Instalment #87 Newsletter #87.
+As we approach Halloween (or Dia de los Muertos/All Saints as I remember it), rest assured there is nothing scary in this weeks round up of all things open source on AWS. This weeks projects include a project that helps you implement a GitOps workflow that includes Crossplane and Argo CD, and a static analysis tool for CloudFormation templates. We have some great blog posts this week, featured topics include Apache Kafka, StackGres, Spinnaker, OpenShift, Envoy, Porting Assistant for .</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #86</title>
+      <link>https://example.com/newsletter/2021-10-18_aws-open-source-news-and-updates-86/</link>
+      <pubDate>Mon, 18 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-10-18_aws-open-source-news-and-updates-86/</guid>
+      <description>October 18th, 2021 - Instalment #86 Newsletter #86.
+This week we have a very broad variety of topics. Starting off with some fresh open source projects such as cfn-diagram, aws-jwt-verify, damo, aws-dotnet-deploy, automated-account-configuration, BayerCLAW and more. For mains, we have new AWS and community authored posts on MySQL, OpenSearch, .NET, miniwdl, OpenMRS, Apache Hudi, Apache Spark, ROS, cdk8s, Jax, Deep Graph Library and more. Finally, for pudding we have this weeks video that provides an insight into contributing to Apache Airflow and we have some new events added so check those out and add them to your diary.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #85</title>
+      <link>https://example.com/newsletter/2021-10-11_aws-open-source-news-and-updates-85/</link>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-10-11_aws-open-source-news-and-updates-85/</guid>
+      <description>October 11th, 2021 - Instalment #85 Newsletter #85.
+This week we have an interesting gaming flavour to this newsletter, with a couple of projects that are influenced or are directly related to gaming. We also have other new open source projects including one that shows you how you can run an OpenVSCode Server for AWS Graviton2. This weeks blog post and tutorials cover Apache Airflow, Apache Spark, Apache Kafka, Apache Ranger, Apache Flink, OpenSearch, Apache Lucene, PostgreSQL, AWS CDK, and Kubernetes.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates 84</title>
+      <link>https://example.com/newsletter/2021-10-04_aws-open-source-news-and-updates-84/</link>
+      <pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-10-04_aws-open-source-news-and-updates-84/</guid>
+      <description>October 4th, 2021 - Instalment #84 Newsletter #84.
+Welcome to issue #84 of this newsletter, and we have more great new open source projects for you this week. We have a couple of great security/compliance/governance tools that will help you with security in cloudgraphdev and (the amazingly named) wonk, placebo, a tool to help you mock tests, a new cli from AWS to help you simplify those of you working with genomics workloads, and more.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #83</title>
+      <link>https://example.com/newsletter/2021-09-27_aws-open-source-news-and-updates-83/</link>
+      <pubDate>Mon, 27 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-09-27_aws-open-source-news-and-updates-83/</guid>
+      <description>September 27th, 2021 - Instalment #83 Newsletter #83.
+Welcome to issue #83 of this newsletter, and more great new open source projects to check out. For infrastructure as code practitioners we have several projects for both CDK and Terrafrom, a CI/CD project to help you scale GitHub Actions runners, a simple hosting project with some nice features you can use as a baseline for your own project, a reference architecture for data analytics on AWS with some comprehensive CDK stacks you can inspect and borrow for your own, a project to help you visualise some of your key cloud metrics and more.</description>
+    </item>
+    
+    <item>
+      <title>Integrating Amazon Timestream in your Amazon Managed Workflows for Apache Airflow v2.x</title>
+      <link>https://example.com/2021-09-23_integrating-amazon-timestream-in-your-amazon-managed-workflows-for-apache-airflow-v2x/</link>
+      <pubDate>Thu, 23 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-09-23_integrating-amazon-timestream-in-your-amazon-managed-workflows-for-apache-airflow-v2x/</guid>
+      <description>Integrating with Amazon Timestream in your Apache Airflow DAGs
+Amazon Timestream is a fast, scalable, and serverless time series database service perfect for use cases that generate huge amounts of events per day, optimised to make it faster and more cost effective that using relational databases.
+I have been playing around with Amazon Timestream to prepare for a talk I am doing with some colleagues, and wanted to see how I could integrate it with other AWS services in the context of leveraging some of the key capabilities of Amazon Timestream.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #82</title>
+      <link>https://example.com/newsletter/2021-09-20_aws-open-source-news-and-updates-82/</link>
+      <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-09-20_aws-open-source-news-and-updates-82/</guid>
+      <description>September 20th, 2021 - Instalment #82 Newsletter #82.
+Welcome to issue #82 of this newsletter, bringing you the latests updates on open source on AWS. This weeks featured new projects include cdk-nag (helping CDK developers to shift left and check their stacks against best practices), cfn-alarms (a nice tool to automate the creation of your CloudWatch alarms), aws-lambda-adapter (a project to help accelerate your web applications to serverless), as well as some new open source solutions including aws-security-hub-automated-response-and-remediation and eks-preventative-controls.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #81</title>
+      <link>https://example.com/newsletter/2021-09-13_aws-open-source-news-and-updates-81/</link>
+      <pubDate>Mon, 13 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-09-13_aws-open-source-news-and-updates-81/</guid>
+      <description>September 13th, 2021 - Instalment #81 Newsletter #81.
+Welcome new and existing readers of this newsletter to another edition with plenty to excite you. This weeks brand new open source projects include some great new AWS CDK constructs to help you with things such as Apache Airflow, a tool to help you with your IAM policies, a really nice tool to explore and interact with AWS SQS and something for Minecraft fans.</description>
+    </item>
+    
+    <item>
+      <title>Reading and writing data across different AWS accounts with Amazon Managed Workflows for Apache Airflow v2.x</title>
+      <link>https://example.com/2021-09-07_reading-and-writing-data-across-different-aws-accounts-with-amazon-managed-workflows-for-apache-airflow-v2x/</link>
+      <pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-09-07_reading-and-writing-data-across-different-aws-accounts-with-amazon-managed-workflows-for-apache-airflow-v2x/</guid>
+      <description>Reading and writing data across different AWS accounts in you Apache Airflow DAGs
+As regular readers will know, I sometimes lurk in the Apache Airflow slack channel to see what is going on. If you are new to Apache Airflow, or want to get a deeper understanding then I highly recommend spending some time here. The community is super welcoming and eager to help new participants.
+It was during a recent session I came across an interesting problem that one of the builders was having, which was how to access (read/write) data in an S3 bucket which was in a different account to the one hosting Amazon Managed Workflows for Apache Airflow (MWAA).</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #80</title>
+      <link>https://example.com/newsletter/2021-09-06_aws-open-source-news-and-updates-80/</link>
+      <pubDate>Mon, 06 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-09-06_aws-open-source-news-and-updates-80/</guid>
+      <description>September 6th, 2021 - Instalment #80 Newsletter #80.
+So what delights does #80 of this newsletter offer this week? We have plenty of new open source projects, such as aws-o11y-recipes (observability recipes), dassana-io (contextual alerts), sgCheckup (security), aws-lambda-scheduler (developer tool to simplify scheduling of AWS Lambda functions), aacli (AWS cli authentication/SSO) as well as Terraform modules and AWS open source solutions covering Hugging Face, reporting on your AWS accounts and more.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #79</title>
+      <link>https://example.com/newsletter/2021-08-27_aws-open-source-news-and-updates-79/</link>
+      <pubDate>Fri, 27 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-08-27_aws-open-source-news-and-updates-79/</guid>
+      <description>August 27th, 2021 - Instalment #79 Newsletter #79.
+The combination of having been away on PTO for the past few weeks, and this coming Monday being a national holiday in the UK, I thought I would post the newsletter today. Covering nearly three weeks, a lot has happened so there is a lot to cover.
+We have 17 new open source projects and solutions, including EventBridge Canon, an essential project if you are working with event driven architectures on AWS, kics a security scanning tool for your IaC, open source solutions such as aws-security-analytics-bootstrap and amazon-msk-with-apache-kafka-streams-api, and other new projects like aws-python-utilities, snap-xcompile, riFT, rds_iamauth_proxy, aws-simple-websocket, ecs-external-instance-network-sentry and more.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #78</title>
+      <link>https://example.com/newsletter/2021-08-02_aws-open-source-news-and-updates-78/</link>
+      <pubDate>Mon, 02 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-08-02_aws-open-source-news-and-updates-78/</guid>
+      <description>August 2nd, 2021 - Instalment #78 Newsletter #78.
+This is the last newsletter for the next three weeks, as I will be taking some time off and shutting down my laptop. I will look forward to bringing you a very full edition when I return, but in the meantime enjoy another great collection of open source projects and blog posts to help you get the most out of open source on AWS.</description>
+    </item>
+    
+    <item>
+      <title>Working with parameters and variables in Amazon Managed Workflows for Apache Airflow</title>
+      <link>https://example.com/2021-07-27_working-with-parameters-and-variables-in-amazon-managed-workflows-for-apache-airflow/</link>
+      <pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-07-27_working-with-parameters-and-variables-in-amazon-managed-workflows-for-apache-airflow/</guid>
+      <description>Maximising the re-use of your DAGs in MWAA
+During some recently conversations with customers, one of the topics that they were interested in was how to create re-usable, parameterised Apache Airflow workflows (DAGs) that could be executed dynamically through the use variables and/or parameters (either submitted via the UI or the command line). This makes a lot of sense, as you may find that you repeat similar tasks in your workflows, and so this approach allows you to maximise the re-use of that work.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #77</title>
+      <link>https://example.com/newsletter/2021-07-26_aws-open-source-news-and-updates-77/</link>
+      <pubDate>Mon, 26 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-07-26_aws-open-source-news-and-updates-77/</guid>
+      <description>26th July, 2021 - Instalment #77 Newsletter #77.
+This week we have more new open source projects including schema-manager, maildog, ddbcereal, ecr-scan-reporter and more. This weeks AWS and community blog posts cover topics such as PartiQL, ConsoleMe, Yor, Kubernetes, Debezium, Apache Kafka, Apache Spark, Redis, HPC and more. Also, don&amp;rsquo;t miss the great video on getting up and running with Amazon EMR on Apache Airflow.
+Observability (o11y) newsletter
+If you had not already signed up for this, then perhaps now is a great time.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #76</title>
+      <link>https://example.com/newsletter/2021-07-19_aws-open-source-news-and-updates-76/</link>
+      <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-07-19_aws-open-source-news-and-updates-76/</guid>
+      <description>19th July, 2021 - Instalment #76 Newsletter #76.
+This week, we have new oss projects such as ecs-files-composer, lucid-dynamodb, kubectl-trace, tailscale-layer and more. AWS and community blog posts featuring OpenSearch, Kubernetes, COBOL, Jamulus, Firecracker, Apache Hudi, Apache Kakfa, Apache Flink, Redis and more. In the videos section we catch up with a couple of the sessions from the Airflow Summit and finally, some new events for your diary.
+Celebrating open source contributors The articles posted in this series are only possible thanks to contributors and project maintainers and so I would like to shout out and thank those folks who really do power open source and enable us all to build on top of what they have created.</description>
+    </item>
+    
+    <item>
+      <title>Creating a multi architecture CI/CD solution with Amazon ECS and ECS Anywhere</title>
+      <link>https://example.com/2021-07-16_creating-a-multi-architecture-cicd-solution-with-amazon-ecs-and-ecs-anywhere/</link>
+      <pubDate>Fri, 16 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-07-16_creating-a-multi-architecture-cicd-solution-with-amazon-ecs-and-ecs-anywhere/</guid>
+      <description>Please let me know how I can improve posts such as this one, by completing this very short survey. $25 AWS credits will be provided for the first 20 completed - take the survey
+Organisations are moving their workloads to the cloud as quickly as they can. While most applications can be easily migrated to the cloud, some applications need to remain on-premises due to low-latency or data sovereignty requirements.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #75</title>
+      <link>https://example.com/newsletter/2021-07-12_aws-open-source-news-and-updates-75/</link>
+      <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-07-12_aws-open-source-news-and-updates-75/</guid>
+      <description>12th July, 2021 - Instalment #75 Newsletter #75.
+This week we have a bumper edition, due to the fact I did not publish last week and it looks like everyone has been very busy. We have new open source projects include a light weight Java client, a tool to help you manage your AWS resources and some sample applications to help you get started with location based services, Bottlerocket and algorithmic trading.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news/updates #74</title>
+      <link>https://example.com/newsletter/2021-06-28_aws-open-source-newsupdates-74/</link>
+      <pubDate>Mon, 28 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-06-28_aws-open-source-newsupdates-74/</guid>
+      <description>28th June, 2021 - Instalment #74 Newsletter #74.
+This week we have new open source projects that help you access your AWS EFS data without the need for a VPN, a new Red Team security tool that is in the very early stages and a number of new AWS projects to help you easily deploy open source projects such as Nextcloud or manage your own SQL Server deployments. Community and AWS posts covering Apache Airflow, Rust, Prometheus, DevOps, Apache Spark, R Studio, Grafana Loki and many more.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #73</title>
+      <link>https://example.com/newsletter/2021-06-21_aws-open-source-news-and-updates-73/</link>
+      <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-06-21_aws-open-source-news-and-updates-73/</guid>
+      <description>21st June, 2021 - Instalment #73 Newsletter #73.
+This week&amp;rsquo;s new projects include a project than can help you reduce your costs if you are running Amazon EKS workloads, an AWS CDK pattern to help you easily create internal and external access points for your applications, a GraphQL solution and some sample AWS projects. We have community and AWS authored posts featuring Kubernetes, Apache Flink, Firecracker, OpenSearch, Apache Tinkerpop, Apache Kafka, as well as .</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #72</title>
+      <link>https://example.com/newsletter/2021-06-14_aws-open-source-news-and-updates-72/</link>
+      <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-06-14_aws-open-source-news-and-updates-72/</guid>
+      <description>14th June, 2021 - Instalment #72 Newsletter #72.
+This week we have new open source projects such as Lift, that makes it super easy to deploy applications to production, a couple of new mods for the Steampipe project that let you do cost optimisation and security auditing, a nice project for tmux fans as well as a project that will get you started with ECS Anywhere. Community and AWS posts covering security, DevOps and IoT/Robotics, as well as Kubernetes, Open Shift, Apache Airflow, Linux and many more.</description>
+    </item>
+    
+    <item>
+      <title>Working with Amazon EKS and Amazon Managed Workflows for Apache Airflow v2.x</title>
+      <link>https://example.com/2021-06-10_working-with-amazon-eks-and-amazon-managed-workflows-for-apache-airflow-v2x/</link>
+      <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-06-10_working-with-amazon-eks-and-amazon-managed-workflows-for-apache-airflow-v2x/</guid>
+      <description>Introduction The Apache Airflow slack channel is a vibrant community of open source builders that is a great source of feedback, knowledge and answers to problems and use cases you might have when trying to do stuff with Apache Airflow. This week I picked up on someone seeing errors with Amazon EKS, and so I thought what better time to try out the new Apache Airflow 2.x version that was recently launched in Amazon Managed Workflows for Apache Airflow (MWAA).</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #71</title>
+      <link>https://example.com/newsletter/2021-06-07_aws-open-source-news-and-updates-71/</link>
+      <pubDate>Mon, 07 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-06-07_aws-open-source-news-and-updates-71/</guid>
+      <description>7th June, 2021 - Instalment #71 Newsletter #71.
+This week we have a number of security related projects, covering reference/best practice deployments of open source security tools as well as new tools that will help you identify misconfigured assets. Another interesting project this week is moot, a serverless project to help yo simplify your deployments. On top of the new projects, we have some great community and AWS blog posts on Kubernetes, OpenSearch, Eventbridge Atlas, Keycloak, Apache Kafka, SQLAlchemy, AWS Copilot, OpenShift and many more.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #70</title>
+      <link>https://example.com/newsletter/2021-06-01_aws-open-source-news-and-updates-70/</link>
+      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-06-01_aws-open-source-news-and-updates-70/</guid>
+      <description>1st June, 2021 - Instalment #70 Due to it being a bank holiday in the UK, Newsletter #70 is a day later than usual.
+Make sure you check out this weeks &amp;ldquo;Quick Updates&amp;rdquo; as there are some updates that I know a lot of people will be happy about, and I always share great nuggets that sometimes folk miss. More great projects this week, from iamzero which helps you simplify your identity and access management, PMapper that you will find helpful for identifying risks in your IAM configurations, an AWS CDK construct to help you deploy a VSCode server, Orkestra, a super nice project that lets you create workflows using Lambda functions a la Apache Airflow and many more.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #69</title>
+      <link>https://example.com/newsletter/2021-05-24_aws-open-source-news-and-updates-69/</link>
+      <pubDate>Mon, 24 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-05-24_aws-open-source-news-and-updates-69/</guid>
+      <description>May 24th, 2021 - Instalment #69 Newsletter #69.
+This week we celebrate more new open source projects, covering tools that can help you lock down and monitor your IAM policies, reference solutions that make it easy to deploy a number of open source projects, and a great tool to help you monitor/debug your serverless functions. On top of that the usual round up of community and AWS blog posts, featuring lots of updates on Kubernetes, performance tuning HTTP on EC2, LLVM, Apache Kafka, Triton inference, the next version of Cloudformation guard, Bottlerocket, AWS Graviton2, Tensorflow and more.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #68</title>
+      <link>https://example.com/newsletter/2021-05-17_aws-open-source-news-and-updates-68/</link>
+      <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-05-17_aws-open-source-news-and-updates-68/</guid>
+      <description>May 17th, 2021 - Instalment #68 Newsletter #68.
+What better way that to celebrate my 100th post on dev.to with the latest AWS open source news and updates. This week we have posts covering Rust, OpenSearch, SaaS Boost, Apache Airflow, Kubernetes, Taurus, Spring Boot, Jenkins, GraphQL, Redis and more. If you are looking for projects, make sure you check out SaaS Boost which generated a lot of buzz last week, as well as the first beta of OpenSearch, sls-test-tools, aws-assume-role-lib and more.</description>
+    </item>
+    
+    <item>
+      <title>Working with the RedshiftToS3Transfer operator and Amazon Managed Workflows for Apache Airflow</title>
+      <link>https://example.com/2021-05-15_working-with-the-redshifttos3transfer-operator-and-amazon-managed-workflows-for-apache-airflow/</link>
+      <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-05-15_working-with-the-redshifttos3transfer-operator-and-amazon-managed-workflows-for-apache-airflow/</guid>
+      <description>Introduction Inspired by a recent conversation within the Apache Airflow open source slack community, I decided to channel the inner terrier within me to tackle this particular issue, around getting an Apache Airflow operator (the protagonist for this post) to work.
+I found the perfect catalyst in the way of the original launch post of Amazon Managed Workflows for Apache Airflow (MWAA). As is often the way, diving into that post (creating a workflow to take some source files, transform them and then move them into Amazon Redshift) led me down some unexpected paths to here, this post.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #67</title>
+      <link>https://example.com/newsletter/2021-05-10_aws-open-source-news-and-updates-67/</link>
+      <pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-05-10_aws-open-source-news-and-updates-67/</guid>
+      <description>May 10th, 2021 - Instalment #67 Newsletter #67.
+This week more great open source projects for you to get stuck into. The big news last week was the release in alpha of the new Rust SDK for AWS, so make sure you check that out if you are exploring the world of Rust. We also have a couple of interesting new projects on awslabs, always a great place to explore if you have the time, awsclii a nice little tool that generates groovy ascii graphics as well as some significant updates to some projects I have covered in earlier newsletters.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #66</title>
+      <link>https://example.com/newsletter/2021-05-04_aws-open-source-news-and-updates-66/</link>
+      <pubDate>Tue, 04 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-05-04_aws-open-source-news-and-updates-66/</guid>
+      <description>May 4th, 2021 - Instalment #66 Newsletter #66.
+This week we have a really outstanding collection of new open source projects, including eventbridge-atlas, ecsk, spotinfo, pecos and more, so make sure you spend some time checking those out. Following on from CDK Day, we have plenty of great posts for CDK fans. As always, there are lots of great community and AWS blog posts covering event driven architectures, containers, big data, and so happy to see the AWS DeepRacer open source announcements last week.</description>
+    </item>
+    
+    <item>
+      <title>Using AWS CDK to deploy your Amazon Managed Workflows for Apache Airflow environment</title>
+      <link>https://example.com/2021-04-28_using-aws-cdk-to-deploy-your-amazon-managed-workflows-for-apache-airflow-environment/</link>
+      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-04-28_using-aws-cdk-to-deploy-your-amazon-managed-workflows-for-apache-airflow-environment/</guid>
+      <description>update I am grateful to Michael Grabenstein for spotting some mistakes in the original post/code. I hope these have now been rectified in this post.
+ Using AWS CDK to deploy your Amazon Managed Workflows for Apache Airflow environment What better way to celebrate CDK Day than to return to a previous blog where I wrote about automating the installation and configuration of Amazon Managed Workflows for Apache Airflow (MWAA), and take a look at doing the same thing but this time using AWS CDK.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #65</title>
+      <link>https://example.com/newsletter/2021-04-26_aws-open-source-news-and-updates-65/</link>
+      <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-04-26_aws-open-source-news-and-updates-65/</guid>
+      <description>April, 26th, 2021 - Instalment #65 Newsletter #65.
+This week we have new projects covering security, AWS CDK, serverless and a very handy tool if you find yourself having to record your screen to do demos and wondering how to make sure you do not disclose sensitive information such as your AWS credentials. We have AWS and community blog posts covering Kubernetes, AWS Copilot, Rust, GraphQL, Apache Airflow, Linux, we have a couple of workshops on AWS Greengrass v2 and Observability on AWS and much more.</description>
+    </item>
+    
+    <item>
+      <title>Automating your ELT Workflows with Managed Workflows for Apache Airflow - Part One</title>
+      <link>https://example.com/2021-04-21_automating-your-elt-workflows-with-managed-workflows-for-apache-airflow-part-one/</link>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-04-21_automating-your-elt-workflows-with-managed-workflows-for-apache-airflow-part-one/</guid>
+      <description>update: I have changed the post to use standard Apache Airflow variables rather than using AWS Secrets Manager.
+Part One - Automating Amazon Athena As part of an upcoming DevDay event, I have been working on how you can use Apache Airflow to help automate your Extract, Load and Transform (ELT) Workflows. Amazon Athena and Amazon EMR are two AWS services that help customers who have existing SQL skills/expertise and are looking at tools such as Presto or Apache Hive when undertaking those transformations.</description>
+    </item>
+    
+    <item>
+      <title>Automating your ELT Workflows with Managed Workflows for Apache Airflow - Part Two</title>
+      <link>https://example.com/2021-04-21_automating-your-elt-workflows-with-managed-workflows-for-apache-airflow-part-two/</link>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-04-21_automating-your-elt-workflows-with-managed-workflows-for-apache-airflow-part-two/</guid>
+      <description>Part Two - Automating Amazon EMR In Part One, we automated an example ELT workflow on Amazon Athena using Apache Airflow. In this post, Part Two, we will do the same thing but automate the same example ELT workflow using Amazon EMR.
+Make sure you recap the setup from Part One. All the code so you can reproduce this yourself can be found in the GitHub repository here.
+Automating Amazon EMR</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #64</title>
+      <link>https://example.com/newsletter/2021-04-19_aws-open-source-news-and-updates-64/</link>
+      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-04-19_aws-open-source-news-and-updates-64/</guid>
+      <description>April, 19th, 2021 - Instalment #64 Newsletter #64.
+Another great selection of posts this week, starting off with the announcement last week of OpenSearch and OpenSearch Dashboards, the name of the community driven open source fork of Elasticsearch and Kibana. We have a great selection of community posts covering topics such as Apache Zeppelin, Rust, OpenJDK as well as an exciting new project called Lift to watch out for. Some great new open source projects including how to run Haskell on AWS Lambda, a nice project to make it easy to run EKS Distro on your desktop, so make sure you check those out.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #63</title>
+      <link>https://example.com/newsletter/2021-04-12_aws-open-source-news-and-updates-63/</link>
+      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-04-12_aws-open-source-news-and-updates-63/</guid>
+      <description>April, 12th, 2021 - Instalment #63 Newsletter #63.
+No newsletter last week due to the holidays, which means that this week we have a bumper edition. Check out the AWS CDK content this week, as there is both lots of it, but also all if it is great. We then have some great content if you are into containers, and the usual round up of other open source posts from AWS and the community covering topics such as Selenium, Apache Airflow, Apache Flink, GraphQL, Java and much more.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #62</title>
+      <link>https://example.com/newsletter/2021-03-29_aws-open-source-news-and-updates-62/</link>
+      <pubDate>Mon, 29 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-03-29_aws-open-source-news-and-updates-62/</guid>
+      <description>March 29th, 2021 - Instalment #62 Newsletter #62.
+This week we have some really interesting new projects for you to take a look at, including someones first. We have cli tools to make it easier to work with the recently announced ECS Exec, to a serverless security tool, a very nice project that incorporates AWS CDK as part of an ArchOps project and more. We also have some great reads for you this week - check out the back story of Jupyter from Matt, a few posts on how AWS and Hugging Face are working together, some nice posts for you DevOps enthusiasts and more.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #61</title>
+      <link>https://example.com/newsletter/2021-03-22_aws-open-source-news-and-updates-61/</link>
+      <pubDate>Mon, 22 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-03-22_aws-open-source-news-and-updates-61/</guid>
+      <description>March 22nd, 2021 - Instalment #61 Newsletter #61.
+This week we have a lot of love for Apache projects, covering Apache Lucene, Parquet, Airflow, Cassandra and HBase, with a couple of must read posts. On top of that, we have more new open source projects, including a couple of curated lists of essential resources as well as some new open source tools from AWS. Finally, the usual round up of open source posts from the community and AWS, as well as a couple of videos and short updates.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #60</title>
+      <link>https://example.com/newsletter/2021-03-15_aws-open-source-news-and-updates-60/</link>
+      <pubDate>Mon, 15 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-03-15_aws-open-source-news-and-updates-60/</guid>
+      <description>March 15th, 2021 - Instalment #60 Newsletter #60.
+This week is packed with posts for data lovers, with posts covering Presto, Apache Airflow and Apache Hudi, we have some Java goodies in the form of a nice deep dive on Heapothesys and a couple of posts on Kotlin, a couple of great whitepapers - the first will help you move your workloads (and open source projects) to Arm based AWS Graviton instance types, and the other is an update to the Redis whitepaper, and the usual round up of community and AWS related posts.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #59</title>
+      <link>https://example.com/newsletter/2021-03-08_aws-open-source-news-and-updates-59/</link>
+      <pubDate>Mon, 08 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-03-08_aws-open-source-news-and-updates-59/</guid>
+      <description>March 8th, 2021 - Instalment #59 Newsletter #59. This week we have a really great selection of open source projects for you to take a look at. Quail, not just a fancy egg you enjoy on those special occasions but an interesting project that helps you easily provision resources for your developers was my pick from a very good bunch. Aside from that, the usual round up of fresh blog posts from AWS and the community, some new events that are happening later this week and next and a new newsletter for you to sign up to.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #58</title>
+      <link>https://example.com/newsletter/2021-03-01_aws-open-source-news-and-updates-58/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-03-01_aws-open-source-news-and-updates-58/</guid>
+      <description>March 1st, 2021 - Instalment #58 Newsletter #58.
+This week we have posts covering some of my favourite topics, AWS Graviton and AWS CDK, we have some new events to check out, more great videos from the Containers on the couch folk, as well as the usual round up of new open source projects, AWS and community related posts and quick updates.
+Before we crack on, why not start by reading this post, The real value of open source in the cloud that Matt Asay wrote last week that talks about the freedom and choice that open source provides, whether that is in the Cloud or not.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #57</title>
+      <link>https://example.com/newsletter/2021-02-22_aws-open-source-news-and-updates-57/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-02-22_aws-open-source-news-and-updates-57/</guid>
+      <description>February 22nd, 2021 - Instalment #57 Newsletter #57.
+This week we have another great selection of content to share with you. Starting off with a look at open source at AWS, which is a must read this week, we meander through a look at a write up of the open source technology stack that supported Fossdem a few weeks ago. Then it is off to the usual round up of latest open source projects, blog posts from the community and AWS as well as a look at some quick updates, videos and more.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #56</title>
+      <link>https://example.com/newsletter/2021-02-15_aws-open-source-news-and-updates-56/</link>
+      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-02-15_aws-open-source-news-and-updates-56/</guid>
+      <description>February 15th, 2021 - Instalment #56 Newsletter #56.
+This week we have the latest update on the Elasticsearch/Kibana fork, events for your diary, the usual round up of blog posts and new open source projects as well as white papers, a nice selection of videos, workshops and case studies. Make sure you read the Rust Foundation blog post this week and check out Didier&amp;rsquo;s post on running a serverless mainframe&amp;hellip;well kind of!</description>
+    </item>
+    
+    <item>
+      <title>Monitoring and logging with Amazon Managed Workflows for Apache Airflow</title>
+      <link>https://example.com/2021-02-09_monitoring-and-logging-with-amazon-managed-workflows-for-apache-airflow/</link>
+      <pubDate>Tue, 09 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-02-09_monitoring-and-logging-with-amazon-managed-workflows-for-apache-airflow/</guid>
+      <description>Part of a series of posts to support an up-coming online event, the Innovate AI/ML on February 24th, from 9:00am GMT - you can sign up here
+ Part 1 - Installation and configuration of Managed Workflows for Apache Airflow Part 2 - Working with Permissions Part 3 - Accessing Amazon Managed Workflows for Apache Airflow Part 4 - Interacting with Amazon Managed Workflows for Apache Airflow via the command line Part 5 - A simple CI/CD system for your development workflow Part 6 - Monitoring and logging &amp;lt;- this post Part 7 - Automating a simple AI/ML pipeline with Apache Airflow  In this post I will be covering Part 6, where to find logs to help you understand and troubleshoot your Apache Airflow workflows, and how you can monitor your Apache Airflow environments.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #55</title>
+      <link>https://example.com/newsletter/2021-02-08_aws-open-source-news-and-updates-55/</link>
+      <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-02-08_aws-open-source-news-and-updates-55/</guid>
+      <description>February 8th, 2021 - Instalment #55 Newsletter #55.
+Another newsletter full of great content for you this week. Make sure you read the essential read this week, Rights Ratchet Model, keep on top of the latest news on the fork of Elasticsearch, some events for your diary, more great videos, a new workshop and of course the usual open source projects and posts from the community and AWS. Pick of the week has to be Ian Mckay&amp;rsquo;s new open source project, iamlive - make sure you check it out in the projects section below.</description>
+    </item>
+    
+    <item>
+      <title>A simple CI/CD system for your Amazon Managed Workflows for Apache Airflow development workflow</title>
+      <link>https://example.com/2021-02-03_a-simple-cicd-system-for-your-amazon-managed-workflows-for-apache-airflow-development-workflow/</link>
+      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-02-03_a-simple-cicd-system-for-your-amazon-managed-workflows-for-apache-airflow-development-workflow/</guid>
+      <description>updated Feb 19th
+Part of a series of posts to support an up-coming online event, the Innovate AI/ML on February 24th, from 9:00am GMT - you can sign up here
+ Part 1 - Installation and configuration of Managed Workflows for Apache Airflow Part 2 - Working with Permissions Part 3 - Accessing Amazon Managed Workflows for Apache Airflow Part 4 - Interacting with Amazon Managed Workflows for Apache Airflow via the command line Part 5 - A simple CI/CD system for your development workflow &amp;lt;- this post Part 6 - Monitoring and logging Part 7 - Automating a simple AI/ML pipeline with Apache Airflow  In this post I will be covering Part 5, how you can setup a very simple CI/CD setup to enable faster development of your Apache Airflow DAGs.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #54</title>
+      <link>https://example.com/newsletter/2021-02-01_aws-open-source-news-and-updates-54/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-02-01_aws-open-source-news-and-updates-54/</guid>
+      <description>February 1st, 2021 - Instalment #54 Newsletter #54. Lots to choose from this week. Catch up with the latest from the Open Distro for Elasticsearch community, an event for your diary in the shape of Innovate AI/ML where I will be covering open source tools in your AI/ML pipeline, and the usual round up of AWS and community open source posts. We have some great open source projects that you need to check out - from tools and utilities that solve real pain points to complete solutions you can use as the base for your projects.</description>
+    </item>
+    
+    <item>
+      <title>Interacting with Amazon Managed Workflows for Apache Airflow via the command line</title>
+      <link>https://example.com/2021-02-01_interacting-with-amazon-managed-workflows-for-apache-airflow-via-the-command-line/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-02-01_interacting-with-amazon-managed-workflows-for-apache-airflow-via-the-command-line/</guid>
+      <description>Part of a series of posts to support an up-coming online event, the Innovate AI/ML on February 24th, from 9:00am GMT - you can sign up here
+ Part 1 - Installation and configuration of Managed Workflows for Apache Airflow Part 2 - Working with Permissions Part 3 - Accessing Amazon Managed Workflows for Apache Airflow environments Part 4 - Interacting with Amazon Managed Workflows for Apache Airflow via the command line &amp;lt; this post Part 5 - A simple CI/CD system for your development workflow Part 6 - Monitoring and logging Part 7 - Automating a simple AI/ML pipeline with Apache Airflow  In this post I will be covering Part 4, how you can interact and access the Apache Airflow via the command line.</description>
+    </item>
+    
+    <item>
+      <title>Accessing your Amazon Managed Workflows for Apache Airflow environments</title>
+      <link>https://example.com/2021-01-28_accessing-your-amazon-managed-workflows-for-apache-airflow-environments/</link>
+      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-01-28_accessing-your-amazon-managed-workflows-for-apache-airflow-environments/</guid>
+      <description>Part of a series of posts to support an up-coming online event, the Innovate AI/ML on February 24th, from 9:00am GMT - you can sign up here
+ Part 1 - Installation and configuration of Managed Workflows for Apache Airflow Part 2 - Working with Permissions Part 3 - Accessing Amazon Managed Workflows for Apache Airflow environments &amp;lt; this post Part 4 - Interacting with Amazon Managed Workflows for Apache Airflow via the command line Part 5 - A simple CI/CD system for your development workflow Part 6 - Monitoring and logging Part 7 - Automating a simple AI/ML pipeline with Apache Airflow  In this post I will be covering Part 3, how you can interact and access the Apache Airflow environments.</description>
+    </item>
+    
+    <item>
+      <title>Working with permissions in Amazon Managed Workflows for Apache Airflow</title>
+      <link>https://example.com/2021-01-27_working-with-permissions-in-amazon-managed-workflows-for-apache-airflow/</link>
+      <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-01-27_working-with-permissions-in-amazon-managed-workflows-for-apache-airflow/</guid>
+      <description>Part of a series of posts to support an up-coming online event, the Innovate AI/ML on February 24th, from 9:00am GMT - you can sign up here
+ Part 1 - Installation and configuration of Managed Workflows for Apache Airflow Part 2 - Working with Permissions &amp;lt;- this post Part 3 - Accessing Amazon Managed Workflows for Apache Airflow environments Part 4 - Interacting with Amazon Managed Workflows for Apache Airflow via the command line Part 5 - A simple CI/CD system for your development workflow Part 6 - Monitoring and logging Part 7 - Automating a simple AI/ML pipeline with Apache Airflow  In this post I will be covering Part 2, how to ensure that you control access to Apache Airflow following best practices such as default no access/least privilege.</description>
+    </item>
+    
+    <item>
+      <title>Automating the installation and configuration of Amazon Managed Workflows for Apache Airflow</title>
+      <link>https://example.com/2021-01-26_automating-the-installation-and-configuration-of-amazon-managed-workflows-for-apache-airflow/</link>
+      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-01-26_automating-the-installation-and-configuration-of-amazon-managed-workflows-for-apache-airflow/</guid>
+      <description>updated, August 25th Thanks to Philip T for spotting a typo in the cloudformation code below - it is ok in the GitHub repo, but I have fixed it now below.
+Part of a series of posts to support an up-coming online event, the Innovate AI/ML on February 24th, from 9:00am GMT - you can sign up here
+ Part 1 - Installation and configuration of Managed Workflows for Apache Airflow &amp;lt;- this post Part 2 - Working with Permissions Part 3 - Accessing Amazon Managed Workflows for Apache Airflow environments Part 4 - Interacting with Amazon Managed Workflows for Apache Airflow via the command line Part 5 - A simple CI/CD system for your development workflow Part 6 - Monitoring and logging Part 7 - Automating a simple AI/ML pipeline with Apache Airflow  In this post I will be covering Part 1, automating the installation and configuration of Managed Workflows for Apache Airflow (MWAA).</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #53</title>
+      <link>https://example.com/newsletter/2021-01-25_aws-open-source-news-and-updates-53/</link>
+      <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-01-25_aws-open-source-news-and-updates-53/</guid>
+      <description>January 25th, 2021 - Instalment #53 Newsletter #53
+This weeks newsletter has another great variety of posts and projects for you to check out. First up though, and probably the most important news from last week was the announcement around how AWS is looking to keep Elasticsearch and Kibana open source (read the post below). In addition to that news, we have some interesting projects for builders interested in infrastructure as code, a couple of great benchmarking posts, including another great AWS Graviton2 story and my new favourite open source project, Apache Airflow.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #52</title>
+      <link>https://example.com/newsletter/2021-01-18_aws-open-source-news-and-updates-52/</link>
+      <pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-01-18_aws-open-source-news-and-updates-52/</guid>
+      <description>January 18th, 2021 - Instalment #52 Newsletter #52
+This week we have a number of posts covering AWS Cloud Development Kit, (AWS CDK) as well as Managed Workflows for Apache Airflow (MWAA) which you should check out (ok, I&amp;rsquo;ll admit I might have been involved in some of those) as well as a couple of interesting projects. Don&amp;rsquo;t miss the summary of re:Invent from last week - still plenty of time to catch up with the on demand videos.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No.51</title>
+      <link>https://example.com/newsletter/2021-01-11_aws-open-source-news-and-updates-no51/</link>
+      <pubDate>Mon, 11 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-01-11_aws-open-source-news-and-updates-no51/</guid>
+      <description>January 11th, 2021 - Instalment #51 Welcome to Newsletter #51. This week we have a carefully selected group of blog posts, projects and more. Make sure you check out this weeks must read post on how to prepare and plan for migrating your existing .NET workloads to .NET Core. We have a couple of new projects that you need to take a look at; first of we have Querypal, essential for Amazon Athena users, and following that make sure you check out the preview of the MySQL JDBC driver (in Quick updates section).</description>
+    </item>
+    
+    <item>
+      <title>TIL: Testing an Amazon Cloudwatch alarm</title>
+      <link>https://example.com/2021-01-07_til-testing-an-amazon-cloudwatch-alarm/</link>
+      <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-01-07_til-testing-an-amazon-cloudwatch-alarm/</guid>
+      <description>Today I was setting up an application load balancer that sits in front of a test application I have put together. Setting this up was super easy, and very quickly I had my domain pointing to the alias and serving requests.
+As part of the setup, I wanted to monitor the application load balancer to let me know when requests were failing to the downstream application (anything other than an HTTP 200) and so I set this up super easily in Amazon Cloudwatch.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No.50</title>
+      <link>https://example.com/newsletter/2021-01-04_aws-open-source-news-and-updates-no50/</link>
+      <pubDate>Mon, 04 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2021-01-04_aws-open-source-news-and-updates-no50/</guid>
+      <description>January 4th, 2021 - Instalment #50 Newsletter #50 and the first one this year. I hope you all had a good break over the festive season. I am busy catching up with all the open source posts, projects, case studies and more, much of which I have shared this week. I have also covered what is happening next week with the concluding week of re:Invent - plenty more open source sessions to check out.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No.49</title>
+      <link>https://example.com/newsletter/2020-12-21_aws-open-source-news-and-updates-no49/</link>
+      <pubDate>Mon, 21 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-12-21_aws-open-source-news-and-updates-no49/</guid>
+      <description>December 21st - Instalment #49 Week No.49 and this will be the last newsletter this year. It is good to go out on a high, and this week we have a round up of the third week of re:Invent, following Dr Werner Vogels&amp;rsquo;s keynote and announcements. There are plenty of great posts related to those launches as well as re:Invent sessions to find out more. We also have the usual round up of blog posts, case studies, videos and open source projects which you can think of as stocking fillers as we head into Christmas.</description>
+    </item>
+    
+    <item>
+      <title>Job opportunity: Developer Advocate in the UK</title>
+      <link>https://example.com/2020-12-17_job-opportunity-developer-advocate-in-the-uk/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2020-12-17_job-opportunity-developer-advocate-in-the-uk/</guid>
+      <description>A little under a year ago I wrote this post:
+{% link https://dev.to/aws/celebrate-the-new-year-with-a-new-job-1ba5 %}
+As 2020 comes to a close, and you reflect on how your year has been it is often a good opportunity to take a look about your year ahead and possibly start to explore new opportunities or your next challenge.
+As you think about next year and where you want to go, I wanted to share an exciting opportunity that has opened up in my team, the UK Developer Advocate team.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No.48</title>
+      <link>https://example.com/newsletter/2020-12-14_aws-open-source-news-and-updates-no48/</link>
+      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-12-14_aws-open-source-news-and-updates-no48/</guid>
+      <description>December 13th - Instalment #48 Week No.48 going into the final week of re:Invent this year (don&amp;rsquo;t worry, we still have more sessions in the 2nd week of 2021) we have another great selection of posts. This week a favourite project of mine gets a lot of love, as well as a roundup of the second week of re:Invent. If that was not enough for you, then I throw in some new open source projects which you will definitely need to check out, with some really great ones including the latest project from Netflix that might make you Weep!</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No.47</title>
+      <link>https://example.com/newsletter/2020-12-07_aws-open-source-news-and-updates-no47/</link>
+      <pubDate>Mon, 07 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-12-07_aws-open-source-news-and-updates-no47/</guid>
+      <description>December 7th - Instalment #47 Week No.47 and with the first week of re:Invent over, it was good to see so many great open source related announcements. You can expected detailed coverage of those in this weeks roundup, including links to the various sessions and blog posts that have been published this week to support those announcements. If that was not enough, this week still has a great round up of other open source blog posts, some really interesting open source projects and of course, more posts from the community.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No. 46</title>
+      <link>https://example.com/newsletter/2020-11-30_aws-open-source-news-and-updates-no-46/</link>
+      <pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-11-30_aws-open-source-news-and-updates-no-46/</guid>
+      <description>November 30th - Instalment #46 Week No.46 and this week marks the beginning of re:Invent 2020 so expect a lot of re:Invent related content in this episode and the next couple. re:Invent has not stopped the relentless march of great open source blog posts, projects and more this week, and we have some great stuff this week including&amp;hellip;the launch of Amazon Managed Workflows for Apache Airflow, an unmissable post on Rust from Matt Asay, a bumper selection of Elasticsearch updates this week, a new project from the Amazon Neptune team and a couple of fantastic videos, one covering AWS CDK and projen and the other kube-bench.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No.45</title>
+      <link>https://example.com/newsletter/2020-11-23_aws-open-source-news-and-updates-no45/</link>
+      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-11-23_aws-open-source-news-and-updates-no45/</guid>
+      <description>November 23rd - Instalment #45 Week No.45 and this is the last edition before re:Invent so look out this week for some blog posts sharing news about the open source track and open source sessions at re:Invent this year. This week we have another great selection of posts, projects and more. Make sure you check out the Karpenter project that was announced last week during AWS Container Day at KubeCon, a great selection of Kubernetes/container related posts and some more great posts on AWS Graviton2 and Nitro Enclaves.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No.44</title>
+      <link>https://example.com/newsletter/2020-11-16_aws-open-source-news-and-updates-no44/</link>
+      <pubDate>Mon, 16 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-11-16_aws-open-source-news-and-updates-no44/</guid>
+      <description>November 16th - Instalment #44 Week No.44 and in a weekend just gone where Lewis Hamilton was crowned the world champion for the seventh time, it was interesting to learn that he has used the number 44 since 2014. From the grand prix to the grand prize of open source, and this week we have open source posts from a number of the AWS Hero communities, Spring Boot fans and a selection for those interested in GraphQL as well as the usual round up of projects, events and case studies.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No.43</title>
+      <link>https://example.com/newsletter/2020-11-09_aws-open-source-news-and-updates-no43/</link>
+      <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-11-09_aws-open-source-news-and-updates-no43/</guid>
+      <description>November 9th - Instalment #43 Week No.43 or 101011 if you prefer binary notation. This week we have the usual collection of open source projects, blog posts, events, case studies and workshops. Of note this week is the GA of the Lambda Powertools for Java, news of the announcement last week of the new RabbitMQ message broker service, more AWS Nitro Enclave goodness, a brand new workshop from Nader Dabit and more events and webinars for your diary.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No.42</title>
+      <link>https://example.com/newsletter/2020-11-02_aws-open-source-news-and-updates-no42/</link>
+      <pubDate>Mon, 02 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-11-02_aws-open-source-news-and-updates-no42/</guid>
+      <description>November 2nd - Instalment #42 Week No.42 - 42 may be the answer to the ultimate question of Life, the Universe and Everything, but for today it is just the latest roundup of all the open source news, projects, events, case studies related to AWS. This week we have a great case study from Intuit and their journey to Kubernetes, we have a couple of nice updates from the Open Distro for Elasticsearch, sleemo a nice new open source GraphQL framework and the Stelligent University, an open source curriculum to help bootstrap your learning on AWS.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No.41</title>
+      <link>https://example.com/newsletter/2020-10-26_aws-open-source-news-and-updates-no41/</link>
+      <pubDate>Mon, 26 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-10-26_aws-open-source-news-and-updates-no41/</guid>
+      <description>October 26th - Instalment #41 Episode No.41 - As we approach Halloween this week, there is nothing scary or frightening in this episode, just a shockingly good amount of new open source projects, blog posts, case studies and events to add to your diary. Last week was dominated by the Open Distro for Telemetry preview announcement (read all about that in a minute) but there is also great stuff such as the unboxing of HashiCorp&amp;rsquo;s Waypoint by the Containers from the Couch team, something for Java folk and another Graviton2 post.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No.40</title>
+      <link>https://example.com/newsletter/2020-10-19_aws-open-source-news-and-updates-no40/</link>
+      <pubDate>Mon, 19 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-10-19_aws-open-source-news-and-updates-no40/</guid>
+      <description>October 19th - Instalment #40 Week No.40 - if life begins at 40 then I am pleased that this newsletter has reached this milestone. We are only just getting started, and since producing this in January we have covered over 800 articles and over 300 different authors covering open source projects and topics. This week we have the usual round up of new projects, a variety of blog post topics including a couple of unmissable posts on how you can combine Rancher, Kubernetes and the AWS Snowball family of products for some interest &amp;lsquo;edge of edge&amp;rsquo; deployment models and a great post covering an old favourite of mine, AWS DeepRacer.</description>
+    </item>
+    
+    <item>
+      <title>Podcast - open source builders: Arpit Mohan</title>
+      <link>https://example.com/newsletter/2020-10-17_podcast-open-source-builders-arpit-mohan/</link>
+      <pubDate>Sat, 17 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-10-17_podcast-open-source-builders-arpit-mohan/</guid>
+      <description>In this podcast I speak with Arpit Mohan, CTO and Co Founder of Appsmith an innovative no/low code project that can accelerate how you build solutions for your customers. In this session I chat with Arpit and ask him about his journey in tech, the leap from hardware to software, the ups and downs of startups and of course open source software. Here are some of the points we cover in this podcast.</description>
+    </item>
+    
+    <item>
+      <title>Amazon Aurora - setting up and configuration, four ways</title>
+      <link>https://example.com/2020-10-15_amazon-aurora-setting-up-and-configuration-four-ways/</link>
+      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2020-10-15_amazon-aurora-setting-up-and-configuration-four-ways/</guid>
+      <description>In this post I want to share four different approaches to installing and configuring your Amazon Aurora database clusters.
+Everything in this post is covered in detail in the embedded video, but I wanted to share some additional information that I did not include in the video that was easier done in this blog.
+{% youtube wZfh9PurE9E %}
+Why four ways? The approach in the video was to look at the journey you might take when learning a new technology and then how you move to productise that technology.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No. 39</title>
+      <link>https://example.com/newsletter/2020-10-12_aws-open-source-news-and-updates-no-39/</link>
+      <pubDate>Mon, 12 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-10-12_aws-open-source-news-and-updates-no-39/</guid>
+      <description>October 12th - Instalment #39 Week No.39 - The 39 Steps is a pretty famous film, a spy thriller if you are into those types of films and I recently found out that the name came from a location not too far from me. I am pleased to say that episode 39 of this newsletter is equally thrilling, combining the usual mix of new open source projects (including one so fresh, it is still warm to the touch), blog posts, case studies and events for you to check out.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No. 38</title>
+      <link>https://example.com/newsletter/2020-10-05_aws-open-source-news-and-updates-no-38/</link>
+      <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-10-05_aws-open-source-news-and-updates-no-38/</guid>
+      <description>October 5th - Instalment #38 Week No.38 and following on from the very first CDK Day, there is plenty of AWS CDK stuff including a link to the recording of the event if you missed it. Aside from that, there is the usual round up of blog posts, including another excellent post featuring honeycomb.io doing some benchmarks on running AWS Graviton2 instance types on a number of open source projects, the latest new AWS related open source projects, events, case studies and we also have a workshop for you, covering how to get started with TorchServe.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No. 37</title>
+      <link>https://example.com/newsletter/2020-09-28_aws-open-source-news-and-updates-no-37/</link>
+      <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-09-28_aws-open-source-news-and-updates-no-37/</guid>
+      <description>September 28th - Instalment #37 Week No.37 and plenty of open source goodness to sink your teeth into this week. We have the usual projects round up, including projects to help you work with your AWS Secrets via the CLI or quickly spin up AWS infrastructure, we have posts covering topics such as Spring Boot, tagging of AWS resources and a must read post on Kubernetes and then finally we have the usual round up of AWS open source goodies and case studies.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No. 36</title>
+      <link>https://example.com/newsletter/2020-09-21_aws-open-source-news-and-updates-no-36/</link>
+      <pubDate>Mon, 21 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-09-21_aws-open-source-news-and-updates-no-36/</guid>
+      <description>September 21st - Instalment #36 Week No.36 and this week have the usual round up of open source goodies, but I do want to call out the Lambda Power Tool UI project and the AWS Graviton2 posts this week as must reads. There is also a a couple of excellent deep dives from Alex Casalboni on optimising Lambda and from Blair Hudson, head of data engineering at Faethm AI. Finally, learn more about how Boston is tackling urban deforestation with the use of open data sets, machine learning and is open sourcing the project.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No. 35</title>
+      <link>https://example.com/newsletter/2020-09-14_aws-open-source-news-and-updates-no-35/</link>
+      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-09-14_aws-open-source-news-and-updates-no-35/</guid>
+      <description>September 14th - Instalment #35 Week No.35, this week we have more great blog posts, projects, events and case studies for you. This week we have the first open source themed Dev Day (see below) which is something I encourage you all to check out as some AWS&amp;rsquo;s best speakers will be covering some great open source topics. As always, thanks for everyone who contributes these posts - please follow them to keep up with future posts and updates.</description>
+    </item>
+    
+    <item>
+      <title>Long running data import jobs with AWS Session Manager</title>
+      <link>https://example.com/2020-09-10_long-running-data-import-jobs-with-aws-session-manager/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2020-09-10_long-running-data-import-jobs-with-aws-session-manager/</guid>
+      <description>Yesterday I was looking to import the TPC-H dataset (some 600 or so million rows) into Amazon Aurora from a workstation that I connect to using AWS Session Manager.
+AWS Session Manager is a great way to simplify your life by allowing you to connect to a machine via the AWS console and not worry about having to manage ssh keys or remembering to lock down external public access from the net.</description>
+    </item>
+    
+    <item>
+      <title>Setting up TPC-H on Amazon Aurora MySQL</title>
+      <link>https://example.com/newsletter/2020-09-08_setting-up-tpc-h-on-amazon-aurora-mysql/</link>
+      <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-09-08_setting-up-tpc-h-on-amazon-aurora-mysql/</guid>
+      <description>Over the past 20 years I have spent a significant amount of time doing all kinds of benchmarking tests. This week I was looking to kick the tyres of Amazon Aurora, and explore the performance gains that can be had using some of the features that customers can use, such as parallel query. I was looking to reproduce some of the findings of this blog post from Jeff Barr.
+To do that, I needed to setup some benchmarking tools, and for databases there are plenty out there.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No. 34</title>
+      <link>https://example.com/newsletter/2020-09-07_aws-open-source-news-and-updates-no-34/</link>
+      <pubDate>Mon, 07 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-09-07_aws-open-source-news-and-updates-no-34/</guid>
+      <description>September 7th - Instalment #34 Week No.34, and another packed issue with some great posts, projects and events covering all your favourite open source projects. This week there has been a lot of focus on Bottlerocket, which went GA last week, so plenty of stuff to read as well as several videos to watch. There are a couple of events happening later this week, so check the events just a little below and save the date in your diary.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No. 33</title>
+      <link>https://example.com/newsletter/2020-08-31_aws-open-source-news-and-updates-no-33/</link>
+      <pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-08-31_aws-open-source-news-and-updates-no-33/</guid>
+      <description>August 31st - Instalment #33 Week No.33, and as we come to the end of the summer season with people returning back from holiday, it is good to see that there has been no slow down in open source activities. This week we have plenty of blog posts, projects for you to check out and customer stories.
+We also have a growing list of events to add to your diary, so make sure you check these out too.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No. 32</title>
+      <link>https://example.com/newsletter/2020-08-24_aws-open-source-news-and-updates-no-32/</link>
+      <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-08-24_aws-open-source-news-and-updates-no-32/</guid>
+      <description>August 24th - Instalment #32 Week No.32 and after two weeks taking some time off visiting sunny Scotland, I return refreshed with a bumper edition with the pick of posts from the past few weeks. As always, some great posts and projects as well as some events you might want to add to your diary and a few customer case studies for you to check out.
+Your feedback matters! I have put together a short feedback survey, which I would ask you to take - it will take no more than 2 minutes.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No. 31</title>
+      <link>https://example.com/newsletter/2020-08-03_aws-open-source-news-and-updates-no-31/</link>
+      <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-08-03_aws-open-source-news-and-updates-no-31/</guid>
+      <description>August 3rd - Instalment #31 Week No.31 and the last update for a few weeks. I will be taking a break from all things open source and tech, seeking solace in nature and recharging my curiosity batteries for the next couple of weeks, so there will be no updates August 10th and 17th. In the meantime, enjoy another packed edition - there appears no slow down when it comes to open source.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No. 30</title>
+      <link>https://example.com/newsletter/2020-07-27_aws-open-source-news-and-updates-no-30/</link>
+      <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-07-27_aws-open-source-news-and-updates-no-30/</guid>
+      <description>July 27th - Instalment #30 Week No.30 and another week of great projects and posts. We have a new open source builder story, the usual selection of projects from robotics to compliance/governance tools and blog posts that cover topics from machine learning to security and serverless. Another good selection of cases studies and customers who are using open source to make a difference as well as some events you should check out and add to your diary.</description>
+    </item>
+    
+    <item>
+      <title>Podcast - open source builders: Justin Garrison</title>
+      <link>https://example.com/newsletter/2020-07-22_podcast-open-source-builders-justin-garrison/</link>
+      <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-07-22_podcast-open-source-builders-justin-garrison/</guid>
+      <description>In this podcast I speak with Justin Garrison, Developer Advocate in the Containers team at AWS, and ask him about his journey in open source.
+From user to contributor
+According to PwC&amp;rsquo;s annual CEO Survey (which you can find easily enough via your preferred search tool), one of the top challenges keeping CEO&amp;rsquo;s up at night is how to tackle their digital skills shortage. In fact, 74% were concerned about the availability of key skills.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No. 29</title>
+      <link>https://example.com/newsletter/2020-07-20_aws-open-source-news-and-updates-no-29/</link>
+      <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-07-20_aws-open-source-news-and-updates-no-29/</guid>
+      <description>July 20th - Instalment #29 Week No.29, and another epic edition packed with lots of great projects and posts, as well as a larger than normal number of case studies this week. Pick of the bunch from me (always hard) is the walkthrough of the CDK Patterns from Matt, the customer case studies and the finala and inframap projects. Remember, if you have a project you want me to mention or talk about, then please reach out.</description>
+    </item>
+    
+    <item>
+      <title>Building a culture of security in open source software development</title>
+      <link>https://example.com/2020-07-15_building-a-culture-of-security-in-open-source-software-development/</link>
+      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2020-07-15_building-a-culture-of-security-in-open-source-software-development/</guid>
+      <description>According to a number of recent studies, the use and adoption of open source software continues to rise. From studies such as the State of Enterprise Open Source by Red Hat (in which nearly 70% of respondents stated that open source software is either extremely or very important) or TideLift’s April 2019 survey report (that found more than 90% of professional developers use open source in building their applications) it is clear that developers from startups to highly regulated enterprises have embraced open source solutions.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No. 28</title>
+      <link>https://example.com/newsletter/2020-07-13_aws-open-source-news-and-updates-no-28/</link>
+      <pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-07-13_aws-open-source-news-and-updates-no-28/</guid>
+      <description>July 13th - Instalment #28 Week No.28, and this week we have another fantastic collection of open source posts covering robotics, containers, serverless, machine learning and more. I cover a number of projects you can get stuck into, including robotics projects and resources, a continuous machine learning project posts and the usual collection of indispensable projects that you will wonder how you ever managed without. Finally there are some events you might want to put in your diary.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates: Reference</title>
+      <link>https://example.com/newsletter/2020-07-09_aws-open-source-news-and-updates-reference/</link>
+      <pubDate>Thu, 09 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-07-09_aws-open-source-news-and-updates-reference/</guid>
+      <description>Complete list of all posts in 2020 I have created this handy page that lists all the AWS open source news and updates this year, sorted by newest to oldest.
+2022 Newsletters
+2021 Newsletters
+{% link https://dev.to/aws/aws-open-source-news-and-updates-94-3o90 %} {% link https://dev.to/aws/aws-open-source-news-and-updates-93-25ef %} {% link https://dev.to/aws/aws-open-source-news-and-updates-92-jdm %} {% link https://dev.to/aws/aws-open-source-news-and-updates-91-2f64 %} {% link https://dev.to/aws/aws-open-source-news-and-updates-90-3ppg %} {% link https://dev.to/aws/aws-open-source-news-and-updates-89-2d9m %} {% link https://dev.to/aws/aws-open-source-news-and-updates-88-25n %} {% link https://dev.to/aws/aws-open-source-news-and-updates-87-46ld %} {% link https://dev.to/aws/aws-open-source-news-and-updates-86-2hpa %} {% link https://dev.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No. 27</title>
+      <link>https://example.com/newsletter/2020-07-06_aws-open-source-news-and-updates-no-27/</link>
+      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-07-06_aws-open-source-news-and-updates-no-27/</guid>
+      <description>July 6th - Instalment #27 Week No.27, and as the days start getting shorter, these weekly newsletters just keep getting longer. There is so much activity and energy in open source, and I am continuously amazed at what new stuff I unearth and uncover.
+This week we have more machine learning goodness, containers, a splattering of serverless, some very interesting .NET updates as well as some more esoteric articles.
+Remember, if you have a project you want me to mention or talk about, then please reach out.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No. 26</title>
+      <link>https://example.com/newsletter/2020-06-29_aws-open-source-news-and-updates-no-26/</link>
+      <pubDate>Mon, 29 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-06-29_aws-open-source-news-and-updates-no-26/</guid>
+      <description>June 29th - Instalment #26 No.26 and officially the half way point of the year. There has been no let up in open source projects and posts. This week we have machine learning deep dives and projects, including a reinforcement learning project that might help you win at Poker, security, serverless and modern application posts.
+It was really good to catch up this week with Arpit Mohan, CTO and co-founder of Appsmith about the topic of open source, growing awareness and different licensing models.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No. 25</title>
+      <link>https://example.com/newsletter/2020-06-22_aws-open-source-news-and-updates-no-25/</link>
+      <pubDate>Mon, 22 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-06-22_aws-open-source-news-and-updates-no-25/</guid>
+      <description>June 22nd - Instalment #25 No.25 is another packed edition with plenty of interesting projects and stories for you to read, whether you are into machine learning, robots, cutting your teeth on code or looking at how to automate and secure your deployments, there is something for you.
+As we past the summer equinox and very close to the half way point of the year, I wanted to share some of the data I have collected over the past six months when putting together this digest and speaking with the builders and business&#39; using open source.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No. 24</title>
+      <link>https://example.com/newsletter/2020-06-15_aws-open-source-news-and-updates-no-24/</link>
+      <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-06-15_aws-open-source-news-and-updates-no-24/</guid>
+      <description>June 15th - Instalment #24 Another expansive instalment in No. 24, as we approach the half way point of the year. In this episode we have a number of PHP related posts, fitting as it rapidly approaches its 25th anniversary. If you are a PHP builder, then keep your eyes/ears posted, as we have something special for you soon. Aside from PHP, we have some great new projects as well as important new releases for existing ones that you need to know about.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No. 23</title>
+      <link>https://example.com/newsletter/2020-06-08_aws-open-source-news-and-updates-no-23/</link>
+      <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-06-08_aws-open-source-news-and-updates-no-23/</guid>
+      <description>June 8th - Instalment #23 Episode 23 - I was reminded this week that I have now posted over 30 posts to dev.to since I joined the platform late last year. I am currently putting together some stats that I will share with you around the breakdown of various open source topics I have seen over that time. Watch this space.
+This week I have added a Retro section as one of the things that keeps coming up is cool open source projects that are not new, but I had never heard of before and are getting new contributions or releases.</description>
+    </item>
+    
+    <item>
+      <title>Automating AWS SSO and G-Suite synchronisation with SSO Sync</title>
+      <link>https://example.com/2020-06-03_automating-aws-sso-and-g-suite-synchronisation-with-sso-sync/</link>
+      <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2020-06-03_automating-aws-sso-and-g-suite-synchronisation-with-sso-sync/</guid>
+      <description>update-July 28th  The ssosync tool has had a lot of interest and the community has updated the tool. This means that you should refer to the project home page https://github.com/awslabs/ssosync and check out the README.md for what changes you might need to make to get this tool working.
+ Next level ssosync In a previous post, I talked about setting up AWS Single Sign On (AWS SSO) with G-Suite, and then using an open source project called ssosync to syncronise users and groups from G-Suite into AWS SSO.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates No. 22</title>
+      <link>https://example.com/newsletter/2020-06-01_aws-open-source-news-and-updates-no-22/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-06-01_aws-open-source-news-and-updates-no-22/</guid>
+      <description>June 1st - Instalment #22 Episode 22, and another great collection of open source stories, updates and projects. Whether it learning about new open source application run times like Deno, impactful projects like AutoSpotting that might help you reduce your costs or those simple but every so useful projects that you just could not get by without, such as ssosync or EKStender.
+Please contact me with your AWS related open source projects.</description>
+    </item>
+    
+    <item>
+      <title>Setting up G-Suite, AWS SSO and ssosync</title>
+      <link>https://example.com/2020-05-27_setting-up-g-suite-aws-sso-and-ssosync/</link>
+      <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2020-05-27_setting-up-g-suite-aws-sso-and-ssosync/</guid>
+      <description>update-July 28th  The ssosync tool has had a lot of interest and the community has updated the tool. This means that you should refer to the project home page https://github.com/awslabs/ssosync and check out the README.md for what changes you might need to make to get this tool working.
+ Enabling AWS SSO with Google G-Suite Many customers have existing directory technologies where they manage their users, and then use this central identity store as a way to simplify the way they authenticate and provide access to applications and other resources.</description>
+    </item>
+    
+    <item>
+      <title>AWS open sources new and updates - No. 21</title>
+      <link>https://example.com/newsletter/2020-05-25_aws-open-sources-new-and-updates-no-21/</link>
+      <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-05-25_aws-open-sources-new-and-updates-no-21/</guid>
+      <description>May 25th - Instalment #21 Episode 21, another full edition. We have some significant announcements of new projects from Uber, a variety of different posts and code for those interested in containers, plenty of serverless goodness and as always, some great Amplify and AWS AppSync posts. We also have a couple of posts on how to get some open source projects you might be using up and running on AWS. Before you dive in, a couple of things you check out first.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates - No. 20</title>
+      <link>https://example.com/newsletter/2020-05-18_aws-open-source-news-and-updates-no-20/</link>
+      <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-05-18_aws-open-source-news-and-updates-no-20/</guid>
+      <description>May 18th - Instalment #20 Episode 20, another packed episode with plenty to check out, and some really great announcements and projects to share. With that, let&amp;rsquo;s get started with one of our big announcements last week.
+cdk8s
+The big news this week though was the launch of CDK for Kubernetes, an open-source software development framework for defining Kubernetes applications and reusable abstractions using familiar programming languages and rich object-oriented APIs.</description>
+    </item>
+    
+    <item>
+      <title>AWS open sources new and updates - No. 19</title>
+      <link>https://example.com/newsletter/2020-05-11_aws-open-sources-new-and-updates-no-19/</link>
+      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-05-11_aws-open-sources-new-and-updates-no-19/</guid>
+      <description>May 11th - Instalment #19 Episode 19, and this week&amp;rsquo;s edition is bursting at the seams with probably the biggest amount of news and updates to share (hence the later posting). Looks like everyone has been busy, and there were some things I had to leave out for another time.
+Before I get started though, I think it is worth reflecting on this blog post by Matt Asay, The most important part of an open source project, where he talks about the value of all contributions in open source projects, not just the developers cutting code.</description>
+    </item>
+    
+    <item>
+      <title>Making the most of mentoring</title>
+      <link>https://example.com/2020-05-08_making-the-most-of-mentoring/</link>
+      <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2020-05-08_making-the-most-of-mentoring/</guid>
+      <description>Some recent experiences mentoring has provided the motivation for this piece. It is not intended to be right or wrong, but just my personal opinion and experience and I hope it is read that way. I have put this together to share what I think are the critical things that make a mentoring relationship work for both the mentor and mentee. So with that out of the way, I invite you to read on&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>AWS open sources news and updates - No. 18</title>
+      <link>https://example.com/newsletter/2020-05-04_aws-open-sources-news-and-updates-no-18/</link>
+      <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-05-04_aws-open-sources-news-and-updates-no-18/</guid>
+      <description>May 4th - Instalment #18 Episode 18, is the open source Force strong in you?
+A post from colleague Matt Asay this week, Remembering when open source is fun made me think about the first open source projects I got my hands on (Apache httpd server, back in 1998). Good times indeed, but it wasn&amp;rsquo;t until later that I did my first contribution (a security module for Atlassian&amp;rsquo;s Confluence to enable SSO).</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates - Instalment No. 17</title>
+      <link>https://example.com/newsletter/2020-04-27_aws-open-source-news-and-updates-instalment-no-17/</link>
+      <pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-04-27_aws-open-source-news-and-updates-instalment-no-17/</guid>
+      <description>April 27th - Instalment #17 Episode 17, and as we leave April and head into May, we have a bumper edition with some very interesting new open source projects that AWS launched this week, TorchServe and Amazon Keyspaces as well as the usual round up of interesting projects, blog posts and other essential reading materials to keep you up to speed with the world of AWS and open source.
+Celebrate open source contributors The articles posted in this series are only possible thanks to contributors and project maintainers and so I would like to shout out and thank those folks who really do power open source and enable us all to build on top of what they have created.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates - No. 16</title>
+      <link>https://example.com/newsletter/2020-04-20_aws-open-source-news-and-updates-no-16/</link>
+      <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-04-20_aws-open-source-news-and-updates-no-16/</guid>
+      <description>April 20th - Instalment #16 Episode 16, and like most folk confining myself to my home has provided me with lots of time to search the four corners of the internet to bring you all the latest news, updates and interesting things happening where open source meets AWS. This week I want to share a couple of posts in which both Amazon and open source developers and communities are helping to tackle the COVID pandemic.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates - No. 15</title>
+      <link>https://example.com/newsletter/2020-04-13_aws-open-source-news-and-updates-no-15/</link>
+      <pubDate>Mon, 13 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-04-13_aws-open-source-news-and-updates-no-15/</guid>
+      <description>April 13th - Instalment #15 Episode 15, the Easter special and even though this is a holiday in most of Europe, that was not going to stop me posting this weeks latest and greatest updates from the confluence of AWS and open source.
+Celebrate open source contributors The articles posted in this series are only possible thanks to contributors and project maintainers and so I would like to shout out and thank those folks who really do power open source and enable us all to build on top of what they have created.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates - No. 14</title>
+      <link>https://example.com/newsletter/2020-04-06_aws-open-source-news-and-updates-no-14/</link>
+      <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-04-06_aws-open-source-news-and-updates-no-14/</guid>
+      <description>April 6th - Instalment #14 Episode 14, and yet more abundance of open source to share with you. Fourteen is an interesting number, and very quickly googling this, I learnt that the number fourteen has a number of interesting facts: the moon waxes for fourteen days and then wanes for fourteen days, a golf player can have no more than fourteen clubs in their caddy, it is the atomic number for silicon and for those who enjoy their open source with the literature, 14 is also the number of lines in a sonnet.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates - No. 13</title>
+      <link>https://example.com/newsletter/2020-03-30_aws-open-source-news-and-updates-no-13/</link>
+      <pubDate>Mon, 30 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-03-30_aws-open-source-news-and-updates-no-13/</guid>
+      <description>March 30th - Instalment #13 Episode 13, lucky for some, superstitious for others. I can promise you no superstitious when you read this, nothing but the finest open source news and updates from around the globe and hopefully a few projects that you will find useful. First though, let us celebrate those people that without them, this newsletter would be just an empty vessel. Interesting to see a higher than normal number of new projects and first time projects this week which is awesome.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates - No.12</title>
+      <link>https://example.com/newsletter/2020-03-23_aws-open-source-news-and-updates-no12/</link>
+      <pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-03-23_aws-open-source-news-and-updates-no12/</guid>
+      <description>March 23rd - Instalment #12 Episode 12 in the series of open source news and updates on AWS brings you another mixed bag of treats. I wanted to start this instalment however with some of the projects that are looking to help respond to the current COVID-19 situation. You can read more about some of the initiatives at Amazon in the blog post that shows how we are helping researchers and scientists accelerate diagnostics, research and testing.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #11</title>
+      <link>https://example.com/newsletter/2020-03-16_aws-open-source-news-and-updates-11/</link>
+      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-03-16_aws-open-source-news-and-updates-11/</guid>
+      <description>March 16th - Instalment #11 Another packed weekly instalment of open source goodness for you, including a very hot announcement we made this week on Bottlerocket. Whether you are interested in security, devOps or the latest open source projects that run on AWS or make your life easier, then read on as there is something for you.
+Celebrate open source contributors The articles posted in this series are only possible thanks to contributors and project maintainers and so I would like to shout out and thank those folks who really do power open source and enable us all to build on top of what they have created.</description>
+    </item>
+    
+    <item>
+      <title>Jitsi: An open source web conferencing solution</title>
+      <link>https://example.com/newsletter/2020-03-16_jitsi-an-open-source-web-conferencing-solution/</link>
+      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-03-16_jitsi-an-open-source-web-conferencing-solution/</guid>
+      <description>Enabling online team collaboration with open source software Teams across the world are looking for solutions that help them to work and collaborate online in these unprecedented times. There are many options that customers have, so this post will help provide you with some options if you are looking.
+Many teams choose to use managed solutions to enable collaboration. If your business needs to scale to support hundreds or thousands of users simultaneously or does not want to deploy and manage new web services for this purpose, consider using Amazon Chime.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #10</title>
+      <link>https://example.com/newsletter/2020-03-09_aws-open-source-news-and-updates-10/</link>
+      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-03-09_aws-open-source-news-and-updates-10/</guid>
+      <description>March 9th - Instalment #10 Another bumper packed edition of everything new and interesting in the world where open source and AWS comingle. I have been asked a few times as to how do I choose the articles that go into these posts, so I thought I would very quickly share that; what does and does not go into these posts.
+The idea of this series is to provide a curated list of open source projects that are either created by AWS, by the builders within AWS and open source projects that are created by customers and builders that either help other customers use AWS services and open source projects.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #9 - Dart, Quarkus, Firecracker and much more</title>
+      <link>https://example.com/newsletter/2020-03-02_aws-open-source-news-and-updates-9-dart-quarkus-firecracker-and-much-more/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-03-02_aws-open-source-news-and-updates-9-dart-quarkus-firecracker-and-much-more/</guid>
+      <description>As we head into March and instalment #9 of AWS open source news and updates, over the past two months I have shared eight posts covering over 100 unique articles on open source and AWS. It is great to see so much activity and across such a broad spectrum of interests. This instalment is representative of that, with everything from security, machine learning, big data and analytics to new programming runtimes.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #8</title>
+      <link>https://example.com/newsletter/2020-02-24_aws-open-source-news-and-updates-8/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-02-24_aws-open-source-news-and-updates-8/</guid>
+      <description>Another episode of the open source news and updates from AWS, and in this installmant I talk a little about the recent trip to Lagos, Nigeria where I talked about why developers should care about open source at the Open Source Festival, as well as more of the usual updates from around the AWS services catalog as well as some interesting customer projects.
+Open Source Fesitval - Lagos, Nigeria Last week I was invited to speak at the Open Source Festival in Lagos, Nigeria.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #7 - networking, data analytics, security and more </title>
+      <link>https://example.com/newsletter/2020-02-17_aws-open-source-news-and-updates-7-networking-data-analytics-security-and-more-/</link>
+      <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-02-17_aws-open-source-news-and-updates-7-networking-data-analytics-security-and-more-/</guid>
+      <description>Episode #7 of the open source news and updates for AWS. More security posts in this weeks updates, together with some other cool updates from machine learning, networking and data analytics. I am always looking for interesting open source projects that run on AWS, so if you are working on or know about any, please let me know as I would love to make more people aware.
+Open Distro for ElasticSearch This tweet announced that the AWS managed Amazon Elasticsearch service had now incorporated the security features that have been available on the Apache 2.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #6 - keep up to date with everything that is happening.</title>
+      <link>https://example.com/newsletter/2020-02-10_aws-open-source-news-and-updates-6-keep-up-to-date-with-everything-that-is-happening/</link>
+      <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-02-10_aws-open-source-news-and-updates-6-keep-up-to-date-with-everything-that-is-happening/</guid>
+      <description>With still so much to digest post FOSDEM, SustainOSS and CHAOSS, this weeks updates are a little more lightweight and easy to consume. I am going to work on some tutorials/coding posts so would be interested (use comments) on what open source AWS projects you would like to see material on.
+Modernising with open source Following on from the previous post on the essential open source tools for serverless, I came across this blog post by Matt Billock called &amp;ldquo;Essential Open Source Serverless Tools&amp;rdquo; - it is a great reference guide, so check it out.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #5</title>
+      <link>https://example.com/newsletter/2020-02-03_aws-open-source-news-and-updates-5/</link>
+      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-02-03_aws-open-source-news-and-updates-5/</guid>
+      <description>So, hello February and welcome to open source updates and news at AWS #5, the FOSDEM edition. Sadly I was unable to attend due to my passport being held to get a VISA, but I have managed to speak with a number of attendees and get some updates from the event.
+CHAOSCON and SustainOSS The day before FOSDEM we had Sustain Open Source summit, an event thinking about the sustainability of open source software.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #4</title>
+      <link>https://example.com/newsletter/2020-01-29_aws-open-source-news-and-updates-4/</link>
+      <pubDate>Wed, 29 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-01-29_aws-open-source-news-and-updates-4/</guid>
+      <description>Welcome to open source updates and news at AWS #4 the end of January 2020 edition. Keeping you up to speed with all things open source and AWS. Let&amp;rsquo;s dive right in.
+ Important announcement   If you are using the Amazon Linux AMI (this was launched back in 2010, and then subsequently we released the Amazo Linux 2 AMI in 2017) then you should be aware that this AMI is now end-of-life.</description>
+    </item>
+    
+    <item>
+      <title>What makes you want to contribute to an open source project?</title>
+      <link>https://example.com/newsletter/2020-01-28_what-makes-you-want-to-contribute-to-an-open-source-project/</link>
+      <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-01-28_what-makes-you-want-to-contribute-to-an-open-source-project/</guid>
+      <description>Do you contribute to open source projects? What is it that you look for before spending time/effort in doing so?
+Collecting data which I will share here - please consider taking part if you contribute (or have thought about doing so) in open source projects.
+Please find the link below
+https://twitter.com/094459/status/1222187362362544129?s=20</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #3</title>
+      <link>https://example.com/newsletter/2020-01-23_aws-open-source-news-and-updates-3/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-01-23_aws-open-source-news-and-updates-3/</guid>
+      <description>So, welcome to open source updates and news at AWS #3 - I should really try and thing of a more entertaining sequence. Next time perhaps&amp;hellip;
+This update has been inspired by a recent trip away with some colleagues. On the way home, I started talking to the person next to me. He was an SA working on HPC, High Performance Computing, an area that I had read about a tiny amount but something I really didnt know that much.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates #2 </title>
+      <link>https://example.com/newsletter/2020-01-17_aws-open-source-news-and-updates-2-/</link>
+      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-01-17_aws-open-source-news-and-updates-2-/</guid>
+      <description>This is update #2 of open source at AWS (#1 here), the regular update where I will share updates and interesting content from stuff we are doing as well as sharing interesting projects our customers are working on.
+This post has a bit of a Security theme, with a number of interesting open source related projects and content. But dont worry, there is lots more cool stuff on machine learning and AWS open source projects too, So lets dive straight on in.</description>
+    </item>
+    
+    <item>
+      <title>Event in London 10th Feb - Hiring in startups</title>
+      <link>https://example.com/2020-01-15_event-in-london-10th-feb-hiring-in-startups/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2020-01-15_event-in-london-10th-feb-hiring-in-startups/</guid>
+      <description>Take a look at this event on 10th Feb in London if you are interested how startups approach hiring and retaining talent. If you fancy joining a startup, or want to know more about what they look for, then why not pop along learn something and make some new friends.
+Not to be missed. Register using the link below.
+https://hirelikeaunicorn.splashthat.com</description>
+    </item>
+    
+    <item>
+      <title>We are hiring</title>
+      <link>https://example.com/2020-01-14_we-are-hiring/</link>
+      <pubDate>Tue, 14 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2020-01-14_we-are-hiring/</guid>
+      <description>Do you have a passion and unending enthusiasm for technology and cloud? Do you love learning and are you curious by nature? If so, then have a look here - we are hiring, and aside from being part of a great team, you will get to work with amazing customers. Work hard, have fun and make history.
+Check out more here.
+https://aws-devrel-jobs.splashthat.com/
+Use the comments to ask me anything about the role, the team or working at AWS.</description>
+    </item>
+    
+    <item>
+      <title>AWS open source news and updates  #1</title>
+      <link>https://example.com/newsletter/2020-01-11_aws-open-source-news-and-updates-1/</link>
+      <pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2020-01-11_aws-open-source-news-and-updates-1/</guid>
+      <description>This is the first in a regular series that will keep you posted on the open source projects, communities and activities that are going on in AWS as well as bringing you some interesting open source projects that builders have put together and that I have stumbled across.
+Open Source projects of the week A few open source projects caught my eye, and I havent not yet had a chance to try them out yet, they are on my weekend project todo list.</description>
+    </item>
+    
+    <item>
+      <title>Mentoring and reverse mentoring</title>
+      <link>https://example.com/2019-12-29_mentoring-and-reverse-mentoring/</link>
+      <pubDate>Sun, 29 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2019-12-29_mentoring-and-reverse-mentoring/</guid>
+      <description>As I reflect on 2019, one of the common themes whilst engaging with builders at the start of their career, has been how do those of us who have deep experience working in the IT industry and technology help bring those who are just starting out?
+Some common themes when talking that have come up include;
+ How do I get started on Cloud or AWS? What tools and languages should I learn?</description>
+    </item>
+    
+    <item>
+      <title>Celebrate the new year with a new job</title>
+      <link>https://example.com/2019-12-23_celebrate-the-new-year-with-a-new-job/</link>
+      <pubDate>Mon, 23 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2019-12-23_celebrate-the-new-year-with-a-new-job/</guid>
+      <description>As it is the time of year that many are now beginning to reflect on where they have been and what they have achieved and look towards the future. For some this might mean looking for new opportunities and so I wanted to share some thoughts I had on this based on my own experience as well as the experience from mentoring others, that I hope will be helpful as you look to deciding what your new year might look like.</description>
+    </item>
+    
+    <item>
+      <title>reInvent 2019 workshop list</title>
+      <link>https://example.com/2019-12-09_reinvent-2019-workshop-list/</link>
+      <pubDate>Mon, 09 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2019-12-09_reinvent-2019-workshop-list/</guid>
+      <description>So here is a list scraped from Twitter and following various other folk, of just a small taster of the workshops that ran during reInvent. As I find more I will update, and feel free to add yours in the comments (oh, and let me know if any of these are dead links)
+Serverless - https://github.com/aws-samples/aws-serverless-workshop-innovator-island/ Serverless image process workshop - https://image-processing.serverlessworkshops.io/ Amplify preductions workshop - https://github.com/mlabieniec/IonicPredictions Full stack serverless Amplify lab - https://github.</description>
+    </item>
+    
+    <item>
+      <title>open source @ reInvent 2019 </title>
+      <link>https://example.com/newsletter/2019-12-06_open-source-reinvent-2019-/</link>
+      <pubDate>Fri, 06 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/newsletter/2019-12-06_open-source-reinvent-2019-/</guid>
+      <description>So, with reInvent drawing to close and many of the attendees recovering from the after party (re:Play), I thought I would put together a curated list of the open source sessions that have been running this week.
+We had a great variety of open source sessions, covering topics from data and data analytics to robotics. If you missed these sessions, you can check out the videos in this post below. They are sorted by category to help you find those that are of most interest to you.</description>
+    </item>
+    
+    <item>
+      <title>Make your business more resilient in the digital age</title>
+      <link>https://example.com/2019-10-17_make-your-business-more-resilient-in-the-digital-age/</link>
+      <pubDate>Thu, 17 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2019-10-17_make-your-business-more-resilient-in-the-digital-age/</guid>
+      <description>Very humbled to write a guest post on Adrian Hornsby excellent blog where he provides guidance to help customers build resilient architecture and champions operational excellence.
+In this post I talk about what you need to think about to build a more resilient business fit for the digital age.
+Here is the link: https://medium.com/@adhorn/make-your-business-more-resilient-in-the-digital-age-888da3f5deaf</description>
+    </item>
+    
+    <item>
+      <title>Innovate Machine Learning and AI - learn how to kick start your journey</title>
+      <link>https://example.com/2019-10-04_innovate-machine-learning-and-ai-learn-how-to-kick-start-your-journey/</link>
+      <pubDate>Fri, 04 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2019-10-04_innovate-machine-learning-and-ai-learn-how-to-kick-start-your-journey/</guid>
+      <description>On October 17th we have a free, online event covering several tracks on Machine Learning. Whether you are a complete beginner or seasoned data scientist, we have gentle introductions to deep dives.
+What I am most excited about however, is that we will have an AWS DeepRacer racing challenge. You will learn how to create your first reinforcement learning model that will race a virtual car, with prizes for the fastest times.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://example.com/about/</link>
+      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/about/</guid>
+      <description>Hugo is the world’s fastest framework for building websites. It is written in Go.
+It makes use of a variety of open source projects including:
+ https://github.com/russross/blackfriday https://github.com/alecthomas/chroma https://github.com/muesli/smartcrop https://github.com/spf13/cobra https://github.com/spf13/viper  Learn more and contribute on GitHub.</description>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>https://example.com/blog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/blog/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

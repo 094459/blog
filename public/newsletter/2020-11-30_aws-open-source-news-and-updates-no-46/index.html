@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="generator" content="Hugo 0.91.2" />
+  <link rel="canonical" href="https://example.com/newsletter/2020-11-30_aws-open-source-news-and-updates-no-46/">
+
+  
+
+  
+    
+    
+    
+    
+    
+
+  
+    <link rel="webmention" href="https://webmention.io/username.co.uk/webmention" />
+    <link rel="pingback" href="https://webmention.io/username.co.uk/xmlrpc" />
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://example.com/css/syntax.css" media="none" onload="this.media='all';">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://example.com/css/styles.css">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://example.com/style.main.css">
+
+  
+
+  <link rel="alternate" rel="canonical" href="https://example.com/index.xml" >
+  
+  <style id="inverter" media="none">
+    .intro-and-nav, .main-and-footer { filter: invert(100%) }
+    * { background-color: inherit }
+    img:not([src*=".svg"]), .colors, iframe, .demo-container { filter: invert(100%) }
+  </style>
+
+  
+  
+  <title>AWS open source news and updates No. 46 | Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="AWS open source news and updates No. 46"/>
+<meta name="twitter:description" content="November 30th - Instalment #46 Week No.46 and this week marks the beginning of re:Invent 2020 so expect a lot of re:Invent related content in this episode and the next couple. re:Invent has not stopped the relentless march of great open source blog posts, projects and more this week, and we have some great stuff this week including&hellip;the launch of Amazon Managed Workflows for Apache Airflow, an unmissable post on Rust from Matt Asay, a bumper selection of Elasticsearch updates this week, a new project from the Amazon Neptune team and a couple of fantastic videos, one covering AWS CDK and projen and the other kube-bench."/>
+
+  <meta name="twitter:card" content="summary" />
+</head>
+
+  <body>
+    <a href="#main">skip to content</a>
+    <svg style="display: none">
+  <symbol id="bookmark" viewBox="0 0 40 50">
+   <g transform="translate(2266 3206.2)">
+    <path style="stroke:currentColor;stroke-width:3.2637;" d="m-2262.2-3203.4-.2331 42.195 16.319-16.318 16.318 16.318.2331-42.428z"/>
+   </g>
+  </symbol>
+
+  <symbol id="w3c" viewBox="0 0 127.09899 67.763">
+   <text font-size="83" style="font-size:83px;font-family:Trebuchet;letter-spacing:-12;fill-opacity:0" letter-spacing="-12" y="67.609352" x="-26.782778">W3C</text>
+   <text font-size="83" style="font-size:83px;font-weight:bold;font-family:Trebuchet;fill-opacity:0" y="67.609352" x="153.21722" font-weight="bold">SVG</text>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m33.695.377 12.062 41.016 12.067-41.016h8.731l-19.968 67.386h-.831l-12.48-41.759-12.479 41.759h-.832l-19.965-67.386h8.736l12.061 41.016 8.154-27.618-3.993-13.397h8.737z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m91.355 46.132c0 6.104-1.624 11.234-4.862 15.394-3.248 4.158-7.45 6.237-12.607 6.237-3.882 0-7.263-1.238-10.148-3.702-2.885-2.47-5.02-5.812-6.406-10.022l6.82-2.829c1.001 2.552 2.317 4.562 3.953 6.028 1.636 1.469 3.56 2.207 5.781 2.207 2.329 0 4.3-1.306 5.909-3.911 1.609-2.606 2.411-5.738 2.411-9.401 0-4.049-.861-7.179-2.582-9.399-1.995-2.604-5.129-3.912-9.397-3.912h-3.327v-3.991l11.646-20.133h-14.062l-3.911 6.655h-2.493v-14.976h32.441v4.075l-12.31 21.217c4.324 1.385 7.596 3.911 9.815 7.571 2.22 3.659 3.329 7.953 3.329 12.892z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.21 0 1.414 8.6-5.008 9.583s-1.924-4.064-5.117-6.314c-2.693-1.899-4.447-2.309-7.186-1.746-3.527.73-7.516 4.938-9.258 10.13-2.084 6.21-2.104 9.218-2.178 11.978-.115 4.428.58 7.043.58 7.043s-3.04-5.626-3.011-13.866c.018-5.882.947-11.218 3.666-16.479 2.404-4.627 5.954-7.404 9.114-7.728 3.264-.343 5.848 1.229 7.841 2.938 2.089 1.788 4.213 5.698 4.213 5.698l4.94-9.837z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.82 48.674s-2.208 3.957-3.589 5.48c-1.379 1.524-3.849 4.209-6.896 5.555-3.049 1.343-4.646 1.598-7.661 1.306-3.01-.29-5.807-2.032-6.786-2.764-.979-.722-3.486-2.864-4.897-4.854-1.42-2-3.634-5.995-3.634-5.995s1.233 4.001 2.007 5.699c.442.977 1.81 3.965 3.749 6.572 1.805 2.425 5.315 6.604 10.652 7.545 5.336.945 9.002-1.449 9.907-2.031.907-.578 2.819-2.178 4.032-3.475 1.264-1.351 2.459-3.079 3.116-4.108.487-.758 1.276-2.286 1.276-2.286l-1.276-6.644z"/>
+  </symbol>
+
+  <symbol id="tag" viewBox="0 0 177.16535 177.16535">
+    <g transform="translate(0 -875.2)">
+     <path style="fill-rule:evenodd;stroke-width:0;fill:currentColor" d="m159.9 894.3-68.79 8.5872-75.42 77.336 61.931 60.397 75.429-76.565 6.8495-69.755zm-31.412 31.835a10.813 10.813 0 0 1 1.8443 2.247 10.813 10.813 0 0 1 -3.5174 14.872l-.0445.0275a10.813 10.813 0 0 1 -14.86 -3.5714 10.813 10.813 0 0 1 3.5563 -14.863 10.813 10.813 0 0 1 13.022 1.2884z"/>
+    </g>
+  </symbol>
+
+  <symbol id="balloon" viewBox="0 0 141.73228 177.16535">
+   <g transform="translate(0 -875.2)">
+    <g>
+     <path style="fill:currentColor" d="m68.156 882.83-.88753 1.4269c-4.9564 7.9666-6.3764 17.321-5.6731 37.378.36584 10.437 1.1246 23.51 1.6874 29.062.38895 3.8372 3.8278 32.454 4.6105 38.459 4.6694-.24176 9.2946.2879 14.377 1.481 1.2359-3.2937 5.2496-13.088 8.886-21.623 6.249-14.668 8.4128-21.264 10.253-31.252 1.2464-6.7626 1.6341-12.156 1.4204-19.764-.36325-12.93-2.1234-19.487-6.9377-25.843-2.0833-2.7507-6.9865-7.6112-7.9127-7.8436-.79716-.20019-6.6946-1.0922-6.7755-1.0248-.02213.0182-5.0006-.41858-7.5248-.22808l-2.149-.22808h-3.3738z"/>
+     <path style="fill:currentColor" d="m61.915 883.28-3.2484.4497c-1.7863.24724-3.5182.53481-3.8494.63994-2.4751.33811-4.7267.86957-6.7777 1.5696-.28598 0-1.0254.20146-2.3695.58589-5.0418 1.4418-6.6374 2.2604-8.2567 4.2364-6.281 7.6657-11.457 18.43-12.932 26.891-1.4667 8.4111.71353 22.583 5.0764 32.996 3.8064 9.0852 13.569 25.149 22.801 37.517 1.3741 1.841 2.1708 2.9286 2.4712 3.5792 3.5437-1.1699 6.8496-1.9336 10.082-2.3263-1.3569-5.7831-4.6968-21.86-6.8361-33.002-.92884-4.8368-2.4692-14.322-3.2452-19.991-.68557-5.0083-.77707-6.9534-.74159-15.791.04316-10.803.41822-16.162 1.5026-21.503 1.4593-5.9026 3.3494-11.077 6.3247-15.852z"/>
+     <path style="fill:currentColor" d="m94.499 885.78c-.10214-.0109-.13691 0-.0907.0409.16033.13489 1.329 1.0675 2.5976 2.0723 6.7003 5.307 11.273 14.568 12.658 25.638.52519 4.1949.24765 14.361-.5059 18.523-2.4775 13.684-9.7807 32.345-20.944 53.519l-3.0559 5.7971c2.8082.76579 5.7915 1.727 8.9926 2.8441 11.562-11.691 18.349-19.678 24.129-28.394 7.8992-11.913 11.132-20.234 12.24-31.518.98442-10.02-1.5579-20.876-6.7799-28.959-.2758-.4269-.57803-.86856-.89617-1.3166-3.247-6.13-9.752-12.053-21.264-16.131-2.3687-.86369-6.3657-2.0433-7.0802-2.1166z"/>
+     <path style="fill:currentColor" d="m32.52 892.22c-.20090-.13016-1.4606.81389-3.9132 2.7457-11.486 9.0476-17.632 24.186-16.078 39.61.79699 7.9138 2.4066 13.505 5.9184 20.562 5.8577 11.77 14.749 23.219 30.087 38.74.05838.059.12188.1244.18052.1838 1.3166-.5556 2.5965-1.0618 3.8429-1.5199-.66408-.32448-1.4608-1.3297-3.8116-4.4602-5.0951-6.785-8.7512-11.962-13.051-18.486-5.1379-7.7948-5.0097-7.5894-8.0586-13.054-6.2097-11.13-8.2674-17.725-8.6014-27.563-.21552-6.3494.13041-9.2733 1.775-14.987 2.1832-7.5849 3.9273-10.986 9.2693-18.07 1.7839-2.3656 2.6418-3.57 2.4409-3.7003z"/>
+     <path style="fill:currentColor" d="m69.133 992.37c-6.2405.0309-12.635.76718-19.554 2.5706 4.6956 4.7759 9.935 10.258 12.05 12.625l4.1272 4.6202h11.493l3.964-4.4516c2.0962-2.3541 7.4804-7.9845 12.201-12.768-8.378-1.4975-16.207-2.6353-24.281-2.5955z"/>
+     <rect style="stroke-width:0;fill:currentColor" ry="2.0328" height="27.746" width="22.766" y="1017.7" x="60.201"/>
+    </g>
+   </g>
+  </symbol>
+
+  <symbol id="info" viewBox="0 0 41.667 41.667">
+   <g transform="translate(-37.035 -1004.6)">
+    <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m76.25 1030.2a18.968 18.968 0 0 1 -23.037 13.709 18.968 18.968 0 0 1 -13.738 -23.019 18.968 18.968 0 0 1 23.001 -13.768 18.968 18.968 0 0 1 13.798 22.984"/>
+    <g transform="matrix(1.1146 0 0 1.1146 -26.276 -124.92)">
+     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m75.491 1039.5v-8.7472"/>
+     <path style="stroke-width:0;fill:currentColor" transform="scale(-1)" d="m-73.193-1024.5a2.3719 2.3719 0 0 1 -2.8807 1.7142 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
+    </g>
+   </g>
+  </symbol>
+
+  <symbol id="warning" viewBox="0 0 48.430474 41.646302">
+    <g transform="translate(-1.1273 -1010.2)">
+     <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:4.151;fill:none" d="m25.343 1012.3-22.14 37.496h44.28z"/>
+     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:4.1512;fill:none" d="m25.54 1027.7v8.7472"/>
+     <path style="stroke-width:0;fill:currentColor" d="m27.839 1042.8a2.3719 2.3719 0 0 1 -2.8807 1.7143 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
+    </g>
+  </symbol>
+
+  <symbol id="menu" viewBox="0 0 50 50">
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="0" x="0"/>
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="20" x="0"/>
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="40" x="0"/>
+   </symbol>
+
+   <symbol id="link" viewBox="0 0 50 50">
+    <g transform="translate(0 -1002.4)">
+     <g transform="matrix(.095670 0 0 .095670 2.3233 1004.9)">
+      <g>
+       <path style="stroke-width:0;fill:currentColor" d="m452.84 192.9-128.65 128.65c-35.535 35.54-93.108 35.54-128.65 0l-42.881-42.886 42.881-42.876 42.884 42.876c11.845 11.822 31.064 11.846 42.886 0l128.64-128.64c11.816-11.831 11.816-31.066 0-42.9l-42.881-42.881c-11.822-11.814-31.064-11.814-42.887 0l-45.928 45.936c-21.292-12.531-45.491-17.905-69.449-16.291l72.501-72.526c35.535-35.521 93.136-35.521 128.64 0l42.886 42.881c35.535 35.523 35.535 93.141-.001 128.66zm-254.28 168.51-45.903 45.9c-11.845 11.846-31.064 11.817-42.881 0l-42.884-42.881c-11.845-11.821-11.845-31.041 0-42.886l128.65-128.65c11.819-11.814 31.069-11.814 42.884 0l42.886 42.886 42.876-42.886-42.876-42.881c-35.54-35.521-93.113-35.521-128.65 0l-128.65 128.64c-35.538 35.545-35.538 93.146 0 128.65l42.883 42.882c35.51 35.54 93.11 35.54 128.65 0l72.496-72.499c-23.956 1.597-48.092-3.784-69.474-16.283z"/>
+      </g>
+     </g>
+    </g>
+  </symbol>
+
+  <symbol id="doc" viewBox="0 0 35 45">
+   <g transform="translate(-147.53 -539.83)">
+    <path style="stroke:currentColor;stroke-width:2.4501;fill:none" d="m149.38 542.67v39.194h31.354v-39.194z"/>
+    <g style="stroke-width:25" transform="matrix(.098003 0 0 .098003 133.69 525.96)">
+     <path d="m220 252.36h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+     <path style="stroke:currentColor;stroke-width:25;fill:none" d="m220 409.95h200"/>
+     <path d="m220 488.74h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+     <path d="m220 331.15h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+    </g>
+   </g>
+ </symbol>
+
+ <symbol id="tick" viewBox="0 0 177.16535 177.16535">
+  <g transform="translate(0 -875.2)">
+   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="155" width="40" y="702.99" x="556.82"/>
+   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="40" width="90.404" y="817.99" x="506.42"/>
+  </g>
+ </symbol>
+</svg>
+
+    <div class="wrapper">
+      <header class="intro-and-nav" role="banner">
+  <div>
+    <div class="intro">
+      <a class="logo" href="https://example.com" aria-label="Beachgeek blog - a refuge for pineapple on pizza lovers home page">
+        <img src="https://example.com/images/logo.svg" alt="My site icon">
+      </a>
+      <p class="library-desc">
+         Technologist and Maker specialising in Cloud, Open Source and Innovation &amp; Emerging Technologies. 
+      </p>
+    </div>
+    <nav id="patterns-nav" class="patterns" role="navigation">
+  <h2 class="vh">Main navigation</h2>
+  <button id="menu-button" aria-expanded="false">
+    <svg viewBox="0 0 50 50" aria-hidden="true" focusable="false">
+      <use xlink:href="#menu"></use>
+    </svg>
+    Menu
+  </button>
+  
+  <ul id="patterns-list">
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Home</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/newsletter/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Newsletter</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/tags/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Tags</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/about/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">About</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/index.xml" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">RSS</span>
+      </a>
+    </li>
+  
+  </ul>
+</nav>
+  </div>
+</header>
+
+      <div class="main-and-footer">
+        <div>
+          
+  <main id="main">
+    <h1>AWS open source news and updates No. 46</h1>
+    <h2 id="november-30th---instalment-46">November 30th - Instalment #46</h2>
+<p>Week No.46 and this week marks the beginning of re:Invent 2020 so expect a lot of re:Invent related content in this episode and the next couple. re:Invent has not stopped the relentless march of great open source blog posts, projects and more this week, and we have some great stuff this week including&hellip;the launch of Amazon Managed Workflows for Apache Airflow, an unmissable post on Rust from Matt Asay, a bumper selection of Elasticsearch updates this week, a new project from the Amazon Neptune team and a couple of fantastic videos, one covering AWS CDK and projen and the other kube-bench.</p>
+<p>So, let&rsquo;s crack on and start with what you can expect during re:Invent.</p>
+<p><strong>re:Invent 2020</strong></p>
+<p>The Open Source track is back at re:Invent this year, with content spread across the first two weeks of the three-week virtual experience. This year, the Open Source track will introduce attendees to number of open source technologies such as GraphQL, Apache Kafka, Redis, Apache Flink, and more. The track will also cover topics on app acceleration using Amplify, observability with AWS Distro for OpenTelemetry, and chaos engineering. We have put together a couple of blog posts to help you understand in more detail what these sessions are as we know you will have a lot of hard choices to make as there are so many great sessions across all the tracks. <a href="https://aws.amazon.com/blogs/opensource/reinvent-2020-open-source-track-preview/">re:Invent 2020: Open Source track preview</a> covers the open source track, and <a href="https://aws.amazon.com/blogs/opensource/reinvent-2020-open-source-session-round-up/">re:Invent 2020: Open source session round-up</a> takes a look beyond the open source track at other sessions where open source is featured heavily.</p>
+<p>This week&rsquo;s open source related sessions in chronological order are as follows. Sessions are typically repeated three times to accommodate the different time zones you might be in. These are all in CET so remember to add or subtract time depending on where you are.</p>
+<p><strong>DEC 1st</strong></p>
+<ul>
+<li>AWS Data Hero Manrique LopezUsing Open Distro for Elasticsearch for developer analytics (6am CET - not repeated)</li>
+<li>OPN 201: Introduction to GraphQL (11:30pm CET)</li>
+</ul>
+<p><strong>DEC 2nd</strong></p>
+<ul>
+<li>CON211 Red Hat OpenShift Service on AWS (6pm CET)</li>
+<li>OPN 201: Introduction to GraphQL (repeat, 7:30am/3:30pm CET)</li>
+<li>OPN 202: App modernization on AWS with Apache Kafka &amp; Confluent Cloud  (7:15pm CET)</li>
+<li>OPN 203: Redis 2020: Creating a Community-Driven Project (9:30 PM CET)</li>
+</ul>
+<p><strong>DEC 3rd</strong></p>
+<ul>
+<li>OPN 204: Accelerate that App! with Amplify opensource framework (00:30am/8:30am/4:30pm CET)</li>
+<li>CON211 Red Hat OpenShift Service on AWS (repeat, 2am/10am CET)</li>
+<li>OPN 202: App modernization on AWS with Apache Kafka &amp; Confluent Cloud  (repeat, 3:15am/11:15am CET)</li>
+<li>OPN 203: Redis 2020: Creating a Community-Driven Project (repeats 5:30AM/1:30PM CET)</li>
+<li>OPN 301: Open Source Observability (7pm CET)</li>
+<li>CMP206 HPC on AWS: Innovating without infrastructure constraints (7:45pm CET)</li>
+<li>AIM404 Productionizing R workloads using Amazon SageMaker, featuring Siemens (10:15pm CET)</li>
+</ul>
+<p><strong>DEC 4th</strong></p>
+<ul>
+<li>OPN 301: Open Source Observability (repeat, 3am/11am CET)</li>
+<li>CMP206 HPC on AWS: Innovating without infrastructure constraints (repeat, 3:45am/11:45am CET)</li>
+<li>AIM404 Productionizing R workloads using Amazon SageMaker, featuring Siemens  (repeat, 6:15am/2:15pm CET)</li>
+</ul>
+<h3 id="celebrate-open-source-contributors">Celebrate open source contributors</h3>
+<p>The articles posted in this series are only possible thanks to contributors and project maintainers and so I would like to shout out and thank those folks who really do power open source and enable us all to build on top of what they have created.</p>
+<p>So thank you to George Pongracz, Franck Pachot, Nader Dabit, Shawn Sachdev, Daniel Pinheiro, Johny Duval, Rohit Yadav, David Boyne, Kaituo Li, Chris Swierczewski, Ekene Amaechi, Pahud Hsieh, Jaymit Bhoraniya, Connor Skennerton, Angela Wu, Piotr Westfalewicz, Danilo Poccia, Nick Minaie, Sam Liu, Matt Asay, James Sun, Gagan Brahmi, Chinmayi Narasimhadevara,  Nathan Peck, Shrinath Kurdekar, Vikram Venkataraman, Kevin Wagner and Liz Rice.</p>
+<p>Make sure you find and follow these builders and keep up to date with their open source projects and contributions.</p>
+<h3 id="latest-from-open-source-projects">Latest from open source projects</h3>
+<p><strong>graph-notebook</strong></p>
+<p><a href="https://github.com/aws/graph-notebook">graph-notebook</a> is a new open source tool from the Amazon Neptune team. The graph notebook provides an easy way to interact with graph databases using Jupyter notebooks. Using this open-source Python package, you can connect to any graph database that supports the Apache TinkerPop or the RDF SPARQL graph model. These databases could be running locally on your desktop or in the cloud. Graph databases can be used to explore a variety of use cases including knowledge graphs and identity graphs.</p>
+<p>The open-source graph notebook provides users the flexibility to run their queries and visualisation from local desktops, EC2, or EMR in addition to using the Neptune Workbench on SageMaker. It is easily installed via the Python Package Installer (PIP). You can connect to graph databases that provide an endpoint that implements an Apache TinkerPop Gremlin Server or the SPARQL 1.1 Protocol. The notebook also gives developers the power to enhance and contribute to the features in the notebook.</p>
+<p><img src="https://github.com/aws/graph-notebook/raw/main/images/GremlinQueryGraph.png" alt="looklike"></p>
+<p>Check out the coverage in Silicon Angel from Maria Deitscher, <a href="https://siliconangle.com/2020/11/26/aws-open-sources-graph-notebook-make-working-graph-databases-easier/">AWS open sources Graph Notebook to make working with graph databases easier</a>.</p>
+<p><strong>geneve-proxy</strong></p>
+<p><a href="https://github.com/sentialabs/geneve-proxy">geneve-proxy</a> is an open source reference application for a proxy appliance behind an AWS Gateway Load Balancer (GWLB) from <a href="https://github.com/sentialabs">Sentia Labs</a>. They put together a blog post to help you understand what and why this project was put together. <a href="https://www.sentiatechblog.com/geneveproxy-an-aws-gateway-load-balancer-reference-application">GeneveProxy - an AWS Gateway Load Balancer reference application</a> walks you through what was built - a first party application, written in Python, which receives traffic from the GWLB, decapsulates the packet, inspects the packet, re-encapsulates it and returns it to the GWLB. Warning, contains ascii tables (which I love!)</p>
+<p><img src="https://images.ctfassets.net/9gzi1io5uqx8/6iysA8pOA9MnruSIYjHNXN/59f0c728a130fa204804eb8854a3f595/overview.png?fit=scale&amp;w=920" alt="arch"></p>
+<p><strong>aws-app-mesh-examples</strong></p>
+<p><a href="https://github.com/aws/aws-app-mesh-examples/tree/master/walkthroughs/howto-k8s-mtls-sds-based">aws-app-mesh-examples</a> this is an open source solution to help you understand how to enable mTLS between two applications in App Mesh using Envoy&rsquo;s Secret Discovery Service(SDS). SDS allows envoy to fetch certificates from a remote SDS Server. When SDS is enabled and configured in Envoy, it will fetch the certificates from a central SDS server. SDS server will automatically renew the certs when they are about to expire and will push them to respective envoys. This greatly simplifies the certificate management process for individual services/apps and is more secure when compared to file based certs as the certs are no longer stored on the disk. If the envoy fails to fetch a certificate from the SDS server for any reason, the listener will be marked as active and the port will be open but the connection to the port will be reset.</p>
+<p><strong>awsicons</strong></p>
+<p><a href="https://github.com/boyney123/awsicons">awsicons</a> is an open source set of high-quality SVG icons for you to use in your web projects that has been forked from another project (documented in the README) by David Boyne. David has also put together this website <a href="https://awsicons.dev">https://awsicons.dev</a> which is a great way to quickly find the icons you need (and in fact, was very helpful as I was looking for an icon for AWS Nitro Enclave and it was in this collection!)</p>
+<p><strong>s3_objects_check</strong></p>
+<p><a href="https://github.com/nccgroup/s3_objects_check">s3_objects_check</a> in an open source tool from the <a href="https://www.nccgroup.com/">NCC Group</a> that provides a white-box evaluation of effective S3 object permissions, in order to identify publicly accessible objects. It allows identifying publicly accessible objects, as well as objects accessible for AuthenticatedUsers (by using a secondary profile). A number of tools exist which check permissions on buckets, but due to the complexity of IAM resource policies and ACL combinations, the effective permissions on specific objects is often hard to assess. The tool runs fast as it uses asyncio and aiobotocore. Easy to run via the command line, with some examples to get you started.</p>
+<h3 id="aws-open-source-posts">AWS open source posts</h3>
+<p><strong>Rust</strong></p>
+<p><a href="https://aws.amazon.com/blogs/opensource/why-aws-loves-rust-and-how-wed-like-to-help/">Why AWS loves Rust, and how we’d like to help</a> this post from Matt Asay where he shares the where (and why) of how AWS uses Rust, and talks a little of our contributions and their evolution. The stand out piece from this post is the following:</p>
+<blockquote>
+<p>Let’s be clear: We understand that we are net beneficiaries of the exceptional work that others have done to make Rust thrive. AWS didn’t start Rust or make it the success that it is today, but we’d like to contribute to its future success. We are convinced that investing in the wider Rust ecosystem helps our customers and those who may never become our customers. That’s OK. That’s how open source is supposed to work.</p>
+</blockquote>
+<p>Make sure you read the rest though, including some great quotes from other AWS builders and what they are doing with Rust.</p>
+<p><strong>Amazon CloudWatch agent</strong></p>
+<p><a href="https://aws.amazon.com/blogs/opensource/getting-started-with-open-source-amazon-cloudwatch-agent/">Getting started with open source Amazon CloudWatch Agent</a> Kevin Wagner talks about the recently open sourced <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Amazon CloudWatch Agent</a> and how this has allowed community contributions, enabled customisation for client-specific use cases, and provided greater level of trust and security through design and implementation transparency. Kevin provides a brief overview of use cases for CloudWatch Agent and walks through how to install and begin configuring the agent.</p>
+<p><strong>Amazon Managed Workflows for Apache Airflow</strong></p>
+<p><a href="https://aws.amazon.com/blogs/aws/introducing-amazon-managed-workflows-for-apache-airflow-mwaa/">Introducing Amazon Managed Workflows for Apache Airflow (MWAA)</a> Danilo Poccia announces the availability of Amazon Managed Workflows for Apache Airflow (MWAA), a fully managed service that makes it easy to run open-source versions of Apache Airflow on AWS and to build workflows to execute your extract-transform-load (ETL) jobs and data pipelines. Developers and data engineers simplify the overall process of building those ETL jobs by decomposing it into a series of smaller tasks and coordinate the execution of these tasks as part of a workflow. Apache Airflow is a popular open source platform created by the community to programmatically author, schedule, and monitor workflows. With Airflow you can manage workflows as scripts, monitor them via the user interface (UI), and extend their functionality through a set of powerful plugins. Danilo provides a good introduction and walkthrough so you can build your first workflow.</p>
+<p><img src="https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2020/11/17/mwaa-graph-view-1024x466.png" alt="dag"></p>
+<p>As Danilo notes, upstream compatibility is a core tenet of Amazon MWAA. Our code changes to the AirFlow platform are released back to open source.</p>
+<p><strong>Apache Hive</strong></p>
+<p><a href="https://aws.amazon.com/blogs/big-data/accessing-and-visualizing-external-tables-in-an-apache-hive-metastore-with-amazon-athena-and-amazon-quicksight/">Accessing and visualizing external tables in an Apache Hive metastore with Amazon Athena and Amazon QuickSight</a> this is a blog post and solution from James Sun, Gagan Brahmi, and Chinmayi Narasimhadevara walk you through a solution that uses Athena to query external Apache Hive tables with public COVID-19 datasets. This posts shows you how to configure a remote Hive metastore based on Amazon Relational Database Service (Amazon RDS) and MySQL with Amazon EMR, and then demonstrates how you can use a Spark step to pull COVID-19 datasets from a public repository and transform the data into a performant Parquet columnar storage format.</p>
+<p><strong>Apache Flink</strong></p>
+<p><a href="https://aws.amazon.com/blogs/architecture/realtime-in-stream-inference-kinesis-sagemaker-flink/">Real-Time In-Stream Inference with AWS Kinesis, SageMaker &amp; Apache Flink</a> in this collaboration between Shawn Sachdev, Daniel Pinheiro, Johny Duval, and Rohit Yadav you will learn how you can use Amazon Kinesis Data Analytics for Apache Flink (KDA), Apache Flink as well as some other AWS services to address the challenges such as real-time fraud detection on a stream of credit card transaction data. They explore how to build a managed, reliable, scalable, and highly available streaming architecture based on managed services that substantially reduce the operational overhead compared to a self-managed environment, and focus on how to prepare and run Flink applications with KDA for Apache Flink applications.</p>
+<p><img src="https://d2908q01vomqb2.cloudfront.net/fc074d501302eb2b93e2554793fcaf50b3bf7291/2020/11/23/Run-Apache-Flink-applications-with-KDA-for-Apache-Flink-applications-1024x408.png" alt="arch"></p>
+<p><strong>Telegraf</strong></p>
+<p><a href="https://aws.amazon.com/blogs/database/collecting-storing-and-analyzing-your-devops-workloads-with-open-source-telegraf-amazon-timestream-and-grafana/">Collecting, storing, and analyzing your DevOps workloads with open-source Telegraf, Amazon Timestream, and Grafana</a> Piotr Westfalewicz writes on Telegraf, an open-source, plugin-driven server agent for collecting and reporting metrics and how to integrate Telegraf with Amazon Timestream, a serverless time series database service for IoT and operational applications. With the Timestream output plugin for Telegraf, you can now ingest metrics from Telegraf agent directly to Timestream and then use Grafana to visualise the metrics stored.</p>
+<p><img src="https://d2908q01vomqb2.cloudfront.net/887309d048beef83ad3eabf2a79a64a389ab1c9f/2020/11/05/Pic1.png" alt="arch"></p>
+<p><strong>Elasticsearch</strong></p>
+<p>A bumper selection of new features and improvements this week covering Elasticsearch. The team and community has been super busy it would appear, awesome stuff.</p>
+<p>First up we have a general update on the Amazon Elasticsearch Service that now supports open source Elasticsearch 7.9 and its corresponding version of Kibana. This minor release includes bug fixes and enhancements. In this new release, Elasticsearch added support for concurrent snapshot operations. You can now create manual snapshots while automatic snapshots are in progress. Also, you can delete multiple snapshots in a single snapshot delete call. With Elasticsearch 7.9, the default for WRITE thread pool size is changed to 10000. This change lets a single domain support indexing requests from a large number of simultaneous clients. This release also includes support for recently released features like detailed audit logging of all Elasticsearch requests, Security Assertion Markup Language (SAML) to offer single sign-on (SSO) for Kibana, and custom domain names. All these features are components of Open Distro for Elasticsearch, an Apache 2.0-licensed distribution of Elasticsearch.</p>
+<p>Next up is news that Amazon Elasticsearch Service also introduced several security enhancements to the fine-grained access control feature.  These include a revamped and improved security workflow in Kibana, and integration with Open Distro for Elasticsearch Alerting and Anomaly Detection features. The integration with Alerting and Anomaly Detection extends fine-grained access control to allow users with limited permissions to create and manage alerts and monitors. Previously, users needed administrator privileges for these tasks, but with this release, you can control how your users leverage these features. The revamped Kibana security user interface simplifies the assignment and management of fine-grained access control user permissions and role mappings while improving readability. All your existing permissions and mappings will be automatically presented in the new format. These enhancements are available on any Amazon Elasticsearch Service domain version 7.9 with fine-grained access control enabled.</p>
+<p>If that was not enough, Amazon Elasticsearch Service also now supports Gantt charts, a new visualisation in Kibana. Users can now embed Gantt charts into dashboards to enable visualisation of events, steps and tasks as horizontal bars. The length of the bars shows the amount of time associated with an event, step or a task. Gantt charts are used to represent a series of events that contain a parent-child relationship. This can be particularly useful in trace analytics, telemetry, and monitoring use cases, in which the users need to understand the overall interaction between traces or events. Gantt charts help users manage their resources by getting an overview of the events or tasks and understanding the relationships between them. Gantt chart in Kibana is powered by Open Distro for Elasticsearch, an Apache 2.0-licensed distribution of Elasticsearch. Kibana Reports is supported on all Amazon Elasticsearch Service domains running Elasticsearch 7.9 or greater. To learn more about Open Distro for Elasticsearch and Gantt charts, visit the project website and documentation.</p>
+<p>Following that we have this blog post from Kaituo Li and Chris Swierczewski, <a href="https://aws.amazon.com/blogs/big-data/a-deep-dive-into-high-cardinality-anomaly-detection-in-elasticsearch/">A deep dive into high-cardinality anomaly detection in Elasticsearch</a>. This post takes a look into the motivation, design, and development of the high-cardinality anomaly detection (HCAD) capability within Elasticsearch, beginning with an in-depth description of the HCAD problem and its properties and then looking at the details of this solution. They follow exploring the challenges and questions we encountered during the research and development and conclude by describing the system and architecture of this solution.</p>
+<p><img src="https://d2908q01vomqb2.cloudfront.net/b6692ea5df920cad691c20319a6fffd7a4a766b8/2020/11/20/detection-in-Elasticsearch-3.jpg" alt="arch"></p>
+<p>And yet more! Amazon Elasticsearch Service now offers support for Remote Reindex, enabling you to migrate data from a remote cluster into Amazon Elasticsearch Service. With this feature, you can simply copy data from one cluster to another, making it easier to migrate from legacy versions of Elasticsearch. Remote Reindex also supports migrating indexes from self-managed Elasticsearch onto Amazon Elasticsearch Service, providing a simple mechanism to onboard onto the service. You can read more about this <a href="https://aws.amazon.com/about-aws/whats-new/2020/11/elasticsearch-service-announces-support-for-remote-reindex/">here</a>.</p>
+<p>We are not quite finished yet, as we also had this update from the Amazon Elasticsearch team. It now supports Piped Processing Language (PPL), a new feature that enables users to explore, discover and find data stored in Amazon ES, using a set of commands delimited by pipes (|). PPL extends Elasticsearch to support a standard set of commands that is easy for system developers, DevOps engineers, support engineers, site reliability engineers (SREs), and IT managers who are proficient with Linux or Unix to learn. PPL enables these users to begin extracting insights from their log, monitoring and observability data on day one. Read more <a href="https://aws.amazon.com/about-aws/whats-new/2020/11/amazon-elasticsearch-service-introduces-piped-processing-language-ppl/">here</a>.</p>
+<p>Finally, we have a video from Ekene Amaechi who takes a look at visualisation in Open Distro for Elasticsearch using a sample set of financial data. There are two videos, this is part one so make sure you check the second.</p>
+<p>{% youtube 9unzV6LHlJc %}</p>
+<p><strong>AWS Copilot</strong></p>
+<p><a href="https://aws.amazon.com/blogs/containers/aws-copilot-is-now-generally-available/">AWS Copilot is now generally available</a> Nathan Peck announces the general availability of AWS Copilot, an open source command line interface that makes it easy for developers to build, release, and operate production ready containerized applications on Amazon ECS and AWS Fargate. This means the initial development and breaking changes are done and Copilot is ready for you to use in production. Lots of resources to get you started with Copilot, including blog posts and video walk throughs.</p>
+<p><img src="https://d2908q01vomqb2.cloudfront.net/fe2ef495a1152561572949784c16bf23abb28057/2020/11/23/screen.png" alt="copilot"></p>
+<p><strong>AWS App Mesh</strong></p>
+<p><a href="https://aws.amazon.com/blogs/containers/appmesh-integrating-cross-vpc-ecs-cluster-for-enhanced-security/">Integrating cross VPC ECS cluster for enhanced security with AWS App Mesh</a> Vikram Venkataraman writes about how you can use App Mesh for connecting, securing, and observing your cross-compute, cross-cluster, and cross-VPC workloads. AWS App Mesh is a service mesh based on the Envoy proxy. It standardises how applications communicate, giving you end-to-end visibility, and helping to ensure high-availability for your applications. A service mesh is composed of two parts, a control plane and a data plane. AWS App Mesh has a managed control plane so you as a user don’t need to install or manage any servers to run it. The data plane for App Mesh is the open source Envoy proxy. It is your responsibility to add the Envoy proxy as a side car to each application you want to expose and manage via App Mesh.</p>
+<p><img src="https://d2908q01vomqb2.cloudfront.net/fe2ef495a1152561572949784c16bf23abb28057/2020/11/23/AppMesh-TLS.png" alt="arch"></p>
+<p><strong>Fluent bit</strong></p>
+<p><a href="https://aws.amazon.com/blogs/storage/persistent-storage-for-container-logging-using-fluent-bit-and-amazon-efs/">Persistent storage for container logging using Fluent Bit and Amazon EFS</a> Shrinath Kurdekar shows you how to persist logs from your Amazon Elastic Kubernetes Service (Amazon EKS) containers on highly durable, highly available, elastic, and POSIX-compliant Amazon Elastic File System (Amazon EFS) file systems using Fluent Bit. Fluent Bit is an open source log shipper and processor, that can collect data from multiple sources and forward it to different destinations for further analysis. Fluent Bit is a lightweight and performant log shipper and forwarder that is a successor to Fluentd and is a part of the Fluentd Ecosystem.</p>
+<p><img src="https://d2908q01vomqb2.cloudfront.net/e1822db470e60d090affd0956d743cb0e7cdf113/2020/11/19/Persistent-storage-for-containers-logging-using-Amazon-EFS-and-Fluent-Bit-architecture-diagram.png" alt="arch"></p>
+<p><strong>R</strong></p>
+<p><a href="https://aws.amazon.com/blogs/machine-learning/bringing-your-own-r-environment-to-amazon-sagemaker-studio/">Bringing your own R environment to Amazon SageMaker Studio</a> Nick Minaie and Sam Liu show you how you can add a custom R image to SageMaker Studio so you can build and train your R models with Amazon SageMaker. R is an open source software environment for statistical computing and graphics and the R language is widely used among statisticians and data miners for developing statistical software and data analysis. SageMaker Studio notebooks provide a set of built-in images for popular data science and ML frameworks and this post will show you how you can also add your own custom R images to SageMaker Studio so you can build and train your R models.</p>
+<p><img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2020/11/24/5-R-notebook.png" alt="Rinstudio"></p>
+<h3 id="partner--industry-spotlight">Partner / Industry spotlight</h3>
+<p><strong>Public Sector</strong></p>
+<p><a href="https://aws.amazon.com/blogs/publicsector/new-key-unlocking-drug-discovery/">A new key to unlocking drug discovery</a> Angela Wu takes a look at VirtualFlow, a new open-source software that is helping to narrow down and identify from the trillions of potential chemical compounds, which ones are best suited to help tackle a specific disease. Infectious disease specialists work to find the specific compound (key) that can bind to the right spot (lock) on a disease-enabling proteins to block its activity but the the key question they ask themselves is: which of the small molecule among the trillion is the right one for a specific disease? Given the range of possible molecule to protein combinations, finding the right small molecule that is able to bind strongly to a certain target site and inhibit its function is a time-intensive and challenging and this post explores how this new open source project, VirtualFlow is helping. Read on to find out more.</p>
+<h3 id="case-studies-and-industries">Case Studies and Industries</h3>
+<p><strong>Graph databases</strong></p>
+<p><a href="https://aws.amazon.com/blogs/database/building-a-biological-knowledge-graph-at-pendulum-using-amazon-neptune/">Building a biological knowledge graph at Pendulum using Amazon Neptune</a> in this guest post, Connor Skennerton, Staff Data Engineer at Pendulum Therapeutics explores how graph databases provide an extremely flexible representation for the analysis of highly connected data in biotechnology. Amazon Neptune is a fast, reliable, fully managed graph database service that supports Apache TinkerPop Gremlin query language and Connor goes on to provide some examples of simple and more complex queries that are enabled thanks to the expressiveness of the Gremlin query language.</p>
+<p><img src="https://d2908q01vomqb2.cloudfront.net/887309d048beef83ad3eabf2a79a64a389ab1c9f/2020/11/13/Building-a-biological-knowledge-graph-5.jpg" alt="graphdb"></p>
+<h3 id="other-open-source-blog-posts">Other open source blog posts</h3>
+<p><strong>PostgresSQL</strong></p>
+<p><a href="https://dev.to/aws-heroes/postgresql-in-aws-clearing-the-doubts-44ep">PostgreSQL in AWS: clearing the doubts</a> this post from AWS Data Hero Franck Pachot looks to clarify any doubts as to the nature of PostgresSQL on AWS, taking a look at some of the options you have, some of the features and what you need to look out for when rolling your own vs using managed services.</p>
+<p><strong>Delta Lake</strong></p>
+<p><a href="https://medium.com/seek-blog/data-lakehousing-in-aws-7c76577ed88f">Data Lakehousing in AWS</a> George Pongracz who is a senior Data Engineer in the Enterprise DataOps Team at SEEK shares how they built a Data Lakehouse on AWS. After lifting and shifting their data warehouse to Amazon Redshift and ETL to Amazon EMR/PySpark, they took an opportunity to rethink and optimise their data platform as part of their CRM re-platform project. This combined Amazon Redshift and Delta Lake by creating a PySpark NoLoader program in conjunction with AWS services and a move from manual to automated processes, including the use of Apache Airflow for orchestration. For those perhaps unfamiliar with Delta Lake, it is an &ldquo;open source columnar storage layer based on the Parquet file format. It provides ACID transactions and simplifies and facilitates the development of incremental data pipelines over cloud object stores like Amazon S3, beyond what is offered by Parquet whilst also providing schema evolution of tables.&rdquo;</p>
+<p>As a bonus, you can dive even deeper by checking out George&rsquo;s talk <a href="https://youtu.be/prQh8lwPz5Q?t=4431">How SEEK “Lakehouses” in AWS</a> at Data Engineering AU Meetup</p>
+<p><img src="https://miro.medium.com/max/1400/1*VuKWR9VocEZ-YXh4ltIC3A.png" alt="arch"></p>
+<p><strong>Kafka</strong></p>
+<p><a href="https://blog.ecs-composex.lambda-my-aws.io/posts/using-composex-to-deploy-confluent-kafka-components/">Using ComposeX to deploy Confluent Kafka components</a> great post from John Preston the maintainer of <a href="https://aws.amazon.com/blogs/opensource/automating-your-ecs-container-architecture-deployments-with-ecs-composex/">ECS ComposeX</a> that shows you how you can use that project to deploy Confluent components in your own AWS VPC and ECS Clusters.</p>
+<p><strong>AWS Amplify</strong></p>
+<p><a href="https://dev.to/aws-builders/how-will-aws-cloud-be-going-to-make-front-end-developer-s-life-easy-1153">How will AWS Amplify (AWS Cloud) be going to make the Front-End Developer&rsquo;s life easy?</a> Jaymit Bhoraniya provides a breakdown and overview of how AWS Amplify can help developers, and takes a look at the different capabilities and layers that AWS Amplify provides - whether it is the open source framework or how this works with the managed services provided by AWS, this should provide a quick primer to help you explore more.</p>
+<h3 id="videos-of-the-week">Videos of the week</h3>
+<p><strong>AWS CDK and Projen</strong></p>
+<p><a href="https://www.youtube.com/watch?v=cTsSXYOYQPw&amp;feature=youtu.be">Building AWS CDK Construct Library with Projen</a> is a fantastic new video from Pahud Hsieh where he shows you how to build, test and publish AWS CDK construct from scratch with projen. After watching this video, you will be able to build your custom CDK construct and publish to npm and pypi.</p>
+<p>{% youtube cTsSXYOYQPw %}</p>
+<p><strong>kube-bench</strong></p>
+<p><a href="https://www.youtube.com/watch?v=dAWCbKVLOTU&amp;feature=youtu.be">AWS Security Hub integration with kube-bench</a> Aqua Security VP of open source engineering Liz Rice shows you how to set up kube-bench to send information about failed or warning CIS Kubernetes Benchmark tests so that they appear as findings in AWS Security Hub.</p>
+<p>{% youtube dAWCbKVLOTU %}</p>
+<p><strong>AWS Amplify, Architect and React</strong></p>
+<p>Nader Dabit walks you through how to build a full stack serverless blogging app from scratch using Architect as the infrastructure as code provider and React on the client.</p>
+<p>{% youtube h38wYQ4uCrM %}</p>
+<h3 id="quick-updates">Quick Updates</h3>
+<p><strong>PostgreSQL</strong></p>
+<p>PostgreSQL 13 is now available in the Amazon RDS Database Preview Environment, allowing customers to test PostgreSQL 13 on Amazon RDS. PostgreSQL 13 can now be deployed for development and testing in the Amazon RDS Database Preview Environment without the hassle of installing, provisioning, and managing the database. This release includes support for a number of extensions.</p>
+<p>The PostgreSQL community released PostgreSQL 13 on September 24, 2020. PostgreSQL 13 includes improved functionality and performance such as better duplicate data handling by B-tree indexes, improvements added to partitioning functionality, incremental sorting to accelerate data sorts, parallel processing of indexes with the VACUUM command, more ways to monitor activity within a PostgreSQL database, new security capabilities, and more.</p>
+<p><strong>Porting Assistant for .NET</strong></p>
+<p>Porting Assistant for .NET can now support customers to migrate their legacy .NET framework applications to newly released .NET 5. .NET 5 is a major release with a broad set of features and improvements. With this updated release of Porting Assistant for .NET customers can analyze and port their .NET framework applications to either new release of .NET 5 or .NET Core 3.1. Porting Assistant for .NET is an analysis tool that scans .NET Framework applications and generates a .NET Core or .NET 5 compatibility assessment, helping you port your applications to Linux faster. Porting .NET Framework applications to .NET Core or .NET 5 helps customers take advantage of the performance, cost savings, and robust ecosystem of Linux.</p>
+<p>The new, updated tool can be downloaded from <a href="https://s3-us-west-2.amazonaws.com/aws.portingassistant.dotnet.download/latest/windows/Porting-Assistant-Dotnet.exe">here</a> and existing customers can update to the latest version of the tool to take advantage of new capability.</p>
+<p><strong>PartiQL</strong></p>
+<p>You now can use PartiQL (a SQL-compatible query language)—in addition to already-available DynamoDB operations—to query, insert, update, and delete table data in Amazon DynamoDB. PartiQL makes it easier to interact with DynamoDB and run queries in the AWS Management Console. Because PartiQL is supported for all DynamoDB data-plane operations, it can help improve the productivity of developers by enabling them to use a familiar, structured query language to perform these operations. With PartiQL, DynamoDB continues to provide consistent, single-digit-millisecond latency at any scale. In addition, you can expect the same availability, latency, and performance when performing DynamoDB operations. The DynamoDB Service Level Agreement continues to apply while you use PartiQL to perform operations on DynamoDB table data.</p>
+<p><strong>AWS Batch now supports Amazon Linux 2</strong></p>
+<p>AWS Batch now supports natively launching Amazon Linux 2 as your AMI when creating an AWS Batch compute environment through a single parameter. Amazon Linux 2 is the next generation of Amazon Linux, a Linux server operating system from Amazon Web Services (AWS). It provides a secure, stable, and high performance execution environment to develop and run cloud and enterprise applications. With Amazon Linux 2, you get an application environment that offers long term support with access to the latest innovations in the Linux ecosystem.</p>
+<p>AWS Batch enables developers, scientists, and engineers to easily and efficiently run hundreds of thousands of batch computing jobs on AWS. AWS Batch dynamically provisions the optimal quantity and type of compute resources (e.g. CPU or memory optimized instances) based on the volume and specific resource requirements of the batch jobs submitted. When creating an AWS Batch compute environment, customers can simply select Amazon Linux 2 in the console, or specify AmazonLinux2 as the EC2 Configuration; which is a new parameter that is also introduced as part of this launch.</p>
+<p><strong>AWS Toolkit for JetBrains</strong></p>
+<p>The AWS Toolkit for JetBrains is an open source plugin for the integrated development environments (IDEs) from JetBrains that toolkit makes it easier to create, debug, and deploy software applications on Amazon Web Services in any of the JetBrains IDEs. The AWS Toolkit for JetBrains now provides convenient IDE functionality to interact with SQS queues and search through CloudWatch Logs.</p>
+<p>Amazon SNS and SQS are foundational services used for synchronous service-to-service communication in serverless and microservices architectures. With pub/sub messaging you can design and build with event-driven architectures or decouple applications to increase performance, reliability and scalability. With the new release of the Toolkit, users can poll, publish messages, purge queues and configure triggers for Lambda functions, all from within the IDE. Check out the AWS Toolkit Docs to learn about the various SQS/SNS features in the IDE.</p>
+<p>CloudWatch Logs Insights enables you to interactively search and analyze your log data in Amazon CloudWatch Logs. You can perform queries to help you more efficiently and effectively respond to operational issues. If an issue occurs, you can use CloudWatch Logs Insights to identify potential causes and validate deployed fixes. With the IDE integration customers can search their existing Cloudwatch Logs using the query API provided by Cloudwatch Logs Insights and view results listed in the results pane within the IDE. Check out the AWS Toolkit Docs to learn about the various CloudWatch Logs Insights features in the IDE.</p>
+<p><strong>Selenium</strong></p>
+<p>CloudWatch Synthetics now supports canary scripts in Python programming language with the Selenium open source web automation testing framework. This gives you more choice in the programming language and framework to use when creating canaries in CloudWatch Synthetics. Read more about this announcement <a href="https://aws.amazon.com/about-aws/whats-new/2020/11/amazon-cloudwatch-synthetics-supports-canary-scripts-python-with-selenium-framework/">here</a>.</p>
+<p><strong>Lustre</strong></p>
+<p>Amazon FSx for Lustre, a service that provides high-performance shared storage, now enables you to increase the storage capacity of your file systems with the click of a button, providing you the flexibility to easily respond to your evolving storage needs by increasing file system size in a matter of minutes. Amazon FSx for Lustre makes it easy and cost effective to launch and run the world’s most popular high-performance file system in AWS. It is designed for applications that require fast storage – where you want your storage to keep up with your compute. Amazon FSx also integrates with Amazon S3, making it easy for you to process cloud data sets with the Lustre high-performance file system. You can now increase the storage capacity of your file systems as needed with the click of a button in the AWS Management Console or using an API call. With the new capability to grow storage, you can dynamically increase your storage size as your data sets grow, so you don&rsquo;t need to worry about accommodating growing data sets when creating your file system.</p>
+<h3 id="events-for-your-diary">Events for your diary</h3>
+<p><strong>re:Invent 2020</strong>
+<strong>November 30th to December 18th</strong></p>
+<p>re:Invent starts later today, and for the next three weeks we will have a packed agenda featuring lots of great sessions covering open source projects from AWS and our customers and partners. It is FREE to attend and we have some amazing open source sessions as well as a dedicated open source track with unmissable content. I have linked above the posts that expand upon these sessions in more detail, but here is a list of the sessions over the next three weeks.</p>
+<p><strong>Open source track</strong></p>
+<ul>
+<li>OPN 203: Redis 2020: Creating a Community-Driven Project</li>
+<li>OPN 305: Build real-time apps with Apache Flink</li>
+<li>OPN 206: Building End-To-End ML Workflows with Kubeflow Pipelines</li>
+<li>OPN 301: Open Source Observability at AWS</li>
+<li>OPN 302: The Serverless LAMP stack</li>
+<li>OPN 303: Open Source Meets SaaS: Accelerating the Path to SaaS Adoption</li>
+<li>OPN 304: Open source failure injection on AWS</li>
+<li>OPN 201: Introduction to GraphQL</li>
+<li>OPN 204: Accelerate that App! with Amplify opensource framework</li>
+<li>OPN 202: App modernization on AWS with Apache Kafka &amp; Confluent Cloud</li>
+</ul>
+<p><strong>Other open source sessions</strong></p>
+<ul>
+<li>ADM 301 Running ultra-high throughput ad tech workloads on Aerospike</li>
+<li>AIM 313 Scaling MLOps on Kubernetes with Amazon SageMaker Operators</li>
+<li>AIM 402 Fast distributed training and near-linear scaling with PyTorch on AWS</li>
+<li>AIM 404 Productionizing R workloads using Amazon SageMaker, featuring Siemens</li>
+<li>AIM 405 Train large models with billions of parameters in TensorFlow 2.0</li>
+<li>ARC 307 Going global in minutes: Multi-Region expansion simplified</li>
+<li>CMP 206 HPC on AWS: Innovating without infrastructure constraints</li>
+<li>CON 201 Getting an insight into your Kubernetes applications</li>
+<li>CON 202 AWS Copilot: Simplifying container development</li>
+<li>CON 207 Define AWS service resources with AWS Controllers for Kubernetes</li>
+<li>CON 211 Red Hat OpenShift Service on AWS</li>
+<li>DAT 314 Running Apache Cassandra workloads with Amazon Keyspaces</li>
+<li>DOP 202 AWS CDK: What’s new and what’s next</li>
+<li>FWM 201 Power modern serverless applications with GraphQL and AWS AppSync</li>
+<li>FMW 202 Empower front-end web and mobile app development with AWS Amplify</li>
+<li>FMW 303 Build iOS &amp; Android mobile apps in record time with Flutter and AWS Amplify</li>
+<li>FMW 304 Unify access to siloed data with AWS AppSync GraphQL resolvers</li>
+<li>FMW 306 Best practices to securely operate GraphQL at scale with AWS AppSync</li>
+<li>IOT 303 Developing and deploying modern edge applications at scale</li>
+<li>NFX 302 Simplifying delivery as code with Spinnaker and Kubernetes</li>
+</ul>
+<p><strong>Virtual ROS-Industrial Conference 2020</strong>
+<strong>December 15 - 16, 2020</strong></p>
+<p>The 8th edition of ROS-Industrial Conference will be held as a virtual event. It is not only the annual community meeting for the European ROS-Industrial community but this years event is also the final event of the H2020 ROSIN project. The conference gives you the chance to see the newest technical developments and to meet people and companies, which are active in the ROS community.</p>
+<p>Learn more and sign up <a href="https://rosindustrial.org/rosindustrial-conference-2020">here</a>.</p>
+<h3 id="stay-in-touch-with-open-source-at-aws">Stay in touch with open source at AWS</h3>
+<p>I hope this summary has been useful. Remember to check out the <a href="https://aws.amazon.com/opensource/?opensource-all.sort-by=item.additionalFields.startDate&amp;opensource-all.sort-order=asc">Open Source homepage</a> to keep up to date with all our activity in open source by following us on <a href="https://twitter.com/AWSOpen">@AWSOpen</a>.</p>
+<h3 id="your-feedback-matters">Your feedback matters!</h3>
+<p>I have put together a short feedback survey, which I would ask you to take - it will take no more than 2 minutes. You can access <a href="https://amazonmr.au1.qualtrics.com/jfe/form/SV_8BsYTwgVY6E6WZn">here</a>. Many thanks!</p>
+<p><a href="https://amazonmr.au1.qualtrics.com/jfe/form/SV_8BsYTwgVY6E6WZn">Take the survey</a></p>
+
+  </main>
+
+          <div class="social-heading">
+            <div class="footer-social">
+  
+    <div class="social-icon">
+      <a href="https://twitter.com/094459" target="_blank" title="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Twitter" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://github.com/094459" target="_blank" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="GitHub" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+      </a>
+    </div>
+  
+  
+    <div class="social-icon">
+      <a href="https://www.linkedin.com/in/ricardosueiras" target="_blank" title="Linkedin">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="LinkedIn" role="img"
+viewBox="0 0 512 512"
+fill="#fff"><rect
+width="512" height="512"
+rx="15%"
+fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://www.reddit.com/r/aws" target="_blank" title="Reddit">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Reddit" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+      </a>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="social-icon">
+      <a href="mailto:ricsue@amazon.com" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Email" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="teal"/><rect width="356" height="256" x="78" y="128" fill="#fff" rx="8%"/><path fill="none" stroke="teal" stroke-width="20" d="M434 128L269 292c-7 8-19 8-26 0L78 128m0 256l129-128m227 128L305 256"/></svg>
+      </a>
+    </div>
+  
+  
+</div>
+
+          </div>
+          <footer role="contentinfo">
+  <div class="social-footer">
+    <div class="footer-social">
+  
+    <div class="social-icon">
+      <a href="https://twitter.com/094459" target="_blank" title="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Twitter" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://github.com/094459" target="_blank" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="GitHub" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+      </a>
+    </div>
+  
+  
+    <div class="social-icon">
+      <a href="https://www.linkedin.com/in/ricardosueiras" target="_blank" title="Linkedin">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="LinkedIn" role="img"
+viewBox="0 0 512 512"
+fill="#fff"><rect
+width="512" height="512"
+rx="15%"
+fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://www.reddit.com/r/aws" target="_blank" title="Reddit">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Reddit" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+      </a>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="social-icon">
+      <a href="mailto:ricsue@amazon.com" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Email" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="teal"/><rect width="356" height="256" x="78" y="128" fill="#fff" rx="8%"/><path fill="none" stroke="teal" stroke-width="20" d="M434 128L269 292c-7 8-19 8-26 0L78 128m0 256l129-128m227 128L305 256"/></svg>
+      </a>
+    </div>
+  
+  
+</div>
+
+    <label for="themer">
+      dark theme: <input type="checkbox" id="themer" class="vh">
+      <span aria-hidden="true"></span>
+    </label>
+  </div>
+  
+    <p class="margin-top-none">Copyright &copy; <span id="copyright-year"></span> - Ricardo Sueiras</p>
+  
+  
+    <p class="margin-top-none">
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cupper-hugo-theme">Cupper</a>.
+    </p>
+  
+</footer>
+<script>
+    var year = new Date().getFullYear()
+    document.getElementById("copyright-year").innerHTML = year;
+</script>
+
+        </div>
+      </div>
+    </div>
+    <script src="https://example.com/js/prism.js"></script>
+
+
+
+<script src="https://example.com/js/dom-scripts.js"></script>
+
+
+
+<script src="/js/search.7aef046a0cc8b0c532f1d20087b920459bc868c936bb48a6ae221eceefca2d07.js"></script>
+
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  </body>
+</html>

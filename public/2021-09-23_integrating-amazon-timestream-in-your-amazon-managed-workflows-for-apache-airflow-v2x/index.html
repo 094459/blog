@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="generator" content="Hugo 0.91.2" />
+  <link rel="canonical" href="https://example.com/2021-09-23_integrating-amazon-timestream-in-your-amazon-managed-workflows-for-apache-airflow-v2x/">
+
+  
+
+  
+    
+    
+    
+    
+    
+
+  
+    <link rel="webmention" href="https://webmention.io/username.co.uk/webmention" />
+    <link rel="pingback" href="https://webmention.io/username.co.uk/xmlrpc" />
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://example.com/css/syntax.css" media="none" onload="this.media='all';">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://example.com/css/styles.css">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://example.com/style.main.css">
+
+  
+
+  <link rel="alternate" rel="canonical" href="https://example.com/index.xml" >
+  
+  <style id="inverter" media="none">
+    .intro-and-nav, .main-and-footer { filter: invert(100%) }
+    * { background-color: inherit }
+    img:not([src*=".svg"]), .colors, iframe, .demo-container { filter: invert(100%) }
+  </style>
+
+  
+  
+  <title>Integrating Amazon Timestream in your Amazon Managed Workflows for Apache Airflow v2.x | Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Integrating Amazon Timestream in your Amazon Managed Workflows for Apache Airflow v2.x"/>
+<meta name="twitter:description" content="Integrating with Amazon Timestream in your Apache Airflow DAGs
+Amazon Timestream is a fast, scalable, and serverless time series database service perfect for use cases that generate huge amounts of events per day, optimised to make it faster and more cost effective that using relational databases.
+I have been playing around with Amazon Timestream to prepare for a talk I am doing with some colleagues, and wanted to see how I could integrate it with other AWS services in the context of leveraging some of the key capabilities of Amazon Timestream."/>
+
+  <meta name="twitter:card" content="summary" />
+</head>
+
+  <body>
+    <a href="#main">skip to content</a>
+    <svg style="display: none">
+  <symbol id="bookmark" viewBox="0 0 40 50">
+   <g transform="translate(2266 3206.2)">
+    <path style="stroke:currentColor;stroke-width:3.2637;" d="m-2262.2-3203.4-.2331 42.195 16.319-16.318 16.318 16.318.2331-42.428z"/>
+   </g>
+  </symbol>
+
+  <symbol id="w3c" viewBox="0 0 127.09899 67.763">
+   <text font-size="83" style="font-size:83px;font-family:Trebuchet;letter-spacing:-12;fill-opacity:0" letter-spacing="-12" y="67.609352" x="-26.782778">W3C</text>
+   <text font-size="83" style="font-size:83px;font-weight:bold;font-family:Trebuchet;fill-opacity:0" y="67.609352" x="153.21722" font-weight="bold">SVG</text>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m33.695.377 12.062 41.016 12.067-41.016h8.731l-19.968 67.386h-.831l-12.48-41.759-12.479 41.759h-.832l-19.965-67.386h8.736l12.061 41.016 8.154-27.618-3.993-13.397h8.737z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m91.355 46.132c0 6.104-1.624 11.234-4.862 15.394-3.248 4.158-7.45 6.237-12.607 6.237-3.882 0-7.263-1.238-10.148-3.702-2.885-2.47-5.02-5.812-6.406-10.022l6.82-2.829c1.001 2.552 2.317 4.562 3.953 6.028 1.636 1.469 3.56 2.207 5.781 2.207 2.329 0 4.3-1.306 5.909-3.911 1.609-2.606 2.411-5.738 2.411-9.401 0-4.049-.861-7.179-2.582-9.399-1.995-2.604-5.129-3.912-9.397-3.912h-3.327v-3.991l11.646-20.133h-14.062l-3.911 6.655h-2.493v-14.976h32.441v4.075l-12.31 21.217c4.324 1.385 7.596 3.911 9.815 7.571 2.22 3.659 3.329 7.953 3.329 12.892z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.21 0 1.414 8.6-5.008 9.583s-1.924-4.064-5.117-6.314c-2.693-1.899-4.447-2.309-7.186-1.746-3.527.73-7.516 4.938-9.258 10.13-2.084 6.21-2.104 9.218-2.178 11.978-.115 4.428.58 7.043.58 7.043s-3.04-5.626-3.011-13.866c.018-5.882.947-11.218 3.666-16.479 2.404-4.627 5.954-7.404 9.114-7.728 3.264-.343 5.848 1.229 7.841 2.938 2.089 1.788 4.213 5.698 4.213 5.698l4.94-9.837z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.82 48.674s-2.208 3.957-3.589 5.48c-1.379 1.524-3.849 4.209-6.896 5.555-3.049 1.343-4.646 1.598-7.661 1.306-3.01-.29-5.807-2.032-6.786-2.764-.979-.722-3.486-2.864-4.897-4.854-1.42-2-3.634-5.995-3.634-5.995s1.233 4.001 2.007 5.699c.442.977 1.81 3.965 3.749 6.572 1.805 2.425 5.315 6.604 10.652 7.545 5.336.945 9.002-1.449 9.907-2.031.907-.578 2.819-2.178 4.032-3.475 1.264-1.351 2.459-3.079 3.116-4.108.487-.758 1.276-2.286 1.276-2.286l-1.276-6.644z"/>
+  </symbol>
+
+  <symbol id="tag" viewBox="0 0 177.16535 177.16535">
+    <g transform="translate(0 -875.2)">
+     <path style="fill-rule:evenodd;stroke-width:0;fill:currentColor" d="m159.9 894.3-68.79 8.5872-75.42 77.336 61.931 60.397 75.429-76.565 6.8495-69.755zm-31.412 31.835a10.813 10.813 0 0 1 1.8443 2.247 10.813 10.813 0 0 1 -3.5174 14.872l-.0445.0275a10.813 10.813 0 0 1 -14.86 -3.5714 10.813 10.813 0 0 1 3.5563 -14.863 10.813 10.813 0 0 1 13.022 1.2884z"/>
+    </g>
+  </symbol>
+
+  <symbol id="balloon" viewBox="0 0 141.73228 177.16535">
+   <g transform="translate(0 -875.2)">
+    <g>
+     <path style="fill:currentColor" d="m68.156 882.83-.88753 1.4269c-4.9564 7.9666-6.3764 17.321-5.6731 37.378.36584 10.437 1.1246 23.51 1.6874 29.062.38895 3.8372 3.8278 32.454 4.6105 38.459 4.6694-.24176 9.2946.2879 14.377 1.481 1.2359-3.2937 5.2496-13.088 8.886-21.623 6.249-14.668 8.4128-21.264 10.253-31.252 1.2464-6.7626 1.6341-12.156 1.4204-19.764-.36325-12.93-2.1234-19.487-6.9377-25.843-2.0833-2.7507-6.9865-7.6112-7.9127-7.8436-.79716-.20019-6.6946-1.0922-6.7755-1.0248-.02213.0182-5.0006-.41858-7.5248-.22808l-2.149-.22808h-3.3738z"/>
+     <path style="fill:currentColor" d="m61.915 883.28-3.2484.4497c-1.7863.24724-3.5182.53481-3.8494.63994-2.4751.33811-4.7267.86957-6.7777 1.5696-.28598 0-1.0254.20146-2.3695.58589-5.0418 1.4418-6.6374 2.2604-8.2567 4.2364-6.281 7.6657-11.457 18.43-12.932 26.891-1.4667 8.4111.71353 22.583 5.0764 32.996 3.8064 9.0852 13.569 25.149 22.801 37.517 1.3741 1.841 2.1708 2.9286 2.4712 3.5792 3.5437-1.1699 6.8496-1.9336 10.082-2.3263-1.3569-5.7831-4.6968-21.86-6.8361-33.002-.92884-4.8368-2.4692-14.322-3.2452-19.991-.68557-5.0083-.77707-6.9534-.74159-15.791.04316-10.803.41822-16.162 1.5026-21.503 1.4593-5.9026 3.3494-11.077 6.3247-15.852z"/>
+     <path style="fill:currentColor" d="m94.499 885.78c-.10214-.0109-.13691 0-.0907.0409.16033.13489 1.329 1.0675 2.5976 2.0723 6.7003 5.307 11.273 14.568 12.658 25.638.52519 4.1949.24765 14.361-.5059 18.523-2.4775 13.684-9.7807 32.345-20.944 53.519l-3.0559 5.7971c2.8082.76579 5.7915 1.727 8.9926 2.8441 11.562-11.691 18.349-19.678 24.129-28.394 7.8992-11.913 11.132-20.234 12.24-31.518.98442-10.02-1.5579-20.876-6.7799-28.959-.2758-.4269-.57803-.86856-.89617-1.3166-3.247-6.13-9.752-12.053-21.264-16.131-2.3687-.86369-6.3657-2.0433-7.0802-2.1166z"/>
+     <path style="fill:currentColor" d="m32.52 892.22c-.20090-.13016-1.4606.81389-3.9132 2.7457-11.486 9.0476-17.632 24.186-16.078 39.61.79699 7.9138 2.4066 13.505 5.9184 20.562 5.8577 11.77 14.749 23.219 30.087 38.74.05838.059.12188.1244.18052.1838 1.3166-.5556 2.5965-1.0618 3.8429-1.5199-.66408-.32448-1.4608-1.3297-3.8116-4.4602-5.0951-6.785-8.7512-11.962-13.051-18.486-5.1379-7.7948-5.0097-7.5894-8.0586-13.054-6.2097-11.13-8.2674-17.725-8.6014-27.563-.21552-6.3494.13041-9.2733 1.775-14.987 2.1832-7.5849 3.9273-10.986 9.2693-18.07 1.7839-2.3656 2.6418-3.57 2.4409-3.7003z"/>
+     <path style="fill:currentColor" d="m69.133 992.37c-6.2405.0309-12.635.76718-19.554 2.5706 4.6956 4.7759 9.935 10.258 12.05 12.625l4.1272 4.6202h11.493l3.964-4.4516c2.0962-2.3541 7.4804-7.9845 12.201-12.768-8.378-1.4975-16.207-2.6353-24.281-2.5955z"/>
+     <rect style="stroke-width:0;fill:currentColor" ry="2.0328" height="27.746" width="22.766" y="1017.7" x="60.201"/>
+    </g>
+   </g>
+  </symbol>
+
+  <symbol id="info" viewBox="0 0 41.667 41.667">
+   <g transform="translate(-37.035 -1004.6)">
+    <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m76.25 1030.2a18.968 18.968 0 0 1 -23.037 13.709 18.968 18.968 0 0 1 -13.738 -23.019 18.968 18.968 0 0 1 23.001 -13.768 18.968 18.968 0 0 1 13.798 22.984"/>
+    <g transform="matrix(1.1146 0 0 1.1146 -26.276 -124.92)">
+     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m75.491 1039.5v-8.7472"/>
+     <path style="stroke-width:0;fill:currentColor" transform="scale(-1)" d="m-73.193-1024.5a2.3719 2.3719 0 0 1 -2.8807 1.7142 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
+    </g>
+   </g>
+  </symbol>
+
+  <symbol id="warning" viewBox="0 0 48.430474 41.646302">
+    <g transform="translate(-1.1273 -1010.2)">
+     <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:4.151;fill:none" d="m25.343 1012.3-22.14 37.496h44.28z"/>
+     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:4.1512;fill:none" d="m25.54 1027.7v8.7472"/>
+     <path style="stroke-width:0;fill:currentColor" d="m27.839 1042.8a2.3719 2.3719 0 0 1 -2.8807 1.7143 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
+    </g>
+  </symbol>
+
+  <symbol id="menu" viewBox="0 0 50 50">
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="0" x="0"/>
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="20" x="0"/>
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="40" x="0"/>
+   </symbol>
+
+   <symbol id="link" viewBox="0 0 50 50">
+    <g transform="translate(0 -1002.4)">
+     <g transform="matrix(.095670 0 0 .095670 2.3233 1004.9)">
+      <g>
+       <path style="stroke-width:0;fill:currentColor" d="m452.84 192.9-128.65 128.65c-35.535 35.54-93.108 35.54-128.65 0l-42.881-42.886 42.881-42.876 42.884 42.876c11.845 11.822 31.064 11.846 42.886 0l128.64-128.64c11.816-11.831 11.816-31.066 0-42.9l-42.881-42.881c-11.822-11.814-31.064-11.814-42.887 0l-45.928 45.936c-21.292-12.531-45.491-17.905-69.449-16.291l72.501-72.526c35.535-35.521 93.136-35.521 128.64 0l42.886 42.881c35.535 35.523 35.535 93.141-.001 128.66zm-254.28 168.51-45.903 45.9c-11.845 11.846-31.064 11.817-42.881 0l-42.884-42.881c-11.845-11.821-11.845-31.041 0-42.886l128.65-128.65c11.819-11.814 31.069-11.814 42.884 0l42.886 42.886 42.876-42.886-42.876-42.881c-35.54-35.521-93.113-35.521-128.65 0l-128.65 128.64c-35.538 35.545-35.538 93.146 0 128.65l42.883 42.882c35.51 35.54 93.11 35.54 128.65 0l72.496-72.499c-23.956 1.597-48.092-3.784-69.474-16.283z"/>
+      </g>
+     </g>
+    </g>
+  </symbol>
+
+  <symbol id="doc" viewBox="0 0 35 45">
+   <g transform="translate(-147.53 -539.83)">
+    <path style="stroke:currentColor;stroke-width:2.4501;fill:none" d="m149.38 542.67v39.194h31.354v-39.194z"/>
+    <g style="stroke-width:25" transform="matrix(.098003 0 0 .098003 133.69 525.96)">
+     <path d="m220 252.36h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+     <path style="stroke:currentColor;stroke-width:25;fill:none" d="m220 409.95h200"/>
+     <path d="m220 488.74h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+     <path d="m220 331.15h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+    </g>
+   </g>
+ </symbol>
+
+ <symbol id="tick" viewBox="0 0 177.16535 177.16535">
+  <g transform="translate(0 -875.2)">
+   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="155" width="40" y="702.99" x="556.82"/>
+   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="40" width="90.404" y="817.99" x="506.42"/>
+  </g>
+ </symbol>
+</svg>
+
+    <div class="wrapper">
+      <header class="intro-and-nav" role="banner">
+  <div>
+    <div class="intro">
+      <a class="logo" href="https://example.com" aria-label="Beachgeek blog - a refuge for pineapple on pizza lovers home page">
+        <img src="https://example.com/images/logo.svg" alt="My site icon">
+      </a>
+      <p class="library-desc">
+         Technologist and Maker specialising in Cloud, Open Source and Innovation &amp; Emerging Technologies. 
+      </p>
+    </div>
+    <nav id="patterns-nav" class="patterns" role="navigation">
+  <h2 class="vh">Main navigation</h2>
+  <button id="menu-button" aria-expanded="false">
+    <svg viewBox="0 0 50 50" aria-hidden="true" focusable="false">
+      <use xlink:href="#menu"></use>
+    </svg>
+    Menu
+  </button>
+  
+  <ul id="patterns-list">
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Home</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/newsletter/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Newsletter</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/tags/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Tags</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/about/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">About</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/index.xml" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">RSS</span>
+      </a>
+    </li>
+  
+  </ul>
+</nav>
+  </div>
+</header>
+
+      <div class="main-and-footer">
+        <div>
+          
+  <main id="main">
+    <h1>
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+        <use xlink:href="#bookmark"></use>
+      </svg>
+      Integrating Amazon Timestream in your Amazon Managed Workflows for Apache Airflow v2.x
+    </h1>
+
+    <div class="date">
+      <p>
+        
+        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" aria-labelledby="calendarIconTitle" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#111"> <title id="calendarIconTitle">Calendar</title> <path d="M3 5H21V21H3V5Z"/> <path d="M21 9H3"/> <path d="M7 5V3"/> <path d="M17 5V3"/> </svg> Published Sep 23, 2021
+      </p>
+      
+      <p><svg role="img" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" aria-labelledby="stopwatchIconTitle" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#111"> <title id="stopwatchIconTitle">Stopwatch</title> <circle cx="12" cy="13" r="8"/> <path d="M12 9L12 13M18 7L20 5M15 2L9 2"/> </svg> Reading time 28&nbsp;minutes</p>
+      
+    </div>
+
+    
+    
+    
+      
+
+
+    
+
+    <p><strong>Integrating with Amazon Timestream in your Apache Airflow DAGs</strong></p>
+<p>Amazon Timestream is a fast, scalable, and serverless time series database service perfect for use cases that generate huge amounts of events per day, optimised to make it faster and more cost effective that using relational databases.</p>
+<p>I have been playing around with Amazon Timestream to prepare for a talk I am doing with some colleagues, and wanted to see how I could integrate it with other AWS services in the context of leveraging some of the key capabilities of Amazon Timestream. For example, you might have a use case where you want to benefit from some of the powerful capabilities of the Timestream query engine to create/export data that you want to store within a data lake. Maybe you need just a subset of the data within a data warehouse such as Amazon Redshift, or perhaps you need to make the data available within Timestream to other systems and applications.</p>
+<p>Interacting with Timestream to run queries is easy and you have several options, but how do you scale this and automate the process so that you do not need to rely on ad hoc queries? This is where data orchestration tools like Apache Airflow are super helpful, allowing you to create workflows that automate those steps and providing the orchestration features that all you to address many different use cases.</p>
+<p>In this post I will explore setting up Amazon Timestream and integrating this with Amazon Managed Workflows for Apache Airflow (MWAA). I will walk you through the setup, creating some example workflows, and then use some of the Amazon Timestream sample tools to generate some load and see it all working. Specifically we are going to:</p>
+<ul>
+<li>simulate some Timestream data being ingested in real time over a period of time</li>
+<li>create a workflow where we want to run a query against the Timestream data and obtain a subset of that data and then export it to our data lake on Amazon S3</li>
+<li>orchestrate this workflow so that it runs hourly, and stores the exported data in csv format in folders that match when the timestream data was ingested</li>
+<li>simulate some real life situations such as workflows failing and how they recover and updating and re-running queries</li>
+</ul>
+<p><strong>Costs</strong></p>
+<p>When I ran through this and checked my AWS bill, it cost around $37 to run this over 24 hours. Please make sure you remember to remove/delete all the resources after you go through this so you do not incur further costs.</p>
+<p><strong>Where can I find the code</strong></p>
+<p>All the source code in this blog post can be found in <a href="https://github.com/094459/blog-mwaa-timestream">this GitHub repository</a>.</p>
+<h3 id="getting-started">Getting started</h3>
+<p><strong>What will you need</strong></p>
+<ul>
+<li>An AWS account with the right level of privileges</li>
+<li>An environment with the AWS CLI tools configured and running</li>
+<li><a href="https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html">AWS CDK set up an installed</a></li>
+<li>Access to an AWS region where both Managed Workflows for Apache Airflow and Amazon Timestream are supported - for this walkthrough, I will be using eu-west-1</li>
+<li>An environment of Amazon Managed Workflows for Apache Airflow already setup - you can follow <a href="https://aws-oss.beachgeek.co.uk/3h">my previous link here</a> or check out the instructions in the GitHub repo which will walk you setting up an environment</li>
+</ul>
+<h3 id="setting-up-the-amazon-timestream">Setting up the Amazon Timestream</h3>
+<p><strong>Setting up the Amazon Timestream database and tables</strong></p>
+<p>First we need to set up our Amazon Timestream database. Let&rsquo;s use AWS CDK to do this.</p>
+<blockquote>
+<p>I have AWS CDK installed on my machine, if you do not, then follow <a href="https://cdkworkshop.com/15-prerequisites/500-toolkit.html">this workshop</a> or the <a href="https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html">documentation here</a> to help you get this installed.
+I have also updated CDK to the latest version - at the time of writing, my version was 1.124.0. (I had used an earlier version, but it generated an error about unsupported CLI versions, and updating this resolved the issue for me)</p>
+</blockquote>
+<p>We create a directory where we will create our Timestream stack, and then run the CDK init command to create the skeleton outline of our application.</p>
+<pre><code>mkdir amazon-timestream-airflow
+cd amazon-timestream-airflow
+cdk init sample-app --language python
+</code></pre>
+<p>This will create something similar to what I have here</p>
+<pre><code>├── README.md
+├── amazon_timestream_airflow
+│   ├── __init__.py
+│   └── amazon_timestream_airflow_stack.py
+├── app.py
+├── cdk.json
+├── requirements.txt
+├── setup.py
+├── source.bat
+└── tests
+    ├── __init__.py
+    └── unit
+        ├── __init__.py
+        └── test_amazon_timestream_airflow_stack.py
+</code></pre>
+<p>The key files we are going to work on is the app.py and the corresponding stack, amazon_timestream_airflow_stack.py.</p>
+<p>I update the app.py file as follows, which is a standard baseline file I use and allows me to try and templatise this as much as possible to make it re-usable.</p>
+<pre><code>#!/usr/bin/env python3
+
+from aws_cdk import core
+from amazon_timestream_airflow.amazon_timestream_airflow_stack import AmazonTimestreamAirflowStack
+
+env_EU=core.Environment(region=&quot;eu-west-1&quot;, account=&quot;xxxxxxxx&quot;)
+ts_props = {'timestream_db': 'airflow-db','timestream_table' : 'airflow-table' , 's3_export' : 'demo-airflow-ts-output'}
+
+app = core.App()
+
+timestream = AmazonTimestreamAirflowStack(
+    scope=app,
+    construct_id=&quot;timestream&quot;,
+    env=env_EU,
+    ts_props=ts_props
+)
+
+app.synth()
+</code></pre>
+<p>I set up a few properties, one for the AWS account this will run in, and then the other to hold the values I want to use when creating my Amazon Timestream resources (so in this instance, the Timestream database and tables, as well as the S3 bucket where my exported data will be copied). I then call the stack, passing in these two properties to the Timestream stack (AmazonTimestreamAirflowStack)</p>
+<p>The AmazonTimestreamAirflowStack stack that is initially created now need to be updated to create our resources. We need to do a couple of things. First, we need to create the actual resources. The second, is as we are planning to integrate this with MWAA, we need to create an IAM policy that will allow the MWAA workers to have the right level of access to these resources, and no more.</p>
+<p>The first thing we need to do is import the <a href="https://docs.aws.amazon.com/cdk/api/latest/python/aws_cdk.aws_timestream/README.html">Timestream construct library</a> using</p>
+<pre><code>aws_timestream as timestream,
+</code></pre>
+<p>As I do not have this construct installed, I need to install it via pip</p>
+<pre><code>pip install aws-cdk.aws-timestream
+</code></pre>
+<p>We can now modify the amazon_timestream_airflow_stack.py file, which is just the default file that gets created.</p>
+<p>First, we need to pass in the parameters from the main python file that gets executed (app.py) so we modify this to include ts_props as follows:</p>
+<pre><code>class AmazonTimestreamAirflowStack(core.Stack):
+
+    def __init__(self, scope: core.Construct, construct_id: str, ts_props, **kwargs) -&gt; None:
+        super().__init__(scope, construct_id, **kwargs)
+</code></pre>
+<p>Next we need to create our Timestream database, which when we look at the <a href="https://docs.aws.amazon.com/cdk/api/latest/python/aws_cdk.aws_timestream/CfnDatabase.html">documentation</a> leads to creating this:</p>
+<pre><code>        timedb = timestream.CfnDatabase(
+            self,
+            &quot;TimestreamDB&quot;,
+            database_name=f&quot;{ts_props['timestream_db'].lower()}&quot;
+            #kms_key_id={string of kms_key_id if you want to use this}
+            )
+</code></pre>
+<p>We pass in the value of the database_name from the properties file. This construct will create the Timestream database, now we need to add our table, which looking at the same documentation link, we do with this:</p>
+<pre><code>        tstable = timestream.CfnTable(
+            self,
+            &quot;TimestreamDBTable&quot;,
+            database_name=f&quot;{ts_props['timestream_db'].lower()}&quot;,
+            table_name=f&quot;{ts_props['timestream_table'].lower()}&quot;,
+            retention_properties= {&quot;MemoryStoreRetentionPeriodInHours&quot;: &quot;24&quot;,&quot;MagneticStoreRetentionPeriodInDays&quot;: &quot;1&quot;}
+        )
+</code></pre>
+<p>Here we are passing in both the database name (which we just created) and the table we want to create. We also define here some additional properties around the memory and long term storage for the Timestream data.</p>
+<p>This looks good, so we do a &lsquo;cdk ls&rsquo; and we see that we have our timestream stack ready to go. We deploy it using</p>
+<pre><code>cdk deploy timestream
+</code></pre>
+<p>And after a few minutes we see red and failures. What is up, why did this not work? It turns out that we need to make sure that the database is created before the table is, so we need to add a dependency in the CDK application. We can do this easily enough by adding</p>
+<pre><code>tstable.node.add_dependency(timedb)
+</code></pre>
+<p>We end up with the stack that looks like this.</p>
+<pre><code>
+class AmazonTimestreamAirflowStack(core.Stack):
+
+    def __init__(self, scope: core.Construct, construct_id: str, ts_props, **kwargs) -&gt; None:
+        super().__init__(scope, construct_id, **kwargs)
+
+        timedb = timestream.CfnDatabase(
+            self,
+            &quot;TimestreamDB&quot;,
+            database_name=f&quot;{ts_props['timestream_db'].lower()}&quot;
+            #kms_key_id={string of kms_key_id if you want to use this}
+            )
+        
+        tstable = timestream.CfnTable(
+            self,
+            &quot;TimestreamDBTable&quot;,
+            database_name=f&quot;{ts_props['timestream_db'].lower()}&quot;,
+            table_name=f&quot;{ts_props['timestream_table'].lower()}&quot;,
+            retention_properties= {&quot;MemoryStoreRetentionPeriodInHours&quot;: &quot;24&quot;,&quot;MagneticStoreRetentionPeriodInDays&quot;: &quot;1&quot;}
+        )
+
+        tstable.node.add_dependency(timedb)
+</code></pre>
+<p>We re-run the cdk deploy timestream, and this time we have everything up and running. We can check my looking in the AWS console</p>
+<pre><code>timestream: deploying...
+timestream: creating CloudFormation changeset...
+
+ ✅  timestream
+
+Stack ARN:
+arn:aws:cloudformation:eu-west-1:704533066374:stack/timestream/a39735c0-1bb1-11ec-b3da-0a4cd6193fe1
+</code></pre>
+<p><img src="https://github.com/094459/blog-mwaa-timestream/blob/main/images/timestream-db.png?raw=true" alt="timestream-db">
+<img src="https://github.com/094459/blog-mwaa-timestream/blob/main/images/timestream-table.png?raw=true" alt="timestream-table"></p>
+<p><strong>Running the load generator</strong></p>
+<p>Now that I have my Timestream database up, I want to try and generate some load and test this out. Luckily for me, the team has put some tools in the GitHub repository to help me out.</p>
+<p><em>The load writer</em></p>
+<p>This is a simple demo application called the <a href="https://github.com/awslabs/amazon-timestream-tools/tree/mainline/integrations/flink_connector">flink_connector</a> is used to take sample load data and then stream it into the Timestream database. This project uses Amazon Kinesis to stream that data, so we need to create a stream which we can do using the following command:</p>
+<pre><code>aws kinesis create-stream --stream-name airflow-timestream --shard-count 1 --region=eu-west-1
+</code></pre>
+<p>When you run this, it does not return anything but if you go to the Amazon Kinesis console, you should now see your new data stream listed.</p>
+<p>Next you need to build this application using Apache Maven, so you will need to have this and a minimum of Java 11 (I am using Amazon Corretto 11). Once I have checked out the repo (using the link above) I can run this using the following command:</p>
+<pre><code>mvn clean compile
+mvn exec:java -Dexec.mainClass=&quot;com.amazonaws.services.kinesisanalytics.StreamingJob&quot; -Dexec.args=&quot;--InputStreamName airflow-timestream --Region eu-west-1 --TimestreamDbName airflow-db --TimestreamTableName airflow-table&quot;
+</code></pre>
+<p>This will generate a load of output, but the last few lines should be similar-ish to</p>
+<pre><code>16:04:50,957 INFO  org.apache.flink.streaming.connectors.kinesis.FlinkKinesisConsumer  - Subtask 7 will be seeded with initial shard StreamShardHandle{streamName='airflow-timestream', shard='{ShardId: shardId-000000000000,HashKeyRange: {StartingHashKey: 0,EndingHashKey: 340282366920938463463374607431768211455},SequenceNumberRange: {StartingSequenceNumber: 49622289611231482257551931446968748664912850071167434754,}}'}, starting state set as sequence number LATEST_SEQUENCE_NUM
+16:04:50,957 INFO  org.apache.flink.streaming.connectors.kinesis.internals.KinesisDataFetcher  - Subtask 7 will start consuming seeded shard StreamShardHandle{streamName='airflow-timestream', shard='{ShardId: shardId-000000000000,HashKeyRange: {StartingHashKey: 0,EndingHashKey: 340282366920938463463374607431768211455},SequenceNumberRange: {StartingSequenceNumber: 49622289611231482257551931446968748664912850071167434754,}}'} from sequence number LATEST_SEQUENCE_NUM with ShardConsumer 0
+16:04:50,960 INFO  org.apache.flink.streaming.connectors.kinesis.internals.KinesisDataFetcher  - Subtask 1 has no active shards to read on startup; marking the subtask as temporarily idle ...
+16:04:50,986 INFO  org.apache.flink.streaming.connectors.kinesis.internals.KinesisDataFetcher  -
+</code></pre>
+<p>Keep this terminal window open, as you need to leave this running when we generate load (the next step). Any time you want to exit, you can just CTRL + C to break out and back into the shell.</p>
+<blockquote>
+<p>In the real world, you would package this up as an Apache Flink application and then run this via Amazon Kinesis analytics applications</p>
+</blockquote>
+<p><em>The load generator</em></p>
+<p><a href="https://github.com/awslabs/amazon-timestream-tools/tree/mainline/tools/kinesis_ingestor">The kinesis_ingestor</a> is a python script that creates random timestream data (server event info such as storage, cpu, memory, etc). It is super easy to run, all I need to do is supply the name of the Kinesis stream, which I created in the previous step.</p>
+<p>In a new, different terminal shell (you will have the previous and this one running side by side)</p>
+<pre><code>python3 timestream_kinesis_data_gen.py --stream airflow-timestream --region eu-west-1
+</code></pre>
+<p>Which will give you output similar to the following:</p>
+<pre><code>Namespace(hostScale=1, late_time=0, percent_late=0, profile=None, region='eu-west-1', sleep_time=0, stream='airflow-timestream')
+zaZswmJk
+Dimensions for metrics: 1000
+Dimensions for events: 1200
+Wrote 20 records to Kinesis Stream 'demo-airflow'
+Wrote 20 records to Kinesis Stream 'demo-airflow'
+Wrote 20 records to Kinesis Stream 'demo-airflow'
+Wrote 20 records to Kinesis Stream 'demo-airflow'
+Wrote 20 records to Kinesis Stream 'demo-airflow'
+Wrote 20 records to Kinesis Stream 'demo-airflow'
+</code></pre>
+<p>Leave this running for a few minutes. To exit, you can do CTRL+C, to return back to the shell.</p>
+<p><strong>Testing the setup</strong></p>
+<p>We can now go to the Amazon Timestream console in the AWS console, and take a quick look at the test load data we have just ingested.</p>
+<p>From the Amazon Timestream hamburger menu, select Query Editor. Select airflow-db in the pull down for database, and you should see the airflow-table appear below.</p>
+<p>If you click on the three dots, an option to &ldquo;Preview Data&rdquo; will appear. Select this, and then click on the RUN button (in orange) which will then execute a query, and you should see output.</p>
+<blockquote>
+<p>Note! If this is longer than 15 min from when you ran the load generator, you may get nothing. Either re-run the load generator and try again, or change the query in the editor, to increase the time - by default, it looks for the last 15 mins &ldquo;WHERE time between ago(15m) and now()&rdquo;</p>
+</blockquote>
+<p><img src="https://github.com/094459/blog-mwaa-timestream/blob/main/images/timstream-query.png?raw=true" alt="query"></p>
+<p>We can now move to integrating this with Apache Airflow. Let&rsquo;s take a look now at what we need to do.</p>
+<h3 id="setting-up-mwaa">Setting up MWAA</h3>
+<p>You should already have an MWAA environment up and running. You can follow <a href="https://aws-oss.beachgeek.co.uk/3h">my previous link here</a> which uses AWS CDK to build up an environment, or if you prefer, you can use the console to create one quickly using the online wizard.</p>
+<blockquote>
+<p>Remember, this needs to be in the same AWS region as the Amazon Timestream database - I am using eu-west-1</p>
+</blockquote>
+<p><strong>Permissions for MWAA</strong></p>
+<p>One of the first thing we need to think about when we integrate MWAA with any AWS service is what permissions the MWAA workers will need. We do not want to provide blanket access, and we want to follow current practices around least privilege where we can.</p>
+<p>In our example, we are accessing a Timestream database and then exporting csv outputs to Amazon S3, so we need two new permissions</p>
+<p><em>Timestream</em></p>
+<p>We have created our Timestream database and table resources, so our IAM policy needs to look something like this. This will provide just READ access to the table we have created, and will not provide access to any other Timestream resources.</p>
+<pre><code>{
+    &quot;Version&quot;: &quot;2012-10-17&quot;,
+    &quot;Statement&quot;: [
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;timestream:Select&quot;,
+                &quot;timestream:DescribeTable&quot;,
+                &quot;timestream:ListTables&quot;
+            ],
+            &quot;Resource&quot;: &quot;arn:aws:timestream:eu-west-1:704533066374:database/airflow-db/table/airflow-table*&quot;
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;timestream:DescribeEndpoints&quot;,
+                &quot;timestream:SelectValues&quot;,
+                &quot;timestream:CancelQuery&quot;
+            ],
+            &quot;Resource&quot;: &quot;*&quot;
+        }
+    ]
+}
+</code></pre>
+<p><em>Amazon S3</em></p>
+<p>We need to make sure that the Apache Airflow workers have access to write to a nominated folder in our data lake, and no more. We defined this as a property in our app.py (&lsquo;s3_export&rsquo; : &lsquo;demo-airflow-ts-output&rsquo;). This is the policy needed.</p>
+<pre><code>{
+    &quot;Version&quot;: &quot;2012-10-17&quot;,
+    &quot;Statement&quot;: [
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;s3:GetBucket*&quot;,
+                &quot;s3:GetObject*&quot;,
+                &quot;s3:PutObject&quot;,
+                &quot;s3:List*&quot;
+            ],
+            &quot;Resource&quot;: [
+            		&quot;arn:aws:s3:::demo-airflow-ts-output/*&quot;,
+            		&quot;arn:aws:s3:::demo-airflow-ts-output&quot;
+        }
+    ]
+}
+</code></pre>
+<p>To make this simple, we modify our CDK application to create this new policy document, and then attach it to our MWAA environment. Here is the code:</p>
+<pre><code>        s3_export_bucket = s3.Bucket.from_bucket_name(self,&quot;DataLakeExport&quot;,bucket_name=f&quot;{ts_props['s3_export']}&quot;)
+        s3_export_arn = s3_export_bucket.bucket_arn
+
+        timestream_mwaa_policy = iam.ManagedPolicy(
+            self,
+            &quot;TimeStreamPolicy&quot;,
+            managed_policy_name=&quot;TimeStreamPolicyforMWAAIntegration&quot;,
+            statements=[
+                iam.PolicyStatement(
+                    actions=[
+                        &quot;s3:GetBucket*&quot;,
+                        &quot;s3:PutObject&quot;,
+                        &quot;s3:List*&quot;,
+                        &quot;s3:GetObject*&quot;
+                    ],
+                    effect=iam.Effect.ALLOW,
+                    resources=[
+                        f&quot;{s3_export_arn}/*&quot;,
+                        f&quot;{s3_export_arn}&quot;
+                        ],
+                ),
+                iam.PolicyStatement(
+                    actions=[
+                        &quot;timestream:Select&quot;,
+                        &quot;timestream:DescribeTable&quot;,
+                        &quot;timestream:ListTables&quot;
+                    ],
+                    effect=iam.Effect.ALLOW,
+                    resources=[f&quot;arn:aws:timestream:{self.region}:{self.account}:database/{ts_props['timestream_db']}/table/{ts_props['timestream_table']}*&quot;],
+                ),
+                iam.PolicyStatement(
+                    actions=[
+                        &quot;timestream:DescribeEndpoints&quot;,
+                        &quot;timestream:SelectValues&quot;,
+                        &quot;timestream:CancelQuery&quot;
+                    ],
+                    effect=iam.Effect.ALLOW,
+                    resources=[&quot;*&quot;],
+                ),
+            ]
+        )
+        
+        core.CfnOutput(
+            self,
+            id=&quot;MWAATimestreamIAMPolicy&quot;,
+            value=timestream_mwaa_policy.managed_policy_arn,
+            description=&quot;MWAA to Timestream IAM policy arn&quot;
+        )
+</code></pre>
+<p>We can then run cdk deploy timestream which will create the new IAM policy (managed_policy_name=&ldquo;TimeStreamPolicyforMWAAIntegration&rdquo;) ready for the next steps.</p>
+<pre><code>cdk deploy timestream
+</code></pre>
+<p>If successful, you should see output that looks like:</p>
+<pre><code>timestream: deploying...
+timestream: creating CloudFormation changeset...
+
+ ✅  timestream
+
+Outputs:
+timestream.MWAATimestreamIAMPolicy = arn:aws:iam::704533066374:policy/TimeStreamPolicyforMWAAIntegration
+
+Stack ARN:
+arn:aws:cloudformation:eu-west-1:704533066374:stack/timestream/5aecb140-1bb3-11ec-8bc1-0287e85bdc49
+</code></pre>
+<blockquote>
+<p>You can check to see this has been created by going to the IAM console, reviewing Policies by the creation date or searching for &ldquo;TimeStreamPolicyforMWAAIntegration&rdquo;</p>
+</blockquote>
+<p>We are going to need that arn output (in the above example, mine is arn:aws:iam::704533066374:policy/TimeStreamPolicyforMWAAIntegration) in the next step.</p>
+<p><strong>Attaching new policy to your MWAA execution role</strong></p>
+<p>We have our policy, but we need to attach it to the execution role of our MWAA environment. To do this, we can run a few commands.</p>
+<p>First, lets find the current execution role our MWAA environment is using. My MWAA environment is called &ldquo;airflow-timestream&rdquo; so I run this command:</p>
+<blockquote>
+<p>I am using jq here, but if you do not have this installed, you can run the command and just search the output for the ExecutionRoleArn value</p>
+</blockquote>
+<pre><code>aws mwaa get-environment --name airflow-timestream --region=eu-west-1  | jq -r '.Environment.ExecutionRoleArn'
+</code></pre>
+<p>This will return a value which is your execution role.</p>
+<pre><code>arn:aws:iam::704533066374:role/service-role/AmazonMWAA-airflow-timestream-KGRJPE
+</code></pre>
+<p>From this we can see our role is called &ldquo;AmazonMWAA-airflow-timestream-KGRJPE&rdquo;.</p>
+<p>Using this, together with the output from the CDK application which has our IAM policy, we can now attach that to the MWAA execution role using this command:</p>
+<pre><code>aws iam attach-role-policy --policy-arn arn:aws:iam::704533066374:policy/TimeStreamPolicyforMWAAIntegration --role-name AmazonMWAA-airflow-timestream-KGRJPE
+
+</code></pre>
+<p>This will not generate output if successful, but you can check this has worked by running the following command:</p>
+<pre><code>aws iam list-attached-role-policies --role-name AmazonMWAA-airflow-timestream-KGRJPE
+</code></pre>
+<p>And we should see something like this (your output will be different depending on how many other policies you may have added to your MWAA environment)</p>
+<pre><code>{
+    &quot;AttachedPolicies&quot;: [
+        {
+            &quot;PolicyName&quot;: &quot;TimeStreamPolicyforMWAAIntegration&quot;,
+            &quot;PolicyArn&quot;: &quot;arn:aws:iam::704533066374:policy/TimeStreamPolicyforMWAAIntegration&quot;
+        },
+        {
+            &quot;PolicyName&quot;: &quot;MWAA-Execution-Policy-47773cc3-79b2-40c8-8622-61314788983a&quot;,
+            &quot;PolicyArn&quot;: &quot;arn:aws:iam::704533066374:policy/service-role/MWAA-Execution-Policy-47773cc3-79b2-40c8-8622-61314788983a&quot;
+        }
+    ]
+}
+</code></pre>
+<p>We now have our MWAA environment set with the additional privileges to access our Amazon Timestream database and table as well as access to a specific bucket we can export the files to. We are ready for the next step.</p>
+<h3 id="integrating-with-amazon-timestream">Integrating with Amazon Timestream</h3>
+<p><strong>Hello AWS Data Wrangler</strong></p>
+<p>We now have all the pieces we need at an infrastructure level, and now we just need to write our workflow in Python. Within Apache Airflow, we typically look for existing operators that make it easy to work with systems and hundreds have been written by the Apache Airflow community. Currently there are no operators for Amazon Timestream (at least, not that I know about) and so that leaves writing in Python. We have a couple of options.</p>
+<p>First, we could write the code in Python using boto3. The Timestream documentation provides some coding examples to help you, and this provides you with lots of fine grain access to what you can do.</p>
+<p>The second option is to use a rather great open source project called <a href="https://aws-oss.beachgeek.co.uk/xf">AWS Data Wrangler</a>, which abstracts a lot of the complexity of working with AWS data services, and it supports Amazon Timestream. In fact, it makes working with Amazon Timestream REALLY easy - what is not to like! Here is a sample line of code to do a query</p>
+<pre><code>wr.timestream.query('{your timestream query here}')
+</code></pre>
+<p>For this example, I am going to use AWS Data Wrangler.</p>
+<p>When working with AWS Data Wrangler, it is as simple as installing the required Python libraries, including the correct import statement and away you go. Currently, the MWAA worker nodes do not have AWS Data Wrangler installed, and so if we want to write any workflows that can run on those worker nodes, we are going to have to fix that.</p>
+<p>The way we do this in MWAA is to create a requirements.txt file that is stored on an Amazon S3 bucket and is referred to by the MWAA environment. The worker nodes will then use this during their provisioning lifecycle phase, which will ensure that our code will have all the dependencies met.</p>
+<p>Here is our requirements.txt file</p>
+<pre><code>cython==0.29.21
+pyarrow==2.0.0
+awswrangler==2.4.0
+</code></pre>
+<p>You will have to update your MWAA environment in order to make these become active. I wrote an <a href="https://aws-oss.beachgeek.co.uk/4t">earlier blog post</a> if you want to know more on how to do this (go down to the section called Requirements).</p>
+<p>Once your MWAA environment has restarted, you are good to go.</p>
+<h3 id="creating-the-workflow">Creating the workflow</h3>
+<p><strong>Creating our workflow</strong></p>
+<p>Now that we have all the pieces, we can work on our workflow. This is just going to be a simple, single task workflow that runs a query and then exports the results of that query to an Amazon S3 bucket. I will set this query to run every hour, and we will export our data in separate folders in that S3 bucket by date and hour.</p>
+<p>When we design this workflow, I want to make sure that the workflow is idempotent. Every time it runs, it should generate the same output, either when run as part of a schedule, or when being run as part of a backfill and manual invocation.</p>
+<p>I start my workflow by importing the libraries I am going to use - pretty standard stuff, and the only thing to point out here is the use of AWS Data Wrangler. I then set up some defaults for the DAG itself, and you will notice that the start_date is set to yesterday. I have used this to demonstrate the way the queries work with some of the Apache Airflow date macros that you can use to ensure idempotent queries.</p>
+<pre><code>import os
+from airflow import DAG
+from datetime import datetime, timedelta
+from airflow.operators.python import PythonOperator
+import awswrangler as wr
+from airflow.utils.dates import days_ago
+
+default_args = {
+    &quot;owner&quot;: &quot;airflow&quot;,
+    &quot;depends_on_past&quot;: False,
+    &quot;start_date&quot; : days_ago(1),
+    &quot;email&quot;: [&quot;airflow@airflow.com&quot;],
+    &quot;email_on_failure&quot;: False,
+    &quot;email_on_retry&quot;: False,
+    &quot;retries&quot;: 0,
+    &quot;retry_delay&quot;: timedelta(minutes=5)
+}
+</code></pre>
+<p>Next we define a function that will run our query and then export the data to an S3 bucket. This function does a few things:</p>
+<ul>
+<li>grab the date parameters and assign these to two variables (start and finish) which will be used within the query to only select the timestream data between these two times. These two times are the previous hour that the workflow is scheduled.</li>
+<li>get a name for the S3 bucket that matches when this workflow is executed - this uses the value &ldquo;execution_date&rdquo; which will be the same when run via the scheduler or as part of a backfill or catchup run</li>
+<li>create a variable which contains the query, passing in the value of the dates we configured earlier (the {start} and {finish} values)</li>
+<li>use AWS Data Wrangler to then run the query and export to S3 using wr.s3.to_csv - this will generate a csv file, but we could use one of the other methods supported by AWS Data Wrangler if we wanted.</li>
+<li>the call to AWS Data Wrangler is managed between a try: catch: block, as we may have situations where no data is returned which we want to handle gracefully</li>
+</ul>
+<pre><code>def ts_query(**kwargs):
+    start = str(kwargs['execution_date']).replace(&quot;T&quot;, &quot; &quot;)
+    finish = str(kwargs['next_execution_date']).replace(&quot;T&quot;, &quot; &quot;)
+    execution_time = str(kwargs['execution_date']).replace(&quot;T&quot;, &quot;-&quot;)
+    s3folder = execution_time[0:13]
+    print (&quot;Data will be uploaded to {target}&quot;.format(target=s3folder))
+    query = &quot;SELECT instance_name, BIN(time, 15s) AS binned_timestamp, ROUND(AVG(measure_value::double), 2) AS avg_cpu_utilization, ROUND(APPROX_PERCENTILE(measure_value::double, 0.9), 2) AS p90_cpu_utilization, ROUND(APPROX_PERCENTILE(measure_value::double, 0.95), 2) AS p95_cpu_utilization, ROUND(APPROX_PERCENTILE(measure_value::double, 0.99), 2) AS p99_cpu_utilization FROM \&quot;airflow-db\&quot;.\&quot;airflow-table\&quot; WHERE measure_name = 'cpu_nice' AND time BETWEEN '{start}' AND '{end}' GROUP BY region, instance_name, availability_zone, BIN(time, 15s) ORDER BY binned_timestamp ASC &quot;.format(start=start,end=finish)
+    print(&quot;Query to be run: {query}&quot;.format(query=query))
+    try:
+        wr.s3.to_csv(df=wr.timestream.query(query), path='s3://demo-airflow-ts-output/{s3folder}/my_file.csv'.format(s3folder=s3folder,))
+        print (&quot;Timestream query processed successfully and copied to {s3folder}&quot;.format(s3folder=s3folder))
+    except ValueError:
+        print(&quot;Query returned no values - no data uploaded&quot;)
+    except wr.exceptions.EmptyDataFrame:
+        print(&quot;Query returned nothing - no data uploaded&quot;)
+</code></pre>
+<p>One of the things I did was the test the query I was going to use within the Amazon Timestream query editor to make sure that the query returned what I expected. For example in the query editor, I enter the following query (if you do this, make sure that you use the timestamp values that are correct for you)</p>
+<pre><code>SELECT instance_name, BIN(time, 15s) AS binned_timestamp, ROUND(AVG(measure_value::double), 2) AS avg_cpu_utilization, ROUND(APPROX_PERCENTILE(measure_value::double, 0.9), 2) AS p90_cpu_utilization, ROUND(APPROX_PERCENTILE(measure_value::double, 0.95), 2) AS p95_cpu_utilization, ROUND(APPROX_PERCENTILE(measure_value::double, 0.99), 2) AS p99_cpu_utilization FROM &quot;airflow-db&quot;.&quot;airflow-table&quot; WHERE measure_name = 'cpu_nice' AND time BETWEEN '2021-09-22 13:00:00+00:00' AND '2021-09-22 16:00:00+00:00' GROUP BY region, instance_name, availability_zone, BIN(time, 15s) ORDER BY binned_timestamp ASC
+</code></pre>
+<p>and in the Timestream console I can see the following output. I would expect to see this when I start to run these via Apache Airflow in my S3 bucket.</p>
+<p><img src="https://github.com/094459/blog-mwaa-timestream/blob/main/images/timestream-demo.png?raw=true" alt="timestream query"></p>
+<p>The final part of our workflow now creates the DAG within Apache Airflow (using the filename as the name that will appear within the UI), passes in the default arguments and then sets up a schedule to run this every hour.</p>
+<pre><code>with DAG(
+        dag_id=os.path.basename(__file__).replace(&quot;.py&quot;, &quot;&quot;),
+        default_args=default_args,
+        dagrun_timeout=timedelta(hours=2),
+        # set to every 10 mins for demo
+        #schedule_interval=&quot;*/10 * * * *&quot;
+        # set to every 2 hours for demo
+        #schedule_interval=&quot;0 */2 * * *&quot;
+        # set to every hour
+        schedule_interval=&quot;0 */1 * * *&quot;
+
+) as dag:
+
+    ts_query=PythonOperator(task_id='ts_query', python_callable=ts_query, dag=dag)
+    ts_query
+</code></pre>
+<p>You can view the whole DAG here in the GitHub repo.</p>
+<p><strong>Deploying and running the workflow</strong></p>
+<p>In my setup, I am using a <a href="https://aws-oss.beachgeek.co.uk/4t">simple CI/CD system</a> to deploy DAGs, but if you wanted to you can just copy this to your MWAA Dags folder using the cli (change these values to your own)</p>
+<pre><code>aws s3 cp timestream-airflow-demo.py s3://airflow-timestream-demo/dags/
+</code></pre>
+<p>And after about 2-3 minutes, you should see your new DAG in the Apache Airflow UI</p>
+<p><img src="https://github.com/094459/blog-mwaa-timestream/blob/main/images/airflow-ui.png?raw=true" alt="screen"></p>
+<p>To run our workflow, all we need to do is enable it - unpause it. Once you unpause you should begin to see that the workflow quickly spawn and schedule tasks to execute the queries for the past 24 hours. This is because within our workflow, we have set the &ldquo;start_date&rdquo; : days_ago(1),&quot; and so it uses this as the starting point, and then works out how many missed scheduled slots the task needs to complete. As the workflow is set to run every hour, you should have 24 scheduled tasks begin to appear in your Apache Airflow UI. They should be all green (complete) if everything has gone ok.</p>
+<p><img src="https://github.com/094459/blog-mwaa-timestream/blob/main/images/dag_run.png?raw=true" alt="screen"></p>
+<p>If we look at the logs of one of the first scheduled tasks, we can see the following:</p>
+<pre><code>[2021-09-23 08:00:03,630] {{logging_mixin.py:104}} INFO - Data will be uploaded to 2021-09-23-07
+[2021-09-23 08:00:03,654] {{logging_mixin.py:104}} INFO - Query to be run: SELECT instance_name, BIN(time, 15s) AS binned_timestamp, ROUND(AVG(measure_value::double), 2) AS avg_cpu_utilization, ROUND(APPROX_PERCENTILE(measure_value::double, 0.9), 2) AS p90_cpu_utilization, ROUND(APPROX_PERCENTILE(measure_value::double, 0.95), 2) AS p95_cpu_utilization, ROUND(APPROX_PERCENTILE(measure_value::double, 0.99), 2) AS p99_cpu_utilization FROM demoAirflow.kinesisdata1 WHERE measure_name = 'cpu_nice' AND time BETWEEN '2021-09-23 07:00:00+00:00' AND '2021-09-23 08:00:00+00:00' GROUP BY region, instance_name, availability_zone, BIN(time, 15s) ORDER BY binned_timestamp ASC
+[2021-09-23 08:00:05,035] {{logging_mixin.py:104}} INFO - Query returned nothing - no data uploaded
+[2021-09-23 08:00:05,060] {{python.py:118}} INFO - Done. Returned value was: None
+</code></pre>
+<p>This is as expected as we did not have a Timestream database setup then, so it returned this message.</p>
+<p>If you leave this running for a few hours, with the load generator generating load in the back ground (the previous steps), what you will eventually see is the following in the task logs:</p>
+<pre><code>[2021-09-22 14:00:02,930] {{logging_mixin.py:104}} INFO - Data will be uploaded to 2021-09-22-13
+[2021-09-22 14:00:02,947] {{logging_mixin.py:104}} INFO - Query to be run: SELECT instance_name, BIN(time, 15s) AS binned_timestamp, ROUND(AVG(measure_value::double), 2) AS avg_cpu_utilization, ROUND(APPROX_PERCENTILE(measure_value::double, 0.9), 2) AS p90_cpu_utilization, ROUND(APPROX_PERCENTILE(measure_value::double, 0.95), 2) AS p95_cpu_utilization, ROUND(APPROX_PERCENTILE(measure_value::double, 0.99), 2) AS p99_cpu_utilization FROM demoAirflow.kinesisdata1 WHERE measure_name = 'cpu_nice' AND time BETWEEN '2021-09-22 13:00:00+00:00' AND '2021-09-22 14:00:00+00:00' GROUP BY region, instance_name, availability_zone, BIN(time, 15s) ORDER BY binned_timestamp ASC
+[2021-09-22 14:00:06,688] {{logging_mixin.py:104}} INFO - Timestream query processed successfully and copied to 2021-09-22-13
+</code></pre>
+<p>We can see here that the output shows the name of the S3 bucket that will be created, and if we look we can see</p>
+<p><img src="https://raw.githubusercontent.com/094459/blog-mwaa-timestream/main/images/s3-export.png" alt="s3bucket"></p>
+<blockquote>
+<p>As you can see from this screen shot, I have been running this over the past few days. I have run the load generator intermittently, which is why there are gaps in the folder names.</p>
+</blockquote>
+<p>If we take a look at the contents of the folder, we can see we have our query export (a file called my_file.csv) which when we take a look at matches the query.</p>
+<pre><code>,instance_name,binned_timestamp,avg_cpu_utilization,p90_cpu_utilization,p95_cpu_utilization,p99_cpu_utilization
+0,i-zaZswmJk-zeus-0002.amazonaws.com,2021-09-22 13:03:15,0.54,0.89,0.91,0.95
+1,i-zaZswmJk-apollo-0000.amazonaws.com,2021-09-22 13:03:15,0.58,0.96,0.96,0.96
+2,i-zaZswmJk-demeter-0000.amazonaws.com,2021-09-22 13:03:15,0.48,0.93,0.94,0.94
+3,i-zaZswmJk-zeus-0000.amazonaws.com,2021-09-22 13:03:15,0.45,0.76,0.82,0.98
+4,i-zaZswmJk-hercules-0000.amazonaws.com,2021-09-22 13:03:15,0.52,0.84,0.85,0.93
+...
+...
+</code></pre>
+<p><strong>Backfill</strong></p>
+<p>Backfill is a really nice feature of Apache Airflow that allows you to run your workflow for a specific historical time period. You in effect pass in a &ldquo;start_date&rdquo; and &ldquo;end_date&rdquo; and the scheduler will use that in the context of the workflow to figure out how many scheduled slots that your workflow would have run, and then execute those tasks passing in the time/date details as if it was running during those times.</p>
+<p>This is great if you need to re-run your workflow because of a number of different reasons. Maybe your Apache Airflow environment was in maintenance mode and you missed some of your scheduled task runs, or perhaps you want to make a change to a query and re-run against all your source data. There are lots of ways that backfill is useful.</p>
+<p>Within Apache Airflow, you can execute backfill for your workflow by using this command:</p>
+<pre><code>airflow dags backfill --start-date START_DATE --end-date END_DATE dag_id
+
+</code></pre>
+<p>where the START_DATE and END_DATE are timestamps, and the dag_id is the name of your workflow.</p>
+<p>Within MWAA we do not have access to the Apache Airflow cli, so in order to run backfill we need to do this via another workflow.</p>
+<pre><code># when running this DAG make sure you select the backfill command
+# {&quot;command&quot;: &quot;backfill -s 2021-09-10 -e 2021-10-10 timestream-airflow-demo&quot;} #mwaa 1.x
+# {&quot;command&quot;: &quot;dags backfill -s 2021-09-10 -e 2021-10-10 timestream-airflow-demo&quot;} #mwaa 2.x
+
+from airflow import DAG
+
+from airflow.operators.bash_operator import BashOperator
+
+from datetime import timedelta,time,datetime
+import os
+
+DAG_ID = os.path.basename(__file__).replace(&quot;.py&quot;, &quot;&quot;)
+
+default_args = {
+            &quot;owner&quot;: &quot;airflow&quot;,
+            &quot;start_date&quot;: datetime(2020, 9, 9),
+            &quot;depends_on_past&quot;: False,
+            &quot;email_on_failure&quot;: False,
+            &quot;email_on_retry&quot;: False,
+            &quot;email&quot;: &quot;youremail@host.com&quot;,
+            &quot;retries&quot;: 0,
+            &quot;retry_delay&quot;: timedelta(minutes=5)
+        }
+
+from time import sleep
+from datetime import datetime
+from random import random
+
+with DAG(dag_id=DAG_ID, schedule_interval=None, default_args=default_args, catchup=False) as dag:
+    bash_task_1 = BashOperator(
+        task_id=&quot;cli_command&quot;,
+        bash_command=&quot;airflow {{ dag_run.conf['command'] }}&quot;
+    )
+    bash_task_1
+</code></pre>
+<p>When we deploy and then enable this workflow within our MWAA environment, this will allow us to trigger a backfill task. When triggering the workflow, you pass into it a configuration file of the start, end and workflow name, as follows:</p>
+<pre><code>{&quot;command&quot;: &quot;dags backfill -s 2021-09-10 -e 2021-10-10 timestream-airflow-demo&quot;}
+</code></pre>
+<p>In this example, I am asking MWAA to re-run these tasks between these two dates. When I fire it off, you should see those tasks start to run.</p>
+<p>This is what I see in the log file after I have submitted a backfill command:</p>
+<pre><code>[2021-09-23 09:20:41,813] {{bash.py:158}} INFO - Running command: airflow dags backfill -s 2021-09-21 -e 2021-09-22 timestream-airflow-demo
+[2021-09-23 09:20:41,836] {{bash.py:169}} INFO - Output:
+[2021-09-23 09:20:43,524] {{bash.py:173}} INFO - /usr/local/lib/python3.7/site-packages/airflow/cli/commands/dag_command.py:62 PendingDeprecationWarning: --ignore-first-depends-on-past is deprecated as the value is always set to True
+[2021-09-23 09:20:43,544] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:43,524[0m] {{[34mdagbag.py:[0m451}} INFO[0m - Filling up the DagBag from /usr/local/airflow/dags[0m
+[2021-09-23 09:20:43,566] {{bash.py:173}} INFO - /usr/local/lib/python3.7/site-packages/airflow/utils/decorators.py:94 DeprecationWarning: provide_context is deprecated as of 2.0 and is no longer required
+[2021-09-23 09:20:49,003] {{bash.py:173}} INFO - 202109230920
+[2021-09-23 09:20:49,036] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:48,994[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-21 00:00:00+00:00: backfill__2021-09-21T00:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:49,053] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:49,008[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-21 01:00:00+00:00: backfill__2021-09-21T01:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:49,105] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:49,021[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-21 02:00:00+00:00: backfill__2021-09-21T02:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:49,133] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:49,032[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-21 03:00:00+00:00: backfill__2021-09-21T03:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:49,205] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:49,048[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-21 04:00:00+00:00: backfill__2021-09-21T04:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:49,228] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:49,113[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-21 05:00:00+00:00: backfill__2021-09-21T05:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:49,247] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:49,125[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-21 06:00:00+00:00: backfill__2021-09-21T06:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:49,305] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:49,140[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-21 07:00:00+00:00: backfill__2021-09-21T07:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:49,326] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:49,152[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-21 08:00:00+00:00: backfill__2021-09-21T08:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:49,347] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:49,218[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-21 09:00:00+00:00: backfill__2021-09-21T09:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:49,404] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:49,234[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-21 10:00:00+00:00: backfill__2021-09-21T10:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:49,424] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:49,250[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-21 11:00:00+00:00: backfill__2021-09-21T11:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:49,863] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:49,315[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-21 12:00:00+00:00: backfill__2021-09-21T12:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:49,877] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:49,332[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-21 13:00:00+00:00: backfill__2021-09-21T13:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:49,897] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:49,344[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-21 14:00:00+00:00: backfill__2021-09-21T14:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:49,915] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:49,355[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-21 15:00:00+00:00: backfill__2021-09-21T15:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:49,935] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:49,407[0m] {{[34mbackfill_job.py:[0m388}} INFO[0m - [backfill progress] | finished run 16 of 25 | tasks waiting: 0 | succeeded: 16 | running: 0 | failed: 0 | skipped: 0 | deadlocked: 0 | not ready: 0[0m
+[2021-09-23 09:20:49,952] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:49,408[0m] {{[34mbackfill_job.py:[0m818}} INFO[0m - max_active_runs limit for dag timestream-airflow-demo has been reached  - waiting for other dag runs to finish[0m
+[2021-09-23 09:20:54,001] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:54,001[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-21 17:00:00+00:00: backfill__2021-09-21T17:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:54,024] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:54,010[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-21 18:00:00+00:00: backfill__2021-09-21T18:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:54,045] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:54,017[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-21 19:00:00+00:00: backfill__2021-09-21T19:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:54,063] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:54,024[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-21 20:00:00+00:00: backfill__2021-09-21T20:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:54,079] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:54,032[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-21 21:00:00+00:00: backfill__2021-09-21T21:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:54,114] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:54,039[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-21 22:00:00+00:00: backfill__2021-09-21T22:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:54,136] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:54,046[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-21 23:00:00+00:00: backfill__2021-09-21T23:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:54,156] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:54,054[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-22 00:00:00+00:00: backfill__2021-09-22T00:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:54,176] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:54,058[0m] {{[34mbackfill_job.py:[0m388}} INFO[0m - [backfill progress] | finished run 24 of 25 | tasks waiting: 0 | succeeded: 24 | running: 0 | failed: 0 | skipped: 0 | deadlocked: 0 | not ready: 0[0m
+[2021-09-23 09:20:54,192] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:54,058[0m] {{[34mbackfill_job.py:[0m818}} INFO[0m - max_active_runs limit for dag timestream-airflow-demo has been reached  - waiting for other dag runs to finish[0m
+[2021-09-23 09:20:59,013] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:59,013[0m] {{[34mdagrun.py:[0m445}} INFO[0m - Marking run &lt;DagRun timestream-airflow-demo @ 2021-09-21 16:00:00+00:00: backfill__2021-09-21T16:00:00+00:00, externally triggered: False&gt; successful[0m
+[2021-09-23 09:20:59,040] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:59,019[0m] {{[34mbackfill_job.py:[0m388}} INFO[0m - [backfill progress] | finished run 25 of 25 | tasks waiting: 0 | succeeded: 25 | running: 0 | failed: 0 | skipped: 0 | deadlocked: 0 | not ready: 0[0m
+[2021-09-23 09:20:59,069] {{bash.py:173}} INFO - [[34m2021-09-23 09:20:59,023[0m] {{[34mbackfill_job.py:[0m831}} INFO[0m - Backfill done. Exiting.[0m
+[2021-09-23 09:20:59,326] {{bash.py:177}} INFO - Command exited with return code 0
+[2021-09-23 09:20:59,370] {{taskinstance.py:1192}} INFO - Marking task as SUCCESS. dag_id=timestream-backfill, task_id=cli_command, execution_date=20210923T092039, start_date=20210923T092040, end_date=20210923T092059
+[2021-09-23 09:20:59,420] {{taskinstance.py:1246}} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-09-23 09:20:59,476] {{logging_mixin.py:104}} INFO - [2021-09-23 09:20:59,476] {{local_task_job.py:146}} INFO - Task exited with return code 0
+</code></pre>
+<p>When I look at the historical view of my workflow, when I hover over the tasks during this time frame, I can see that they were run via backfill</p>
+<p><img src="https://github.com/094459/blog-mwaa-timestream/blob/main/images/backfill.png?raw=true" alt="backfill"></p>
+<h3 id="clean-up">Clean up</h3>
+<p>Once you have finished walking through this, then make sure you clean up all the resources.</p>
+<ul>
+<li>you can run &ldquo;cdk destroy timestream&rdquo; to remove all the resources provisioned (the Timestream database and tables as well as the policy)</li>
+<li>remove any of the data that was export to your Amazon S3 bucket</li>
+<li>remove any of the DAGs you deployed into your MWAA environment</li>
+<li>(optional) update your requirements.txt to remove the additional Python libraries we added and then restart your MWAA environment (after uploading your updated requirements file)</li>
+</ul>
+<h3 id="conclusion">Conclusion</h3>
+<p>In this post I showed you how you can integrate and orchestrate Amazon Timestream data using Amazon&rsquo;s Managed Workflows for Apache Airflow. I walked you through how you can set this up, how you can use a great open source project called AWS Data Wrangler to interact with Amazon Timestream, and then use some of Apache Airflow&rsquo;s powerful capabilities such as backfill.</p>
+<p><strong>What next?</strong></p>
+<p>I had some ideas of how you could improve on this setup, which I ran out of time. The one I wanted to do (and may return back to complete) was to package up the code as a plugin so that it can be more easily deployed/shared. I could use other Apache Airflow operators such as the ECS and EKS operators, running the same Timeseries queries. I also want to experiment and explore some of the Timestream features such as interpolation. Hopefully this blog post will provide the foundation for that exploration and make it easier for you to experiment.</p>
+<p>Please let me know via the comments of any additional questions or comments you have on this post.</p>
+
+  </main>
+
+          <div class="social-heading">
+            <div class="footer-social">
+  
+    <div class="social-icon">
+      <a href="https://twitter.com/094459" target="_blank" title="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Twitter" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://github.com/094459" target="_blank" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="GitHub" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+      </a>
+    </div>
+  
+  
+    <div class="social-icon">
+      <a href="https://www.linkedin.com/in/ricardosueiras" target="_blank" title="Linkedin">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="LinkedIn" role="img"
+viewBox="0 0 512 512"
+fill="#fff"><rect
+width="512" height="512"
+rx="15%"
+fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://www.reddit.com/r/aws" target="_blank" title="Reddit">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Reddit" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+      </a>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="social-icon">
+      <a href="mailto:ricsue@amazon.com" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Email" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="teal"/><rect width="356" height="256" x="78" y="128" fill="#fff" rx="8%"/><path fill="none" stroke="teal" stroke-width="20" d="M434 128L269 292c-7 8-19 8-26 0L78 128m0 256l129-128m227 128L305 256"/></svg>
+      </a>
+    </div>
+  
+  
+</div>
+
+          </div>
+          <footer role="contentinfo">
+  <div class="social-footer">
+    <div class="footer-social">
+  
+    <div class="social-icon">
+      <a href="https://twitter.com/094459" target="_blank" title="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Twitter" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://github.com/094459" target="_blank" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="GitHub" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+      </a>
+    </div>
+  
+  
+    <div class="social-icon">
+      <a href="https://www.linkedin.com/in/ricardosueiras" target="_blank" title="Linkedin">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="LinkedIn" role="img"
+viewBox="0 0 512 512"
+fill="#fff"><rect
+width="512" height="512"
+rx="15%"
+fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://www.reddit.com/r/aws" target="_blank" title="Reddit">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Reddit" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+      </a>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="social-icon">
+      <a href="mailto:ricsue@amazon.com" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Email" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="teal"/><rect width="356" height="256" x="78" y="128" fill="#fff" rx="8%"/><path fill="none" stroke="teal" stroke-width="20" d="M434 128L269 292c-7 8-19 8-26 0L78 128m0 256l129-128m227 128L305 256"/></svg>
+      </a>
+    </div>
+  
+  
+</div>
+
+    <label for="themer">
+      dark theme: <input type="checkbox" id="themer" class="vh">
+      <span aria-hidden="true"></span>
+    </label>
+  </div>
+  
+    <p class="margin-top-none">Copyright &copy; <span id="copyright-year"></span> - Ricardo Sueiras</p>
+  
+  
+    <p class="margin-top-none">
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cupper-hugo-theme">Cupper</a>.
+    </p>
+  
+</footer>
+<script>
+    var year = new Date().getFullYear()
+    document.getElementById("copyright-year").innerHTML = year;
+</script>
+
+        </div>
+      </div>
+    </div>
+    <script src="https://example.com/js/prism.js"></script>
+
+
+
+<script src="https://example.com/js/dom-scripts.js"></script>
+
+
+
+<script src="/js/search.7aef046a0cc8b0c532f1d20087b920459bc868c936bb48a6ae221eceefca2d07.js"></script>
+
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  </body>
+</html>
