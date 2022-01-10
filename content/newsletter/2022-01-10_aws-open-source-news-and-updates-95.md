@@ -129,7 +129,7 @@ Published on Christmas Day, this nice post from Matt Morgan, [AWS CDK v2 Tutoria
 
 It was great to read this, [On The State Of Continuous Profiling](https://aws-oss.beachgeek.co.uk/17t), from Michael Hausenblas who takes a look at what continuous profiling is, and where are we with it at the end of 2021.
 
-{{< tweet user="mhausenblas" id="1462047847776407556" >}}
+{{< tweet 1462047847776407556 >}}
 
 **Other posts worth checking out**
 
