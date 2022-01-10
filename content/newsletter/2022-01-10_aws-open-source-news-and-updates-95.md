@@ -43,7 +43,7 @@ If you missed it in the last newsletter that I published before the Christmas ho
 
 The articles posted in this series are only possible thanks to contributors and project maintainers and so I would like to shout out and thank those folks who really do power open source and enable us all to build on top of what they have created. 
 
-So thank you to the following open source heroes: David Krohn, Kapil Thangavelu, Harish Vaswani, Rafael RamoMonitor,  Welly Siauw, Parag Bhingre, Sanjeev Ganjihal, Aaron Miller, Mike Revitt, Woongbin Kang, Jonathan Rao, Chris Miller, Michael Sokolov, Michael Froh, Sébastien Stormacq, Matt Morgan, Gary Stafford, Michael Hausenblas, Udit Mehrotra and Gagan Brahmi.
+So thank you to the following open source heroes: David Krohn, Kapil Thangavelu, Harish Vaswani, Rafael Ramos,  Welly Siauw, Parag Bhingre, Sanjeev Ganjihal, Aaron Miller, Mike Revitt, Woongbin Kang, Jonathan Rau, Chris Miller, Michael Sokolov, Michael Froh, Sébastien Stormacq, Matt Morgan, Gary Stafford, Michael Hausenblas, Udit Mehrotra and Gagan Brahmi.
 
 Make sure you find and follow these builders and keep up to date with their open source projects and contributions.
 
