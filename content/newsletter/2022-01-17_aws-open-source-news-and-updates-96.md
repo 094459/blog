@@ -26,7 +26,7 @@ The application form to join AWS Community Builders will be open until January 2
 
 The articles posted in this series are only possible thanks to contributors and project maintainers and so I would like to shout out and thank those folks who really do power open source and enable us all to build on top of what they have created. 
 
-So thank you to the following open source heroes: Matt Lewis, Matt Morgan, Aidan Steele, Lars Jacobsson, Cameron Senese, Yehor Shytikov, David Boyney, Damon Cortesi, Matt Muller, Asher Yermiyahu, Viji Sarathy, Kishore Dhamodaran, Jared Keating, Neha Gupta, Ramesh Kumar Venkatraman, Sheetal Joshi, Apurup Chevuru, Mike Stefaniak, Carlos Manzanedo Rueda, Brandon Wagner, Karthik Basavaraj, Suman Debnath, Hubert Asamer and Jan Metzner.
+So thank you to the following open source heroes: Matt Lewis, Matt Morgan, Aidan Steele, Lars Jacobsson, Cameron Senese, Yehor Shytikov, David Boyne, Damon Cortesi, Matt Muller, Asher Yermiyahu, Viji Sarathy, Kishore Dhamodaran, Jared Keating, Neha Gupta, Ramesh Kumar Venkatraman, Sheetal Joshi, Apurup Chevuru, Mike Stefaniak, Carlos Manzanedo Rueda, Brandon Wagner, Karthik Basavaraj, Suman Debnath, Hubert Asamer and Jan Metzner.
 
 Make sure you find and follow these builders and keep up to date with their open source projects and contributions.
 
@@ -34,7 +34,7 @@ Make sure you find and follow these builders and keep up to date with their open
 
 **eventcatalog**
 
-[eventcatalog](https://aws-oss.beachgeek.co.uk/18d) another fantastic project from David Boyney. Event Catalog helps you to discover, explore and document your Event Driven Architectures powered by Markdown. EventCatalog as a website generator that allows you to document your event architectures with markdown files. As with all David's projects, next level documentation and there are example/demo output so you can see what you are likely to get if you were to run it yourself. Awesome stuff. If you do find it useful, make sure you do not skip the Sponsor link...
+[eventcatalog](https://aws-oss.beachgeek.co.uk/18d) another fantastic project from David Boyne. Event Catalog helps you to discover, explore and document your Event Driven Architectures powered by Markdown. EventCatalog as a website generator that allows you to document your event architectures with markdown files. As with all David's projects, next level documentation and there are example/demo output so you can see what you are likely to get if you were to run it yourself. Awesome stuff. If you do find it useful, make sure you do not skip the Sponsor link...
 
 ![demo](https://raw.githubusercontent.com/boyney123/eventcatalog/master/website/static/img/eventcatalog-screen1.png)
 
