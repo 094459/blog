@@ -2,7 +2,7 @@
 
 title: 'AWS open source news and updates #96'
 date: '2022-01-17'
-tags : [ oss-newsletter, aws open source, kubernetes, Babelfish, Redis, Smithy, Lambda Powertools, Amazon EMR, TorcheServe, Deep Graph Library, ParallelCluster, Galaxy, Apache Flink, OpenSearch]
+tags : [ oss-newsletter, aws open source, kubernetes, Babelfish, Redis, Smithy, Lambda Powertools, Amazon EMR, TorcheServe, Deep Graph Library, ParallelCluster, Galaxy, Apache Flink, OpenSearch ]
 
 ---
 
@@ -192,7 +192,7 @@ If you have an event you want me to publish here, please contact me and I will i
 **Lakehouse Automation w/ Redshift+Apache Airflow & New AWS ML services**
 **January 17th, 9:00am PST**
 
-During this meetup, join hosts Chris Fregly and Antje Barth and speaker Gary Stafford, who do a presentation and brief demonstration, based on his recent video demonstration, AWS Lakehouse Automation: Loading and unloading data from Amazon Redshift using Apache Airflow, we will learn how to use Amazon Managed Workflows for Apache Airflow (Amazon MWAA) to programmatically load, unload, test, catalog, query, and monitor data using DevOps-like DataOps practices.
+During this meetup, join hosts Chris Fregly and Antje Barth, and speaker Gary Stafford, who will be doing a presentation and brief demonstration, based on his recent video demonstration, AWS Lakehouse Automation: Loading and unloading data from Amazon Redshift using Apache Airflow. You will learn how to use Amazon Managed Workflows for Apache Airflow (Amazon MWAA) to programmatically load, unload, test, catalog, query, and monitor data using DevOps-like DataOps practices.
 
 Find out more about this and [register here](https://www.meetup.com/data-science-on-aws/events/282788878/?_xtd=gqFyqTI2NzgyNDA2OaFwo2FwaQ&from=ref).
  
