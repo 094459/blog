@@ -1,7 +1,7 @@
 ---
 title: 'AWS open source news and updates 92'
 date: '2021-11-29'
-tags : [ oss-newsletter ]
+tags : [ oss-newsletter, AWS Open Source ]
 ---
 ## November 29th, 2021 - Instalment #92
 

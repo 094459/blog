@@ -1,7 +1,7 @@
 ---
 title: 'AWS open source news and updates #81'
 date: '2021-09-13'
-tags : [ oss-newsletter ]
+tags : [ oss-newsletter , AWS Open Source]
 ---
 ## September 13th, 2021 - Instalment #81
 

@@ -1,7 +1,7 @@
 ---
 title: 'AWS open source news and updates 84'
 date: '2021-10-04'
-tags : [ oss-newsletter ]
+tags : [ oss-newsletter , AWS Open Source]
 ---
 ## October 4th, 2021 - Instalment #84
 

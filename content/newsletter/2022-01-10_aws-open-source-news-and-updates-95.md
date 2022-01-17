@@ -2,7 +2,7 @@
 
 title: 'AWS open source news and updates #95'
 date: '2022-01-10'
-tags : [ oss-newsletter, Terraform, Amazon EMR, Consul, PostgreSQL, Flagger, Observability, AWS DeepRacer, Apache Lucene, Apache Log4j, AWS CDK, Babelfish, Apache Hudi, Apache Spark, Debezium]
+tags : [ oss-newsletter, AWS Open Source, Terraform, Amazon EMR, Consul, PostgreSQL, Flagger, Observability, AWS DeepRacer, Apache Lucene, Apache Log4j, AWS CDK, Babelfish, Apache Hudi, Apache Spark, Debezium]
 
 ---
 
