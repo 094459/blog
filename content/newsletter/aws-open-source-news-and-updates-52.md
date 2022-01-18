@@ -80,8 +80,6 @@ If you love AWS Amplify and you use it to run/host some of your applications but
 
 ![solution](https://www.outcoldman.com/en/archive/2021/01/14/analyzing-aws-amplify-access-logs-part-1/numbers.png)
 
-[How to Add Authentication to a Vue App Using AWS Amplify](https://aws-oss.beachgeek.co.uk/1v) Jennifer Bland shows you how you can create a new Vue application and then using AWS Amplify, add authentication. She provides full source code to this walkthrough.
-
 **CloudQuery**
 
 [How to run AWS CIS Benchmark with CloudQuery](https://aws-oss.beachgeek.co.uk/1c) I have introduced readers to this newsletter about this open source project before ([check out newsletter 45](https://aws-oss.beachgeek.co.uk/1i)) and cloudquery is an open source tool that allows you to interact with your cloud infrastructure via queryable SQL or Graphs for easy monitoring, governance and security. In this post, they show you how to run AWS CIS benchmark with CloudQuery using out-of-the-box SQL statements that you can customised to your environment. Watch out for future posts too.
