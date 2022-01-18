@@ -10,7 +10,6 @@ So here is a list scraped from Twitter and following various other folk, of just
 **Serverless image process workshop** - https://image-processing.serverlessworkshops.io/
 **Amplify preductions workshop** - https://github.com/mlabieniec/IonicPredictions
 **Full stack serverless Amplify lab** - https://github.com/aws-samples/aws-reinvent-2019-mobile-workshops/tree/master/MOB303
-**Building secure APIs in the Cloud** - https://workshop.reinvent.awsdemo.me/
 **Auth and Authorization flows in IOS apps** - https://amplify-ios-workshop.go-aws.com/
 **Building a modern application with CDK** - https://github.com/aws-samples/aws-modern-application-workshop/tree/python-cdk
 **Using SAM CLI workshop** - https://github.com/aws-samples/reinvent2019-svs217

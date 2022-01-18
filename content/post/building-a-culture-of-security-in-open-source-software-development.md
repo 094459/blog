@@ -3,7 +3,10 @@ title: 'Building a culture of security in open source software development'
 date: '2020-07-15'
 tags: [open source]
 ---
-According to a number of recent studies, the use and adoption of open source software continues to rise. From studies such as the [State of Enterprise Open Source](https://www.redhat.com/en/enterprise-open-source-report/2019) by Red Hat (in which nearly 70% of respondents stated that open source software is either extremely or very important) or TideLift’s April 2019 survey report (that found more than 90% of professional developers use open source in building their applications) it is clear that developers from startups to highly regulated enterprises have embraced open source solutions. These reports [and others] (https://www.em360tech.com/wp-content/uploads/2018/09/Synopsys-Open-Source-Security-and-Risk-Analysis.pdf) show that the use of open source code and components in projects is increasing.
+
+*Updated on Jan 18th to remove broken link to report*
+
+According to a number of recent studies, the use and adoption of open source software continues to rise. From studies such as the [State of Enterprise Open Source](https://www.redhat.com/en/enterprise-open-source-report/2019) by Red Hat (in which nearly 70% of respondents stated that open source software is either extremely or very important) or TideLift’s April 2019 survey report (that found more than 90% of professional developers use open source in building their applications) it is clear that developers from startups to highly regulated enterprises have embraced open source solutions. These reports and others show that the use of open source code and components in projects is increasing.
 
 With the increasing adoption of open source also increases the need to ensure that security remains a top priority, which means you need to think about your approach to securing your open source supply chain. 
 
