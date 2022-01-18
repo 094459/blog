@@ -5,6 +5,8 @@ tags : [ oss-newsletter , AWS Open Source]
 ---
 ## October 18th, 2021 - Instalment #86
 
+*updated Jan 18th, to remove dead links*
+
 Newsletter #86.
 
 This week we have a very broad variety of topics. Starting off with some fresh open source projects such as cfn-diagram, aws-jwt-verify, damo, aws-dotnet-deploy, automated-account-configuration, BayerCLAW and more. For mains, we have new AWS and community authored posts on MySQL, OpenSearch, .NET, miniwdl, OpenMRS, Apache Hudi, Apache Spark, ROS, cdk8s, Jax, Deep Graph Library and more. Finally, for pudding we have this weeks video that provides an insight into contributing to Apache Airflow and we have some new events added so check those out and add them to your diary. 
@@ -22,7 +24,6 @@ Make sure you find and follow these builders and keep up to date with their open
 **cfn-diagram**
 
 [cfn-diagram](https://aws-oss.beachgeek.co.uk/4r) whilst I did cover this project back in Feb, I was [notified](https://aws-oss.beachgeek.co.uk/10b) by Lars from Mathem that there was now a new capability, ascii graphics.
-![demo](https://raw.githubusercontent.com/mhlabs/cfn-diagram/master/demo-ascii.gif)
 
 **aws-jwt-verify**
 

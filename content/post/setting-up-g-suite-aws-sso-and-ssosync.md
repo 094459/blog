@@ -135,15 +135,27 @@ When you have confirmed that is setup, click on NEXT and then complete the ATTRI
 
 > Tip! It can be tricky to view the information on this screen, so just hovering over the link will display the full link to help you. To help you out I have used Inspect to dig these out.
 
-You need to MAP **https://aws.amazon.com/SAML/Attributes/RoleSessionName** to Primary Email
-You need to MAP **https://aws.amazon.com/SAML/Attributes/Role** to IAM_role
+You need to MAP
+```
+https://aws.amazon.com/SAML/Attributes/RoleSessionName
+```
+to Primary Email
+
+and MAP
+```
+ https://aws.amazon.com/SAML/Attributes/Role
+```
+to IAM_role
 
 >Note! You will need to click on the twisty to select whatever you called the category and you should then see IAM_role
 >
 
 From this screen you also need to add a NEW MAPPING.
 
-Create NEW mapping called **https://aws.amazon.com/SAML/Attributes/SessionDuration** and set this to SessionDuration
+Create NEW mapping called
+```https://aws.amazon.com/SAML/Attributes/SessionDuration
+```
+and set this to SessionDuration
 
 ![AWS SSO Screens](https://ricsuepublicresources.s3-eu-west-1.amazonaws.com/images/sso-12.png)
 
@@ -343,7 +355,6 @@ If this is useful, then you will probably need to think about:
 
 Many thanks to **[Lee Packham](https://twitter.com/Joolz)** for the work that has gone into this open source tool. You can find the [GitHub repository for ssosync here.](https://github.com/awslabs/ssosync)
 
-Just want to shout out to this post https://medium.com/faun/single-sign-on-with-g-suite-on-the-amazon-web-services-console-18b88c838cae that helped me get this up and running, as well as Lee Packham.
 
 
 

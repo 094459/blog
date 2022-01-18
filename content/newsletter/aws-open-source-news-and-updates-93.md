@@ -5,6 +5,8 @@ tags : [ oss-newsletter , AWS Open Source]
 ---
 ## December 13th, 2021 - Instalment #93
 
+*Updated Jan 18th, to remove dead links*
+
 Newsletter #93. We took a week off last week to recover from re:Invent, so this week we have extensive coverage of the open source related news and announcements so be sure to check those out. This week we have some great new open source projects, from a project that will help you get started with data meshes, an alternative way to provide internet connectivity to those private subnets, a nice new CDK construct to quickly deploy single page applications and a cool IoT simulator solution which I know I am going to try out. On top of the re:Invent related posts, we have content covering Kubernetes, Karpenter, Flower, Grafana, Apache Spark, Greengrass v2 and more.
 
 Finally, before diving into the newsletter, make sure you check out the post and info on the Log4J rce vulnerability.
@@ -119,7 +121,7 @@ In this post, [Collecting data from edge devices using Kubernetes and AWS IoT Gr
 
 **Kubernetes**
 
-Find out how to use managed node groups to upgrade Amazon Elastic Kubernetes Service (Amazon EKS) cluster nodes in parallel from 1.19 to 1.20 in the post, [Automate Amazon EKS upgrades with infrastructure as code](![https://aws-oss.beachgeek.co.uk/15r](https://aws-oss.beachgeek.co.uk/15r)) from  Virginia Chu and Manoj Shunmugam.
+Find out how to use managed node groups to upgrade Amazon Elastic Kubernetes Service (Amazon EKS) cluster nodes in parallel from 1.19 to 1.20 in the post, [Automate Amazon EKS upgrades with infrastructure as code](https://aws-oss.beachgeek.co.uk/15r) from  Virginia Chu and Manoj Shunmugam.
 
 ![flow](https://d2908q01vomqb2.cloudfront.net/ca3512f4dfa95a03169c5a670a4c91a19b3077b4/2021/11/12/virchu_automate_eks_upgrades_f1-603x1024.png)
 

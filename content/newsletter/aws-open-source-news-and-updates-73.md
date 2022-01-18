@@ -5,6 +5,8 @@ tags : [ oss-newsletter ]
 ---
 ## 21st June, 2021 - Instalment #73
 
+*updated 18th, Jan to remove dead link*
+
 Newsletter #73.
 
 This week's new projects include a project than can help you reduce your costs if you are running Amazon EKS workloads, an AWS CDK pattern to help you easily create internal and external access points for your applications, a GraphQL solution and some sample AWS projects. We have community and AWS authored posts featuring Kubernetes, Apache Flink, Firecracker, OpenSearch, Apache Tinkerpop, Apache Kafka, as well as .NET, GraphQL and Amazon Corretto and many more. To add to that we have a new workshop if you want to get started with High Performance Computing, a great video walkthrough of the open source tool cfn_nag and all the videos from last weeks Open@Amazon, which leads me nicely to...
@@ -44,8 +46,6 @@ Make sure you find and follow these builders and keep up to date with their open
 **cdk-fargate-patterns**
 
 [cdk-fargate-patterns](https://aws-oss.beachgeek.co.uk/ne) - saw this AWS CDK pattern last week from Pahud Hsieh last week and thought it was pretty nice, having needed to do this many times in the past, this is going to save folks a lot of effort. It allows you to create one or many Fargate services with both internet-facing ALB and internal ALB associated with all services.
-
-![https://github.com/pahud/cdk-fargate-patterns](https://raw.githubusercontent.com/pahud/cdk-fargate-patterns/b9332b4661feae0c129ef87d3ced6b4b921b0d78/images/DualAlbFargateService.svg)
 
 **amazon-fraud-detector-end-to-end**
 

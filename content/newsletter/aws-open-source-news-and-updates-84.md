@@ -5,6 +5,8 @@ tags : [ oss-newsletter , AWS Open Source]
 ---
 ## October 4th, 2021 - Instalment #84
 
+*updated Jan 18th, to remove dead links*
+
 Newsletter #84.
 
 Welcome to issue #84 of this newsletter, and we have more great new open source projects for you this week. We have a couple of great security/compliance/governance tools that will help you with security in **cloudgraphdev** and (the amazingly named) **wonk**, **placebo**, a tool to help you mock tests, a new cli from AWS to help you simplify those of you working with genomics workloads, and more. 
@@ -24,13 +26,12 @@ Make sure you find and follow these builders and keep up to date with their open
 
 **amazon-genomics-cli**
 
-[amazon-genomics-cli](https://aws-oss.beachgeek.co.uk/yk) this open source project is a tool to simplify the processes of deploying the AWS infrastructure required to run genomics workflows in the cloud, to submit those workflows to run, and to monitor the logs and outputs of those workflows. You can find out more and get hands on by reading and working through Danilo Poccia's blog post, [New – Amazon Genomics CLI Is Now Open Source and Generally Available](https://aws-oss.beachgeek.co.uk/yq). You can also check out [this YT session](https://www.youtube.com/watch?v=mMeBeFbFzq0) that provides some additional background before showing you this in action.
+[amazon-genomics-cli](https://aws-oss.beachgeek.co.uk/yk) this open source project is a tool to simplify the processes of deploying the AWS infrastructure required to run genomics workflows in the cloud, to submit those workflows to run, and to monitor the logs and outputs of those workflows. You can find out more and get hands on by reading and working through Danilo Poccia's blog post, [New – Amazon Genomics CLI Is Now Open Source and Generally Available](https://aws-oss.beachgeek.co.uk/yq).
 
 **cloudgraphdev**
 
 [cloudgraphdev](https://aws-oss.beachgeek.co.uk/yp) another interesting tool to help you manage security on AWS, CloudGraph is an open-source search engine for your public cloud infrastructure, powered by DGraph and GraphQL. You can quickly query assets, configurations, and more across accounts and providers. CloudGraph also enables you to solve a host of security, compliance, governance, and FinOps challenges in the time it takes to write a single GraphQL query. Very nice project from the folks at AutoCloud
 
-![demo](https://raw.githubusercontent.com/cloudgraphdev/cli/master/docs/images/init.png)
 
 **wonk**
 

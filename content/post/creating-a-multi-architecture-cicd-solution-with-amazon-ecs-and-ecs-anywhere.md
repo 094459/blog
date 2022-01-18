@@ -393,7 +393,7 @@ ecs-anywhere-cicd.LoadBalancerEndpoint = ecs-a-LB8A1-UQ0ZD3461WUB-1638849351.eu-
 Stack ARN:
 arn:aws:cloudformation:eu-central-1:704533066374:stack/ecs-anywhere-cicd/7004c1a0-e290-11eb-9334-0288a08f1e2c
 ```
-[10] You will now be able to access the application via the browser, using the endpoint that is output. In my example, when I enter "http://ecs-a-LB8A1-UQ0ZD3461WUB-1638849351.eu-central-1.elb.amazonaws.com" into my browser and refresh a few times, I see the following:
+[10] You will now be able to access the application via the browser, using the endpoint that is output. In my example, when I enter "ecs-a-LB8A1-UQ0ZD3461WUB-1638849351.eu-central-1.elb.amazonaws.com" into my browser and refresh a few times, I see the following:
 
 ![demo app](https://github.com/094459/blog-multi-arch-springboot/blob/main/images/app-x86.png?raw=true)
 

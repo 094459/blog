@@ -20,8 +20,7 @@ So here is a list scraped from Twitter and following various other folk, of just
 **Amazon EKS workshop** - https://eksworkshop.com/
 **Amazon Lightsail workshop** - https://lightsailworkshop.com/
 **EC2 Spot Instance workshop** - https://ec2spotworkshops.com/
-**AWS Service Catalog workshop** - https://service-catalog-tools-workshop.com/10-servicecatalog.html
-**NET403: Amazon EKS and Kubernetes on EC2 Container Networking Workshop ** - https://awsk8snetworkshops.com/
+**NET403: Amazon EKS and Kubernetes on EC2 Container Networking Workshop** - https://awsk8snetworkshops.com/
 
 **Realtime analytics for ride sharing workshop** - https://streaming-analytics.labgui.de/
 **Open Distro for Elasticsearch** - https://reinvent.aesworkshops.com/opn302/
@@ -32,8 +31,8 @@ So here is a list scraped from Twitter and following various other folk, of just
 **Sagemaker Autopilot workshop** - https://gitlab.com/juliensimon/aim361
 
 **IoT/Greengrass/Analytics/Edge** - https://github.com/aws-samples/aws-iot-greengrass-edge-analytics-workshop
-**Voice Robotics workshop** - http://voiceroboticsworkshop.com/
 **AWS RoboMaker workshop** - https://robomakerworkshops.com/
-**Sumarian workshop** - http://workshop-sumerian-ar-webapp.s3-website-eu-west-1.amazonaws.com/en/
+
 
 *updated 15th December, thanks for the update Paavan M*
+*updated 18th Jan, to fix broken links*

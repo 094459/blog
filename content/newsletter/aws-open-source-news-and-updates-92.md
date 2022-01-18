@@ -5,6 +5,8 @@ tags : [ oss-newsletter, AWS Open Source ]
 ---
 ## November 29th, 2021 - Instalment #92
 
+*Updated 18th Jan, to remove dead links*
+
 Newsletter #92. This is the re:Invent edition of the weekly newsletter, and whilst I am not there this year, I will still be covering all the announcements and topics of interest in this and next weeks newsletter. 
 
 Outside of re:Invent, this weeks letter also brings you lots more new open source projects including something for DynamoDB fans, a serverless GraalVM project, a very nice AWS SSO project, new Grafana recipes and more. AWS and community posts this week cover Linux, Redis, Deep Java Library, Deep Graph Library, Magma, Moodle, GitHub Actions and more. We have a couple of new videos to share to round things off.
@@ -96,8 +98,6 @@ First up we how to [setup Amazon Athena](https://aws-oss.beachgeek.co.uk/159), u
 **aws-sso-extensions-for-enterprise**
 
 [aws-sso-extensions-for-enterprise](https://aws-oss.beachgeek.co.uk/15h) this project simplifies the process to manage user access to AWS accounts with AWS SSO by extending the AWS SSO API. Instead of separately managing AWS SSO permission sets and account assignments, you can use this solution to describe permission sets with one API call per set.
-
-![arch](https://github.com/aws-samples/aws-sso-extensions-for-enterprise/blob/main/docs/images/aws-sso-extensions-for-enterprise-overview.png?raw=true)
 
 **mlops-template-gitlab**
 
