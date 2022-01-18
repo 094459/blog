@@ -63,7 +63,6 @@ Other sessions of note include:
 If you are there in person, a few things you should check out:
 
 * Developer Lounge - there will be open source projects being show cased as well as open source builders on hand to speak with you.
-* [After Dark](https://aws-oss.beachgeek.co.uk/13n) - an open source social that the open source team is organising. 
 
 There is still time to register and attend, so find out more by checking out the [event home page.](https://aws-oss.beachgeek.co.uk/13m)
 

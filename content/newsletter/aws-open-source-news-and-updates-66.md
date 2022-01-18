@@ -5,6 +5,8 @@ tags : [ oss-newsletter ]
 ---
 ## May 4th, 2021 - Instalment #66
 
+*Updated Jan 18th, to remove dead links*
+
 Newsletter #66. 
 
 This week we have a really outstanding collection of new open source projects, including eventbridge-atlas, ecsk, spotinfo, pecos and more, so make sure you spend some time checking those out. Following on from CDK Day, we have plenty of great posts for CDK fans. As always, there are lots of great community and AWS blog posts covering event driven architectures, containers, big data, and so happy to see the AWS DeepRacer open source announcements last week. Finally, we have a couple of great videos, a podcast and events you should check out and put in your diary.
@@ -184,7 +186,7 @@ You can now use the Node.js 14.x runtime to develop functions in AWS Lambda@Edge
 
 **Apache Kafka**
 
-Amazon Managed Streaming for Apache Kafka (Amazon MSK) now supports Apache Kafka version 2.8.0 for new and existing clusters. Apache Kafka 2.8.0 includes several bug fixes and new features that improve performance. Some of the key features include connection rate limiting to avoid problems with misconfigured clients (KIP-612) and topic identifiers which provides performance benefits (KIP-516). There is also an early access feature to replace zookeeper with a self-managed metadata quorum (KIP-500), however this is not recommended for use in production. For a complete list of improvements and bug fixes, see the Apache Kafka [release notes for 2.8.0](https://downloads.apache.org/kafka/2.8.0/RELEASE_NOTES.html).
+Amazon Managed Streaming for Apache Kafka (Amazon MSK) now supports Apache Kafka version 2.8.0 for new and existing clusters. Apache Kafka 2.8.0 includes several bug fixes and new features that improve performance. Some of the key features include connection rate limiting to avoid problems with misconfigured clients (KIP-612) and topic identifiers which provides performance benefits (KIP-516). There is also an early access feature to replace zookeeper with a self-managed metadata quorum (KIP-500), however this is not recommended for use in production.
 
 **Kubernetes**
 

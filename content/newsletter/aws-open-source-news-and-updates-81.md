@@ -5,6 +5,8 @@ tags : [ oss-newsletter , AWS Open Source]
 ---
 ## September 13th, 2021 - Instalment #81
 
+*Updated 18th Jan, remove dead links*
+
 Newsletter #81.
 
 Welcome new and existing readers of this newsletter to another edition with plenty to excite you. This weeks brand new open source projects include some great new AWS CDK constructs to help you with things such as Apache Airflow, a tool to help you with your IAM policies, a really nice tool to explore and interact with AWS SQS and something for Minecraft fans. If that was not enough, the AWS and community blog posts cover all the news from last weeks GA for EKS Anywhere and other Kubernetes related articles. For those interested in the topic of big data, we have a bumper lot of content including posts covering Apache Airflow, Apache Spark, Apache Kafka, PartiQL, Apache Nifi and more. On top of that we have posts covering AWS CDK, open source file systems, the announcement last week of the latest HPC open source tool from AWS and more. There are also a few new events in the Events section, so check those out and put them in your diary. 
@@ -37,8 +39,6 @@ Make sure you find and follow these builders and keep up to date with their open
 **minecraft-ondemand**
 
 [minecraft-ondemand](https://aws-oss.beachgeek.co.uk/w9) Ray Gibson's open sourced project that helps you provision resources on AWS to deploy Minecraft servers frugally will delight lots of you. Clean and easy to follow docs, together with some cost estimates provide everything you need to get going. Where was this at the beginning of the lockdown :-)
-
-![demo](https://github.com/doctorray117/minecraft-ondemand/blob/main/diagrams/aws_architecture.drawio.png?raw=true)
 
 **sqs-workbench**
 

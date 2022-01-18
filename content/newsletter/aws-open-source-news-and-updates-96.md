@@ -18,10 +18,6 @@ Before diving in though, make sure you check out the AWS Community Builder appli
 
 If you are looking for something to read, then I have a recommendation for you. Towards the end of 2021, [The CDK Book](https://aws-oss.beachgeek.co.uk/195) came out, written by Matthew Bonig, Thorsten Höger, Sathyajith Bhat and Matt Coulter. This is a must read interesting in automation and writing infrastructure as code, this book has been written by DevOps engineers for DevOps engineers. With a foreword from Elad Ben-Israel, this provides a hands on (plenty of examples and code, across more than just TypeScript) guide, as well as sharing current good practices as well as how you might use this in more enterprise use cases. 
 
-**AWS Community Builders**
-
-The application form to join AWS Community Builders will be open until January 24th, and I would love to see more of the great open source builders sign up for this great program. Application form is [here](https://aws-oss.beachgeek.co.uk/18a) If you want more info, check out this great write up from an existing AWS Community Builder, Stephen Sennett, [How to become an AWS Community Builder](https://aws-oss.beachgeek.co.uk/18b)  
-
 ### Celebrating open source contributors
 
 The articles posted in this series are only possible thanks to contributors and project maintainers and so I would like to shout out and thank those folks who really do power open source and enable us all to build on top of what they have created. 
