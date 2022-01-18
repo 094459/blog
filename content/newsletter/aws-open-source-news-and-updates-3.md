@@ -67,7 +67,7 @@ The [OSI have elections coming up](https://opensource.org/elections) and they ha
 
 ### Interested in Podcasts
 
-The AWS Podcast always has interesting content, including covering our open source projects. [In this episode, hear all about our encryption tools including the open source projects such as s2n.](https://podplayer.net/?id=93377398) (later on in the podcast)
+The AWS Podcast always has interesting content, including covering our open source projects. In this episode, hear all about our encryption tools including the open source projects such as s2n.(later on in the podcast)
 
 ### Do you use AWS and love open source? 
 

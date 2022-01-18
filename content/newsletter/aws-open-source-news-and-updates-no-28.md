@@ -39,7 +39,7 @@ This event is broadly targeted at HPC users, developers, and user support teams.
 **Databricks machine learning workshop**
 **30th July, at 3PM BST (4:00PM CEST, 7:00am PST)**
 
-A date and time for your diary, on **30th July, at 3PM BST (9:00am CDT)** Databricks are running a workshop on [Unifying Data Pipelines and Machine Learning with Apache Spark™ and Amazon SageMaker](https://events.databricks.com/awsdatabricksmldevday730?utm_source=bambu&utm_medium=social&utm_campaign=advocacy&blaid=668173). This event will cover:
+A date and time for your diary, on **30th July, at 3PM BST (9:00am CDT)** Databricks are running a workshop on Unifying Data Pipelines and Machine Learning with Apache Spark™ and Amazon SageMaker. This event will cover:
 
 * building scalable and reliable pipelines for analytics
 * a look at Apache Spark and Databricks

@@ -17,8 +17,6 @@ This month's AWS Architecture Monthly has an open source special. You can check 
 
 If you fancy working with the AWS Amplify crew, including folks such as Matt Auerbach and Nader Dabit then check out this new opening within their team. They are looking for folks excited about OSS to support Amplify developers in their GitHub repos and Discord channels. This is a great opportunity to work on the Amplify product team, and even better this is a remote role.
 
-Details [here](https://www.amazon.jobs/en-gb/jobs/1345338/developer-support-engineer-amplify-framework) but feel free to reach out to Matt, Nader or myself.
-
 ### Celebrate open source contributors
 
 The articles posted in this series are only possible thanks to contributors and project maintainers and so I would like to shout out and thank those folks who really do power open source and enable us all to build on top of what they have created. 

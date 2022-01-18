@@ -162,10 +162,6 @@ They all conclude that working with the OpenTelemetry community was an amazing e
 
 [Build a Music Sharing App with Amazon S3 and AWS Amplify](https://dev.to/aws/getting-started-with-amazon-s3-using-aws-amplify-5ake) a fantastic project and walkthrough from fellow advocate Ali Spittel, which will walk you through how to build a simple music sharing application. Check out the code on Ali's [GitHub repository here](https://github.com/aspittel/s3-demo).
 
-**AWS Chalice**
-
-[How to Build a Serverless Application Using AWS Chalice](https://www.freecodecamp.org/news/how-to-build-a-serverless-application-using-aws-chalice/) excellent write up from Siben Nayak who provides an introduction and then tutorial on how to build a serverless application using AWS Chalice. I have featured AWS Chalice heavily in this newsletter, and it is a serverless framework that allows you to build serverless applications using Python, and deploy them on AWS using Amazon API Gateway and AWS Lambda. Siben points to some further tutorials and resources if you are hungry for more. 
-
 **Bottlerocket**
 
 [Why We Expect AWS Bottlerocket to Take Off](https://uk.nttdataservices.com/en/blog/2020/october/why-we-expect-aws-bottlerocket-to-take-off) in this post, NTT Data provide an overview of what Bottlerocket, what they feel it's strengths are and then conclude what some of the unique features of Bottlerocket that will be important to customers. 

@@ -10,8 +10,7 @@ This post has a bit of a Security theme, with a number of interesting open sourc
 
 ### AWS service related open source updates
 
-[Automating security using step functions](https://aws.amazon.com/blogs/compute/orchestrating-a-security-incident-response-with-aws-step-functions/) is a cool post and repo that shows how you can automate security response using AWS Step Functions. Here is the link to the repo - 
-https://github.com/bls20AWS/AutomatedPolicyOrchestrator
+[Automating security using step functions](https://aws.amazon.com/blogs/compute/orchestrating-a-security-incident-response-with-aws-step-functions/) is a cool post and repo that shows how you can automate security response using AWS Step Functions.
 
 Follow Ben Smith, one of the developer advocats for serverless.
 
@@ -21,9 +20,7 @@ https://github.com/kubernetes-sigs/aws-fsx-csi-driver
 When I go and speak at events, I always find customers who use and love AWS Elastic Beanstalk. I was very happy to see that the team have open sourced the [AWS Elastic Beanstalk CLI](https://aws.amazon.com/about-aws/whats-new/2020/01/aws-elastic-beanstalk-command-line-interface-now-open-source/)
 Check out the github repo at [https://github.com/aws/aws-elastic-beanstalk-cli](https://github.com/aws/aws-elastic-beanstalk-cli)
 
-Finally, a cool little project from one of my colleagues. One of the things I love most about the open source community is the small projects they release that provide useful functionality that you will find useful. This one is a great little project that allows you to both construct and deconstruct ARNs. Here is the code repo, but you can just use 'as is' as it has been hosted via https://arn.services
-
-https://github.com/mhausenblas/arn.services
+Finally, a cool little project from one of my colleagues. One of the things I love most about the open source community is the small projects they release that provide useful functionality that you will find useful. This one is a great little project that allows you to both construct and deconstruct ARNs. https://github.com/mhausenblas/arn.services
 
 Thanks Michael, and be sure to follow him on [github](https://github.com/mhausenblas) and via [Twitter](https://twitter.com/mhausenblas).
 

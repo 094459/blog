@@ -40,9 +40,7 @@ The project is [well documented](https://dce.readthedocs.io) so read more on the
 
 **sls-dev-tools**
 
-There are many open source tools that help you understand what is going on in your serverless applications throughout their lifecycle. I try and share these on this newsletter as I find them, and whilst I have tweeted about [sls-dev-tools](https://theodo-uk.github.io/sls-dev-tools/) project before, am including it in this weeks round up so that others can check it out in case you missed this.
-
-I love the single plane of glass UI that sls dev tools provides you, so take a look at this screen shot and if that piques your interest, head on to the [GitHub repository for sls dev tools](https://github.com/Theodo-UK/sls-dev-tools).
+There are many open source tools that help you understand what is going on in your serverless applications throughout their lifecycle. I try and share these on this newsletter as I find them, and whilst I have tweeted about sls-dev-tools project before, am including it in this weeks round up so that others can check it out in case you missed this. I love the single plane of glass UI that sls dev tools provides.
 
 ![sls dev tools console
 ](https://github.com/Theodo-UK/sls-dev-tools/blob/master/demo.png?raw=true)

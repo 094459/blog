@@ -57,7 +57,7 @@ It is important that you celebrate the community for your open source project, a
 
 People who have been following these updates will know that I love sharing those tweets and blog posts that talk about the first contribution. Head on over to [Joseph Heyburb's blog](https://jdheyburn.co.uk/posts/on-becoming-an-open-source-software-contributor/) where he talks about his experience. Be sure to follow him at [@jdheyburn](https://twitter.com/jdheyburn/)
 
-And following on from that, another [tweet](https://twitter.com/WebinyPlatform/status/1222174684130750464) that [links to a blog post for Webiny](https://blog.webiny.com/webiny-january-update-%EF%B8%8F-a7b8dc7fcb36) that gives a shout out to the new communinty members. More of this please (and if you have a project and want to share with me good news like this, please get in touch).
+And following on from that, another [tweet](https://twitter.com/WebinyPlatform/status/1222174684130750464) that links to a blog post for Webiny that gives a shout out to the new communinty members. More of this please (and if you have a project and want to share with me good news like this, please get in touch).
 
 From Twitter to [Reddit, this thread](https://www.reddit.com/r/opensource/comments/euzzqv/how_can_i_contribute_to_open_source_software_if_i/) shows that even if you are not a coder, that there are many ways you can contribute to open source communities. From tagging issues to contributing docs, there are many ways to contribute even if you are not a coder.
 

@@ -21,7 +21,6 @@ Are you passionate about building, promoting and supporting an inclusive and gro
 
 We are looking for senior developer advocate and open source community leader to drive forward Open Distro for Elasticsearch and help make it the de facto choice for users who want to run open source Elasticsearch.
 
-Check out the [job description](https://www.amazon.jobs/en-gb/jobs/1165938/senior-developer-advocate-open-source) for more details. Do not hesitate to get back to me if you have any questions, I am here to answer any thing you might want to know.
 
 ### Want to help this project?
 

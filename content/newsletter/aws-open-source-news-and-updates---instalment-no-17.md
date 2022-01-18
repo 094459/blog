@@ -48,7 +48,7 @@ If you are using Terraform, then this project will allow you to take your existi
 
 ![AirIAM diagram](https://github.com/bridgecrewio/AirIAM/raw/master/images/ComponentDiagram.png)
 
-Check out the [AirIAM GitHub repository](https://github.com/bridgecrewio/AirIAM). They provide great documentation, tutorials and examples to get you started. They posted a video where you can also deep dive on this project, so check out the YouTube [clip here](https://www.youtube.com/watch?v=nFD0e9BNQRg&feature=youtu.be).
+Check out the [AirIAM GitHub repository](https://github.com/bridgecrewio/AirIAM). They provide great documentation, tutorials and examples to get you started.
 
 Why AirIAM? From the tweet that I read that made me aware of this project
 

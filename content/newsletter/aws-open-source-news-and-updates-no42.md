@@ -289,21 +289,15 @@ Databricks and Slalom bring you this virtual event where you will:
 * Train a model against data and learn best practices for working with ML frameworks (i.e. - TensorFlow, XGBoost, Scikit-Learn, etc.)
 * Learn about MLflow to track experiments, share projects and deploy models in the cloud with Amazon SageMaker
 
-Get more details and register [here](https://events.databricks.com/machinelearningdevday1110).
-
 **AWS Container Day: Kubernetes Edition**
 **November 17th, 10:00am to 6:00pm EST**
 
 Join us for AWS Container Day, a fully live, virtual day of sessions all about Amazon EKS and Kubernetes at AWS, hosted by Containers from the Couch. At this Day Zero KubeCon event, the AWS Kubernetes team will be discussing new launches, demoing products and features, covering best practices, and answering your question live on Twitch.
 
-Register [here](https://awscontainerdayk8s.splashthat.com/#rsvp).
-
 **Virtual ROS-Industrial Conference 2020**
 **December 15 - 16, 2020**
 
 The 8th edition of ROS-Industrial Conference will be held as a virtual event. It is not only the annual community meeting for the European ROS-Industrial community but this years event is also the final event of the H2020 ROSIN project. The conference gives you the chance to see the newest technical developments and to meet people and companies, which are active in the ROS community.
-
-Learn more and sign up [here](https://rosindustrial.org/rosindustrial-conference-2020).
 
 ### Stay in touch with open source at AWS
 
