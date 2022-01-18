@@ -187,7 +187,7 @@ Announced this week was the second [CDK Day](https://sessionize.com/cdkday/), wh
 
 Rust is a language empowering everyone to build secure, reliable, and efficient software. Rust is becoming more widely used in cloud native, powering everything from lightning-fast service meshes and powerful developer tools to internet-scale distributed databases.
 
-Come explore what makes Rust a fantastic choice for new cloud native development, and learn about how the community uses Rust today. Find out [more and register here](https://aws-oss.beachgeek.co.uk/5y).
+Come explore what makes Rust a fantastic choice for new cloud native development, and learn about how the community uses Rust today. 
 
 ### Stay in touch with open source at AWS
 

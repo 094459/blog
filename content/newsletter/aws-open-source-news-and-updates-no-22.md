@@ -65,7 +65,7 @@ Thank you Andrew!
 
 One of the great strengths of open source software is the ability to build on top of or extend your functionality with features that those open source projects provides. 
 
-[Massimo](https://twitter.com/mreferre) [tweeted](ttps://twitter.com/mreferre/status/1265652045266276352) about a new project of his this week that does just that. Massimo's project, [EKStendder](https://github.com/mreferre/ekstender) does just that. From the project page;
+[Massimo](https://twitter.com/mreferre) tweeted about a new project of his this week that does just that. Massimo's project, [EKStendder](https://github.com/mreferre/ekstender) does just that. From the project page;
 
 >The tool is aimed at bridging the gap that exists between a vanilla K8s deployment (too basic for some operational requirements) and very opinionated platforms built on top of K8s (too opinionated for many use cases).
 
@@ -155,7 +155,7 @@ There are some really great posts on dev.to, so here is a quick round up of the 
 
 **AWS Step Functions and AWS CDK**
 
-[Piotr Mionskowskih](ttps://dev.to/miensol) on dev.to walks you through an example of getting AWS CDK to create a step function. To read on, check out [Combine AWS Step Functions with CloudWatch events using AWS CDK](https://dev.to/miensol/combine-aws-step-functions-with-cloudwatch-events-using-aws-cdk-d75).
+[Piotr Mionskowskih](https://dev.to/miensol) on dev.to walks you through an example of getting AWS CDK to create a step function. To read on, check out [Combine AWS Step Functions with CloudWatch events using AWS CDK](https://dev.to/miensol/combine-aws-step-functions-with-cloudwatch-events-using-aws-cdk-d75).
 
 
 **EC2 Stopinator**

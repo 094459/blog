@@ -153,7 +153,7 @@ Insider is an AWS Advanced Technology Partner with the AWS Digital Customer Expe
 
 Some more great posts this week covering one of my favourite AWS innovations, AWS Nitro Enclaves.
 
-First up we have [Serving IAM credentials to enclaves](https://awsteele.com/2020/11/02/2020-11-02-nitro-enclaves-first-impressions.html). In this post Aidan Steele explores some of the features of AWS Nitro Enclave. Aidan shows you a proof of concept of how you might create a service that would vend AWS IAM role session credentials to code running in enclaves. He has some code that accompanies this post, but as he says in the post, this should not be used in anger and is just to show what can be done.
+First up we have Serving IAM credentials to enclaves. In this post Aidan Steele explores some of the features of AWS Nitro Enclave. Aidan shows you a proof of concept of how you might create a service that would vend AWS IAM role session credentials to code running in enclaves. He has some code that accompanies this post, but as he says in the post, this should not be used in anger and is just to show what can be done.
 
 ![diagram](https://awsteele.com/assets/2020-11-02-sequence-diagram.png)
 
@@ -218,8 +218,6 @@ Check out these events this week.
 
 Mayur Shetty will discuss the benefits of Red Hat OpenShift 4.5 and all the consumption options available to customers on AWS.
 
-Register [here](https://register.gotowebinar.com/register/7154011299129383181?source=Socialhttps://attendee.gotowebinar.com/register/7154011299129383181?source=Social).
-
 **Unifying Data Pipelines and Machine Learning with Apache Spark™ and Amazon SageMaker**
 **11/10/2020 9:00am CST**
 
@@ -230,14 +228,10 @@ Databricks and Slalom bring you this virtual event where you will:
 * Train a model against data and learn best practices for working with ML frameworks (i.e. - TensorFlow, XGBoost, Scikit-Learn, etc.)
 * Learn about MLflow to track experiments, share projects and deploy models in the cloud with Amazon SageMaker
 
-Get more details and register [here](https://events.databricks.com/machinelearningdevday1110).
-
 **Enabling Cloud Data Lakes for Analytics**
 **11/11/2020 9:00am - 12:00pm PST**
 
 In this virtual workshop, we’ll cover best practices for organisations to use powerful open source technologies to build and extend your AWS investments to make your data lake analytics ready. You’ll learn about the advantages of cloud-based data lakes in terms of security and cost. And finally, you’ll learn how data professionals are having a huge impact - lowering costs, changing time to market, and even revolutionising industries.
-
-Full details and registration link [here](https://events.databricks.com/virtualclouddatalakedevdaywest).
 
 
 **AWS Container Day: Kubernetes Edition**
@@ -245,14 +239,10 @@ Full details and registration link [here](https://events.databricks.com/virtualc
 
 Join us for AWS Container Day, a fully live, virtual day of sessions all about Amazon EKS and Kubernetes at AWS, hosted by Containers from the Couch. At this Day Zero KubeCon event, the AWS Kubernetes team will be discussing new launches, demoing products and features, covering best practices, and answering your question live on Twitch.
 
-Register [here](https://awscontainerdayk8s.splashthat.com/#rsvp).
-
 **Virtual ROS-Industrial Conference 2020**
 **December 15 - 16, 2020**
 
 The 8th edition of ROS-Industrial Conference will be held as a virtual event. It is not only the annual community meeting for the European ROS-Industrial community but this years event is also the final event of the H2020 ROSIN project. The conference gives you the chance to see the newest technical developments and to meet people and companies, which are active in the ROS community.
-
-Learn more and sign up [here](https://rosindustrial.org/rosindustrial-conference-2020).
 
 ### Check out this newsletter on Cloud Native
 

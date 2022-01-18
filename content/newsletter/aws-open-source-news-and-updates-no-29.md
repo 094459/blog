@@ -31,7 +31,7 @@ This event is broadly targeted at HPC users, developers, and user support teams.
 **Databricks machine learning workshop**
 **30th July, at 3PM BST (4:00PM CEST, 7:00am PST)**
 
-A date and time for your diary, on **30th July, at 3PM BST (9:00am CDT)** Databricks are running a workshop on [Unifying Data Pipelines and Machine Learning with Apache Spark™ and Amazon SageMaker](https://events.databricks.com/awsdatabricksmldevday730?utm_source=bambu&utm_medium=social&utm_campaign=advocacy&blaid=668173). This event will cover:
+A date and time for your diary, on **30th July, at 3PM BST (9:00am CDT)** Databricks are running a workshop on Unifying Data Pipelines and Machine Learning with Apache Spark™ and Amazon SageMaker. This event will cover:
 
 * building scalable and reliable pipelines for analytics
 * a look at Apache Spark and Databricks
@@ -39,12 +39,6 @@ A date and time for your diary, on **30th July, at 3PM BST (9:00am CDT)** Databr
 * see how to tack experiments in MLflow, share projects and deploy models in the cloud with Amazon SageMaker
 
 
-
-### Your feedback matters!
-
-I have put together a short feedback survey, which I would ask you to take - it will take no more than 2 minutes. You can access [here](https://amazonmr.au1.qualtrics.com/jfe/form/SV_8BsYTwgVY6E6WZn). Many thanks!
-
-[Take the survey](https://amazonmr.au1.qualtrics.com/jfe/form/SV_8BsYTwgVY6E6WZn)
 
 ### Celebrate open source contributors
 
@@ -190,7 +184,7 @@ The post walks you through how to use CDK Pipelines to deploy an AWS Lambda-powe
 
 **Scaling Electronic Design Automation workloads**
 
-[Scaling EDA Workloads using Scale-Out Computing on AWS](https://aws.amazon.com/blogs/industries/scaling-eda-workloads-using-scale-out-computing-on-aws/) - Ahmed Elzeftawi's post shows you have to implement a scale out computing architecture using several open source components (Linux OS, Amazon Elasticsearch and Amazon FSx for Lustre) for this specific industrial vertical, although you can adapt this to other verticals too. You can check out the source code [here](https://awslabs.github.io/scale-out-computing-on-aws/install-soca-cluster/). This is a good example of how combining open source components and cloud can enable high scale, robust solutions to solve industry use cases.
+[Scaling EDA Workloads using Scale-Out Computing on AWS](https://aws.amazon.com/blogs/industries/scaling-eda-workloads-using-scale-out-computing-on-aws/) - Ahmed Elzeftawi's post shows you have to implement a scale out computing architecture using several open source components (Linux OS, Amazon Elasticsearch and Amazon FSx for Lustre) for this specific industrial vertical, although you can adapt this to other verticals too. This is a good example of how combining open source components and cloud can enable high scale, robust solutions to solve industry use cases.
 
 ![architecture](https://d2908q01vomqb2.cloudfront.net/c5b76da3e608d34edb07244cd9b875ee86906328/2020/07/08/AhmedBlog_Image1-1024x667.png)
 

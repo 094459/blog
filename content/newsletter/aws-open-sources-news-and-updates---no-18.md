@@ -42,7 +42,7 @@ Jeremy Daly, AWS Serverless Hero and publisher of the excellent [offbyone](https
 >The DynamoDB Toolbox is a simple set of tools for working with Amazon DynamoDB and the DocumentClient. It lets you define your data models (with typings and aliases) and map them to your DynamoDB table. You can then generate parameters to put, get, delete, and update data by passing in a JavaScript object. The DynamoDB Toolbox will map aliases, validate and coerce types, and even write complex UpdateExpressions for you.
 >
 
-[v2 is still in development](https://github.com/jeremydaly/dynamodb-toolbox/tree/v0.2), and Jeremy has put stated that this contains breaking changes to v1 ([which you can find here](https://github.com/jeremydaly/dynamodb-toolbox)).
+[v2 is still in development](https://github.com/jeremydaly/dynamodb-toolbox), and Jeremy has put stated that this contains breaking changes to v1 ([which you can find here](https://github.com/jeremydaly/dynamodb-toolbox)).
 
 As always, Jeremy is looking for feedback and contributions, so why not check it out and let Jeremy know what you think.
 

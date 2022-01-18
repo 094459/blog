@@ -218,7 +218,7 @@ from Albert Niderhofer at CyberArk introduces the open source AWS Encryption SDK
 
 **AWS CDK and F#**
 
-[F# for the Cloud Worker - Part 5 - AWS Cloud Development Kit](https://elz.cloud/post/fsharp-for-cloud-worker-part5/) Erik Lundevall-Zara dives deep at how you can use AWS CDK with .NET and F#, but provides a good starting point if you want to know more about AWS CDK too and Erik does a great job is explaining the interactions and components and how they all work together.
+F# for the Cloud Worker - Part 5 - AWS Cloud Development Kit Erik Lundevall-Zara dives deep at how you can use AWS CDK with .NET and F#, but provides a good starting point if you want to know more about AWS CDK too and Erik does a great job is explaining the interactions and components and how they all work together.
 
 
 ### Quick updates

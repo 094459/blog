@@ -21,7 +21,7 @@ Please let me know how you found this newsletter - how could I improve it or wha
 
 **Job of the Week**
 
-[Principal Technical Product Manager, Amazon Corretto](https://aws-oss.beachgeek.co.uk/tz)
+Principal Technical Product Manager, Amazon Corretto
 
 Amazon Corretto is a public distribution of OpenJDK as well as the primary Java distribution used by Amazon's own developers. Many of AWS's and Amazon's signature service run on the Java runtime, you will have a direct opportunity to influence them in this role.
 
@@ -325,7 +325,7 @@ Next.js is a React framework that combines build-time static site generation (SS
 **Cloud DevSecOps with Bridgecrew and Terraform**
 **8th September, 9am PST**
 
-From scanning infrastructure as code (IaC) for security misconfigurations to implementing automated DevSecOps workflows, this workshop will provide a hands-on experience to automate your cloud security. Find out more and [register via this link](https://aws-oss.beachgeek.co.uk/ud).
+From scanning infrastructure as code (IaC) for security misconfigurations to implementing automated DevSecOps workflows, this workshop will provide a hands-on experience to automate your cloud security. 
 
 **Cloud Native Day**
 **23rd September, Bern Switzerland**
@@ -341,8 +341,6 @@ As a developer, the most important parts of managing your applications should al
 * Possible ways to authenticate and authorise access to GraphQL APIs
 * How to configure network security for your API
 * How to enable observability for your API with logging, tracing or auditing
-
-To [register for this event, use this link](https://aws-oss.beachgeek.co.uk/ue).
 
 ### Stay in touch with open source at AWS
 

@@ -49,13 +49,6 @@ Congratulations to Heitor for getting this over the line, and keep watching for 
 
 Now all I need to know is where the name came from :)
 
-**Chirp**
-
-Looking for a php based social media tracking solution you can host on AWS using serverless technologies? Well, look no further as Benjamin Crozat has put together [Chirp](https://chirp.benjamincrozat.com/overview). Full source code in the [GitHub repository here](https://github.com/benjamincrozat/chirp).
-
-You can have a look at what you will end up as Ben has put together a demo of the solution which I checked out.
-
-
 **CredoPy**
 
 Martin Wie's first open source project on GitHub, [CredoPy](https://github.com/MartinWie/CredoPy), looks to make you more secure by adopting the "troy password credo", the company where he works. What is this manifesto? Well, it is simple - It's very simple: Never store credentials unencrypted!
@@ -112,8 +105,6 @@ Nice project Saša
 
 First mentioned in [No. 13](https://dev.to/aws/aws-open-source-news-and-updates-no-13-46fg), [No. 16](https://dev.to/aws/aws-open-source-news-and-updates-no-16-3bp5) and then [No. 21](https://dev.to/aws/aws-open-sources-new-and-updates-no-21-3if8), John has released a new version of this project, [v0.3.0](https://pypi.org/project/ecs-composex/0.3.0/). What does ECS Compose X do? ECS ComposeX translates the services definition in the docker compose file into the ECS definitions to allow the service to run on AWS. It will, doing so, create all the necessary elements to ensure a successful and feature rich deployment into ECS.
 
-The updates can be found [here](https://docs.ecs-composex.lambda-my-aws.io/changelog.html#id1), and the significant update in this version is the ability to allow multiple services to be merged into one Task definition and support for Docker compose v3 compute definition.
-
 Super clear documentation, so if you are looking Build your infrastructure and deploy your services to AWS services using docker-compose file format
 
 Thanks John!
@@ -169,7 +160,7 @@ From AWS Serverless Hero Ken Collins, [AWS Lambda Microservice Workshop using S3
 
 **Keycloak, open source identity federation**
 
-[Keycloak](https://www.keycloak.org/docs/latest/getting_started/index.html), developed by Redhat, is an open solution to identity federation, and one that works with AWS. In this post by  Bojan Zivic, [Keycloak: A case for open-source IDP](https://www.ac3.com.au/resources/keycloak-a-case-for-open-source-idp) he shares his experience in implementing Keycloak, and how he and his team approached the decision making process and how they looked at all the alternative before settling on this. If you are currently looking at iDP solutions, worth a read to see if his approach might help you.
+Keycloak, developed by Redhat, is an open solution to identity federation, and one that works with AWS. In this post by  Bojan Zivic, [Keycloak: A case for open-source IDP](https://www.ac3.com.au/resources/keycloak-a-case-for-open-source-idp) he shares his experience in implementing Keycloak, and how he and his team approached the decision making process and how they looked at all the alternative before settling on this. If you are currently looking at iDP solutions, worth a read to see if his approach might help you.
 
 **Python Dashboards**
 

@@ -196,7 +196,7 @@ As a bonus, you can dive even deeper by checking out George's talk [How SEEK “
 
 **Kafka**
 
-[Using ComposeX to deploy Confluent Kafka components](https://blog.ecs-composex.lambda-my-aws.io/posts/using-composex-to-deploy-confluent-kafka-components/) great post from John Preston the maintainer of [ECS ComposeX](https://aws.amazon.com/blogs/opensource/automating-your-ecs-container-architecture-deployments-with-ecs-composex/) that shows you how you can use that project to deploy Confluent components in your own AWS VPC and ECS Clusters. 
+Using ComposeX to deploy Confluent Kafka components great post from John Preston the maintainer of [ECS ComposeX](https://aws.amazon.com/blogs/opensource/automating-your-ecs-container-architecture-deployments-with-ecs-composex/) that shows you how you can use that project to deploy Confluent components in your own AWS VPC and ECS Clusters. 
 
 **AWS Amplify**
 
@@ -309,8 +309,6 @@ re:Invent starts later today, and for the next three weeks we will have a packed
 **December 15 - 16, 2020**
 
 The 8th edition of ROS-Industrial Conference will be held as a virtual event. It is not only the annual community meeting for the European ROS-Industrial community but this years event is also the final event of the H2020 ROSIN project. The conference gives you the chance to see the newest technical developments and to meet people and companies, which are active in the ROS community.
-
-Learn more and sign up [here](https://rosindustrial.org/rosindustrial-conference-2020).
 
 ### Stay in touch with open source at AWS
 

@@ -18,8 +18,6 @@ If you are looking for a tool to help evaluate your Terraform scripts, then **[R
 
 Wanting to have a good grasp of what your environments sounds like something a lot of people will find useful. This open source project from **[duo-labs, Cloudmapper](https://github.com/duo-labs/cloudmapper)** does just that. It looks pretty meaty, has been going for a while and has a lot of fans (currently at 3.3K stars). There are some demo videos as well as this [intro post](https://duo.com/blog/introducing-cloudmapper-an-aws-visualization-tool) from the authors. Happy mapping folks!
 
-On a related note is this python project, [AWS Report by Haking](https://hakin9.org/aws-report-a-tool-for-analyzing-amazon-resources/). Check out the repo [here](https://github.com/gmdutra/aws-report), and let me know what you think.
-
 And for the lover of lists, then a new one from the [Linux Security Expert](https://linuxsecurity.expert/security-tools/aws-security-tools) site. From AWS hardening, scanning, modeling and benchmarking, you will find something. These are open source and whilst I have shared some of these before, you can never have enough lists.
 
 The day before valentines day is the perfect time to release a [7 open source cloud security tools you should know blog post](https://blog.runpanther.io/open-source-cloud-security-tools/). Any post where I get to hear about new open source projects is fine by me, and this one has more than one I didn't know about. Nice touch adding the stats for the different projects, so thank you Panther. (and check out the rest of their site, lots of other interesting content too)

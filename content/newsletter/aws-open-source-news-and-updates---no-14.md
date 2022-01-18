@@ -7,14 +7,6 @@ tags : [ oss-newsletter ]
 
 Episode 14, and yet more abundance of open source to share with you. Fourteen is an interesting number, and very quickly googling this, I learnt that the number fourteen has a number of interesting facts: the moon waxes for fourteen days and then wanes for fourteen days, a golf player can have no more than fourteen clubs in their caddy, it is the atomic number for silicon and for those who enjoy their open source with the literature, 14 is also the number of lines in a sonnet. So, I am hoping you will equally enjoy this sonnet of open source goodness.
 
-**Job Highlight**
-
-Occasionally I like to highlight jobs at AWS that people in the open source community might be interested in, and this is one such posting. Read the post, but in this role, you will be positioning AWS as a thought leader in related open source projects by collaborating and influencing the open source community and contributing to open source projects. 
-
-[Senior Software Design Engineer - AWS Observability](https://www.amazon.jobs/en/jobs/1092234/senior-software-design-engineer-aws-observability)
-
-Feel free to contact me directly if you want any insights or further information about the role or working at AWS.
-
 ### Celebrate open source contributors
 
 The articles posted in this series are only possible thanks to contributors and project maintainers and so I would like to shout out and thank those folks who really do power open source and enable us all to build on top of what they have created.

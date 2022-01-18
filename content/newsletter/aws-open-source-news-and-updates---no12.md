@@ -27,7 +27,7 @@ If you have not already heard of Jitsi, then hopefully this post will rectify th
 
 Find out more about Jitsi and how to get it up and running in this blog post, [Running your own open source web conferencing applications](https://dev.to/aws/running-your-own-open-source-web-conferencing-application-5aa2).
 
-It is not the only one however, and there are other open source projects that might also be of use to remote teams. Let me know what you think -> [openvidu](https://openvidu.io/docs/deployment/deploying-aws/) and [BigBlueButton](https://bigbluebutton.org/) (open source project [here](https://github.com/bigbluebutton/bigbluebutton))
+It is not the only one however, and there are other open source projects that might also be of use to remote teams. Let me know what you think -> openvidu and [BigBlueButton](https://bigbluebutton.org/) (open source project [here](https://github.com/bigbluebutton/bigbluebutton))
 
 
 **Sharing best practices**
@@ -54,9 +54,8 @@ A couple of new security related projects came up on my radar this week;
 
 **Checkov.io**
 
-[This project from Checkov is a static code analysis tool](https://www.checkov.io/documentation.html) for infrastructure-as-code and looks pretty comprehensive and easy to use. If python is your language of choice you will be right at home here. From the checkov.io folks:
+This project from Checkov is a static code analysis tool for infrastructure-as-code and looks pretty comprehensive and easy to use. If python is your language of choice you will be right at home here. From the checkov.io folks:
 >simplify and increase the adoption of security and compliance best practices that prevent common cloud misconfigurations. Its scans adhere and implement common industry standards such as the Center for Internet Security (CIS) Amazon Web Services (AWS) Foundations Benchmark.
-https://www.checkov.io/3.Scans/Credentials%20Scans.html
 
 **Electric Eye**
 

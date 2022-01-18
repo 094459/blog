@@ -30,9 +30,7 @@ Make sure you find and follow these builders and keep up to date with their open
 [vscode-spoty-army](https://aws-oss.beachgeek.co.uk/z5) Gitpod is a great open source project that helps you to tun upstream VS Code on a remote machine with access through a modern web browser from any device, anywhere, via the [OpenVSCode Server project](https://aws-oss.beachgeek.co.uk/z6). This project from Eng-Hwa Tan will help you to deploy an OpenVSCode Server for AWS Graviton2 (arm64) with spot instance using Amazon ECS.
 
 **cloudkeeper-ckui**
-[cloudkeeper-ckui](https://aws-oss.beachgeek.co.uk/z7) this project really impressed me last week and got me thinking should game designers be hired by all projects/organisations to help design their UI's. Cloudkeeper is an open source project that indexes resources, captures dependencies and maps out your AWS infrastructure in a graph so that it’s understandable for a human. Raffa aka Picster shared news last week on Reddit about a new project he is working on, a UI for this project. Check out the [thread in Reddit](https://aws-oss.beachgeek.co.uk/z7), or the video that provides a glimpse of what you can see. 
-
-{% youtube jOB0yUst2eg %}
+cloudkeeper-ckui this project really impressed me last week and got me thinking should game designers be hired by all projects/organisations to help design their UI's. Cloudkeeper is an open source project that indexes resources, captures dependencies and maps out your AWS infrastructure in a graph so that it’s understandable for a human. Raffa aka Picster shared news last week on Reddit about a new project he is working on, a UI for this project. 
 
 **Planet_Storm**
 
@@ -159,7 +157,7 @@ Coming up later this week we have...
 **Container Day x KubeCon**
 **October 12th, 8:00 AM – 4:00 PM (PDT)**
 
-The AWS Kubernetes team is back for the next instillment of Container Day x KubeCon, a full day of sessions on Amazon EKS and Kubernetes at AWS. In this live and virtual Twitch event, the AWS Kubernetes team, hosted by developer advocates Justin Garrison and Jesse Butler, will be covering new launches, demoing products and features, and answering your questions. [Sign up](https://aws-oss.beachgeek.co.uk/cr) to be reminded when things kick off.
+The AWS Kubernetes team is back for the next instillment of Container Day x KubeCon, a full day of sessions on Amazon EKS and Kubernetes at AWS. In this live and virtual Twitch event, the AWS Kubernetes team, hosted by developer advocates Justin Garrison and Jesse Butler, will be covering new launches, demoing products and features, and answering your questions. 
 
 **GraphQL API security best practices with AWS AppSync and AWS Amplify**
 **14th October, 11am AEST**
@@ -171,14 +169,10 @@ As a developer, the most important parts of managing your applications should al
 * How to configure network security for your API
 * How to enable observability for your API with logging, tracing or auditing
 
-To [register for this event, use this link](https://aws-oss.beachgeek.co.uk/ue).
-
 **Flink Forwards Global 2021**
 **October 26th/27th**
 
 Flink Forward Global 2021 is a 2-day virtual conference for the Apache Flink and stream processing communities. Apache Flink is an open-source distributed engine for processing data streams that can support both streaming and batch workloads. Flink Forward has keynote presentations and talks on production Flink use cases, technical deep dive sessions, and the growth of the Flink ecosystem. You can meet core Flink committers, new and experienced users, and thought leaders who share experiences and best practices in stream processing, real-time analytics, and the management of mission-critical Flink deployments in production.
-
-[Read more and sign up here.](https://aws-oss.beachgeek.co.uk/wh)
 
 **Databricks | AWS Lakehouse Dev Day Live Workshop**
 **November 16th 9:00 AM PT**
@@ -188,8 +182,6 @@ Delta Lake is an open source storage layer that provides ACID transactions, scal
 * Make your existing Amazon S3 data lakes into a lakehouse with Delta Lake.  
 * Provide an easy-to-use platform for analysts to directly query data on your data lake using SQL Analytics
 * Simplify and automate data pipelines for streaming and batch data to lower costs and boost productivity for your data teams
-
-[Read more and sign up here](https://aws-oss.beachgeek.co.uk/zs).
 
 ### Stay in touch with open source at AWS
 

@@ -187,27 +187,23 @@ Last week I enjoyed listening to [Security Superfriends | James Sorling, Securit
 
 Recently we expanded AWS DeepRacer’s educational capabilities to coding robotics applications with the introduction of AWS DeepRacer Open Source. Now, aspiring ROS developers can use their AWS DeepRacer device to experiment with sample projects developed by our GitHub community, and contribute their own projects for a chance to be featured. During this tech talk we’ll provide an overview of DeepRacer Open Source, how to access sample projects in the DeepRacer GitHub community, and finally we’ll show you how to program your DeepRacer to scare off unwanted critters with the DeepRacer Robocat project.
 
-Find out more and register by clicking over[ here](https://aws-oss.beachgeek.co.uk/in).
-
 **How to Run Your First HPC Job on AWS**
 **May 25th, 8:00PM CET**
 
 In this online webinar you will learn how to set up your first HPC cluster on AWS. We'll cover everything from installing AWS ParallelCluster (and open source cluster management tool to deploy and manage HPC clusters in the AWS cloud), selecting the your Amazon EC2 instances, when to use Spot Instances to save up to 90% on compute, to launching your first MPI “hello world” job from the command line.
-
-Find out more and register by clicking over[ here](https://aws-oss.beachgeek.co.uk/io).
 
 **Mobile and Front-End Live**
 **May 25th, 9:00 - 15:00 PDT**
 
 This is a LIVE streamed event on Twitch  focused on accelerating full-stack mobile and web development. Learn about AWS Amplify, a set of purpose-built tools and services for front-end web and mobile developers that simplify app development. Deep dive into GraphQL and AWS AppSync, a fully-managed GraphQL service that improves app performance and developer productivity.
 
-You can read more about what you can expect in the blog post, [Mobile and Front-End Live, May 25](https://aws-oss.beachgeek.co.uk/f4) and [register via this link](https://aws-oss.beachgeek.co.uk/f3).
+You can read more about what you can expect in the blog post, [Mobile and Front-End Live, May 25](https://aws-oss.beachgeek.co.uk/f4)
 
 
 **Cloud Native Day**
 **23rd September, Bern Switzerland**
 
-What is this, an in person event returning? A stellar line up including our own Michael Hausenblas, an event looking at CNCF projects and the future of IT. Find out more and to view prices/register, by clicking [here](https://cloudnativeday.ch/en/#speakers).
+What is this, an in person event returning? A stellar line up including our own Michael Hausenblas, an event looking at CNCF projects and the future of IT. 
 
 
 ### Stay in touch with open source at AWS

@@ -12,11 +12,9 @@ So what delights does #80 of this newsletter offer this week? We have plenty of 
 
 **Job of the week**
 
-**[Principal Developer Advocate - Java Specialist](https://aws-oss.beachgeek.co.uk/ur)**
+**Principal Developer Advocate - Java Specialist**
 
 A new opening in my team has come up, for anyone in the Cambridge/Boston area in the US. As a Principal Developer Advocate in the AWS Developer Relations organisation, you will work to earn trust with Enterprise developers and the broader Java community through your technical leadership and expertise. This is a high-impact role that's well-suited to someone with domain-specific technical experience that enjoys sharing what they have learned in order to help users solve their technical issues and overcome any challenges they face. You will have the ability to influence and educate customers at every stage of their experience with technologies such as OpenJDK, Serverless, Containers, DevOps tools and more.
-
-Check out the [job description](https://aws-oss.beachgeek.co.uk/ur) for more details, and please feel free to DM or email me with any questions you might have. 
 
 ### Celebrating open source contributors
 
@@ -218,7 +216,7 @@ AWS Copilot v1.10 also adds a new field taskdef_overrides in the manifest file t
 **Cloud DevSecOps with Bridgecrew and Terraform**
 **8th September, 9am PST**
 
-From scanning infrastructure as code (IaC) for security misconfigurations to implementing automated DevSecOps workflows, this workshop will provide a hands-on experience to automate your cloud security. Find out more and [register via this link](https://aws-oss.beachgeek.co.uk/ud).
+From scanning infrastructure as code (IaC) for security misconfigurations to implementing automated DevSecOps workflows, this workshop will provide a hands-on experience to automate your cloud security. 
 
 **Cloud Native Day**
 **23rd September, Bern Switzerland**
@@ -234,8 +232,6 @@ As a developer, the most important parts of managing your applications should al
 * Possible ways to authenticate and authorise access to GraphQL APIs
 * How to configure network security for your API
 * How to enable observability for your API with logging, tracing or auditing
-
-To [register for this event, use this link](https://aws-oss.beachgeek.co.uk/ue).
 
 ### Stay in touch with open source at AWS
 

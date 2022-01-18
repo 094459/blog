@@ -94,16 +94,6 @@ In [Building a location-based, scalable, serverless web app – part 1](https://
 
 You find the code on the [GitHub repository here](https://github.com/aws-samples/ask-around-me). Like all good box sets, I am not sure I can wait until the next instalment.
 
-**panther**
-
-I first mentioned panther back in [episode 7](https://dev.to/aws/open-source-news-and-updates-on-aws-7-networking-data-analytics-security-and-more-5954), but this time it is to talk about their security project focused on security for cloud native applications. So what does it do? From the project page;
-
-> Panther is a platform for detecting threats with log data, improving cloud security posture, and conducting investigations.
-
-You can use this for analysing your log files, help to tirage incidents, searching for security incidents and helping identify any security weakness to ensure you meet your compliance and best practice objectives.
-
-The project provides clear documentation and a quick start to get you up and running within your AWS environment. Check out the [Quickstart](https://docs.runpanther.io/quick-start) section here. Head over to the actual [**panther** project on GitHub](https://github.com/panther-labs/panther) and give it a go
-
 **ssosync**
 
 Last week I introduced this new project from [Lee Packham](https://twitter.com/Joolz), and this week I put together a follow up post to help you automate how you run ssosync.
@@ -112,7 +102,7 @@ Nice work Lee!
 
 **Webiny**
 
-Webiny is a serverless, headless CMS that is very popular. In this [post](https://dev.to/webiny/serverless-headless-cms-by-webiny-open-source-31bk), [Sven A](https://dev.to/svenalhamad) introduces what Webiny is and how it is different to some of the other headless CMS technologies you might already be familiar with, and then provides a [walkthrough](https://docs.webiny.com/docs/get-started/quick-start/).
+Webiny is a serverless, headless CMS that is very popular. In this [post](https://dev.to/webiny/serverless-headless-cms-by-webiny-open-source-31bk), [Sven A](https://dev.to/svenalhamad) introduces what Webiny is and how it is different to some of the other headless CMS technologies you might already be familiar with.
 
 Thanks Sven.
 

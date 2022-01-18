@@ -159,14 +159,10 @@ Want to contribute to Apache Airflow? Find out more as to how this works by chec
 
 In this workshop, [Getting Started with Amazon SageMaker: Training your first NLP Transformer model with Hugging Face](https://aws-oss.beachgeek.co.uk/10l) you will learn how to use Amazon SageMaker to train a Hugging Face Transformer model and deploy it afterwards. The workshop covers preparing and uploading  test dataset to S3, fine-tuning a script to be used with Amazon SageMaker Training jobs, launching a training job and storing the trained model into S3 and then deploying the model after successful training.
 
-Everything you need will be provided, so [read more and register using this link](https://aws-oss.beachgeek.co.uk/10l).
-
 **Flink Forwards Global 2021**
 **October 26th/27th**
 
 Flink Forward Global 2021 is a 2-day virtual conference for the Apache Flink and stream processing communities. Apache Flink is an open-source distributed engine for processing data streams that can support both streaming and batch workloads. Flink Forward has keynote presentations and talks on production Flink use cases, technical deep dive sessions, and the growth of the Flink ecosystem. You can meet core Flink committers, new and experienced users, and thought leaders who share experiences and best practices in stream processing, real-time analytics, and the management of mission-critical Flink deployments in production.
-
-[Read more and sign up here.](https://aws-oss.beachgeek.co.uk/wh)
 
 **Databricks | AWS Lakehouse Dev Day Live Workshop**
 **November 16th 9:00 AM PT**
@@ -176,8 +172,6 @@ Delta Lake is an open source storage layer that provides ACID transactions, scal
 * Make your existing Amazon S3 data lakes into a lakehouse with Delta Lake.  
 * Provide an easy-to-use platform for analysts to directly query data on your data lake using SQL Analytics
 * Simplify and automate data pipelines for streaming and batch data to lower costs and boost productivity for your data teams
-
-[Read more and sign up here](https://aws-oss.beachgeek.co.uk/zs).
 
 ### Stay in touch with open source at AWS
 

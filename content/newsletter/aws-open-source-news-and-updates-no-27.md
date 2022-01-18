@@ -3,6 +3,8 @@ title: 'AWS open source news and updates No. 27'
 date: '2020-07-06'
 tags : [ oss-newsletter ]
 ---
+*Updated, 18th Jan to remove dead links*
+
 ## July 6th - Instalment #27
 
 Week No.27, and as the days start getting shorter, these weekly newsletters just keep getting longer. There is so much activity and energy in open source, and I am continuously amazed at what new stuff I unearth and uncover.
@@ -87,11 +89,6 @@ If you are a user of Adobe's XD then this project will be of interest. It provid
 ![architecture](https://hackernoon.com/photos/4sk6eGzDnrU1CLYT7UcYe31UdUm2-mg23wcx)
 
 Make sure you follow Brian so you don't miss out future posts he shares.
-
-**Getting started with AWS SAM**
-
-[Getting started with AWS SAM: Step by Step guide](https://medium.com/@kisancodes/getting-started-with-aws-sam-step-by-step-guide-c82c27dbb9ac) - this post from [Kisan Tamang](@kisanpakhreen) is an excellent introduction and tutorial that will help you get started with AWS Serverless Application Model or SAM.
-
 
 **PyCaret, Streamlit and AWS Fargate**
 

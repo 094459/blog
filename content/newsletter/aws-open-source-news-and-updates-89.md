@@ -178,7 +178,7 @@ Nick Coval & Adam Palmer presented "[Building an Open Source IDS/IPS Service on 
 **MLOps: End-to-End Hugging Face Transformers with the Hub & SageMaker Pipelines**
 **November 10th 2021 - 6:00 PM (GMT)**
 
-Later this week, we have this workshop where you will learn how to build an End-to-End MLOps Pipeline for Hugging Face Transformers from training to production using Amazon SageMaker. Join the always amazing Julien Simon, together with Matteu Desve and Phillip Schmid for this webinar. [Read more and register here.](https://aws-oss.beachgeek.co.uk/12g)
+Later this week, we have this workshop where you will learn how to build an End-to-End MLOps Pipeline for Hugging Face Transformers from training to production using Amazon SageMaker. Join the always amazing Julien Simon, together with Matteu Desve and Phillip Schmid for this webinar. 
 
 
 **Databricks | AWS Lakehouse Dev Day Live Workshop**
@@ -190,7 +190,6 @@ Delta Lake is an open source storage layer that provides ACID transactions, scal
 * Provide an easy-to-use platform for analysts to directly query data on your data lake using SQL Analytics
 * Simplify and automate data pipelines for streaming and batch data to lower costs and boost productivity for your data teams
 
-[Read more and sign up here](https://aws-oss.beachgeek.co.uk/zs).
 
 ### Stay in touch with open source at AWS
 

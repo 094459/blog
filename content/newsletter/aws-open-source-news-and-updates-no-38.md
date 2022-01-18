@@ -14,33 +14,25 @@ Week No.38 and following on from the very first CDK Day, there is plenty of AWS 
 
 Given the importance of community in open source, this event is something you will want to register for and check out. Mark Birch is seasoned and experienced when it comes to community building, and he recently wrote a how-to book about creating communities, full of nuts and bolts advice along with case studies. This is your chance to listen and ask him questions you might have on this topic.
 
-More details [here](https://www.runtheworld.today/app/invitation/8783).
-
 **All Things Open**
 **October 19th|20th**
 
-All Things Open is one of the must attend events for open source folks. Check out the event, the speakers and the tracks, you can find the link [here](https://2020.allthingsopen.org/).
+All Things Open is one of the must attend events for open source folks. 
 
 **AWS Copilot**
 **October 19, 2020, 1:00 PM (PT) | 4:00 PM (ET)**
 
 AWS Copilot is a command line interface tool that helps customers develop, release, and operate containerized applications on AWS. AWS Copilot creates all the infrastructure and artifacts required to run a production-ready service on Amazon ECS and AWS Fargate, including task definitions, image repositories, and AWS resources like load balancers and deployment pipelines. In this tech talk, you will learn how to leverage AWS Copilot to containerize applications and deploy production ready micro-services faster on Amazon ECS, with code demos.
 
-Sign up [here](https://pages.awscloud.com/AWS-Online-Tech-Talks_October-2020.html?webinar=2020_1003-CON).
-
 **KubeFlow**
 **October 23, 2020, 1:00 PM (PT) | 4:00 PM (ET)**
 
 Distributed training on Kubernetes is both hard to set up and optimize for ML jobs. In this tech talk, you'll learn how to do distributed training in a Kubeflow Pipelines workflow with a Mask-RCNN model in PyTorch. We'll set up an end to end training job for a computer vision use case on multiple GPU nodes and then deploy that model onto a production endpoint using Kubeflow Pipelines for orchestration and Amazon Sagemaker Components for Kubeflow Pipelines. Our model is a Mask-RCNN model from the Detectron2 model zoo trained on the COCO2017 dataset and further fine-tuned on a custom dataset with aerial imagery.
 
-Sign up [here](https://pages.awscloud.com/AWS-Online-Tech-Talks_October-2020.html?webinar=2020_1015-MCL).
-
 **cdk8s**
 **October 27, 2020, 11:00 AM (PT) | 2:00 PM (ET)**
 
 The new CDK for Kubernetes (cdk8s) is an open-source project that lets you define Kubernetes applications and reusable components using familiar programming languages. In this tech talk, learn how csk8s works locally on your machine and generates standard Kubernetes YAML data, so you can use it with any Kubernetes cluster running anywhere, including on-premises and the cloud.
-
-Sign up [here](https://pages.awscloud.com/AWS-Online-Tech-Talks_October-2020.html?webinar=2020_1020-CON).
 
 #### CDK Day
 
@@ -106,7 +98,7 @@ Make sure you find and follow these builders and keep up to date with their open
 
 **Microtica**
 
-[Microtica](https://github.com/microtica-components/mic-cloudformation-hub) is an open source automation platform that helps accelerate the configuration of your cloud environments whilst maintaining consistency by using templates that are then executed via AWS Cloud Formation. There are a number of samples components provided, and the project is looking for more. Sara Miteva has also written a very clear post on dev.to on how to get started, so make sure you check out [Microtica—the DevOps automation platform with open-source components](https://dev.to/microtica/microtica-the-devops-automation-platform-with-open-source-components-2gdh)  
+Microtica is an open source automation platform that helps accelerate the configuration of your cloud environments whilst maintaining consistency by using templates that are then executed via AWS Cloud Formation. There are a number of samples components provided, and the project is looking for more. Sara Miteva has also written a very clear post on dev.to on how to get started, so make sure you check out [Microtica—the DevOps automation platform with open-source components](https://dev.to/microtica/microtica-the-devops-automation-platform-with-open-source-components-2gdh)  
 
 **Amazon Interactive Video Service**
 

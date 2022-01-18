@@ -14,11 +14,9 @@ Welcome new and existing readers of this newsletter to another edition with plen
 
 **Job of the week**
 
-**[Principal Developer Advocate - Java Specialist](https://aws-oss.beachgeek.co.uk/ur)**
+**Principal Developer Advocate - Java Specialist*
 
 In case you missed this last week, we have a new opening in my team for anyone in the Cambridge/Boston area in the US. As a Principal Developer Advocate in the AWS Developer Relations organisation, you will work to earn trust with Enterprise developers and the broader Java community through your technical leadership and expertise. This is a high-impact role that's well-suited to someone with domain-specific technical experience that enjoys sharing what they have learned in order to help users solve their technical issues and overcome any challenges they face. You will have the ability to influence and educate customers at every stage of their experience with technologies such as OpenJDK, Serverless, Containers, DevOps tools and more.
-
-Check out the [job description](https://aws-oss.beachgeek.co.uk/ur) for more details, and please feel free to DM or email me with any questions you might have. 
 
 ### Celebrating open source contributors
 
@@ -185,8 +183,6 @@ During August, 2021, 4 new versions of the AWS Cloud Development Kit (CDK) for J
 
 In this webinar, Big Compass, Confluent, and AWS will come together to explore the strengths of Confluent and AWS, and how each technology can complement one another for various use cases. The webinar covers ways to combine AWS and Confluent in a hybrid platform, how to build your serverless applications with AWS and Confluent, and a look at real-world use cases for AWS and Confluent.
 
-To find out more and [register, click here](https://aws-oss.beachgeek.co.uk/vq).
-
 
 **Cloud Native Day**
 **23rd September, Bern Switzerland**
@@ -203,14 +199,10 @@ As a developer, the most important parts of managing your applications should al
 * How to configure network security for your API
 * How to enable observability for your API with logging, tracing or auditing
 
-To [register for this event, use this link](https://aws-oss.beachgeek.co.uk/ue).
-
 **Flink Forwards Global 2021**
 **October 26th/27th**
 
 Flink Forward Global 2021 is a 2-day virtual conference for the Apache Flink and stream processing communities. Apache Flink is an open-source distributed engine for processing data streams that can support both streaming and batch workloads. Flink Forward has keynote presentations and talks on production Flink use cases, technical deep dive sessions, and the growth of the Flink ecosystem. You can meet core Flink committers, new and experienced users, and thought leaders who share experiences and best practices in stream processing, real-time analytics, and the management of mission-critical Flink deployments in production.
-
-[Read more and sign up here.](https://aws-oss.beachgeek.co.uk/wh)
 
 ### Stay in touch with open source at AWS
 

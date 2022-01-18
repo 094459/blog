@@ -145,11 +145,6 @@ GitHub repository [here](https://github.com/jdhollis/bastions-on-demand/blob/mas
 
 ![pipeline](https://emshea.com/static/images/serverless-cicd/pipeline-diagram-1280.png)
 
-**GraphQL**
-
-[Serverless GraphQL server on AWS Lambda](https://johndous.com/posts/serverless-graphql-server-on-aws-lambda) post from John Dusaitis, shows you how to run a GraphQL server (Apollo) on AWS Lambda. You can find the complete code for the post and walkthrough [here](https://github.com/johndous/graphql-serverless).
-
-
 **CyberArk conjur**
 
 If you are looking for an open source secrets manager, then this project from CyberArk should be of interest. In this post by Joe Garica, [AWS IAM Authenticator Tutorial For Conjur Open Source](https://www.conjur.org/blog/aws-iam-authenticator-tutorial-for-conjur-open-source/), Joe walks you through setting up Conjur on AWS, integrating this with AWS IAM and then showing you how you can then store and access secrets which you can access from your AWS EC2 instances or Lambda functions.

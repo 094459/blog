@@ -31,7 +31,7 @@ This event is broadly targeted at HPC users, developers, and user support teams.
 **Databricks machine learning workshop**
 **30th July, at 3PM BST (4:00PM CEST, 7:00am PST)**
 
-A date and time for your diary, on **30th July, at 3PM BST (9:00am CDT)** Databricks are running a workshop on [Unifying Data Pipelines and Machine Learning with Apache Spark™ and Amazon SageMaker](https://events.databricks.com/awsdatabricksmldevday730?utm_source=bambu&utm_medium=social&utm_campaign=advocacy&blaid=668173). This event will cover:
+A date and time for your diary, on **30th July, at 3PM BST (9:00am CDT)** Databricks are running a workshop on Unifying Data Pipelines and Machine Learning with Apache Spark™ and Amazon SageMaker. This event will cover:
 
 * building scalable and reliable pipelines for analytics
 * a look at Apache Spark and Databricks
@@ -43,16 +43,12 @@ A date and time for your diary, on **30th July, at 3PM BST (9:00am CDT)** Databr
 
 Join technical experts from across the robotics industry for a complimentary educational event. We’ve designed our program to help you learn best practices and the latest technology for robotics application development. Check out our schedule of sessions hosted by AWS Robotics engineers and solutions architects with guest speakers from the Open Robotics, ROS-Industrial Consortium, iRobot, and Labrador Robotics.
 
-[Sign up here](https://pages.awscloud.com/Cloud-Robotics-Summit?sc_channel=sm&sc_campaign=Open_Source&sc_publisher=TWITTER&sc_country=Open+Source&sc_geo=GLOBAL&sc_outcome=event_registration&trk=open_source_TWITTER&linkId=94846423#).
-
 **Kubecon**
 **August 17th, 8:00am PST**
 **August 19th, 9:00am - 5:00pm ASIA/Shanghai APAC edition**
 **August 24th, 9:00am - 5:00pm CEST EMEA edition**
 
 Start off your KubeCon 2020 with AWS at Container Day on August 17th. In this full-day virtual event, we’ll cover how Amazon EKS makes it easy to deploy, manage, and scale containerised applications using Kubernetes on AWS. Virtual sessions throughout the day will consist of technical deep dives, product demos, and product announcements. The AWS Kubernetes team will be streaming on Twitch all day, ready to answer your questions.
-
-Read more about the AWS Containers Day at KubeCon [here](https://aws.amazon.com/blogs/containers/save-the-date-aws-container-day-at-kubecon/) and register [here](https://awscontainerday.splashthat.com/?&trk=el_a134p000003ygmIAAQ&trkCampaign=AWS_Container_Day&sc_channel=el&sc_campaign=GLOBAL_PM_WEBINAR_aws-container-day_20200817_NAMER&sc_outcome=Product_Marketing&sc_geo=mult). For APAC regions/time register [here](https://awscontainerdayapac.splashthat.com/?&trk=el_a134p000003ygmXAAQ&trkCampaign=AWS_Container_Day_APAC&sc_channel=el&sc_campaign=GLOBAL_PM_WEBINAR_aws-container-day_20200817_APAC&sc_outcome=Product_Marketing&sc_geo=mult), for EMEA regions/time register [here](https://awscontainerdayemea.splashthat.com/?&trk=el_a134p000003ygmcAAA&trkCampaign=AWS_Container_Day_EMEA&sc_channel=el&sc_campaign=GLOBAL_PM_WEBINAR_aws-container-day_20200817_EMEA&sc_outcome=Product_Marketing&sc_geo=mult).
 
 ### Your feedback matters!
 
@@ -99,9 +95,7 @@ Related to this was a [tweet](https://twitter.com/fabianfett/status/126736690082
 
 **amazon-keyspaces-toolkit**
 
-[amazon-keyspaces-toolkit](https://github.com/aws-samplamazon-keyspaces-toolkites/amazon-keyspaces-toolkit) this open source project provides docker image for Cassandra Query Language Shell (CQLSH) to help you use CQLSH with Amazon Keyspaces for functional testing, light operations, and data migration. The container includes configuration settings optimised for Amazon Keyspaces, but will also work with Apache Cassandra clusters. Amazon Keyspaces is a scalable, highly available, and managed Apache Cassandra–compatible database service.
-
-![keyspaces](https://github.com/aws-samples/amazon-keyspaces-toolkit/raw/master/content/static/keyspaces-toolkit-architecture.png)
+amazon-keyspaces-toolkit this open source project provides docker image for Cassandra Query Language Shell (CQLSH) to help you use CQLSH with Amazon Keyspaces for functional testing, light operations, and data migration. The container includes configuration settings optimised for Amazon Keyspaces, but will also work with Apache Cassandra clusters. Amazon Keyspaces is a scalable, highly available, and managed Apache Cassandra–compatible database service.
 
 **cdwatch**
 

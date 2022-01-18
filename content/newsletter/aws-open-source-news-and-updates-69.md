@@ -21,7 +21,7 @@ Many thanks!
 
 **Job of the Week**
 
-[Senior Developer Advocate - OpenSearch](https://aws-oss.beachgeek.co.uk/jc)
+Senior Developer Advocate - OpenSearch
 
 Are you passionate about building, promoting and supporting an inclusive and growing open source community? Do you want to have direct and immediate impact on a large number of open source and AWS users? Do you want to be part of a fast-growing AWS service and work in a fast paced startup style environment?
 
@@ -205,14 +205,10 @@ Several events for you this week...
 
 In this online webinar you will learn how to set up your first HPC cluster on AWS. We'll cover everything from installing AWS ParallelCluster (and open source cluster management tool to deploy and manage HPC clusters in the AWS cloud), selecting the your Amazon EC2 instances, when to use Spot Instances to save up to 90% on compute, to launching your first MPI “hello world” job from the command line.
 
-Find out more and register by clicking over [here.](https://aws-oss.beachgeek.co.uk/io)
-
 **Mobile and Front-End Live**
 **May 25th, 9:00 - 15:00 PDT**
 
 This is a LIVE streamed event on Twitch  focused on accelerating full-stack mobile and web development. Learn about AWS Amplify, a set of purpose-built tools and services for front-end web and mobile developers that simplify app development. Deep dive into GraphQL and AWS AppSync, a fully-managed GraphQL service that improves app performance and developer productivity.
-
-You can read more about what you can expect in the blog post, [Mobile and Front-End Live, May 25](https://aws-oss.beachgeek.co.uk/f4) and [register via this link](https://aws-oss.beachgeek.co.uk/f3).
 
 **OpenSearch: The open source successor of Elasticsearc**
 **May 27th, 9am EST/3pm CET**
@@ -225,8 +221,7 @@ Streamed [via YouTube here](https://www.youtube.com/watch?v=UDvWdTeH5V4).
 **Cloud Native Day**
 **23rd September, Bern Switzerland**
 
-What is this, an in person event returning? A stellar line up including our own Michael Hausenblas, an event looking at CNCF projects and the future of IT. Find out more and to view prices/register, by clicking [here](https://cloudnativeday.ch/en/#speakers).
-
+What is this, an in person event returning? A stellar line up including our own Michael Hausenblas, an event looking at CNCF projects and the future of IT. 
 
 ### Stay in touch with open source at AWS
 

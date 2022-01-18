@@ -39,7 +39,7 @@ Thank you Amir!
 
 **ECS ComposeX**
 
-A few weeks ago in [No.13](https://dev.to/aws/aws-open-source-news-and-updates-no-13-46fg) I mentioned this neat project, ECS ComposeX that John Preston had created. Well, following on from that I wanted to share his new blog post and walkthrough of how to use this. In '[CICD Pipeline for multiple services on AWS ECS with ECS ComposeX](https://blog.ecs-composex.lambda-my-aws.io)' John provides a great walkthrough of how to use ECS ComposeX using some sample applications integrated with AWS services.
+A few weeks ago in [No.13](https://dev.to/aws/aws-open-source-news-and-updates-no-13-46fg) I mentioned this neat project, ECS ComposeX that John Preston had created. Well, following on from that I wanted to share his new blog post and walkthrough of how to use this. In 'CICD Pipeline for multiple services on AWS ECS with ECS ComposeX.' John provides a great walkthrough of how to use ECS ComposeX using some sample applications integrated with AWS services.
 
 ![Diagram of architecture.](https://blog.ecs-composex.lambda-my-aws.io/images/cicd-pipeline/cicd-structure.jpg)
 

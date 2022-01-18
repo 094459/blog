@@ -219,35 +219,29 @@ Jaana Dogan (@rakyll) explains which problems the industry, and especially cloud
 
 Rust is a language empowering everyone to build secure, reliable, and efficient software. Rust is becoming more widely used in cloud native, powering everything from lightning-fast service meshes and powerful developer tools to internet-scale distributed databases.
 
-Come explore what makes Rust a fantastic choice for new cloud native development, and learn about how the community uses Rust today. Find out [more and register here](https://aws-oss.beachgeek.co.uk/5y).
+Come explore what makes Rust a fantastic choice for new cloud native development, and learn about how the community uses Rust today. 
 
 **Container Day**
 **May 4, 2021 | 10:00AM - 6:00PM CEST**
 
 Container Day x KubeCon is a fully live, virtual day of sessions all about Amazon EKS and Kubernetes at AWS, hosted by Brent Langston and Adam Keller of Containers from the Couch. At this Day Zero KubeCon event, the AWS Kubernetes team will be revealing new launches, demoing products and features, covering best practices, and answering your questions live on Twitch! If you have a question before the event, you can email the team at awscontainerday@amazon.com and maybe get them answered.
 
-Find out more and to register, [click here](https://aws-oss.beachgeek.co.uk/cr).
-
 **An Introduction to Amazon Managed Blockchain**
 **5th May**
 
 Amazon Managed Blockchain (AMB) is a fully managed service that makes it easier to build scalable blockchain networks using popular open source frameworks, including Hyperledger Fabric and Ethereum. AMB includes several features and enhancements beyond those provided by the open-source projects on which it is based. It supports public and private blockchain options, each of which favors different use cases. We review reference architectures outlining example applications on both Hyperledger Fabric and Ethereum. In this lecture, you will also hear several customer success stories building solutions on Amazon Managed Blockchain.
-
-Find out more and register [via this link](https://aws-oss.beachgeek.co.uk/dx).
 
 **Building And Maintaining Your Own Secure Container OS**
 **May 13th 9am PST**
 
 Curtis Rissi, a Principal Partner SA at AWS will walk attendees through the Bottlerocket (an open-source Linux-based operating system meant for hosting containers) build process, and provide some key use cases for customisation: how to add new configuration options; how to add new packages; how to configure your own update repositories; how to add security policy; and other common customisations. 
 
-Find out more and to register, click [here](https://aws-oss.beachgeek.co.uk/ed)
-
 **Mobile and Front-End Live**
 **May 25th, 9:00 - 15:00 PDT**
 
 This is a LIVE streamed event on Twitch  focused on accelerating full-stack mobile and web development. Learn about AWS Amplify, a set of purpose-built tools and services for front-end web and mobile developers that simplify app development. Deep dive into GraphQL and AWS AppSync, a fully-managed GraphQL service that improves app performance and developer productivity.
 
-You can read more about what you can expect in the blog post, [Mobile and Front-End Live, May 25](https://aws-oss.beachgeek.co.uk/f4) and [register via this link](https://aws-oss.beachgeek.co.uk/f3).
+You can read more about what you can expect in the blog post,.
 
 
 ### Stay in touch with open source at AWS

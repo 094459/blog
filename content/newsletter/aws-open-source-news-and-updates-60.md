@@ -27,7 +27,7 @@ Make sure you find and follow these builders and keep up to date with their open
 
 **Open Source job of the week**
 
-[Open Source Solutions Architect, Amplify Framework](https://aws-oss.beachgeek.co.uk/aa) If you are looking for a fresh challenge, are based in the Southern California region, then take a look at this great opportunity to join the AWS Amplify team to help support the open source Amplify Libraries. The open source Amplify Framework team is continuously innovating and expanding our mobile and web framework to enable developers to quickly build, deploy, and manage native, web, and hybrid apps. 
+Open Source Solutions Architect, Amplify Framework If you are looking for a fresh challenge, are based in the Southern California region, then take a look at this great opportunity to join the AWS Amplify team to help support the open source Amplify Libraries. The open source Amplify Framework team is continuously innovating and expanding our mobile and web framework to enable developers to quickly build, deploy, and manage native, web, and hybrid apps. 
 
 ### Latest from open source projects
 
@@ -41,7 +41,7 @@ Remember, it is good security hygiene to not have old versions of unused functio
 
 **elgato-streamdeck-awscosts**
 
-[elgato-streamdeck-awscosts](https://aws-oss.beachgeek.co.uk/aq) interesting open source project from Trevor Sullivan for anyone running Windows and using the elgato Stream Deck. This project creates a custom icon that displays your AWS bill. Trevor has written a supporting blog post, [Monitor Monthly AWS Spend on Elgato Stream Deck](https://aws-oss.beachgeek.co.uk/ar) and I really wanted to run this but sadly am using a Mac. 
+[elgato-streamdeck-awscosts](https://aws-oss.beachgeek.co.uk/aq) interesting open source project from Trevor Sullivan for anyone running Windows and using the elgato Stream Deck. This project creates a custom icon that displays your AWS bill. Trevor has written a supporting blog post, Monitor Monthly AWS Spend on Elgato Stream Deck and I really wanted to run this but sadly am using a Mac. 
 
 ### Community open source posts
 
@@ -179,29 +179,22 @@ We have a couple of these events happening later this week, so check it out and 
 
 Moving solutions to a SaaS delivery can be daunting for some organisations. The complexity and overhead of refactoring your solution, automating tenant on boarding, introducing new operational tooling, and a host of other factors can make it challenging or impossible for organisations to move to SaaS. The investment and time is just too long. In this tech talk, we’ll dig into the details of AWS SaaS Boost, a new tool that streamlines your ability to move a monolith into a SaaS delivery model. The goal of AWS SaaS Boost is to provide a pre-built SaaS environment that enables organisations to begin to operate as a SaaS business without absorbing all the complexity that comes with building, operating, and managing a SaaS solutions. We’ll explore the fundamentals of this open source environment, describing both the experience and the underlying architecture.
 
-[Sign up here](https://aws-oss.beachgeek.co.uk/aw), there is still time to catch this event later today.
-
-
 **Embracing Observability in Distributed Systems**
 **March 16th, 9:00am EST**
 
 Michael Hausenblas is your speaker and he will look at the motivation for observability in distributed systems such as containerized microservices. We discuss good practices and current developments around CNCF open source projects and specifications including OpenTelemetry and FluentBit.
 
-This is not a free event, but part of the InfoQ event. You can find out more details and register here](https://live.infoq.com/ve2021/presentation/observability).
+This is not a free event, but part of the InfoQ event. 
 
 **Bottlerocket: Community Meetup**
 **March 18, 11:00am PST**
 
 Have questions for the Bottlerocket team? Want to talk about a particular feature you'd like to see, or want more insight into how Bottlerocket works? Join the Bottlerocket community on Thursday, March 18th at 11am Pacific US time. If you have any particular topics you want to discuss, then feel free to add them to the discussion (see the link below)
 
-Find out more [via this link](https://aws-oss.beachgeek.co.uk/ap), which includes how to add your discussion topics and how to attend.
-
 **Kickstart Your Kubernetes Projects With Amazon EKS-D and KubeOne**
 **March 18, 5:00PM CET**
 
 In this session, Michael Hausenblas (AWS) and Mario Fahland (Kubermatic) will take a closer look at EKS-D and dive into how to set up your very own cluster running EKS-D with KubeOne – our open source and infrastructure agnostic Kubernetes cluster lifecycle management tool. We will also have a peek into the future and show how to bring EKS-D to your data centres so you can use the very same tooling on-premises and in the cloud.
-
-Register [here](https://aws-oss.beachgeek.co.uk/7u).
 
 **CDK Day**
 **April 30th**
@@ -213,7 +206,7 @@ Announced this week was the second [CDK Day](https://sessionize.com/cdkday/), wh
 
 Rust is a language empowering everyone to build secure, reliable, and efficient software. Rust is becoming more widely used in cloud native, powering everything from lightning-fast service meshes and powerful developer tools to internet-scale distributed databases.
 
-Come explore what makes Rust a fantastic choice for new cloud native development, and learn about how the community uses Rust today. Find out [more and register here](https://aws-oss.beachgeek.co.uk/5y).
+Come explore what makes Rust a fantastic choice for new cloud native development, and learn about how the community uses Rust today. 
 
 ### Stay in touch with open source at AWS
 

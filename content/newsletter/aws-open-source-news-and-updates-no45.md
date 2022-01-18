@@ -13,8 +13,6 @@ A reminder that the[ Architecture Monthly Magazine: Open Source](https://aws.ama
 
 We are still looking for applications, so if you fancy working with the AWS Amplify crew (I know, I know it means you will have to toil with the likes of Matt Auerbach and Nader Dabit) then check out this opening within their team. They are looking for folks excited about OSS to support Amplify developers in their GitHub repos and Discord channels. This is a great opportunity to work on the Amplify product team, and even better this is a remote role.
 
-Details [here](https://www.amazon.jobs/en-gb/jobs/1345338/developer-support-engineer-amplify-framework) but feel free to reach out to Matt, Nader or myself.
-
 ### Celebrate open source contributors
 
 The articles posted in this series are only possible thanks to contributors and project maintainers and so I would like to shout out and thank those folks who really do power open source and enable us all to build on top of what they have created. 
@@ -47,7 +45,7 @@ If you missed AWS Container Day then worry not, scroll down to the bottom and ch
 
 **cloudquery**
 
-[cloudquery](https://github.com/cloudquery/cloudquery) is an open source tool that exposes your cloud configuration and metadata as sql tables, providing powerful analysis and monitoring without writing code. You can check out the detailed docs [here](https://docs.cloudquery.run/) including the [quickstart](https://docs.cloudquery.run/quick-start) which is the fastest way to get to grips with what this project can do for you.
+[cloudquery](https://github.com/cloudquery/cloudquery) is an open source tool that exposes your cloud configuration and metadata as sql tables, providing powerful analysis and monitoring without writing code.
 
 
 **s3BucketManager**
@@ -251,7 +249,7 @@ Hot reload of dictionary files is available on any Amazon Elasticsearch Service 
 
 Two updates this week relating to AWS CDK.
 
-[AWS CDK EKS Construct Library in Developer Preview and Adds Support for cdk8s](https://aws.amazon.com/about-aws/whats-new/2020/11/aws-cdk-eks-construct-library-available-developer-preview/) The EKS Construct Library is an AWS CDK module that helps customers provision Amazon EKS clusters using infrastructure-as-code best practices. Up until now, it has been in an experimental state, incorporating lots of customer feedback and undergoing multiple API and behavioural changes. Starting from version 1.65.0 (https://github.com/aws/aws-cdk/releases/tag/v1.65.0), the library is graduating to Developer Preview. This means that we are not planning any breaking changes going forward and are preparing the library for GA.
+[AWS CDK EKS Construct Library in Developer Preview and Adds Support for cdk8s](https://aws.amazon.com/about-aws/whats-new/2020/11/aws-cdk-eks-construct-library-available-developer-preview/) The EKS Construct Library is an AWS CDK module that helps customers provision Amazon EKS clusters using infrastructure-as-code best practices. Up until now, it has been in an experimental state, incorporating lots of customer feedback and undergoing multiple API and behavioural changes. Starting from version 1.65.0, the library is graduating to Developer Preview. This means that we are not planning any breaking changes going forward and are preparing the library for GA.
 
 In addition to cluster provisioning, the EKS Construct Library enables customers to deploy Kubernetes resources onto their clusters. Currently, those resources can be deployed by either manually creating Kubernetes manifests, or by installing Helm charts. Starting with version 1.67.0, customers can also utilise manifest authoring capabilities provided by The CDK for Kubernetes (cdk8s). These include type-safety, IDE assistance, and higher level constructs available via the cdk8s+ library.
 

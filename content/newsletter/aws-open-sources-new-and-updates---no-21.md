@@ -125,7 +125,7 @@ First is an absolutely essential read if you are [using AWS AppSync, and looking
 
 Very nice post[ Mechanical Rock](https://twitter.com/mechanicalrock_).
 
-Following that is this post from [Rich at Going Serverless](https://www.goingserverless.com/about/) and I love how this post, [How to build an AppSync API using a single table DynamoDB design](https://www.goingserverless.com/blog/single-table-dynamodb-for-appsync) starts;
+Following that is this post from [Rich at Going Serverless](https://www.goingserverless.com/about/) and I love how this post, How to build an AppSync API using a single table DynamoDB design starts;
 
 > If you want to start a flame war in the AWS AppSync community then ask if you should use a single or multiple table design for DynamoDB.
 

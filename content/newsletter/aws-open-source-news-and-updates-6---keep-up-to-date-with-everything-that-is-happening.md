@@ -16,8 +16,6 @@ And whilst I am talking about that previous post, you can watch this recording o
 
 Ephemeral email addresses to protect your inbox, sounds interesting right? Well read this post on ["How I built Heimdall, an open source personal email guardian" by Fabian Terh](https://medium.com/swlh/how-i-built-heimdall-an-open-source-personal-email-guardian-68e306d172d1) and then check out his code and implement this for yourself.
 
-Security is job zero and everyones job, and there are many useful open source projects that can help you automate security tasks. [In this project by BishopFox, they created a tool called Dufflebag](https://know.bishopfox.com/research/dufflebag-uncovering-exposed-ebs?utm_campaign=190900_Research_Dufflebag_Influencers_Global&utm_content=114956258&utm_medium=social&utm_source=twitter&hss_channel=tw-1376153113) that helps you to identify potential information that might be exposed. [The project repo is here](https://github.com/bishopfox/dufflebag?__hssc=24978341.1.1580911422477&__hstc=24978341.36c1e0978fe852cb52f7cf107b288c6d.1580911422477.1580911422477.1580911422477.1&__hsfp=155284130&hsCtaTracking=2dcbd7ca-d02e-4b02-95d7-974a6e29ed84%7Ce2150983-d952-4b19-8443-754af9e42003).
-
 ### AWS related Open Source projects
 
 **AWS CDK under the covers**
@@ -53,35 +51,6 @@ Well, not sure if this is allowed, but this time it is one of mine. If you are u
 ### Do you use AWS and love open source? 
 
 Do you have some content you want to share with a broader audience? We are always looking for guest content for the AWS Open blog. Please get in touch (via comments below) and I would love to speak with you about what you are doing in open source. We are always looking for interesting new content.
-
-### We are hiring
-
-We are hiring, so if you love open source, then why not check out the current openings. We would love to hear from you and if you want to chat and ask me anything, connect to me via LinkedIn or Twitter and always happy to talk.
-
-Here is a sneak at some of the current open roles;
-
-Open roles in open source include:
-
-* [Principal Evangelist, Open Source](https://www.amazon.jobs/en/jobs/990374/principal-evangelist-open-source)
-* [Senior Product Manager, .NET libraries and open source](https://www.amazon.jobs/en/jobs/1043043/senior-product-manager-net-libraries-and-open-source) – Bay Area
-* [Senior Software Development Engineer, Firecracker] (https://www.amazon.jobs/en/jobs/1002846/senior-software-dev-engineer-firecracker) – Bucharest, Romania 
-* [Manager, Open Source Program Office] (https://www.amazon.jobs/en/jobs/990377/manager-open-source-program-office) – Seattle
-* [Senior Software Development Engineer, Open Source Programs] (https://www.amazon.jobs/en/jobs/914312/senior-software-development-engineer-open-source-programs) – Seattle
-* [Software Development Engineer, Open Source Programs] (https://www.amazon.jobs/en/jobs/908711/software-development-engineer-open-source-programs) – Seattle 
-* [Open Source Engineer] (https://www.amazon.jobs/en/jobs/998335/open-source-engineer) – Seattle
-* [Principal Specialist Solutions Architect - Open Source Software] (https://www.amazon.jobs/en/jobs/963278/principal-specialist-solutions-architect-open-source-software-oss) – Palo Alto
-* [Partner Solutions Architect - Linux] (https://www.amazon.jobs/en/jobs/1014503/partner-solutions-architect-linux) – Seattle
-* [Partner Solutions Architect - Linux] (https://www.amazon.jobs/en/jobs/1008397/partner-solutions-architect-linux) – Seattle
-* [Principal Product Manager] (https://www.amazon.jobs/en/jobs/836429/principal-product-manager-for-a-new-aws-service-amazon-msk), [Amazon MSK] (https://aws.amazon.com/msk/) – Seattle
-* [Principal Developer Advocate (EU)] (https://www.amazon.jobs/en/jobs/987815/principal-developer-advocate-eu), [Amazon MSK] (https://aws.amazon.com/msk/) – Cambridge, UK 
-* [Software Development Engineer] (https://www.amazon.jobs/en/jobs/977448/software-development-engineer) [AWS Cloud Development Kit] (https://aws.amazon.com/cdk/) – Seattle
-* [Software Development Engineer] (https://www.amazon.jobs/en/jobs/946512/software-development-engineer) [AWS Cloud Development Kit] (https://aws.amazon.com/cdk/) – Seattle
-* [Software Development Engineer] - [AWS Lambda ](https://www.amazon.jobs/en/jobs/789084/software-development-engineer-aws-lambda) – Seattle 
-* [Senior Software Development Engineer, Distributed Systems, Amazon EMR] (https://www.amazon.jobs/en/jobs/759159/senior-software-development-engineer-distributed-systems-amazon-emr) – New York
-
-and many many more....
-
-[Open Source jobs at Amazon and AWS](https://aws.amazon.com/opensource/?opensource-all.sort-by=item.additionalFields.startDate&opensource-all.sort-order=asc) - scroll to bottom, on left.
 
 ### Stay in touch with open source at AWS
 

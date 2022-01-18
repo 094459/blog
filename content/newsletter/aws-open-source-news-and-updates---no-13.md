@@ -56,11 +56,6 @@ Sound useful to you? Then check the [ssmsh Github repository here](https://githu
 
 Another new open source project, this time from the prolific hands of [John Preston](https://github.com/JohnPreston). ECS ComposerX is a tool to generate CFN templates that allows you to build and publish their applications running in Docker containers on top of AWS ECS. If that sounds useful to you, then head over to the [ECS ComposerX repository](https://github.com/lambda-my-aws/ecs_composex) and whilst you are there check out the other projects too.
 
-**Serverless Ops Boilerplate**
-
-Most organisations create multiple AWS accounts because they provide the highest level of resource and security isolation. Mahdi Azarboon shared his very first open source project this week, [a production ready serverless Ops boilerplate](https://github.com/eficode/serverless-ops-boilerplate), inspired by an AWS blog post ([Building a secure cross account continuous delivery pipeline](https://aws.amazon.com/blogs/devops/aws-building-a-secure-cross-account-continuous-delivery-pipeline/)) this project uses a number of AWS servers to simplify what is outlined in that post.
-
-
 ### AWS Open Source projects
 
 **Knative on Fargate**

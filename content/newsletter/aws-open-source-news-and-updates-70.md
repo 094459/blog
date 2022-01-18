@@ -21,7 +21,6 @@ Also, later this week we have a new regular open source series by developers for
 
 Thank you to those who have provided such great feedback already, I am currently reviewing and thinking how to incorporate the suggestions. I would still love to hear from more of you, and I have more AWS credit vouchers as a thank you for taking the time to complete the survey. The first 20 will get an AWS credit voucher for $25, so thank you again. It is only 5 questions, and will probably only take you a minute or two to complete.
 
-[Take me to the survey!](https://aws-oss.beachgeek.co.uk/jp)
 
 ### Celebrating open source contributors
 
@@ -35,7 +34,7 @@ Make sure you find and follow these builders and keep up to date with their open
 
 **orkestra**
 
-[orkestra](https://aws-oss.beachgeek.co.uk/kw) this new open source project from Stephan Fitzpatrick looks very promising, allowing you to create workflow tasks via Lambda functions and then orchestrate these similar to how Apache Airflow works. The [documentation](https://aws-oss.beachgeek.co.uk/kx) says "a seamless way of building observable (scheduled or event-driven) cloud-native workflows. It aims to bring a similar development experience to that of Airflow while leveraging the full power of AWS."
+[orkestra](https://aws-oss.beachgeek.co.uk/kw) this new open source project from Stephan Fitzpatrick looks very promising, allowing you to create workflow tasks via Lambda functions and then orchestrate these similar to how Apache Airflow works. The documentation says "a seamless way of building observable (scheduled or event-driven) cloud-native workflows. It aims to bring a similar development experience to that of Airflow while leveraging the full power of AWS."
 
 This is a project that is going to get some closer inspection from myself for sure.
 
@@ -120,7 +119,7 @@ This [tweet](https://aws-oss.beachgeek.co.uk/k4) from Jonathan Matthews asking a
 
 **AWS CDK**
 
-Henrique Lima had [an ask](https://aws-oss.beachgeek.co.uk/k6) this week for folks who are using AWS CDK. He is specifically looking for developers interested in checking or automating compliance of infrastructure changes, to provide 30 minutes to [complete a survey](https://aws-oss.beachgeek.co.uk/k7) to help him as he works on a Change Analysis tool for his Master's thesis to do just that. 
+Henrique Lima had [an ask](https://aws-oss.beachgeek.co.uk/k6) this week for folks who are using AWS CDK. He is specifically looking for developers interested in checking or automating compliance of infrastructure changes, to provide 30 minutes to complete a survey to help him as he works on a Change Analysis tool for his Master's thesis to do just that. 
 
 
 ### Community open source posts
@@ -232,7 +231,7 @@ AWS Database Migration Service (AWS DMS) has expanded functionality by adding su
 
 **Apache Kakfa**
 
-Amazon Managed Streaming for Apache Kafka (Amazon MSK) now supports Apache Kafka version 2.7.1 for new and existing clusters. Apache Kafka 2.7.1 includes several bug fixes. For a complete list of fixes, see the Apache Kafka [release notes for 2.7.1](https://aws-oss.beachgeek.co.uk/jq).
+Amazon Managed Streaming for Apache Kafka (Amazon MSK) now supports Apache Kafka version 2.7.1 for new and existing clusters. Apache Kafka 2.7.1 includes several bug fixes. For a complete list of fixes, see the Apache Kafka release notes for 2.7.1.
 
 **Apache Cassandra**
 
@@ -280,7 +279,6 @@ The Allstate Data Hack for Good, is taking place virtually Saturday and Sunday 5
 
 The hackathon is open to technologists of all experience levels and backgrounds, with the goal to use data and technology to make life better in Belfast. During the hackathon, on demand technical training will be available, including data visualisation, data manipulation, model building, and Alexa Skills. Experts will be on hand throughout the event to answer questions, troubleshoot and support a collaborative approach to using data to solve problems.
 
-Find out more and register via [this link](https://www.meetup.com/Everything-Data/events/277828428/).
 
 **Maintainer Week**
 **week of June 7th**
@@ -294,13 +292,10 @@ Of course I am biased, but this is a must attend event. A celebration of open so
 
 Check out the blog post, [What’s up with open source at AWS? Attend Open@Amazon live on Twitch June 16](https://aws-oss.beachgeek.co.uk/jo)
 
-Or just register to get a handy calendar invite [HERE](https://aws-oss.beachgeek.co.uk/jn)
-
 **Cloud Native Day**
 **23rd September, Bern Switzerland**
 
-What is this, an in person event returning? A stellar line up including our own Michael Hausenblas, an event looking at CNCF projects and the future of IT. Find out more and to view prices/register, by clicking [here](https://cloudnativeday.ch/en/#speakers).
-
+What is this, an in person event returning? A stellar line up including our own Michael Hausenblas, an event looking at CNCF projects and the future of IT. 
 
 ### Stay in touch with open source at AWS
 

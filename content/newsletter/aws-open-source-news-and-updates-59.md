@@ -203,21 +203,15 @@ We have one of these events happening later this week, so check it out and regis
 
 In this live workshop, we’ll cover the best practices for organizations to use with powerful open source technologies so you can build and extend your AWS investments and make your data lake analytics-ready. You’ll learn about the advantages of cloud-based data lakes in terms of security and cost. How to enable SQL analysts to easily access data in your data lake for reporting and visualization.
 
-Find out more and register via [this link](https://aws-oss.beachgeek.co.uk/8a)
-
 **Embracing Observability in Distributed Systems**
 **March 16th, 9:00am EST**
 
 Michael Hausenblas is your speaker and he will look at the motivation for observability in distributed systems such as containerized microservices. We discuss good practices and current developments around CNCF open source projects and specifications including OpenTelemetry and FluentBit.
 
-This is not a free event, but part of the InfoQ event. You can find out more details and register here](https://live.infoq.com/ve2021/presentation/observability).
-
 **Kickstart Your Kubernetes Projects With Amazon EKS-D and KubeOne**
 **March 18, 5:00PM CET**
 
 In this session, Michael Hausenblas (AWS) and Mario Fahland (Kubermatic) will take a closer look at EKS-D and dive into how to set up your very own cluster running EKS-D with KubeOne – our open source and infrastructure agnostic Kubernetes cluster lifecycle management tool. We will also have a peek into the future and show how to bring EKS-D to your data centres so you can use the very same tooling on-premises and in the cloud.
-
-Register [here](https://aws-oss.beachgeek.co.uk/7u).
 
 **CDK Day**
 **April 30th**
@@ -229,7 +223,7 @@ Announced this week was the second [CDK Day](https://sessionize.com/cdkday/), wh
 
 Rust is a language empowering everyone to build secure, reliable, and efficient software. Rust is becoming more widely used in cloud native, powering everything from lightning-fast service meshes and powerful developer tools to internet-scale distributed databases.
 
-Come explore what makes Rust a fantastic choice for new cloud native development, and learn about how the community uses Rust today. Find out [more and register here](https://aws-oss.beachgeek.co.uk/5y).
+Come explore what makes Rust a fantastic choice for new cloud native development, and learn about how the community uses Rust today. 
 
 ### Stay in touch with open source at AWS
 

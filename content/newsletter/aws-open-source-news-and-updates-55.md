@@ -65,7 +65,7 @@ Make sure you find and follow these builders and keep up to date with their open
 
 [aws-iam-management-as-code](https://aws-oss.beachgeek.co.uk/4w) is a MIT licensed open source project from Peng Su and Shan Huang at Alpha Health that helps you to create IAM policies as code, defining a set of atomic permissions and using a tree data structure with multi-level inheritance. This allows you to better manage via best practices such as source control, those policies.
 
-To understand more, you can read their supporting blog post from Peng Su and Shan Huang, [IAM Management as Code](https://aws-oss.beachgeek.co.uk/4x). The post takes a look at the context and background that led to the creation of this solution. It is very detailed and shows the specific workflows that they were looking to automate and protect. If you have similar requirements, then take a look at this project.
+To understand more, you can read their supporting blog post from Peng Su and Shan Huang, IAM Management as Code. The post takes a look at the context and background that led to the creation of this solution. It is very detailed and shows the specific workflows that they were looking to automate and protect. If you have similar requirements, then take a look at this project.
 
 ![problem-space](https://github.com/alpha-health/aws-iam-management-as-code/raw/main/images/IAM_as_code_Design.svg)
 

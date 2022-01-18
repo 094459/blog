@@ -47,7 +47,7 @@ Make sure you find and follow these builders and keep up to date with their open
 
 **aws-lambda-extensions-s3-logs-extension-demo**
 
-[s3-logs-extension-demo](https://github.com/aws-samples/aws-lambda-extensions/tree/main/s3-logs-extension-demo) this new open source project shows you how you can use AWS Lambda extensions to send logs directly from Lambda to Amazon S3. Julian Wood has written up, [Using AWS Lambda extensions to send logs to custom destinations](https://aws.amazon.com/blogs/compute/using-aws-lambda-extensions-to-send-logs-to-custom-destinations/) that walks you through how you can do this, as well as provide a list of other providers where you can send your logs to.
+s3-logs-extension-demo this new open source project shows you how you can use AWS Lambda extensions to send logs directly from Lambda to Amazon S3. Julian Wood has written up, [Using AWS Lambda extensions to send logs to custom destinations](https://aws.amazon.com/blogs/compute/using-aws-lambda-extensions-to-send-logs-to-custom-destinations/) that walks you through how you can do this, as well as provide a list of other providers where you can send your logs to.
 
 **aws-iam-authenticator HTTP Proxy**
 
@@ -186,30 +186,18 @@ This week, don't miss KubeCon and specifically the AWS Container Day. A great li
 
 Join us for AWS Container Day, a fully live, virtual day of sessions all about Amazon EKS and Kubernetes at AWS, hosted by Containers from the Couch. At this Day Zero KubeCon event, the AWS Kubernetes team will be discussing new launches, demoing products and features, covering best practices, and answering your question live on Twitch.
 
-Register [here](https://awscontainerdayk8s.splashthat.com/#rsvp).
-
-
 **Deep Dive Into AWS Nitro Enclaves**
 **November 20, 2020, 11:00 AM (PT) | 2:00 PM (ET)**
 
 AWS Nitro Enclaves enables customers to create isolated compute environments to further protect and securely process highly sensitive data such as personally identifiable information (PII), healthcare, financial, and intellectual property data within their Amazon EC2 instances. In this tech talk, we'll deep dive into Nitro Enclaves including the architecture, benefits, how it works, and the use cases when considering confidential computing.
-
-Register [here](https://pages.awscloud.com/AWS-Online-Tech-Talks_November-2020.html?webinar=2020_1114-CMP&trk=ep_card-el_a134p000006g9RqAAI&trkCampaign=November_2020_1114-CMP&sc_channel=el&sc_campaign=pac_Q4-2020_exlinks_events_OTT_11DGAB&sc_outcome=Product_Adoption_Campaigns&sc_geo=NAMER&sc_country=mult&category=CMP).
 
 **Virtual ROS-Industrial Conference 2020**
 **December 15 - 16, 2020**
 
 The 8th edition of ROS-Industrial Conference will be held as a virtual event. It is not only the annual community meeting for the European ROS-Industrial community but this years event is also the final event of the H2020 ROSIN project. The conference gives you the chance to see the newest technical developments and to meet people and companies, which are active in the ROS community.
 
-Learn more and sign up [here](https://rosindustrial.org/rosindustrial-conference-2020).
-
 ### Stay in touch with open source at AWS
 
 I hope this summary has been useful. Remember to check out the [Open Source homepage](https://aws.amazon.com/opensource/?opensource-all.sort-by=item.additionalFields.startDate&opensource-all.sort-order=asc) to keep up to date with all our activity in open source by following us on [@AWSOpen](https://twitter.com/AWSOpen).
 
-### Your feedback matters!
 
-I have put together a short feedback survey, which I would ask you to take - it will take no more than 2 minutes. You can access [here](https://amazonmr.au1.qualtrics.com/jfe/form/SV_8BsYTwgVY6E6WZn). Many thanks!
-
-[Take the survey](https://amazonmr.au1.qualtrics.com/jfe/form/SV_8BsYTwgVY6E6WZn)
-26t

@@ -160,8 +160,6 @@ Everything you need will be provided, so [read more and register using this link
 
 Flink Forward Global 2021 is a 2-day virtual conference for the Apache Flink and stream processing communities. Apache Flink is an open-source distributed engine for processing data streams that can support both streaming and batch workloads. Flink Forward has keynote presentations and talks on production Flink use cases, technical deep dive sessions, and the growth of the Flink ecosystem. You can meet core Flink committers, new and experienced users, and thought leaders who share experiences and best practices in stream processing, real-time analytics, and the management of mission-critical Flink deployments in production.
 
-[Read more and sign up here.](https://aws-oss.beachgeek.co.uk/wh)
-
 **Databricks | AWS Lakehouse Dev Day Live Workshop**
 **November 16th 9:00 AM PT**
 
@@ -171,7 +169,6 @@ Delta Lake is an open source storage layer that provides ACID transactions, scal
 * Provide an easy-to-use platform for analysts to directly query data on your data lake using SQL Analytics
 * Simplify and automate data pipelines for streaming and batch data to lower costs and boost productivity for your data teams
 
-[Read more and sign up here](https://aws-oss.beachgeek.co.uk/zs).
 
 ### Stay in touch with open source at AWS
 

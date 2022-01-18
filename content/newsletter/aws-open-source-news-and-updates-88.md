@@ -210,7 +210,6 @@ Delta Lake is an open source storage layer that provides ACID transactions, scal
 * Provide an easy-to-use platform for analysts to directly query data on your data lake using SQL Analytics
 * Simplify and automate data pipelines for streaming and batch data to lower costs and boost productivity for your data teams
 
-[Read more and sign up here](https://aws-oss.beachgeek.co.uk/zs).
 
 ### Stay in touch with open source at AWS
 

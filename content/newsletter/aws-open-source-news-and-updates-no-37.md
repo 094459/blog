@@ -59,7 +59,7 @@ Here is the latest open source tools, libraries and demos from the last week.
 
 **Takomo**
 
-[Takomo](https://github.com/takomo-io/takomo) is an open source project from Takomo.io that makes it easy to organise, parameterise and deploy your AWS CloudFormation stacks across multiple regions and accounts. In addition to stacks, you can also manage accounts, organisational units and service control policies that belong to your AWS organisation. The documentation is great and this project comes with plenty of examples to get you going which you can find [here](https://takomo.io/docs/examples/about).
+Takomo is an open source project from Takomo.io that makes it easy to organise, parameterise and deploy your AWS CloudFormation stacks across multiple regions and accounts. In addition to stacks, you can also manage accounts, organisational units and service control policies that belong to your AWS organisation. 
 
 **stackmanager**
 

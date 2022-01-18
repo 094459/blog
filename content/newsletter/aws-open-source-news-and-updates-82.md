@@ -181,8 +181,6 @@ Coming up later this week we have...
 
 In this webinar, Big Compass, Confluent, and AWS will come together to explore the strengths of Confluent and AWS, and how each technology can complement one another for various use cases. The webinar covers ways to combine AWS and Confluent in a hybrid platform, how to build your serverless applications with AWS and Confluent, and a look at real-world use cases for AWS and Confluent.
 
-To find out more and [register, click here](https://aws-oss.beachgeek.co.uk/vq).
-
 **Cloud Native Day**
 **23rd September, Bern Switzerland**
 
@@ -192,8 +190,6 @@ What is this, an in person event returning? A stellar line up including our own 
 **September 29, 2021**
 
 The Secure Coding Virtual Summit is your source for everything you need to build secure code from the ground up. There are many interesting session, but check out the sessions covering how to secure and protect yourself when using open source.
-
-Full details, including speaker line up and [how to register, here](https://aws-oss.beachgeek.co.uk/xb).
 
 **GraphQL API security best practices with AWS AppSync and AWS Amplify**
 **14th October, 11am AEST**
@@ -205,26 +201,15 @@ As a developer, the most important parts of managing your applications should al
 * How to configure network security for your API
 * How to enable observability for your API with logging, tracing or auditing
 
-To [register for this event, use this link](https://aws-oss.beachgeek.co.uk/ue).
-
-
 **Amazon SageMaker and Open-Source Tools for ML: Better Together**
 **October 7 | 11 AM PT | 2 PM ET**
 
 Many organisations rely on open-source tools to support the Machine Learning lifecycle. Amazon SageMaker has been rapidly evolving by introducing support and compatibility for various open-source frameworks. In this session, you will learn how to build a customisable ML Infrastructure based on Amazon SageMaker and open-source components. We will discuss pros and cons, the limitations of different tools that support specific stages of the ML workflow, and best practices for MLOps, to automate these stages into repeatable pipelines.
 
-To read more and [register for this event, click here](https://aws-oss.beachgeek.co.uk/wz).
-
-
 **Flink Forwards Global 2021**
 **October 26th/27th**
 
 Flink Forward Global 2021 is a 2-day virtual conference for the Apache Flink and stream processing communities. Apache Flink is an open-source distributed engine for processing data streams that can support both streaming and batch workloads. Flink Forward has keynote presentations and talks on production Flink use cases, technical deep dive sessions, and the growth of the Flink ecosystem. You can meet core Flink committers, new and experienced users, and thought leaders who share experiences and best practices in stream processing, real-time analytics, and the management of mission-critical Flink deployments in production.
-
-[Read more and sign up here.](https://aws-oss.beachgeek.co.uk/wh)
-
-
-
 
 ### Stay in touch with open source at AWS
 

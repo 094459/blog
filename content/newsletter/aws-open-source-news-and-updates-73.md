@@ -45,7 +45,7 @@ Make sure you find and follow these builders and keep up to date with their open
 
 **cdk-fargate-patterns**
 
-[cdk-fargate-patterns](https://aws-oss.beachgeek.co.uk/ne) - saw this AWS CDK pattern last week from Pahud Hsieh last week and thought it was pretty nice, having needed to do this many times in the past, this is going to save folks a lot of effort. It allows you to create one or many Fargate services with both internet-facing ALB and internal ALB associated with all services.
+cdk-fargate-patterns - saw this AWS CDK pattern last week from Pahud Hsieh last week and thought it was pretty nice, having needed to do this many times in the past, this is going to save folks a lot of effort. It allows you to create one or many Fargate services with both internet-facing ALB and internal ALB associated with all services.
 
 **amazon-fraud-detector-end-to-end**
 
@@ -110,7 +110,7 @@ Cloud Custodian is an open source rules engine for managing public cloud account
 
 A couple of posts last week on Prometheus. First up we have this post, [Automating the installation and configuration of Prometheus using Systems Manager documents](https://aws-oss.beachgeek.co.uk/n0) from Mike George showing you how you can use a number of AWS services to automate and ensure that Prometheus is installed in exactly the same way every time.
 
-Following that we have Imaya Kumar Jagannathan and Rafael Pereyra who have written [Collect on-premises metrics using Amazon Managed Service for Prometheus](https://aws-oss.beachgeek.co.uk/n1) where they show you how you can set up a secure environment to collect Prometheus metrics from an on-premises VM and remote write metrics to Amazon Managed Service for Prometheus (AMP).
+Following that we have Imaya Kumar Jagannathan and Rafael Pereyra who have written Collect on-premises metrics using Amazon Managed Service for Prometheus where they show you how you can set up a secure environment to collect Prometheus metrics from an on-premises VM and remote write metrics to Amazon Managed Service for Prometheus (AMP).
 
 ![arch](https://d2908q01vomqb2.cloudfront.net/972a67c48192728a34979d9a35164c1295401b71/2021/06/14/Fig-1.png)
 

@@ -41,7 +41,7 @@ Thank you David Boeke for sharing with me a couple of new open source projects t
 
 **ecsanywhere-dind**
 
-[ecsanywhere-dind](https://aws-oss.beachgeek.co.uk/mk) Jason Umiker has put together this repository that will help you quickly get started with running ECS Anywhere, and builds an Amazon Linux 2 container that has both systemd and docker that can serve as an ECS Anywhere sandbox.
+ecsanywhere-dind Jason Umiker has put together this repository that will help you quickly get started with running ECS Anywhere, and builds an Amazon Linux 2 container that has both systemd and docker that can serve as an ECS Anywhere sandbox.
 
 ### Community open source posts
 
@@ -183,12 +183,12 @@ This week, make sure you attend Open@Amazon. I am super excited about this event
 **Open@Amazon**
 **June 16th, 9:00am - 5:00PM EDT**
 
-If you missed it last week, next week we are running Open@Amazon, a celebration of open source on AWS with a fabulous cast of speakers, a fantastic broad set of topics and the event will be fully live so you can get your chance to interact with the speakers and the broader open source and AWS community. Check out the blog post, [What’s up with open source at AWS? Attend Open@Amazon live on Twitch June 16](https://aws-oss.beachgeek.co.uk/jo) or just register to get a handy calendar invite [HERE](https://aws-oss.beachgeek.co.uk/jn)
+If you missed it last week, next week we are running Open@Amazon, a celebration of open source on AWS with a fabulous cast of speakers, a fantastic broad set of topics and the event will be fully live so you can get your chance to interact with the speakers and the broader open source and AWS community. Check out the blog post, [What’s up with open source at AWS? Attend Open@Amazon live on Twitch June 16](https://aws-oss.beachgeek.co.uk/jo) 
 
 **Cloud Native Day**
 **23rd September, Bern Switzerland**
 
-What is this, an in person event returning? A stellar line up including our own Michael Hausenblas, an event looking at CNCF projects and the future of IT. Find out more and to view prices/register, by clicking [here](https://cloudnativeday.ch/en/#speakers).
+What is this, an in person event returning? A stellar line up including our own Michael Hausenblas, an event looking at CNCF projects and the future of IT. 
 
 
 ### Stay in touch with open source at AWS

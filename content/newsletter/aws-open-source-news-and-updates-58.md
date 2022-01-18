@@ -19,14 +19,9 @@ Before we crack on, why not start by reading this post, [The real value of open 
 
 Hashicorp is looking to hire a new steward for the AWS Terraform Provider. This is a wonderful team that builds a wonderful product. This role interacts with folks at AWS as we have a strategic relationship and often work together to bring new features to market.
 
-Check out the [job link](https://aws-oss.beachgeek.co.uk/7s) for details. 
-
 **PHP**
 
 If that does not take your fancy, then what about working on PHP at AWS? The AWS SDK for PHP team is hiring. They are looking to build the next major version of the SDK that will feature strong typing, codegen, and lots of other goodies.
-
-Check out the [job link](https://aws-oss.beachgeek.co.uk/7x) for details.
-
 
 ### Celebrating open source contributors
 
@@ -64,7 +59,7 @@ Make sure you find and follow these builders and keep up to date with their open
 
 **amazon-lookout-for-vision-python-sdk**
 
-[amazon-lookout-for-vision-python-sdk](https://aws-oss.beachgeek.co.uk/8b) released last week, the Amazon Lookout for Vision Python SDK is an open-source library that allows data scientists and software developers to easily build, train and deploy computer vision (CV) models using Amazon Lookout for Vision.
+amazon-lookout-for-vision-python-sdk released last week, the Amazon Lookout for Vision Python SDK is an open-source library that allows data scientists and software developers to easily build, train and deploy computer vision (CV) models using Amazon Lookout for Vision.
 
 **aws-media-asset-preparation-system**
 

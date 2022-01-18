@@ -216,21 +216,19 @@ Andrew Etter, the Senior Technical Writer at Amazon Web Services, shares his jou
 
 Curtis Rissi, a Principal Partner SA at AWS will walk attendees through the Bottlerocket (an open-source Linux-based operating system meant for hosting containers) build process, and provide some key use cases for customisation: how to add new configuration options; how to add new packages; how to configure your own update repositories; how to add security policy; and other common customisations. 
 
-Find out more and to register, click [here](https://aws-oss.beachgeek.co.uk/ed)
-
 **ROS 2 Industrial Training (Europe)**
 **May 18th - 21st**
 
 If you were looking to increase your knowledge of open source robotics, then this training event might be of interest. Being held over 4 days, this is an industry focused event, that teaches the basics of ROS 2
 and how to use ROS 2 for manipulation and for navigation. The class is completed by a session of best
-practices, with the goal of the training is to get you started in developing with ROS. This is not a free event, so check the prices in the links, which you can [find here](https://www.eventbrite.de/e/ros-2-industrial-training-europe-may-2021-tickets-149655392307).
+practices, with the goal of the training is to get you started in developing with ROS.
 
 **Mobile and Front-End Live**
 **May 25th, 9:00 - 15:00 PDT**
 
 This is a LIVE streamed event on Twitch  focused on accelerating full-stack mobile and web development. Learn about AWS Amplify, a set of purpose-built tools and services for front-end web and mobile developers that simplify app development. Deep dive into GraphQL and AWS AppSync, a fully-managed GraphQL service that improves app performance and developer productivity.
 
-You can read more about what you can expect in the blog post, [Mobile and Front-End Live, May 25](https://aws-oss.beachgeek.co.uk/f4) and [register via this link](https://aws-oss.beachgeek.co.uk/f3).
+You can read more about what you can expect in the blog post.
 
 
 ### Stay in touch with open source at AWS

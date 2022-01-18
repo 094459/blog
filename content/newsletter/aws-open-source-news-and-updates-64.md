@@ -21,7 +21,7 @@ Essential reading this week.
 
 **Open Source Job of the week**
 
-[Sr. Software Development Engineer - rust-vmm](https://aws-oss.beachgeek.co.uk/ec)
+Sr. Software Development Engineer - rust-vmm
 
 In this role, you will work on rust-vmm [1]. Rust-vmm is an open-source project that empowers the community to build custom Virtual Machine Monitors (VMMs) and hypervisors. It provides a set of virtualisation components that any project can use to quickly develop virtualisation solutions while focusing on the key differentiators of their product rather than re-implementing common components like KVM wrappers, virtio devices and other VMM libraries.The rust-vmm project is organised as a shared effort, shared ownership open-source project that includes (so far) contributors from Alibaba, AWS, Cloud Base, Crowdstrike, Intel, Google, Red Hat as well as individual contributors. It's components are already used in several projects such as Firecracker [2] and Cloud Hypervisor, [3] with more integrations under way.
 
@@ -241,28 +241,22 @@ Announced this week was the second [CDK Day](https://sessionize.com/cdkday/), wh
 
 Rust is a language empowering everyone to build secure, reliable, and efficient software. Rust is becoming more widely used in cloud native, powering everything from lightning-fast service meshes and powerful developer tools to internet-scale distributed databases.
 
-Come explore what makes Rust a fantastic choice for new cloud native development, and learn about how the community uses Rust today. Find out [more and register here](https://aws-oss.beachgeek.co.uk/5y).
+Come explore what makes Rust a fantastic choice for new cloud native development, and learn about how the community uses Rust today.
 
 **Container Day**
 **May 4, 2021 | 10:00AM - 6:00PM CEST**
 
 Container Day x KubeCon is a fully live, virtual day of sessions all about Amazon EKS and Kubernetes at AWS, hosted by Brent Langston and Adam Keller of Containers from the Couch. At this Day Zero KubeCon event, the AWS Kubernetes team will be revealing new launches, demoing products and features, covering best practices, and answering your questions live on Twitch! If you have a question before the event, you can email the team at awscontainerday@amazon.com and maybe get them answered.
 
-Find out more and to register, [click here](https://aws-oss.beachgeek.co.uk/cr).
-
 **An Introduction to Amazon Managed Blockchain**
 **5th May**
 
 Amazon Managed Blockchain (AMB) is a fully managed service that makes it easier to build scalable blockchain networks using popular open source frameworks, including Hyperledger Fabric and Ethereum. AMB includes several features and enhancements beyond those provided by the open-source projects on which it is based. It supports public and private blockchain options, each of which favors different use cases. We review reference architectures outlining example applications on both Hyperledger Fabric and Ethereum. In this lecture, you will also hear several customer success stories building solutions on Amazon Managed Blockchain.
 
-Find out more and register [via this link](https://aws-oss.beachgeek.co.uk/dx).
-
 **Building And Maintaining Your Own Secure Container OS**
 **May 13th 9am PST**
 
 Curtis Rissi, a Principal Partner SA at AWS will walk attendees through the Bottlerocket (an open-source Linux-based operating system meant for hosting containers) build process, and provide some key use cases for customisation: how to add new configuration options; how to add new packages; how to configure your own update repositories; how to add security policy; and other common customisations. 
-
-Find out more and to register, click [here](https://aws-oss.beachgeek.co.uk/ed)
 
 ### Stay in touch with open source at AWS
 

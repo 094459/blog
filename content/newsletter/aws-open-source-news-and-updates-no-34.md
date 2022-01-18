@@ -39,12 +39,12 @@ The State of the Source Summit invites open source communities of practice from 
 **Machine Learning workshop**
 **September 10th, 2PM BST**
 
-[Unifying Data Pipelines and Machine Learning with Apache Spark™ and Amazon SageMaker](https://awsmldevdayeast.splashthat.com/?utm_source=bambu&utm_medium=social&utm_campaign=advocacy&blaid=748357) a Databricks and Immuta workshop to learn how Unified Data Analytics can bring Data Science, Business Analytics and engineering together to accelerate your Data and ML efforts.
+Unifying Data Pipelines and Machine Learning with Apache Spark™ and Amazon SageMaker a Databricks and Immuta workshop to learn how Unified Data Analytics can bring Data Science, Business Analytics and engineering together to accelerate your Data and ML efforts.
 
 **Dev Day: Open Source**
 **September 17th, 10:00 BST - 4:00PM BST**
 
-[Dev Day: Open source edition](https://pages.awscloud.com/EMEA-field-OE-DevDay-OpenSource-2020-reg-event.html) - our first Dev Day featuring open source topics from Kubernetes networking, looking at different options on running Apache Flink, building machine learning workflows with Kubernetes and Kubeflow Pipelines and finally full-stack TypeSafety with React, GraphQL, and TypeScript.
+Dev Day: Open source edition - our first Dev Day featuring open source topics from Kubernetes networking, looking at different options on running Apache Flink, building machine learning workflows with Kubernetes and Kubeflow Pipelines and finally full-stack TypeSafety with React, GraphQL, and TypeScript.
 
 **MLops Best Practices with Amazon SageMaker and KubeFlow**
 **September 15th, 9am Singapore TZ**
@@ -96,11 +96,6 @@ Make sure you read the detailed post from Adam Youngberg that provides some back
 [infracost](https://github.com/infracost/infracost) is a neat open source project that I just love the idea of, and is probably going to be a must check out if you are using Terraform. This project creates AWS cost estimates for your Terraform projects, broken down by hour/month costs. Brilliant stuff from the folks at Infracost.
 
 ![show](https://raw.githubusercontent.com/infracost/infracost/master/assets/screenshot.png)
-
-**cheat sheets for Linux**
-
-[Reference guide to commands](http://walkintocloud.com/index.php/2020/09/03/linux-ubuntu-common-operations-command-cheat-sheet/) this cheat sheet and reference guide for different flavours of Linux, including Amazon Linux, is a handy way to navigate the subtle differences if you find yourself working across different distros.
-
 
 ### Fresh blog posts for your reading pleasure
 

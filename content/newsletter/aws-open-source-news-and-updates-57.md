@@ -19,38 +19,6 @@ A few weeks ago Fossdem ran virtually, and there were a number of great sessions
 
 ![fossdem](https://matrix.org/blog/img/upload_06b59bc2b2d518ffe616020e1fe5bee8.png)
 
-### Events for your diary
-
-A couple of events happening this week - still time to register and save your spot.
-
-**Innovate AI/ML**
-**Feb 24th**
-
-Last week I shared that I have been putting together some blog posts to support my session at the [Innovate AI/ML event](https://aws.amazon.com/events/aws-innovate/machine-learning/online/emea/?sc_channel=em&sc_campaign=EMEA_FIELD_WEBINAR_innovate-AIML_20210224_7014z000001MJbu&sc_medium=em_&sc_content=REG_t1_field&sc_geo=emea&sc_country=mult&sc_outcome=reg&sc_publisher=aws&trkCampaign=emea21_innovatemlq1&trk=em_emea21_innovatemlq1_ricardosueiras) happening on Feb, 24th. I have been working on more posts, and this week I managed to complete the fourth and fifth posts which you can find below. Use the [sign up link here](https://aws.amazon.com/events/aws-innovate/machine-learning/online/emea/?sc_channel=em&sc_campaign=EMEA_FIELD_WEBINAR_innovate-AIML_20210224_7014z000001MJbu&sc_medium=em_&sc_content=REG_t1_field&sc_geo=emea&sc_country=mult&sc_outcome=reg&sc_publisher=aws&trkCampaign=emea21_innovatemlq1&trk=em_emea21_innovatemlq1_ricardosueiras) to register for this event.
-
-**Apache Kafka**
-**Feb 25th**
-
-[Building ML-driven streaming applications with Apache Kafka](https://aws-oss.beachgeek.co.uk/4y) join Joseph Morais from Confluent and Kanchan Waikar from AWS in this webinar to learn how to build Apache Kafka®-based streaming applications backed by machine learning models. The event is across three time zones so whether you are in Asia, Europe or the Americas, there will be a time you can attend.
-
-**CDK Day**
-**April 30th**
-
-Announced this week was the second [CDK Day](https://sessionize.com/cdkday/), which will be on April 30th. Check out [the web page](https://sessionize.com/cdkday/) to find out more about the first CDK Day, which was incredible. This second event promises to be even better. The CFP is open until the 19th of March. Check out this supporting blog post, [CDK Day CFP Is Open!!!!](https://aws-oss.beachgeek.co.uk/4v) from Matt as to what to expect and what they are looking for when it comes to sessions.
-
-**Cloud Native Rust Day**
-**May 3rd**
-
-Rust is a language empowering everyone to build secure, reliable, and efficient software. Rust is becoming more widely used in cloud native, powering everything from lightning-fast service meshes and powerful developer tools to internet-scale distributed databases.
-
-Come explore what makes Rust a fantastic choice for new cloud native development, and learn about how the community uses Rust today. Find out [more and register here](https://aws-oss.beachgeek.co.uk/5y).
-
-### Open Source Jobs
-
-**Rust**
-
-If you are looking for an exciting new challenge, love Rust, then check out this role that is based out of New York, US. The AWS SDK team is looking for a [Software Development Engineer - AWS Rust SDK](https://www.amazon.jobs/en-gb/jobs/1424393/software-development-engineer-aws-rust-sdk?no_int_redir=1) to join the ever growing group of Rustaceans at AWS.
-
 ### Celebrating open source contributors
 
 The articles posted in this series are only possible thanks to contributors and project maintainers and so I would like to shout out and thank those folks who really do power open source and enable us all to build on top of what they have created. 

@@ -5,6 +5,8 @@ tags : [ oss-newsletter , AWS Open Source]
 ---
 ## November 15th, 2021 - Instalment #90
 
+*Updated, 18th Jan to remove dead links*
+
 Newsletter #90.
 
 Another packed edition of his newsletter, with some great new open source projects such as ploomber (a project to help you build production pipelines for your notebooks), slic-starter (a complete starter project for production-grade serverless applications) and many more interesting projects covering RStudio, Spring Boot, a serverless software vending solution, Kubernetes on the edge and more. AWS and Community content this week covers AWS CDK, Steampipe, AWS Distro for OpenTelemetry, Dask, Flagger, Cortex, Apache Airflow, Apache Flink, OpenSearch, Reddis, RabbitMQ and more. Make sure you check out the videos too, this week featuring open source Observability and OpenSearch.
@@ -34,10 +36,6 @@ If you are looking for examples CDK projects, then AWS Community Builder Azmi Me
 [slic-starter](https://aws-oss.beachgeek.co.uk/136) Whilst I was watching the great sessions during AWS Community Day, I came across this project from fourTheorem. SLIC Starter is a complete starter project for production-grade serverless applications on AWS.
 
 ![arch](https://github.com/fourTheorem/slic-starter/blob/main/architecture.png?raw=true)
-
-**lambda-runtimes-stack**
-
-[lambda-runtimes-stack](https://aws-oss.beachgeek.co.uk/135) Pawel Grzybek has put together this project that provides detailed information about the AWS Lambda runtimes versions. Deploy it and every few hours it will show record details of important version information about the AWS Lambda runtimes.
 
 **aws-fargate-with-rstudio-open-source**
 
@@ -197,7 +195,6 @@ Delta Lake is an open source storage layer that provides ACID transactions, scal
 * Provide an easy-to-use platform for analysts to directly query data on your data lake using SQL Analytics
 * Simplify and automate data pipelines for streaming and batch data to lower costs and boost productivity for your data teams
 
-[Read more and sign up here](https://aws-oss.beachgeek.co.uk/zs).
 
 ### Stay in touch with open source at AWS
 
