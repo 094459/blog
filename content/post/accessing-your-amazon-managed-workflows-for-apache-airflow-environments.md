@@ -1,7 +1,7 @@
 ---
 title: 'Accessing your Amazon Managed Workflows for Apache Airflow environments'
 date: '2021-01-28'
-tags: [airflow, mwaa]
+tags: [Apache Airflow, mwaa]
 ---
 ![innovate](https://raw.githubusercontent.com/094459/innovateaiml-airflow/main/images/banner.png)
 

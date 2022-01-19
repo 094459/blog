@@ -1,7 +1,7 @@
 ---
 title: 'Interacting with Amazon Managed Workflows for Apache Airflow via the command line'
 date: '2021-02-01'
-tags: [airflow, mwaa, cli]
+tags: [Apache Airflow, mwaa, cli]
 ---
 
 ![innovate](https://raw.githubusercontent.com/094459/innovateaiml-airflow/main/images/banner.png)

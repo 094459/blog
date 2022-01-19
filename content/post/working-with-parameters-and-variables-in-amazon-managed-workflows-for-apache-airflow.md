@@ -1,7 +1,7 @@
 ---
 title: 'Working with parameters and variables in Amazon Managed Workflows for Apache Airflow'
 date: '2021-07-27'
-tags: [airflow, mwaa, variables, scripts]
+tags: [Apache Airflow, mwaa, variables, scripts]
 ---
 **Maximising the re-use of your DAGs in MWAA**
 

@@ -1,7 +1,7 @@
 ---
 title: 'Integrating Amazon Timestream in your Amazon Managed Workflows for Apache Airflow v2.x'
 date: '2021-09-23'
-tags: [airflow, mwaa, timestream, datawrangler]
+tags: [Apache Airflow, mwaa, timestream, datawrangler]
 ---
 **Integrating with Amazon Timestream in your Apache Airflow DAGs**
 

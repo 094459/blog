@@ -1,7 +1,7 @@
 ---
 title: 'Working with the RedshiftToS3Transfer operator and Amazon Managed Workflows for Apache Airflow'
 date: '2021-05-15'
-tags: [airflow, mwaa, Amazon Redshift]
+tags: [Apache Airflow, mwaa, Amazon Redshift]
 ---
 ### Introduction
 

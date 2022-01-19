@@ -1,7 +1,7 @@
 ---
 title: 'Working with Amazon EKS and Amazon Managed Workflows for Apache Airflow v2.x'
 date: '2021-06-10'
-tags: [airflow, aws, kubernetes]
+tags: [Apache Airflow, aws, kubernetes]
 ---
 ### Introduction
 
