@@ -6,7 +6,7 @@ tags : [ oss-newsletter, aws open source, Kubernetes, Tekton, ArgoCD, Suricata, 
 
 ---
 
-## Jan 29th, 2022 - Instalment #98
+## Jan 31st, 2022 - Instalment #98
 
 Newsletter #98. Welcome to another edition of AWS open source news and updates, featuring more new open source projects. This week, these include eventbridge-assistant (a VScode plugin to help you whilst you are developing with Amazon EventBridge), stratus-red-team (a tool you can use to emulate offensive attack techniques), critter (AWS Config rule integration testing), syne-tune-s3-transfer (an example of how to apply the distributed parameter search library to optimise download performance), karpenter-terraform (a Terraform module to help you automate deployment of karpenter), and a couple of super interesting open source solutions covering last mile delivery and software defined radio.
 
