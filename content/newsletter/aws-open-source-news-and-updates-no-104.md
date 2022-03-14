@@ -1,7 +1,7 @@
 ---
 
 title: 'AWS open source news and updates #104'
-date: '2022-03-014'
+date: '2022-03-14'
 tags : [ oss-newsletter, aws open source, Apache Spark, cfn-guard, Delta Lake, Hugging Face, Spinnaker, Grafana,  Apache Hudi, PostgreSQL, Amazon Corretto, OpenQASM, Envoy, Apache Cassandra, Bottlerocket, Amazon Genomics CLI, Apache Airflow, ROS, Locust, Vault, Packer, Terraform, Mantil, rtdl, OpenSearch, Metabase, AWS CDK]
 
 ---
