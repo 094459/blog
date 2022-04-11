@@ -2,7 +2,7 @@
 
 title: 'AWS open source news and updates #103'
 date: '2022-03-07'
-tags : [ oss-newsletter, aws open source, Apache Spark, Apache Kakfa, Amazon Athena Federated Queries, XEN, Apache Cassandra, MySQL, OpenZFS, PostgreSQL, Kubeflow, Apache Airflow, ROS, Kubernetes, Amazon EMR, Grafana, Prometheus, Karpenter, Apache Flink, Apache Hudi, Babelfish for Aurora PostgreSQL, AutoGluon]
+tags : [ oss-newsletter, aws open source, Apache Spark, Apache Kafka, Amazon Athena Federated Queries, XEN, Apache Cassandra, MySQL, OpenZFS, PostgreSQL, Kubeflow, Apache Airflow, ROS, Kubernetes, Amazon EMR, Grafana, Prometheus, Karpenter, Apache Flink, Apache Hudi, Babelfish for Aurora PostgreSQL, AutoGluon]
 
 ---
 
