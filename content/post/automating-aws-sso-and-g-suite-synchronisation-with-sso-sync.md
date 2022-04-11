@@ -1,7 +1,7 @@
 ---
 title: 'Automating AWS SSO and G-Suite synchronisation with SSO Sync'
 date: '2020-06-03'
-tags: [g-suite, sso, aws sso]
+tags: [g-suite, SSO, AWS SSO]
 ---
 # update-July 28th
 

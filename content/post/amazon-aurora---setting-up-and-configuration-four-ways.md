@@ -1,7 +1,7 @@
 ---
 title: 'Amazon Aurora - setting up and configuration, four ways'
 date: '2020-10-15'
-tags: [Amazon Aurora, cdk, cloud formation, aws cli, iac]
+tags: [Amazon Aurora, AWS CDK, AWS CloudFormation, AWS Cli, IaC]
 ---
 In this post I want to share four different approaches to installing and configuring your Amazon Aurora database clusters. 
 

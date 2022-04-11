@@ -1,7 +1,7 @@
 ---
 title: 'Long running data import jobs with AWS Session Manager'
 date: '2020-09-10'
-tags: [aws session manager, TPC-H, Amazon Aurora]
+tags: [AWS Session Manager, TPC-H, Amazon Aurora]
 ---
 Yesterday I was looking to import the TPC-H dataset (some 600 or so million rows) into Amazon Aurora from a workstation that I connect to using AWS Session Manager.
 

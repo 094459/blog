@@ -1,7 +1,7 @@
 ---
 title: 'TIL: Testing an Amazon Cloudwatch alarm'
 date: '2021-01-07'
-tags: [aws cloudwatch]
+tags: [AWS CloudWatch]
 ---
 Today I was setting up an application load balancer that sits in front of a test application I have put together. Setting this up was super easy, and very quickly I had my domain pointing to the alias and serving requests.
 

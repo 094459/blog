@@ -1,7 +1,7 @@
 ---
 title: 'Creating a multi architecture CI/CD solution with Amazon ECS and ECS Anywhere'
 date: '2021-07-16'
-tags: [ arm, AWS Graviton, AWS ECS, Raspberry Pi, ECS Anywhere]
+tags: [ arm, AWS Graviton, Amazon ECS, Raspberry Pi, Amazon ECS Anywhere]
 ---
 *Please let me know how I can improve posts such as this one, by completing this very short survey. $25 AWS credits will be provided for the first 20 completed - [take the survey](https://eventbox.dev/survey/C6HLWSB)*
 

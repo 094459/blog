@@ -1,7 +1,7 @@
 ---
 title: 'Automating the installation and configuration of Amazon Managed Workflows for Apache Airflow'
 date: '2021-01-26'
-tags: [Apache Airflow, mwaa, iac, cdk, cloudformation]
+tags: [Apache Airflow, mwaa, IaC, AWS CDK, AWS CloudFormation]
 ---
 **updated, August 25th**
 *Thanks to Philip T for spotting a typo in the cloudformation code below - it is ok in the GitHub repo, but I have fixed it now below.*

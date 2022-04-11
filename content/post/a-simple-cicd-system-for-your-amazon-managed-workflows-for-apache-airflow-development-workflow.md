@@ -1,7 +1,7 @@
 ---
 title: 'A simple CI/CD system for your Amazon Managed Workflows for Apache Airflow development workflow'
 date: '2021-02-03'
-tags: [Apache Airflow, mwaa, automation, ci/cd, codepipeline, codecommit]
+tags: [Apache Airflow, mwaa, automation, ci/cd, AWS CodePipeline, AWS CodeCommit]
 ---
 **updated Feb 19th**
 

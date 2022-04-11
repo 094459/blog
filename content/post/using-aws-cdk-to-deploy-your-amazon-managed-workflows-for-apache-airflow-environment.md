@@ -1,7 +1,7 @@
 ---
 title: 'Using AWS CDK to deploy your Amazon Managed Workflows for Apache Airflow environment'
 date: '2021-04-28'
-tags: [Apache Airflow, mwaa, cdk, iac]
+tags: [Apache Airflow, mwaa, AWS CDK, IaC]
 ---
 > *update* I am grateful to Michael Grabenstein for spotting some mistakes in the original post/code. I hope these have now been rectified in this post.
 

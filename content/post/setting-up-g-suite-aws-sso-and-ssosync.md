@@ -1,7 +1,7 @@
 ---
 title: 'Setting up G-Suite, AWS SSO and ssosync'
 date: '2020-05-27'
-tags: [g-suite, sso, aws sso]
+tags: [g-suite, SSO, AWS SSO]
 ---
 # update-July 28th
 

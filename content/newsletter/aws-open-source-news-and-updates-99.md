@@ -2,7 +2,7 @@
 
 title: 'AWS open source news and updates #99'
 date: '2022-02-07'
-tags : [ oss-newsletter, aws open source, PostgreSQL, Apache Airflow, AWS CDK, Redis, GraphQL, Apollo GraphQL, Kubernetes, AWS EKS, Monokle, Rust,  Visual Flow, Apache Cassandra, OpenZFS, Lustre, Apache Kafka, MariaDB]
+tags : [ oss-newsletter, aws open source, PostgreSQL, Apache Airflow, AWS CDK, Redis, GraphQL, Apollo GraphQL, Kubernetes, Amazon EKS, Monokle, Rust,  Visual Flow, Apache Cassandra, OpenZFS, Lustre, Apache Kafka, MariaDB]
 
 ---
 
