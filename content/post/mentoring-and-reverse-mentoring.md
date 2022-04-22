@@ -1,7 +1,7 @@
 ---
 title: 'Mentoring and reverse mentoring'
 date: '2019-12-29'
-tags: [mentoring]
+tags: [Mentoring]
 ---
 As I reflect on 2019, one of the common themes whilst engaging with builders at the start of their career, has been how do those of us who have deep experience working in the IT industry and technology help bring those who are just starting out?
 

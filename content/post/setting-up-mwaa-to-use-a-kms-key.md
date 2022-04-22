@@ -1,7 +1,7 @@
 ---
 title: 'Setting up MWAA to use a KMS key'
 date: '2021-12-14'
-tags: [ Apache Airflow, mwaa, kms, encryption ]
+tags: [ Apache Airflow, mwaa, AWS KMS ]
 ---
 ### Introduction
 

@@ -1,7 +1,7 @@
 ---
 title: 'Automating your ELT Workflows with Managed Workflows for Apache Airflow - Part One'
 date: '2021-04-21'
-tags: [Apache Airflow, mwaa, elt, Amazon Athena]
+tags: [Apache Airflow, mwaa, ELT, Amazon Athena]
 ---
 **update**: *I have changed the post to use standard Apache Airflow variables rather than using AWS Secrets Manager.*
 

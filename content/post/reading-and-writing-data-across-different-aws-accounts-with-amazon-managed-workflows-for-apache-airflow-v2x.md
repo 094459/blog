@@ -1,7 +1,7 @@
 ---
 title: 'Reading and writing data across different AWS accounts with Amazon Managed Workflows for Apache Airflow v2.x'
 date: '2021-09-07'
-tags: [Apache Airflow, mwaa, security]
+tags: [Apache Airflow, mwaa, Security]
 ---
 **Reading and writing data across different AWS accounts in you Apache Airflow DAGs**
 

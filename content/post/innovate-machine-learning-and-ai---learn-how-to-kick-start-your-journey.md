@@ -1,7 +1,7 @@
 ---
 title: 'Innovate Machine Learning and AI - learn how to kick start your journey'
 date: '2019-10-04'
-tags: [event, AWS Deep Racer]
+tags: [ AWS Deep Racer]
 ---
 On October 17th we have a free, online event covering several tracks on Machine Learning. Whether you are a complete beginner or seasoned data scientist, we have gentle introductions to deep dives.
 

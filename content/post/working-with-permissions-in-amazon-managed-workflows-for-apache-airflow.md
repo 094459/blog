@@ -1,7 +1,7 @@
 ---
 title: 'Working with permissions in Amazon Managed Workflows for Apache Airflow'
 date: '2021-01-27'
-tags: [Apache Airflow, mwaa, permission, security]
+tags: [Apache Airflow, mwaa, IAM Permissions, Security]
 ---
 ![innovate](https://raw.githubusercontent.com/094459/innovateaiml-airflow/main/images/banner.png)
 Part of a series of posts to support an up-coming online event, the Innovate AI/ML on February 24th, from 9:00am GMT - you can sign up [here](https://aws.amazon.com/events/aws-innovate/machine-learning/online/emea/?sc_channel=em&sc_campaign=EMEA_FIELD_WEBINAR_innovate-AIML_20210224_7014z000001MJbu&sc_medium=em_&sc_content=REG_t1_field&sc_geo=emea&sc_country=mult&sc_outcome=reg&sc_publisher=aws&trkCampaign=emea21_innovatemlq1&trk=em_emea21_innovatemlq1_ricardosueiras)

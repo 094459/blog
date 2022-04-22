@@ -1,7 +1,7 @@
 ---
 title: 'Making the most of mentoring'
 date: '2020-05-08'
-tags: [mentoring]
+tags: [Mentoring]
 ---
 Some recent experiences mentoring has provided the motivation for this piece. It is not intended to be right or wrong, but just my personal opinion and experience and I hope it is read that way. I have put this together to share what I think are the critical things that make a mentoring relationship work for both the mentor and mentee. So with that out of the way, I invite you to read on...
 

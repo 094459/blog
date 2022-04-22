@@ -1,7 +1,7 @@
 ---
 title: 'Automating your ELT Workflows with Managed Workflows for Apache Airflow - Part Two'
 date: '2021-04-21'
-tags: [Apache Airflow, mwaa, elt, Apache Hive, Presto, Amazon EMR]
+tags: [Apache Airflow, mwaa, ELT, Apache Hive, Presto, Amazon EMR]
 ---
 ### Part Two - Automating Amazon EMR
 
