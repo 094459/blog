@@ -1,6 +1,6 @@
 ---
 
-* title: 'AWS open source news and updates #116'
+title: 'AWS open source news and updates #116'
 date: '2022-06-10'
 tags : [ oss-newsletter, aws open source, Flutter, MySQL, Open Data, Amazon EMR, CentOS Linux, Rocky Linux, SUSE, AWS SAM, AWS CDK, PostgreSQL, Redis, Apache Cassandra, Nginx, Quarkus, Kubernetes, AWS Amplify, GROMACS, AWS ParallelCluster, Open Policy Agent]
 
