@@ -1,6 +1,6 @@
 ---
 
-* title: 'AWS open source news and updates #117'
+title: 'AWS open source news and updates #117'
 date: '2022-06-17'
 tags : [ oss-newsletter, aws open source, Apache Cassandra, PostgreSQL, Bottlerocket, Apache APISIX, PostGraphile, OpenSearch, Apache Iceberg, Kubernetes, Yocto Project, Flutter, Linux, Django, AWS CDK, Karpenter]
 
