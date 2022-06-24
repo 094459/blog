@@ -187,7 +187,7 @@ James Eastham shares how to get started using AWS SAM to build serverless applic
 
 From the Apache Hudi community call, Syeda Marium Faheem shares the success story of how Bazaar Technologies leveraged Apache Hudi to build robust cost efficient data pipelines using EMR on EKS.
 
-{{< youtube 5h4i63aB1-I?t=2004 >}}
+{{< youtube 5h4i63aB1-I >}}
 
 
 ### Events for your diary
