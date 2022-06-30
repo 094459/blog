@@ -1,7 +1,7 @@
 ---
 
 title: 'AWS open source news and updates #118'
-date: '2022-06-22'
+date: '2022-06-24'
 tags : [ oss-newsletter, aws open source, Backstage, OpenSearch, Qiskit, PostgreSQL, Prometheus, Kubernetes, ROS, Unified ID, Grafana, PostGraphile, CloudQuery, Apache Iceberg, Apache Airflow, AWS SAM, Babelfish for PostgreSQL, Apache Hudi]
 
 ---
