@@ -6,7 +6,7 @@ tags : [ oss-newsletter, aws open source, Backstage, OpenSearch, Qiskit, Postgre
 
 ---
 
-## June 22nd, 2022 - Instalment #118
+## June 24th, 2022 - Instalment #118
 
 Welcome to regular and new readers alike, to the AWS open source newsletter episode #118.
 
