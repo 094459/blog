@@ -22,7 +22,7 @@ At Amazon we work backwards from our customers, and one of the ways we do that i
 
 The articles and projects shared in this newsletter are only possible thanks to the many contributors in open source. I would like to shout out and thank those folks who really do power open source and enable us all to learn and build on top of what they have created. 
 
-So thank you to the following open source heroes: Adam Bien, Lerna Ekmekcioglu, Jack Iu, Arun Km, Rohit Bhosale, Abhishek Ray, Jeremy Cowan, Akshit Khanna, Arun Thangaraj, Chaitanya Varma Mudundi, Sekar Srinivasan and Christian Bonzelet
+So thank you to the following open source heroes: David Tippett, Steven Hillon, Adam Bien, Lerna Ekmekcioglu, Jack Iu, Arun Km, Rohit Bhosale, Abhishek Ray, Jeremy Cowan, Akshit Khanna, Arun Thangaraj, Chaitanya Varma Mudundi, Sekar Srinivasan and Christian Bonzelet
 
 
 ### Latest open source projects
