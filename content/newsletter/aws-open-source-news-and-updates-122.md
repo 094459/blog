@@ -176,15 +176,6 @@ Fresh from Containers from the Couch, we have guests Matthew Overstreet and "Rag
 
 {{< youtube R8zsp7mH6so >}}
 
-
-**Apache Cassandra and Apache Kafka**
-
-Staying on the theme of Apache Cassandra, check out this [Twitch](https://aws-oss.beachgeek.co.uk/1x7) from Michael Raney and Sri Rangisetti who present "Scaling Data with Amazon Keyspaces : Data pipelines with MSK" where Sri will show you how you can build a real time data pipeline, ingesting data into Amazon Keyspaces from Apache Kafka. Amazon Keyspaces is an Apache Cassandra compatible service from AWS.
-
-
-{{< twitch 1538668808 >}}
-
-
 ### Events for your diary
 
 **OpenSearch**
