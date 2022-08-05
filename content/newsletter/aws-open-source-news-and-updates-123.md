@@ -105,6 +105,10 @@ This is my favourite post this week, and takes a look at some of the broader con
 
 ![artist illustrations for apache tinkerpop](https://d2908q01vomqb2.cloudfront.net/ca3512f4dfa95a03169c5a670a4c91a19b3077b4/2022/07/27/TinkerPop-mascots.png)
 
+Check out the post, [Beyond Code: The Artist Who Contributes to Apache TinkerPop](https://aws-oss.beachgeek.co.uk/1yg)
+
+>Thanks to Taylor Riggan for flagging that I had missed the link!
+
 **dbt**
 
 dbt is a popular open-source command line tool that helps data engineering teams move and transform data into data warehouses more effectively. Randy Chng and Sean Beath have put together this post, [Manage data transformations with dbt in Amazon Redshift](https://aws-oss.beachgeek.co.uk/1y5) demonstrate some features in dbt that help you manage data transformations in Amazon Redshift. There is also a link to a workshop for you to dive even deeper if you want to learn more about how dbt can help you. [hands on]
