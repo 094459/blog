@@ -253,6 +253,14 @@ ApacheCon is the official open source software convention of the Apache Software
 
 [Check out the ApacheCon registration page](https://aws-oss.beachgeek.co.uk/221) for more details, including the sessions and keynotes.
 
+**The Present and The Future of Infrastructure as Code**
+**Paris, France**
+**Oct 11, 6 PM**
+
+This promises to be a great meet-up and essential attendance if you are into infrastructure as code. AWS Hero Anton Babenko hosts this event, sponsored by Qovery.
+
+Read more and register for this event by heading over to [their meet-up page](https://aws-oss.beachgeek.co.uk/220).
+
 **OpenSearch**
 **Every other Tuesday, 3pm GMT**
 
