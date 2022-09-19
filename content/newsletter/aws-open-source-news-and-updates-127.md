@@ -246,6 +246,13 @@ This episode (S01E03) we are very lucky to have the AWS Cloudscape team who will
 
 https://twitch.tv/aws
 
+**ApacheCon North America 2022**
+**October 3-6, New Orleans**
+
+ApacheCon is the official open source software convention of the Apache Software Foundation (ASF), focused on the software projects hosted at the ASF. With over 160 sessions covering all your favourite Apache open source projects and more, 
+
+[Check out the ApacheCon registration page](https://aws-oss.beachgeek.co.uk/221) for more details, including the sessions and keynotes.
+
 **OpenSearch**
 **Every other Tuesday, 3pm GMT**
 
