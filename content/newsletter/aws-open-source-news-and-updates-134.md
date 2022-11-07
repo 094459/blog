@@ -2,7 +2,7 @@
 
 title: 'AWS open source news and updates #134'
 date: '2022-11-07'
-tags : [ oss-newsletter, aws open source, AWS ParallelCluster, Apache Hudi, Apache Iceberg, Apache Flin, Hive, PrestoDB, Trino, Amazon EMR, Apache Kafka, Babelfish for Aurora PostgreSQL, Firecracker, AWS CDK, Kubernetes, MySQL, ArgoCD, PostgreSQL, Fluentbit, AWS Distro for OpenTelemetry, OpenSearch  ]
+tags : [ oss-newsletter, aws open source, AWS ParallelCluster, Apache Hudi, Apache Iceberg, Apache Flink, Hive, PrestoDB, Trino, Amazon EMR, Apache Kafka, Babelfish for Aurora PostgreSQL, Firecracker, AWS CDK, Kubernetes, MySQL, ArgoCD, PostgreSQL, Fluentbit, AWS Distro for OpenTelemetry, OpenSearch  ]
 
 ---
 
