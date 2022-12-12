@@ -101,8 +101,6 @@ So thank you to the following open source heroes: John Preston, Andreas Wittig, 
 
 [amazon-ecs-fargate-cdk-v2-cicd](https://aws-oss.beachgeek.co.uk/2b2) This project builds a complete sample containerised Flask application publicly available on AWS, using Fargate, ECS, CodeBuild, and CodePipline to produce a fully functional pipeline to continuously roll out changes to your new app.
 
-![overview of solution for ecs fargate cdkv2 flask](https://github.com/aws-samples/amazon-ecs-fargate-cdk-v2-cicd/blob/main/images/eks-cicd-codebuild.png?raw=true)
-
 **ROSConDemo**
 
 [ROSConDemo](https://aws-oss.beachgeek.co.uk/2b4) this repo contains code for a working robotic fruit picking demo project for O3DE with ROS 2 Gem.
