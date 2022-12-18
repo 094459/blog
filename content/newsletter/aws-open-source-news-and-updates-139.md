@@ -1,12 +1,12 @@
 ---
 
 title: 'AWS open source news and updates #139'
-date: '2022-12-19'
+date: '2022-12-18'
 tags : [ oss-newsletter, aws open source, Prowler, Terraform, AWS IoT Greengrass v2, Karpenter, PostgreSQL, MySQL, AWS Amplify, Apache Skywalking, Micronaut, Kubernetes, Grafana, Porting Assistant for .NET, Bottlerocket, Amazon EMR, AWS CDK, Apache Ranger]
 
 ---
 
-## December 19th, 2022 - Instalment #139
+## December 18th, 2022 - Instalment #139
 
 **Welcome**
 
