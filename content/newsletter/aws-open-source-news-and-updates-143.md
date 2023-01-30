@@ -197,7 +197,7 @@ Check out the video version of Gary Stafford's post, [DataHub on AWS:  Data Disc
 
 **Java**
 
-A stellar cast of Java developers, Mark Sailes, Maciej Walkowiak, Serkan Ozal, Vadym Kazulkin, and Goran Opacic Esteh take a look at SnapStart and SpringCloud AWS. A must watch for all Java fans.
+A stellar cast of Java developers, Mark Sailes, Maciej Walkowiak, Serkan Ozal, Vadym Kazulkin, and Goran Opacic take a look at SnapStart and SpringCloud AWS. A must watch for all Java fans.
 
 {{< youtube nhwgm9J4F9A >}}
 
