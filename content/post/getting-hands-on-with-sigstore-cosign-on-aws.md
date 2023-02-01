@@ -437,6 +437,39 @@ The following checks were performed on each of these signatures:
 > 
 > ```
 
+**Hacking our Container**
+
+Now that we have covered the basics, lets put this together to show what would happen if someone had somehow managed to push an updated (hacked) container image onto your repository.
+
+We modify our Dockerfile, and change the text so that it outputs something like "I've been hacked".
+
+```
+FROM alpine
+CMD ["echo", "Hello, Cosign! - Hacked!"]
+```
+
+We then build, tag, push, and then test it to make sure its running our new "hacked" container image.
+
+```
+docker build -t os-security .
+docker tag os-security:latest public.ecr.aws/a4b5h6u6/os-security
+docker push public.ecr.aws/a4b5h6u6/os-security:latest
+docker run public.ecr.aws/a4b5h6u6/os-security
+
+Hello, Cosign! - Hacked
+```
+
+What happens now if we use Cosign to validate this image?
+
+```
+cosign verify --key awskms:///arn:aws:kms:eu-west-1:704533066374:alias/devcosign-key public.ecr.aws/a4b5h6u6/os-security:latest
+Error: no matching signatures:
+
+main.go:62: error during command execution: no matching signatures:
+```
+
+As we can see, Cosign has correctly identified the imposter container image. As part of a workflow, you could incorporate this to make sure what you are getting is what you expect.
+
 **Conclusion**
 
 In this short blog post, I wanted to share a few recipes of how you can use Sigstore Cosign to sign and verify both container images, but also other artefacts such as files/binaries. I also looked at how you can use Amazon ECR and AWS KMS as the target repository and private key store for Cosign.
