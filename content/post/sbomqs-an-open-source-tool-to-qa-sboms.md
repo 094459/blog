@@ -1,5 +1,5 @@
 ---
-title: 'sbomqs, an open source tools to quality check your SBOMS'
+title: 'sbomqs, an open source tool to quality check your SBOMS'
 date: '2023-02-02'
 tags: [Amazon ECR, sbomqs, SPDX, SBOM]
 ---
