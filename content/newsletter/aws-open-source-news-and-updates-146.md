@@ -65,7 +65,7 @@ Check out their supporting blog post, [What does it mean to have a cloud native 
 
 [otel-config-validator](https://aws-oss.beachgeek.co.uk/2jw) is an experimental OpenTelemetry Collector Configuraton Validator that is currently a work in progress (i.e. please give us feedback if you try this project out). The AWS Distro for OpenTelemetry (ADOT) provides a secure production-ready distribution of OpenTelemetry (OTel) that allows for instrumentation and collecting of metrics and traces. The ADOT collector can be used to collect and export telemetry data. Within the collector, observability pipelines are defined using a YAML configuration file. When creating these configuration files,  there is a potential for syntactic error in the YAML file which would prevent your pipeline from operating effectively. Having a telemetry pipeline non-functional may cause gaps in observability that can lead to application downtime. The goal of this project is to assist with error-checking OTEL configuration files during development so potential mis-configurations can be addressed before causing issues. Read more about this in the excellent post from Kevin Lewin, [Validating OpenTelemetry Configuration Files with the otel-config-validator](https://aws-oss.beachgeek.co.uk/2jx) [hands on]
 
-[architecture of otel-config-validator](https://d2908q01vomqb2.cloudfront.net/ca3512f4dfa95a03169c5a670a4c91a19b3077b4/2023/02/22/ADOT-collector-architecture.png)
+![architecture of otel-config-validator](https://d2908q01vomqb2.cloudfront.net/ca3512f4dfa95a03169c5a670a4c91a19b3077b4/2023/02/22/ADOT-collector-architecture.png)
 
 **mask-words-in-image**
 
