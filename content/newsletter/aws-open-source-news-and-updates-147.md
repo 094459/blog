@@ -74,7 +74,7 @@ Check out more details from [this Reddit thread](https://aws-oss.beachgeek.co.uk
 
 **mlops-sagemaker-github-actions**
 
-mlops-sagemaker-github-actions similar to the previous post, this repo is an example of MLOps implementation using Amazon SageMaker and GitHub Actions. The code helps you to build a solution that automates a model-build pipeline that includes steps for data preparation, model training, model evaluation, and registration of that model in the SageMaker Model Registry. The resulting trained ML model is deployed from the model registry to staging and production environments upon the approval.
+[mlops-sagemaker-github-actions](https://aws-oss.beachgeek.co.uk/2hv) similar to the previous post, this repo is an example of MLOps implementation using Amazon SageMaker and GitHub Actions. The code helps you to build a solution that automates a model-build pipeline that includes steps for data preparation, model training, model evaluation, and registration of that model in the SageMaker Model Registry. The resulting trained ML model is deployed from the model registry to staging and production environments upon the approval.
 
 ![architecture of mlops on sagemaker](https://github.com/aws-samples/mlops-sagemaker-github-actions/blob/main/img/Amazon-SageMaker-GitHub-Actions-Architecture.png?raw=true)
 
