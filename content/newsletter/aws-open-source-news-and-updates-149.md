@@ -1,10 +1,9 @@
 ---
 title: 'AWS open source newsletter #149'
-date: '2023-03-20'
+date: '2023-03-19'
 tags : [ oss-newsletter, aws open source,  Apache Cassandra, OpenSearch, Amazon EMR, Amazon Linux, Kubernetes, Apache Airflow, Apache Hudi, Apache Iceberg, Nextcloud, Apache Kafka, Avalanche, AWS Parallel Cluster, AWS CDK, Babelfish for Aurora PostgreSQL, Terraform, AWS RoboMaker, ROS]
 
 ---
-
 
 ## March 20th, 2023 - Instalment #149
 
