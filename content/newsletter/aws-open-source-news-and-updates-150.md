@@ -25,7 +25,7 @@ Please please please take 1 minute to [complete this short survey](https://pulse
 
 The articles and projects shared in this newsletter are only possible thanks to the many contributors in open source. I would like to shout out and thank those folks who really do power open source and enable us all to learn and build on top of what they have created.
 
-So thank you to the following open source heroes: Franck Pachot,  Guillaume Marchand, Daisy Riley, Oğuzhan Yılmaz, Veena Vasudevan, Soumil Shah, Sashi Varanasi, Lakshmi Peri, Noritaka Sekiyama, Scott Long, Sean Ma, Surendar Munimohan, Chelluru V N S S Vidyadhar, José Gardiazabal and Donato Azevedo  
+So thank you to the following open source heroes: Ivica Kolenkaš, Franck Pachot,  Guillaume Marchand, Daisy Riley, Oğuzhan Yılmaz, Veena Vasudevan, Soumil Shah, Sashi Varanasi, Lakshmi Peri, Noritaka Sekiyama, Scott Long, Sean Ma, Surendar Munimohan, Chelluru V N S S Vidyadhar, José Gardiazabal and Donato Azevedo  
 
 ### Latest open source projects
 
