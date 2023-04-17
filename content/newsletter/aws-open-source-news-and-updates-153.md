@@ -33,7 +33,6 @@ So thank you to the following open source heroes: Nithya Ruff , Nick Karpov, Cha
 [cfnctl](https://aws-oss.beachgeek.co.uk/2ox)  [[ pronounced cfn control or cloudformation control ]] is a great tool from Roger Welin that provides a CLI that brings the Terraform cli experience to Cloudformation. With cfnctl, you write Cloudformation templates as usual but use the cli workflow that you are already used to from Terraform, including: apply, plan, destroy, and output. Still work in progress, so why not give this a try and provide Roger feedback, or even better contribute back to the project. Very neat indeed!
 
 {{< youtube -ZpbvEoC9rc >}}
-{% youtube -ZpbvEoC9rc %}
 
 **ckia**
 
@@ -48,7 +47,6 @@ So thank you to the following open source heroes: Nithya Ruff , Nick Karpov, Cha
 [pg_gpt](https://aws-oss.beachgeek.co.uk/2p0) is an experimental extension from the lovely folks at Cloudquery that brings OpenAI API to your PostgreSQL to run queries in human language. Check out the details and the short demo they have put together. You will need to have an OPENAI API key to use this, and as the README states, do not use this for production as the plugin does send the schema info to OpenAI.
 
 {{< youtube HQVgVDYDa5k >}}
-{% youtube HQVgVDYDa5k %}
 
 **aiws**
 
@@ -87,7 +85,6 @@ So thank you to the following open source heroes: Nithya Ruff , Nick Karpov, Cha
 > To enable communication between the frontend and Chime, temporary AWS credentials need to be generated. For this, the authentication service offered by Cognito and the generation of credentials through the Cognito Identity Pool were used. Finally, to perform the action of creating a user in Chime Messaging, a trigger was configured that invokes a lambda when a Cognito account is confirmed. To create this entire infrastructure, Terraform was used as an IaC (Infrastructure as code) platform to facilitate the creation, modification, and destruction of all infrastructure created in AWS. To exemplify the application flow, I created a diagram that shows the entire user creation flow and communication between AWS services, as well as a video that shows the application in action,.
 
 {{< youtube FP7BrV9W8s8 >}}
-{% youtube FP7BrV9W8s8 %}
 
 **emr-cli-examples**
 
@@ -140,7 +137,6 @@ In this post, [Connect to Amazon MSK Serverless from your on-premises network](h
 The Amazon Elastic Kubernetes Service (Amazon EKS) team announced support for Kubernetes version 1.26 for Amazon EKS and Amazon EKS Distro. Just in time for KubeCon next week, you can dive deeper by reading the post, [Amazon EKS now supports Kubernetes version 1.26](https://aws-oss.beachgeek.co.uk/2pl), where Leah Tucker looks at some of the key features you need to know about.
 
 {{< youtube nK9iC_U2fVA >}}
-{% youtube nK9iC_U2fVA %}
 
 **Apache Airflow**
 
@@ -178,21 +174,20 @@ Last week we announced support for Apache Spark with Java 11 in EMR on EKS. Amaz
 Join Sheetal Joshi and Sai Vennam as they dive into a hands-on demo focusing on the Networking module in the [all-new Amazon EKS Workshop: [https://www.eksworkshop.com/](https://aws-oss.beachgeek.co.uk/2pf)]
 
 {{< youtube EAZnXII9NTY >}}
-{% youtube EAZnXII9NTY %}
+
 
 **Java on Graviton - How to Use Amazon Corretto**
 
 Java is one of the most popular languages when running applications on AWS. Did you know about Amazon Corretto, a no-cost, multi-platform, production-ready distribution of the Open Java Development Kit? Did you know that the kit runs on Graviton-based Amazon EC2 instances? During this session, Arthur Petitpierre shares more info about Amazon Corretto,  and how to install it on Graviton-based Amazon EC2 instances.
 
 {{< youtube zANOBN4jZfI >}}
-{% youtube zANOBN4jZfI %}
+
 
 **Nithya Ruff from Amazon on Building Successful Open Source Businesses**
 
 Nithya Ruff heads up Amazon's Open Source Program Office, and in this video podcast, she talks about various aspects of open source with hosts Avi Press and Matt Yonkovit. They cover a broad range of topics, including the challenges facing open source today, how to evaluate new open source projects, the importance of Open Source Program Offices (OSPOs) for startups, building successful and sustainable open source businesses, reducing friction for developers, open source diversity, managing diverse talent and competing ideals in open source governance, and more!
 
 {{< youtube SswwJyzU7po >}}
-{% youtube SswwJyzU7po %}
 
 
 **Build on Open Source**
