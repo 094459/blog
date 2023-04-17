@@ -6,6 +6,8 @@ tags: [ Apache Airflow, mwaa, mwaa-local-runner, AWS Cloud9 ]
 
 Here is a quick recipe if you are looking to get mwaa-local-runner up and running on your Cloud9 developer setup. This might not be the most optimised way, so I am very happy to received suggestions on how to improve this. What I will cover here is how to deploy mwaa-local-runner onto a standard Cloud9 IDE, deployed in a default VPC.
 
+*Updating my AWS Cloud9 environment*
+
 The first thing I needed to do was to increase the size of my local disk as Cloud9 only provides 10gb of storage. This is fine for typical use cases, but we are going to be building container images, so need to set this higher.
 
 ```
@@ -39,6 +41,7 @@ if [ $? -eq 0 ]; then
     sudo reboot
 fi
 ```
+*Installing some missing tools*
 
 The next thing I need to do is install "docker-compose" as whilst Docker is installed, docker-compose is not. This is the script I use
 
@@ -55,12 +58,16 @@ ops:~/environment $ docker-compose version
 Docker Compose version v2.17.2
 ```
 
+*Grabbing my AWS Cloud9 public IP address*
+
 This should be everything you need to get started. However, we do need one piece of information before we proceed, and that is the public IP address for your Cloud9 instance. We need this as we are going to update the URL configuration parameter in mwaa-local-runner. (If you do not do this, you will get 400 Gateway errors when accessing Airflow via the UI). Run the following command to find yours
 
 ```
 curl http://169.254.169.254/latest/meta-data/public-ipv4
 3.253.9.131
 ```
+
+*Configuring and building mwaa-local-runner*
 
 You can now check out the mwaa-local-runner project into your Cloud9 environment
 
@@ -70,7 +77,7 @@ git clone https://github.com/aws/aws-mwaa-local-runner.git
 
 We now need to change a couple of things.
 
-The first is to update the airflow.cfg so that we can update the base_url parameter (line 406) with the public IP of your Cloud9 instance.
+The first is to update the airflow.cfg (docker/config/airflow.cfg) so that we can update the base_url parameter (line 406) with the public IP of your Cloud9 instance.
 
 ```
 #base_url = http://localhost:8080
