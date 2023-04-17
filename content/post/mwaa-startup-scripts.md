@@ -80,6 +80,8 @@ When using MWAA, you can now specify a startup script via the environment config
 
 ![simple workflow of how startup scripts work](https://ricsuepublicresources.s3.eu-west-1.amazonaws.com/images/airflow-variables.png)
 
+We can see that whilst we only need to add our changes to the startup.sh script (on the far right on the diagram above) there are a number of other scripts involved. From the entrypoint.sh script, the execute_startup_script is called which then through a series of steps runs the contents of the startup.sh you have created. If you have defined environment variables, these are persisted to a file called stored_env, and then sourced into the environment when Airflow starts.
+
 With this new capability being released, there is a new command to the mwaa-local-env command called "test-startup-script" which will allow you to validate your startup scripts in your mwaa-local-runner setup. 
 
 **Updating your existing mwaa-local-runner**
