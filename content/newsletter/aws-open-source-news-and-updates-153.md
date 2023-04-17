@@ -20,7 +20,7 @@ Please please please take 1 minute to [complete this short survey](https://pulse
 
 The articles and projects shared in this newsletter are only possible thanks to the many contributors in open source. I would like to shout out and thank those folks who really do power open source and enable us all to learn and build on top of what they have created.
 
-So thank you to the following open source heroes: Nithya Ruff , Nick Karpov, Chandrapal Badshah, Walter McCain II, Kyaw Soe Hlaing, Sai Kiran Akula, Samiullah Mohammed, Masudur Rahaman Sayem, Akeef Khan, Bret Edwards, Roger Welin, Brittan DeYoung, Roberson Andrade, Damon Cortesi,  Arthur Petitpierre, Andreas Cavagna, Join Sheetal Joshi and Sai Vennam
+So thank you to the following open source heroes: Nithya Ruff , Nick Karpov, Chandrapal Badshah, Walter McCain II, Kyaw Soe Hlaing, Sai Kiran Akula, Samiullah Mohammed, Masudur Rahaman Sayem, Akeef Khan, Bret Edwards, Roger Welin, Brittan DeYoung, Roberson Andrade, Damon Cortesi,  Arthur Petitpierre, Andreas Cavagna, Sheetal Joshi and Sai Vennam
 
 ### Latest open source projects
 
