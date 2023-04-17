@@ -1,5 +1,5 @@
 ---
-title: 'AWS open source newsletter #152'
+title: 'AWS open source newsletter #153'
 date: '2023-04-17'
 tags : [ oss-newsletter, aws open source, Babelfish for Aurora PostgreSQL, MySQL, Apache Airflow, MWAA, PostgreSQL, gMSA on Linux, Cloud Custodian, Delta Lake, Apache Kafka, Amazon EMR, Streamlit,  Crossplane, Flux, Amazon Corretto, Amazon EKS, Kubernetes]
 
