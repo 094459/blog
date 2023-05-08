@@ -209,8 +209,6 @@ If you want to find out more, read on in ["Announcing Amazon Managed Grafana wor
 Check out Nathan Taber's keynote at KubeCon for a really nice summary of some of the work going on to support open source projects and communities.
 
 {{< youtube BM5y-OwQhP0 >}}
-{% youtube BM5y-OwQhP0 %}
-
 
 **Build on Open Source**
 
