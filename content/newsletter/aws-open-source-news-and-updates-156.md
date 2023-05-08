@@ -1,6 +1,6 @@
 ---
-title: 'AWS open source newsletter #155'
-date: '2023-05-07'
+title: 'AWS open source newsletter #156'
+date: '2023-05-08'
 tags : [ oss-newsletter, aws open source, OpenSearch, Amazon Corretto, Apache Kafka, Apache Airflow, Suricata, Grafana, GraphQL, PostgreSQL, Amazon EMR, Kubernetes, Amazon EKS, Spring Cloud AWS, MySQL, PyTorch, MLFlow, Redis, Apache Spark, Zarr, AWS Amplify, AWS CDK, DuckDB]
 
 ---
