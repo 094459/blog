@@ -253,6 +253,13 @@ Curious about Transactional Data Lakes? Come join our AWS experts as we take you
 
 You can [join via YouTube live here](https://aws-oss.beachgeek.co.uk/2pu)
 
+**London Open Source Data Infrastructure Meetup**
+**Huckletree Shoreditch, 6:30PM - 9:30PM**
+
+As part of London Tech Week Aiven are co-hosting the 'London Open Source Data Infrastructure Meetup' on the 14th of June. This event is in collaboration with Hugh Evans from Daemon the 'AI and Deep Learning for Enterprise' group. The speaker panel includes Ricardo Sueiras from Amazon Web Services (AWS) discussing the wonders of Apache Airflow, Davies Oludare from Confluent shedding light on the intricate world of Kafka, and Ed Shee from Seldon breaking down the nuances of ML-powered summarisation.
+
+Spaces are limited, so make sure you reserve your spot by [checking and out the meetup page](https://aws-oss.beachgeek.co.uk/2tu)
+
 **Open Source Festival**
 **Lagos, Nigeria - June 15th-17th**
 
