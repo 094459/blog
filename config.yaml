@@ -6,7 +6,7 @@ title: Beachgeek blog - a refuge for pineapple on pizza lovers
 theme: cupper-hugo-theme
 enableGitInfo: false
 enableEmoji: true
-googleAnalytics: UA-160626931-1
+googleAnalytics: G-R9LTJQLW8W
 enableRobotsTXT: true
 
 taxonomies:
@@ -22,7 +22,7 @@ params:
   author: "Ricardo Sueiras"
   iconTitle: "My site icon"
   navTitleText: Beachgeek Blog
-  description: Technologist and Maker specialising in Cloud, Open Source and Innovation & Emerging Technologies.
+  description: Technologist and Maker specialising in Cloud, Open Source and Innovation.
   homeMetaContent: Technologist and Maker specialising in Cloud, Open Source and Innovation & Emerging Technologies.
   footer: Made with [Hugo](https://gohugo.io/). Themed by [Cupper](https://github.com/zwbetz-gh/cupper-hugo-theme). 
   # For more date formats see https://gohugo.io/functions/format/
