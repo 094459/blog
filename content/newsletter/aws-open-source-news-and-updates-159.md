@@ -57,7 +57,7 @@ So thank you to the following open source heroes:  Marco Leong, Arthur Busser, L
 
 **aws-doc-extractor**
 
-[aws-doc-extractor](https://aws-oss.beachgeek.co.uk/2vn) this project from Kevin Lin that pulls in AWS documentation and extracts, consolidates, and organises it. Kevin publishes this over at [https://awsnotes.dendron.so/about/readme](https://aws-oss.beachgeek.co.uk/2vo) so you can see what this project is capable of. Hat Tip to Corey Quin's newsletter where I found this project.
+[aws-doc-extractor](https://aws-oss.beachgeek.co.uk/2vn) this project from Kevin Lin that pulls in AWS documentation and extracts, consolidates, and organises it. Kevin publishes this over at [https://awsnotes.dendron.so/about/readme](https://aws-oss.beachgeek.co.uk/2vo) so you can see what this project is capable of. Hat Tip to Corey Quinn's newsletter where I found this project.
 
 **aws-glue-test-data-generator**
 
