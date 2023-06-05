@@ -1,5 +1,5 @@
 ---
-title: 'AWS open source newsletter #158'
+title: 'AWS open source newsletter #159'
 date: '2023-06-05'
 tags : [ oss-newsletter, aws open source, Kubernetes, Amazon EKS, PostgreSQL, AWS Copilot, Redis, AWS CDK, Apache Iceberg, datree, Grafana, GraphQL, Go, Apache Flink, Deep Java Library, DJL, containerd, Cedar, Tailscale, Apache Cassandra  ]
 
