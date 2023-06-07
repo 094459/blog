@@ -158,7 +158,7 @@ The command will not generate any output, and you will need to go to the AWS Clo
 
 > **Note!** When I used the original templates, some resources (the Aurora MySQL database) had deletion protection enabled. So if you do get an error when trying to clean up/delete the stack, make sure you check and remove the deletion protection and then try again.
 
-**Keycloak version v21r**
+**Keycloak version v21**
 
 So I kind of left the details of how to deploy older versions of Keycloak for reference in case anyone finds themselves needing to do that. For most installations however,  you will most likely want to deploy newer (newest) versions of Keycloak. This is where I ran into a spot of bother, and spent three days trying to figure out how to do this. The approaches outlined above just didn't work, and I spent a lot of time trying to troubleshoot and find a solution. In the end, it was down to a bit of luck and the excellence of [Alexander Widera](https://aws-oss.beachgeek.co.uk/2vr) that I got something working.
 
