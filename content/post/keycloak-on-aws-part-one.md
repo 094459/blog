@@ -6,14 +6,13 @@ tags : [ aws open source, Keycloak, CDK, Cloudformation, SAML2.0, AWS Identity C
 
 ### Integrating Keycloak as my Identity Provider for IAM Identity Centre: Part one, deploying Keycloak on AWS
 
-"It was the best of times, it was the worst of times..." A Tale of Two Cities
+> "It was the best of times, it was the worst of times..." A Tale of Two Cities
 
 It started out innocently enough. As part of working on a new blog post, I needed a way to use an open source tool called [saml2aws](https://aws-oss.beachgeek.co.uk/2uv) that generates AWS short lived credentials that you can use to access your AWS resources. This is a pretty common pattern, and a good practice to do and for many organisations this means they integrate with their "user directory" - sometimes this might be something like Active Directory, or an LDAP server. AWS IAM Identity Centre (which is the new name for AWS Single Sign-On) allows you to integrate those identity providers into your AWS Account, allowing your users to authenticate against that user directory and then get access to AWS resources. 
 
 So I needed to set up an Identity Provider (IdP), and decided to use an open source Identity and Access Management solution called Keycloak rather than the usual suspects of Active Directory or something like Auth0. What I thought would be a simple deployment ended up being less than straightforward. This post outlines how you can get your own Keycloak IAM service up and running on AWS.
 
 Why was it less than straightforward? As it turns out, that was down to some significant changes introduced in later versions of Keycloak that impacted how many tools created to simplify the deployment of Keycloak, worked. Or as I found, did not!
-
 
 In this post I will share how you can get both the older versions of Keycloak (v16.1) as well as the latest versions (I am running v21.0.1)  up and running on AWS. In a future post, I will use the Keycloak service that this post helps you deploy, and integrate this into AWS Identity Centre as our SSO.
 
@@ -69,7 +68,7 @@ Exploring and trying these different options out made me realised something impo
 
 **Keycloak version v16 or older**
 
-As you can see from the list above, I had a few options to get my Keycloa v16.1 server up and running. After going through the documentation of each, and looking at how much work/effort was required for each, and finally trying a few out, I ended up settling for the CloudFormation solution. You will find the template I used in the [GitHub repo](https://aws-oss.beachgeek.co.uk/2vs) in the cf folder. The file is called "keycloak-aurora-serverless-from-new-vpc.template" which is the template I used, and is slightly modified from the origin repo of the resources I shared above. You can see what it will deploy by [checking out the documentation here](https://aws-oss.beachgeek.co.uk/2v0)
+As you can see from the list above, I had a few options to get my Keycloak v16.1 server up and running. After going through the documentation of each, and looking at how much work/effort was required for each, and finally trying a few out, I ended up settling for the CloudFormation solution. You will find the template I used in the [GitHub repo](https://aws-oss.beachgeek.co.uk/2vs) in the cf folder. The file is called "keycloak-aurora-serverless-from-new-vpc.template" which is the template I used, and is slightly modified from the origin repo of the resources I shared above. You can see what it will deploy by [checking out the documentation here](https://aws-oss.beachgeek.co.uk/2v0)
 
 ![overview of keycloak architecture using cloudformation](https://aws-samples.github.io/keycloak-on-aws/en/images/architecture/01-keycloak-on-aws-architecture.png)
 
@@ -105,7 +104,8 @@ aws cloudformation describe-stack-resource  --stack-name keycloak-sso-provider -
 ```
 Will display the arn, which we can then use in the following command to grab the password (in the below I have redacted it as XXXXX)
 
-```aws secretsmanager get-secret-value  --secret-id arn:aws:secretsmanager:eu-west-1:xxxxxxx:secret:KeyCloakKCSecretF8498E5C-1ZI9SjZjDsmJ-xxxxxx
+```
+aws secretsmanager get-secret-value  --secret-id arn:aws:secretsmanager:eu-west-1:xxxxxxx:secret:KeyCloakKCSecretF8498E5C-1ZI9SjZjDsmJ-xxxxxx
 
 {
     "ARN": "arn:aws:secretsmanager:eu-west-1:xxxxxxxxx:secret:KeyCloakKCSecretF8498E5C-1ZI9SjZjDsmJ-xxxxx",
@@ -274,8 +274,8 @@ Once this has completed, make sure you grab the URI for the image you just uploa
 ```
 aws ecr describe-images --repository-name keycloak  --query 'imageDetails[*].imageTags[0]' --output json | jq --arg v `aws ecr describe-repositories --repository-name keycloak  --query 'repositories[0].repositoryUri' --output text` '.[] | ($v + ":" + .)'
 
-"704533066374.dkr.ecr.eu-west-1.amazonaws.com/keycloak:21.1.1-amd64"
-"704533066374.dkr.ecr.eu-west-1.amazonaws.com/keycloak:21.1.1"
+"xxxxxxx.dkr.ecr.eu-west-1.amazonaws.com/keycloak:21.1.1-amd64"
+"xxxxxxx.dkr.ecr.eu-west-1.amazonaws.com/keycloak:21.1.1"
 ```
 
 *Updating and running our CDK app*
@@ -296,6 +296,7 @@ import aws_cdk as cdk
 import aws_cdk.aws_rds as rds 
 import aws_cdk.aws_ecs as ecs
 from cdk_keycloak import KeyCloak, KeycloakVersion
+from aws_cdk import CfnOutput
 
 app = cdk.App()
 env = cdk.Environment(region="{replacewithyourawsregion}", account="{replacewithyourawsaccount}")
@@ -312,6 +313,12 @@ mysso = KeyCloak(stack, "KeyCloak",
     database_removal_policy=cdk.RemovalPolicy.DESTROY
 )
 
+CfnOutput(
+            stack,
+            id="KeyCloakSecret",
+            value=mysso.keycloak_secret.secret_full_arn,
+            description="Keycloak admin username and password"
+        )
 app.synth()
 ```
 
@@ -402,10 +409,22 @@ You can then run the cdk destroy command to remove your Keycloak resources.
 ```
 cdk destroy keycloak-demo
 ```
+You will be asked to confirm, so review and respond appropriately. It will take approx 15-20 minutes to complete the deletion.
+
+```
+Are you sure you want to delete: keycloak-demo (y/n)? y
+keycloak-demo: destroying... [1/1]
+9:05:04 AM | DELETE_IN_PROGRESS   | AWS::CloudFormation::Stack                  | keycloak-demo
+9:05:07 AM | DELETE_IN_PROGRESS   | Custom::VpcRestrictDefaultSG                | KeyCloak/Vpc/Restr...omResource/Default
+9:05:07 AM | DELETE_IN_PROGRESS   | AWS::ECS::Service                           | KeyCloak/KeyCloakC...ce/Service/Service
+...
+...
+
+ ✅  keycloak-demo: destroyed
+```
 
 ## Next steps
 
-In this post I shared how you can install the open source identity and access management project Keycloak in AWS. We looked at how you can use the CDKv2 construct with a few tweaks to make it easier to deploy this project, and
-You are now ready for the next part of this post, integrating Keycloak into AWS Identity Centre as your Idp for SSO. I am writing this post as we speak, so stay tuned for this to drop soon.
+In this post I shared how you can install the open source identity and access management project Keycloak in AWS. We looked at how you can use the CDKv2 construct with a few tweaks to make it easier to deploy this project. We are now ready for the next part, integrating Keycloak into AWS Identity Centre as your Idp for SSO. I am writing this post as we speak, so stay tuned as this to drop soon.
 
 If you have found this blog post helpful, please give me some feedback by [completing this very short survey here](https://pulse.buildon.aws/survey/D4L9Y3II).
