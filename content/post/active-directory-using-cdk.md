@@ -15,7 +15,7 @@ This post and supporting CDK code, will help you to deploy your own Active Direc
 
 * Admin access to an AWS account
 * CDKv2 - I am using version 2.83.1 (build 006b542)
-* Code from the support repo on Github
+* Code from the [repo on Github](https://github.com/094459/active-directory-on-aws-cdk)
 
 Also, it is worth checking to make sure how many VPCs you have in the AWS Account you are deploying to. The default value (five) will cause this stack to fail. You will need to either clean up and remove a VPC or increase the limits via the AWS Support Centre.
 
