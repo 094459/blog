@@ -18,7 +18,7 @@ Please please please take 1 minute to [complete this short survey](https://pulse
 
 The articles and projects shared in this newsletter are only possible thanks to the many contributors in open source. I would like to shout out and thank those folks who really do power open source and enable us all to learn and build on top of what they have created.
 
-So thank you to the following open source heroes:   Suman Debnath, Justin Garrison,  Aidan Steele, Nathan Glover,  Lars Jacobsson,  John Milne,  Abdel Jaidi, Anton Kukushkin, Leon Luttenberger, Jimmy Ray, Jesse Butler, Stuti Deshpande, Jesus Max Hernandez, Divya Gaitonde, Joseph Barlan, Aniket Jiddigoudar, Parnab Basak, Fernando Gamero, Shubham Mehta, Michael Raney, Meet Bhagdev, Lotfi Mouhib, Vara Bonthu, Praveen Koorse, and Mike Hicks, Jeremy Cowan and Shane Corbett
+So thank you to the following open source heroes:   Suman Debnath, Justin Garrison,  Aidan Steele, Nathan Glover,  Lars Jacobsson,  John Mille,  Abdel Jaidi, Anton Kukushkin, Leon Luttenberger, Jimmy Ray, Jesse Butler, Stuti Deshpande, Jesus Max Hernandez, Divya Gaitonde, Joseph Barlan, Aniket Jiddigoudar, Parnab Basak, Fernando Gamero, Shubham Mehta, Michael Raney, Meet Bhagdev, Lotfi Mouhib, Vara Bonthu, Praveen Koorse, and Mike Hicks, Jeremy Cowan and Shane Corbett
 
 ### Latest open source projects
 
