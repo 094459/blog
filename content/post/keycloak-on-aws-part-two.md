@@ -22,7 +22,7 @@ In order to find this post useful, you will need a Keycloak server up and runnin
 
 > **Users and Groups in AWS IAM Identity Centre** Not in scope for this post, but within AWS IAM Identity Centre you are able to define groups and permissions sets, and then assign these to users that are created. When you integrate an Idp with AWS IAM Identity Centre, this is your control point to ensure you define and control what these federated users have permissions to do.
 > 
-> In this walkthrough I created the simplest setup. A group called "Dev-Users" which have a subset of AWS permissions (in my case, [PowerUsers](https://aws-oss.beachgeek.co.uk/2wv) who can do a lot but not everything) and assigned a user called "ricardo.sueiras@ricuse.dev" which I have created in my Keycloak environment. I can log into Keycloak as "developer@bigdev.com" but this account currently cannot log into my AWS account.
+> In this walkthrough I created the simplest setup. A group called "Dev-Users" which have a subset of AWS permissions (in my case, [PowerUsers](https://aws-oss.beachgeek.co.uk/2wv) who can do a lot but not everything) and assigned a user called "developer@bigdev.com" which I have created in my Keycloak environment. I can log into Keycloak as "developer@bigdev.com" but this account currently cannot log into my AWS account.
 > 
 
 **Starting off at the AWS IAM Identity Centre**
