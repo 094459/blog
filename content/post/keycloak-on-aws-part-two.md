@@ -1,5 +1,5 @@
 ---
-title: 'Integrating Keycloak as my Identity Provider for IAM Identity Centre: Part two, integrating Keycloak as my Identity provide in AWS Identity Centre'
+title: 'Integrating Keycloak as my Identity Provider for IAM Identity Centre: Part two, configuring Keycloak as my Identity provider'
 date: '2023-06-12'
 tags : [ aws open source, Keycloak, CDK, Cloudformation, SAML2.0, AWS Identity Centre, AWS SSO]
 
