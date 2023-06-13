@@ -33,8 +33,9 @@ from active_directory_cdk.active_directory_cdk_stack import ActiveDirectoryCdkSt
 from active_directory_cdk.active_directory_vpc_cdk_stack import ActiveDirectoryVPCCdkStack
 
 env_EU=cdk.Environment(region="eu-west-1", account="xxxxx")
-ad_props = {
-    'adminpw': 'XXXXX'
+    'adminpw': 'XXXXX!',
+    'domain' : 'devad.ricsue.dev',
+    'short-name' : 'devad'
     }
 
 app = cdk.App()
@@ -60,6 +61,8 @@ You will need to update:
 
 * "env_EU=cdk.Environment(region="eu-west-1", account="xxxxx")" - update this to the AWS region you want to deploy this into and your AWS account ID
 * adminpw - the password for your Active Directory server
+* domain - the complete domain for your Active Directory server
+* short-name - used for the NetBios name (typically set to the host name, e.g. devad in devad.ricsue.dev)
 
 Once saved, you are ready to go. There are two stacks, a VPC which configures a set of subnets and other supporting configuration, and the Active Directory service itself.
 
@@ -97,11 +100,13 @@ Thats it, you now have your Active Directory VPC ready.
 
 **Deploying the AWS managed Active Directory service**
 
-You can now deploy your AWS managed Active Directy by running the following command:
+You can now deploy your AWS managed Active Directory by running the following command:
 
 ```
 cdk deploy ad-demo-svc
 ```
+You will be prompted again to review the security information. We are creating a new IAM Role that can be used for Windows machines that need to join this Active Directory service. After reviewing this, if you are happy to proceed answer Y.
+
 After a short period of time, you should start to see the following:
 
 
@@ -151,9 +156,12 @@ ad-demo-svc: creating CloudFormation changeset...
 ✨  Deployment time: 1794.84s
 
 Outputs:
-ad-demo-svc.ActiveDirectoryId = d-936xx443ba
+ad-demo-svc.ActiveDirectoryDNS1 = 10.192.2.xx
+ad-demo-svc.ActiveDirectoryDNS2 = 10.192.3.xx
+ad-demo-svc.ActiveDirectoryId = d-9367544exx
+ad-demo-svc.IAMRoleJoiningActiveDirectory = arn:aws:iam::xxxx:role/ad-demo-svc-JoinActiveDirectoryRoleB53D6E41-6TIK7MSQxxxx
 Stack ARN:
-arn:aws:cloudformation:eu-west-1:xxxx:stack/ad-demo-svc/88c80a10-0932-11ee-b326-0a5a6e0a9f8d
+arn:aws:cloudformation:eu-west-1:xxxx:stack/ad-demo-svc/88c80a10-0932-11ee-b326-0a5a6e0axxxx
 
 ✨  Total time: 1836.94s
 ```
