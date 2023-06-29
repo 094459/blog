@@ -311,6 +311,10 @@ So as of writing this blog post, I have been running this tool for just under 24
 
 ![report of 12 hours access of my blog](https://ricsuepublicresources.s3.eu-west-1.amazonaws.com/images/blog/analytics-in-action.png)
 
+One feature I really like is the ability to drill down over the past 24 hours, and get the data by hour.
+
+![hourly report](https://ricsuepublicresources.s3.eu-west-1.amazonaws.com/images/blog/analytics-in-action-hour.png)
+
 I will be running it for about a week before I look at moving to using Cognito.
 
 **Cleaning up**
