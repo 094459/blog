@@ -190,7 +190,7 @@ Once saved, we are ready to deploy.
 To deploy we simply use the following command:
 
 ```
-cdk destroy beachgeek-analytics
+cdk deploy beachgeek-analytics
 ```
 CDK will initially upload assets to its S3 bucket, and then you will be asked to review some security information of resources the stack wants to create. Once you have reviewed, if you are happy to proceed answer Y. The stack will start to deploy and will take around 20-25 minutes to complete. You should see output similar to the following:
 
