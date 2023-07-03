@@ -78,8 +78,6 @@ So thank you to the following open source heroes:  Ran Isenberg, Bob Tordella, S
 
 [Introduction to Terraform on AWS](https://aws-oss.beachgeek.co.uk/2z6) this is a new workshop that will help you gain hands-on experience in creating and managing AWS resources using Terraform and leverage Terraform best practices.
 
-![overview of workshop details](https://static.us-east-1.prod.workshops.aws/public/5c45f27c-a7a6-4250-b4fb-099690999b3b/static/images/03/p05-00-architecture.png)
-
 
 ### AWS and Community blog posts
 
