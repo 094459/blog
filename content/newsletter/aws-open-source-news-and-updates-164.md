@@ -21,7 +21,7 @@ Before you dive in however, I need your help!  Please please please take 1 minut
 
 The articles and projects shared in this newsletter are only possible thanks to the many contributors in open source. I would like to shout out and thank those folks who really do power open source and enable us all to learn and build on top of what they have created.
 
-So thank you to the following open source heroes:   Ian Mckay, Andrew 'mrpackethead', Dan Vega, Johannes Hoch, Heitor Lessa, Harsh Rawat, Purvi Goyal, Jie Chen, John Jackson, Anil Raut, Nataizya Sikasote, Marine Haddad, Tom Palmer, Tony Phan, George Agiasoglou, Guy Bachar, Boris Litvin, Amogh Jahagirdar, Noam Ouaknine, Sercan Karaoglu, Jack Ye, Nicholas Tunney, Sid Sijbrandij,  Bob Tordella,  and Or Weis.
+So thank you to the following open source heroes:   Ian Mckay, Andrew 'mrpackethead', Dan Vega, Johannes Koch, Heitor Lessa, Harsh Rawat, Purvi Goyal, Jie Chen, John Jackson, Anil Raut, Nataizya Sikasote, Marine Haddad, Tom Palmer, Tony Phan, George Agiasoglou, Guy Bachar, Boris Litvin, Amogh Jahagirdar, Noam Ouaknine, Sercan Karaoglu, Jack Ye, Nicholas Tunney, Sid Sijbrandij,  Bob Tordella, and Or Weis.
 
 ### Latest open source projects
 
@@ -184,7 +184,7 @@ Amazon GameLift now supports Amazon Linux 2023 (AL2023), a new Linux-based opera
 
 **AWS Lambda Power Tools**
 
-You want to understand how the Lambda Power Tools team does their Continuous Integration Process? Take a detailed look at this recording from AWS Hero Johannes Hoch did together with Heitor Lessa.  A must watch episode, with more coming next week.
+You want to understand how the Lambda Power Tools team does their Continuous Integration Process? Take a detailed look at this recording from AWS Hero Johannes Koch did together with Heitor Lessa.  A must watch episode, with more coming next week.
 
 {{< youtube kIRTu_n-gZQ >}}
 
