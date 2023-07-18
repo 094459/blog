@@ -22,7 +22,7 @@ There are many ways you can deploy your own Apache Airflow, but I want to share 
 
 ![overview of all doeks projects available](https://user-images.githubusercontent.com/19464259/208900860-a7ccdaeb-158d-4767-baad-fbc76388bc09.png)
 
-In this blog post I want to share my journey in deploying a self managed Apache Airflow using DoEKS. The project is well documented, and we are going to be referencing the document[ Self-managed Apache Airflow deployment for EKS](https://awslabs.github.io/data-on-eks/docs/job-schedulers/self-managed-airflow) throughout this post. 
+In this blog post I want to share my journey in deploying a self managed Apache Airflow using DoEKS. The project is well documented, and we are going to be referencing the document[ Self-managed Apache Airflow deployment for EKS](https://awslabs.github.io/data-on-eks/docs/blueprints/job-schedulers/self-managed-airflow) throughout this post. 
 
 > **Note!** Currently I could not get this working from my Cloud9 development desktop. I am currently looking at why and then documenting a fix. It is something to do with the kms key generation which fails from C9, but works fine when running from my local Macbook.
 
