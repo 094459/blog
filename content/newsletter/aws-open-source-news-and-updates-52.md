@@ -163,17 +163,17 @@ If you missed these sessions last week then fear not, you can catch them on the 
 
 **Rust**
 
-* OPN205: [Next-gen networking infrastructure with Rust and Tokio](http://aws-oss.beachgeek.co.uk/1) Carl Lerche and Sean McArthur session covered why you should be thinking how the combination of Tokio and Rust are great combinations when building reliable network applications without comprising performance and speed. Great deep dive session.
-* OPN401: [Securing Bottlerocket updates with TUF and Rust](http://aws-oss.beachgeek.co.uk/2) in this session iliana talked about the approach to building the over-the-air update system for Bottlerocket,  building on top of The Update Framework (TUF), now a CNCF graduated project. She covers the Rust library and tooling for the project and dives deep into the TUF specification and how AWS implemented it in Rust.
-* OPN402: [Rust-vmm: Secure VM-based isolation made simple](http://aws-oss.beachgeek.co.uk/7) Rust-vmm is an open-source project that maintains a set of secure and highly reusable virtualization building blocks designed to be used as part of battle-tested, virtual machine monitors (VMMs) such as Firecracker and Cloud Hypervisor. Andreea Florescu from AWS and Samuel Ortiz, Principal Software Engineer at Intel showed you how to use rust-vmm building blocks (with some additional glue and a simple API) to assemble and run a VMM that isolates Linux guests. 
+* OPN205: [Next-gen networking infrastructure with Rust and Tokio](https://aws-oss.beachgeek.co.uk/1) Carl Lerche and Sean McArthur session covered why you should be thinking how the combination of Tokio and Rust are great combinations when building reliable network applications without comprising performance and speed. Great deep dive session.
+* OPN401: [Securing Bottlerocket updates with TUF and Rust](https://aws-oss.beachgeek.co.uk/2) in this session iliana talked about the approach to building the over-the-air update system for Bottlerocket,  building on top of The Update Framework (TUF), now a CNCF graduated project. She covers the Rust library and tooling for the project and dives deep into the TUF specification and how AWS implemented it in Rust.
+* OPN402: [Rust-vmm: Secure VM-based isolation made simple](https://aws-oss.beachgeek.co.uk/7) Rust-vmm is an open-source project that maintains a set of secure and highly reusable virtualization building blocks designed to be used as part of battle-tested, virtual machine monitors (VMMs) such as Firecracker and Cloud Hypervisor. Andreea Florescu from AWS and Samuel Ortiz, Principal Software Engineer at Intel showed you how to use rust-vmm building blocks (with some additional glue and a simple API) to assemble and run a VMM that isolates Linux guests. 
 
 **Elasticsearch**
 
-* OPN207: [The future of Elasticsearch: Open Distro for Elasticsearch](http://aws-oss.beachgeek.co.uk/3) Kyle Davis takes a peek in his crytal ball at a look at what the future holds for the Open Distro for Elasticsearch is a 100 percent open-source distribution of Elasticsearch that includes advanced features previously only available in commercial software. 
+* OPN207: [The future of Elasticsearch: Open Distro for Elasticsearch](https://aws-oss.beachgeek.co.uk/3) Kyle Davis takes a peek in his crytal ball at a look at what the future holds for the Open Distro for Elasticsearch is a 100 percent open-source distribution of Elasticsearch that includes advanced features previously only available in commercial software. 
 
 **Apache Cassandra**
 
-* OPN307: [Pronto: An IaC suite for managing Cassandra at scale](http://aws-oss.beachgeek.co.uk/5) Aaron Elman from AWS introduced Ben Covi and Achal Kumar from Intuit in this session covering a project I have covered in previous issues of this newsletter, Pronto. Pronto is an effort to give back to the community with an open-sourced framework of tools for self-managed Cassandra. It automates Packer, Terraform, and Ansible to go from an empty account to a running cluster in less than an hour.
+* OPN307: [Pronto: An IaC suite for managing Cassandra at scale](https://aws-oss.beachgeek.co.uk/5) Aaron Elman from AWS introduced Ben Covi and Achal Kumar from Intuit in this session covering a project I have covered in previous issues of this newsletter, Pronto. Pronto is an effort to give back to the community with an open-sourced framework of tools for self-managed Cassandra. It automates Packer, Terraform, and Ansible to go from an empty account to a running cluster in less than an hour.
 
 **Apache Kafka**
 
@@ -181,8 +181,8 @@ If you missed these sessions last week then fear not, you can catch them on the 
 
 **Machine Learning**
 
-* OPN308: [Designing better ML systems: Learnings from Netflix](http://aws-oss.beachgeek.co.uk/6) Netflix open-sourced Metaflow, its human-centric ML platform. Savin Goyal, Software Engineer at Netflix shared some of the lessons learned in its multi-year journey building the ML systems that Metaflow incorporates, covering a diverse range of scale from one-time experimentation on laptops to large-scale model training and serving systems on AWS.
-* OPN306: [Deploying PyTorch models for inference using TorchServe](http://aws-oss.beachgeek.co.uk/4) my colleague Shashank Prasanna and Geeta Chauhan, Head of AI Partnership Engineering at Facebook took a look at some of the challenges around deploying PyTorch models into production and how Torchserve can help you.
+* OPN308: [Designing better ML systems: Learnings from Netflix](https://aws-oss.beachgeek.co.uk/6) Netflix open-sourced Metaflow, its human-centric ML platform. Savin Goyal, Software Engineer at Netflix shared some of the lessons learned in its multi-year journey building the ML systems that Metaflow incorporates, covering a diverse range of scale from one-time experimentation on laptops to large-scale model training and serving systems on AWS.
+* OPN306: [Deploying PyTorch models for inference using TorchServe](https://aws-oss.beachgeek.co.uk/4) my colleague Shashank Prasanna and Geeta Chauhan, Head of AI Partnership Engineering at Facebook took a look at some of the challenges around deploying PyTorch models into production and how Torchserve can help you.
 
 * AIM410: [Achieve real-time inference at scale on AWS with Deep Java Library](https://aws-oss.beachgeek.co.uk/1z) in this session Zach Kimberg will show you how to deploy BERT, one of the 70+ models available in the DJL model zoo, on Amazon EMR with Spark and Flink to achieve real-time inference at scale, using AWS developed Deep Java Library (DJL). Many of today’s big data solutions (Apache Spark, Kafka, Flink, etc.) are Java-based, so the deployment of deep learning models in Java offers advantages in performance and reduced overhead.
 * CON305: [Running machine learning workflows at enterprise scale using Kubeflow](https://aws-oss.beachgeek.co.uk/22) Peter Dalbhanjan from AWS and Mohan Muppidi, a ML Cloud Architect at iRobot take you through the journey of enterprise AWS customer iRobot in adopting Kubeflow to run its machine learning (ML) workflows.
@@ -239,7 +239,7 @@ Porting Assistant for .NET UI is a React application that uses Electron applicat
 
 Last chance to sign up for this even this week. Projen is a code-first approach for managing software project configuration. This is the first meeting of the projen community. The event will mostly be an unstructured conversation about current and future plans for projen. Any topics are welcome!
 
-[Register for the event here.](http://aws-oss.beachgeek.co.uk/n)
+[Register for the event here.](https://aws-oss.beachgeek.co.uk/n)
 
 ### Stay in touch with open source at AWS
 

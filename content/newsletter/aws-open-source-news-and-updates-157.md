@@ -108,7 +108,7 @@ One of the big announcements at the Open Source Summit  a few weeks ago was Ceda
 
 Mike also put together this post, [How we built Cedar with automated reasoning and differential testing](https://aws-oss.beachgeek.co.uk/2su) which takes a look behind the scenes as to how the new development process used by Cedar.
 
-![automated reasoning and differential testing overview](http://amazon-topics-brightspot.s3.amazonaws.com/science/c7/70/6b4be46346ce9c36adbdc58b998e/cedar-figure.png)
+![automated reasoning and differential testing overview](https://amazon-topics-brightspot.s3.amazonaws.com/science/c7/70/6b4be46346ce9c36adbdc58b998e/cedar-figure.png)
 
 Swapnil Bhartiya of TFiR: Let’s Talk, catches up with Gabriel Manor, Director of DevRel at Permit.io, while at Open Source Summit in Vancouver, discussing Cedar and the current trends in policy and access control. Gabriel goes on to explain how Permit.io is helping customers deploy policies at scale using Cedar and other policy engines.
 

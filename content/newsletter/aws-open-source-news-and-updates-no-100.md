@@ -179,7 +179,7 @@ If you have an event you want me to publish here, please contact me and I will i
 **Apache Cassandra**
 **Thursday, Feb 17th, 1PM PST**
 
-Make sure you check out the AWS Twitch channel for a convo with Brian Houser from the Amazon Keyspaces (for Apache Cassandra) open-source team. He will be talking about OSS projects and contributions the team is working on. [http://twitch.tv/aws](http://twitch.tv/aws)
+Make sure you check out the AWS Twitch channel for a convo with Brian Houser from the Amazon Keyspaces (for Apache Cassandra) open-source team. He will be talking about OSS projects and contributions the team is working on. [https://twitch.tv/aws](https://twitch.tv/aws)
 
 
 **HashiTalks 2022**

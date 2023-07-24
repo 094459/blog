@@ -149,7 +149,7 @@ You can find [Adrian's blog here](https://cantrill.io/), and his [GitHub reposit
 
 **Serverless apps with Zappa**
 
-[Serverless Web Apps in Python](http://www.sanjaysiddhanti.com/2020/07/05/serverless/) - this post [Sanjay Siddhanti](https://twitter.com/siddhantis) shares his experience from deploying a full stack web application written in Python, using the Zappa framework. The post shows you how to get started and interact/configure AWS services to do things such as storing and managing secrets, handling the database and managing static content.
+[Serverless Web Apps in Python](https://www.sanjaysiddhanti.com/2020/07/05/serverless/) - this post [Sanjay Siddhanti](https://twitter.com/siddhantis) shares his experience from deploying a full stack web application written in Python, using the Zappa framework. The post shows you how to get started and interact/configure AWS services to do things such as storing and managing secrets, handling the database and managing static content.
 
 **Financial trading and Reinforcement Learning**
 

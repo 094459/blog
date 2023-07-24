@@ -18,7 +18,7 @@ I met some amazing builders who had come along to find out more about open sourc
 * [Agiri](https://twitter.com/094459/status/1230493558894997506), open source developer and advocate
 
 One of the bulders, [Emmanuel Martins](https://twitter.com/emmamartinscode), was looking to promote his open source python MVC framework, **Pytonik**. Specifically he is looking to get more contributors. I asked him to say a few words about his project:
->Pytonik is a python framework built to enhance web development, also helps web developers to build more apps with less http://codes.It uses expressive architectural patterns, structured on Model View Controller (MVC) and bundles of component to reuse while deploying the framework.
+>Pytonik is a python framework built to enhance web development, also helps web developers to build more apps with less https://codes.It uses expressive architectural patterns, structured on Model View Controller (MVC) and bundles of component to reuse while deploying the framework.
 
 >The purpose of this project is to change the way python developers build or create web applications. Pytonik improves web development and eradicates vulnerabilities, it will attract more developers to the python community, or this will increase the number of developers activities for both old and new in the python community as well as capturing companies' attention.
 

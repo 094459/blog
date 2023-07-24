@@ -20,7 +20,7 @@ Ephemeral email addresses to protect your inbox, sounds interesting right? Well 
 
 **AWS CDK under the covers**
 
-Have you ever wondered what happens under the covers when you are using AWS CDK? - [Massimo shares his first experiences.](http://www.it20.info/2020/02/my-first-cdk-experience-under-the-hood/).
+Have you ever wondered what happens under the covers when you are using AWS CDK? - [Massimo shares his first experiences.](https://www.it20.info/2020/02/my-first-cdk-experience-under-the-hood/).
 
 **AWS CodeBuild**
 

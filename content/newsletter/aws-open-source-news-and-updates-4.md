@@ -22,7 +22,7 @@ Check out the link above and if you fit the description, why not help your open 
 
 **AWS Cloud Development Kit (CDK)**
 
-The [Open Construct Foundation](http://www.openconstructfoundation.org) is where you want to go to find out more about the ecosystem that is built around the AWS CDK. Think of this as a kind of manefesto (my words, not theirs!) with links to use guides and examples. One of the links takes you to the [library of CDK Patterns](https://github.com/cdk-patterns/serverless) which I found via [Jeremy Daly](https://twitter.com/jeremy_daly) who is one of the AWS Serverless Heroes (make sure you follow him on Twitter as he always has great stuff he shares). There are a few patterns in there and this will surely grow over time.
+The [Open Construct Foundation](https://www.openconstructfoundation.org) is where you want to go to find out more about the ecosystem that is built around the AWS CDK. Think of this as a kind of manefesto (my words, not theirs!) with links to use guides and examples. One of the links takes you to the [library of CDK Patterns](https://github.com/cdk-patterns/serverless) which I found via [Jeremy Daly](https://twitter.com/jeremy_daly) who is one of the AWS Serverless Heroes (make sure you follow him on Twitter as he always has great stuff he shares). There are a few patterns in there and this will surely grow over time.
 
 Next up, [CDK 1.22.0](https://github.com/aws/aws-cdk/releases/tag/v1.22.0) went live, with the headline feature being support of AWS Fargate in Amazon EKS.
 
