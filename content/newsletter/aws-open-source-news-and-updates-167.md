@@ -18,7 +18,7 @@ Before you dive in however, I need your help!  Please please please take 1 minut
 
 The articles and projects shared in this newsletter are only possible thanks to the many contributors in open source. I would like to shout out and thank those folks who really do power open source and enable us all to learn and build on top of what they have created.
 
-So thank you to the following open source heroes:   Chuong Tran (Chris), Gary Stafford, Efi Merdler-Kravitz, Matt Carey , Sreekesh Iyer,  Dejanu Alex, Lars Jacobsson, Mark Sailes, Tsahi Duek, Andreas Lindh, Siva Guruvareddiar, Cameron Senese, Joseph Keating, Dinuth De Zoysa, Virginia Chu, Sarat Vemulapalli, Dan Widdis, Owais Kazi, Daniel (dB.) Doubrovkine, Dagney Braun, Minal Shah, Fanit Kolchina, Ravi Kumar Singh, Kevin Wikant,  Micah Walter, Yanko Bolanos, Ramesh Mathikumar, Ramesh Mathikumar, and Francesco Vergona.
+So thank you to the following open source heroes:   Chuong Tran (Chris), Gary Stafford, Efi Merdler-Kravitz, Matt Carey , Sreekesh Iyer,  Dejanu Alex, Lars Jacobsson, Mark Sailes, Tsahi Duek, Andreas Lindh, Siva Guruvareddiar, Cameron Senese, Joseph Keating, Dinuth De Zoysa, Virginia Chu, Sarat Vemulapalli, Dan Widdis, Owais Kazi, Daniel (dB.) Doubrovkine, Dagney Braun, Minal Shah, Fanit Kolchina, Ravi Kumar Singh, Kevin Wikant,  Micah Walter, Yanko Bolanos, Ramesh Mathikumar, and Francesco Vergona.
 
 ### Latest open source projects
 
