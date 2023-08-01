@@ -5,6 +5,11 @@ date: '2023-06-29'
 tags : [ open source, serverless-website-analytics]
 
 ---
+**Update, August 1st**
+
+*I have been running this project for five weeks now, so have a better understanding of costs. My bill in July was $0.85, and I suspect this will be reasonably stable over the coming months. I think this represents great value! I will report back at the end of the year and update this*
+
+***
 
 Like many folk, I run a [personal blog](https://blog.beachgeek.co.uk). This blog runs Hugo and turns my markdown pages into static content, which I then deploy on Netlify. One of the key things about running a blog is understanding how readers are interacting with your content, and this is where web analytics solutions can help you. A common solution to this has been to use something like Google Analytics as this typically is very easy to integrate into your website.
 
