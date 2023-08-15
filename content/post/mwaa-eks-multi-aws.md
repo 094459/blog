@@ -7,6 +7,46 @@ tags: [Apache Airflow, mwaa, Amazon EKS, Kubernetes]
 
 ### Running KubernetesPodOperator in different AWS accounts
 
+> **update August, 14th**
+
+I wanted to update to newer version of MWAA, so I have tested the original blog post against EKS 1.24 and MWAA version 2.4.3. I also had a few messages about whether this would work across different AWS regions. The good news is that it does. I have also put together a repo for this [here](https://github.com/094459/mwaa-eks)
+
+I thought that I would also check/update that it works for newer versions of MWAA, so I had 2.4.3 up and running so thought I would use that. I did have to update the requirements.txt from the original post below so that it is compatible with Airflow 2.4.3. If you are using newer versions, you will need to make suitable changes. Check your constraints files for the right versions.
+
+```
+--constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.4.3/constraints-3.10.txt"
+
+apache-airflow-providers-cncf-kubernetes==4.4.0
+kubernetes==23.6.0
+```
+
+
+
+In my quick test, I had my MWAA 2.4.3 environment up and running in eu-central-1 (Frankfurt), and I had my EKS Cluster 1.24 running in eu-west-2 (London). When I triggered the DAG from Frankfurt.
+
+```
+[2023-08-15, 19:27:45 UTC] {{kubernetes_pod.py:380}} INFO - Found matching pod mwaa-pod-test-4e7bc9fc53b84c048a45ba0dabef35b8 with labels {'airflow_kpo_in_cluster': 'False', 'airflow_version': '2.4.3', 'dag_id': 'kubernetes_pod_example', 'foo': 'bar', 'kubernetes_pod_operator': 'True', 'run_id': 'manual__2023-08-15T192740.4169940000-5bfe34873', 'task_id': 'pod-task', 'try_number': '1'}
+[2023-08-15, 19:27:45 UTC] {{kubernetes_pod.py:381}} INFO - `try_number` of task_instance: 1
+[2023-08-15, 19:27:45 UTC] {{kubernetes_pod.py:382}} INFO - `try_number` of pod: 1
+[2023-08-15, 19:27:45 UTC] {{pod_manager.py:180}} WARNING - Pod not yet started: mwaa-pod-test-4e7bc9fc53b84c048a45ba0dabef35b8
+[2023-08-15, 19:27:46 UTC] {{pod_manager.py:180}} WARNING - Pod not yet started: mwaa-pod-test-4e7bc9fc53b84c048a45ba0dabef35b8
+[2023-08-15, 19:27:47 UTC] {{pod_manager.py:180}} WARNING - Pod not yet started: mwaa-pod-test-4e7bc9fc53b84c048a45ba0dabef35b8
+[2023-08-15, 19:27:48 UTC] {{pod_manager.py:180}} WARNING - Pod not yet started: mwaa-pod-test-4e7bc9fc53b84c048a45ba0dabef35b8
+[2023-08-15, 19:27:49 UTC] {{pod_manager.py:180}} WARNING - Pod not yet started: mwaa-pod-test-4e7bc9fc53b84c048a45ba0dabef35b8
+[2023-08-15, 19:27:50 UTC] {{pod_manager.py:180}} WARNING - Pod not yet started: mwaa-pod-test-4e7bc9fc53b84c048a45ba0dabef35b8
+[2023-08-15, 19:27:51 UTC] {{pod_manager.py:180}} WARNING - Pod not yet started: mwaa-pod-test-4e7bc9fc53b84c048a45ba0dabef35b8
+[2023-08-15, 19:27:52 UTC] {{pod_manager.py:180}} WARNING - Pod not yet started: mwaa-pod-test-4e7bc9fc53b84c048a45ba0dabef35b8
+[2023-08-15, 19:27:53 UTC] {{pod_manager.py:180}} WARNING - Pod not yet started: mwaa-pod-test-4e7bc9fc53b84c048a45ba0dabef35b8
+[2023-08-15, 19:27:54 UTC] {{pod_manager.py:228}} INFO - 665240076514
+[2023-08-15, 19:27:54 UTC] {{pod_manager.py:228}} INFO - eu-west-2
+[2023-08-15, 19:27:56 UTC] {{pod_manager.py:275}} INFO - Pod mwaa-pod-test-4e7bc9fc53b84c048a45ba0dabef35b8 has phase Running
+[2023-08-15, 19:27:58 UTC] {{kubernetes_pod.py:478}} INFO - skipping deleting pod: mwaa-pod-test-4e7bc9fc53b84c048a45ba0dabef35b8
+[2023-08-15, 19:27:58 UTC] {{taskinstance.py:1401}} INFO - Marking task as SUCCESS. dag_id=kubernetes_pod_example, task_id=pod-task, execution_date=20230815T192740, start_date=20230815T192743, end_date=20230815T192758
+[2023-08-15, 19:27:58 UTC] {{local_task_job.py:159}} INFO - Task exited with return code 0
+```
+
+--end of update
+
 I got a mail from Apurav Sharma who was looking to find out about how MWAA supported using the KubernetesPodOperator to kick off tasks in Amazon EKS Containers in any AWS account. This post reveals how you can do that, using a very simple task that displays the AWS account number.
 
 ![sample architecture for multi account eks](https://ricsuepublicresources.s3.eu-west-1.amazonaws.com/images/eks-multi.png)
