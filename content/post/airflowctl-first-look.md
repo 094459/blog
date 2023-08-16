@@ -185,7 +185,17 @@ When you are in the logs, you will need to CTRL + C to exit.
 
 *Accessing the Airflow UI*
 
-You can now open up the URL in Cloud9 to access this. However, we have to do a couple of things first. First we need to go to your Cloud9 instance, and open up an inbound port for your specific IP address, to access port 8080. This is the port that Apache Airflow is listening on, so we need to open this up. The second is to grab the IP of our Cloud 9 instance, which we can do easily enough by running this command in a terminal. Read [this page](https://docs.aws.amazon.com/cloud9/latest/user-guide/app-preview.html) of the AWS Cloud 9 documentation to help you through this if you are not sure.
+You can now open up the URL in Cloud9 to access this. Click on the PREVIEW > PREVIEW RUNNING APPLICATION toolbar menu option. This will open up a new window in your Cloud 9 UI, with the familiar Apache Airflow login prompt. Before you try and login however, you need to make sure that you open this window in a new browser tab. Cloud 9 provides a handy link next to the address bar window (called "Pop Out into new window") which you will need to use. If you do not do this and try and login, it will just bring you back to the login prompt.
+
+*Enabling others to access the Airflow UI*
+
+If you want to share what you are working on with others, you can also enable access to the Airflow UI across the public internet. However, we have to do a couple of things first. 
+
+First we need to go to your Cloud9 instance, and open up an inbound port for your specific IP address, to access port 8080. This is the port that Apache Airflow is listening on, so we need to open this up. 
+
+> **REMEMBER!** Make sure you scope down access as tight as you can, and remember to remove this when you no longer need it open.
+
+The second is to grab the IP of our Cloud 9 instance, which we can do easily enough by running this command in a terminal. Read [this page](https://docs.aws.amazon.com/cloud9/latest/user-guide/app-preview.html) of the AWS Cloud 9 documentation to help you through this if you are not sure.
 
 ```
 curl http://169.254.169.254/latest/meta-data/public-ipv4
@@ -199,10 +209,7 @@ The output will be your public IP address. You can now open this up in a browser
 
 **Stopping your environments**
 
-To stop Apache Airflow, you can use either CTRL+C is you are running it in the foreground, or the airflowctl stop command if running in background.
-
-> **NOTE!** I found a small issue in that when you run in background mode, it creates a file (.airflowctl/.background_process_ids) which contains the parent PID. The PID was always off, so I needed to manually edit this. I have created [an issue here](https://github.com/kaxil/airflowctl/issues/1) so if this happens to you, follow that.
-
+To stop Apache Airflow, you can use either CTRL+C is you are running it in the foreground, or the airflowctl stop command if running in background. Make sure you are running the latest versions of airflowctl (I am using 0.2.0) as earlier versions have a [minor issue](https://github.com/kaxil/airflowctl/issues/3).
 
 ```
 airflowctl stop
