@@ -5,9 +5,15 @@ tags : [ oss-newsletter, Apache Airflow, airflowctl]
 
 ---
 
-I have written in the past about setting up developer environments and tools when working with Apache Airflow. Today I came across a new tool from [Kaxil Naik](https://github.com/kaxil), director of engineering at Astronomer and all round Apache Airflow good guy. Kaxil has put together [airflowctl](https://aws-oss.beachgeek.co.uk/35c), a command-line tool for managing Apache Airflow™ projects, and making it super easy to get up and running. What does it do? Well, it helps you install and use different versions of Apache Airflow, work with Variables and Connections, provide live logs, and more.
+I have written in the [past](https://dev.to/aws/getting-mwaa-local-runner-up-on-aws-cloud9-1nhd) about setting up developer environments and tools when working with Apache Airflow. Today I came across a new tool from [Kaxil Naik](https://github.com/kaxil), directory of engineering at Astronomer and all round Apache Airflow good guy. Kaxil has put together [airflowctl](https://aws-oss.beachgeek.co.uk/35c), a command-line tool for managing Apache Airflow™ projects, and making it super easy to get up and running. What does it do? Well, it helps you install and use different versions of Apache Airflow, work with Variables and Connections, provide live logs, and more.
 
-The README provides nice documentation to get you up and running, but I thought I would do a quick demo showing how you can get this up and running on your AWS environment, using my Cloud 9 developer environment. This is my first impressions of the tool, having used it for the past few hours.
+The README provides nice documentation to get you up and running, but I thought I would do a quick demo showing how you can get this up and running on your AWS environment, using my Cloud 9 developer environment. Everything in this post was done in my [AWS Cloud 9](https://aws-oss.beachgeek.co.uk/35g) developer environment. If you are not sure what that is, it is a Cloud based IDE that provides everything you need to develop your applications. I am a big fan, and find it helps me better organise my development activities from the stuff I do on my local machine. You do not need that to follow along this post however, and you can probably (not tested) run this on your own preferred environment.
+
+This is my first impressions of the tool, having used it for the past few hours.
+
+**Getting started**
+
+The project has a comprehensive README which helped understand how to use and configure the tool.
 
 The tool has a number of different steps you need to follow. Configure, Build, and then Run, so lets take a look at each of these as we get up and running.
 
