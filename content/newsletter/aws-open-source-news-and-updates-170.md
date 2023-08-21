@@ -20,7 +20,7 @@ Before you dive in however, I need your help!  Please please please take 1 minut
 
 The articles and projects shared in this newsletter are only possible thanks to the many contributors in open source. I would like to shout out and thank those folks who really do power open source and enable us all to learn and build on top of what they have created.
 
-So thank you to the following open source heroes: Greg Foster, Chris Farris, Stephen Jones, Rotem Tamir, Ivica Kolenkaš, Heitor Lessa, Daniel Aniszkiewicz, Yasunori Kirimoto, Kaxil Naik, Virgil Ennes, Samuel Baruffi, Emmanuel Saliu, Rishi Gera, Hernan Garcia, Parnab Basak, Shubham Mehta, Kevin Schwarz, Eoin Shanaghy, and Luciano Mammino
+So thank you to the following open source heroes:  Darren Boyd, Jessie Wei, Andrew Hopkins, Greg Foster, Chris Farris, Stephen Jones, Rotem Tamir, Ivica Kolenkaš, Heitor Lessa, Daniel Aniszkiewicz, Yasunori Kirimoto, Kaxil Naik, Virgil Ennes, Samuel Baruffi, Emmanuel Saliu, Rishi Gera, Hernan Garcia, Parnab Basak, Shubham Mehta, Kevin Schwarz, Eoin Shanaghy, and Luciano Mammino
 
 ### Latest open source projects
 
