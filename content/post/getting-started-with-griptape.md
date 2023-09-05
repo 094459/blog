@@ -19,6 +19,7 @@ What you will need:
 
 * An AWS Account with the right level of access (Admin equiv)
 * An OpenAI API key - if you do not have one, don't worry, as we will also be using Falcon7b which does not require an API key
+* Code for this post can be found in the [GitHub repo](https://github.com/094459/griptape-hello-world)
 
 Lets get stuck in.
 
