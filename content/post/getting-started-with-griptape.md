@@ -11,7 +11,7 @@ tags : [ Griptape, Amazon SageMaker, LLMs, Falcon7b, OpenAI,]
 
 When I was much much younger, I was known to (very occasionally) drop an ollie, kick-turn, or very occasionally dare a drop in on my trusty skateboard. Thanks to the grip tape, my shoes would stick to the board, and gave me the confidence I could try these tricks. I was always grateful to that grip tape and who knew all these years later, I would become re-aquatinted with it (albeit in a different form!)
 
-Last week I had a quick call with the folks behind [Griptape](https://aws-oss.beachgeek.co.uk/37t), an Apache 2.0 licenced open source project that hopes to empower developers to build a new generation of applications powered by the capabilities of large language models. It looks super interesting, and for folks who are already exploring this space, I way that I was thinking of Griptape is as a more production ready version of LangChain.
+Last week I had a quick call with the folks behind [Griptape](https://aws-oss.beachgeek.co.uk/37t), an Apache 2.0 licenced open source project that hopes to empower developers to build a new generation of applications powered by the capabilities of large language models. It looks super interesting, and for folks who are already exploring this space, the way that I was thinking of Griptape is as a more production ready version of LangChain.
 
 Enough of an introduction, in this post I am going to take a quick look at Griptape, and show you how you can get it up and running to interact with the Falcon-7b large language model, deployed on Amazon SageMaker.
 
