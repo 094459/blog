@@ -5,9 +5,9 @@ tags : [ python, AWS CodeWhisperer, Amazon SageMaker]
 
 ---
 
-How are you using these new AI coding assistants like Amazon CodeWhisperer? I want to share a quick story about how I am using and finding some success with using these tools, which I hope will encourage you to experiment for yourselves.
+How are you using these new AI coding assistants like Amazon CodeWhisperer? I want to share a quick story about how I am finding some success with using these tools, which I hope will encourage you to experiment for yourselves.
 
-As I work on new projects, demos, blog posts, I often need to do supporting activities such as creating or cleaning up AWS environments, which I sometimes do by hand but mostly do via the AWS CLI or via Python scripts and boto3. I am working on a some demos to show how you can use tools like GripTape, which is a Python framework for AI workflows and pipelines which you can think of as an enterprise grade alternative to LangChain. I needed to delete a bunch of resources in my Amazon Sagemaker environment that I had forgotten to clean up. I had a few hundred SageMaker Models that were really distracting me as I love to have clean environments when I start writing new content.
+As I work on new projects, demos, blog posts, I often need to do supporting activities such as creating or cleaning up AWS environments, which I sometimes do by hand but mostly do via the AWS CLI or via Python scripts and boto3. I am working on a some demos to show how you can use tools like Griptape, which is a Python framework for AI workflows and pipelines which you can think of as an enterprise grade alternative to LangChain. I needed to delete a bunch of resources in my Amazon Sagemaker environment that I had forgotten to clean up. I had a few hundred SageMaker Models that were really distracting me as I love to have clean environments when I start writing new content.
 
 Typically I might just use the console to clean these up, but there were just too many so I decided to write a quick script to do this. In my VSCode I have Amazon CodeWispherer enabled via the AWS Toolkit (check out [this video](https://aws-oss.beachgeek.co.uk/37n) if you want to learn how). I thought I would try and use it to create a script to help me automate this.
 
@@ -107,6 +107,6 @@ I updated ran the script and this time it went through and removed all instances
 
 **How will you use Amazon CodeWhisperer?**
 
-Than you Amazon CodeWhisperer, you are going to be a very handy side kick that will make tasks like this, a walk in the park. As I hope this quick example shows, you do need to evaluate the code that is generated, and it might not always do what you think it will do, so it is important to review and understand the code. As in the example above, whilst the initial script worked great, I had to re-run it a few times. It was simple enough to update to fix, but it is also something that I could have addressed if my initial prompt was better. This is something that I am learning to get better at. 
+Thank you Amazon CodeWhisperer, you are going to be a very handy side kick that will make tasks like this, a walk in the park. As I hope this quick example shows, you do need to evaluate the code that is generated, and it might not always do what you think it will do, so it is important to review and understand the code. As in the example above, whilst the initial script worked great, I had to re-run it a few times. It was simple enough to update to fix, but it is also something that I could have addressed if my initial prompt was better. This is something that I am learning to get better at. 
 
 I would be interested to hear how you are using tools like Amazon CodeWhisperer to make your lives easier. Please share via the comments or reach out to me directly.
