@@ -288,7 +288,7 @@ A great video from my old pal Julien Simon from Hugging Face, who shows you that
 
 Discover how a solo founder or indie hacker can host a full stack application using Amplify Hosting. Join Michael Liendo as he dives in to tackle a new aspect of deploying real world solutions with frontend hosting.
 
-{{< youtube Zev6F0T1L3Y >}}
+{{< youtube bnj49fVT4ko >}}
 
 
 # Events for your diary
