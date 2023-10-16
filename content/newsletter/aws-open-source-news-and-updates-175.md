@@ -275,7 +275,6 @@ Follow Gazal's journey as he shares the lessons learned in adopting, rolling out
 Gazal hinted at a 40% reduction in compute capacity when combining Bottlerocket OS and Karpenter (and 30% lower response times).
 
 {{< youtube 5jzIN8pwxJ0 >}}
-{% youtube 5jzIN8pwxJ0 %}
 
 
 **Fine tuning Stable Diffusion for Pokemon creation**
@@ -283,14 +282,14 @@ Gazal hinted at a 40% reduction in compute capacity when combining Bottlerocket 
 A great video from my old pal Julien Simon from Hugging Face, who shows you that it doesn't have to be complicated and expensive to can fine-tune large models. In this tutorial, Julien provides a step-by-step demonstration of the fine-tuning process for a Stable Diffusion model geared towards Pokemon image generation. Utilising a pre-existing script sourced from the Hugging Face diffusers library, the configuration is set to leverage the LoRA algorithm from the Hugging Face PEFT library. The training procedure is executed on a modest AWS GPU instance (g4dn.xlarge), optimising cost-effectiveness through the utilisation of EC2 Spot Instances, resulting in a total cost as low as $1.
 
 {{< youtube Zev6F0T1L3Y >}}
-{% youtube Zev6F0T1L3Y %}
+
 
 **Quickly Deploy your NextJS app with the AWS CDK**
 
 Discover how a solo founder or indie hacker can host a full stack application using Amplify Hosting. Join Michael Liendo as he dives in to tackle a new aspect of deploying real world solutions with frontend hosting.
 
 {{< youtube Zev6F0T1L3Y >}}
-{% youtube Zev6F0T1L3Y %}
+
 
 # Events for your diary
 
