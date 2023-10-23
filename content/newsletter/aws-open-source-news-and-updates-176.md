@@ -119,7 +119,6 @@ Back on September 29th, [CDK Day 2023 took place](https://aws-oss.beachgeek.co.u
 
 **Other posts and quick reads**
 
-* [Developing Java Applications using Amazon Bedrock](https://aws-oss.beachgeek.co.uk/3bc) is the essential getting started guide to using Amazon Bedrock within Java, put together by my colleague Ricardo Ferreira [hands on]
 * [Modern Tooling for Your Website using AWS, Contentful, and Next.js](https://aws-oss.beachgeek.co.uk/39y) is a tutorial that helps you build a blog website from beginning to end with an A-level Lighthouse performance scale and low maintenance friction [hands on]
 * [Query Heterogeneous Data Sources through AWS AppSync GraphQL APIs](https://aws-oss.beachgeek.co.uk/3ba) looks at why you might want to consider using GraphQL when architecting solutions that have multiple data sources
 * [Orchestrate Ray-based machine learning workflows using Amazon SageMaker](https://aws-oss.beachgeek.co.uk/3ai) looks at  the benefits of using Ray (an open-source distributed computing framework) and Amazon SageMaker for distributed ML, and provide a step-by-step guide on how to use these frameworks to build and deploy a scalable ML workflow [hands on]
@@ -192,21 +191,18 @@ Check out the supporting blog post from my colleague Sebastien, [New – Add You
 If you missed the keynote from Jonathan Katz at the Open Source Summit in Bilbao, then here is your chance to watch it. Amazon Web Services has increased its contributions to the open source PostgreSQL project dramatically over the past two years. Jonathan Katz, a PostgreSQL Core Team member, shares details  about AWS contributions to the recent PostgreSQL 16 release, and our plans to contribute over the long term to help build a strong and sustainable PostgreSQL community.
 
 {{< youtube DSc6WTrSHSI >}}
-{% youtube DSc6WTrSHSI %}
 
 **Enterprise Vector-based Information Retrieval & Prompt Engineering at Scale**
 
 Verdant Ari Jain looks at some of the challenges in building next generation information retrieval systems, and walkthroughs a set open source technologies on AWS that you can use to address these.
 
 {{< youtube eg-tW7mdtqc >}}
-{% youtube eg-tW7mdtqc %}
 
 **AWS SAM 👉 Deploy Swagger API Tutorial**
 
 Abi Asija provides a short tutorial on how you can use AWS Serverless Application Model (AWS SAM) tool together AWS Cloud9 to  to deploy a REST API using a Swagger definition file to AWS.
 
 {{< youtube 7Nr3bsINVOc >}}
-{% youtube 7Nr3bsINVOc %}
 
 # Events for your diary
 
