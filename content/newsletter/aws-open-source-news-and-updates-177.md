@@ -172,7 +172,7 @@ Check out the blog post from my colleague Danilo Poccia, [Introducing Amazon MSK
 Another great piece from regular open source contributor Gary Stafford, where he walks you through how you can use some open source technologies together with Amazon Bedrock and some of the foundational models that it provides developer access to, to create a cool AI-powered Vehicle Damage Evaluator Demo.
 
 {{< youtube vkouFozFSvE >}}
-{% youtube vkouFozFSvE %}
+
 
 You can also follow along in the blog post that accompanies this video: [Image Identification and Classification with Amazon Bedrock, OpenSearch, and OpenCLIP](https://aws-oss.beachgeek.co.uk/3cp)
 
@@ -184,22 +184,23 @@ You can also follow along in the blog post that accompanies this video: [Image I
 There were lots of great session from the recent Apache Airflow Summit (check out the entire list of videos [here](https://aws-oss.beachgeek.co.uk/3ck)) but this was my pick from the lot. John Jackson dives deep and looks at how you can maximise the efficiency and performance of your workflows in Apache Airflow, helping you to reduce your costs. A must watch video this week if you are a user of Apache Airflow.
 
 {{< youtube 8gcBdknaM8I >}}
-{% youtube 8gcBdknaM8I %}
+
 
 **Effectively running Java applications on AWS**
 
 There are several options to get Java running in the Cloud. Join Maximilian Schellhorn and Dennis Kieselhorst as they  dive deep with a mix of presentations and live demonstrations to learn how to effectively run Java applications on Amazon Web Services (AWS). You will get an overview about recent cloud-native developments in the Java ecosystem and Amazon Corretto, a production-ready distribution of the OpenJDK. We’ll guide you through different deployment options both for containers and Serverless functions including services like AWS Lambda, Amazon Elastic Container Service (ECS) and Amazon Elastic Kubernetes Service (EKS). You will also understand how to leverage development tools such as CLIs and IDE support, infrastructure as code and Observability tooling. After this session you will be able to make well informed decisions when running Java workloads on AWS.
 
 {{< youtube u3tgOE8qFjI >}}
-{% youtube u3tgOE8qFjI %}
+
 
 **AWS CDK Assets**
 
 In this video, Adam Keller explores a cornerstone feature of the AWS Cloud Development Kit (CDK)—Assets. This tutorial is designed to offer a comprehensive understanding of what CDK Assets are, why they're an integral part of infrastructure management, and how you can effectively use them in your Infrastructure as Code (IaC).
 
 You'll learn the ins and outs of asset handling in AWS CDK, including how to seamlessly include static files like configurations, code, or even Docker images into your cloud deployment. We'll walk through the types of assets you can manage, and how they interact with various AWS services like Lambda, S3, and ECR.
+
 {{< youtube jHNtXQmkKfw >}}
-{% youtube jHNtXQmkKfw %}
+
 
 # Events for your diary
 
