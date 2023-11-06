@@ -192,21 +192,21 @@ The final MySQL update was news from last week, where we announced news that Ama
 If you missed this last week, my colleagues David Nalley and Nithya Ruff joined Arun Gupta for a fire side chat about why Amazon cares about and contributes to open source. 
 
 {{< youtube dzvKxlc3pQg >}}
-{% youtube dzvKxlc3pQg %}
+
 
 **Rust Programming Tutorial for Developers**
 
 Join Trevor Sullivan as he takes a look at the preview version of their Software Development Kit (SDK) for Rust developers. You can use the Rust SDK to interact with nearly any service in the AWS portfolio. In the video, you will  explore the Rust SDK for AWS, and learn how it's designed, and spend some hands-on time with the Amazon S3 service. You will also learn how to research calling APIs including the CreateBucket and PutObject operations, which are among the most common in the S3 service.
 
 {{< youtube rXL8i4nGY6s >}}
-{% youtube rXL8i4nGY6s %}
+
 
 **CI CD Pipeline with Spring Boot and AWS**
 
 In this extended video, you will see how you can set up a CI CD Pipeline with Spring Boot and AWS.
 
 {{< youtube Ut-yDePowbY >}}
-{% youtube Ut-yDePowbY %}
+
 
 # Events for your diary
 
