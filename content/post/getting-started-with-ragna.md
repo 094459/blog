@@ -182,6 +182,8 @@ And now we are in business. Now it is working great.
 
 ![ragna demo working with openai](https://ricsuepublicresources.s3.eu-west-1.amazonaws.com/images/ragna-working.png)
 
+> **Info** Ragna writes stuff to ~/.cache/ragna, and I found it useful to purge this folder every now and then to reset my set up.
+
 ### AWS Cloud9 installation
 
 As regular readers of this blog will know, I am a big fan of using AWS Cloud9 to make it super easy to try out new projects like this. I wanted to make sure that I could get the same experience when running on my environment.
