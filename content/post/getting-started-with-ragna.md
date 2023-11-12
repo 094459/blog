@@ -25,6 +25,8 @@ Getting up and running is nice and easy, and the project have done a great job i
 python -m venv ragna
 source ragna/bin/activate
 cd ragna
+git clone https://github.com/Quansight/ragna.git
+cd ragna
 pip install --upgrade pip
 pip install 'ragna[all]'
 ```
