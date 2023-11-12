@@ -60,7 +60,9 @@ It will ask you to provide inputs for three questions:
 * Which source storages do you want to use?
 * Which assistants do you want to use?
 
-At this point it is probably worth reading the docs to understand what these mean in the context of this application. They have [provided a page](https://ragna.chat/en/stable/how-tos/set-configuration/) that provides the details of what is happening when you run the "ragna init", 
+At this point it is probably worth reading the docs to understand what these mean in the context of this application. They have [provided a page](https://ragna.chat/en/stable/how-tos/set-configuration/) that provides the details of what is happening when you run the "ragna init". For the time beinng I just went with the defaults.
+
+To start Ragna, from the command line you type "ragna ui" and you should start to see something similar to the following.
 
 ```
 ragna ui
