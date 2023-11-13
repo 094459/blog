@@ -9,6 +9,10 @@ tags : [ aws open source, generative AI, Ragna, Amazon Bedrock, Anthropic Claude
 
 I am always on the look out for interesting new projects to check out, and this week I came across [Ragna](https://aws-oss.beachgeek.co.uk/3e6), an open source Retrieval Augmented Generation [RAG](https://aws-oss.beachgeek.co.uk/3e7) orchestration framework. It is a new project with a committed and active community, so I wanted to find out more about this project.
 
+What piqued my interest was reading this blog post, [Unveiling Ragna: An Open Source RAG-based AI Orchestration Framework Designed to Scale From Research to Production](https://aws-oss.beachgeek.co.uk/3ex) which takes a look at the background, or as I like to think of it, the "scratch that needed to be itched". I couldn't help notice some parallels from an architectural perspective to one of my favourite open source projects, Apache Airflow.
+
+![architecture of ragna](https://quansight.com/wp-content/uploads/elementor/thumbs/ragna-architecture-qeoic0wqnsa4axasb9m1ogxpc0jhclpcgqt59y8plu.png)
+
 In this post I will share my experience of getting hands on with Ragna, and then also share how I was able to integrate it with Amazon Bedrock's foundation models, specifically Anthropic Claude. This is only a quick post, and just intended to show you how you can get started yourself, but includes everything you need to get up and running.
 
 **Pre-requisites**
