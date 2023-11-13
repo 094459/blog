@@ -1,8 +1,7 @@
 ---
 title: 'AWS open source newsletter #179'
 date: '2023-11-13'
-tags : [ oss-newsletter, aws open source, Test Containers, WordPress, PySpark, Amazon EMR, Kubernetes, Amazon EKS, FluxCD, OpenSearch, PostgreSQL, LangChain, Kani, MySQL, MariaDB, dbt, Apache Ranger, Apache Hudi, Prometheus, Grafana, Jupyter, Apache Airflow, Karpenter, AWS CDK ]
-
+tags : [ oss-newsletter, aws open source, Test Containers, WordPress, PySpark, Amazon EMR, Kubernetes, Amazon EKS, FluxCD, OpenSearch, PostgreSQL, LangChain, Kani, MySQL, MariaDB, dbt, Apache Ranger, Apache Hudi, Prometheus, Grafana, Jupyter, Apache Airflow, Karpenter, AWS CDK, Ragna ]
 ---
 
 ## November 13th, 2023 - Instalment #179
