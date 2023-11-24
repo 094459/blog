@@ -9,7 +9,7 @@ tags : [ aws open source, generative AI, Ragna, Amazon Bedrock, Meta Llama2 ]
 
 Following up from [my previous post on Ragna](https://dev.to/aws/unboxing-ragna-getting-hands-on-and-making-it-to-work-with-amazon-bedrock-7k3), I wanted to share following [the announcement of Meta's Llama2 13b](https://aws.amazon.com/blogs/aws/amazon-bedrock-now-provides-access-to-llama-2-chat-13b-model/) model availability within Amazon Bedrock, how you can incorporate that.
 
-I have also put together a [GitHub repo](https://github.com/094459/ragna) that shares the code, something that I got quite a few questions from the original post.
+I have also put together a [GitHub repo](https://github.com/094459/ragna-bedrock) that shares the code, something that I got quite a few questions from the original post.
 
 **Adding Meta's Llama2**
 
