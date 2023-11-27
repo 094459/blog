@@ -203,7 +203,7 @@ If you are planning any events in 2023, either virtual, in person, or hybrid, ge
 
 The annual must attend conference for all AWS developers is back, and with another strong line up of open source sessions, chalk talks, builder sessions, workshops and more. There will be a super cool open source booth, with a line up of great demos - I have taken a sneak look and so make sure you check out the demo schedule on the booth.
 
-Find out more by checking out the event page, [re:Invent 2023](https://reinvent.awsevents.com/)
+Find out more by checking out the event page, [re:Invent 2023](https://reinvent.awsevents.com/) but make sure you also read about what you can expect in the demo zone in the post, [Get Your Questions Answered at re:Invent 2023 in the AWS Modern Applications and Open Source Zone](https://aws-oss.beachgeek.co.uk/3gx)
 
 The Amazon EKS team have published a post to help ensure that you do not miss the best Kubernetes related sessions. Go check it out at, [Amazon EKS and Kubernetes sessions at AWS re:Invent 2023](https://aws-oss.beachgeek.co.uk/3fb).
 
