@@ -24,7 +24,7 @@ Please please please take 1 minute to [complete this short survey](https://www.p
 
 The articles and projects shared in this newsletter are only possible thanks to the many contributors in open source. I would like to shout out and thank those folks who really do power open source and enable us all to learn and build on top of what they have created.
 
-So thank you to the following open source heroes: 
+So thank you to the following open source heroes: Efi Merdler-Kravitz, Jeffrey Lyon, Alex Pust, Salam Shaik, Rahul Pulikkot Nath, Sophia Parafina, Vadym Kazulkin, Alexander Rey,  Jason Andrews, Nikhil Swaminathan, Danny Banks, Erik Hanchett, Stephen Siegert,  Sunil Ramachandra, Julie Mills, James Eastham, and Damon Cortesi
 
 ### Latest open source projects
 
@@ -192,13 +192,6 @@ Your host James Eastham shows you how you can adopt Java 21 when building AWS La
 Damon Cortesi provides a short video to show you how Amazon EMR Studio now integrates with Amazon CodeWhisperer to provide real-time code suggestions for Apache Spark. Make sure you check out his other videos, there is lots of great content.
 
 {{< youtube BLx-RiKnm9c >}}
-
-
-**Lambda PowerTuning tool demo | The Keys to AWS Optimization**
-
-It was great to see my colleague Alex Casalboni appear in this show hosted by Steph Gooch, that explores Alex's amazing open source tool, Lambda PowerTuning. Go check this out.
-
-{{< youtube jiR1RxNQ9M >}}
 
 
 # Events for your diary
