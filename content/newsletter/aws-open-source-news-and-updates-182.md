@@ -223,6 +223,7 @@ In case you missed it, just before re:Invent, we announced the general availabil
 
 Customers can now use ADOT to collect all telemetry data from their containerized AWS workloads running in Amazon Elastic Kubernetes Service (EKS) and Amazon Elastic Container Service (ECS) in a standardized manner. By adding support for the Filelog receiver and the AWS CloudWatch Logs exporter to the ADOT collector, you now have a reliable way to collect application logs and ingest them into observability backends. AWS delivers security patches and provides support for logging use cases with this launch. For example, by configuring the ADOT collector in an EKS cluster, using the EKS add-on, you can collect logs from a variety of sources including Syslog and Log4j. At the same time, you can get out-of-the-box metadata enrichment based on OpenTelemetry’s semantic conventions, which enables you to improve correlation of the logs with metrics and traces.
 
+### Videos of the week
 
 **re:Invent special**
 
@@ -242,7 +243,7 @@ PostgreSQL is a popular open source relational database that is available on Ama
 
 I would also recommend you check out Jonathan's 400 level session, [Best practices for querying vector data for gen AI apps in PostgreSQL](https://aws-oss.beachgeek.co.uk/3h1), which was one of my favourite sessions that I watched. This goes super deep, but Jonathan has a nack of explaining things so well, that you don't realise how deep you have just been!
 
-### Videos of the week
+
 **OPN203: Jupyter AI: Open source brings LLMs to your notebooks**
 
 At AWS, our developers built Jupyter AI, an open source project to connect JupyterLab with generative AI large language models (LLMs) like Amazon Titan and OpenAI’s gpt-3.5-turbo (used in ChatGPT). Piyush Jain and Jason Weill explore how you can use the power of these models to become more productive. Learn from several use cases, including code refactoring, debugging, code explanation, and answering common questions, about how Jupyter AI can answer questions based on user input, help explain and fix code errors, and learn from and answer questions about local data files. Announced at JupyterCon 2023, Jupyter AI is available as free, open source software.
