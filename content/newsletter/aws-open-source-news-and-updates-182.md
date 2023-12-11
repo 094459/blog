@@ -68,6 +68,13 @@ So thank you to the following open source heroes: Allan Chua, Benjamin Chastanie
 
 ### Demos, Samples, Solutions and Workshops
 
+**DREM**
+
+[drem](https://aws-oss.beachgeek.co.uk/3i4) also known as the AWS DeepRacer Event Manager (DREM) is used to run and manage all aspects of in-person events for AWS DeepRacer, an autonomous 1/18th scale race car designed to test reinforcement learning (RL) models by racing on a physical track. DREM offers event organizers tools for managing users, models, cars and fleets, events, as well as time recording and leaderboards. Race participants also use DREM to upload their RL models.
+
+![architecture overview of DREM](https://github.com/aws-solutions-library-samples/guidance-for-aws-deepracer-event-management/blob/main/docs/images/DREM-aws-reference-architecture-overview.png?raw=true)
+
+
 **multi-region-data-residency**
 
 [multi-region-data-residency](https://aws-oss.beachgeek.co.uk/3hu) This repository demonstrates how to deploy a multi-region architecture with data residency for sensitive data, such as Personally Identifiable Information (PII) or Personal Health Information (PHI) data. To maintain data residency for each region, the architecture operates under a silo model with its own isolated infrastructure stack per region. The architecture is suitable for businesses in specific verticals such as Health-care / Life-sciences (HCLS) and FinTech, with business requirements to isolate customer PII/PHI data to a specific region, expanding globally from a single-region architecture, and/or operating in strict regulatory or compliance environments.
