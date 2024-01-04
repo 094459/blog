@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DuckDB on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/duckdb/</link>
+    <description>Recent content in DuckDB on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 08 May 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/duckdb/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #156</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-156/</link>
+      <pubDate>Mon, 08 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-156/</guid>
+      <description>May 8th, 2023 - Instalment #156 Welcome&#xA;Hello and welcome to the AWS open source newsletter, #156, the newsletter that just keeps on giving&amp;hellip;.in this case, keeps giving you brand new open source projects to practice your four freedoms on. So what do we have for you this week? Coming up later in this newsletter we have projects such as &amp;ldquo;sustainability-scanner&amp;rdquo; helps you check your Cloudformation templates against sustainability good practices, &amp;ldquo;synthtable&amp;rdquo; helps you create synthetic data for different use cases, &amp;ldquo;neptune-gremlin-client&amp;rdquo; a Java based Gremlin client, &amp;ldquo;s3zipper&amp;rdquo; a tool to quickly download entire S3 buckets, &amp;ldquo;chataws&amp;rdquo; a nice demo of how you can use ChatGPT to aid your AWS deployments, and plenty of other great projects.</description>
+    </item>
+  </channel>
+</rss>

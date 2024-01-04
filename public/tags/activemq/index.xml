@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ActiveMQ on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/activemq/</link>
+    <description>Recent content in ActiveMQ on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/activemq/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #163</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-163/</link>
+      <pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-163/</guid>
+      <description>July 3rd, 2023 - Instalment #163 Welcome to #163 of the AWS open source newsletter. As always, we search high and low for the best and latest open source content, and I think you will love what we have lined up this week. This weeks featured projects include a Cedar authorisation service and demo examples, a tool to help you find dangling DNS records, a new CLI for those using Amazon ECR, an accelerator for observability on AWS, a serverless web analytics solution (so good, that I implemented it myself), and several more projects.</description>
+    </item>
+  </channel>
+</rss>

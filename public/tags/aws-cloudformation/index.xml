@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS CloudFormation on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/aws-cloudformation/</link>
+    <description>Recent content in AWS CloudFormation on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/aws-cloudformation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automating the installation and configuration of Amazon Managed Workflows for Apache Airflow</title>
+      <link>https://blog.beachgeek.co.uk/automating-the-installation-and-configuration-of-amazon-managed-workflows-for-apache-airflow/</link>
+      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/automating-the-installation-and-configuration-of-amazon-managed-workflows-for-apache-airflow/</guid>
+      <description>updated, August 25th Thanks to Philip T for spotting a typo in the cloudformation code below - it is ok in the GitHub repo, but I have fixed it now below.&#xA;Part of a series of posts to support an up-coming online event, the Innovate AI/ML on February 24th, from 9:00am GMT - you can sign up here&#xA;Part 1 - Installation and configuration of Managed Workflows for Apache Airflow &amp;lt;- this post Part 2 - Working with Permissions Part 3 - Accessing Amazon Managed Workflows for Apache Airflow environments Part 4 - Interacting with Amazon Managed Workflows for Apache Airflow via the command line Part 5 - A simple CI/CD system for your development workflow Part 6 - Monitoring and logging Part 7 - Automating a simple AI/ML pipeline with Apache Airflow In this post I will be covering Part 1, automating the installation and configuration of Managed Workflows for Apache Airflow (MWAA).</description>
+    </item>
+    <item>
+      <title>Amazon Aurora - setting up and configuration, four ways</title>
+      <link>https://blog.beachgeek.co.uk/amazon-aurora---setting-up-and-configuration-four-ways/</link>
+      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/amazon-aurora---setting-up-and-configuration-four-ways/</guid>
+      <description>In this post I want to share four different approaches to installing and configuring your Amazon Aurora database clusters.&#xA;Everything in this post is covered in detail in the embedded video, but I wanted to share some additional information that I did not include in the video that was easier done in this blog.&#xA;{% youtube wZfh9PurE9E %}&#xA;Why four ways? The approach in the video was to look at the journey you might take when learning a new technology and then how you move to productise that technology.</description>
+    </item>
+  </channel>
+</rss>

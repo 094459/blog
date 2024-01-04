@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="generator" content="Hugo 0.121.1">
+  
+  
+    <link rel="canonical" href="https://blog.beachgeek.co.uk/reading-and-writing-data-across-different-aws-accounts-with-amazon-managed-workflows-for-apache-airflow-v2x/">
+  
+
+  
+
+  
+    
+    
+    
+    
+    
+
+  
+    <link rel="webmention" href="https://webmention.io/username.co.uk/webmention" />
+    <link rel="pingback" href="https://webmention.io/username.co.uk/xmlrpc" />
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://blog.beachgeek.co.uk/css/syntax.css" media="none" onload="this.media='all';">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://blog.beachgeek.co.uk/css/styles.css">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://blog.beachgeek.co.uk/style.main.css">
+
+  
+
+  <link rel="alternate" rel="canonical" href="https://blog.beachgeek.co.uk/index.xml" >
+  
+  <style id="inverter" media="none">
+    .intro-and-nav, .main-and-footer { filter: invert(100%) }
+    * { background-color: inherit }
+    img:not([src*=".svg"]), .colors, iframe, .demo-container { filter: invert(100%) }
+  </style>
+
+  
+  
+  <title>Reading and writing data across different AWS accounts with Amazon Managed Workflows for Apache Airflow v2.x | Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Reading and writing data across different AWS accounts with Amazon Managed Workflows for Apache Airflow v2.x"/>
+<meta name="twitter:description" content="Reading and writing data across different AWS accounts in you Apache Airflow DAGs
+As regular readers will know, I sometimes lurk in the Apache Airflow slack channel to see what is going on. If you are new to Apache Airflow, or want to get a deeper understanding then I highly recommend spending some time here. The community is super welcoming and eager to help new participants.
+It was during a recent session I came across an interesting problem that one of the builders was having, which was how to access (read/write) data in an S3 bucket which was in a different account to the one hosting Amazon Managed Workflows for Apache Airflow (MWAA)."/>
+<meta name="twitter:site" content="@094459"/>
+
+  <meta name="twitter:card" content="summary" />
+</head>
+
+  <body>
+    <a href="#main">skip to content</a>
+    <svg style="display: none">
+  <symbol id="bookmark" viewBox="0 0 40 50">
+   <g transform="translate(2266 3206.2)">
+    <path style="stroke:currentColor;stroke-width:3.2637;" d="m-2262.2-3203.4-.2331 42.195 16.319-16.318 16.318 16.318.2331-42.428z"/>
+   </g>
+  </symbol>
+
+  <symbol id="w3c" viewBox="0 0 127.09899 67.763">
+   <text font-size="83" style="font-size:83px;font-family:Trebuchet;letter-spacing:-12;fill-opacity:0" letter-spacing="-12" y="67.609352" x="-26.782778">W3C</text>
+   <text font-size="83" style="font-size:83px;font-weight:bold;font-family:Trebuchet;fill-opacity:0" y="67.609352" x="153.21722" font-weight="bold">SVG</text>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m33.695.377 12.062 41.016 12.067-41.016h8.731l-19.968 67.386h-.831l-12.48-41.759-12.479 41.759h-.832l-19.965-67.386h8.736l12.061 41.016 8.154-27.618-3.993-13.397h8.737z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m91.355 46.132c0 6.104-1.624 11.234-4.862 15.394-3.248 4.158-7.45 6.237-12.607 6.237-3.882 0-7.263-1.238-10.148-3.702-2.885-2.47-5.02-5.812-6.406-10.022l6.82-2.829c1.001 2.552 2.317 4.562 3.953 6.028 1.636 1.469 3.56 2.207 5.781 2.207 2.329 0 4.3-1.306 5.909-3.911 1.609-2.606 2.411-5.738 2.411-9.401 0-4.049-.861-7.179-2.582-9.399-1.995-2.604-5.129-3.912-9.397-3.912h-3.327v-3.991l11.646-20.133h-14.062l-3.911 6.655h-2.493v-14.976h32.441v4.075l-12.31 21.217c4.324 1.385 7.596 3.911 9.815 7.571 2.22 3.659 3.329 7.953 3.329 12.892z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.21 0 1.414 8.6-5.008 9.583s-1.924-4.064-5.117-6.314c-2.693-1.899-4.447-2.309-7.186-1.746-3.527.73-7.516 4.938-9.258 10.13-2.084 6.21-2.104 9.218-2.178 11.978-.115 4.428.58 7.043.58 7.043s-3.04-5.626-3.011-13.866c.018-5.882.947-11.218 3.666-16.479 2.404-4.627 5.954-7.404 9.114-7.728 3.264-.343 5.848 1.229 7.841 2.938 2.089 1.788 4.213 5.698 4.213 5.698l4.94-9.837z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.82 48.674s-2.208 3.957-3.589 5.48c-1.379 1.524-3.849 4.209-6.896 5.555-3.049 1.343-4.646 1.598-7.661 1.306-3.01-.29-5.807-2.032-6.786-2.764-.979-.722-3.486-2.864-4.897-4.854-1.42-2-3.634-5.995-3.634-5.995s1.233 4.001 2.007 5.699c.442.977 1.81 3.965 3.749 6.572 1.805 2.425 5.315 6.604 10.652 7.545 5.336.945 9.002-1.449 9.907-2.031.907-.578 2.819-2.178 4.032-3.475 1.264-1.351 2.459-3.079 3.116-4.108.487-.758 1.276-2.286 1.276-2.286l-1.276-6.644z"/>
+  </symbol>
+
+  <symbol id="tag" viewBox="0 0 177.16535 177.16535">
+    <g transform="translate(0 -875.2)">
+     <path style="fill-rule:evenodd;stroke-width:0;fill:currentColor" d="m159.9 894.3-68.79 8.5872-75.42 77.336 61.931 60.397 75.429-76.565 6.8495-69.755zm-31.412 31.835a10.813 10.813 0 0 1 1.8443 2.247 10.813 10.813 0 0 1 -3.5174 14.872l-.0445.0275a10.813 10.813 0 0 1 -14.86 -3.5714 10.813 10.813 0 0 1 3.5563 -14.863 10.813 10.813 0 0 1 13.022 1.2884z"/>
+    </g>
+  </symbol>
+
+  <symbol id="balloon" viewBox="0 0 141.73228 177.16535">
+   <g transform="translate(0 -875.2)">
+    <g>
+     <path style="fill:currentColor" d="m68.156 882.83-.88753 1.4269c-4.9564 7.9666-6.3764 17.321-5.6731 37.378.36584 10.437 1.1246 23.51 1.6874 29.062.38895 3.8372 3.8278 32.454 4.6105 38.459 4.6694-.24176 9.2946.2879 14.377 1.481 1.2359-3.2937 5.2496-13.088 8.886-21.623 6.249-14.668 8.4128-21.264 10.253-31.252 1.2464-6.7626 1.6341-12.156 1.4204-19.764-.36325-12.93-2.1234-19.487-6.9377-25.843-2.0833-2.7507-6.9865-7.6112-7.9127-7.8436-.79716-.20019-6.6946-1.0922-6.7755-1.0248-.02213.0182-5.0006-.41858-7.5248-.22808l-2.149-.22808h-3.3738z"/>
+     <path style="fill:currentColor" d="m61.915 883.28-3.2484.4497c-1.7863.24724-3.5182.53481-3.8494.63994-2.4751.33811-4.7267.86957-6.7777 1.5696-.28598 0-1.0254.20146-2.3695.58589-5.0418 1.4418-6.6374 2.2604-8.2567 4.2364-6.281 7.6657-11.457 18.43-12.932 26.891-1.4667 8.4111.71353 22.583 5.0764 32.996 3.8064 9.0852 13.569 25.149 22.801 37.517 1.3741 1.841 2.1708 2.9286 2.4712 3.5792 3.5437-1.1699 6.8496-1.9336 10.082-2.3263-1.3569-5.7831-4.6968-21.86-6.8361-33.002-.92884-4.8368-2.4692-14.322-3.2452-19.991-.68557-5.0083-.77707-6.9534-.74159-15.791.04316-10.803.41822-16.162 1.5026-21.503 1.4593-5.9026 3.3494-11.077 6.3247-15.852z"/>
+     <path style="fill:currentColor" d="m94.499 885.78c-.10214-.0109-.13691 0-.0907.0409.16033.13489 1.329 1.0675 2.5976 2.0723 6.7003 5.307 11.273 14.568 12.658 25.638.52519 4.1949.24765 14.361-.5059 18.523-2.4775 13.684-9.7807 32.345-20.944 53.519l-3.0559 5.7971c2.8082.76579 5.7915 1.727 8.9926 2.8441 11.562-11.691 18.349-19.678 24.129-28.394 7.8992-11.913 11.132-20.234 12.24-31.518.98442-10.02-1.5579-20.876-6.7799-28.959-.2758-.4269-.57803-.86856-.89617-1.3166-3.247-6.13-9.752-12.053-21.264-16.131-2.3687-.86369-6.3657-2.0433-7.0802-2.1166z"/>
+     <path style="fill:currentColor" d="m32.52 892.22c-.20090-.13016-1.4606.81389-3.9132 2.7457-11.486 9.0476-17.632 24.186-16.078 39.61.79699 7.9138 2.4066 13.505 5.9184 20.562 5.8577 11.77 14.749 23.219 30.087 38.74.05838.059.12188.1244.18052.1838 1.3166-.5556 2.5965-1.0618 3.8429-1.5199-.66408-.32448-1.4608-1.3297-3.8116-4.4602-5.0951-6.785-8.7512-11.962-13.051-18.486-5.1379-7.7948-5.0097-7.5894-8.0586-13.054-6.2097-11.13-8.2674-17.725-8.6014-27.563-.21552-6.3494.13041-9.2733 1.775-14.987 2.1832-7.5849 3.9273-10.986 9.2693-18.07 1.7839-2.3656 2.6418-3.57 2.4409-3.7003z"/>
+     <path style="fill:currentColor" d="m69.133 992.37c-6.2405.0309-12.635.76718-19.554 2.5706 4.6956 4.7759 9.935 10.258 12.05 12.625l4.1272 4.6202h11.493l3.964-4.4516c2.0962-2.3541 7.4804-7.9845 12.201-12.768-8.378-1.4975-16.207-2.6353-24.281-2.5955z"/>
+     <rect style="stroke-width:0;fill:currentColor" ry="2.0328" height="27.746" width="22.766" y="1017.7" x="60.201"/>
+    </g>
+   </g>
+  </symbol>
+
+  <symbol id="info" viewBox="0 0 41.667 41.667">
+   <g transform="translate(-37.035 -1004.6)">
+    <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m76.25 1030.2a18.968 18.968 0 0 1 -23.037 13.709 18.968 18.968 0 0 1 -13.738 -23.019 18.968 18.968 0 0 1 23.001 -13.768 18.968 18.968 0 0 1 13.798 22.984"/>
+    <g transform="matrix(1.1146 0 0 1.1146 -26.276 -124.92)">
+     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m75.491 1039.5v-8.7472"/>
+     <path style="stroke-width:0;fill:currentColor" transform="scale(-1)" d="m-73.193-1024.5a2.3719 2.3719 0 0 1 -2.8807 1.7142 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
+    </g>
+   </g>
+  </symbol>
+
+  <symbol id="warning" viewBox="0 0 48.430474 41.646302">
+    <g transform="translate(-1.1273 -1010.2)">
+     <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:4.151;fill:none" d="m25.343 1012.3-22.14 37.496h44.28z"/>
+     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:4.1512;fill:none" d="m25.54 1027.7v8.7472"/>
+     <path style="stroke-width:0;fill:currentColor" d="m27.839 1042.8a2.3719 2.3719 0 0 1 -2.8807 1.7143 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
+    </g>
+  </symbol>
+
+  <symbol id="menu" viewBox="0 0 50 50">
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="0" x="0"/>
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="20" x="0"/>
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="40" x="0"/>
+   </symbol>
+
+   <symbol id="link" viewBox="0 0 50 50">
+    <g transform="translate(0 -1002.4)">
+     <g transform="matrix(.095670 0 0 .095670 2.3233 1004.9)">
+      <g>
+       <path style="stroke-width:0;fill:currentColor" d="m452.84 192.9-128.65 128.65c-35.535 35.54-93.108 35.54-128.65 0l-42.881-42.886 42.881-42.876 42.884 42.876c11.845 11.822 31.064 11.846 42.886 0l128.64-128.64c11.816-11.831 11.816-31.066 0-42.9l-42.881-42.881c-11.822-11.814-31.064-11.814-42.887 0l-45.928 45.936c-21.292-12.531-45.491-17.905-69.449-16.291l72.501-72.526c35.535-35.521 93.136-35.521 128.64 0l42.886 42.881c35.535 35.523 35.535 93.141-.001 128.66zm-254.28 168.51-45.903 45.9c-11.845 11.846-31.064 11.817-42.881 0l-42.884-42.881c-11.845-11.821-11.845-31.041 0-42.886l128.65-128.65c11.819-11.814 31.069-11.814 42.884 0l42.886 42.886 42.876-42.886-42.876-42.881c-35.54-35.521-93.113-35.521-128.65 0l-128.65 128.64c-35.538 35.545-35.538 93.146 0 128.65l42.883 42.882c35.51 35.54 93.11 35.54 128.65 0l72.496-72.499c-23.956 1.597-48.092-3.784-69.474-16.283z"/>
+      </g>
+     </g>
+    </g>
+  </symbol>
+
+  <symbol id="doc" viewBox="0 0 35 45">
+   <g transform="translate(-147.53 -539.83)">
+    <path style="stroke:currentColor;stroke-width:2.4501;fill:none" d="m149.38 542.67v39.194h31.354v-39.194z"/>
+    <g style="stroke-width:25" transform="matrix(.098003 0 0 .098003 133.69 525.96)">
+     <path d="m220 252.36h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+     <path style="stroke:currentColor;stroke-width:25;fill:none" d="m220 409.95h200"/>
+     <path d="m220 488.74h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+     <path d="m220 331.15h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+    </g>
+   </g>
+ </symbol>
+
+ <symbol id="tick" viewBox="0 0 177.16535 177.16535">
+  <g transform="translate(0 -875.2)">
+   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="155" width="40" y="702.99" x="556.82"/>
+   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="40" width="90.404" y="817.99" x="506.42"/>
+  </g>
+ </symbol>
+</svg>
+
+    <div class="wrapper">
+      <header class="intro-and-nav" role="banner">
+  <div>
+    <div class="intro">
+      <a class="logo" href="https://blog.beachgeek.co.uk/" aria-label="Beachgeek blog - a refuge for pineapple on pizza lovers home page">
+        <img src="https://blog.beachgeek.co.uk/images/logo.svg" alt="My site icon">
+      </a>
+      <p class="library-desc">
+         Technologist and Maker specialising in Cloud, Open Source and Innovation. 
+      </p>
+    </div>
+    <nav id="patterns-nav" class="patterns" role="navigation">
+  <h2 class="vh">Main navigation</h2>
+  <button id="menu-button" aria-expanded="false">
+    <svg viewBox="0 0 50 50" aria-hidden="true" focusable="false">
+      <use xlink:href="#menu"></use>
+    </svg>
+    Menu
+  </button>
+  
+  <ul id="patterns-list">
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Home</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/post/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Blog posts</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/newsletter/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Newsletter</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/tags/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Tags</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/about/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">About</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/index.xml" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">RSS</span>
+      </a>
+    </li>
+  
+  </ul>
+</nav>
+  </div>
+</header>
+
+      <div class="main-and-footer">
+        <div>
+          
+  <main id="main">
+    <h1>
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+        <use xlink:href="#bookmark"></use>
+      </svg>
+      Reading and writing data across different AWS accounts with Amazon Managed Workflows for Apache Airflow v2.x
+    </h1>
+
+    <div class="date">
+      <p>
+        
+        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" aria-labelledby="calendarIconTitle" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#111"> <title id="calendarIconTitle">Calendar</title> <path d="M3 5H21V21H3V5Z"/> <path d="M21 9H3"/> <path d="M7 5V3"/> <path d="M17 5V3"/> </svg> Published Sep 7, 2021
+      </p>
+      
+      <p><svg role="img" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" aria-labelledby="stopwatchIconTitle" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#111"> <title id="stopwatchIconTitle">Stopwatch</title> <circle cx="12" cy="13" r="8"/> <path d="M12 9L12 13M18 7L20 5M15 2L9 2"/> </svg> Reading time 13&nbsp;minutes</p>
+      
+    </div>
+
+    
+      <div class="tags">
+        <strong>Tags: </strong>
+        <ul aria-label="tags">
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/apache-airflow">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                Apache Airflow
+              </a>
+            </li>
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/mwaa">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                mwaa
+              </a>
+            </li>
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/security">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                Security
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    
+    
+    
+      
+
+
+    
+
+    <p><strong>Reading and writing data across different AWS accounts in you Apache Airflow DAGs</strong></p>
+<p>As regular readers will know, I sometimes lurk in the <a href="https://apache-airflow.slack.com/">Apache Airflow slack channel</a> to see what is going on. If you are new to Apache Airflow, or want to get a deeper understanding then I highly recommend spending some time here. The community is super welcoming and eager to help new participants.</p>
+<p>It was during a recent session I came across an interesting problem that one of the builders was having, which was how to access (read/write) data in an S3 bucket which was in a different account to the one hosting Amazon Managed Workflows for Apache Airflow (MWAA).</p>
+<p>The rest of this post will be a quick look at the setup, the error that occurred and how to configure MWAA so that you can read/write data confidently across your different AWS accounts.</p>
+<h3 id="the-problem">The problem</h3>
+<p>A customer was using MWAA 2.0.2, and within their workflow, they were trying to upload data to an S3 bucket in a different AWS account to what their MWAA environment was running in. When they triggered their DAG, they were getting errors such as the following:</p>
+<pre><code> An error occurred (AccessDenied) when calling the PutObject operation: Access Denied
+</code></pre>
+<p>To help with troubleshooting, the customer had created a test DAG that would try and read/write files to a sample S3 bucket in three ways:</p>
+<ul>
+<li>using boto3, the Python SDK for interacting with AWS</li>
+<li>using Apache Airflow operators - airflow.providers.amazon.aws.hooks.s3</li>
+<li>using the pandas Python library - using s3fs</li>
+</ul>
+<p>Here is the test DAG that the customer put together</p>
+<pre><code>import logging
+import random
+from datetime import timedelta
+import pandas as pd
+import boto3
+from airflow.models import Variable
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+from airflow.providers.amazon.aws.hooks.s3 import S3Hook
+from airflow.utils.dates import days_ago
+
+
+def save_file_to_s3():
+    n = random.randint(100, 10000)
+    filename = f'demo_{n}.csv'
+    local_file_path = f'/tmp/{filename}'
+    demo_data = pd.DataFrame({'num_legs': [2, 4, 8, 0],
+                              'num_wings': [2, 0, 0, 0],
+                              'num_specimen_seen': [10, 2, 1, 8]},
+                             index=['falcon', 'dog', 'spider', 'fish'])
+    demo_data.to_csv(local_file_path, index=False)
+
+    bucket_name = Variable.get('TEST_BUCKET')
+    folder_name = Variable.get('TEST_FOLDER')
+    s3_key = f'{folder_name}/boto3_{filename}'
+    logging.info(f'local_file_path: {local_file_path}, bucket_name: {bucket_name}, key: {s3_key}')
+
+    logging.info('Uploading CSV to S3 with boto3')
+    s3 = boto3.resource('s3')
+    try:
+        s3.meta.client.upload_file(local_file_path, bucket_name, s3_key, ExtraArgs={'ACL': 'bucket-owner-full-control'})
+    except Exception as e:
+        logging.info(e)
+        pass
+    logging.info('Done uploading CSV to S3 with boto3')
+    logging.info('Uploading CSV to S3 with S3HOOK')
+    s3_hook = S3Hook()
+    s3_key = f'{folder_name}/s3hook_{filename}'
+    try:
+        s3_hook.load_file(local_file_path, bucket_name=bucket_name, key=s3_key, acl_policy='bucket-owner-full-control')
+    except Exception as e:
+        logging.info(e)
+        pass
+    logging.info('Done uploading CSV to S3 with S3HOOK')
+
+    logging.info('Uploading CSV to S3 with pandas')
+    demo_data.to_csv(f's3://{bucket_name}/{folder_name}/pandas_{filename}', index=False)
+    logging.info('Done uploading CSV to S3 with pandas')
+
+
+def run_dag():
+    save_file_to_s3()
+
+
+dag_default_args = {
+    'owner': 'airflow',
+    'depends_on_past': False,
+    'email': ['airflow@example.com'],
+    'email_on_failure': False,
+    'email_on_retry': False,
+    'retries': 0,
+    'retry_delay': timedelta(minutes=2)
+}
+
+with DAG(
+    'demo',
+    default_args=dag_default_args,
+    description='description',
+    schedule_interval=&quot;0 10 * * *&quot;,
+    start_date=days_ago(1),
+    tags=['test'],
+) as dag:
+    test_dag = PythonOperator(
+        task_id=&quot;test_dag&quot;,
+        python_callable=run_dag
+    )
+
+</code></pre>
+<p>What was interesting, was that when they ran the DAG, the boto3 function would write the file to the target S3 bucket, but the other two failed.</p>
+<p>Time to take a closer look.</p>
+<h3 id="the-approach">The approach</h3>
+<p>I wanted to see if I could reproduce this issue, so the approach I took was to</p>
+<p>1/ set up an environment running the same version of MWAA as the customer, but initially use an S3 bucket in the SAME account to make sure that everything works as expected,</p>
+<p>2/ setup a new S3 bucket on a different AWS account and repeat to see if I could reproduce the error,</p>
+<p>3/ review CloudTrail and MWAA logs to see if I could identify any issues and fix.</p>
+<h3 id="the-setup">The setup</h3>
+<p>The customer was running a standard MWAA 2.0.2 environment in one AWS account, so I quickly provisioned an environment (using my CDK application <a href="https://dev.to/aws/using-aws-cdk-to-deploy-your-amazon-managed-workflows-for-apache-airflow-environment-12cf">which I have blogged about before</a>).</p>
+<p>I deployed the above DAG, and then had to do a couple of things:</p>
+<ul>
+<li>create a new S3 bucket (in my case, I called this &ldquo;ricsue-airflow-s3hook&rdquo; and within this bucket, I created a folder called &ldquo;s3permissions&rdquo;)</li>
+<li>adjusted the permissions for the MWAA execution role (which you can find by opening up your MWAA environment in the AWS console) to include the new bucket I just created</li>
+</ul>
+<pre><code>...
+            &quot;Resource&quot;: [
+                &quot;arn:aws:s3:::airflow-ricsue-cdk-demo/*&quot;,
+                &quot;arn:aws:s3:::airflow-ricsue-cdk-demo&quot;,
+                &quot;arn:aws:s3:::ricsue-airflow-s3hook/*&quot;,
+                &quot;arn:aws:s3:::ricsue-airflow-s3hook&quot;
+            ],
+            &quot;Effect&quot;: &quot;Allow&quot;
+...
+</code></pre>
+<ul>
+<li>within the MWAA console, using the Admin menu option in the Apache Airflow UI, I created two new variables: TEST_BUKCET (with a value of &ldquo;ricsue-airflow-s3hook&rdquo;) and TEST_FOLDER (with a value of &ldquo;s3permissions&rdquo;)</li>
+</ul>
+<p>Once I had completed that, I enabled it and then manually triggered it. It failed with the following error:</p>
+<pre><code>[2021-09-06 12:36:26,255] {{customer-s3.py:26}} INFO - local_file_path: /tmp/demo_2025.csv, bucket_name: ricsue-airflow-s3hook, key: s3permissions/boto3_demo_2025.csv
+[2021-09-06 12:36:26,284] {{customer-s3.py:28}} INFO - Uploading CSV to S3 with boto3
+[2021-09-06 12:36:26,429] {{customer-s3.py:35}} INFO - Done uploading CSV to S3 with boto3
+[2021-09-06 12:36:26,455] {{customer-s3.py:36}} INFO - Uploading CSV to S3 with S3HOOK
+[2021-09-06 12:36:26,487] {{logging_mixin.py:104}} INFO - [2021-09-06 12:36:26,486] {{base_aws.py:368}} INFO - Airflow Connection: aws_conn_id=aws_default
+[2021-09-06 12:36:26,545] {{logging_mixin.py:104}} INFO - [2021-09-06 12:36:26,545] {{base_aws.py:179}} INFO - No credentials retrieved from Connection
+[2021-09-06 12:36:26,571] {{logging_mixin.py:104}} INFO - [2021-09-06 12:36:26,571] {{base_aws.py:87}} INFO - Creating session with aws_access_key_id=None region_name=None
+[2021-09-06 12:36:26,613] {{logging_mixin.py:104}} INFO - [2021-09-06 12:36:26,613] {{base_aws.py:157}} INFO - role_arn is None
+[2021-09-06 12:36:26,782] {{customer-s3.py:44}} INFO - Done uploading CSV to S3 with S3HOOK
+[2021-09-06 12:36:26,813] {{customer-s3.py:46}} INFO - Uploading CSV to S3 with pandas
+[2021-09-06 12:36:26,851] {{taskinstance.py:1482}} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File &quot;/usr/local/lib/python3.7/site-packages/airflow/models/taskinstance.py&quot;, line 1138, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File &quot;/usr/local/lib/python3.7/site-packages/airflow/models/taskinstance.py&quot;, line 1311, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File &quot;/usr/local/lib/python3.7/site-packages/airflow/models/taskinstance.py&quot;, line 1341, in _execute_task
+    result = task_copy.execute(context=context)
+  File &quot;/usr/local/lib/python3.7/site-packages/airflow/operators/python.py&quot;, line 117, in execute
+    return_value = self.execute_callable()
+  File &quot;/usr/local/lib/python3.7/site-packages/airflow/operators/python.py&quot;, line 128, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File &quot;/usr/local/airflow/dags/customer-s3.py&quot;, line 52, in run_dag
+    save_file_to_s3()
+  File &quot;/usr/local/airflow/dags/customer-s3.py&quot;, line 47, in save_file_to_s3
+    demo_data.to_csv(f's3://{bucket_name}/{folder_name}/pandas_{filename}', index=False)
+  File &quot;/usr/local/lib64/python3.7/site-packages/pandas/core/generic.py&quot;, line 3403, in to_csv
+    storage_options=storage_options,
+  File &quot;/usr/local/lib64/python3.7/site-packages/pandas/io/formats/format.py&quot;, line 1083, in to_csv
+    csv_formatter.save()
+  File &quot;/usr/local/lib64/python3.7/site-packages/pandas/io/formats/csvs.py&quot;, line 234, in save
+    storage_options=self.storage_options,
+  File &quot;/usr/local/lib64/python3.7/site-packages/pandas/io/common.py&quot;, line 563, in get_handle
+    storage_options=storage_options,
+  File &quot;/usr/local/lib64/python3.7/site-packages/pandas/io/common.py&quot;, line 315, in _get_filepath_or_buffer
+    fsspec = import_optional_dependency(&quot;fsspec&quot;)
+  File &quot;/usr/local/lib64/python3.7/site-packages/pandas/compat/_optional.py&quot;, line 109, in import_optional_dependency
+    raise ImportError(msg) from None
+ImportError: Missing optional dependency 'fsspec'.  Use pip or conda to install fsspec.
+</code></pre>
+<p>Whilst the boto3 and Apache Airflow operators had worked, the Python library (pandas) had not. This is because they were not installed on the Apache Airflow worker nodes.</p>
+<p>I amended the requirements text to add the following:</p>
+<pre><code>fsspec
+s3fs
+</code></pre>
+<p>Once uploaded, the MWAA environment had to be updated. This took approx 20 mins, but once it completed, I was then able to trigger the DAG successfully. No errors, and when I looked in the local S3 bucket, I could see the following files:</p>
+<pre><code>boto3_demo_9977.csv
+s3hook_demo_9977.csv
+pandas_demo_9977.csv
+</code></pre>
+<p>So, the first step completed - we have everything working as expected. Now to change the DAG to write those files to an S3 bucket in a different AWS account.</p>
+<h3 id="the-error">The error</h3>
+<p>In order to reproduce the same setup as the customer, I had to:</p>
+<ul>
+<li>create a new S3 bucket in a different AWS account - (in my case, I called this &ldquo;ricsue-airflow-s3hook-diffawsaccount&rdquo; and within this bucket, I kept the same folder called &ldquo;s3permissions&rdquo;)</li>
+<li>I needed to UPDATE the Apache Airflow variable, TEST_BUCKET. From within the Apache Airflow UI, I edited the value to point to this new bucket and the different AWS account.</li>
+</ul>
+<p>To make this easier, I had two browsers running with Chrome running my AWS account with MWAA, and Firefox running a different AWS account with just the Amazon S3 bucket.</p>
+<p>Once I had made those changes, I triggered the DAG again. I did not expect ANY of these ways to upload the file to work given that these are two separate AWS accounts, but I wanted to baseline. Sure enough, I got the following error with the DAG failing:</p>
+<pre><code>[2021-09-06 13:18:54,317] {{customer-s3.py:26}} INFO - local_file_path: /tmp/demo_5839.csv, bucket_name: ricsue-airflow-s3hook-diffawsaccount, key: s3permissions/boto3_demo_5839.csv
+[2021-09-06 13:18:54,344] {{customer-s3.py:28}} INFO - Uploading CSV to S3 with boto3
+[2021-09-06 13:18:54,479] {{customer-s3.py:33}} INFO - Failed to upload /tmp/demo_5839.csv to ricsue-airflow-s3hook-diffawsaccount/s3permissions/boto3_demo_5839.csv: An error occurred (AccessDenied) when calling the PutObject operation: Access Denied
+[2021-09-06 13:18:54,507] {{customer-s3.py:35}} INFO - Done uploading CSV to S3 with boto3
+[2021-09-06 13:18:54,531] {{customer-s3.py:36}} INFO - Uploading CSV to S3 with S3HOOK
+[2021-09-06 13:18:54,558] {{logging_mixin.py:104}} INFO - [2021-09-06 13:18:54,558] {{base_aws.py:368}} INFO - Airflow Connection: aws_conn_id=aws_default
+[2021-09-06 13:18:54,602] {{logging_mixin.py:104}} INFO - [2021-09-06 13:18:54,602] {{base_aws.py:179}} INFO - No credentials retrieved from Connection
+[2021-09-06 13:18:54,631] {{logging_mixin.py:104}} INFO - [2021-09-06 13:18:54,631] {{base_aws.py:87}} INFO - Creating session with aws_access_key_id=None region_name=None
+[2021-09-06 13:18:54,673] {{logging_mixin.py:104}} INFO - [2021-09-06 13:18:54,673] {{base_aws.py:157}} INFO - role_arn is None
+[2021-09-06 13:18:54,792] {{customer-s3.py:42}} INFO - An error occurred (403) when calling the HeadObject operation: Forbidden
+[2021-09-06 13:18:54,818] {{customer-s3.py:44}} INFO - Done uploading CSV to S3 with S3HOOK
+[2021-09-06 13:18:54,850] {{customer-s3.py:46}} INFO - Uploading CSV to S3 with pandas
+[2021-09-06 13:18:56,049] {{taskinstance.py:1482}} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File &quot;/usr/local/airflow/.local/lib/python3.7/site-packages/s3fs/core.py&quot;, line 248, in _call_s3
+    out = await method(**additional_kwargs)
+  File &quot;/usr/local/airflow/.local/lib/python3.7/site-packages/aiobotocore/client.py&quot;, line 155, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (AccessDenied) when calling the CreateBucket operation: Access Denied
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File &quot;/usr/local/lib/python3.7/site-packages/airflow/models/taskinstance.py&quot;, line 1138, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File &quot;/usr/local/lib/python3.7/site-packages/airflow/models/taskinstance.py&quot;, line 1311, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File &quot;/usr/local/lib/python3.7/site-packages/airflow/models/taskinstance.py&quot;, line 1341, in _execute_task
+    result = task_copy.execute(context=context)
+  File &quot;/usr/local/lib/python3.7/site-packages/airflow/operators/python.py&quot;, line 117, in execute
+    return_value = self.execute_callable()
+  File &quot;/usr/local/lib/python3.7/site-packages/airflow/operators/python.py&quot;, line 128, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File &quot;/usr/local/airflow/dags/customer-s3.py&quot;, line 52, in run_dag
+    save_file_to_s3()
+  File &quot;/usr/local/airflow/dags/customer-s3.py&quot;, line 47, in save_file_to_s3
+    demo_data.to_csv(f's3://{bucket_name}/{folder_name}/pandas_{filename}', index=False)
+  File &quot;/usr/local/lib64/python3.7/site-packages/pandas/core/generic.py&quot;, line 3403, in to_csv
+    storage_options=storage_options,
+  File &quot;/usr/local/lib64/python3.7/site-packages/pandas/io/formats/format.py&quot;, line 1083, in to_csv
+    csv_formatter.save()
+  File &quot;/usr/local/lib64/python3.7/site-packages/pandas/io/formats/csvs.py&quot;, line 234, in save
+    storage_options=self.storage_options,
+  File &quot;/usr/local/lib64/python3.7/site-packages/pandas/io/common.py&quot;, line 563, in get_handle
+    storage_options=storage_options,
+  File &quot;/usr/local/lib64/python3.7/site-packages/pandas/io/common.py&quot;, line 345, in _get_filepath_or_buffer
+    filepath_or_buffer, mode=fsspec_mode, **(storage_options or {})
+  File &quot;/usr/local/airflow/.local/lib/python3.7/site-packages/fsspec/core.py&quot;, line 438, in open
+    **kwargs,
+  File &quot;/usr/local/airflow/.local/lib/python3.7/site-packages/fsspec/core.py&quot;, line 292, in open_files
+    [fs.makedirs(parent, exist_ok=True) for parent in parents]
+  File &quot;/usr/local/airflow/.local/lib/python3.7/site-packages/fsspec/core.py&quot;, line 292, in &lt;listcomp&gt;
+    [fs.makedirs(parent, exist_ok=True) for parent in parents]
+  File &quot;/usr/local/airflow/.local/lib/python3.7/site-packages/fsspec/asyn.py&quot;, line 88, in wrapper
+    return sync(self.loop, func, *args, **kwargs)
+  File &quot;/usr/local/airflow/.local/lib/python3.7/site-packages/fsspec/asyn.py&quot;, line 69, in sync
+    raise result[0]
+  File &quot;/usr/local/airflow/.local/lib/python3.7/site-packages/fsspec/asyn.py&quot;, line 25, in _runner
+    result[0] = await coro
+  File &quot;/usr/local/airflow/.local/lib/python3.7/site-packages/s3fs/core.py&quot;, line 731, in _makedirs
+    await self._mkdir(path, create_parents=True)
+  File &quot;/usr/local/airflow/.local/lib/python3.7/site-packages/s3fs/core.py&quot;, line 716, in _mkdir
+    await self._call_s3(&quot;create_bucket&quot;, **params)
+  File &quot;/usr/local/airflow/.local/lib/python3.7/site-packages/s3fs/core.py&quot;, line 268, in _call_s3
+    raise err
+PermissionError: Access Denied
+</code></pre>
+<p>As we can see, all three methods failed. Exactly what I expected.</p>
+<p>What was strange was that the customer was not seeing this issue, and was able to write to the target S3 bucket using boto3. Lets see how to reproduce that in my environment.</p>
+<h3 id="the-fix">The fix</h3>
+<p>Within your Amazon S3 bucket, you have the ability to define bucket policies that allow access to read/write files from other AWS accounts.</p>
+<p>In the NEW AWS account, I created the following bucket policy for the new bucket I had created (&ldquo;ricsue-airflow-s3hook-diffawsaccount&rdquo;). This is what I added:</p>
+<pre><code>{
+    &quot;Version&quot;: &quot;2012-10-17&quot;,
+    &quot;Statement&quot;: [
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Principal&quot;: {
+                &quot;AWS&quot;: &quot;arn:aws:iam::704533066374:role/mwaa-2-eks-role&quot;
+            },
+            &quot;Action&quot;: [
+                &quot;s3:GetObject*&quot;,
+                &quot;s3:GetBucket*&quot;,
+                &quot;s3:List*&quot;,
+                &quot;s3:PutObject*&quot;
+            ],
+            &quot;Resource&quot;: [
+                &quot;arn:aws:s3:::ricsue-airflow-s3hook-diffawsaccount/*&quot;,
+                &quot;arn:aws:s3:::ricsue-airflow-s3hook-diffawsaccount&quot;
+            ]
+        }
+    ]
+}
+</code></pre>
+<p>The policy contains the arn of the MWAA execution role for my MWAA environment in my original AWS account, configures allowed actions (in this instance, I have narrowed it down to these actions - GetObject* , GetBucket* , List* , and PutObject* ) and then configured the target S3 buckets resources (here it is all resources under this bucket, but you could also reduce the scope to just certain folders if you wanted to)</p>
+<p>When I saved this, and then re-ran the DAG. Success, it all worked.</p>
+<pre><code>[2021-09-06 18:09:15,305] {{customer-s3.py:26}} INFO - local_file_path: /tmp/demo_3455.csv, bucket_name: ricsue-airflow-s3hook-diffawsaccount, key: s3permissions/boto3_demo_3455.csv
+[2021-09-06 18:09:15,335] {{customer-s3.py:28}} INFO - Uploading CSV to S3 with boto3
+[2021-09-06 18:09:15,499] {{customer-s3.py:35}} INFO - Done uploading CSV to S3 with boto3
+[2021-09-06 18:09:15,564] {{customer-s3.py:36}} INFO - Uploading CSV to S3 with S3HOOK
+[2021-09-06 18:09:15,592] {{logging_mixin.py:104}} INFO - [2021-09-06 18:09:15,592] {{base_aws.py:368}} INFO - Airflow Connection: aws_conn_id=aws_default
+[2021-09-06 18:09:15,632] {{logging_mixin.py:104}} INFO - [2021-09-06 18:09:15,632] {{base_aws.py:179}} INFO - No credentials retrieved from Connection
+[2021-09-06 18:09:15,681] {{logging_mixin.py:104}} INFO - [2021-09-06 18:09:15,681] {{base_aws.py:87}} INFO - Creating session with aws_access_key_id=None region_name=None
+[2021-09-06 18:09:15,719] {{logging_mixin.py:104}} INFO - [2021-09-06 18:09:15,719] {{base_aws.py:157}} INFO - role_arn is None
+[2021-09-06 18:09:15,859] {{customer-s3.py:44}} INFO - Done uploading CSV to S3 with S3HOOK
+[2021-09-06 18:09:15,887] {{customer-s3.py:46}} INFO - Uploading CSV to S3 with pandas
+[2021-09-06 18:09:16,729] {{customer-s3.py:48}} INFO - Done uploading CSV to S3 with pandas
+[2021-09-06 18:09:16,762] {{python.py:118}} INFO - Done. Returned value was: None
+[2021-09-06 18:09:16,805] {{taskinstance.py:1192}} INFO - Marking task as SUCCESS. dag_id=demo, task_id=test_dag, execution_date=20210906T180913, start_date=20210906T180914, end_date=20210906T180916
+[2021-09-06 18:09:16,901] {{taskinstance.py:1246}} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-09-06 18:09:16,943] {{logging_mixin.py:104}} INFO - [2021-09-06 18:09:16,943] {{local_task_job.py:146}} INFO - Task exited with return code 0
+</code></pre>
+<p>But wait, that does not describe the customer problem. They could get it working with boto3, so what is going on then?</p>
+<p>I altered the bucket policy so that it had fewer permissions, specifically removing the List* as follows:</p>
+<pre><code>{
+    &quot;Version&quot;: &quot;2012-10-17&quot;,
+    &quot;Statement&quot;: [
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Principal&quot;: {
+                &quot;AWS&quot;: &quot;arn:aws:iam::704533066374:role/mwaa-2-eks-role&quot;
+            },
+            &quot;Action&quot;: [
+                &quot;s3:GetObject*&quot;,
+                &quot;s3:GetBucket*&quot;,
+                &quot;s3:PutObject*&quot;
+            ],
+            &quot;Resource&quot;: [
+                &quot;arn:aws:s3:::ricsue-airflow-s3hook-diffawsaccount/*&quot;,
+                &quot;arn:aws:s3:::ricsue-airflow-s3hook-diffawsaccount&quot;
+            ]
+        }
+    ]
+}
+</code></pre>
+<p>And when I re-ran the DAG, boto3 worked, but the S3 Hook and the pandas failed with permissions errors:</p>
+<pre><code>[2021-09-06 18:07:11,238] {{customer-s3.py:26}} INFO - local_file_path: /tmp/demo_6465.csv, bucket_name: ricsue-airflow-s3hook-diffawsaccount, key: s3permissions/boto3_demo_6465.csv
+[2021-09-06 18:07:11,263] {{customer-s3.py:28}} INFO - Uploading CSV to S3 with boto3
+[2021-09-06 18:07:11,420] {{customer-s3.py:35}} INFO - Done uploading CSV to S3 with boto3
+[2021-09-06 18:07:11,454] {{customer-s3.py:36}} INFO - Uploading CSV to S3 with S3HOOK
+[2021-09-06 18:07:11,481] {{logging_mixin.py:104}} INFO - [2021-09-06 18:07:11,481] {{base_aws.py:368}} INFO - Airflow Connection: aws_conn_id=aws_default
+[2021-09-06 18:07:11,547] {{logging_mixin.py:104}} INFO - [2021-09-06 18:07:11,546] {{base_aws.py:179}} INFO - No credentials retrieved from Connection
+[2021-09-06 18:07:11,571] {{logging_mixin.py:104}} INFO - [2021-09-06 18:07:11,571] {{base_aws.py:87}} INFO - Creating session with aws_access_key_id=None region_name=None
+[2021-09-06 18:07:11,578] {{logging_mixin.py:104}} WARNING - /usr/local/airflow/.local/lib/python3.7/site-packages/watchtower/__init__.py:205 WatchtowerWarning: Failed to deliver logs: None
+[2021-09-06 18:07:11,649] {{logging_mixin.py:104}} INFO - [2021-09-06 18:07:11,649] {{base_aws.py:157}} INFO - role_arn is None
+[2021-09-06 18:07:11,761] {{customer-s3.py:42}} INFO - An error occurred (403) when calling the HeadObject operation: Forbidden
+[2021-09-06 18:07:11,789] {{customer-s3.py:44}} INFO - Done uploading CSV to S3 with S3HOOK
+[2021-09-06 18:07:11,817] {{customer-s3.py:46}} INFO - Uploading CSV to S3 with pandas
+[2021-09-06 18:07:12,347] {{taskinstance.py:1482}} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File &quot;/usr/local/airflow/.local/lib/python3.7/site-packages/s3fs/core.py&quot;, line 248, in _call_s3
+    out = await method(**additional_kwargs)
+  File &quot;/usr/local/airflow/.local/lib/python3.7/site-packages/aiobotocore/client.py&quot;, line 155, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (AccessDenied) when calling the CreateBucket operation: Access Denied
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File &quot;/usr/local/lib/python3.7/site-packages/airflow/models/taskinstance.py&quot;, line 1138, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File &quot;/usr/local/lib/python3.7/site-packages/airflow/models/taskinstance.py&quot;, line 1311, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File &quot;/usr/local/lib/python3.7/site-packages/airflow/models/taskinstance.py&quot;, line 1341, in _execute_task
+    result = task_copy.execute(context=context)
+  File &quot;/usr/local/lib/python3.7/site-packages/airflow/operators/python.py&quot;, line 117, in execute
+    return_value = self.execute_callable()
+  File &quot;/usr/local/lib/python3.7/site-packages/airflow/operators/python.py&quot;, line 128, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File &quot;/usr/local/airflow/dags/customer-s3.py&quot;, line 52, in run_dag
+    save_file_to_s3()
+  File &quot;/usr/local/airflow/dags/customer-s3.py&quot;, line 47, in save_file_to_s3
+    demo_data.to_csv(f's3://{bucket_name}/{folder_name}/pandas_{filename}', index=False)
+  File &quot;/usr/local/lib64/python3.7/site-packages/pandas/core/generic.py&quot;, line 3403, in to_csv
+    storage_options=storage_options,
+  File &quot;/usr/local/lib64/python3.7/site-packages/pandas/io/formats/format.py&quot;, line 1083, in to_csv
+    csv_formatter.save()
+  File &quot;/usr/local/lib64/python3.7/site-packages/pandas/io/formats/csvs.py&quot;, line 234, in save
+    storage_options=self.storage_options,
+  File &quot;/usr/local/lib64/python3.7/site-packages/pandas/io/common.py&quot;, line 563, in get_handle
+    storage_options=storage_options,
+  File &quot;/usr/local/lib64/python3.7/site-packages/pandas/io/common.py&quot;, line 345, in _get_filepath_or_buffer
+    filepath_or_buffer, mode=fsspec_mode, **(storage_options or {})
+  File &quot;/usr/local/airflow/.local/lib/python3.7/site-packages/fsspec/core.py&quot;, line 438, in open
+    **kwargs,
+  File &quot;/usr/local/airflow/.local/lib/python3.7/site-packages/fsspec/core.py&quot;, line 292, in open_files
+    [fs.makedirs(parent, exist_ok=True) for parent in parents]
+  File &quot;/usr/local/airflow/.local/lib/python3.7/site-packages/fsspec/core.py&quot;, line 292, in &lt;listcomp&gt;
+    [fs.makedirs(parent, exist_ok=True) for parent in parents]
+  File &quot;/usr/local/airflow/.local/lib/python3.7/site-packages/fsspec/asyn.py&quot;, line 88, in wrapper
+    return sync(self.loop, func, *args, **kwargs)
+  File &quot;/usr/local/airflow/.local/lib/python3.7/site-packages/fsspec/asyn.py&quot;, line 69, in sync
+    raise result[0]
+  File &quot;/usr/local/airflow/.local/lib/python3.7/site-packages/fsspec/asyn.py&quot;, line 25, in _runner
+    result[0] = await coro
+  File &quot;/usr/local/airflow/.local/lib/python3.7/site-packages/s3fs/core.py&quot;, line 731, in _makedirs
+    await self._mkdir(path, create_parents=True)
+  File &quot;/usr/local/airflow/.local/lib/python3.7/site-packages/s3fs/core.py&quot;, line 716, in _mkdir
+    await self._call_s3(&quot;create_bucket&quot;, **params)
+  File &quot;/usr/local/airflow/.local/lib/python3.7/site-packages/s3fs/core.py&quot;, line 268, in _call_s3
+    raise err
+PermissionError: Access Denied
+</code></pre>
+<p>So, we can close that loop. We now understand under what scenarios this might work (target S3 bucket policy not having the right permissions for the various methods of uploading files) and we can address/solve this as needed.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>In this post I showed you how you can set up your S3 buckets so that you can use them to read and write data from your MWAA environment. I showed you how this works whether you are doing this via boto3, using the Apache Airflow S3 operator,  or doing this via a third party Python library.</p>
+<p>Please let me know via the comments of any additional questions or comments you have on this post.</p>
+<p>You can view/use the files that accompany this blog <a href="https://github.com/094459/blog-mwaa-xaccount">via the GitHub repository link here</a></p>
+
+  </main>
+
+          <div class="social-heading">
+            <div class="footer-social">
+  
+    <div class="social-icon">
+      <a href="https://twitter.com/094459" target="_blank" title="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Twitter" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://github.com/094459" target="_blank" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="GitHub" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+      </a>
+    </div>
+  
+  
+    <div class="social-icon">
+      <a href="https://www.linkedin.com/in/ricardosueiras" target="_blank" title="Linkedin">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="LinkedIn" role="img"
+viewBox="0 0 512 512"
+fill="#fff"><rect
+width="512" height="512"
+rx="15%"
+fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://www.reddit.com/r/aws" target="_blank" title="Reddit">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Reddit" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+      </a>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="social-icon">
+      <a href="mailto:ricsue@amazon.com" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Email" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="teal"/><rect width="356" height="256" x="78" y="128" fill="#fff" rx="8%"/><path fill="none" stroke="teal" stroke-width="20" d="M434 128L269 292c-7 8-19 8-26 0L78 128m0 256l129-128m227 128L305 256"/></svg>
+      </a>
+    </div>
+  
+  
+</div>
+
+          </div>
+          <footer role="contentinfo">
+  <div class="social-footer">
+    <div class="footer-social">
+  
+    <div class="social-icon">
+      <a href="https://twitter.com/094459" target="_blank" title="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Twitter" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://github.com/094459" target="_blank" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="GitHub" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+      </a>
+    </div>
+  
+  
+    <div class="social-icon">
+      <a href="https://www.linkedin.com/in/ricardosueiras" target="_blank" title="Linkedin">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="LinkedIn" role="img"
+viewBox="0 0 512 512"
+fill="#fff"><rect
+width="512" height="512"
+rx="15%"
+fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://www.reddit.com/r/aws" target="_blank" title="Reddit">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Reddit" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+      </a>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="social-icon">
+      <a href="mailto:ricsue@amazon.com" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Email" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="teal"/><rect width="356" height="256" x="78" y="128" fill="#fff" rx="8%"/><path fill="none" stroke="teal" stroke-width="20" d="M434 128L269 292c-7 8-19 8-26 0L78 128m0 256l129-128m227 128L305 256"/></svg>
+      </a>
+    </div>
+  
+  
+</div>
+
+    <label for="themer">
+      dark theme: <input type="checkbox" id="themer" class="vh">
+      <span aria-hidden="true"></span>
+    </label>
+  </div>
+  
+    <p class="margin-top-none">Copyright &copy; <span id="copyright-year"></span> - Ricardo Sueiras</p>
+  
+  
+    <p class="margin-top-none">
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cupper-hugo-theme">Cupper</a>.
+    </p>
+  
+</footer>
+<script>
+    var year = new Date().getFullYear()
+    document.getElementById("copyright-year").innerHTML = year;
+</script>
+
+        </div>
+      </div>
+    </div>
+    <script src="https://blog.beachgeek.co.uk/js/prism.js"></script>
+
+
+
+<script src="https://blog.beachgeek.co.uk/js/dom-scripts.js"></script>
+
+
+
+<script src="/js/search.7aef046a0cc8b0c532f1d20087b920459bc868c936bb48a6ae221eceefca2d07.js"></script>
+
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  </body>
+</html>

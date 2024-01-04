@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Keycloak on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/keycloak/</link>
+    <description>Recent content in Keycloak on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 31 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/keycloak/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #167</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-167/</link>
+      <pubDate>Mon, 31 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-167/</guid>
+      <description>July 31st, 2023 - Instalment #167 Welcome to #167 of the AWS open source newsletter, and another edition packed with new open source projects for you to explore. Whether you are new to this newsletter, or returning (we thank you!) there is something for you. This week we have projects that will help use Terraform to deploy your monolith applications, a tool to accelerate your GraphQL building when working with Amazon DynamoDB, a project that will help you introduce chaos without changes to your code, and a couple of really nice demos of using generative AI that allows you to use natural language to query your data.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #161</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-161/</link>
+      <pubDate>Mon, 19 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-161/</guid>
+      <description>June 19th, 2023 - Instalment #161 Welcome to #161 of the AWS open source newsletter, and another week for fresh, new open source projects and code for you to practice your four freedoms. This weeks projects include tools that will help you create temporary elevated credentials, a new Java library that provides methods for encrypting and decrypting cryptographic materials, an AWS DynamoDB wrapper for Node/TypeScript developers, and a solution to help you find and visualise data assets.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #160</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-160/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-160/</guid>
+      <description>June 12th, 2023 - Instalment #160 Welcome to #160 of the AWS open source newsletter, where we try and share all the important open source news, projects, events, and content that open source builders want. This week we have new projects that include tools to help you build data workflows, Terraform modules to help you incorporate temporary elevated access controls, integrating Tailscale to change your traffic flows, a neat AWS Lambda debugging tool, Go bindings for Cedar, and more.</description>
+    </item>
+    <item>
+      <title>Integrating Keycloak as my Identity Provider for IAM Identity Centre: Part two, configuring Keycloak as my Identity provider</title>
+      <link>https://blog.beachgeek.co.uk/keycloak-on-aws-part-two/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/keycloak-on-aws-part-two/</guid>
+      <description>This is the follow up post to Integrating Keycloak as my Identity Provider for IAM Identity Centre: Part one, deploying Keycloak on AWS, where I looked at how to deploy Keycloak on AWS in order to have an Identity Provider to use when configuring AWS Identity Centre. In this post, I am going to use that setup, and show you how I configured it to integrate with AWS Identity Centre to provide access to my AWS resources.</description>
+    </item>
+    <item>
+      <title>Integrating Keycloak as my Identity Provider for IAM Identity Centre: Part one, deploying Keycloak on AWS</title>
+      <link>https://blog.beachgeek.co.uk/keycloak-on-aws-part-one/</link>
+      <pubDate>Tue, 06 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/keycloak-on-aws-part-one/</guid>
+      <description>Integrating Keycloak as my Identity Provider for IAM Identity Centre: Part one, deploying Keycloak on AWS &amp;ldquo;It was the best of times, it was the worst of times&amp;hellip;&amp;rdquo; A Tale of Two Cities&#xA;It started out innocently enough. As part of working on a new blog post, I needed a way to use an open source tool called saml2aws that generates AWS short lived credentials that you can use to access your AWS resources.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #129</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-129/</link>
+      <pubDate>Fri, 30 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-129/</guid>
+      <description>September 30th, 2022 - Instalment #129 Welcome&#xA;Welcome to the AWS open source newsletter, edition #129.&#xA;We have loads of great new projects this week, with plenty of variety to keep you all interested. We have &amp;ldquo;aws-ecr-cleaner&amp;rdquo;, a great tool to help you manage your container images, &amp;ldquo;dotnet-lambda-sql-server-proxy&amp;rdquo; that shows you how you can use RDS Proxy with SQL Server and why, &amp;ldquo;minecraft-server-dashboard&amp;rdquo; perfect for those running their own minecraft servers, &amp;ldquo;YATAS&amp;rdquo; and &amp;ldquo;aws-security-survival-kit&amp;rdquo; for those working on security and governance, &amp;ldquo;aws-lambda-handler-cookbook&amp;rdquo; useful recipes to get you going, &amp;ldquo;autonomous-driving-data-framework&amp;rdquo; for folks working in the automotive space, and many more - make sure you check all the projects out.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #125</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-125/</link>
+      <pubDate>Fri, 02 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-125/</guid>
+      <description>September 2nd, 2022 - Instalment #125 Welcome&#xA;After a couple of weeks off, it is great to welcome to back to the AWS open source newsletter, edition #125. As it has been a couple of weeks, this edition contains even more open source goodness to keep you occupied.&#xA;As always, we kick things off we a round up of new open source projects. Over the past couple of weeks, there were so many that it was hard to select them (I will include the others in next weeks newsletter).</description>
+    </item>
+  </channel>
+</rss>

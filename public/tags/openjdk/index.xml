@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenJDK on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/openjdk/</link>
+    <description>Recent content in OpenJDK on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/openjdk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #181</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-181/</link>
+      <pubDate>Mon, 27 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-181/</guid>
+      <description>November 27th, 2023 - Instalment #181 Welcome to #181 of the AWS open source newsletter, the place for all your AWS and open source needs. As some of you will know, this is re:Invent week, where many of my colleagues and tens of thousands of developers will be congregating to learn about Cloud, and hopefully discover plenty of open source goodness too. If you are going, make sure to visit the open source booth in the Expo floor.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #177</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-177/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-177/</guid>
+      <description>October 30th, 2023 - Instalment #177 Welcome to #177 of the AWS open source newsletter, the Halloween special. You will find no tricks in this edition, only treats, with more new projects for you to check out and content that are a feast for your eyes. This weeks new projects include a tool to help you easily deploy vector databases on Kubernetes, an observability toolkit, a tool to help you benchmark network latency, as well as lots of new demos on generative AI.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #143</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-143/</link>
+      <pubDate>Mon, 30 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-143/</guid>
+      <description>January 30th, 2023 - Instalment #143 Welcome to edition #143 of the AWS open source newsletter, and another week of great new open source projects for you to try out. This week we feature projects including &amp;ldquo;aws-cdk-in-electron&amp;rdquo;, a project that lets you put AWS CDK in a graphical user interface, &amp;ldquo;lightsail-k8s-installer&amp;rdquo; that helps you deploy Kubernetes into Amazon Lightsail, &amp;ldquo;porting-advisor-for-graviton&amp;rdquo; a great project to help you migrate to Arm based AWS Graviton instance types, &amp;ldquo;aws-ebook-downloader&amp;rdquo; a browser tool to help you easily download pdf&amp;rsquo;s on AWS topics, &amp;ldquo;lake-formation-permissions-sync&amp;rdquo; a useful tool to help you keep on top of your Lake Formation setups, and many more.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #106</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-106/</link>
+      <pubDate>Mon, 28 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-106/</guid>
+      <description>March 28th, 2022 - Instalment #106 Newsletter #106.&#xA;Welcome to the AWS open source newsletter, and this week we have more great new open source projects to tell you about. We have &amp;ldquo;access-undenied-aws&amp;rdquo;, a tool that helps you better understand your CloudTrail logs and suggest remediation. &amp;ldquo;aws-slack-clickoops-watcher&amp;rdquo; provides you with a way to alert you when changes are made to your AWS environment. &amp;ldquo;kronicle&amp;rdquo; provides a way of illustrating your tech stack automagically, and we have many more tools, demos and sample projects to help get you started on a number of topics.</description>
+    </item>
+  </channel>
+</rss>

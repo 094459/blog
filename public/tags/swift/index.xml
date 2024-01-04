@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Swift on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/swift/</link>
+    <description>Recent content in Swift on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/swift/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #176</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-176/</link>
+      <pubDate>Mon, 23 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-176/</guid>
+      <description>October 23rd, 2023 - Instalment #176 Welcome to #176 of the AWS open source newsletter, heading into Autumn and getting ready for the clocks to go back later in the week. How will you use that extra hour? Well, perhaps some of you might use it to check out this weeks new projects, which include a nice cli chat tool that uses Amazon Bedrock, a tool to help simplify deploying VSCode in the Cloud environments, and sample demos and code on chaos engineering, deploying Amazon Bedrock via AWS Lambda, and how you can use IAM Roles Anywhere to authenticate against external identity providers.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #152</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-152/</link>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-152/</guid>
+      <description>April 10th, 2023 - Instalment #152 Welcome&#xA;Hello and welcome to the AWS open source newsletter, #152 an Easter special. This week sees more great new projects including, &amp;ldquo;redshift-test-drive&amp;rdquo; a set of essential tools for Amazon Redshift users, &amp;ldquo;simple-database-archival-solution&amp;rdquo; a nice tool to help you archive your data, &amp;ldquo;attribution-gen&amp;rdquo; a Go tool to help you build open source attribution documents, &amp;ldquo;aws-glue-data-catalog-federation&amp;rdquo; a library to help you federate your Glue catalog, &amp;ldquo;subnet-utilization-monitor-for-amazon-vpc&amp;rdquo; a handy tool to keep on top of your IP address allocation, &amp;ldquo;AlexaGPT&amp;rdquo; a demo of integrating Alexa with you know what, and more!</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #132</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-132/</link>
+      <pubDate>Fri, 21 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-132/</guid>
+      <description>October 21st, 2022 - Instalment #132 Welcome&#xA;Welcome to the AWS open source newsletter, edition #132. This newsletter was covered in last Friday&amp;rsquo;s Build on Open Source, so if you missed it, don&amp;rsquo;t worry as you can view episode five of Build on Open Source. In this episode special guest Abhishek Gupta walked us through how to use cdk8s using Golang, building a Wordpress site in minutes.&#xA;New projects this week include &amp;ldquo;duvet&amp;rdquo; a tool to help honour RFC in code, &amp;ldquo;aws-lambda-explorer&amp;rdquo; a gui tool to explore your AWS Lambda functions, &amp;ldquo;k3s-aws-terraform-cluster&amp;rdquo; deploy k3s on AWS via Terraform, &amp;ldquo;snow-transfer-tool&amp;rdquo; a tool to help you transfer data via Snowball devices, &amp;ldquo;amazon-emr-vscode-toolkit&amp;rdquo; a new VSCode plugin for Amazon EMR users, &amp;ldquo;aws-cdk-for-discourse&amp;rdquo; a quick way to deploy the open source discourse tool, &amp;ldquo;image-optimization&amp;rdquo; a reference example of how to do image optimising, and &amp;ldquo;gtfs-serverless-ticketing-sample&amp;rdquo; a sample application using public transport data.</description>
+    </item>
+  </channel>
+</rss>

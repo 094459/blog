@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cosign on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/cosign/</link>
+    <description>Recent content in Cosign on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/cosign/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #144</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-144/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-144/</guid>
+      <description>Feb 5th, 2023 - Instalment #144 Welcome to edition #144 of the AWS open source newsletter, and another week of great new open source projects for you to try out. Some of the treats in store for you this week include &amp;ldquo;dynamodb-shell&amp;rdquo;, a project that provides a cli to your favourite AWS database, &amp;ldquo;precloud&amp;rdquo; a tool to help you catch issues with your configuration before you deploy, &amp;ldquo;node-latency-for-k8s&amp;rdquo; a tool to analyse your node logs, &amp;ldquo;stepfunctions-lambda-ec2-ssm&amp;rdquo; a very nice way of using step functions to overcome the 15 minute timeout of your lambda functions, &amp;ldquo;terraform-ec2-image-builder-container-hardening-pipeline&amp;rdquo; a very cool example of how to build an EC2 image hardening pipeline using Terraform, and &amp;ldquo;cloudtrail-event-fuzzy-viewer&amp;rdquo; a tool to copy your AWS CloudTrail events and then fuzzy search them on the command line.</description>
+    </item>
+    <item>
+      <title>Building a software bill of materials (SBOM) using open source tools</title>
+      <link>https://blog.beachgeek.co.uk/building-sbom-with-syft/</link>
+      <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/building-sbom-with-syft/</guid>
+      <description>This is the second post exploring how you can use open source tools to help you build a stronger defence against common software supply chain attacks. In this blog post, I look at syft, an open source CLI tool and Go library for generating a Software Bill of Materials (SBOM) from container images and filesystems. We will use examples and build on the previous post, Getting hands on with Sigstore Cosign on AWS.</description>
+    </item>
+    <item>
+      <title>Getting hands on with Sigstore Cosign on AWS</title>
+      <link>https://blog.beachgeek.co.uk/getting-hands-on-with-sigstore-cosign-on-aws/</link>
+      <pubDate>Tue, 31 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/getting-hands-on-with-sigstore-cosign-on-aws/</guid>
+      <description>Getting hands on with Sigstore Cosign on AWS I am currently putting together some content around how you can use a number of open source tools to help build a stronger defence against common software supply chain attacks. In this blog post, I look at emerging tools from Sigstore, and focus in this post on Cosign, a tool that supports container image signing, verification, and storage in an Open Container Initiative (OCI) registry.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #128</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-128/</link>
+      <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-128/</guid>
+      <description>September 23rd, 2022 - Instalment #128 Welcome&#xA;Welcome to the AWS open source newsletter, edition #128. I hope some of you were able to catch Derek and myself sharing a peek at this edition, and enjoyed our special guest, Gethin Webster as he walked us through the open source Cloudscape project. If you want to catch up on that event, check out the video here.&#xA;This weeks opens new open source projects include &amp;ldquo;Guardian&amp;rdquo;, a command line tool that produces nice reports on your AWS environments, &amp;ldquo;cdk-scheduler&amp;rdquo;, a new construct that helps you schedule your CDK deployments, &amp;ldquo;terraform-iam-policy-validator&amp;rdquo; a script that helps you validate your Terraform scripts, &amp;ldquo;aws-cdk-golden-ami-pipeline&amp;rdquo; an example of how to build an automated pipeline to build Amazon Machine Images (AMI&amp;rsquo;s), and many more.</description>
+    </item>
+  </channel>
+</rss>

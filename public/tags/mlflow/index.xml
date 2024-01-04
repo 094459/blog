@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MLFlow on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/mlflow/</link>
+    <description>Recent content in MLFlow on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/mlflow/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #182</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-182/</link>
+      <pubDate>Mon, 11 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-182/</guid>
+      <description>December 11th, 2023 - Instalment #182 Welcome to #182 of the AWS open source newsletter, the place for all your AWS and open source needs. This is a special re:Invent packed edition of this newsletter, attempting to catch up and cover all the main talking points, sessions, and announcements. Whilst there is a lot of content to go through, I know that many of you will still be wanting to know about new projects you can try out, and the good news is that we have plenty.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #157</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-157/</link>
+      <pubDate>Mon, 22 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-157/</guid>
+      <description>May 22nd, 2023 - Instalment #157 Welcome&#xA;Hello and welcome to the AWS open source newsletter, #157. Apologies for the lack of newsletter last week, but hopefully this week will make up for that as we have a bumper selection of great open source content for you. This weeks new projects include repos that help you get OpenEMR up and running (&amp;ldquo;host-openemr-on-aws-fargate&amp;rdquo;), two new security related open source projects that you definitely need to check out, (&amp;ldquo;cedar&amp;rdquo; and &amp;ldquo;snapchange&amp;rdquo;), integration of clickstream analytics using Swift (&amp;ldquo;clickstream-swift&amp;rdquo;), deployment of Backstage to serve up access to your AWS resources, (&amp;ldquo;app-development-for-backstage-io-on-aws&amp;rdquo;), a tool to help you clean up ecs tasks definitions (&amp;ldquo;aws-ecs-task-definition-cleanup&amp;rdquo;) and many more.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #156</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-156/</link>
+      <pubDate>Mon, 08 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-156/</guid>
+      <description>May 8th, 2023 - Instalment #156 Welcome&#xA;Hello and welcome to the AWS open source newsletter, #156, the newsletter that just keeps on giving&amp;hellip;.in this case, keeps giving you brand new open source projects to practice your four freedoms on. So what do we have for you this week? Coming up later in this newsletter we have projects such as &amp;ldquo;sustainability-scanner&amp;rdquo; helps you check your Cloudformation templates against sustainability good practices, &amp;ldquo;synthtable&amp;rdquo; helps you create synthetic data for different use cases, &amp;ldquo;neptune-gremlin-client&amp;rdquo; a Java based Gremlin client, &amp;ldquo;s3zipper&amp;rdquo; a tool to quickly download entire S3 buckets, &amp;ldquo;chataws&amp;rdquo; a nice demo of how you can use ChatGPT to aid your AWS deployments, and plenty of other great projects.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #137</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-137/</link>
+      <pubDate>Fri, 25 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-137/</guid>
+      <description>November 25th, 2022 - Instalment #137 Welcome&#xA;Welcome to the AWS open source newsletter, edition #137. As it is re:Invent next week, I will be publishing the newsletter early as I am heading out on Monday. I will be in Las Vegas talking with open source Builders, hanging out on the Open Source Kiosk in the AWS Village, and doing some talks. If you are coming, I would love to meet some of you, so get in touch.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #108</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-108/</link>
+      <pubDate>Mon, 11 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-108/</guid>
+      <description>April 11th, 2022 - Instalment #108 Newsletter #108.&#xA;A little later the usual as it was a busy week last week, and I was lucky enough to speak at some great events. It certainly seems that things are returning to normality now on the tech events scene, and it was great to meet so many customers and builders who were enthusiastic champions of open source. The AWS Summit season is upon us, with the Brussels summit just gone and Paris Summit happening this week.</description>
+    </item>
+  </channel>
+</rss>

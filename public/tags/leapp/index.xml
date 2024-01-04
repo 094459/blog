@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Leapp on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/leapp/</link>
+    <description>Recent content in Leapp on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/leapp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source news and updates #102</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-102/</link>
+      <pubDate>Mon, 28 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-102/</guid>
+      <description>Feb 28th, 2022 - Instalment #102 Newsletter #102.&#xA;Welcome to edition #102 of the AWS open source news and updates newsletter, and this week we have a super collection of new open source projects that I am really excited to share. First up we have the AWS DataOps Development Kit, which uses AWS CDK under the covers, and is an open source development framework to help you build data workflows. Threatmapper is an open source cloud native security observability platform, which looks easy to use and has some good visualisations.</description>
+    </item>
+  </channel>
+</rss>

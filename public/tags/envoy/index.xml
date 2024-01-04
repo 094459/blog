@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Envoy on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/envoy/</link>
+    <description>Recent content in Envoy on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 May 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/envoy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source news and updates #113</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-113/</link>
+      <pubDate>Fri, 20 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-113/</guid>
+      <description>May 13th, 2022 - Instalment #113 Newsletter #113.&#xA;A little later than usual this week thanks to KubeCon, #113 of the AWS open source newsletter provides you with yet more new open source projects. &amp;ldquo;aws-iam-utils&amp;rdquo; is a Python library to help you work with IAM, &amp;ldquo;iot-app-kit&amp;rdquo; is a new IoT visualisation framework, &amp;ldquo;s3pathlib-project&amp;rdquo; that provides the Pythonic objective oriented programming (OOP) interface to manipulate AWS S3 object / directory, &amp;ldquo;collaboration-chambers-on-aws&amp;rdquo; which is a cool and very comprehensive project to help you do Scale-Out Computing on AWS, and many more!</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #104</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-104/</link>
+      <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-104/</guid>
+      <description>March 14th, 2022 - Instalment #104 Newsletter #104.&#xA;Welcome to #104 of the AWS open source news and updates newsletter, bringing you the latest updates from around the AWS and Communities. This week we have yet more great new open source projects, including a Deno runtime for your Lambda functions, data lineage and data testing tools, a performance testing tool for Apache Kafka, an ELT tool for Amazon Redshift, an Amazon S3 archive tool, and many more.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #100</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-100/</link>
+      <pubDate>Mon, 14 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-100/</guid>
+      <description>Feb 14th, 2022 - Instalment #100 Newsletter #100.&#xA;Happy Valentines everyone, and welcome to this landmark 100st edition of this newsletter. This week we celebrate the love that many builders have for open source with more great new open source projects and content. Cuddle up to new projects that will help you build scalable systems, simplify your work with AWS DynamoDB, integrate your .NET applications with OpenSearch, keep on top of your VPC networks, and more.</description>
+    </item>
+  </channel>
+</rss>

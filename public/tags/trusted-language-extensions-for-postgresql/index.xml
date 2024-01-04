@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Trusted Language Extensions for PostgreSQL on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/trusted-language-extensions-for-postgresql/</link>
+    <description>Recent content in Trusted Language Extensions for PostgreSQL on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/trusted-language-extensions-for-postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #174</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-174/</link>
+      <pubDate>Mon, 18 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-174/</guid>
+      <description>September 18th, 2023 - Instalment #174 Welcome to #174 of the AWS open source newsletter, which will be the last one for a couple of weeks as I take some time off to recharge. I will be back in early October with more open source goodness, but in the meantime, you still have this edition packed with open source goodness.&#xA;This weeks new projects include a Rust tool to help you keep your CloudFormation stacks up to date, a tool to help upload files to Amazon S3, a generative AI tool that aims to help you review and detect IAM configuration issues, an updated JDBC driver for connecting to Amazon Aurora, and more.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #154</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-154/</link>
+      <pubDate>Mon, 24 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-154/</guid>
+      <description>April 24th, 2023 - Instalment #154 Welcome&#xA;Hello and welcome to the AWS open source newsletter, #154, the newsletter that just keeps on giving&amp;hellip;.in this case, keeps giving you brand new open source projects to practice your four freedoms on. We have another great selection of projects for you as always, starting off with &amp;ldquo;cfn-teleport&amp;rdquo; an essential cli tool for Cloudformation users, &amp;ldquo;aither&amp;rdquo; an interesting collaborative development tool using virtualised desktops on containers, &amp;ldquo;tabular-column-semantic-search&amp;rdquo; a tool to help you find similar types of data in your data lakes, &amp;ldquo;resource-lister&amp;rdquo; and &amp;ldquo;komiser&amp;rdquo; tools that help you manage your AWS resources, &amp;ldquo;resource-utilization&amp;rdquo; helps you track your AWS resource utilisation, &amp;ldquo;iot-network-traffic-control-and-load-testing-simulator&amp;rdquo; an interesting load and chaos testing example, and more!</description>
+    </item>
+  </channel>
+</rss>

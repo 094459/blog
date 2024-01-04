@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="generator" content="Hugo 0.121.1">
+  
+  
+    <link rel="canonical" href="https://blog.beachgeek.co.uk/automating-your-elt-workflows-with-managed-workflows-for-apache-airflow---part-one/">
+  
+
+  
+
+  
+    
+    
+    
+    
+    
+
+  
+    <link rel="webmention" href="https://webmention.io/username.co.uk/webmention" />
+    <link rel="pingback" href="https://webmention.io/username.co.uk/xmlrpc" />
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://blog.beachgeek.co.uk/css/syntax.css" media="none" onload="this.media='all';">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://blog.beachgeek.co.uk/css/styles.css">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://blog.beachgeek.co.uk/style.main.css">
+
+  
+
+  <link rel="alternate" rel="canonical" href="https://blog.beachgeek.co.uk/index.xml" >
+  
+  <style id="inverter" media="none">
+    .intro-and-nav, .main-and-footer { filter: invert(100%) }
+    * { background-color: inherit }
+    img:not([src*=".svg"]), .colors, iframe, .demo-container { filter: invert(100%) }
+  </style>
+
+  
+  
+  <title>Automating your ELT Workflows with Managed Workflows for Apache Airflow - Part One | Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Automating your ELT Workflows with Managed Workflows for Apache Airflow - Part One"/>
+<meta name="twitter:description" content="update: I have changed the post to use standard Apache Airflow variables rather than using AWS Secrets Manager.
+Part One - Automating Amazon Athena As part of an upcoming DevDay event, I have been working on how you can use Apache Airflow to help automate your Extract, Load and Transform (ELT) Workflows. Amazon Athena and Amazon EMR are two AWS services that help customers who have existing SQL skills/expertise and are looking at tools such as Presto or Apache Hive when undertaking those transformations."/>
+<meta name="twitter:site" content="@094459"/>
+
+  <meta name="twitter:card" content="summary" />
+</head>
+
+  <body>
+    <a href="#main">skip to content</a>
+    <svg style="display: none">
+  <symbol id="bookmark" viewBox="0 0 40 50">
+   <g transform="translate(2266 3206.2)">
+    <path style="stroke:currentColor;stroke-width:3.2637;" d="m-2262.2-3203.4-.2331 42.195 16.319-16.318 16.318 16.318.2331-42.428z"/>
+   </g>
+  </symbol>
+
+  <symbol id="w3c" viewBox="0 0 127.09899 67.763">
+   <text font-size="83" style="font-size:83px;font-family:Trebuchet;letter-spacing:-12;fill-opacity:0" letter-spacing="-12" y="67.609352" x="-26.782778">W3C</text>
+   <text font-size="83" style="font-size:83px;font-weight:bold;font-family:Trebuchet;fill-opacity:0" y="67.609352" x="153.21722" font-weight="bold">SVG</text>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m33.695.377 12.062 41.016 12.067-41.016h8.731l-19.968 67.386h-.831l-12.48-41.759-12.479 41.759h-.832l-19.965-67.386h8.736l12.061 41.016 8.154-27.618-3.993-13.397h8.737z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m91.355 46.132c0 6.104-1.624 11.234-4.862 15.394-3.248 4.158-7.45 6.237-12.607 6.237-3.882 0-7.263-1.238-10.148-3.702-2.885-2.47-5.02-5.812-6.406-10.022l6.82-2.829c1.001 2.552 2.317 4.562 3.953 6.028 1.636 1.469 3.56 2.207 5.781 2.207 2.329 0 4.3-1.306 5.909-3.911 1.609-2.606 2.411-5.738 2.411-9.401 0-4.049-.861-7.179-2.582-9.399-1.995-2.604-5.129-3.912-9.397-3.912h-3.327v-3.991l11.646-20.133h-14.062l-3.911 6.655h-2.493v-14.976h32.441v4.075l-12.31 21.217c4.324 1.385 7.596 3.911 9.815 7.571 2.22 3.659 3.329 7.953 3.329 12.892z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.21 0 1.414 8.6-5.008 9.583s-1.924-4.064-5.117-6.314c-2.693-1.899-4.447-2.309-7.186-1.746-3.527.73-7.516 4.938-9.258 10.13-2.084 6.21-2.104 9.218-2.178 11.978-.115 4.428.58 7.043.58 7.043s-3.04-5.626-3.011-13.866c.018-5.882.947-11.218 3.666-16.479 2.404-4.627 5.954-7.404 9.114-7.728 3.264-.343 5.848 1.229 7.841 2.938 2.089 1.788 4.213 5.698 4.213 5.698l4.94-9.837z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.82 48.674s-2.208 3.957-3.589 5.48c-1.379 1.524-3.849 4.209-6.896 5.555-3.049 1.343-4.646 1.598-7.661 1.306-3.01-.29-5.807-2.032-6.786-2.764-.979-.722-3.486-2.864-4.897-4.854-1.42-2-3.634-5.995-3.634-5.995s1.233 4.001 2.007 5.699c.442.977 1.81 3.965 3.749 6.572 1.805 2.425 5.315 6.604 10.652 7.545 5.336.945 9.002-1.449 9.907-2.031.907-.578 2.819-2.178 4.032-3.475 1.264-1.351 2.459-3.079 3.116-4.108.487-.758 1.276-2.286 1.276-2.286l-1.276-6.644z"/>
+  </symbol>
+
+  <symbol id="tag" viewBox="0 0 177.16535 177.16535">
+    <g transform="translate(0 -875.2)">
+     <path style="fill-rule:evenodd;stroke-width:0;fill:currentColor" d="m159.9 894.3-68.79 8.5872-75.42 77.336 61.931 60.397 75.429-76.565 6.8495-69.755zm-31.412 31.835a10.813 10.813 0 0 1 1.8443 2.247 10.813 10.813 0 0 1 -3.5174 14.872l-.0445.0275a10.813 10.813 0 0 1 -14.86 -3.5714 10.813 10.813 0 0 1 3.5563 -14.863 10.813 10.813 0 0 1 13.022 1.2884z"/>
+    </g>
+  </symbol>
+
+  <symbol id="balloon" viewBox="0 0 141.73228 177.16535">
+   <g transform="translate(0 -875.2)">
+    <g>
+     <path style="fill:currentColor" d="m68.156 882.83-.88753 1.4269c-4.9564 7.9666-6.3764 17.321-5.6731 37.378.36584 10.437 1.1246 23.51 1.6874 29.062.38895 3.8372 3.8278 32.454 4.6105 38.459 4.6694-.24176 9.2946.2879 14.377 1.481 1.2359-3.2937 5.2496-13.088 8.886-21.623 6.249-14.668 8.4128-21.264 10.253-31.252 1.2464-6.7626 1.6341-12.156 1.4204-19.764-.36325-12.93-2.1234-19.487-6.9377-25.843-2.0833-2.7507-6.9865-7.6112-7.9127-7.8436-.79716-.20019-6.6946-1.0922-6.7755-1.0248-.02213.0182-5.0006-.41858-7.5248-.22808l-2.149-.22808h-3.3738z"/>
+     <path style="fill:currentColor" d="m61.915 883.28-3.2484.4497c-1.7863.24724-3.5182.53481-3.8494.63994-2.4751.33811-4.7267.86957-6.7777 1.5696-.28598 0-1.0254.20146-2.3695.58589-5.0418 1.4418-6.6374 2.2604-8.2567 4.2364-6.281 7.6657-11.457 18.43-12.932 26.891-1.4667 8.4111.71353 22.583 5.0764 32.996 3.8064 9.0852 13.569 25.149 22.801 37.517 1.3741 1.841 2.1708 2.9286 2.4712 3.5792 3.5437-1.1699 6.8496-1.9336 10.082-2.3263-1.3569-5.7831-4.6968-21.86-6.8361-33.002-.92884-4.8368-2.4692-14.322-3.2452-19.991-.68557-5.0083-.77707-6.9534-.74159-15.791.04316-10.803.41822-16.162 1.5026-21.503 1.4593-5.9026 3.3494-11.077 6.3247-15.852z"/>
+     <path style="fill:currentColor" d="m94.499 885.78c-.10214-.0109-.13691 0-.0907.0409.16033.13489 1.329 1.0675 2.5976 2.0723 6.7003 5.307 11.273 14.568 12.658 25.638.52519 4.1949.24765 14.361-.5059 18.523-2.4775 13.684-9.7807 32.345-20.944 53.519l-3.0559 5.7971c2.8082.76579 5.7915 1.727 8.9926 2.8441 11.562-11.691 18.349-19.678 24.129-28.394 7.8992-11.913 11.132-20.234 12.24-31.518.98442-10.02-1.5579-20.876-6.7799-28.959-.2758-.4269-.57803-.86856-.89617-1.3166-3.247-6.13-9.752-12.053-21.264-16.131-2.3687-.86369-6.3657-2.0433-7.0802-2.1166z"/>
+     <path style="fill:currentColor" d="m32.52 892.22c-.20090-.13016-1.4606.81389-3.9132 2.7457-11.486 9.0476-17.632 24.186-16.078 39.61.79699 7.9138 2.4066 13.505 5.9184 20.562 5.8577 11.77 14.749 23.219 30.087 38.74.05838.059.12188.1244.18052.1838 1.3166-.5556 2.5965-1.0618 3.8429-1.5199-.66408-.32448-1.4608-1.3297-3.8116-4.4602-5.0951-6.785-8.7512-11.962-13.051-18.486-5.1379-7.7948-5.0097-7.5894-8.0586-13.054-6.2097-11.13-8.2674-17.725-8.6014-27.563-.21552-6.3494.13041-9.2733 1.775-14.987 2.1832-7.5849 3.9273-10.986 9.2693-18.07 1.7839-2.3656 2.6418-3.57 2.4409-3.7003z"/>
+     <path style="fill:currentColor" d="m69.133 992.37c-6.2405.0309-12.635.76718-19.554 2.5706 4.6956 4.7759 9.935 10.258 12.05 12.625l4.1272 4.6202h11.493l3.964-4.4516c2.0962-2.3541 7.4804-7.9845 12.201-12.768-8.378-1.4975-16.207-2.6353-24.281-2.5955z"/>
+     <rect style="stroke-width:0;fill:currentColor" ry="2.0328" height="27.746" width="22.766" y="1017.7" x="60.201"/>
+    </g>
+   </g>
+  </symbol>
+
+  <symbol id="info" viewBox="0 0 41.667 41.667">
+   <g transform="translate(-37.035 -1004.6)">
+    <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m76.25 1030.2a18.968 18.968 0 0 1 -23.037 13.709 18.968 18.968 0 0 1 -13.738 -23.019 18.968 18.968 0 0 1 23.001 -13.768 18.968 18.968 0 0 1 13.798 22.984"/>
+    <g transform="matrix(1.1146 0 0 1.1146 -26.276 -124.92)">
+     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m75.491 1039.5v-8.7472"/>
+     <path style="stroke-width:0;fill:currentColor" transform="scale(-1)" d="m-73.193-1024.5a2.3719 2.3719 0 0 1 -2.8807 1.7142 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
+    </g>
+   </g>
+  </symbol>
+
+  <symbol id="warning" viewBox="0 0 48.430474 41.646302">
+    <g transform="translate(-1.1273 -1010.2)">
+     <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:4.151;fill:none" d="m25.343 1012.3-22.14 37.496h44.28z"/>
+     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:4.1512;fill:none" d="m25.54 1027.7v8.7472"/>
+     <path style="stroke-width:0;fill:currentColor" d="m27.839 1042.8a2.3719 2.3719 0 0 1 -2.8807 1.7143 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
+    </g>
+  </symbol>
+
+  <symbol id="menu" viewBox="0 0 50 50">
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="0" x="0"/>
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="20" x="0"/>
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="40" x="0"/>
+   </symbol>
+
+   <symbol id="link" viewBox="0 0 50 50">
+    <g transform="translate(0 -1002.4)">
+     <g transform="matrix(.095670 0 0 .095670 2.3233 1004.9)">
+      <g>
+       <path style="stroke-width:0;fill:currentColor" d="m452.84 192.9-128.65 128.65c-35.535 35.54-93.108 35.54-128.65 0l-42.881-42.886 42.881-42.876 42.884 42.876c11.845 11.822 31.064 11.846 42.886 0l128.64-128.64c11.816-11.831 11.816-31.066 0-42.9l-42.881-42.881c-11.822-11.814-31.064-11.814-42.887 0l-45.928 45.936c-21.292-12.531-45.491-17.905-69.449-16.291l72.501-72.526c35.535-35.521 93.136-35.521 128.64 0l42.886 42.881c35.535 35.523 35.535 93.141-.001 128.66zm-254.28 168.51-45.903 45.9c-11.845 11.846-31.064 11.817-42.881 0l-42.884-42.881c-11.845-11.821-11.845-31.041 0-42.886l128.65-128.65c11.819-11.814 31.069-11.814 42.884 0l42.886 42.886 42.876-42.886-42.876-42.881c-35.54-35.521-93.113-35.521-128.65 0l-128.65 128.64c-35.538 35.545-35.538 93.146 0 128.65l42.883 42.882c35.51 35.54 93.11 35.54 128.65 0l72.496-72.499c-23.956 1.597-48.092-3.784-69.474-16.283z"/>
+      </g>
+     </g>
+    </g>
+  </symbol>
+
+  <symbol id="doc" viewBox="0 0 35 45">
+   <g transform="translate(-147.53 -539.83)">
+    <path style="stroke:currentColor;stroke-width:2.4501;fill:none" d="m149.38 542.67v39.194h31.354v-39.194z"/>
+    <g style="stroke-width:25" transform="matrix(.098003 0 0 .098003 133.69 525.96)">
+     <path d="m220 252.36h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+     <path style="stroke:currentColor;stroke-width:25;fill:none" d="m220 409.95h200"/>
+     <path d="m220 488.74h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+     <path d="m220 331.15h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+    </g>
+   </g>
+ </symbol>
+
+ <symbol id="tick" viewBox="0 0 177.16535 177.16535">
+  <g transform="translate(0 -875.2)">
+   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="155" width="40" y="702.99" x="556.82"/>
+   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="40" width="90.404" y="817.99" x="506.42"/>
+  </g>
+ </symbol>
+</svg>
+
+    <div class="wrapper">
+      <header class="intro-and-nav" role="banner">
+  <div>
+    <div class="intro">
+      <a class="logo" href="https://blog.beachgeek.co.uk/" aria-label="Beachgeek blog - a refuge for pineapple on pizza lovers home page">
+        <img src="https://blog.beachgeek.co.uk/images/logo.svg" alt="My site icon">
+      </a>
+      <p class="library-desc">
+         Technologist and Maker specialising in Cloud, Open Source and Innovation. 
+      </p>
+    </div>
+    <nav id="patterns-nav" class="patterns" role="navigation">
+  <h2 class="vh">Main navigation</h2>
+  <button id="menu-button" aria-expanded="false">
+    <svg viewBox="0 0 50 50" aria-hidden="true" focusable="false">
+      <use xlink:href="#menu"></use>
+    </svg>
+    Menu
+  </button>
+  
+  <ul id="patterns-list">
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Home</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/post/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Blog posts</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/newsletter/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Newsletter</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/tags/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Tags</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/about/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">About</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/index.xml" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">RSS</span>
+      </a>
+    </li>
+  
+  </ul>
+</nav>
+  </div>
+</header>
+
+      <div class="main-and-footer">
+        <div>
+          
+  <main id="main">
+    <h1>
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+        <use xlink:href="#bookmark"></use>
+      </svg>
+      Automating your ELT Workflows with Managed Workflows for Apache Airflow - Part One
+    </h1>
+
+    <div class="date">
+      <p>
+        
+        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" aria-labelledby="calendarIconTitle" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#111"> <title id="calendarIconTitle">Calendar</title> <path d="M3 5H21V21H3V5Z"/> <path d="M21 9H3"/> <path d="M7 5V3"/> <path d="M17 5V3"/> </svg> Published Apr 21, 2021
+      </p>
+      
+      <p><svg role="img" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" aria-labelledby="stopwatchIconTitle" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#111"> <title id="stopwatchIconTitle">Stopwatch</title> <circle cx="12" cy="13" r="8"/> <path d="M12 9L12 13M18 7L20 5M15 2L9 2"/> </svg> Reading time 18&nbsp;minutes</p>
+      
+    </div>
+
+    
+      <div class="tags">
+        <strong>Tags: </strong>
+        <ul aria-label="tags">
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/apache-airflow">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                Apache Airflow
+              </a>
+            </li>
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/mwaa">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                mwaa
+              </a>
+            </li>
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/elt">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                ELT
+              </a>
+            </li>
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/amazon-athena">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                Amazon Athena
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    
+    
+    
+      
+
+
+    
+
+    <p><strong>update</strong>: <em>I have changed the post to use standard Apache Airflow variables rather than using AWS Secrets Manager.</em></p>
+<h3 id="part-one---automating-amazon-athena">Part One - Automating Amazon Athena</h3>
+<p>As part of an upcoming DevDay event, I have been working on  how you can use Apache Airflow to help automate your Extract, Load and Transform (ELT) Workflows. Amazon Athena and Amazon EMR are two AWS services that help customers who have existing SQL skills/expertise and are looking at tools such as Presto or Apache Hive when undertaking those transformations.</p>
+<p>This is a two part post, in this post I focus on Amazon Athena, and in <a href="https://dev.to/aws/automating-your-elt-workflows-with-managed-workflows-for-apache-airflow-1h1m">Part Two</a>, I look at Amazon EMR, Apache Hive and Presto.</p>
+<p>In this post I want to share how you can use open source tools like Apache Airflow to automate the manual steps your developers might run when using tools like Presto or Apache Hive. If you want to learn more about Apache Airflow, then head over to the project&rsquo;s website at <a href="https://airflow.apache.org">https://airflow.apache.org</a>.</p>
+<p>I guess a good question to ask is Why, Why do we need to automate these tasks? Here are some of the things that come to mind (this is not intended to be a comprehensive list but some of the reasons that for me, make sense):</p>
+<ul>
+<li>the ability to reproduce and repurpose the work these developers create so that it can be run when and at scale</li>
+<li>so you can separate the development of the code to the running of it</li>
+<li>reducing the time it takes to get value from your data by enabling code to be run on demand, for example being triggered when a new data payload is received</li>
+<li>adopting of modern development practices such as creation of data pipelines that check your code into source code, validate/test it and then deploy it automatically</li>
+</ul>
+<p>There are probably many more, but the outcome is the same - automating those pesky manual tasks is a good thing, and Apache Airflow is our friend here.</p>
+<h4 id="scenarios">Scenarios</h4>
+<p>In this post I will use two simple scenarios that are typical in many organisations looking at putting data in the hands of their builders. Imagine you have been asked to do any of the following:</p>
+<ul>
+<li>Create some new tables from data in your data lake, which is going to be used by the data visualisation and reporting team to create some dashboards and graphs from that data.</li>
+<li>Create some new data files in the data lake the data scientists need as they want to experiment and create new machine learning models.</li>
+</ul>
+<p>The persona that has been asked to do this will have database expertise, with a good understanding of SQL and looking to leverage that as part of the solution.</p>
+<p>You will find all the code for this demo at <a href="https://github.com/094459/devday-elt-automation">my repo location here</a></p>
+<p>I will not cover the manual steps that we will automate as they are detailed in the GitHub repo. The key takeaways from reading this post will (hopefully) be a clearer understanding of how you can automate the tasks you do in Amazon Athena and Amazon EMR using Apache Airflow. This should give you a good understanding of how to approach automating your own tasks.</p>
+<h4 id="setup">Setup</h4>
+<p>I am going to setup and use Managed Workflows for Apache Airflow (MWAA). I have documented in the past how to get this up and running in these blog posts, <a href="https://dev.to/aws/automating-the-installation-of-managed-workflows-for-apache-airflow-5h8a">Automating the installation and configuration of Amazon Managed Workflows for Apache Airflow</a> and I will be using a CI/CD setup that I shared how to setup in, <a href="https://dev.to/aws/a-simple-ci-cd-system-for-your-development-workflow-30b4">A simple CI/CD system for your Amazon Managed Workflows for Apache Airflow development workflow</a>. This setup gives me a super easy way to author my Apache Airflow workflows from my local IDE (Visual Studio Code as you asked so nicely:-) and then push this to a git repository and then deployed onto MWAA.</p>
+<p>There were a number of things I did need to do however, before I could automate these workflows.</p>
+<p><strong>Storing variables</strong></p>
+<p>I wanted to use Apache Airflow&rsquo;s ability to store variables so that I didn&rsquo;t have to hardcode my workflows (DAGs) so before creating these workflows, I created the following variables using the Apache Airflow UI.</p>
+<p><img src="https://raw.githubusercontent.com/094459/devday-elt-automation/main/images/airflow-variables.png" alt="screen of variables"></p>
+<p><strong>Permissions</strong></p>
+<p>From a permissions perspective I did have to make a couple of changes:</p>
+<ul>
+<li>I needed to increase the scope of the permissions that the MWAA execution role had within the Amazon S3 buckets. I do not provide a blanket access, so needed to add a few more resources. If you get any Access Denied errors, then make sure you have the right permissions</li>
+<li>I needed to add new permissions to allow the MWAA worker nodes to kick off and then terminate jobs on Amazon EMR. I scoped down the permissions to the minimum needed for the worker nodes to execute the workflows. I use the default policies when using Amazon EMR (EMR_DefaultRole and EC2_DefaultRole, so change yours as needed):</li>
+</ul>
+<pre><code>{
+    &quot;Version&quot;: &quot;2012-10-17&quot;,
+    &quot;Statement&quot;: [
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;ssm:GetParameter&quot;
+            ],
+            &quot;Resource&quot;: &quot;arn:aws:ssm:*: XXXXXXXXXXXX:parameter/*&quot;
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;elasticmapreduce:DescribeStep&quot;,
+                &quot;elasticmapreduce:AddJobFlowSteps&quot;,
+                &quot;elasticmapreduce:RunJobFlow&quot;,
+                &quot;elasticmapreduce:TerminateJobFlows&quot;
+            ],
+            &quot;Resource&quot;: &quot;arn:aws:elasticmapreduce:*: XXXXXXXXXXXX:cluster/*&quot;
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: &quot;iam:PassRole&quot;,
+            &quot;Resource&quot;: [
+                &quot;arn:aws:iam::XXXXXXXXXXXX:role/EC2_DefaultRole&quot;,
+                &quot;arn:aws:iam::XXXXXXXXXXXX:role/EMR_DefaultRole&quot;
+            ]
+        }
+    ]
+}
+</code></pre>
+<ul>
+<li>I needed to add new permissions to allow the MWAA worker nodes to access Amazon Athena, which required creating a new policy to scope down access to only what it needed. I used this page of the Amazon Athena documentation to help me scope what I needed - <a href="https://docs.aws.amazon.com/athena/latest/ug/fine-grained-access-to-glue-resources.html">Fine-Grained Access to Databases and Tables in the AWS Glue Data Catalog</a>. This is the one I used during my demo (the Amazon S3 bucket I was using as my data lake was devday-demo-airflow-sql, and the initial database in Amazon Athena was called Movielens. I set a prefix for all new Athena resources to be devday*. You might want to experiment further locking these permissions down if you want more control.</li>
+</ul>
+<pre><code>{
+    &quot;Version&quot;: &quot;2012-10-17&quot;,
+    &quot;Statement&quot;: [
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;athena:*&quot;
+            ],
+            &quot;Resource&quot;: [
+                &quot;*&quot;
+            ]
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;glue:CreateDatabase&quot;,
+                &quot;glue:DeleteDatabase&quot;,
+                &quot;glue:GetDatabase&quot;,
+                &quot;glue:GetDatabases&quot;,
+                &quot;glue:UpdateDatabase&quot;,
+                &quot;glue:CreateTable&quot;,
+                &quot;glue:DeleteTable&quot;,
+                &quot;glue:BatchDeleteTable&quot;,
+                &quot;glue:UpdateTable&quot;,
+                &quot;glue:GetTable&quot;,
+                &quot;glue:GetTables&quot;,
+                &quot;glue:BatchCreatePartition&quot;,
+                &quot;glue:CreatePartition&quot;,
+                &quot;glue:DeletePartition&quot;,
+                &quot;glue:BatchDeletePartition&quot;,
+                &quot;glue:UpdatePartition&quot;,
+                &quot;glue:GetPartition&quot;,
+                &quot;glue:GetPartitions&quot;,
+                &quot;glue:BatchGetPartition&quot;
+            ],
+            &quot;Resource&quot;: [
+                &quot;arn:aws:glue:*:XXXXXXXXXXXX:catalog&quot;,
+                &quot;arn:aws:glue:*:XXXXXXXXXXXX:database/default&quot;,
+                &quot;arn:aws:glue:*:XXXXXXXXXXXX:database/movielens&quot;,
+                &quot;arn:aws:glue:*:XXXXXXXXXXXX:database/devday-*&quot;
+            ]
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;s3:GetBucketLocation&quot;,
+                &quot;s3:GetObject&quot;,
+                &quot;s3:ListBucket&quot;,
+                &quot;s3:ListBucketMultipartUploads&quot;,
+                &quot;s3:ListMultipartUploadParts&quot;,
+                &quot;s3:AbortMultipartUpload&quot;,
+                &quot;s3:CreateBucket&quot;,
+                &quot;s3:PutObject&quot;
+            ],
+            &quot;Resource&quot;: [
+                &quot;arn:aws:s3:::aws-athena-query-results-*&quot;,
+                &quot;arn:aws:s3:::devday-demo-airflow-sql&quot;,
+                &quot;arn:aws:s3:::devday-demo-airflow-sql/*&quot;
+            ]
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;s3:GetObject&quot;,
+                &quot;s3:ListBucket&quot;
+            ],
+            &quot;Resource&quot;: [
+                &quot;arn:aws:s3:::devday-demo-airflow-sql&quot;,
+                &quot;arn:aws:s3:::devday-demo-airflow-sql/*&quot;
+            ]
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;s3:ListBucket&quot;,
+                &quot;s3:GetBucketLocation&quot;,
+                &quot;s3:ListAllMyBuckets&quot;
+            ],
+            &quot;Resource&quot;: [
+                &quot;arn:aws:s3:::devday-demo-airflow-sql&quot;,
+                &quot;arn:aws:s3:::devday-demo-airflow-sql/*&quot;
+            ]
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;sns:ListTopics&quot;,
+                &quot;sns:GetTopicAttributes&quot;
+            ],
+            &quot;Resource&quot;: [
+                &quot;*&quot;
+            ]
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;cloudwatch:PutMetricAlarm&quot;,
+                &quot;cloudwatch:DescribeAlarms&quot;,
+                &quot;cloudwatch:DeleteAlarms&quot;
+            ],
+            &quot;Resource&quot;: [
+                &quot;*&quot;
+            ]
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;lakeformation:GetDataAccess&quot;
+            ],
+            &quot;Resource&quot;: [
+                &quot;*&quot;
+            ]
+        }
+    ]
+}
+</code></pre>
+<ul>
+<li>As I am using AWS Secrets Managers to hold variables, I needed to allow the MWAA worker nodes permissions, so using the standard SecretsManagerReadWrite policy</li>
+</ul>
+<p>This is what the environment looks like - it is an approximation but hopefully lets you see visually all the moving parts.</p>
+<p><img src="https://github.com/094459/devday-elt-automation/blob/main/images/demo-arch.png?raw=true" alt="arch"></p>
+<p><strong>Automating Amazon Athena</strong></p>
+<p>To recap: We are using the Movielens dataset, loaded it into our data lake on Amazon S3 and we have been asked to a) create a new table with a subset of the information we care about, in this instance a particular genre of films, and b) create a new file with the same subset of information available in the data lake.</p>
+<p>As part of the set of manual steps we are trying to automate, we are creating Athena databases as well as creating tables and export files. As we are automating this, a lot of the stuff we would not need to do because we absorb that as part of the manual work (for example, I already have a database called XX, so I do not need to re-create that) we need to build into the workflow. So at a high level the steps look like:</p>
+<ul>
+<li>Check to see if a database exists and create it if it does not exist</li>
+<li>Create tables to import the movie and ratings data</li>
+<li>Create a new table that just contains the information we are looking for (in this example, films of a particular genre)</li>
+<li>Export the new table as a csv file, checking first to see if any old data exists and clearing it</li>
+<li>Move the export csv file to a new location in the data lake</li>
+</ul>
+<p>For this blog post, it doesn&rsquo;t really matter whether these are the best steps to achieve the task. Any task you set out to do will have a set of steps, with logic and conditions you need to think about, and interactions with external systems and data. So how do we go from that set of steps to a workflow?</p>
+<p>In Apache Airflow, you write your automation as a Directed Acylic Graph (or simply DAG) file, which is a file written in Python where you import Apache Airflow operators (either out of the box ones, third party open source or you can create your own) together with your own helper libraries. There are lots of tutorials and getting started guides that will help you understand more, and the one on the Apache Airflow documentation site is pretty good.</p>
+<p>When using Apache Airflow to automate tasks with Amazon Athena we can <a href="https://airflow.apache.org/docs/apache-airflow-providers-amazon/stable/_modules/airflow/providers/amazon/aws/operators/athena.html">use the Amazon Athena operator</a> which makes it super easy to submit queries as all we need to do is pass a query to the operator and it will take care of the rest.</p>
+<p>All we need to do is import the Python libraries and Apache Airflow operators we want to use. Here is my starting DAG code, importing the Apache Airflow operators I think I am going to use, as well as some addition Python libraries which I need as part of my code. How you know which ones to use will be determined by what you are trying to achieve in your tasks, although there are some typical ones you will tend to see in many workflows (for example, PythonOperator or DAG)</p>
+<pre><code>from airflow import DAG, settings, secrets
+from airflow.models import Variable
+from airflow.utils.trigger_rule import TriggerRule
+from airflow.utils.dates import days_ago
+
+from airflow.operators.python_operator import PythonOperator, BranchPythonOperator
+from airflow.operators.dummy_operator import DummyOperator
+
+from airflow.contrib.operators.aws_athena_operator import AWSAthenaOperator
+
+
+import os
+import sys
+import boto3
+import time
+</code></pre>
+<blockquote>
+<p>Note! As I am using MWAA, I know these libraries are already available to me. If you are using your own instance of Apache Airflow, you will need to make sure these libraries are installed (pip install&hellip;)</p>
+</blockquote>
+<p>Apache Airflow operators use a number of arguments, and so to reduce the amount of code we need to write, we can specify these in a section called &ldquo;default_args&rdquo; which will be used by each operator we define in our workflow. In our workflow we do not need to set any default arguments other then the typical defaults, so we can use the following.</p>
+<pre><code>default_args = {
+    'owner': 'airflow',
+    'depends_on_past': False,
+    'email': ['airflow@example.com'],
+    'email_on_failure': False,
+    'email_on_retry': False,
+    'retries': 1
+}
+
+</code></pre>
+<p>Next up we need to create a DAG object in which our tasks will live. There are a number of ways you can do this, so explore the different options. I am keeping it simple here for the purposes of explaining this workflow.</p>
+<p>When creating the DAG object that will represent our workflow, we set things like a name (you can use a string if you wanted, but here I am just assigning the filename to keep things simple), selecting the default_args which we just defined in the previous step, provide a description and then do a few other things. In the schedule, we can define how and when we want this workflow to run - you can think of this like a crontab. In this post I do not want to schedule this and just run it on demand, so I select None. If I wanted to run this daily, I might select @daily or @hourly - check the documentation to find out more. Finally, I can assign tags to the workflow so they are easy to find/search for.</p>
+<pre><code>DAG_ID = os.path.basename(__file__).replace('.py', '')
+dag = DAG(
+    dag_id=DAG_ID,
+    default_args=default_args,
+    description='DevDay Athena export SciFi DAG',
+    schedule_interval=None,
+    start_date=days_ago(2),
+    tags=['devday','demo'],
+)
+
+</code></pre>
+<p>Next we define some variables, and grab the values from AWS Secrets Manager. I am defining these three variables (assigning the value of &ldquo;undefined&rdquo; if it cannot grab the value):</p>
+<ul>
+<li>s3_dlake - is the location of my Amazon S3 data lake</li>
+<li>athena_db - is the name of the database we will create in Amazon Athena</li>
+<li>athena_output - this is the name of the folder under the s3_dlake where Amazon Athena queries are saved, these being generated when we use the Amazon Athena operator.</li>
+</ul>
+<pre><code>s3_dlake = Variable.get(&quot;s3_dlake&quot;, default_var=&quot;undefined&quot;)
+athena_db = Variable.get(&quot;athena_db&quot;, default_var=&quot;undefined&quot;)
+athena_output = Variable.get(&quot;athena_output&quot;, default_var=&quot;undefined&quot;)
+</code></pre>
+<p>Now onto the actual workflow. A workflow is just a series of tasks that are orchestrated. Using the list above, the first task we need to do is create the database. But what if the database already exists (perhaps this is the nth time we are running this workflow)? We need some basic decision making logic in our workflow.</p>
+<p>One of the ways we can achieve this is to use an Apache Airflow operator called BranchPythonOperator. We define our steps (check the database/create the database/skip the database creation) so what now. We can create this branch code using that operator as follows:</p>
+<pre><code>check_athena_database = BranchPythonOperator(
+    task_id='check_athena_database',
+    provide_context=True,
+    python_callable=check_athena_database,
+    dag=dag,
+)
+</code></pre>
+<p>We give this task a name as well as a task_id which we will use when we come to creating the dependency graph. We want to associate this task with the DAG object we instantiated above, so we use the dag=dag. We use the provide_context=True to enable Apache Airflow to pass keyword arguments in our functions and then we need to point to some code, so we define a function (in this example, it is called check_athena_database). But wait, where is this function?</p>
+<p>We need to create it, and importantly, we need to create it before this piece of code. This code is where we will put our logic for testing whether a database exists, and the logic that allows us to return a task within the workflow for either path of our branch.</p>
+<p>To check for the existence of the database, I use boto3 and some simple code which will return true if it finds it (the try: loop) and then return &ldquo;skip_athena_database_creation&rdquo; and generate an exception (the except: loop) and return &ldquo;create_athena_database&rdquo; - we have not created these Apache Airflow tasks yet, so lets do that next.</p>
+<p>Before we do that though, you may notice that we use the print statement here to help you log which branch the workflow will take. Any output from tasks will show up when you view logs as the workflow is running. Apache Airflow operators may emit their own information, but you can also add your own. Here is what the logs look like after this task has run:</p>
+<pre><code>[2021-04-19 13:30:48,996] {{standard_task_runner.py:78}} INFO - Job 116421: Subtask check_athena_database
+[2021-04-19 13:30:49,119] {{logging_mixin.py:112}} INFO - Running %s on host %s &lt;TaskInstance: devday-athena-create.check_athena_database 2021-04-19T13:30:30.821655+00:00 [running]&gt; ip-10-192-21-41.eu-west-1.compute.internal
+[2021-04-19 13:30:49,352] {{logging_mixin.py:112}} INFO - No Database Found
+[2021-04-19 13:30:49,411] {{python_operator.py:114}} INFO - Done. Returned value was: create_athena_database
+[2021-04-19 13:30:49,440] {{skipmixin.py:123}} INFO - Following branch create_athena_database
+[2021-04-19 13:30:49,507] {{skipmixin.py:149}} INFO - Skipping tasks ['skip_athena_database_creation']
+</code></pre>
+<p>Back to the code that checks to see whether the Amazon Athena database exists.</p>
+<pre><code>def check_athena_database(**kwargs):
+    ath = boto3.client('athena')
+    try:
+        response = ath.get_database(
+            CatalogName='AwsDataCatalog',
+            DatabaseName=athena_db
+        )
+        print(&quot;Database already exists - skip creation&quot;)
+        return &quot;skip_athena_database_creation&quot;
+    except:
+        print(&quot;No Database Found&quot;)
+        return &quot;create_athena_database&quot;
+        
+check_athena_database = BranchPythonOperator(
+    task_id='check_athena_database',
+    provide_context=True,
+    python_callable=check_athena_database,
+    dag=dag,
+)
+</code></pre>
+<p>We create the &ldquo;skip_athena_database_creation&rdquo; task first as this is the easiest as there is nothing to do. Here we use the DummyOperator, that does nothing. It is useful when we put these kinds of branches however.</p>
+<pre><code>skip_athena_database_creation = DummyOperator(
+    task_id=&quot;skip_athena_database_creation&quot;,
+    trigger_rule=TriggerRule.NONE_FAILED,
+    dag=dag,
+)
+</code></pre>
+<p>You will notice that we have &ldquo;trigger_rule=TriggerRule.NONE_FAILED&rdquo;. Trigger Rules are used by Apache Airflow to help you define rules that allow you to control the workflow based on how upstream (previous tasks) have completed in your workflow. The NONE_FAILED means that all previous steps must have been successful or skipped. This is all this task does.</p>
+<p>If we look at the &ldquo;create_athena_database&rdquo; task code, we can see this is a PythonOperator (rather than the BranchPythonOperator) and calls a python function called &ldquo;create_db&rdquo;</p>
+<pre><code>create_athena_database = PythonOperator (
+    task_id='create_athena_database',
+	provide_context=True,
+	python_callable=create_db,
+	dag=dag
+    )
+</code></pre>
+<p>If we look at the code for &ldquo;create_db&rdquo; we can see it is again using boto3 to create the database. In the function we pass in &ldquo;**kwargs&rdquo; which allows us to access within the code Apache Airflow arguments, such as variables we have defined and task information. You will also notice that in this code we are accessing the variables we defined earlier. We run this query (the CREATE DATABASE IF NOT EXISTS) with an output location that is &ldquo;s3://&rdquo; plus the value of the variable {s3_dlake}. This allows us to create re-usable tasks that are driven by input parameters/variables.</p>
+<pre><code>def create_db(**kwargs):
+    print(&quot;Creating the database if it does not exist&quot;)
+    ath = boto3.client('athena')
+    ath.start_query_execution(
+        QueryString='CREATE DATABASE IF NOT EXISTS '+ athena_db,
+        ResultConfiguration={'OutputLocation': 's3://{s3_dlake}/queries/'.format(s3_dlake=s3_dlake)},
+        WorkGroup=&quot;devday-demo&quot;
+        )
+</code></pre>
+<p>So no we have one final task to create. We have two flow so far - one that is for the creation of the database, and the other is for the skipping of the database. We used the BranchPythonOperator to direct which task to execute. We now need another task that both of these tasks converge towards, and we again use the DummyTask for this.</p>
+<pre><code>athena_database_checks_done = DummyOperator(
+    task_id=&quot;athena_database_checks_done&quot;,
+    trigger_rule=TriggerRule.NONE_FAILED,
+    dag=dag,
+)
+</code></pre>
+<p>We now have four tasks in our workflow. The next thing is to create the relationship of these tasks within the workflow. There are a few ways we can do this, but the way we will do it here is to use the &ldquo;&raquo;&rdquo; to define the relationship.</p>
+<pre><code>check_athena_database &gt;&gt; skip_athena_database_creation &gt;&gt; athena_database_checks_done
+check_athena_database &gt;&gt; create_athena_database &gt;&gt; athena_database_checks_done
+</code></pre>
+<p>When we save our workflow (DAG) and check it into source control (a reminder I am using my Simple CI/CD setup here) approx 20-30 seconds we will see our workflow appear in the Apache Airflow UI.</p>
+<p><img src="https://github.com/094459/devday-elt-automation/blob/main/images/blog-1.png?raw=true" alt="flow"></p>
+<p>So far so good. The next step we want to automate is the population of the movies and ratings tables within this database. For this we can use the AWSAthenaOperator. Before we can use this, we need to define the query we want to run. As we want to create two tables, we need two queries, so our code looks like this:</p>
+<pre><code>create_athena_movie_table_query=&quot;&quot;&quot;
+CREATE EXTERNAL TABLE IF NOT EXISTS {database}.movies (
+  `movieId` int,
+  `title` string,
+  `genres` string 
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe'
+WITH SERDEPROPERTIES (
+  'serialization.format' = ',',
+  'field.delim' = ','
+) LOCATION 's3://{s3_dlake}/movielens/movies/'
+TBLPROPERTIES (
+  'has_encrypted_data'='false',
+  'skip.header.line.count'='1'
+); 
+&quot;&quot;&quot;.format(database=athena_db, s3_dlake=s3_dlake)
+
+create_athena_ratings_table_query=&quot;&quot;&quot;
+CREATE EXTERNAL TABLE IF NOT EXISTS {database}.ratings (
+  `userId` int,
+  `movieId` int,
+  `rating` int,
+  `timestamp` bigint 
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe'
+WITH SERDEPROPERTIES (
+  'serialization.format' = ',',
+  'field.delim' = ','
+) LOCATION 's3://{s3_dlake}/movielens/ratings/'
+TBLPROPERTIES (
+  'has_encrypted_data'='false',
+  'skip.header.line.count'='1'
+); 
+&quot;&quot;&quot;.format(database=athena_db, s3_dlake=s3_dlake)
+</code></pre>
+<p>We have assigned two variables, &ldquo;create_athena_movie_table_query&rdquo; and &ldquo;create_athena_ratings_table_query&rdquo;. As you can see, we are again using variables so we do not need to hard code the references (the code could be improved by adding more variables for the source data in movielens/* - it is in my backlog!). These queries should look familiar as they are the same ones we ran via the Amazon Athena console.</p>
+<p>We now create the task that will create these tables using the AWSAthenaOperator as follows:</p>
+<pre><code>create_athena_movie_table = AWSAthenaOperator(
+    task_id=&quot;create_athena_movie_table&quot;,
+    query=create_athena_movie_table_query, 
+    workgroup = &quot;devday-demo&quot;, 
+    database=athena_db,
+    output_location='s3://'+s3_dlake+&quot;/&quot;+athena_output+'create_athena_movie_table'
+    )
+create_athena_ratings_table = AWSAthenaOperator(
+    task_id=&quot;create_athena_movie_ratings&quot;,
+    query=create_athena_ratings_table_query, 
+    workgroup = &quot;devday-demo&quot;, 
+    database=athena_db,
+    output_location='s3://'+s3_dlake+&quot;/&quot;+athena_output+'create_athena_ratings_table'
+    )
+</code></pre>
+<p>These should begin to look familiar now. Each Operator can have different arguments, and this one requires a &ldquo;query=&rdquo; which we point to the variables we defined in the previous step, we define the. Amazon Athena workgroup we want to run this query in, the Amazon Athena database and then the location where the queries will be saved.</p>
+<p>Now we have defined these, we need to include them in the actual workflow. We add these to the original so we end up with the following:</p>
+<pre><code>check_athena_database &gt;&gt; skip_athena_database_creation &gt;&gt; athena_database_checks_done
+check_athena_database &gt;&gt; create_athena_database &gt;&gt; athena_database_checks_done
+
+athena_database_checks_done &gt;&gt; create_athena_movie_table &gt;&gt; create_athena_ratings_table 
+</code></pre>
+<p>After committing our code, a few seconds later our workflow now looks like:</p>
+<p><img src="https://github.com/094459/devday-elt-automation/blob/main/images/blog-2.png?raw=true" alt="flow"></p>
+<p>I will not repeat for the remaining tasks, as you should have the idea by now. You can check out the full code in the GitHub repository. I did end up breaking this workflow into two workflows, but they could have been combined into a single one. How you decide will be down to what you are trying to automate, whether there are any tasks that make sense to group together (perhaps they might be run more frequently, or need to be run first or in a specific order).</p>
+<p>One thing however that I do want to point out is that in the second workflow (devday-athena-export.py) you will notice that rather than the &ldquo;&raquo;&rdquo; to define the relationship between the tasks, we use the following:</p>
+<pre><code>check_athena_export_table.set_upstream(disp_variables)
+</code></pre>
+<p>you can use &ldquo;.set_upstream&rdquo; or &ldquo;.set_downstream&rdquo; to define the relationship between the tasks if you prefer.</p>
+<p><strong>Running the workflow</strong></p>
+<p>After committing the code you should have the workflows available in the Apache Airflow UI and can then trigger them via the UI. As each step starts, runs and then completes, you should be able to see the information and logs produced (including any of the Print statements included in the DAG).</p>
+<p>Once the workflow has completed, you should now see back in the Amazon Athena console a new database (in my case, a new database called devdays_scifimovies) and within this I have a new table (in my case, I had a table called scifi which contained just a subset of the Movielens data that had been tagged with the scifi genre). If I explore the data lake on Amazon S3, and go to the Movielens folder, I notice that I now also have a new exported csv file which contains the same data.</p>
+<p>{% youtube I0ghfwIL1ps %}</p>
+<p>This completes the automation of those manual tasks. We have the new tables and we have exported new data into the data lake. Now that we have covered how to do this for Amazon Athena, in the next post we will cover Amazon EMR.</p>
+<p>Take me to <a href="https://dev.to/aws/automating-your-elt-workflows-with-managed-workflows-for-apache-airflow-1h1m">Post Two</a></p>
+
+  </main>
+
+          <div class="social-heading">
+            <div class="footer-social">
+  
+    <div class="social-icon">
+      <a href="https://twitter.com/094459" target="_blank" title="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Twitter" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://github.com/094459" target="_blank" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="GitHub" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+      </a>
+    </div>
+  
+  
+    <div class="social-icon">
+      <a href="https://www.linkedin.com/in/ricardosueiras" target="_blank" title="Linkedin">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="LinkedIn" role="img"
+viewBox="0 0 512 512"
+fill="#fff"><rect
+width="512" height="512"
+rx="15%"
+fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://www.reddit.com/r/aws" target="_blank" title="Reddit">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Reddit" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+      </a>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="social-icon">
+      <a href="mailto:ricsue@amazon.com" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Email" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="teal"/><rect width="356" height="256" x="78" y="128" fill="#fff" rx="8%"/><path fill="none" stroke="teal" stroke-width="20" d="M434 128L269 292c-7 8-19 8-26 0L78 128m0 256l129-128m227 128L305 256"/></svg>
+      </a>
+    </div>
+  
+  
+</div>
+
+          </div>
+          <footer role="contentinfo">
+  <div class="social-footer">
+    <div class="footer-social">
+  
+    <div class="social-icon">
+      <a href="https://twitter.com/094459" target="_blank" title="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Twitter" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://github.com/094459" target="_blank" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="GitHub" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+      </a>
+    </div>
+  
+  
+    <div class="social-icon">
+      <a href="https://www.linkedin.com/in/ricardosueiras" target="_blank" title="Linkedin">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="LinkedIn" role="img"
+viewBox="0 0 512 512"
+fill="#fff"><rect
+width="512" height="512"
+rx="15%"
+fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://www.reddit.com/r/aws" target="_blank" title="Reddit">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Reddit" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+      </a>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="social-icon">
+      <a href="mailto:ricsue@amazon.com" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Email" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="teal"/><rect width="356" height="256" x="78" y="128" fill="#fff" rx="8%"/><path fill="none" stroke="teal" stroke-width="20" d="M434 128L269 292c-7 8-19 8-26 0L78 128m0 256l129-128m227 128L305 256"/></svg>
+      </a>
+    </div>
+  
+  
+</div>
+
+    <label for="themer">
+      dark theme: <input type="checkbox" id="themer" class="vh">
+      <span aria-hidden="true"></span>
+    </label>
+  </div>
+  
+    <p class="margin-top-none">Copyright &copy; <span id="copyright-year"></span> - Ricardo Sueiras</p>
+  
+  
+    <p class="margin-top-none">
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cupper-hugo-theme">Cupper</a>.
+    </p>
+  
+</footer>
+<script>
+    var year = new Date().getFullYear()
+    document.getElementById("copyright-year").innerHTML = year;
+</script>
+
+        </div>
+      </div>
+    </div>
+    <script src="https://blog.beachgeek.co.uk/js/prism.js"></script>
+
+
+
+<script src="https://blog.beachgeek.co.uk/js/dom-scripts.js"></script>
+
+
+
+<script src="/js/search.7aef046a0cc8b0c532f1d20087b920459bc868c936bb48a6ae221eceefca2d07.js"></script>
+
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  </body>
+</html>

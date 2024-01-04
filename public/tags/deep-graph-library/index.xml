@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deep Graph Library on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/deep-graph-library/</link>
+    <description>Recent content in Deep Graph Library on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 12 Aug 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/deep-graph-library/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source news and updates #124</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-124/</link>
+      <pubDate>Fri, 12 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-124/</guid>
+      <description>August, 12th, 2022 - Instalment #124 Welcome&#xA;Welcome to edition #124 of the AWS open source newsletter. This is a very special edition as this will be the first edition that we cover in the new Build on AWS Open Source fortnight show on twitch.tv/aws. I hope some of you were able to attend, but if not don&amp;rsquo;t worry we will be sharing links to the recording. To keep up to date on future episodes, make sure you follow @buildonopen.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #122</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-122/</link>
+      <pubDate>Fri, 29 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-122/</guid>
+      <description>July 29th, 2022 - Instalment #122 Welcome&#xA;Welcome back to my regular readers and hello to new readers, I hope you will enjoy and come back again to the AWS open source newsletter episode #122.&#xA;This week we have another great collection of community and AWS related open source tools, demos and samples for you to practice your open source four freedoms. &amp;ldquo;rds_auto_encrypt&amp;rdquo; helps you encrypt your Amazon RDS databases, &amp;ldquo;middy-profiler&amp;rdquo; is an interesting looking tool to help you understand performance characteristics of your AWS Lambda functions, &amp;ldquo;simpleiot&amp;rdquo; is a very nice looking IoT framework to help simplify how you can onboard devices into AWS IoT, &amp;ldquo;aws-secrets-manager-hybrid-secret-replication-from-hashicorp-vault&amp;rdquo; (bit of a mouthful to say that one) helps you synchronise your secrets across different secret providers, &amp;ldquo;automated-forensic-orchestrator-for-amazon-ec2&amp;rdquo; is a very nice reference solution for automating some of your operational security activities, and we have several other projects for you to dive deep into.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #96</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-96/</link>
+      <pubDate>Mon, 17 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-96/</guid>
+      <description>Jan 17th, 2022 - Instalment #96 Newsletter #96.&#xA;Welcome to another great round up of open source projects, news and great content. This week, we have new open source projects such as Event Catalog (that helps you to discover, explore and document your Event Driven Architectures), AWS Powertools for Lambda TypeScript edition, flowdog (an application/framework for inspection and manipulation of network traffic in AWS VPCs), ai-doorbell (a serverless AI enabled door bell) and many more.</description>
+    </item>
+  </channel>
+</rss>

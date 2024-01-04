@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS IoT Greengrass v2 on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/aws-iot-greengrass-v2/</link>
+    <description>Recent content in AWS IoT Greengrass v2 on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 18 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/aws-iot-greengrass-v2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source news and updates #139</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-139/</link>
+      <pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-139/</guid>
+      <description>December 18th, 2022 - Instalment #139 Welcome&#xA;Welcome to the last AWS open source newsletter of 2022, edition #139. I am planning on take a few weeks off to recharge, and wish readers of this newsletter a fabulous Christmas and New Year. Over 100K of you have read this newsletter, so I want to thank you all for your continued support. This newsletter is only possible because of the passion and enthusiasm of open source Builders, and I look forward to seeing what 2023 will bring.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #124</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-124/</link>
+      <pubDate>Fri, 12 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-124/</guid>
+      <description>August, 12th, 2022 - Instalment #124 Welcome&#xA;Welcome to edition #124 of the AWS open source newsletter. This is a very special edition as this will be the first edition that we cover in the new Build on AWS Open Source fortnight show on twitch.tv/aws. I hope some of you were able to attend, but if not don&amp;rsquo;t worry we will be sharing links to the recording. To keep up to date on future episodes, make sure you follow @buildonopen.</description>
+    </item>
+  </channel>
+</rss>

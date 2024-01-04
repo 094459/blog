@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Anthropic Claude on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/anthropic-claude/</link>
+    <description>Recent content in Anthropic Claude on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/anthropic-claude/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unboxing Ragna: Getting hands on and making it to work with Amazon Bedrock</title>
+      <link>https://blog.beachgeek.co.uk/getting-started-with-ragna/</link>
+      <pubDate>Sun, 12 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/getting-started-with-ragna/</guid>
+      <description>Unboxing Ragna: Getting hands on and making it to work with Amazon Bedrock I am always on the look out for interesting new projects to check out, and this week I came across Ragna, an open source Retrieval Augmented Generation RAG orchestration framework. It is a new project with a committed and active community, so I wanted to find out more about this project.&#xA;What piqued my interest was reading this blog post, Unveiling Ragna: An Open Source RAG-based AI Orchestration Framework Designed to Scale From Research to Production which takes a look at the background, or as I like to think of it, the &amp;ldquo;scratch that needed to be itched&amp;rdquo;.</description>
+    </item>
+  </channel>
+</rss>

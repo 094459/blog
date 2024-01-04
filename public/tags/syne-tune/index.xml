@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Syne Tune on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/syne-tune/</link>
+    <description>Recent content in Syne Tune on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/syne-tune/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source news and updates #119</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-119/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-119/</guid>
+      <description>July 1st, 2022 - Instalment #119 Welcome to regular and new readers alike, to the AWS open source newsletter episode #119.&#xA;This week we feature more new open source projects, such as &amp;ldquo;cdk-bill-bot&amp;rdquo;, a tool that can help you reduce AWS bill surprises, &amp;ldquo;steampipe-mod-aws-perimeter&amp;rdquo; helps you look for resources that are publicly accessible, &amp;ldquo;aws-cloudformation-diagrams&amp;rdquo; is a nice visualisation tool for CloudFormation users, &amp;ldquo;aws-swagger-ui&amp;rdquo; a project to help you set up Swagger UI for API Gateway, &amp;ldquo;kinesis-hot-shard-advisor&amp;rdquo; a handy tool that helps you identify whether you have hot key or hot shard issues on your Kinesis data streams, and many more.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #101</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-101/</link>
+      <pubDate>Mon, 21 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-101/</guid>
+      <description>Feb 21st, 2022 - Instalment #101 Newsletter #101.&#xA;There is nothing basic and fundamental about edition 101 of the AWS open source newsletter, with another great round up of new open source projects including eks-creation-engine from the folks at Lightspin helping you all to stay safer with this handy tool you should check out, idp-scim-sync to help users of AWS SSO who want to synchronise with their Google Workspace Directory, typecart an analysis tool for proof evolution and many other great projects and sample code.</description>
+    </item>
+  </channel>
+</rss>

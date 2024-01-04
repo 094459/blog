@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>datree on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/datree/</link>
+    <description>Recent content in datree on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/datree/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #159</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-159/</link>
+      <pubDate>Mon, 05 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-159/</guid>
+      <description>June 5th, 2023 - Instalment #159 Welcome to #159 of the AWS open source newsletter, where we try and share all the important open source news, projects, events, and content that open source builders want. This week we have new projects that include tools to help you generate test data, an accelerator for stable diffusion, tools to help you with managing application credentials and variables, a new connector for Apache Kafka, and more!</description>
+    </item>
+  </channel>
+</rss>

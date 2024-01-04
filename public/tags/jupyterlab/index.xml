@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JupyterLab on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/jupyterlab/</link>
+    <description>Recent content in JupyterLab on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 22 May 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/jupyterlab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #157</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-157/</link>
+      <pubDate>Mon, 22 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-157/</guid>
+      <description>May 22nd, 2023 - Instalment #157 Welcome&#xA;Hello and welcome to the AWS open source newsletter, #157. Apologies for the lack of newsletter last week, but hopefully this week will make up for that as we have a bumper selection of great open source content for you. This weeks new projects include repos that help you get OpenEMR up and running (&amp;ldquo;host-openemr-on-aws-fargate&amp;rdquo;), two new security related open source projects that you definitely need to check out, (&amp;ldquo;cedar&amp;rdquo; and &amp;ldquo;snapchange&amp;rdquo;), integration of clickstream analytics using Swift (&amp;ldquo;clickstream-swift&amp;rdquo;), deployment of Backstage to serve up access to your AWS resources, (&amp;ldquo;app-development-for-backstage-io-on-aws&amp;rdquo;), a tool to help you clean up ecs tasks definitions (&amp;ldquo;aws-ecs-task-definition-cleanup&amp;rdquo;) and many more.</description>
+    </item>
+  </channel>
+</rss>

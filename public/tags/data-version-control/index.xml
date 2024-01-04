@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Version Control on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/data-version-control/</link>
+    <description>Recent content in Data Version Control on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/data-version-control/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source news and updates #120</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-120/</link>
+      <pubDate>Fri, 15 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-120/</guid>
+      <description>July 15th, 2022 - Instalment #120 Welcome to regular and new readers alike, to the AWS open source newsletter episode #120.&#xA;The observant will have noticed that it has been two weeks since the last newsletter. We all need some time off, and I spent most of the time cycling around the hills of a new cycle route called King Alfreds Way - highly recommended.&#xA;There has been some great new projects created over the past couple of weeks, and of course I have you covered and have shared them below.</description>
+    </item>
+  </channel>
+</rss>

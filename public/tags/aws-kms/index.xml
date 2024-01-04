@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS KMS on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/aws-kms/</link>
+    <description>Recent content in AWS KMS on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 31 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/aws-kms/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting hands on with Sigstore Cosign on AWS</title>
+      <link>https://blog.beachgeek.co.uk/getting-hands-on-with-sigstore-cosign-on-aws/</link>
+      <pubDate>Tue, 31 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/getting-hands-on-with-sigstore-cosign-on-aws/</guid>
+      <description>Getting hands on with Sigstore Cosign on AWS I am currently putting together some content around how you can use a number of open source tools to help build a stronger defence against common software supply chain attacks. In this blog post, I look at emerging tools from Sigstore, and focus in this post on Cosign, a tool that supports container image signing, verification, and storage in an Open Container Initiative (OCI) registry.</description>
+    </item>
+    <item>
+      <title>Setting up MWAA to use a KMS key</title>
+      <link>https://blog.beachgeek.co.uk/setting-up-mwaa-to-use-a-kms-key/</link>
+      <pubDate>Tue, 14 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/setting-up-mwaa-to-use-a-kms-key/</guid>
+      <description>Introduction In a previous post, I shared how you can using AWS CDK to provision your Apache Airflow environments using the Managed Workflows for Apache Airflow service (MWAA).&#xA;I was contacted this week by Michael Grabenstein, who flagged an issue with the code in that post. The post used code that configured a kms key for the MWAA environment, but when trying to deploy the app it would fail with the following error:</description>
+    </item>
+  </channel>
+</rss>

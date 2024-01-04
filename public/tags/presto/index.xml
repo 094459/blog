@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Presto on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/presto/</link>
+    <description>Recent content in Presto on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/presto/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automating your ELT Workflows with Managed Workflows for Apache Airflow - Part Two</title>
+      <link>https://blog.beachgeek.co.uk/automating-your-elt-workflows-with-managed-workflows-for-apache-airflow---part-two/</link>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/automating-your-elt-workflows-with-managed-workflows-for-apache-airflow---part-two/</guid>
+      <description>Part Two - Automating Amazon EMR In Part One, we automated an example ELT workflow on Amazon Athena using Apache Airflow. In this post, Part Two, we will do the same thing but automate the same example ELT workflow using Amazon EMR.&#xA;Make sure you recap the setup from Part One. All the code so you can reproduce this yourself can be found in the GitHub repository here.&#xA;Automating Amazon EMR</description>
+    </item>
+  </channel>
+</rss>

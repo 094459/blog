@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unified ID on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/unified-id/</link>
+    <description>Recent content in Unified ID on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/unified-id/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source news and updates #118</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-118/</link>
+      <pubDate>Fri, 24 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-118/</guid>
+      <description>June 24th, 2022 - Instalment #118 Welcome to regular and new readers alike, to the AWS open source newsletter episode #118.&#xA;This week we feature more new open source projects, such as &amp;ldquo;seed-farmer&amp;rdquo;, and orchestration tool modelled after GitOps deployments, &amp;ldquo;aws-proton-plugins-for-backstage&amp;rdquo; Backstage plugins for interacting with AWS Proton, &amp;ldquo;dcv-gnome-shell-extension&amp;rdquo; is a GNOME Shell extension to provide functionalities required by NICE DCV, &amp;ldquo;simpleiot-arduino&amp;rdquo; an Arduino library to integrate with the SimpleIOT framework, &amp;ldquo;event-driven-weather-forecasts&amp;rdquo; an event driven weather forecasting demo, and many more.</description>
+    </item>
+  </channel>
+</rss>

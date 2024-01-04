@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS CodeCommit on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/aws-codecommit/</link>
+    <description>Recent content in AWS CodeCommit on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/aws-codecommit/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A simple CI/CD system for your Amazon Managed Workflows for Apache Airflow development workflow</title>
+      <link>https://blog.beachgeek.co.uk/a-simple-cicd-system-for-your-amazon-managed-workflows-for-apache-airflow-development-workflow/</link>
+      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/a-simple-cicd-system-for-your-amazon-managed-workflows-for-apache-airflow-development-workflow/</guid>
+      <description>updated Feb 19th&#xA;Part of a series of posts to support an up-coming online event, the Innovate AI/ML on February 24th, from 9:00am GMT - you can sign up here&#xA;Part 1 - Installation and configuration of Managed Workflows for Apache Airflow Part 2 - Working with Permissions Part 3 - Accessing Amazon Managed Workflows for Apache Airflow Part 4 - Interacting with Amazon Managed Workflows for Apache Airflow via the command line Part 5 - A simple CI/CD system for your development workflow &amp;lt;- this post Part 6 - Monitoring and logging Part 7 - Automating a simple AI/ML pipeline with Apache Airflow In this post I will be covering Part 5, how you can setup a very simple CI/CD setup to enable faster development of your Apache Airflow DAGs.</description>
+    </item>
+  </channel>
+</rss>

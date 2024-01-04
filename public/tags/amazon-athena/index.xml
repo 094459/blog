@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Amazon Athena on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/amazon-athena/</link>
+    <description>Recent content in Amazon Athena on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/amazon-athena/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automating your ELT Workflows with Managed Workflows for Apache Airflow - Part One</title>
+      <link>https://blog.beachgeek.co.uk/automating-your-elt-workflows-with-managed-workflows-for-apache-airflow---part-one/</link>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/automating-your-elt-workflows-with-managed-workflows-for-apache-airflow---part-one/</guid>
+      <description>update: I have changed the post to use standard Apache Airflow variables rather than using AWS Secrets Manager.&#xA;Part One - Automating Amazon Athena As part of an upcoming DevDay event, I have been working on how you can use Apache Airflow to help automate your Extract, Load and Transform (ELT) Workflows. Amazon Athena and Amazon EMR are two AWS services that help customers who have existing SQL skills/expertise and are looking at tools such as Presto or Apache Hive when undertaking those transformations.</description>
+    </item>
+  </channel>
+</rss>

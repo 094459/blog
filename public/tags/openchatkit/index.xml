@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenChatkit on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/openchatkit/</link>
+    <description>Recent content in OpenChatkit on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 19 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/openchatkit/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #161</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-161/</link>
+      <pubDate>Mon, 19 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-161/</guid>
+      <description>June 19th, 2023 - Instalment #161 Welcome to #161 of the AWS open source newsletter, and another week for fresh, new open source projects and code for you to practice your four freedoms. This weeks projects include tools that will help you create temporary elevated credentials, a new Java library that provides methods for encrypting and decrypting cryptographic materials, an AWS DynamoDB wrapper for Node/TypeScript developers, and a solution to help you find and visualise data assets.</description>
+    </item>
+  </channel>
+</rss>

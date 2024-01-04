@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>syft on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/syft/</link>
+    <description>Recent content in syft on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 21 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/syft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #170</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-170/</link>
+      <pubDate>Mon, 21 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-170/</guid>
+      <description>August 21st, 2023 - Instalment #170 Welcome to edition #170 of the AWS open source newsletter, an oasis of open source goodness that features the latest new projects, essential reading, and must view videos to quench the thirst of every open source developer. This weeks edition we have new projects that help you get on top of your IAM actions, a handy tool for knowing what your current AWS account service limits are from the command line, a tool to help you do database migrations, and some interesting and very detailed reference solutions for gaming, live streaming, and managing/exporting of your Amazon Cognito profiles.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #144</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-144/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-144/</guid>
+      <description>Feb 5th, 2023 - Instalment #144 Welcome to edition #144 of the AWS open source newsletter, and another week of great new open source projects for you to try out. Some of the treats in store for you this week include &amp;ldquo;dynamodb-shell&amp;rdquo;, a project that provides a cli to your favourite AWS database, &amp;ldquo;precloud&amp;rdquo; a tool to help you catch issues with your configuration before you deploy, &amp;ldquo;node-latency-for-k8s&amp;rdquo; a tool to analyse your node logs, &amp;ldquo;stepfunctions-lambda-ec2-ssm&amp;rdquo; a very nice way of using step functions to overcome the 15 minute timeout of your lambda functions, &amp;ldquo;terraform-ec2-image-builder-container-hardening-pipeline&amp;rdquo; a very cool example of how to build an EC2 image hardening pipeline using Terraform, and &amp;ldquo;cloudtrail-event-fuzzy-viewer&amp;rdquo; a tool to copy your AWS CloudTrail events and then fuzzy search them on the command line.</description>
+    </item>
+    <item>
+      <title>Building a software bill of materials (SBOM) using open source tools</title>
+      <link>https://blog.beachgeek.co.uk/building-sbom-with-syft/</link>
+      <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/building-sbom-with-syft/</guid>
+      <description>This is the second post exploring how you can use open source tools to help you build a stronger defence against common software supply chain attacks. In this blog post, I look at syft, an open source CLI tool and Go library for generating a Software Bill of Materials (SBOM) from container images and filesystems. We will use examples and build on the previous post, Getting hands on with Sigstore Cosign on AWS.</description>
+    </item>
+  </channel>
+</rss>

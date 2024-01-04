@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flutter on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/flutter/</link>
+    <description>Recent content in Flutter on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/flutter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #154</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-154/</link>
+      <pubDate>Mon, 24 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-154/</guid>
+      <description>April 24th, 2023 - Instalment #154 Welcome&#xA;Hello and welcome to the AWS open source newsletter, #154, the newsletter that just keeps on giving&amp;hellip;.in this case, keeps giving you brand new open source projects to practice your four freedoms on. We have another great selection of projects for you as always, starting off with &amp;ldquo;cfn-teleport&amp;rdquo; an essential cli tool for Cloudformation users, &amp;ldquo;aither&amp;rdquo; an interesting collaborative development tool using virtualised desktops on containers, &amp;ldquo;tabular-column-semantic-search&amp;rdquo; a tool to help you find similar types of data in your data lakes, &amp;ldquo;resource-lister&amp;rdquo; and &amp;ldquo;komiser&amp;rdquo; tools that help you manage your AWS resources, &amp;ldquo;resource-utilization&amp;rdquo; helps you track your AWS resource utilisation, &amp;ldquo;iot-network-traffic-control-and-load-testing-simulator&amp;rdquo; an interesting load and chaos testing example, and more!</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #137</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-137/</link>
+      <pubDate>Fri, 25 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-137/</guid>
+      <description>November 25th, 2022 - Instalment #137 Welcome&#xA;Welcome to the AWS open source newsletter, edition #137. As it is re:Invent next week, I will be publishing the newsletter early as I am heading out on Monday. I will be in Las Vegas talking with open source Builders, hanging out on the Open Source Kiosk in the AWS Village, and doing some talks. If you are coming, I would love to meet some of you, so get in touch.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #123</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-123/</link>
+      <pubDate>Fri, 05 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-123/</guid>
+      <description>August, 5th, 2022 - Instalment #123 Welcome&#xA;Welcome to the AWS open source newsletter episode #123.&#xA;I sometimes speak with builders who are experienced developers but perhaps new to open source. A common question I get asked is what the impact of them working on open source might be on their careers. Whilst it is never a guarantee, open source can be a great career accelerator. I was reminded of that last week when reading the excellent post from Ran Isenberg, who shared his experience in his post How One Open-Source Code Donation Got Me Promoted.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #117</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-117/</link>
+      <pubDate>Fri, 17 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-117/</guid>
+      <description>June 17th, 2022 - Instalment #117 Welcome to regular and new readers alike, to the AWS open source newsletter episode #117.&#xA;A little behind schedule this week, as I have been speaking at a couple of events this week. It has been good to get back on the stage and to talk and engage with real people. It seems that things are quickly returning back to normal. So this week we have some great new projects for you.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #116</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-116/</link>
+      <pubDate>Fri, 10 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-116/</guid>
+      <description>June 10th, 2022 - Instalment #116 Welcome to regular and new readers alike, to the AWS open source newsletter episode #116.&#xA;Another selection of useful and interesting new open source projects for you to try out this week. First up, we have &amp;ldquo;aws-exec&amp;rdquo; a tool to help you do adhoc shell execution in AWS Lambda functions, &amp;ldquo;edgy&amp;rdquo; helps you simplify writing tests for Node.js based AWS CloudFront Lambda@Edge functions, &amp;ldquo;cdk-app-cli&amp;rdquo; a really nice cli that every AWS CDK user should know about, &amp;ldquo;Accumulus&amp;rdquo; a great looking reporting tool for AWS Lambda users, &amp;ldquo;sqldef-gitops-cdk&amp;rdquo; is a schema management for several open source databases, &amp;ldquo;log-hub&amp;rdquo; helps you to build your own log analytics tool using OpenSearch, &amp;ldquo;verifiable-controls-evidence-store&amp;rdquo; a very cool solution that builds a mechanism to centrally store findings and results of cloud security controls governing AWS workloads, and many more!</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #114</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-114/</link>
+      <pubDate>Fri, 27 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-114/</guid>
+      <description>May 27th, 2022 - Instalment #114 Welcome to the AWS open source newsletter #114. This weeks new open source projects feature a variety of community related projects such as &amp;ldquo;instance-scheduler&amp;rdquo; a tool to help you schedule AWS resources, &amp;ldquo;libaws&amp;rdquo; an opinionated tool that helps you simplify creation and deletion of some AWS resources, &amp;ldquo;elasticspot&amp;rdquo; a nice tool to help you reassign elastic IPs, and &amp;ldquo;auto-close-aws-accounts&amp;rdquo; that allows you to close AWS accounts if you are using AWS Organisations.</description>
+    </item>
+  </channel>
+</rss>

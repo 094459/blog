@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VS Code Server on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/vs-code-server/</link>
+    <description>Recent content in VS Code Server on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/vs-code-server/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #164</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-164/</link>
+      <pubDate>Mon, 10 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-164/</guid>
+      <description>July 10th, 2023 - Instalment #164 Welcome to #164 of the AWS open source newsletter. As always, we search high and low for the best and latest open source content, and I think you will love what we have lined up this week.&#xA;New projects this week will help you implement single table designs easily on Amazon DynamoDB, an experimental project to help you get to grips with Cedar, a comprehensive clickstream analytics project for your applications, web sites, and mobile applications, and some cool projects to help you with edge and hybrid use cases.</description>
+    </item>
+  </channel>
+</rss>

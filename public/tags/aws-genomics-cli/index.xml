@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS Genomics CLI on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/aws-genomics-cli/</link>
+    <description>Recent content in AWS Genomics CLI on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/aws-genomics-cli/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source news and updates #106</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-106/</link>
+      <pubDate>Mon, 28 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-106/</guid>
+      <description>March 28th, 2022 - Instalment #106 Newsletter #106.&#xA;Welcome to the AWS open source newsletter, and this week we have more great new open source projects to tell you about. We have &amp;ldquo;access-undenied-aws&amp;rdquo;, a tool that helps you better understand your CloudTrail logs and suggest remediation. &amp;ldquo;aws-slack-clickoops-watcher&amp;rdquo; provides you with a way to alert you when changes are made to your AWS environment. &amp;ldquo;kronicle&amp;rdquo; provides a way of illustrating your tech stack automagically, and we have many more tools, demos and sample projects to help get you started on a number of topics.</description>
+    </item>
+  </channel>
+</rss>

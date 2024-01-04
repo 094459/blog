@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flux on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/flux/</link>
+    <description>Recent content in Flux on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/flux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #173</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-173/</link>
+      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-173/</guid>
+      <description>September 11th, 2023 - Instalment #173 Welcome to #173 of the AWS open source newsletter, bringing you all the news and latest projects for AWS developers. This weeks new projects include a Golang based SDK for kernel eBPF operations, a project that helps you to optimise your network performance, a couple of projects for Apache Flink users, as well as a handful of different tools and demos featuring open source technologies helping to drive innovation in generative AI.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #161</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-161/</link>
+      <pubDate>Mon, 19 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-161/</guid>
+      <description>June 19th, 2023 - Instalment #161 Welcome to #161 of the AWS open source newsletter, and another week for fresh, new open source projects and code for you to practice your four freedoms. This weeks projects include tools that will help you create temporary elevated credentials, a new Java library that provides methods for encrypting and decrypting cryptographic materials, an AWS DynamoDB wrapper for Node/TypeScript developers, and a solution to help you find and visualise data assets.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #153</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-153/</link>
+      <pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-153/</guid>
+      <description>April 17th, 2023 - Instalment #153 Welcome&#xA;Hello and welcome to the AWS open source newsletter, #153 as featured in the latest episode of Build on Open Source (S2E5) . We have lots of great projects for you this week, with a strong chatGPT influence. &amp;ldquo;pg_gpt&amp;rdquo;, &amp;ldquo;cw-logs-insights-gpt&amp;rdquo;, and &amp;ldquo;aiws&amp;rdquo; all integrate chatGPT to help you do different things on AWS, &amp;ldquo;semantic-search-aws-docs&amp;rdquo; is a very interesting demo on how to build a more coherent search for your documentation, &amp;ldquo;aws-chime-chat-demo&amp;rdquo; a very nice demo using the Chime SDK, &amp;ldquo;ckia&amp;rdquo; is an open source AWS Trusted Advisor tool, &amp;ldquo;AWS_ED&amp;rdquo; helps you keep your local IP in sync with external DNS records, &amp;ldquo;cfnctl&amp;rdquo; provides a Terraform like cli experience to CloudFormation, and more!</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #148</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-148/</link>
+      <pubDate>Sun, 12 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-148/</guid>
+      <description>March 13th, 2023 - Instalment #148 Welcome&#xA;Hello and a warm welcome to edition #148 of the AWS open source newsletter, the only newsletter on the planet that serves you up a weekly dose of the freshest, latest open source projects on AWS. This week we have projects such as &amp;ldquo;iam-ape&amp;rdquo; a tool to help you grapple with your IAM policies, &amp;ldquo;amazon-emr-cli&amp;rdquo; a nice command line tool to package and deploy your Spark jobs on Amazon EMR, &amp;ldquo;duckdb-athena-extension&amp;rdquo; that helps you import data from Amazon Athena into DuckDB, &amp;ldquo;terraform-aws-email-files-dropped-in-s3&amp;rdquo; a helpful tool to easily email you attachments automatically, &amp;ldquo;cloud-queue-for-quantum-devices&amp;rdquo; a tool to help Quantum researchers across the world, &amp;ldquo;aws-private-ca-matter-infrastructure&amp;rdquo; a sample reference architecture for setting up a secure, private certificate authority, &amp;ldquo;aws-sam-cli-java-examples&amp;rdquo; will help you deploy your Java apps via AWS SAM, &amp;ldquo;mpartman&amp;rdquo; a PostgreSQL partition manager, &amp;ldquo;aws-do-pcluster&amp;rdquo; simplifying how to run AWS ParallelCluster, &amp;ldquo;staticwebsite-cli&amp;rdquo; a very nice too to help you easily deploy static web sites, and more!</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #101</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-101/</link>
+      <pubDate>Mon, 21 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-101/</guid>
+      <description>Feb 21st, 2022 - Instalment #101 Newsletter #101.&#xA;There is nothing basic and fundamental about edition 101 of the AWS open source newsletter, with another great round up of new open source projects including eks-creation-engine from the folks at Lightspin helping you all to stay safer with this handy tool you should check out, idp-scim-sync to help users of AWS SSO who want to synchronise with their Google Workspace Directory, typecart an analysis tool for proof evolution and many other great projects and sample code.</description>
+    </item>
+  </channel>
+</rss>

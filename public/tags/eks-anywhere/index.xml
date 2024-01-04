@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EKS Anywhere on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/eks-anywhere/</link>
+    <description>Recent content in EKS Anywhere on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 30 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/eks-anywhere/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #143</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-143/</link>
+      <pubDate>Mon, 30 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-143/</guid>
+      <description>January 30th, 2023 - Instalment #143 Welcome to edition #143 of the AWS open source newsletter, and another week of great new open source projects for you to try out. This week we feature projects including &amp;ldquo;aws-cdk-in-electron&amp;rdquo;, a project that lets you put AWS CDK in a graphical user interface, &amp;ldquo;lightsail-k8s-installer&amp;rdquo; that helps you deploy Kubernetes into Amazon Lightsail, &amp;ldquo;porting-advisor-for-graviton&amp;rdquo; a great project to help you migrate to Arm based AWS Graviton instance types, &amp;ldquo;aws-ebook-downloader&amp;rdquo; a browser tool to help you easily download pdf&amp;rsquo;s on AWS topics, &amp;ldquo;lake-formation-permissions-sync&amp;rdquo; a useful tool to help you keep on top of your Lake Formation setups, and many more.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #124</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-124/</link>
+      <pubDate>Fri, 12 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-124/</guid>
+      <description>August, 12th, 2022 - Instalment #124 Welcome&#xA;Welcome to edition #124 of the AWS open source newsletter. This is a very special edition as this will be the first edition that we cover in the new Build on AWS Open Source fortnight show on twitch.tv/aws. I hope some of you were able to attend, but if not don&amp;rsquo;t worry we will be sharing links to the recording. To keep up to date on future episodes, make sure you follow @buildonopen.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #120</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-120/</link>
+      <pubDate>Fri, 15 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-120/</guid>
+      <description>July 15th, 2022 - Instalment #120 Welcome to regular and new readers alike, to the AWS open source newsletter episode #120.&#xA;The observant will have noticed that it has been two weeks since the last newsletter. We all need some time off, and I spent most of the time cycling around the hills of a new cycle route called King Alfreds Way - highly recommended.&#xA;There has been some great new projects created over the past couple of weeks, and of course I have you covered and have shared them below.</description>
+    </item>
+  </channel>
+</rss>

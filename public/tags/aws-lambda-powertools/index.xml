@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS Lambda Powertools on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/aws-lambda-powertools/</link>
+    <description>Recent content in AWS Lambda Powertools on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/aws-lambda-powertools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #164</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-164/</link>
+      <pubDate>Mon, 10 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-164/</guid>
+      <description>July 10th, 2023 - Instalment #164 Welcome to #164 of the AWS open source newsletter. As always, we search high and low for the best and latest open source content, and I think you will love what we have lined up this week.&#xA;New projects this week will help you implement single table designs easily on Amazon DynamoDB, an experimental project to help you get to grips with Cedar, a comprehensive clickstream analytics project for your applications, web sites, and mobile applications, and some cool projects to help you with edge and hybrid use cases.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #163</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-163/</link>
+      <pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-163/</guid>
+      <description>July 3rd, 2023 - Instalment #163 Welcome to #163 of the AWS open source newsletter. As always, we search high and low for the best and latest open source content, and I think you will love what we have lined up this week. This weeks featured projects include a Cedar authorisation service and demo examples, a tool to help you find dangling DNS records, a new CLI for those using Amazon ECR, an accelerator for observability on AWS, a serverless web analytics solution (so good, that I implemented it myself), and several more projects.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #147</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-147/</link>
+      <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-147/</guid>
+      <description>March 6th, 2023 - Instalment #147 Welcome&#xA;Welcome to edition #147 of the AWS open source newsletter, featured in the latest episode of Build on Open Source. This week we have new projects such as &amp;ldquo;metahub&amp;rdquo; and &amp;ldquo;savings-estimator&amp;rdquo; that we looked at in closer detail on the Build on Open Source livestream, &amp;ldquo;aws-iot-core-credential-provider-session-helper&amp;rdquo; a Python library to help simplify working with AWS IoT, &amp;ldquo;traffic-inspection-architectures-aws-cloud-wan&amp;rdquo; code that provides examples of different network architectures and how to do traffic inspection, &amp;ldquo;neptune-export&amp;rdquo; a tool to help you export your data in Amazon Neptune, &amp;ldquo;aws-organizations-tool&amp;rdquo; a command line tool to help you configure AWS Organisations, &amp;ldquo;sagemaker-external-repo-access&amp;rdquo; a nice reference architecture for Amazon Sagemaker, &amp;ldquo;aws-cdk-cfn-hook&amp;rdquo; a Python CDK app that will get you up and running quickly working with Cloudformation template hooks, and more!</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #114</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-114/</link>
+      <pubDate>Fri, 27 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-114/</guid>
+      <description>May 27th, 2022 - Instalment #114 Welcome to the AWS open source newsletter #114. This weeks new open source projects feature a variety of community related projects such as &amp;ldquo;instance-scheduler&amp;rdquo; a tool to help you schedule AWS resources, &amp;ldquo;libaws&amp;rdquo; an opinionated tool that helps you simplify creation and deletion of some AWS resources, &amp;ldquo;elasticspot&amp;rdquo; a nice tool to help you reassign elastic IPs, and &amp;ldquo;auto-close-aws-accounts&amp;rdquo; that allows you to close AWS accounts if you are using AWS Organisations.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #109</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-109/</link>
+      <pubDate>Fri, 22 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-109/</guid>
+      <description>April 22nd, 2022 - Instalment #109 Newsletter #109.&#xA;Welcome to edition #109 of the AWS open source newsletter. Big news, I have shaken things up and will be changing the publish date to Friday mornings, starting today with this edition. Over the months I have received some feedback about changing the published date to Fridays, so I am hoping this will give everyone plenty of time to check out the projects, read the posts and provide everyone with something to do over the weekend (if they want!</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #100</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-100/</link>
+      <pubDate>Mon, 14 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-100/</guid>
+      <description>Feb 14th, 2022 - Instalment #100 Newsletter #100.&#xA;Happy Valentines everyone, and welcome to this landmark 100st edition of this newsletter. This week we celebrate the love that many builders have for open source with more great new open source projects and content. Cuddle up to new projects that will help you build scalable systems, simplify your work with AWS DynamoDB, integrate your .NET applications with OpenSearch, keep on top of your VPC networks, and more.</description>
+    </item>
+  </channel>
+</rss>

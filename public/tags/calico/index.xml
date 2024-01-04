@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Calico on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/calico/</link>
+    <description>Recent content in Calico on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 02 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/calico/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source news and updates #125</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-125/</link>
+      <pubDate>Fri, 02 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-125/</guid>
+      <description>September 2nd, 2022 - Instalment #125 Welcome&#xA;After a couple of weeks off, it is great to welcome to back to the AWS open source newsletter, edition #125. As it has been a couple of weeks, this edition contains even more open source goodness to keep you occupied.&#xA;As always, we kick things off we a round up of new open source projects. Over the past couple of weeks, there were so many that it was hard to select them (I will include the others in next weeks newsletter).</description>
+    </item>
+  </channel>
+</rss>

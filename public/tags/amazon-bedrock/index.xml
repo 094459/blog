@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Amazon Bedrock on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/amazon-bedrock/</link>
+    <description>Recent content in Amazon Bedrock on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 16 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/amazon-bedrock/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adding Amazon Bedrock Llama2 as an assistant in Ragna</title>
+      <link>https://blog.beachgeek.co.uk/adding-llama2-to-ragna/</link>
+      <pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/adding-llama2-to-ragna/</guid>
+      <description>Adding a new assistant in Ragna Following up from my previous post on Ragna, I wanted to share following the announcement of Meta&amp;rsquo;s Llama2 13b model availability within Amazon Bedrock, how you can incorporate that.&#xA;I have also put together a GitHub repo that shares the code, something that I got quite a few questions from the original post.&#xA;Adding Meta&amp;rsquo;s Llama2&#xA;As with adding Amazon Bedrock&amp;rsquo;s Anthropic&amp;rsquo;s Claude support, it was pretty straight forward to modify the original code to add support for Llama2.</description>
+    </item>
+    <item>
+      <title>Unboxing Ragna: Getting hands on and making it to work with Amazon Bedrock</title>
+      <link>https://blog.beachgeek.co.uk/getting-started-with-ragna/</link>
+      <pubDate>Sun, 12 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/getting-started-with-ragna/</guid>
+      <description>Unboxing Ragna: Getting hands on and making it to work with Amazon Bedrock I am always on the look out for interesting new projects to check out, and this week I came across Ragna, an open source Retrieval Augmented Generation RAG orchestration framework. It is a new project with a committed and active community, so I wanted to find out more about this project.&#xA;What piqued my interest was reading this blog post, Unveiling Ragna: An Open Source RAG-based AI Orchestration Framework Designed to Scale From Research to Production which takes a look at the background, or as I like to think of it, the &amp;ldquo;scratch that needed to be itched&amp;rdquo;.</description>
+    </item>
+  </channel>
+</rss>

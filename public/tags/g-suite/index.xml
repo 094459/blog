@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>g-suite on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/g-suite/</link>
+    <description>Recent content in g-suite on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/g-suite/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automating AWS SSO and G-Suite synchronisation with SSO Sync</title>
+      <link>https://blog.beachgeek.co.uk/automating-aws-sso-and-g-suite-synchronisation-with-sso-sync/</link>
+      <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/automating-aws-sso-and-g-suite-synchronisation-with-sso-sync/</guid>
+      <description>update-July 28th The ssosync tool has had a lot of interest and the community has updated the tool. This means that you should refer to the project home page https://github.com/awslabs/ssosync and check out the README.md for what changes you might need to make to get this tool working.&#xA;Next level ssosync In a previous post, I talked about setting up AWS Single Sign On (AWS SSO) with G-Suite, and then using an open source project called ssosync to syncronise users and groups from G-Suite into AWS SSO.</description>
+    </item>
+    <item>
+      <title>Setting up G-Suite, AWS SSO and ssosync</title>
+      <link>https://blog.beachgeek.co.uk/setting-up-g-suite-aws-sso-and-ssosync/</link>
+      <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/setting-up-g-suite-aws-sso-and-ssosync/</guid>
+      <description>update-July 28th The ssosync tool has had a lot of interest and the community has updated the tool. This means that you should refer to the project home page https://github.com/awslabs/ssosync and check out the README.md for what changes you might need to make to get this tool working.&#xA;Enabling AWS SSO with Google G-Suite Many customers have existing directory technologies where they manage their users, and then use this central identity store as a way to simplify the way they authenticate and provide access to applications and other resources.</description>
+    </item>
+  </channel>
+</rss>

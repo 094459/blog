@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Seekable OCI on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/seekable-oci/</link>
+    <description>Recent content in Seekable OCI on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/seekable-oci/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #169</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-169/</link>
+      <pubDate>Mon, 14 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-169/</guid>
+      <description>August 14th, 2023 - Instalment #169 Welcome to #169 of the AWS open source newsletter, featuring the latest and greatest open source news, projects, videos, and community content that you need to know about. Featured in this weeks edition we have more great projects, including a new ODBC driver for Amazon Timestream database, a nice tool to simplify your ssh tunnelling, an essential VSCode extension for working with Cedar policies, a couple of projects that help you shift left and validate / monitor your policies, a solution to help you monitor your Apache Kafka environments, as well as some great sample applications.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #166</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-166/</link>
+      <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-166/</guid>
+      <description>July 24th, 2023 - Instalment #166 Welcome to #166 of the AWS open source newsletter. As always, we search high and low for the best and latest open source content, and I think you will love what we have lined up this week.&#xA;This weeks new projects include a library to help you managed and validate your environment variables when working with AWS Lambda, a new Rust based tool for interacting with your S3 buckets, an essential tool to help CDK developers remove a lot of the setup work, and a tool that helps you run Yocto embedded Linux build jobs in AWS.</description>
+    </item>
+  </channel>
+</rss>

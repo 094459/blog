@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Localstack on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/localstack/</link>
+    <description>Recent content in Localstack on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/localstack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #171</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-171/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-171/</guid>
+      <description>August 29th, 2023 - Instalment #171 Welcome to #171 of the AWS open source newsletter, the newsletter created for developers passionate about open source. Thanks to the wonderful August bank holiday here in the UK, we are publishing a day later than usual. If you have not read this newsletter before, we feature new projects, content from across the open source and AWS community, and share events and videos that you should check out.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #168</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-168/</link>
+      <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-168/</guid>
+      <description>August 7th, 2023 - Instalment #168 Welcome to #168 of the AWS open source newsletter, the only newsletter that features the freshest open source and AWS content*&#xA;New projects for you to feast on in this issue include the obligatory projects that look at how Generative AI can help developers be more productive, in this case by making documentation more relevant and easier to find and to help with code reviews, a nice tool to help you query your AWS Identity Access Management (IAM) policies, and a security focused tool to help you search for potentially incorrect configured S3 buckets.</description>
+    </item>
+  </channel>
+</rss>

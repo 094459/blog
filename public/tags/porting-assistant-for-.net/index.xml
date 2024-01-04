@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Porting Assistant for .NET on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/porting-assistant-for-.net/</link>
+    <description>Recent content in Porting Assistant for .NET on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 18 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/porting-assistant-for-.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source news and updates #139</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-139/</link>
+      <pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-139/</guid>
+      <description>December 18th, 2022 - Instalment #139 Welcome&#xA;Welcome to the last AWS open source newsletter of 2022, edition #139. I am planning on take a few weeks off to recharge, and wish readers of this newsletter a fabulous Christmas and New Year. Over 100K of you have read this newsletter, so I want to thank you all for your continued support. This newsletter is only possible because of the passion and enthusiasm of open source Builders, and I look forward to seeing what 2023 will bring.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #130</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-130/</link>
+      <pubDate>Mon, 10 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-130/</guid>
+      <description>October 10th, 2022 - Instalment #130 Welcome&#xA;Welcome to the AWS open source newsletter, edition #130. This newsletter was featured in the Build on Open Source episode four, which you can check out here if you missed it.&#xA;New projects for you to practice your open source four freedoms this week include &amp;ldquo;grucloud&amp;rdquo; a new infrastructure as code tool with some nice features, &amp;ldquo;stepfunctions-sdk-autocomplete&amp;rdquo; a VSCode plugin for all you AWS Step Functions fans, &amp;ldquo;AWS_Billing_Overage_Shutdown&amp;rdquo; a very new repo that has some code to help you automate shutting down resources on alerts, &amp;ldquo;aws-secrets-manager-github-action&amp;rdquo; if you are using GitHub Actions, this one is for you, &amp;ldquo;meta-aws&amp;rdquo;, tools and recipes for those using and building with Yocto, &amp;ldquo;data-on-eks&amp;rdquo; a number of sample solutions to configure self managed open source data analytics tools, &amp;ldquo;cql-replicator&amp;rdquo; a tool to help you migrate from self managed Apache Cassandra to Amazon Keyspaces, &amp;ldquo;ec2-imagebuilder-ami-lifecycle&amp;rdquo; provides some new capabilities for those building AMIs, and many more.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #121</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-121/</link>
+      <pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-121/</guid>
+      <description>July 22nd, 2022 - Instalment #121 Welcome to regular and new readers alike, to the AWS open source newsletter episode #121.&#xA;Am super excited about this weeks new projects, including a number of AWS CDK related projects so if you are a fan of AWS CDK then make sure you check them all out. We feature projects such as &amp;ldquo;openrolesanywhere&amp;rdquo;, a proof of concept client for the recently released AWS IAM Roles Anywhere, &amp;ldquo;amazon-redshift-odbc-driver&amp;rdquo; an open source ODBC driver for Amazon Redshift, &amp;ldquo;spot-interruption-simulation&amp;rdquo; a very handy tool to help you test and simulate spot interuptions for your EC2 workloads, &amp;ldquo;magento-ecs-cdk&amp;rdquo; a quick way to deploy a scalable Magento environment, &amp;ldquo;using-rekognition-to-detect-sounds&amp;rdquo; a very interesting project that will help you hear sounds from your pictures (yes, you did not read that wrong!</description>
+    </item>
+  </channel>
+</rss>

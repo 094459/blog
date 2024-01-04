@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SaaS Boost on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/saas-boost/</link>
+    <description>Recent content in SaaS Boost on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/saas-boost/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source news and updates #108</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-108/</link>
+      <pubDate>Mon, 11 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-108/</guid>
+      <description>April 11th, 2022 - Instalment #108 Newsletter #108.&#xA;A little later the usual as it was a busy week last week, and I was lucky enough to speak at some great events. It certainly seems that things are returning to normality now on the tech events scene, and it was great to meet so many customers and builders who were enthusiastic champions of open source. The AWS Summit season is upon us, with the Brussels summit just gone and Paris Summit happening this week.</description>
+    </item>
+  </channel>
+</rss>

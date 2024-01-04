@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS Cli on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/aws-cli/</link>
+    <description>Recent content in AWS Cli on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/aws-cli/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Amazon Aurora - setting up and configuration, four ways</title>
+      <link>https://blog.beachgeek.co.uk/amazon-aurora---setting-up-and-configuration-four-ways/</link>
+      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/amazon-aurora---setting-up-and-configuration-four-ways/</guid>
+      <description>In this post I want to share four different approaches to installing and configuring your Amazon Aurora database clusters.&#xA;Everything in this post is covered in detail in the embedded video, but I wanted to share some additional information that I did not include in the video that was easier done in this blog.&#xA;{% youtube wZfh9PurE9E %}&#xA;Why four ways? The approach in the video was to look at the journey you might take when learning a new technology and then how you move to productise that technology.</description>
+    </item>
+  </channel>
+</rss>

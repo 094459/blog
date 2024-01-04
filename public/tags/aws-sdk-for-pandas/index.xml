@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS SDK for pandas on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/aws-sdk-for-pandas/</link>
+    <description>Recent content in AWS SDK for pandas on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/aws-sdk-for-pandas/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #160</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-160/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-160/</guid>
+      <description>June 12th, 2023 - Instalment #160 Welcome to #160 of the AWS open source newsletter, where we try and share all the important open source news, projects, events, and content that open source builders want. This week we have new projects that include tools to help you build data workflows, Terraform modules to help you incorporate temporary elevated access controls, integrating Tailscale to change your traffic flows, a neat AWS Lambda debugging tool, Go bindings for Cedar, and more.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #138</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-138/</link>
+      <pubDate>Mon, 12 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-138/</guid>
+      <description>December 12th, 2022 - Instalment #138 Welcome&#xA;Welcome to the AWS open source newsletter, edition #138. After a week off due to re:Invent, this edition is packed with content on many of the open source related announcements. As always, we have a great line up of new projects for you to practice your four freedoms on. In no particular order, we have projects like &amp;ldquo;eks-node-viewer&amp;rdquo;, a nice visualisation tool for your Amazon EKS clusters, &amp;ldquo;pg_tle&amp;rdquo; a great new project to make your PostgreSQL environments safer, &amp;ldquo;dyna53&amp;rdquo; a fun project that finally turns Amazon Route 53 into a database, &amp;ldquo;dynamodb-mass-migrations&amp;rdquo; a tool to help you migrate to Amazon DynamoDB, &amp;ldquo;visual-asset-management-system&amp;rdquo; a very nice digital asset management tool, &amp;ldquo;fast-differential-privacy&amp;rdquo; implement differential privacy in your PyTorch models, &amp;ldquo;migration-hadoop-to-emr-tco-simulator&amp;rdquo; a handy total cost of ownership calculator for Amazon EMR, &amp;ldquo;realtime-toxicity-detection&amp;rdquo; a tool to help you stay on top of your online communities, &amp;ldquo;functionclarity&amp;rdquo; a very cool tool to check the integrity of your serverless functions before executing, and many more.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #128</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-128/</link>
+      <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-128/</guid>
+      <description>September 23rd, 2022 - Instalment #128 Welcome&#xA;Welcome to the AWS open source newsletter, edition #128. I hope some of you were able to catch Derek and myself sharing a peek at this edition, and enjoyed our special guest, Gethin Webster as he walked us through the open source Cloudscape project. If you want to catch up on that event, check out the video here.&#xA;This weeks opens new open source projects include &amp;ldquo;Guardian&amp;rdquo;, a command line tool that produces nice reports on your AWS environments, &amp;ldquo;cdk-scheduler&amp;rdquo;, a new construct that helps you schedule your CDK deployments, &amp;ldquo;terraform-iam-policy-validator&amp;rdquo; a script that helps you validate your Terraform scripts, &amp;ldquo;aws-cdk-golden-ami-pipeline&amp;rdquo; an example of how to build an automated pipeline to build Amazon Machine Images (AMI&amp;rsquo;s), and many more.</description>
+    </item>
+  </channel>
+</rss>

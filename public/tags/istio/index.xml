@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Istio on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/istio/</link>
+    <description>Recent content in Istio on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/istio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #181</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-181/</link>
+      <pubDate>Mon, 27 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-181/</guid>
+      <description>November 27th, 2023 - Instalment #181 Welcome to #181 of the AWS open source newsletter, the place for all your AWS and open source needs. As some of you will know, this is re:Invent week, where many of my colleagues and tens of thousands of developers will be congregating to learn about Cloud, and hopefully discover plenty of open source goodness too. If you are going, make sure to visit the open source booth in the Expo floor.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #175</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-175/</link>
+      <pubDate>Mon, 16 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-175/</guid>
+      <description>October 16th, 2023 - Instalment #175 Welcome to #175 of the AWS open source newsletter, back after recharging in the wonderful countyside of Yorkshire. I am publishing this weeks newsletter from Raleigh, North Carolina. All Things Open is happening this week, and you will catch me at the AWS booth where I will be showing off some cool open source stuff (Cedar, Apache Airflow, and a few others), and I also have a talk on Tuesday.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #112</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-112/</link>
+      <pubDate>Fri, 13 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-112/</guid>
+      <description>May 13th, 2022 - Instalment #112 Newsletter #112.&#xA;Welcome to this weeks round up of AWS open source news. This weeks new projects features projects such as &amp;ldquo;aws-dataall&amp;rdquo; an open source framework for building a data marketplace, &amp;ldquo;backpack&amp;rdquo; a set of tools to help you work with the AWS Panorama devices, and we have other projects that help you automate DNS tasks, manage game servers, automate data ingestion, and more.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #110</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-110/</link>
+      <pubDate>Fri, 29 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-110/</guid>
+      <description>April 29th, 2022 - Instalment #110 Newsletter #110.&#xA;Welcome to edition #110 of the AWS open source newsletter. It has been a busy week, with the AWS Summit London happening this week (where I was lucky enough to do a session on Apache Airflow) meaning I am publishing this a little later than I had planned. We have more great new projects this week, including a project that helps make it easier to deploy your static and dynamic applications, a tool that provides help in managing the long term health of your AWS Data Lake, a cool project to help you replicate data from a Kinesis Data Stream across regions, a nice CloudWatch dashboard widget that summarises your CloudFormation stacks, and many more - so check them out.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #109</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-109/</link>
+      <pubDate>Fri, 22 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-109/</guid>
+      <description>April 22nd, 2022 - Instalment #109 Newsletter #109.&#xA;Welcome to edition #109 of the AWS open source newsletter. Big news, I have shaken things up and will be changing the publish date to Friday mornings, starting today with this edition. Over the months I have received some feedback about changing the published date to Fridays, so I am hoping this will give everyone plenty of time to check out the projects, read the posts and provide everyone with something to do over the weekend (if they want!</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fluentbit on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/fluentbit/</link>
+    <description>Recent content in Fluentbit on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 07 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/fluentbit/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source news and updates #134</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-134/</link>
+      <pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-134/</guid>
+      <description>November 7th, 2022 - Instalment #134 Welcome&#xA;Welcome to the AWS open source newsletter, edition #134. This weeks newsletter was featured in the latest Build on Open Source on twitch.tv/aws, so I hope some of you were able to tune in and watch.&#xA;New projects that we featured include &amp;ldquo;enclaver&amp;rdquo;, a toolkit to make working with enclaves easier, &amp;ldquo;s3crets_scanner&amp;rdquo; a new secrets scanning tool, &amp;ldquo;sandbox-accounts-for-events&amp;rdquo; a way to easily vend temporary environments, &amp;ldquo;frontend-discovery&amp;rdquo; helps you define and drive adoption of a frontend discovery patterns, &amp;ldquo;cf-sam-openapi-file-organization-demo&amp;rdquo;, a tool to help you get started with API development, &amp;ldquo;decoupling-microservices-lambda-amazonmq-rabbitmq&amp;rdquo; a sample solution to get you started on how to use micro services with RabbitMQ, &amp;ldquo;how-to-write-more-correct-software-workshop&amp;rdquo; a workshop to get you developing better software, and more!</description>
+    </item>
+  </channel>
+</rss>

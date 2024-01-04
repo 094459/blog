@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenZFS on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/openzfs/</link>
+    <description>Recent content in OpenZFS on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/openzfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #182</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-182/</link>
+      <pubDate>Mon, 11 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-182/</guid>
+      <description>December 11th, 2023 - Instalment #182 Welcome to #182 of the AWS open source newsletter, the place for all your AWS and open source needs. This is a special re:Invent packed edition of this newsletter, attempting to catch up and cover all the main talking points, sessions, and announcements. Whilst there is a lot of content to go through, I know that many of you will still be wanting to know about new projects you can try out, and the good news is that we have plenty.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #181</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-181/</link>
+      <pubDate>Mon, 27 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-181/</guid>
+      <description>November 27th, 2023 - Instalment #181 Welcome to #181 of the AWS open source newsletter, the place for all your AWS and open source needs. As some of you will know, this is re:Invent week, where many of my colleagues and tens of thousands of developers will be congregating to learn about Cloud, and hopefully discover plenty of open source goodness too. If you are going, make sure to visit the open source booth in the Expo floor.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #170</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-170/</link>
+      <pubDate>Mon, 21 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-170/</guid>
+      <description>August 21st, 2023 - Instalment #170 Welcome to edition #170 of the AWS open source newsletter, an oasis of open source goodness that features the latest new projects, essential reading, and must view videos to quench the thirst of every open source developer. This weeks edition we have new projects that help you get on top of your IAM actions, a handy tool for knowing what your current AWS account service limits are from the command line, a tool to help you do database migrations, and some interesting and very detailed reference solutions for gaming, live streaming, and managing/exporting of your Amazon Cognito profiles.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #169</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-169/</link>
+      <pubDate>Mon, 14 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-169/</guid>
+      <description>August 14th, 2023 - Instalment #169 Welcome to #169 of the AWS open source newsletter, featuring the latest and greatest open source news, projects, videos, and community content that you need to know about. Featured in this weeks edition we have more great projects, including a new ODBC driver for Amazon Timestream database, a nice tool to simplify your ssh tunnelling, an essential VSCode extension for working with Cedar policies, a couple of projects that help you shift left and validate / monitor your policies, a solution to help you monitor your Apache Kafka environments, as well as some great sample applications.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #166</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-166/</link>
+      <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-166/</guid>
+      <description>July 24th, 2023 - Instalment #166 Welcome to #166 of the AWS open source newsletter. As always, we search high and low for the best and latest open source content, and I think you will love what we have lined up this week.&#xA;This weeks new projects include a library to help you managed and validate your environment variables when working with AWS Lambda, a new Rust based tool for interacting with your S3 buckets, an essential tool to help CDK developers remove a lot of the setup work, and a tool that helps you run Yocto embedded Linux build jobs in AWS.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #164</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-164/</link>
+      <pubDate>Mon, 10 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-164/</guid>
+      <description>July 10th, 2023 - Instalment #164 Welcome to #164 of the AWS open source newsletter. As always, we search high and low for the best and latest open source content, and I think you will love what we have lined up this week.&#xA;New projects this week will help you implement single table designs easily on Amazon DynamoDB, an experimental project to help you get to grips with Cedar, a comprehensive clickstream analytics project for your applications, web sites, and mobile applications, and some cool projects to help you with edge and hybrid use cases.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #138</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-138/</link>
+      <pubDate>Mon, 12 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-138/</guid>
+      <description>December 12th, 2022 - Instalment #138 Welcome&#xA;Welcome to the AWS open source newsletter, edition #138. After a week off due to re:Invent, this edition is packed with content on many of the open source related announcements. As always, we have a great line up of new projects for you to practice your four freedoms on. In no particular order, we have projects like &amp;ldquo;eks-node-viewer&amp;rdquo;, a nice visualisation tool for your Amazon EKS clusters, &amp;ldquo;pg_tle&amp;rdquo; a great new project to make your PostgreSQL environments safer, &amp;ldquo;dyna53&amp;rdquo; a fun project that finally turns Amazon Route 53 into a database, &amp;ldquo;dynamodb-mass-migrations&amp;rdquo; a tool to help you migrate to Amazon DynamoDB, &amp;ldquo;visual-asset-management-system&amp;rdquo; a very nice digital asset management tool, &amp;ldquo;fast-differential-privacy&amp;rdquo; implement differential privacy in your PyTorch models, &amp;ldquo;migration-hadoop-to-emr-tco-simulator&amp;rdquo; a handy total cost of ownership calculator for Amazon EMR, &amp;ldquo;realtime-toxicity-detection&amp;rdquo; a tool to help you stay on top of your online communities, &amp;ldquo;functionclarity&amp;rdquo; a very cool tool to check the integrity of your serverless functions before executing, and many more.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #115</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-115/</link>
+      <pubDate>Fri, 03 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-115/</guid>
+      <description>June 3rd, 2022 - Instalment #115 Welcome to regular and new readers alike, to the AWS open source newsletter episode #115.&#xA;This week we have another great selection of brand new open source projects for you to explore, including &amp;ldquo;firec&amp;rdquo; a Rust client library for interacting with Firecracker, &amp;ldquo;sfn-cli&amp;rdquo; a tool that helps you quickly build StepFunctions definitions, &amp;ldquo;ssm-cloner&amp;rdquo; a tool to help you replicate across AWS regions your AWS System Manager documents, &amp;ldquo;amazon-lambda-compute-tuning&amp;rdquo; an AWS Lambda function benchmarking tool, &amp;ldquo;aws-iam-root-user-activity-monitor&amp;rdquo; a sample project to help you keep track of your root user, &amp;ldquo;hpc-cost-simulator&amp;rdquo; a tool to help estimate costs running your HPC workloads on AWS, and many more.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #113</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-113/</link>
+      <pubDate>Fri, 20 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-113/</guid>
+      <description>May 13th, 2022 - Instalment #113 Newsletter #113.&#xA;A little later than usual this week thanks to KubeCon, #113 of the AWS open source newsletter provides you with yet more new open source projects. &amp;ldquo;aws-iam-utils&amp;rdquo; is a Python library to help you work with IAM, &amp;ldquo;iot-app-kit&amp;rdquo; is a new IoT visualisation framework, &amp;ldquo;s3pathlib-project&amp;rdquo; that provides the Pythonic objective oriented programming (OOP) interface to manipulate AWS S3 object / directory, &amp;ldquo;collaboration-chambers-on-aws&amp;rdquo; which is a cool and very comprehensive project to help you do Scale-Out Computing on AWS, and many more!</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #109</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-109/</link>
+      <pubDate>Fri, 22 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-109/</guid>
+      <description>April 22nd, 2022 - Instalment #109 Newsletter #109.&#xA;Welcome to edition #109 of the AWS open source newsletter. Big news, I have shaken things up and will be changing the publish date to Friday mornings, starting today with this edition. Over the months I have received some feedback about changing the published date to Fridays, so I am hoping this will give everyone plenty of time to check out the projects, read the posts and provide everyone with something to do over the weekend (if they want!</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #107</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-107/</link>
+      <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-107/</guid>
+      <description>April 4th, 2022 - Instalment #107 Newsletter #107.&#xA;Welcome to edition #107 of the AWS open source newsletter, and we have a bumper edition this week packed with more great new open source projects and content for you to consume. Topics featured this week include optimising open source big data tools, developer tooling, case studies and we even some some great open source content for .NET core developers.&#xA;This weeks projects include a really nice handy browser plugin called &amp;ldquo;aws-search-extension&amp;rdquo;, that lets you search and find developer information from the AWS docs, a tool that will help you detect whether you have configured or using dockershim in your Kubernetes clusters, a library to help you integrate Amazon Cognito in your Laravel PHP applications, and plenty more developer tools and sample projects.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #103</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-103/</link>
+      <pubDate>Mon, 07 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-103/</guid>
+      <description>March 7th, 2022 - Instalment #103 Newsletter #103.&#xA;Welcome to edition #103 of the AWS open source news and updates. This weeks featured new open source projects include botocove (a decorator that helps you run your functions across your AWS accounts easily), functionless (a TypeScript plugin that transforms TypeScript code into Service-to-Service integrations), replibyte (a tool to replicate your PostgreSQL data), aws-security-bulletin-alert (notifies you of new AWS Security Bulletins) and sends out E-Mail notifications via Amazon SES), and many more.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #99</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-99/</link>
+      <pubDate>Mon, 07 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-99/</guid>
+      <description>Feb 7th, 2022 - Instalment #99 Newsletter #99. While Nena gave you 99 red balloons, I give you the latest version of the AWS open source news letter. This week we feature more great new open source projects including a project to help you with drift detection in your CloudFormation stacks, new Terraform modules, an open-source prometheus exporter, some AWS CDK resources and sample projects and more. This weeks AWS and Community posts cover PostgreSQL, Apache Airflow, AWS CDK, Redis, GraphQL, Apollo GraphQL, Kubernetes, AWS EKS and more.</description>
+    </item>
+  </channel>
+</rss>

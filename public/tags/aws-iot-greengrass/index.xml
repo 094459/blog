@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS IoT Greengrass on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/aws-iot-greengrass/</link>
+    <description>Recent content in AWS IoT Greengrass on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/aws-iot-greengrass/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source news and updates #138</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-138/</link>
+      <pubDate>Mon, 12 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-138/</guid>
+      <description>December 12th, 2022 - Instalment #138 Welcome&#xA;Welcome to the AWS open source newsletter, edition #138. After a week off due to re:Invent, this edition is packed with content on many of the open source related announcements. As always, we have a great line up of new projects for you to practice your four freedoms on. In no particular order, we have projects like &amp;ldquo;eks-node-viewer&amp;rdquo;, a nice visualisation tool for your Amazon EKS clusters, &amp;ldquo;pg_tle&amp;rdquo; a great new project to make your PostgreSQL environments safer, &amp;ldquo;dyna53&amp;rdquo; a fun project that finally turns Amazon Route 53 into a database, &amp;ldquo;dynamodb-mass-migrations&amp;rdquo; a tool to help you migrate to Amazon DynamoDB, &amp;ldquo;visual-asset-management-system&amp;rdquo; a very nice digital asset management tool, &amp;ldquo;fast-differential-privacy&amp;rdquo; implement differential privacy in your PyTorch models, &amp;ldquo;migration-hadoop-to-emr-tco-simulator&amp;rdquo; a handy total cost of ownership calculator for Amazon EMR, &amp;ldquo;realtime-toxicity-detection&amp;rdquo; a tool to help you stay on top of your online communities, &amp;ldquo;functionclarity&amp;rdquo; a very cool tool to check the integrity of your serverless functions before executing, and many more.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #131</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-131/</link>
+      <pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-131/</guid>
+      <description>October 17th, 2022 - Instalment #131 Welcome to the AWS open source newsletter, edition #131. This week&amp;rsquo;s new projects include &amp;ldquo;metahub&amp;rdquo;, a command line way to interact with AWS Security Hub, &amp;ldquo;somod&amp;rdquo; a framework for creating micro applications in serverless, &amp;ldquo;terraform-aws-guardduty-multiaccount&amp;rdquo; a Terraform module to help you automate your AWS Guard Duty configuration, &amp;ldquo;aws-glue-cdk-cicd&amp;rdquo; a sample project to automate the creation data pipelines using AWS Glue, &amp;ldquo;go-kafka-event-source&amp;rdquo; an Apache Kafka client in Go, &amp;ldquo;project-tools&amp;rdquo; a tool to help you get insights from your GitHub repo, &amp;ldquo;eks-event-watcher&amp;rdquo; a command line tool to tail your Amazon EKS logs, &amp;ldquo;listmonk-based-edm-solution&amp;rdquo; an example of how to deploy this open source mailing list tool, and many more.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #130</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-130/</link>
+      <pubDate>Mon, 10 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-130/</guid>
+      <description>October 10th, 2022 - Instalment #130 Welcome&#xA;Welcome to the AWS open source newsletter, edition #130. This newsletter was featured in the Build on Open Source episode four, which you can check out here if you missed it.&#xA;New projects for you to practice your open source four freedoms this week include &amp;ldquo;grucloud&amp;rdquo; a new infrastructure as code tool with some nice features, &amp;ldquo;stepfunctions-sdk-autocomplete&amp;rdquo; a VSCode plugin for all you AWS Step Functions fans, &amp;ldquo;AWS_Billing_Overage_Shutdown&amp;rdquo; a very new repo that has some code to help you automate shutting down resources on alerts, &amp;ldquo;aws-secrets-manager-github-action&amp;rdquo; if you are using GitHub Actions, this one is for you, &amp;ldquo;meta-aws&amp;rdquo;, tools and recipes for those using and building with Yocto, &amp;ldquo;data-on-eks&amp;rdquo; a number of sample solutions to configure self managed open source data analytics tools, &amp;ldquo;cql-replicator&amp;rdquo; a tool to help you migrate from self managed Apache Cassandra to Amazon Keyspaces, &amp;ldquo;ec2-imagebuilder-ami-lifecycle&amp;rdquo; provides some new capabilities for those building AMIs, and many more.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #120</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-120/</link>
+      <pubDate>Fri, 15 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-120/</guid>
+      <description>July 15th, 2022 - Instalment #120 Welcome to regular and new readers alike, to the AWS open source newsletter episode #120.&#xA;The observant will have noticed that it has been two weeks since the last newsletter. We all need some time off, and I spent most of the time cycling around the hills of a new cycle route called King Alfreds Way - highly recommended.&#xA;There has been some great new projects created over the past couple of weeks, and of course I have you covered and have shared them below.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #105</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-105/</link>
+      <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-105/</guid>
+      <description>March 21st, 2022 - Instalment #105 Newsletter #105.&#xA;Welcome to edition #105 of the AWS open source news and updates, where we bring you the latest open source projects, posts, events, and much more. This weeks new projects include the latest work in progress from AWS Hero Ian Mckay, &amp;ldquo;iamfast&amp;rdquo; is an AWS IAM policy generation tool that is in early stages but promises to be very useful indeed. &amp;ldquo;iasql-engine&amp;rdquo; is a tool that models cloud infrastructure as data, &amp;ldquo;ssm-patch-portal&amp;rdquo; provides a nice gui front end to simplify patching with AWS System Manager, a new crowdsource guide that contains learning resources for AWS, a business intelligence platform built using open source technologies from the NHS, and many more.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS CloudWatch on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/aws-cloudwatch/</link>
+    <description>Recent content in AWS CloudWatch on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/aws-cloudwatch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Monitoring and logging with Amazon Managed Workflows for Apache Airflow</title>
+      <link>https://blog.beachgeek.co.uk/monitoring-and-logging-with-amazon-managed-workflows-for-apache-airflow/</link>
+      <pubDate>Tue, 09 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/monitoring-and-logging-with-amazon-managed-workflows-for-apache-airflow/</guid>
+      <description>Part of a series of posts to support an up-coming online event, the Innovate AI/ML on February 24th, from 9:00am GMT - you can sign up here&#xA;Part 1 - Installation and configuration of Managed Workflows for Apache Airflow Part 2 - Working with Permissions Part 3 - Accessing Amazon Managed Workflows for Apache Airflow Part 4 - Interacting with Amazon Managed Workflows for Apache Airflow via the command line Part 5 - A simple CI/CD system for your development workflow Part 6 - Monitoring and logging &amp;lt;- this post Part 7 - Automating a simple AI/ML pipeline with Apache Airflow In this post I will be covering Part 6, where to find logs to help you understand and troubleshoot your Apache Airflow workflows, and how you can monitor your Apache Airflow environments.</description>
+    </item>
+    <item>
+      <title>TIL: Testing an Amazon Cloudwatch alarm</title>
+      <link>https://blog.beachgeek.co.uk/til-testing-an-amazon-cloudwatch-alarm/</link>
+      <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/til-testing-an-amazon-cloudwatch-alarm/</guid>
+      <description>Today I was setting up an application load balancer that sits in front of a test application I have put together. Setting this up was super easy, and very quickly I had my domain pointing to the alias and serving requests.&#xA;As part of the setup, I wanted to monitor the application load balancer to let me know when requests were failing to the downstream application (anything other than an HTTP 200) and so I set this up super easily in Amazon Cloudwatch.</description>
+    </item>
+  </channel>
+</rss>

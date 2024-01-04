@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloudscape on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/cloudscape/</link>
+    <description>Recent content in Cloudscape on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 22 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/cloudscape/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source news and updates #121</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-121/</link>
+      <pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-121/</guid>
+      <description>July 22nd, 2022 - Instalment #121 Welcome to regular and new readers alike, to the AWS open source newsletter episode #121.&#xA;Am super excited about this weeks new projects, including a number of AWS CDK related projects so if you are a fan of AWS CDK then make sure you check them all out. We feature projects such as &amp;ldquo;openrolesanywhere&amp;rdquo;, a proof of concept client for the recently released AWS IAM Roles Anywhere, &amp;ldquo;amazon-redshift-odbc-driver&amp;rdquo; an open source ODBC driver for Amazon Redshift, &amp;ldquo;spot-interruption-simulation&amp;rdquo; a very handy tool to help you test and simulate spot interuptions for your EC2 workloads, &amp;ldquo;magento-ecs-cdk&amp;rdquo; a quick way to deploy a scalable Magento environment, &amp;ldquo;using-rekognition-to-detect-sounds&amp;rdquo; a very interesting project that will help you hear sounds from your pictures (yes, you did not read that wrong!</description>
+    </item>
+  </channel>
+</rss>

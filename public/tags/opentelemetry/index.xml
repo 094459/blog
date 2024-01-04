@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenTelemetry on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/opentelemetry/</link>
+    <description>Recent content in OpenTelemetry on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/opentelemetry/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #174</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-174/</link>
+      <pubDate>Mon, 18 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-174/</guid>
+      <description>September 18th, 2023 - Instalment #174 Welcome to #174 of the AWS open source newsletter, which will be the last one for a couple of weeks as I take some time off to recharge. I will be back in early October with more open source goodness, but in the meantime, you still have this edition packed with open source goodness.&#xA;This weeks new projects include a Rust tool to help you keep your CloudFormation stacks up to date, a tool to help upload files to Amazon S3, a generative AI tool that aims to help you review and detect IAM configuration issues, an updated JDBC driver for connecting to Amazon Aurora, and more.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #158</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-158/</link>
+      <pubDate>Tue, 30 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-158/</guid>
+      <description>May 30th, 2023 - Instalment #158 Welcome&#xA;Hello and welcome to the AWS open source newsletter, #158. I hope some of you were able to catch the last episode of season two of Build on Open Source where we looked at some of the projects featured in this newsletter (specctl, eksdemo, and ec2-spot-placement-score-tracker). As always we pride ourself on this newsletter on giving you the newest, shiniest open source projects and this week we have some really great ones to share with you.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #97</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-97/</link>
+      <pubDate>Sat, 22 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-97/</guid>
+      <description>Jan 22nd, 2022 - Instalment #97 Newsletter #97.&#xA;Welcome to another edition of the AWS open source newsletter, packed with more great new open source projects, content, and events. This week, we have new projects that help you improve security by de-obfuscating strings, a library to help you automate the configuration of your build pipelines, a new Terraform module, a nice new VSCode plugin that will help you when working with IAM, and several more.</description>
+    </item>
+  </channel>
+</rss>

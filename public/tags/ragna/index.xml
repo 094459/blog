@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ragna on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/ragna/</link>
+    <description>Recent content in Ragna on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/ragna/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #180</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-180/</link>
+      <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-180/</guid>
+      <description>November 20th, 2023 - Instalment #180 Welcome to #180 of the AWS open source newsletter, the place for all your AWS and open source needs. As we ramp up to re:Invent, it is good to see that pre:Invent is giving us plenty of open source goodies. In this weeks newsletter, we have some of those in the way of new projects such as res and aws-iatk, but we also have lots of really great content too.</description>
+    </item>
+    <item>
+      <title>Adding Amazon Bedrock Llama2 as an assistant in Ragna</title>
+      <link>https://blog.beachgeek.co.uk/adding-llama2-to-ragna/</link>
+      <pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/adding-llama2-to-ragna/</guid>
+      <description>Adding a new assistant in Ragna Following up from my previous post on Ragna, I wanted to share following the announcement of Meta&amp;rsquo;s Llama2 13b model availability within Amazon Bedrock, how you can incorporate that.&#xA;I have also put together a GitHub repo that shares the code, something that I got quite a few questions from the original post.&#xA;Adding Meta&amp;rsquo;s Llama2&#xA;As with adding Amazon Bedrock&amp;rsquo;s Anthropic&amp;rsquo;s Claude support, it was pretty straight forward to modify the original code to add support for Llama2.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #179</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-179/</link>
+      <pubDate>Mon, 13 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-179/</guid>
+      <description>November 13th, 2023 - Instalment #179 Welcome to #179 of the AWS open source newsletter, the place for all your AWS and open source needs. This weeks new projects include an open source tool that provides similar capabilities to AWS Control Tower, a tool for enrolling your Mac based EC2 instances into mobile device management (MDM) solution, a very neat tool to help you compare costs of running your CodePipeline jobs, as well as sample code that shows you how you can use Karpenter to optimise IP address use, examples of using Test Containers with AWS CDK, generative AI technologies such as LangChain, and more.</description>
+    </item>
+    <item>
+      <title>Unboxing Ragna: Getting hands on and making it to work with Amazon Bedrock</title>
+      <link>https://blog.beachgeek.co.uk/getting-started-with-ragna/</link>
+      <pubDate>Sun, 12 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/getting-started-with-ragna/</guid>
+      <description>Unboxing Ragna: Getting hands on and making it to work with Amazon Bedrock I am always on the look out for interesting new projects to check out, and this week I came across Ragna, an open source Retrieval Augmented Generation RAG orchestration framework. It is a new project with a committed and active community, so I wanted to find out more about this project.&#xA;What piqued my interest was reading this blog post, Unveiling Ragna: An Open Source RAG-based AI Orchestration Framework Designed to Scale From Research to Production which takes a look at the background, or as I like to think of it, the &amp;ldquo;scratch that needed to be itched&amp;rdquo;.</description>
+    </item>
+  </channel>
+</rss>

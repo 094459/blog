@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Faker on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/faker/</link>
+    <description>Recent content in Faker on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 30 May 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/faker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #158</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-158/</link>
+      <pubDate>Tue, 30 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-158/</guid>
+      <description>May 30th, 2023 - Instalment #158 Welcome&#xA;Hello and welcome to the AWS open source newsletter, #158. I hope some of you were able to catch the last episode of season two of Build on Open Source where we looked at some of the projects featured in this newsletter (specctl, eksdemo, and ec2-spot-placement-score-tracker). As always we pride ourself on this newsletter on giving you the newest, shiniest open source projects and this week we have some really great ones to share with you.</description>
+    </item>
+  </channel>
+</rss>

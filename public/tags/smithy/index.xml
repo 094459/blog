@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Smithy on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/smithy/</link>
+    <description>Recent content in Smithy on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/smithy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #173</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-173/</link>
+      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-173/</guid>
+      <description>September 11th, 2023 - Instalment #173 Welcome to #173 of the AWS open source newsletter, bringing you all the news and latest projects for AWS developers. This weeks new projects include a Golang based SDK for kernel eBPF operations, a project that helps you to optimise your network performance, a couple of projects for Apache Flink users, as well as a handful of different tools and demos featuring open source technologies helping to drive innovation in generative AI.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #169</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-169/</link>
+      <pubDate>Mon, 14 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-169/</guid>
+      <description>August 14th, 2023 - Instalment #169 Welcome to #169 of the AWS open source newsletter, featuring the latest and greatest open source news, projects, videos, and community content that you need to know about. Featured in this weeks edition we have more great projects, including a new ODBC driver for Amazon Timestream database, a nice tool to simplify your ssh tunnelling, an essential VSCode extension for working with Cedar policies, a couple of projects that help you shift left and validate / monitor your policies, a solution to help you monitor your Apache Kafka environments, as well as some great sample applications.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #168</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-168/</link>
+      <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-168/</guid>
+      <description>August 7th, 2023 - Instalment #168 Welcome to #168 of the AWS open source newsletter, the only newsletter that features the freshest open source and AWS content*&#xA;New projects for you to feast on in this issue include the obligatory projects that look at how Generative AI can help developers be more productive, in this case by making documentation more relevant and easier to find and to help with code reviews, a nice tool to help you query your AWS Identity Access Management (IAM) policies, and a security focused tool to help you search for potentially incorrect configured S3 buckets.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #155</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-155/</link>
+      <pubDate>Sat, 29 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-155/</guid>
+      <description>May 1st, 2023 - Instalment #155 Welcome&#xA;Hello and welcome to the AWS open source newsletter, #155, the newsletter that just keeps on giving&amp;hellip;.in this case, keeps giving you brand new open source projects to practice your four freedoms on. This week&amp;rsquo;s new projects include&#xA;&amp;ldquo;aws-cloudformation-controller-for-flux&amp;rdquo; provides a way to use flux to orchestrate your CloudFormation deployments, &amp;ldquo;threat-composer&amp;rdquo; is a nice React based tool to help you create Threat Models for your systems and applications, &amp;ldquo;cdk-integ-tests-sample&amp;rdquo; a tool to allow you to do integration tests with your CDK stacks (these three were all featured in the latest episode of Build on Open Source, you can watch it here), &amp;ldquo;iam-access-key-report&amp;rdquo; generates reports from your AWS accounts about your AWS access keys, &amp;ldquo;personalize-kafka-connector&amp;rdquo; provides an integration into Apache Kafka for this AWS service, and more!</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #124</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-124/</link>
+      <pubDate>Fri, 12 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-124/</guid>
+      <description>August, 12th, 2022 - Instalment #124 Welcome&#xA;Welcome to edition #124 of the AWS open source newsletter. This is a very special edition as this will be the first edition that we cover in the new Build on AWS Open Source fortnight show on twitch.tv/aws. I hope some of you were able to attend, but if not don&amp;rsquo;t worry we will be sharing links to the recording. To keep up to date on future episodes, make sure you follow @buildonopen.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #111</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-111/</link>
+      <pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-111/</guid>
+      <description>May 6th, 2022 - Instalment #111 Newsletter #111.&#xA;Welcome to edition #111 of the AWS open source newsletter, a bit later this week but that was so I could pack in even more great open source content. This week we have another round up of new open source projects from the AWS community that include tools to help you manage your AWS CloudFront distributions, resource providers for CloudFormation for Confluent users, managing Amazon Route53 via the command line, a nice tool for Rust developers working with AWS Lambda, a nice tool to help you find your CIDR address ranges, and many more including some great samples.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #97</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-97/</link>
+      <pubDate>Sat, 22 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-97/</guid>
+      <description>Jan 22nd, 2022 - Instalment #97 Newsletter #97.&#xA;Welcome to another edition of the AWS open source newsletter, packed with more great new open source projects, content, and events. This week, we have new projects that help you improve security by de-obfuscating strings, a library to help you automate the configuration of your build pipelines, a new Terraform module, a nice new VSCode plugin that will help you when working with IAM, and several more.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #96</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-96/</link>
+      <pubDate>Mon, 17 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-96/</guid>
+      <description>Jan 17th, 2022 - Instalment #96 Newsletter #96.&#xA;Welcome to another great round up of open source projects, news and great content. This week, we have new open source projects such as Event Catalog (that helps you to discover, explore and document your Event Driven Architectures), AWS Powertools for Lambda TypeScript edition, flowdog (an application/framework for inspection and manipulation of network traffic in AWS VPCs), ai-doorbell (a serverless AI enabled door bell) and many more.</description>
+    </item>
+  </channel>
+</rss>

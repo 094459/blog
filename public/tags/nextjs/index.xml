@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NextJS on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/nextjs/</link>
+    <description>Recent content in NextJS on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/nextjs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #181</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-181/</link>
+      <pubDate>Mon, 27 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-181/</guid>
+      <description>November 27th, 2023 - Instalment #181 Welcome to #181 of the AWS open source newsletter, the place for all your AWS and open source needs. As some of you will know, this is re:Invent week, where many of my colleagues and tens of thousands of developers will be congregating to learn about Cloud, and hopefully discover plenty of open source goodness too. If you are going, make sure to visit the open source booth in the Expo floor.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #176</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-176/</link>
+      <pubDate>Mon, 23 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-176/</guid>
+      <description>October 23rd, 2023 - Instalment #176 Welcome to #176 of the AWS open source newsletter, heading into Autumn and getting ready for the clocks to go back later in the week. How will you use that extra hour? Well, perhaps some of you might use it to check out this weeks new projects, which include a nice cli chat tool that uses Amazon Bedrock, a tool to help simplify deploying VSCode in the Cloud environments, and sample demos and code on chaos engineering, deploying Amazon Bedrock via AWS Lambda, and how you can use IAM Roles Anywhere to authenticate against external identity providers.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #175</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-175/</link>
+      <pubDate>Mon, 16 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-175/</guid>
+      <description>October 16th, 2023 - Instalment #175 Welcome to #175 of the AWS open source newsletter, back after recharging in the wonderful countyside of Yorkshire. I am publishing this weeks newsletter from Raleigh, North Carolina. All Things Open is happening this week, and you will catch me at the AWS booth where I will be showing off some cool open source stuff (Cedar, Apache Airflow, and a few others), and I also have a talk on Tuesday.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #130</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-130/</link>
+      <pubDate>Mon, 10 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-130/</guid>
+      <description>October 10th, 2022 - Instalment #130 Welcome&#xA;Welcome to the AWS open source newsletter, edition #130. This newsletter was featured in the Build on Open Source episode four, which you can check out here if you missed it.&#xA;New projects for you to practice your open source four freedoms this week include &amp;ldquo;grucloud&amp;rdquo; a new infrastructure as code tool with some nice features, &amp;ldquo;stepfunctions-sdk-autocomplete&amp;rdquo; a VSCode plugin for all you AWS Step Functions fans, &amp;ldquo;AWS_Billing_Overage_Shutdown&amp;rdquo; a very new repo that has some code to help you automate shutting down resources on alerts, &amp;ldquo;aws-secrets-manager-github-action&amp;rdquo; if you are using GitHub Actions, this one is for you, &amp;ldquo;meta-aws&amp;rdquo;, tools and recipes for those using and building with Yocto, &amp;ldquo;data-on-eks&amp;rdquo; a number of sample solutions to configure self managed open source data analytics tools, &amp;ldquo;cql-replicator&amp;rdquo; a tool to help you migrate from self managed Apache Cassandra to Amazon Keyspaces, &amp;ldquo;ec2-imagebuilder-ami-lifecycle&amp;rdquo; provides some new capabilities for those building AMIs, and many more.</description>
+    </item>
+  </channel>
+</rss>

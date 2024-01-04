@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Meta Llama2 on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/meta-llama2/</link>
+    <description>Recent content in Meta Llama2 on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 16 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/meta-llama2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adding Amazon Bedrock Llama2 as an assistant in Ragna</title>
+      <link>https://blog.beachgeek.co.uk/adding-llama2-to-ragna/</link>
+      <pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/adding-llama2-to-ragna/</guid>
+      <description>Adding a new assistant in Ragna Following up from my previous post on Ragna, I wanted to share following the announcement of Meta&amp;rsquo;s Llama2 13b model availability within Amazon Bedrock, how you can incorporate that.&#xA;I have also put together a GitHub repo that shares the code, something that I got quite a few questions from the original post.&#xA;Adding Meta&amp;rsquo;s Llama2&#xA;As with adding Amazon Bedrock&amp;rsquo;s Anthropic&amp;rsquo;s Claude support, it was pretty straight forward to modify the original code to add support for Llama2.</description>
+    </item>
+  </channel>
+</rss>

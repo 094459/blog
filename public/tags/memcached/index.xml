@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Memcached on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/memcached/</link>
+    <description>Recent content in Memcached on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/memcached/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #171</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-171/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-171/</guid>
+      <description>August 29th, 2023 - Instalment #171 Welcome to #171 of the AWS open source newsletter, the newsletter created for developers passionate about open source. Thanks to the wonderful August bank holiday here in the UK, we are publishing a day later than usual. If you have not read this newsletter before, we feature new projects, content from across the open source and AWS community, and share events and videos that you should check out.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #142</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-142/</link>
+      <pubDate>Mon, 23 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-142/</guid>
+      <description>January 23rd, 2023 - Instalment #142 Welcome&#xA;Welcome to edition #142 of the AWS open source newsletter.&#xA;We have another great round up of new projects for you to get stuck into. Here are just a taste of some of the projects, kicking off with &amp;ldquo;sls-mentor&amp;rdquo; a new tool to help you assess your serverless applications, &amp;ldquo;subnet-watcher&amp;rdquo;, a tool to help you monitor your IP addresses, &amp;ldquo;aws-cdk-web-administered-apps&amp;rdquo; a very nice reference solution for applications that have a user and admin component, &amp;ldquo;serverless-newsletter-app&amp;rdquo; if you are looking for a newsletter solution and want to host your own, look here first, &amp;ldquo;aws-iot-with-privatelink&amp;rdquo; shows you how you use private networks for your IoT traffic, &amp;ldquo;emr-spark-benchmark&amp;rdquo; benchmarking tool for assessing your Amazon EMR environments, and &amp;ldquo;update-aws-ip-ranges&amp;rdquo; keep automatically updated on Amazon&amp;rsquo;s IP address ranges.</description>
+    </item>
+  </channel>
+</rss>

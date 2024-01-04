@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cli on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/cli/</link>
+    <description>Recent content in cli on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/cli/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interacting with Amazon Managed Workflows for Apache Airflow via the command line</title>
+      <link>https://blog.beachgeek.co.uk/interacting-with-amazon-managed-workflows-for-apache-airflow-via-the-command-line/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/interacting-with-amazon-managed-workflows-for-apache-airflow-via-the-command-line/</guid>
+      <description>Part of a series of posts to support an up-coming online event, the Innovate AI/ML on February 24th, from 9:00am GMT - you can sign up here&#xA;Part 1 - Installation and configuration of Managed Workflows for Apache Airflow Part 2 - Working with Permissions Part 3 - Accessing Amazon Managed Workflows for Apache Airflow environments Part 4 - Interacting with Amazon Managed Workflows for Apache Airflow via the command line &amp;lt; this post Part 5 - A simple CI/CD system for your development workflow Part 6 - Monitoring and logging Part 7 - Automating a simple AI/ML pipeline with Apache Airflow In this post I will be covering Part 4, how you can interact and access the Apache Airflow via the command line.</description>
+    </item>
+  </channel>
+</rss>

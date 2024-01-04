@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nginx on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/nginx/</link>
+    <description>Recent content in Nginx on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 30 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #177</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-177/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-177/</guid>
+      <description>October 30th, 2023 - Instalment #177 Welcome to #177 of the AWS open source newsletter, the Halloween special. You will find no tricks in this edition, only treats, with more new projects for you to check out and content that are a feast for your eyes. This weeks new projects include a tool to help you easily deploy vector databases on Kubernetes, an observability toolkit, a tool to help you benchmark network latency, as well as lots of new demos on generative AI.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #151</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-151/</link>
+      <pubDate>Mon, 03 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-151/</guid>
+      <description>April 3rd, 2023 - Instalment #151 Welcome&#xA;Hello and welcome to the AWS open source newsletter, #151. This week sees more great new projects, including those covered in the latest episode of Build on Open Source, such as &amp;ldquo;ec2-former2&amp;rdquo; a way to host this great project to reverse engineer your CloudFormation templates, &amp;ldquo;protonizer&amp;rdquo; a cli tool for those using AWS Proton, &amp;ldquo;fortuna&amp;rdquo;, a library for Uncertainty Quantification, &amp;ldquo;aws-resilience-hub-tools&amp;rdquo; a set of tools and scripts for working with the AWS Resilience Hub, &amp;ldquo;jenkins-unity-build-on-aws&amp;rdquo; a nice reference solution for those needing to build Unity projects, &amp;ldquo;amazon-cognito-passwordless-auth&amp;rdquo; a nice demo of how to do authentication sans password, and more.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #137</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-137/</link>
+      <pubDate>Fri, 25 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-137/</guid>
+      <description>November 25th, 2022 - Instalment #137 Welcome&#xA;Welcome to the AWS open source newsletter, edition #137. As it is re:Invent next week, I will be publishing the newsletter early as I am heading out on Monday. I will be in Las Vegas talking with open source Builders, hanging out on the Open Source Kiosk in the AWS Village, and doing some talks. If you are coming, I would love to meet some of you, so get in touch.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #116</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-116/</link>
+      <pubDate>Fri, 10 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-116/</guid>
+      <description>June 10th, 2022 - Instalment #116 Welcome to regular and new readers alike, to the AWS open source newsletter episode #116.&#xA;Another selection of useful and interesting new open source projects for you to try out this week. First up, we have &amp;ldquo;aws-exec&amp;rdquo; a tool to help you do adhoc shell execution in AWS Lambda functions, &amp;ldquo;edgy&amp;rdquo; helps you simplify writing tests for Node.js based AWS CloudFront Lambda@Edge functions, &amp;ldquo;cdk-app-cli&amp;rdquo; a really nice cli that every AWS CDK user should know about, &amp;ldquo;Accumulus&amp;rdquo; a great looking reporting tool for AWS Lambda users, &amp;ldquo;sqldef-gitops-cdk&amp;rdquo; is a schema management for several open source databases, &amp;ldquo;log-hub&amp;rdquo; helps you to build your own log analytics tool using OpenSearch, &amp;ldquo;verifiable-controls-evidence-store&amp;rdquo; a very cool solution that builds a mechanism to centrally store findings and results of cloud security controls governing AWS workloads, and many more!</description>
+    </item>
+  </channel>
+</rss>

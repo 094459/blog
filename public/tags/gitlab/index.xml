@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GitLab on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/gitlab/</link>
+    <description>Recent content in GitLab on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #173</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-173/</link>
+      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-173/</guid>
+      <description>September 11th, 2023 - Instalment #173 Welcome to #173 of the AWS open source newsletter, bringing you all the news and latest projects for AWS developers. This weeks new projects include a Golang based SDK for kernel eBPF operations, a project that helps you to optimise your network performance, a couple of projects for Apache Flink users, as well as a handful of different tools and demos featuring open source technologies helping to drive innovation in generative AI.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #172</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-172/</link>
+      <pubDate>Mon, 04 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-172/</guid>
+      <description>September 4th, 2023 - Instalment #172 Welcome to #172 of the AWS open source newsletter, your reliable source for all open source on AWS goodness. What do we have for you this week? Well, more new projects to check out, and plenty of fresh content on the open source projects you all love.&#xA;We have tools to help you export your DynamoDB tables as csv files, a tool that goes beyond tracking cost and actually shuts down resources to help you manage your AWS budget, a cool dashboard to help you stay on top of your EC2 configurations, a couple of useful utilities to simplify working with files on Amazon S3, and then a sample Cedar project that helps you implement a Lambda authoriser.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #170</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-170/</link>
+      <pubDate>Mon, 21 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-170/</guid>
+      <description>August 21st, 2023 - Instalment #170 Welcome to edition #170 of the AWS open source newsletter, an oasis of open source goodness that features the latest new projects, essential reading, and must view videos to quench the thirst of every open source developer. This weeks edition we have new projects that help you get on top of your IAM actions, a handy tool for knowing what your current AWS account service limits are from the command line, a tool to help you do database migrations, and some interesting and very detailed reference solutions for gaming, live streaming, and managing/exporting of your Amazon Cognito profiles.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #98</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-98/</link>
+      <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-98/</guid>
+      <description>Jan 31st, 2022 - Instalment #98 Newsletter #98. Welcome to another edition of AWS open source news and updates, featuring more new open source projects. This week, these include eventbridge-assistant (a VScode plugin to help you whilst you are developing with Amazon EventBridge), stratus-red-team (a tool you can use to emulate offensive attack techniques), critter (AWS Config rule integration testing), syne-tune-s3-transfer (an example of how to apply the distributed parameter search library to optimise download performance), karpenter-terraform (a Terraform module to help you automate deployment of karpenter), and a couple of super interesting open source solutions covering last mile delivery and software defined radio.</description>
+    </item>
+  </channel>
+</rss>

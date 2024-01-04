@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VSCode on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/vscode/</link>
+    <description>Recent content in VSCode on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VSCode and Apache Airflow</title>
+      <link>https://blog.beachgeek.co.uk/using-vscode-with-airflow/</link>
+      <pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/using-vscode-with-airflow/</guid>
+      <description>VSCode and Apache Airflow In this short post, I wanted to highlight how you can use a VSCode plugin to work with a local running instance of Apache Airflow to improve the developer experience. This post was inspired by a tweet from Kaxil Naik who was asking about what features developers are looking for when using VSCode and Pycharm and Apache Airflow.&#xA;In this post I will show you how you can configure mwaa-local-runner, an open source project that provides you with an easy way to get a local Apache Airflow environment up and running (that is configuration wide, aligned to the Amazon Managed Workflows for Apache Airflow service MWAA), together with some VSCode plugins.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #111</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-111/</link>
+      <pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-111/</guid>
+      <description>May 6th, 2022 - Instalment #111 Newsletter #111.&#xA;Welcome to edition #111 of the AWS open source newsletter, a bit later this week but that was so I could pack in even more great open source content. This week we have another round up of new open source projects from the AWS community that include tools to help you manage your AWS CloudFront distributions, resource providers for CloudFormation for Confluent users, managing Amazon Route53 via the command line, a nice tool for Rust developers working with AWS Lambda, a nice tool to help you find your CIDR address ranges, and many more including some great samples.</description>
+    </item>
+  </channel>
+</rss>

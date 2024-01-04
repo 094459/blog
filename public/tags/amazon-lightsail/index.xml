@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Amazon Lightsail on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/amazon-lightsail/</link>
+    <description>Recent content in Amazon Lightsail on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 21 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/amazon-lightsail/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source news and updates #132</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-132/</link>
+      <pubDate>Fri, 21 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-132/</guid>
+      <description>October 21st, 2022 - Instalment #132 Welcome&#xA;Welcome to the AWS open source newsletter, edition #132. This newsletter was covered in last Friday&amp;rsquo;s Build on Open Source, so if you missed it, don&amp;rsquo;t worry as you can view episode five of Build on Open Source. In this episode special guest Abhishek Gupta walked us through how to use cdk8s using Golang, building a Wordpress site in minutes.&#xA;New projects this week include &amp;ldquo;duvet&amp;rdquo; a tool to help honour RFC in code, &amp;ldquo;aws-lambda-explorer&amp;rdquo; a gui tool to explore your AWS Lambda functions, &amp;ldquo;k3s-aws-terraform-cluster&amp;rdquo; deploy k3s on AWS via Terraform, &amp;ldquo;snow-transfer-tool&amp;rdquo; a tool to help you transfer data via Snowball devices, &amp;ldquo;amazon-emr-vscode-toolkit&amp;rdquo; a new VSCode plugin for Amazon EMR users, &amp;ldquo;aws-cdk-for-discourse&amp;rdquo; a quick way to deploy the open source discourse tool, &amp;ldquo;image-optimization&amp;rdquo; a reference example of how to do image optimising, and &amp;ldquo;gtfs-serverless-ticketing-sample&amp;rdquo; a sample application using public transport data.</description>
+    </item>
+  </channel>
+</rss>

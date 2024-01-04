@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mentoring on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/mentoring/</link>
+    <description>Recent content in Mentoring on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 08 May 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/mentoring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Making the most of mentoring</title>
+      <link>https://blog.beachgeek.co.uk/making-the-most-of-mentoring/</link>
+      <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/making-the-most-of-mentoring/</guid>
+      <description>Some recent experiences mentoring has provided the motivation for this piece. It is not intended to be right or wrong, but just my personal opinion and experience and I hope it is read that way. I have put this together to share what I think are the critical things that make a mentoring relationship work for both the mentor and mentee. So with that out of the way, I invite you to read on&amp;hellip;</description>
+    </item>
+    <item>
+      <title>Mentoring and reverse mentoring</title>
+      <link>https://blog.beachgeek.co.uk/mentoring-and-reverse-mentoring/</link>
+      <pubDate>Sun, 29 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/mentoring-and-reverse-mentoring/</guid>
+      <description>As I reflect on 2019, one of the common themes whilst engaging with builders at the start of their career, has been how do those of us who have deep experience working in the IT industry and technology help bring those who are just starting out?&#xA;Some common themes when talking that have come up include;&#xA;How do I get started on Cloud or AWS? What tools and languages should I learn?</description>
+    </item>
+  </channel>
+</rss>

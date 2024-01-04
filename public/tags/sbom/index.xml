@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SBOM on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/sbom/</link>
+    <description>Recent content in SBOM on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 21 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/sbom/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #170</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-170/</link>
+      <pubDate>Mon, 21 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-170/</guid>
+      <description>August 21st, 2023 - Instalment #170 Welcome to edition #170 of the AWS open source newsletter, an oasis of open source goodness that features the latest new projects, essential reading, and must view videos to quench the thirst of every open source developer. This weeks edition we have new projects that help you get on top of your IAM actions, a handy tool for knowing what your current AWS account service limits are from the command line, a tool to help you do database migrations, and some interesting and very detailed reference solutions for gaming, live streaming, and managing/exporting of your Amazon Cognito profiles.</description>
+    </item>
+    <item>
+      <title>sbomqs, an open source tool to quality check your SBOMS</title>
+      <link>https://blog.beachgeek.co.uk/sbomqs-an-open-source-tool-to-qa-sboms/</link>
+      <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/sbomqs-an-open-source-tool-to-qa-sboms/</guid>
+      <description>When putting together a previous post on how to use open source tools to create a software bill of materials (SBOM), Ritesh Noronha alerted me to another project, sbomqs that aims to simplify the evaluation of SBOM quality for both producers and consumers. A quality SBOM is one that is accurate, complete, and up-to-date. It should accurately reflect the components and dependencies used in the software application, including their version and optionally any known vulnerabilities.</description>
+    </item>
+    <item>
+      <title>Building a software bill of materials (SBOM) using open source tools</title>
+      <link>https://blog.beachgeek.co.uk/building-sbom-with-syft/</link>
+      <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/building-sbom-with-syft/</guid>
+      <description>This is the second post exploring how you can use open source tools to help you build a stronger defence against common software supply chain attacks. In this blog post, I look at syft, an open source CLI tool and Go library for generating a Software Bill of Materials (SBOM) from container images and filesystems. We will use examples and build on the previous post, Getting hands on with Sigstore Cosign on AWS.</description>
+    </item>
+  </channel>
+</rss>

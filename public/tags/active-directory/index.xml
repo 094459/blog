@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Active Directory on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/active-directory/</link>
+    <description>Recent content in Active Directory on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/active-directory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using CDK to deploy AWS managed Active Directory</title>
+      <link>https://blog.beachgeek.co.uk/active-directory-using-cdk/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/active-directory-using-cdk/</guid>
+      <description>CIFS (Common Internet File System) and SMB (Server Message Block) are both Windows file-sharing protocols used in storage systems. As part of a new demo/blog post that looks at how to use data stored on SMB/CIF file shares with Apache Airflow, I have been exploring the various options of creating SMB/CIF compatible resources. (There are LOTS of ways you could do this, so there is plenty for me to play around with!</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="generator" content="Hugo 0.121.1">
+  
+  
+    <link rel="canonical" href="https://blog.beachgeek.co.uk/setting-up-g-suite-aws-sso-and-ssosync/">
+  
+
+  
+
+  
+    
+    
+    
+    
+    
+
+  
+    <link rel="webmention" href="https://webmention.io/username.co.uk/webmention" />
+    <link rel="pingback" href="https://webmention.io/username.co.uk/xmlrpc" />
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://blog.beachgeek.co.uk/css/syntax.css" media="none" onload="this.media='all';">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://blog.beachgeek.co.uk/css/styles.css">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://blog.beachgeek.co.uk/style.main.css">
+
+  
+
+  <link rel="alternate" rel="canonical" href="https://blog.beachgeek.co.uk/index.xml" >
+  
+  <style id="inverter" media="none">
+    .intro-and-nav, .main-and-footer { filter: invert(100%) }
+    * { background-color: inherit }
+    img:not([src*=".svg"]), .colors, iframe, .demo-container { filter: invert(100%) }
+  </style>
+
+  
+  
+  <title>Setting up G-Suite, AWS SSO and ssosync | Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Setting up G-Suite, AWS SSO and ssosync"/>
+<meta name="twitter:description" content="update-July 28th The ssosync tool has had a lot of interest and the community has updated the tool. This means that you should refer to the project home page https://github.com/awslabs/ssosync and check out the README.md for what changes you might need to make to get this tool working.
+Enabling AWS SSO with Google G-Suite Many customers have existing directory technologies where they manage their users, and then use this central identity store as a way to simplify the way they authenticate and provide access to applications and other resources."/>
+<meta name="twitter:site" content="@094459"/>
+
+  <meta name="twitter:card" content="summary" />
+</head>
+
+  <body>
+    <a href="#main">skip to content</a>
+    <svg style="display: none">
+  <symbol id="bookmark" viewBox="0 0 40 50">
+   <g transform="translate(2266 3206.2)">
+    <path style="stroke:currentColor;stroke-width:3.2637;" d="m-2262.2-3203.4-.2331 42.195 16.319-16.318 16.318 16.318.2331-42.428z"/>
+   </g>
+  </symbol>
+
+  <symbol id="w3c" viewBox="0 0 127.09899 67.763">
+   <text font-size="83" style="font-size:83px;font-family:Trebuchet;letter-spacing:-12;fill-opacity:0" letter-spacing="-12" y="67.609352" x="-26.782778">W3C</text>
+   <text font-size="83" style="font-size:83px;font-weight:bold;font-family:Trebuchet;fill-opacity:0" y="67.609352" x="153.21722" font-weight="bold">SVG</text>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m33.695.377 12.062 41.016 12.067-41.016h8.731l-19.968 67.386h-.831l-12.48-41.759-12.479 41.759h-.832l-19.965-67.386h8.736l12.061 41.016 8.154-27.618-3.993-13.397h8.737z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m91.355 46.132c0 6.104-1.624 11.234-4.862 15.394-3.248 4.158-7.45 6.237-12.607 6.237-3.882 0-7.263-1.238-10.148-3.702-2.885-2.47-5.02-5.812-6.406-10.022l6.82-2.829c1.001 2.552 2.317 4.562 3.953 6.028 1.636 1.469 3.56 2.207 5.781 2.207 2.329 0 4.3-1.306 5.909-3.911 1.609-2.606 2.411-5.738 2.411-9.401 0-4.049-.861-7.179-2.582-9.399-1.995-2.604-5.129-3.912-9.397-3.912h-3.327v-3.991l11.646-20.133h-14.062l-3.911 6.655h-2.493v-14.976h32.441v4.075l-12.31 21.217c4.324 1.385 7.596 3.911 9.815 7.571 2.22 3.659 3.329 7.953 3.329 12.892z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.21 0 1.414 8.6-5.008 9.583s-1.924-4.064-5.117-6.314c-2.693-1.899-4.447-2.309-7.186-1.746-3.527.73-7.516 4.938-9.258 10.13-2.084 6.21-2.104 9.218-2.178 11.978-.115 4.428.58 7.043.58 7.043s-3.04-5.626-3.011-13.866c.018-5.882.947-11.218 3.666-16.479 2.404-4.627 5.954-7.404 9.114-7.728 3.264-.343 5.848 1.229 7.841 2.938 2.089 1.788 4.213 5.698 4.213 5.698l4.94-9.837z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.82 48.674s-2.208 3.957-3.589 5.48c-1.379 1.524-3.849 4.209-6.896 5.555-3.049 1.343-4.646 1.598-7.661 1.306-3.01-.29-5.807-2.032-6.786-2.764-.979-.722-3.486-2.864-4.897-4.854-1.42-2-3.634-5.995-3.634-5.995s1.233 4.001 2.007 5.699c.442.977 1.81 3.965 3.749 6.572 1.805 2.425 5.315 6.604 10.652 7.545 5.336.945 9.002-1.449 9.907-2.031.907-.578 2.819-2.178 4.032-3.475 1.264-1.351 2.459-3.079 3.116-4.108.487-.758 1.276-2.286 1.276-2.286l-1.276-6.644z"/>
+  </symbol>
+
+  <symbol id="tag" viewBox="0 0 177.16535 177.16535">
+    <g transform="translate(0 -875.2)">
+     <path style="fill-rule:evenodd;stroke-width:0;fill:currentColor" d="m159.9 894.3-68.79 8.5872-75.42 77.336 61.931 60.397 75.429-76.565 6.8495-69.755zm-31.412 31.835a10.813 10.813 0 0 1 1.8443 2.247 10.813 10.813 0 0 1 -3.5174 14.872l-.0445.0275a10.813 10.813 0 0 1 -14.86 -3.5714 10.813 10.813 0 0 1 3.5563 -14.863 10.813 10.813 0 0 1 13.022 1.2884z"/>
+    </g>
+  </symbol>
+
+  <symbol id="balloon" viewBox="0 0 141.73228 177.16535">
+   <g transform="translate(0 -875.2)">
+    <g>
+     <path style="fill:currentColor" d="m68.156 882.83-.88753 1.4269c-4.9564 7.9666-6.3764 17.321-5.6731 37.378.36584 10.437 1.1246 23.51 1.6874 29.062.38895 3.8372 3.8278 32.454 4.6105 38.459 4.6694-.24176 9.2946.2879 14.377 1.481 1.2359-3.2937 5.2496-13.088 8.886-21.623 6.249-14.668 8.4128-21.264 10.253-31.252 1.2464-6.7626 1.6341-12.156 1.4204-19.764-.36325-12.93-2.1234-19.487-6.9377-25.843-2.0833-2.7507-6.9865-7.6112-7.9127-7.8436-.79716-.20019-6.6946-1.0922-6.7755-1.0248-.02213.0182-5.0006-.41858-7.5248-.22808l-2.149-.22808h-3.3738z"/>
+     <path style="fill:currentColor" d="m61.915 883.28-3.2484.4497c-1.7863.24724-3.5182.53481-3.8494.63994-2.4751.33811-4.7267.86957-6.7777 1.5696-.28598 0-1.0254.20146-2.3695.58589-5.0418 1.4418-6.6374 2.2604-8.2567 4.2364-6.281 7.6657-11.457 18.43-12.932 26.891-1.4667 8.4111.71353 22.583 5.0764 32.996 3.8064 9.0852 13.569 25.149 22.801 37.517 1.3741 1.841 2.1708 2.9286 2.4712 3.5792 3.5437-1.1699 6.8496-1.9336 10.082-2.3263-1.3569-5.7831-4.6968-21.86-6.8361-33.002-.92884-4.8368-2.4692-14.322-3.2452-19.991-.68557-5.0083-.77707-6.9534-.74159-15.791.04316-10.803.41822-16.162 1.5026-21.503 1.4593-5.9026 3.3494-11.077 6.3247-15.852z"/>
+     <path style="fill:currentColor" d="m94.499 885.78c-.10214-.0109-.13691 0-.0907.0409.16033.13489 1.329 1.0675 2.5976 2.0723 6.7003 5.307 11.273 14.568 12.658 25.638.52519 4.1949.24765 14.361-.5059 18.523-2.4775 13.684-9.7807 32.345-20.944 53.519l-3.0559 5.7971c2.8082.76579 5.7915 1.727 8.9926 2.8441 11.562-11.691 18.349-19.678 24.129-28.394 7.8992-11.913 11.132-20.234 12.24-31.518.98442-10.02-1.5579-20.876-6.7799-28.959-.2758-.4269-.57803-.86856-.89617-1.3166-3.247-6.13-9.752-12.053-21.264-16.131-2.3687-.86369-6.3657-2.0433-7.0802-2.1166z"/>
+     <path style="fill:currentColor" d="m32.52 892.22c-.20090-.13016-1.4606.81389-3.9132 2.7457-11.486 9.0476-17.632 24.186-16.078 39.61.79699 7.9138 2.4066 13.505 5.9184 20.562 5.8577 11.77 14.749 23.219 30.087 38.74.05838.059.12188.1244.18052.1838 1.3166-.5556 2.5965-1.0618 3.8429-1.5199-.66408-.32448-1.4608-1.3297-3.8116-4.4602-5.0951-6.785-8.7512-11.962-13.051-18.486-5.1379-7.7948-5.0097-7.5894-8.0586-13.054-6.2097-11.13-8.2674-17.725-8.6014-27.563-.21552-6.3494.13041-9.2733 1.775-14.987 2.1832-7.5849 3.9273-10.986 9.2693-18.07 1.7839-2.3656 2.6418-3.57 2.4409-3.7003z"/>
+     <path style="fill:currentColor" d="m69.133 992.37c-6.2405.0309-12.635.76718-19.554 2.5706 4.6956 4.7759 9.935 10.258 12.05 12.625l4.1272 4.6202h11.493l3.964-4.4516c2.0962-2.3541 7.4804-7.9845 12.201-12.768-8.378-1.4975-16.207-2.6353-24.281-2.5955z"/>
+     <rect style="stroke-width:0;fill:currentColor" ry="2.0328" height="27.746" width="22.766" y="1017.7" x="60.201"/>
+    </g>
+   </g>
+  </symbol>
+
+  <symbol id="info" viewBox="0 0 41.667 41.667">
+   <g transform="translate(-37.035 -1004.6)">
+    <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m76.25 1030.2a18.968 18.968 0 0 1 -23.037 13.709 18.968 18.968 0 0 1 -13.738 -23.019 18.968 18.968 0 0 1 23.001 -13.768 18.968 18.968 0 0 1 13.798 22.984"/>
+    <g transform="matrix(1.1146 0 0 1.1146 -26.276 -124.92)">
+     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m75.491 1039.5v-8.7472"/>
+     <path style="stroke-width:0;fill:currentColor" transform="scale(-1)" d="m-73.193-1024.5a2.3719 2.3719 0 0 1 -2.8807 1.7142 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
+    </g>
+   </g>
+  </symbol>
+
+  <symbol id="warning" viewBox="0 0 48.430474 41.646302">
+    <g transform="translate(-1.1273 -1010.2)">
+     <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:4.151;fill:none" d="m25.343 1012.3-22.14 37.496h44.28z"/>
+     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:4.1512;fill:none" d="m25.54 1027.7v8.7472"/>
+     <path style="stroke-width:0;fill:currentColor" d="m27.839 1042.8a2.3719 2.3719 0 0 1 -2.8807 1.7143 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
+    </g>
+  </symbol>
+
+  <symbol id="menu" viewBox="0 0 50 50">
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="0" x="0"/>
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="20" x="0"/>
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="40" x="0"/>
+   </symbol>
+
+   <symbol id="link" viewBox="0 0 50 50">
+    <g transform="translate(0 -1002.4)">
+     <g transform="matrix(.095670 0 0 .095670 2.3233 1004.9)">
+      <g>
+       <path style="stroke-width:0;fill:currentColor" d="m452.84 192.9-128.65 128.65c-35.535 35.54-93.108 35.54-128.65 0l-42.881-42.886 42.881-42.876 42.884 42.876c11.845 11.822 31.064 11.846 42.886 0l128.64-128.64c11.816-11.831 11.816-31.066 0-42.9l-42.881-42.881c-11.822-11.814-31.064-11.814-42.887 0l-45.928 45.936c-21.292-12.531-45.491-17.905-69.449-16.291l72.501-72.526c35.535-35.521 93.136-35.521 128.64 0l42.886 42.881c35.535 35.523 35.535 93.141-.001 128.66zm-254.28 168.51-45.903 45.9c-11.845 11.846-31.064 11.817-42.881 0l-42.884-42.881c-11.845-11.821-11.845-31.041 0-42.886l128.65-128.65c11.819-11.814 31.069-11.814 42.884 0l42.886 42.886 42.876-42.886-42.876-42.881c-35.54-35.521-93.113-35.521-128.65 0l-128.65 128.64c-35.538 35.545-35.538 93.146 0 128.65l42.883 42.882c35.51 35.54 93.11 35.54 128.65 0l72.496-72.499c-23.956 1.597-48.092-3.784-69.474-16.283z"/>
+      </g>
+     </g>
+    </g>
+  </symbol>
+
+  <symbol id="doc" viewBox="0 0 35 45">
+   <g transform="translate(-147.53 -539.83)">
+    <path style="stroke:currentColor;stroke-width:2.4501;fill:none" d="m149.38 542.67v39.194h31.354v-39.194z"/>
+    <g style="stroke-width:25" transform="matrix(.098003 0 0 .098003 133.69 525.96)">
+     <path d="m220 252.36h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+     <path style="stroke:currentColor;stroke-width:25;fill:none" d="m220 409.95h200"/>
+     <path d="m220 488.74h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+     <path d="m220 331.15h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+    </g>
+   </g>
+ </symbol>
+
+ <symbol id="tick" viewBox="0 0 177.16535 177.16535">
+  <g transform="translate(0 -875.2)">
+   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="155" width="40" y="702.99" x="556.82"/>
+   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="40" width="90.404" y="817.99" x="506.42"/>
+  </g>
+ </symbol>
+</svg>
+
+    <div class="wrapper">
+      <header class="intro-and-nav" role="banner">
+  <div>
+    <div class="intro">
+      <a class="logo" href="https://blog.beachgeek.co.uk/" aria-label="Beachgeek blog - a refuge for pineapple on pizza lovers home page">
+        <img src="https://blog.beachgeek.co.uk/images/logo.svg" alt="My site icon">
+      </a>
+      <p class="library-desc">
+         Technologist and Maker specialising in Cloud, Open Source and Innovation. 
+      </p>
+    </div>
+    <nav id="patterns-nav" class="patterns" role="navigation">
+  <h2 class="vh">Main navigation</h2>
+  <button id="menu-button" aria-expanded="false">
+    <svg viewBox="0 0 50 50" aria-hidden="true" focusable="false">
+      <use xlink:href="#menu"></use>
+    </svg>
+    Menu
+  </button>
+  
+  <ul id="patterns-list">
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Home</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/post/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Blog posts</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/newsletter/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Newsletter</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/tags/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Tags</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/about/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">About</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/index.xml" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">RSS</span>
+      </a>
+    </li>
+  
+  </ul>
+</nav>
+  </div>
+</header>
+
+      <div class="main-and-footer">
+        <div>
+          
+  <main id="main">
+    <h1>
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+        <use xlink:href="#bookmark"></use>
+      </svg>
+      Setting up G-Suite, AWS SSO and ssosync
+    </h1>
+
+    <div class="date">
+      <p>
+        
+        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" aria-labelledby="calendarIconTitle" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#111"> <title id="calendarIconTitle">Calendar</title> <path d="M3 5H21V21H3V5Z"/> <path d="M21 9H3"/> <path d="M7 5V3"/> <path d="M17 5V3"/> </svg> Published May 27, 2020
+      </p>
+      
+      <p><svg role="img" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" aria-labelledby="stopwatchIconTitle" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#111"> <title id="stopwatchIconTitle">Stopwatch</title> <circle cx="12" cy="13" r="8"/> <path d="M12 9L12 13M18 7L20 5M15 2L9 2"/> </svg> Reading time 17&nbsp;minutes</p>
+      
+    </div>
+
+    
+      <div class="tags">
+        <strong>Tags: </strong>
+        <ul aria-label="tags">
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/g-suite">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                g-suite
+              </a>
+            </li>
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/sso">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                SSO
+              </a>
+            </li>
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/aws-sso">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                AWS SSO
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    
+    
+    
+      
+
+  <nav class="toc" aria-labelledby="toc-heading">
+    <h2 id="toc-heading">Table of contents</h2>
+    <ol>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#what-you-will-need-and-be-aware-of">
+            What you will need and be aware of
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#setup-your-g-suite-users">
+            Setup your G-Suite users
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#start-the-aws-single-sign-on-setup">
+            Start the AWS Single Sign on setup
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#setup-your-g-suite-to-be-your-identity-provider">
+            Setup your G-Suite to be your Identity Provider
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#complete-the-aws-sso-configuration">
+            Complete the AWS SSO configuration
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#enabling-and-then-testing-the-setup">
+            Enabling and then testing the setup
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#syncing-your-users-and-groups">
+            Syncing your users and Groups
+          </a>
+        </li>
+      
+    </ol>
+  </nav>
+
+
+    
+
+    <h1 id="update-july-28th">update-July 28th</h1>
+<blockquote>
+<p>The ssosync tool has had a lot of interest and the community has updated the tool. This means that you should refer to the project home page <a href="https://github.com/awslabs/ssosync">https://github.com/awslabs/ssosync</a> and check out the README.md for what changes you might need to make to get this tool working.</p>
+</blockquote>
+<h1 id="enabling-aws-sso-with-google-g-suite">Enabling AWS SSO with Google G-Suite</h1>
+<p>Many customers have existing directory technologies where they manage their users, and then use this central identity store as a way to simplify the way they authenticate and provide access to applications and other resources. Those directories might be something like  Microsoft&rsquo;s Active Directory or Google&rsquo;s G-Suite. For example, I have a G-Suite setup for the lovely people in my house as we collaborate using the various tools it provides. We each have our own account (person@mydomain) which is managed by the G-Suite Admin function.</p>
+<p>AWS Single Sign On is an AWS service that launched a few years ago that allows you to authenticate AWS resources using the same identities you use to log into your Microsoft or Google accounts, making it easier for those authorised resources to access AWS accounts using the same set of credentials. This is the wonder that is federated identity, and AWS Single Sign On allows you to leverage that to authenticate those users into the AWS and access resources you define.</p>
+<p>I just spent a couple of hours setting this up, so wanted to walk through this as it might help others who are trying to do the same. I wanted a way to authenticate into the AWS console using G-suite credentials rather than having to setup new users in the AWS console.
+A lot of the guides out there are pre AWS SSO, so wanted to put together this guide that I used to get this all working.</p>
+<blockquote>
+<p>A quick word about browsers, privacy mode and testing - one of the challenges when testing this is to make sure you have a &lsquo;clean&rsquo; browser environment as you login and log out of using various identities. I use a combination of different browsers as well as incognito/privacy modes to help. You might need to do something similar, or use the approach that you are familiar with.</p>
+</blockquote>
+<h2 id="what-you-will-need-and-be-aware-of">What you will need and be aware of</h2>
+<ol>
+<li>Administrator access to your AWS account and G-Suite accounts. I struggled to find the G-Suite admin console link, but this one worked for me: <a href="https://admin.google.com/u/1/ac/home">https://admin.google.com/u/1/ac/home</a></li>
+</ol>
+<p>For the purpose of this post, I had to setup some test users and groups in my G-Suite environment. You may not need to do that.</p>
+<ol start="2">
+<li>You will need to setup AWS Organisations. If you do not have this setup, don&rsquo;t worry this will walk you through the step. If you already have this setup, then nothing to see, walk on by.</li>
+</ol>
+<blockquote>
+<p><strong>What if I already have SSO set up?</strong></p>
+</blockquote>
+<blockquote>
+<p>Excellent question. You can only set up a single Identity provider, so you will need to review your current setup before proceeding as you will need to delete any existing SSO configurations before setting up this one.</p>
+</blockquote>
+<blockquote>
+<p>Do <strong>NOT</strong> proceed until you know what you want to do. Deleting an existing configuration may break stuff, so find out more about that before continuing!</p>
+</blockquote>
+<blockquote>
+<p><strong>What if I have a big G-Suite directory with LOTS of users OR I have 100&rsquo;s of AWS Accounts</strong></p>
+</blockquote>
+<blockquote>
+<p>You do need to be aware of the limits when using AWS SSO and integrating your G-Suite directory, so check out the current <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/limits.html">limits page here</a>.</p>
+</blockquote>
+<blockquote>
+<p>If this is a blocker for you please let me know, we are always working hard to make sure that customer feedback drives how we make our services better.</p>
+</blockquote>
+<p>With that out of the way, let&rsquo;s begin.</p>
+<h2 id="setup-your-g-suite-users">Setup your G-Suite users</h2>
+<p>The first thing you need to do is add some additional attributes to the users in the G-Suite directory as these attributes are needed to make SSO work.</p>
+<p>1] From your G-Suite Admin go to USERS</p>
+<p><img src="https://ricsuepublicresources.s3-eu-west-1.amazonaws.com/images/sso-1.png" alt="G-suite dashboard"></p>
+<p>2] From this screen, select MANAGE CUSTOM ATTRIBUTES (on the current UI, this is under the MORE menu option)</p>
+<p>3] Click on ADD CUSTOM ATTRIBUTE</p>
+<p>4] You need to give this a Category name, so call this something like AWS-SSO and add a brief description (it is always to document this stuff for those that you work with or who come after you) - I add &ldquo;Custom attributes required to authenticate G-Suite users into AWS SSO&rdquo;</p>
+<p>5] You will now need to add TWO custom fields - these are case sensitive and should be entered exactly as the following:</p>
+<ul>
+<li>Name: IAM_role
+<ul>
+<li>Type: Text</li>
+<li>Set to Visible to User and Admin</li>
+<li>Set to Multiple Values</li>
+</ul>
+</li>
+<li>Name: SessionDuration
+<ul>
+<li>Type: Whole Number</li>
+<li>Set to Visible to User and Admin</li>
+<li>Set to Single Value</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://ricsuepublicresources.s3-eu-west-1.amazonaws.com/images/sso-5.png" alt="User attributes screen"></p>
+<p>6] Click SAVE and you should now see this appear at the bottom of the attributes screen.</p>
+<p><img src="https://ricsuepublicresources.s3-eu-west-1.amazonaws.com/images/sso-6.png" alt="User attributes screen"></p>
+<h2 id="start-the-aws-single-sign-on-setup">Start the AWS Single Sign on setup</h2>
+<p>Before proceeding, we now need to setup the AWS SSO as we are going to use some of the information in the next stage when we setup G-Suite to be our identity provider.</p>
+<p>1] From the AWS console, go to the AWS Single Sign on console</p>
+<p>2] As this should be the first time you are setting up this, you should see this screen. Click on Enable AWS SSO.</p>
+<p><img src="https://ricsuepublicresources.s3-eu-west-1.amazonaws.com/images/sso-2.png" alt="AWS SSO Screens"></p>
+<p><img src="https://ricsuepublicresources.s3-eu-west-1.amazonaws.com/images/sso-3.png" alt="AWS SSO Screens"></p>
+<blockquote>
+<p>If you do NOT see this, then you (or someone in your org) have probably already setup AWS SSO. Do not proceed until you have resolved this and are able to delete the existing SSO configuration as needed.</p>
+</blockquote>
+<p>3] Once the setup has been completed, you will be on the AWS Single Sign-On dashboard, with three options.</p>
+<p><img src="https://ricsuepublicresources.s3-eu-west-1.amazonaws.com/images/sso-8.png" alt="AWS SSO Screens"></p>
+<p>Select 1, Choose your identity source</p>
+<p>4] In the top section, you will see Identity source set to AWS SSO. Click on the Change link.</p>
+<p><img src="https://ricsuepublicresources.s3-eu-west-1.amazonaws.com/images/sso-9.png" alt="AWS SSO Screens"></p>
+<p>5] Change the option from AWS SSO to External Identity Provider</p>
+<p><img src="https://ricsuepublicresources.s3-eu-west-1.amazonaws.com/images/sso-10.png" alt="AWS SSO Screens"></p>
+<p>6] Click on SHOW INDIVIDUAL METADATA VALUES to show three links (AWS SSO ACS URL, AWS SSO Issuer URL and AWS SSO Sign-in URL). You are going to need these in the next section.</p>
+<p>We now need to go back to the G-Suite Admin console and set it up as our Identity Provider. We are going to use these links to generate the configuration, and we will need to come back to this page to upload the IdP SAML Metadata xml file - so do not close this page!</p>
+<h2 id="setup-your-g-suite-to-be-your-identity-provider">Setup your G-Suite to be your Identity Provider</h2>
+<p>The next step is to now configure your G-Suite directory that contains your users and groups to be your identity provider (IdP). We do this by selecting &ldquo;Apps&rdquo; from the G-Suite Admin dashboard, and then selecting &ldquo;SAML apps&rdquo;.</p>
+<p>Click on the round + (Enable SSO for a SAML application) to create a new SAML application. From the screen that appears, select Amazon Web Services.</p>
+<p>You will now follow a set of steps to setup your Identity provider.</p>
+<p>In the first screen, Google Idp Information, you will see two options listed. Option 1) is a list of URLs and certificate and Option 2) is a file you can download called the IDP Metadata. You want to select Option 2) and download this file. We are going to use that file in a minute.</p>
+<blockquote>
+<p><strong>WARNING!!</strong> You must keep this file safe. Do not share it or store it where it can be easily accessed. If this files DOES become compromised, then don&rsquo;t worry, you can just repeat this process to regenerate the configuration files and certificates.</p>
+</blockquote>
+<p>Click on NEXT until you get to the SERVICE PROVIDER DETAILS and here you will need to use the links from the previous section, as well as some of the custom attributes to configure your Identity Provider.</p>
+<p>In the top half of this screen, substitute the following values from what you got in the previous section.</p>
+<ul>
+<li>For the ACS URL use the AWS SSO ACS URL link</li>
+<li>For the Entity ID use the AWS SSO Issuer URL</li>
+<li>For the Start URL use the AWS SSO Sign-in URL</li>
+</ul>
+<p>Make sure that the additional settings are also set:</p>
+<p>Name ID - Basic Information and Primary Email
+Name ID Format - EMAIL</p>
+<p>When you have confirmed that is setup, click on NEXT and then complete the ATTRIBUTE MAPPINGS. Here you need to make sure you have the correct mappings, and we will use the custom attributes we configured in the G-Suite Directory.</p>
+<blockquote>
+<p>Tip! It can be tricky to view the information on this screen, so just hovering over the link will display the full link to help you. To help you out I have used Inspect to dig these out.</p>
+</blockquote>
+<p>You need to MAP</p>
+<pre><code>https://aws.amazon.com/SAML/Attributes/RoleSessionName
+</code></pre>
+<p>to Primary Email</p>
+<p>and MAP</p>
+<pre><code> https://aws.amazon.com/SAML/Attributes/Role
+</code></pre>
+<p>to IAM_role</p>
+<blockquote>
+<p>Note! You will need to click on the twisty to select whatever you called the category and you should then see IAM_role</p>
+</blockquote>
+<p>From this screen you also need to add a NEW MAPPING.</p>
+<p>Create NEW mapping called</p>
+<pre><code class="language-https://aws.amazon.com/SAML/Attributes/SessionDuration"></code></pre>
+<p>and set this to SessionDuration</p>
+<p><img src="https://ricsuepublicresources.s3-eu-west-1.amazonaws.com/images/sso-12.png" alt="AWS SSO Screens"></p>
+<p>When complete, it should look a little like this. Once you have checked, click FINISH. Now we can complete the setup on AWS Single Sign-on.</p>
+<h2 id="complete-the-aws-sso-configuration">Complete the AWS SSO configuration</h2>
+<p>Go back to the browser tab/screen where you are ready to upload the IdP SAML Metadata xml file. We now have this file (the file we downloaded in the previous section, the one we need to keep very safe), so click on the BROWSE select the file and then click on REVIEW.</p>
+<p>On the next screen you need to review so you and understand and then confirm the changes that are about to be made. Do not proceed if you are not sure. If you are happy, type in CONFIRM in the box and click on Change Identity Source button.</p>
+<p><img src="https://ricsuepublicresources.s3-eu-west-1.amazonaws.com/images/sso-11.png" alt="AWS SSO Screens"></p>
+<p>If you are successful, you should get a Complete message with a button to return you to settings.</p>
+<blockquote>
+<p>Troubleshooting! If you do not get this, then there are a few things you can check. First that you have entered the information correctly in the links. The second, ensure you are using the right metadata XML file.</p>
+</blockquote>
+<p>So we have now setup the integration between G-Suite Directory and AWS SSO, but how does AWS know what access to give those authenticated users?</p>
+<p>The next step therefore is to a) create the users within the AWS SSO directory that match/map to the users within the G-Suite directory, and b) then map those users to AWS resources and permission sets.</p>
+<blockquote>
+<p><strong>Syncing users and groups</strong> - adding users and groups is a manual process prone to error, so being able to sync these between the source (G-Suite directory) and AWS SSO directory is key. See later on in this blog on how you can do that with a great open source project.</p>
+</blockquote>
+<p>From the AWS SSO Dashboard screen, select USERS from the left hand menu. Click on ADD USER and then complete a profile, using the email address EXACTLY as it is in the G-Suite directory for the Username as well as Email fields. Once you have added a user, create a group and add the user to that Group.</p>
+<p>Click on AWS Accounts, and you should see a screen that will show you AWS accounts (this will vary from person to person, but it you are trying this out on your own personal AWS environment, you will see a single AWS account, if you are doing this at work and have a number of AWS accounts under your AWS Organisation, you will see more).</p>
+<p>Click on the AWS account you want to assign / map one of the G-Suite user IDs to. Once you click on the AWS account, you can then click on ASSIGN USERS. On the next screen, click on the GROUPS tab, and select the group you setup in the previous step.</p>
+<blockquote>
+<p>Groups not Users - in this walkthrough I am using groups as I do not like assigning accounts and permissions sets to individual users.</p>
+</blockquote>
+<p>Once you have selected it, click on the PERMISSIONS SETS. This screen will allow you to define what permissions you want to give this user. There are a set of standard templates you can use (for example, Administrators, with full access) but you can create your own custom ones too. Click on CREATE NEW PERMISSIONS SET and from the screen that comes up, select an existing template (Use an Existing job function policy)  - you can see the Create a custom permission set below, I will not cover these here, but you can see where you would set this if you wanted to refine the permissions.</p>
+<p>Select AdministratorAccess and then click on CREATE. Once complete it should return you back to the previous screen. Click on the checkbox next to AdministratorAccess and then click on FINISH.</p>
+<p>Now, we are not quite ready to test this, but we are almost there. Just one more thing to do.</p>
+<h2 id="enabling-and-then-testing-the-setup">Enabling and then testing the setup</h2>
+<p>When we setup the Identity Provide on G-Suite, the default setting is to DISABLE it for everyone so we are now going to need to go back and ENABLE this.</p>
+<p>What this is doing is allow either ALL or a subset of your G-Suite users to have access to this AWS SSO integration. Check your G-Suite documentation on how to manage this, as this is outside the scope of this post.</p>
+<p>For the purpose of testing, we are going to ENABLE FOR ALL - this means that anyone who is a user within my G-Suite directory, can SSO into my AWS account.</p>
+<p><strong>Testing</strong></p>
+<p>So, we have completed everything we need to do, so are ready to test. In the steps above, a login link was displayed. This link is called the AWS SSO Sign-in URL, and will be in the format of</p>
+<pre><code>https://{identifier}.awsapps.com/start 
+</code></pre>
+<p>You can also customise this against a global namespace, so you will need to make sure whatever you set that it is unique.</p>
+<p>Click on the link, and this should redirect you to Google so you can authenticate and once you have successfully done that, you should be presented with this screen.</p>
+<p><img src="https://ricsuepublicresources.s3-eu-west-1.amazonaws.com/images/SSO-20.png" alt="Log in image"></p>
+<p>Congratulations, you have now logged in using your G-Suite identity.</p>
+<blockquote>
+<p>Troubleshooting! If you get the following error when logging in, you either have not setup a user in AWS SSO User, not mapped a user to a permission set or not used exactly the right information in the User details - check all three and you should resolve your problem.</p>
+</blockquote>
+<h2 id="syncing-your-users-and-groups">Syncing your users and Groups</h2>
+<p>What you really need to do next is ensure that you can synchronise your user and groups from your G-Suite directory to the AWS SSO users and groups. In this step, we will use an open source project called <a href="https://github.com/awslabs/ssosync"><strong>ssosync</strong> (GitHub repository here)</a> to automate this.</p>
+<p><strong>Installing the SSO Sync Tool</strong></p>
+<p>From the GitHub repo README.md file, you will need an environment where you are going to check out the code and run it. For the purpose of this post, we will use a local dev environment (I am using my Mac)</p>
+<p><strong>Configuring the SSOSync on GCP</strong></p>
+<p>You will need to following the instructions under the Google section. Do not worry about whether you have a GCP environment, you will not need to sign up for that to get this working. The output of this process is to generate the configuration on the Google side and then two configuration files (below) that you will use during the sync process.</p>
+<p><strong>Changes you need to make to your G-Suite security settings</strong></p>
+<p>When following these instructions, make sure your G-Suite security settings allow your sync process to access its APIs. Make sure you review your security settings for your G-Suite environment. You might be using third party tools to do this, but if you get the following error when you set this up, this will mean you need to review your settings to enable the tool to access your G-Suite Directory</p>
+<p><img src="https://ricsuepublicresources.s3-eu-west-1.amazonaws.com/images/sso-7.png" alt="Access error"></p>
+<p>If you are just using the default tools, Enabled the TRUST INTERNAL, DOMAIN OWNED APPS (this is disabled by default)</p>
+<blockquote>
+<p>Note! Before making this change, you should check that this will not have any other impacts for your G-Suite environment.</p>
+</blockquote>
+<p><strong>Completing the GCP configuration</strong></p>
+<p>Once you have finished the setup instructions, you will have the following artefacts in your local environment:</p>
+<ul>
+<li>the <strong>ssosync</strong> executable for the runtime you want to run this on</li>
+<li>a <strong>credentials.json</strong> file</li>
+<li>a <strong>token.json</strong> file</li>
+</ul>
+<p><strong>Complete the AWS configuration</strong></p>
+<p>From Settings in your AWS SSO, Under Identity Source you will see there is a Provisioning options. There will be a link to ENABLE AUTOMATIC PROVISION. Click on that link.</p>
+<p><img src="https://ricsuepublicresources.s3-eu-west-1.amazonaws.com/images/SSO-17.png" alt="Automatic provisioning"></p>
+<p>When you click on this, you will see an SCIM endpoint and the Access token (which will be hidden). You will need to create a file that the <strong>ssosync</strong> will use to authenticate and then interact with your AWS SSO user and group repository.</p>
+<p><img src="https://ricsuepublicresources.s3-eu-west-1.amazonaws.com/images/SSO-18.png" alt="SCIM endpoints"></p>
+<p>Create a file in the same folder where you have the other artefacts, and call it <strong>aws.toml</strong> (you can call this whatever you want, you will refer to the file as a parameter later). The file will be in the format of two lines:</p>
+<pre><code>Token = &quot;bea11536........==&quot;
+Endpoint = &quot;https://scim.us-east-2.amazonaws.com/...../scim/v2/&quot;
+</code></pre>
+<p>Every time you update or change this setting, these values will change so bear that in mind if you are automating this and need to update these settings.</p>
+<blockquote>
+<p>Note! You will to reset this file on a regular basis to ensure good security hygiene. You can delete or generate new tokens as and when you need to, so make sure you bake this into how you deploy this tool.</p>
+</blockquote>
+<p>It is important to know that this process is just performing a one way synchronisation from the G-Suite directory to AWS SSO, but it is NOT enabling any of those identities to access AWS&hellip;yet. You still need to do that.</p>
+<p>You can assign users and group to a set of AWS Permissions, and once you have done that they will then be able to access AWS resources. Try and use groups to manage these rather than assigning permission sets to individuals.</p>
+<p><strong>Running SSOSync</strong></p>
+<p><strong>Note!</strong> Running SSOsync will delete any existing users and group you have defined in your AWS SSO, so do NOT proceed unless you understand that.</p>
+<p>Once you have all these files in place, kick off your sync process by running</p>
+<pre><code>$ ./ssosync
+</code></pre>
+<p>And you should see output as it starts syncing users and groups, and removing any current users and groups in your AWS SSO setup.</p>
+<pre><code>2020-05-26T15:23:39.023+0100	INFO	cmd/root.go:43	Creating the Google and AWS Clients needed
+2020-05-26T15:23:39.025+0100	INFO	internal/sync.go:38	Start user sync
+2020-05-26T15:23:42.453+0100	INFO	internal/sync.go:60	Create user in AWS	{&quot;email&quot;: &quot;albert.camus@beachxxxx.co.uk&quot;}
+2020-05-26T15:23:42.804+0100	INFO	internal/sync.go:60	Create user in AWS	{&quot;email&quot;: &quot;che@beachxxxx.co.uk&quot;}
+2020-05-26T15:23:43.028+0100	INFO	internal/sync.go:60	Create user in AWS	{&quot;email&quot;: &quot;poet@beachxxxx.co.uk&quot;}
+2020-05-26T15:23:43.306+0100	INFO	internal/sync.go:60	Create user in AWS	{&quot;email&quot;: &quot;ricardo.sueiras@beachxxxx.co.uk&quot;}
+2020-05-26T15:23:43.656+0100	INFO	internal/sync.go:73	Clean up AWS Users
+2020-05-26T15:23:43.657+0100	INFO	internal/sync.go:76	Delete User in AWS	{&quot;email&quot;: &quot;developer1&quot;}
+2020-05-26T15:23:44.378+0100	INFO	internal/sync.go:89	Start group sync
+2020-05-26T15:23:45.214+0100	INFO	internal/sync.go:119	Creating group in AWS	{&quot;group&quot;: &quot;Admin Group&quot;}
+2020-05-26T15:23:46.232+0100	INFO	internal/sync.go:135	Start group user sync	{&quot;group&quot;: &quot;Admin Group&quot;}
+2020-05-26T15:23:46.807+0100	INFO	internal/sync.go:154	Adding user to group	{&quot;group&quot;: &quot;Admin Group&quot;, &quot;user&quot;: &quot;che@beachxxxx.co.uk&quot;}
+2020-05-26T15:23:47.729+0100	INFO	internal/sync.go:154	Adding user to group	{&quot;group&quot;: &quot;Admin Group&quot;, &quot;user&quot;: &quot;ricardo.sueiras@beachxxxx.co.uk&quot;}
+2020-05-26T15:23:48.027+0100	INFO	internal/sync.go:119	Creating group in AWS	{&quot;group&quot;: &quot;Beats Group&quot;}
+2020-05-26T15:23:49.199+0100	INFO	internal/sync.go:135	Start group user sync	{&quot;group&quot;: &quot;Beats Group&quot;}
+2020-05-26T15:23:50.188+0100	INFO	internal/sync.go:154	Adding user to group	{&quot;group&quot;: &quot;Beats Group&quot;, &quot;user&quot;: &quot;albert.camus@beachxxxx.co.uk&quot;}
+2020-05-26T15:23:51.440+0100	INFO	internal/sync.go:119	Creating group in AWS	{&quot;group&quot;: &quot;Poets&quot;}
+2020-05-26T15:23:52.119+0100	INFO	internal/sync.go:135	Start group user sync	{&quot;group&quot;: &quot;Poets&quot;}
+2020-05-26T15:23:52.982+0100	INFO	internal/sync.go:154	Adding user to group	{&quot;group&quot;: &quot;Poets&quot;, &quot;user&quot;: &quot;ricardo.sueiras@beachxxxx.co.uk&quot;}
+2020-05-26T15:23:54.797+0100	INFO	internal/sync.go:154	Adding user to group	{&quot;group&quot;: &quot;Poets&quot;, &quot;user&quot;: &quot;poet@beachxxxx.co.uk&quot;}
+2020-05-26T15:23:55.050+0100	INFO	internal/sync.go:172	Clean up AWS groups
+2020-05-26T15:23:55.050+0100	INFO	internal/sync.go:175	Delete User in AWS	{&quot;group&quot;: &quot;DevFam&quot;}
+2020-05-26T15:23:55.401+0100	INFO	internal/sync.go:183	Done sync groups
+</code></pre>
+<p>You have now synced from your G-Suite directory to your AWS SSO users and groups. When you go back to the AWS console, we can see our users and groups are there, and all we now need to do is assign them AWS resources.</p>
+<p><img src="https://ricsuepublicresources.s3-eu-west-1.amazonaws.com/images/SSO-15.png" alt="Users"></p>
+<p><img src="https://ricsuepublicresources.s3-eu-west-1.amazonaws.com/images/SSO-14.png" alt="Groups"></p>
+<p>If we re-run the tool, having made no changes to users or groups we will see no updates.</p>
+<pre><code>2020-05-26T15:34:20.789+0100	INFO	cmd/root.go:43	Creating the Google and AWS Clients needed
+2020-05-26T15:34:20.791+0100	INFO	internal/sync.go:38	Start user sync
+2020-05-26T15:34:24.278+0100	INFO	internal/sync.go:73	Clean up AWS Users
+2020-05-26T15:34:24.278+0100	INFO	internal/sync.go:89	Start group sync
+2020-05-26T15:34:25.629+0100	INFO	internal/sync.go:135	Start group user sync	{&quot;group&quot;: &quot;Admin Group&quot;}
+2020-05-26T15:34:28.328+0100	INFO	internal/sync.go:135	Start group user sync	{&quot;group&quot;: &quot;Beats Group&quot;}
+2020-05-26T15:34:29.479+0100	INFO	internal/sync.go:135	Start group user sync	{&quot;group&quot;: &quot;Poets&quot;}
+2020-05-26T15:34:30.472+0100	INFO	internal/sync.go:172	Clean up AWS groups
+2020-05-26T15:34:30.472+0100	INFO	internal/sync.go:183	Done sync groups
+
+</code></pre>
+<h3 id="what-next">What next</h3>
+<p>This post has show you how to get the ssosync open source tool to help you synchronise your G-Suite directory with your AWS Sign Sign on environment.</p>
+<p>If this is useful, then you will probably need to think about:</p>
+<ul>
+<li>How to automate the running of this on a regular basis</li>
+<li>How you approach managing the security sensitive artefacts that are generated</li>
+<li>How you cycle and reset credentials on a regular basis</li>
+</ul>
+<h3 id="thanks">Thanks!</h3>
+<p>Many thanks to <strong><a href="https://twitter.com/Joolz">Lee Packham</a></strong> for the work that has gone into this open source tool. You can find the <a href="https://github.com/awslabs/ssosync">GitHub repository for ssosync here.</a></p>
+
+  </main>
+
+          <div class="social-heading">
+            <div class="footer-social">
+  
+    <div class="social-icon">
+      <a href="https://twitter.com/094459" target="_blank" title="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Twitter" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://github.com/094459" target="_blank" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="GitHub" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+      </a>
+    </div>
+  
+  
+    <div class="social-icon">
+      <a href="https://www.linkedin.com/in/ricardosueiras" target="_blank" title="Linkedin">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="LinkedIn" role="img"
+viewBox="0 0 512 512"
+fill="#fff"><rect
+width="512" height="512"
+rx="15%"
+fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://www.reddit.com/r/aws" target="_blank" title="Reddit">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Reddit" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+      </a>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="social-icon">
+      <a href="mailto:ricsue@amazon.com" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Email" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="teal"/><rect width="356" height="256" x="78" y="128" fill="#fff" rx="8%"/><path fill="none" stroke="teal" stroke-width="20" d="M434 128L269 292c-7 8-19 8-26 0L78 128m0 256l129-128m227 128L305 256"/></svg>
+      </a>
+    </div>
+  
+  
+</div>
+
+          </div>
+          <footer role="contentinfo">
+  <div class="social-footer">
+    <div class="footer-social">
+  
+    <div class="social-icon">
+      <a href="https://twitter.com/094459" target="_blank" title="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Twitter" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://github.com/094459" target="_blank" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="GitHub" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+      </a>
+    </div>
+  
+  
+    <div class="social-icon">
+      <a href="https://www.linkedin.com/in/ricardosueiras" target="_blank" title="Linkedin">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="LinkedIn" role="img"
+viewBox="0 0 512 512"
+fill="#fff"><rect
+width="512" height="512"
+rx="15%"
+fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://www.reddit.com/r/aws" target="_blank" title="Reddit">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Reddit" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+      </a>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="social-icon">
+      <a href="mailto:ricsue@amazon.com" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Email" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="teal"/><rect width="356" height="256" x="78" y="128" fill="#fff" rx="8%"/><path fill="none" stroke="teal" stroke-width="20" d="M434 128L269 292c-7 8-19 8-26 0L78 128m0 256l129-128m227 128L305 256"/></svg>
+      </a>
+    </div>
+  
+  
+</div>
+
+    <label for="themer">
+      dark theme: <input type="checkbox" id="themer" class="vh">
+      <span aria-hidden="true"></span>
+    </label>
+  </div>
+  
+    <p class="margin-top-none">Copyright &copy; <span id="copyright-year"></span> - Ricardo Sueiras</p>
+  
+  
+    <p class="margin-top-none">
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cupper-hugo-theme">Cupper</a>.
+    </p>
+  
+</footer>
+<script>
+    var year = new Date().getFullYear()
+    document.getElementById("copyright-year").innerHTML = year;
+</script>
+
+        </div>
+      </div>
+    </div>
+    <script src="https://blog.beachgeek.co.uk/js/prism.js"></script>
+
+
+
+<script src="https://blog.beachgeek.co.uk/js/dom-scripts.js"></script>
+
+
+
+<script src="/js/search.7aef046a0cc8b0c532f1d20087b920459bc868c936bb48a6ae221eceefca2d07.js"></script>
+
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  </body>
+</html>

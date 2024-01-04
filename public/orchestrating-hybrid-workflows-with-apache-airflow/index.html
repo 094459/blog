@@ -1,0 +1,1901 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="generator" content="Hugo 0.121.1">
+  
+  
+    <link rel="canonical" href="https://blog.beachgeek.co.uk/orchestrating-hybrid-workflows-with-apache-airflow/">
+  
+
+  
+
+  
+    
+    
+    
+    
+    
+
+  
+    <link rel="webmention" href="https://webmention.io/username.co.uk/webmention" />
+    <link rel="pingback" href="https://webmention.io/username.co.uk/xmlrpc" />
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://blog.beachgeek.co.uk/css/syntax.css" media="none" onload="this.media='all';">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://blog.beachgeek.co.uk/css/styles.css">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://blog.beachgeek.co.uk/style.main.css">
+
+  
+
+  <link rel="alternate" rel="canonical" href="https://blog.beachgeek.co.uk/index.xml" >
+  
+  <style id="inverter" media="none">
+    .intro-and-nav, .main-and-footer { filter: invert(100%) }
+    * { background-color: inherit }
+    img:not([src*=".svg"]), .colors, iframe, .demo-container { filter: invert(100%) }
+  </style>
+
+  
+  
+  <title>Orchestrating hybrid workflows using Amazon Managed Workflows for Apache Airflow (MWAA) | Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Orchestrating hybrid workflows using Amazon Managed Workflows for Apache Airflow (MWAA)"/>
+<meta name="twitter:description" content="Using Apache Airflow to orchestrate hybrid workflows In some recent discussions with customers, the topic of how open source is increasingly being used as a common mechanisms to help build re-usable solutions that can protect investments in engineering and development time, skills and that work across on premises and Cloud environment. In 2021 my most viewed blog post talked about how you can build and deploy containerised applications, anywhere (Cloud, your data centre, other Clouds) and on anything (Intel and Arm)."/>
+<meta name="twitter:site" content="@094459"/>
+
+  <meta name="twitter:card" content="summary" />
+</head>
+
+  <body>
+    <a href="#main">skip to content</a>
+    <svg style="display: none">
+  <symbol id="bookmark" viewBox="0 0 40 50">
+   <g transform="translate(2266 3206.2)">
+    <path style="stroke:currentColor;stroke-width:3.2637;" d="m-2262.2-3203.4-.2331 42.195 16.319-16.318 16.318 16.318.2331-42.428z"/>
+   </g>
+  </symbol>
+
+  <symbol id="w3c" viewBox="0 0 127.09899 67.763">
+   <text font-size="83" style="font-size:83px;font-family:Trebuchet;letter-spacing:-12;fill-opacity:0" letter-spacing="-12" y="67.609352" x="-26.782778">W3C</text>
+   <text font-size="83" style="font-size:83px;font-weight:bold;font-family:Trebuchet;fill-opacity:0" y="67.609352" x="153.21722" font-weight="bold">SVG</text>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m33.695.377 12.062 41.016 12.067-41.016h8.731l-19.968 67.386h-.831l-12.48-41.759-12.479 41.759h-.832l-19.965-67.386h8.736l12.061 41.016 8.154-27.618-3.993-13.397h8.737z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m91.355 46.132c0 6.104-1.624 11.234-4.862 15.394-3.248 4.158-7.45 6.237-12.607 6.237-3.882 0-7.263-1.238-10.148-3.702-2.885-2.47-5.02-5.812-6.406-10.022l6.82-2.829c1.001 2.552 2.317 4.562 3.953 6.028 1.636 1.469 3.56 2.207 5.781 2.207 2.329 0 4.3-1.306 5.909-3.911 1.609-2.606 2.411-5.738 2.411-9.401 0-4.049-.861-7.179-2.582-9.399-1.995-2.604-5.129-3.912-9.397-3.912h-3.327v-3.991l11.646-20.133h-14.062l-3.911 6.655h-2.493v-14.976h32.441v4.075l-12.31 21.217c4.324 1.385 7.596 3.911 9.815 7.571 2.22 3.659 3.329 7.953 3.329 12.892z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.21 0 1.414 8.6-5.008 9.583s-1.924-4.064-5.117-6.314c-2.693-1.899-4.447-2.309-7.186-1.746-3.527.73-7.516 4.938-9.258 10.13-2.084 6.21-2.104 9.218-2.178 11.978-.115 4.428.58 7.043.58 7.043s-3.04-5.626-3.011-13.866c.018-5.882.947-11.218 3.666-16.479 2.404-4.627 5.954-7.404 9.114-7.728 3.264-.343 5.848 1.229 7.841 2.938 2.089 1.788 4.213 5.698 4.213 5.698l4.94-9.837z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.82 48.674s-2.208 3.957-3.589 5.48c-1.379 1.524-3.849 4.209-6.896 5.555-3.049 1.343-4.646 1.598-7.661 1.306-3.01-.29-5.807-2.032-6.786-2.764-.979-.722-3.486-2.864-4.897-4.854-1.42-2-3.634-5.995-3.634-5.995s1.233 4.001 2.007 5.699c.442.977 1.81 3.965 3.749 6.572 1.805 2.425 5.315 6.604 10.652 7.545 5.336.945 9.002-1.449 9.907-2.031.907-.578 2.819-2.178 4.032-3.475 1.264-1.351 2.459-3.079 3.116-4.108.487-.758 1.276-2.286 1.276-2.286l-1.276-6.644z"/>
+  </symbol>
+
+  <symbol id="tag" viewBox="0 0 177.16535 177.16535">
+    <g transform="translate(0 -875.2)">
+     <path style="fill-rule:evenodd;stroke-width:0;fill:currentColor" d="m159.9 894.3-68.79 8.5872-75.42 77.336 61.931 60.397 75.429-76.565 6.8495-69.755zm-31.412 31.835a10.813 10.813 0 0 1 1.8443 2.247 10.813 10.813 0 0 1 -3.5174 14.872l-.0445.0275a10.813 10.813 0 0 1 -14.86 -3.5714 10.813 10.813 0 0 1 3.5563 -14.863 10.813 10.813 0 0 1 13.022 1.2884z"/>
+    </g>
+  </symbol>
+
+  <symbol id="balloon" viewBox="0 0 141.73228 177.16535">
+   <g transform="translate(0 -875.2)">
+    <g>
+     <path style="fill:currentColor" d="m68.156 882.83-.88753 1.4269c-4.9564 7.9666-6.3764 17.321-5.6731 37.378.36584 10.437 1.1246 23.51 1.6874 29.062.38895 3.8372 3.8278 32.454 4.6105 38.459 4.6694-.24176 9.2946.2879 14.377 1.481 1.2359-3.2937 5.2496-13.088 8.886-21.623 6.249-14.668 8.4128-21.264 10.253-31.252 1.2464-6.7626 1.6341-12.156 1.4204-19.764-.36325-12.93-2.1234-19.487-6.9377-25.843-2.0833-2.7507-6.9865-7.6112-7.9127-7.8436-.79716-.20019-6.6946-1.0922-6.7755-1.0248-.02213.0182-5.0006-.41858-7.5248-.22808l-2.149-.22808h-3.3738z"/>
+     <path style="fill:currentColor" d="m61.915 883.28-3.2484.4497c-1.7863.24724-3.5182.53481-3.8494.63994-2.4751.33811-4.7267.86957-6.7777 1.5696-.28598 0-1.0254.20146-2.3695.58589-5.0418 1.4418-6.6374 2.2604-8.2567 4.2364-6.281 7.6657-11.457 18.43-12.932 26.891-1.4667 8.4111.71353 22.583 5.0764 32.996 3.8064 9.0852 13.569 25.149 22.801 37.517 1.3741 1.841 2.1708 2.9286 2.4712 3.5792 3.5437-1.1699 6.8496-1.9336 10.082-2.3263-1.3569-5.7831-4.6968-21.86-6.8361-33.002-.92884-4.8368-2.4692-14.322-3.2452-19.991-.68557-5.0083-.77707-6.9534-.74159-15.791.04316-10.803.41822-16.162 1.5026-21.503 1.4593-5.9026 3.3494-11.077 6.3247-15.852z"/>
+     <path style="fill:currentColor" d="m94.499 885.78c-.10214-.0109-.13691 0-.0907.0409.16033.13489 1.329 1.0675 2.5976 2.0723 6.7003 5.307 11.273 14.568 12.658 25.638.52519 4.1949.24765 14.361-.5059 18.523-2.4775 13.684-9.7807 32.345-20.944 53.519l-3.0559 5.7971c2.8082.76579 5.7915 1.727 8.9926 2.8441 11.562-11.691 18.349-19.678 24.129-28.394 7.8992-11.913 11.132-20.234 12.24-31.518.98442-10.02-1.5579-20.876-6.7799-28.959-.2758-.4269-.57803-.86856-.89617-1.3166-3.247-6.13-9.752-12.053-21.264-16.131-2.3687-.86369-6.3657-2.0433-7.0802-2.1166z"/>
+     <path style="fill:currentColor" d="m32.52 892.22c-.20090-.13016-1.4606.81389-3.9132 2.7457-11.486 9.0476-17.632 24.186-16.078 39.61.79699 7.9138 2.4066 13.505 5.9184 20.562 5.8577 11.77 14.749 23.219 30.087 38.74.05838.059.12188.1244.18052.1838 1.3166-.5556 2.5965-1.0618 3.8429-1.5199-.66408-.32448-1.4608-1.3297-3.8116-4.4602-5.0951-6.785-8.7512-11.962-13.051-18.486-5.1379-7.7948-5.0097-7.5894-8.0586-13.054-6.2097-11.13-8.2674-17.725-8.6014-27.563-.21552-6.3494.13041-9.2733 1.775-14.987 2.1832-7.5849 3.9273-10.986 9.2693-18.07 1.7839-2.3656 2.6418-3.57 2.4409-3.7003z"/>
+     <path style="fill:currentColor" d="m69.133 992.37c-6.2405.0309-12.635.76718-19.554 2.5706 4.6956 4.7759 9.935 10.258 12.05 12.625l4.1272 4.6202h11.493l3.964-4.4516c2.0962-2.3541 7.4804-7.9845 12.201-12.768-8.378-1.4975-16.207-2.6353-24.281-2.5955z"/>
+     <rect style="stroke-width:0;fill:currentColor" ry="2.0328" height="27.746" width="22.766" y="1017.7" x="60.201"/>
+    </g>
+   </g>
+  </symbol>
+
+  <symbol id="info" viewBox="0 0 41.667 41.667">
+   <g transform="translate(-37.035 -1004.6)">
+    <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m76.25 1030.2a18.968 18.968 0 0 1 -23.037 13.709 18.968 18.968 0 0 1 -13.738 -23.019 18.968 18.968 0 0 1 23.001 -13.768 18.968 18.968 0 0 1 13.798 22.984"/>
+    <g transform="matrix(1.1146 0 0 1.1146 -26.276 -124.92)">
+     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m75.491 1039.5v-8.7472"/>
+     <path style="stroke-width:0;fill:currentColor" transform="scale(-1)" d="m-73.193-1024.5a2.3719 2.3719 0 0 1 -2.8807 1.7142 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
+    </g>
+   </g>
+  </symbol>
+
+  <symbol id="warning" viewBox="0 0 48.430474 41.646302">
+    <g transform="translate(-1.1273 -1010.2)">
+     <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:4.151;fill:none" d="m25.343 1012.3-22.14 37.496h44.28z"/>
+     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:4.1512;fill:none" d="m25.54 1027.7v8.7472"/>
+     <path style="stroke-width:0;fill:currentColor" d="m27.839 1042.8a2.3719 2.3719 0 0 1 -2.8807 1.7143 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
+    </g>
+  </symbol>
+
+  <symbol id="menu" viewBox="0 0 50 50">
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="0" x="0"/>
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="20" x="0"/>
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="40" x="0"/>
+   </symbol>
+
+   <symbol id="link" viewBox="0 0 50 50">
+    <g transform="translate(0 -1002.4)">
+     <g transform="matrix(.095670 0 0 .095670 2.3233 1004.9)">
+      <g>
+       <path style="stroke-width:0;fill:currentColor" d="m452.84 192.9-128.65 128.65c-35.535 35.54-93.108 35.54-128.65 0l-42.881-42.886 42.881-42.876 42.884 42.876c11.845 11.822 31.064 11.846 42.886 0l128.64-128.64c11.816-11.831 11.816-31.066 0-42.9l-42.881-42.881c-11.822-11.814-31.064-11.814-42.887 0l-45.928 45.936c-21.292-12.531-45.491-17.905-69.449-16.291l72.501-72.526c35.535-35.521 93.136-35.521 128.64 0l42.886 42.881c35.535 35.523 35.535 93.141-.001 128.66zm-254.28 168.51-45.903 45.9c-11.845 11.846-31.064 11.817-42.881 0l-42.884-42.881c-11.845-11.821-11.845-31.041 0-42.886l128.65-128.65c11.819-11.814 31.069-11.814 42.884 0l42.886 42.886 42.876-42.886-42.876-42.881c-35.54-35.521-93.113-35.521-128.65 0l-128.65 128.64c-35.538 35.545-35.538 93.146 0 128.65l42.883 42.882c35.51 35.54 93.11 35.54 128.65 0l72.496-72.499c-23.956 1.597-48.092-3.784-69.474-16.283z"/>
+      </g>
+     </g>
+    </g>
+  </symbol>
+
+  <symbol id="doc" viewBox="0 0 35 45">
+   <g transform="translate(-147.53 -539.83)">
+    <path style="stroke:currentColor;stroke-width:2.4501;fill:none" d="m149.38 542.67v39.194h31.354v-39.194z"/>
+    <g style="stroke-width:25" transform="matrix(.098003 0 0 .098003 133.69 525.96)">
+     <path d="m220 252.36h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+     <path style="stroke:currentColor;stroke-width:25;fill:none" d="m220 409.95h200"/>
+     <path d="m220 488.74h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+     <path d="m220 331.15h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+    </g>
+   </g>
+ </symbol>
+
+ <symbol id="tick" viewBox="0 0 177.16535 177.16535">
+  <g transform="translate(0 -875.2)">
+   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="155" width="40" y="702.99" x="556.82"/>
+   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="40" width="90.404" y="817.99" x="506.42"/>
+  </g>
+ </symbol>
+</svg>
+
+    <div class="wrapper">
+      <header class="intro-and-nav" role="banner">
+  <div>
+    <div class="intro">
+      <a class="logo" href="https://blog.beachgeek.co.uk/" aria-label="Beachgeek blog - a refuge for pineapple on pizza lovers home page">
+        <img src="https://blog.beachgeek.co.uk/images/logo.svg" alt="My site icon">
+      </a>
+      <p class="library-desc">
+         Technologist and Maker specialising in Cloud, Open Source and Innovation. 
+      </p>
+    </div>
+    <nav id="patterns-nav" class="patterns" role="navigation">
+  <h2 class="vh">Main navigation</h2>
+  <button id="menu-button" aria-expanded="false">
+    <svg viewBox="0 0 50 50" aria-hidden="true" focusable="false">
+      <use xlink:href="#menu"></use>
+    </svg>
+    Menu
+  </button>
+  
+  <ul id="patterns-list">
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Home</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/post/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Blog posts</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/newsletter/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Newsletter</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/tags/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Tags</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/about/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">About</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/index.xml" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">RSS</span>
+      </a>
+    </li>
+  
+  </ul>
+</nav>
+  </div>
+</header>
+
+      <div class="main-and-footer">
+        <div>
+          
+  <main id="main">
+    <h1>
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+        <use xlink:href="#bookmark"></use>
+      </svg>
+      Orchestrating hybrid workflows using Amazon Managed Workflows for Apache Airflow (MWAA)
+    </h1>
+
+    <div class="date">
+      <p>
+        
+        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" aria-labelledby="calendarIconTitle" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#111"> <title id="calendarIconTitle">Calendar</title> <path d="M3 5H21V21H3V5Z"/> <path d="M21 9H3"/> <path d="M7 5V3"/> <path d="M17 5V3"/> </svg> Published Mar 7, 2022
+      </p>
+      
+      <p><svg role="img" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" aria-labelledby="stopwatchIconTitle" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#111"> <title id="stopwatchIconTitle">Stopwatch</title> <circle cx="12" cy="13" r="8"/> <path d="M12 9L12 13M18 7L20 5M15 2L9 2"/> </svg> Reading time 46&nbsp;minutes</p>
+      
+    </div>
+
+    
+      <div class="tags">
+        <strong>Tags: </strong>
+        <ul aria-label="tags">
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/apache-airflow">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                Apache Airflow
+              </a>
+            </li>
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/mwaa">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                mwaa
+              </a>
+            </li>
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/hybrid">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                hybrid
+              </a>
+            </li>
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/ecs-anywhere">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                ECS Anywhere
+              </a>
+            </li>
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/amazon-ecs">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                Amazon ECS
+              </a>
+            </li>
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/ecsoperator">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                ECSOperator
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    
+    
+    
+      
+
+
+    
+
+    <h3 id="using-apache-airflow-to-orchestrate-hybrid-workflows">Using Apache Airflow to orchestrate hybrid workflows</h3>
+<p>In some recent discussions with customers, the topic of how open source is increasingly being used as a common mechanisms to help build re-usable solutions that can protect investments in engineering and development time, skills and that work across on premises and Cloud environment. In 2021 my <a href="https://dev.to/aws/creating-a-multi-architecture-ci-cd-deployment-for-amazon-ecs-and-ecs-anywhere-15o3">most viewed blog post</a> talked about how you can build and deploy containerised applications, anywhere (Cloud, your data centre, other Clouds) and on anything (Intel and Arm). I wanted to combine the learnings from that post (and the code) and apply it to another topic I have been diving deeper into, Apache Airflow. I wanted to explore how you can combine the two to see how you can start to build data pipelines that work across hybrid architectures seamlessly.</p>
+<p><strong>Use Case</strong></p>
+<p>So why would we want to do this? I can see a number of real world applications, but the two that stand out for me are:</p>
+<ul>
+<li>where you want to leverage and use existing legacy/heritage systems within your data analytics pipelines</li>
+<li>where local regulation and compliance places additional controls as to where data can be processed</li>
+</ul>
+<p>In this post I will show how you can address both of these use cases, combining open source technology and a number of AWS products and services that will enable you to orchestrate workflows across heterogeneous environments using Apache Airflow. In this demo I want to show you how you might approach orchestrating a data pipeline to build a centralised data lake across all your Cloud and non Cloud based data silos, that respect local processing and controls that you might have.</p>
+<p>This is what we will end up building.</p>
+<p><img src="https://raw.githubusercontent.com/094459/blogpost-airflow-hybrid/main/images/ricsue-airflow-hybrid.png" alt="architecture diagram"></p>
+<p>As always, you can find the code for this walk through in this GitHub repo, <a href="https://github.com/094459/blogpost-airflow-hybrid">blogpost-airflow-hybrid</a></p>
+<p><strong>Approach</strong></p>
+<p>First up we need to create our demo customer data. I used <a href="https://www.mockaroo.com/">Mockaroo</a> and found it super intuitive to generate sample data, and then use that to setup a sample customer database running on MySQL. I am not going to cover setting that up, but I have included the data scripts in the repo, and there is a section at the end of this blog where I share my setup if you want to set this up yourself.The demo will have two MySQL databases running, with the same database schema but with different data. One will be running on an Amazon RDS MySQL instance in AWS, and the other I have running on my local Ubuntu machine here at Home HQ.</p>
+<p>The goal of this demo/walk through is to orchestrate a workflow that will allow us to do batch extracts from these databases, based on some specific criteria (to simulate some regulator controls for example) and upload these into our data lake. We will be used an Amazon S3 bucket for this purpose, as it is a common scenario.</p>
+<p>The approach I am going to take is to create an Apache Airflow workflow (DAG) and leverage an Apache Airflow operator, ECSOperator, which allows us to launch container based images. The container based images we launch will contain our ETL code, and this will be parameterised so that we can re-use this multiple times, changing the behaviour by providing parameters during launch (for example, different SQL queries). Finally, we will use ECS Anywhere, which uses the open source <a href="https://github.com/aws/amazon-ecs-agent">amazon-ecs-agent</a> to simplify how we can run our containers anywhere - in the Cloud, on premises or on other Clouds.</p>
+<p>To make this blog post easier to follow, I will break it down into the different tasks. First, creating our ETL container that we can use to extract our data. Following that I will show how we can run this via Amazon ECS, and then walk through the process of deploying ECS Anywhere so we can run it on Amazon EC2 instances (Cloud) and on my humble (very old) Ubuntu 18.04 box (on-prem). With that all working, we will then switch to Apache Airflow and create our DAG that puts these pieces together and creates a workflow that will define and launch these containers to run our ETL scripts and upload our data in our data lake.</p>
+<p>Time to get started.</p>
+<p><strong>Pre-reqs</strong></p>
+<p>If you want to follow along, then you will need the following:</p>
+<ul>
+<li>An AWS account with the right level of privileges and the AWS cli set up and running locally</li>
+<li>AWS CDK installed and configured (the latest version, v1 or v2)</li>
+<li>Docker and Docker Compose in order to be able to build your container images and test locally</li>
+<li>Access to an AWS region where Managed Workflows for Apache Airflow is supported - I will be using eu-west-2 (London)</li>
+<li>An environment of Amazon Managed Workflows for Apache Airflow already setup. You can follow an earlier post, and I have included the AWS CDK code on how to build that environment within the repo</li>
+<li>MySQL databases running a database and data you can query - it doesn&rsquo;t have to be the same as I have used, you can use your own. I have provided the sql customer dummy data incase you wanted to use that if you try this demo for yourself. They key thing here is that you have one running locally and one running in the cloud. I am using Amazon RDS MySQL, but you could easily run MySQL a different way if you want. I have provided some details on how I set this up at the end of the blog post.</li>
+<li>AWS Secrets configured to contain connection details to the MySQL databases</li>
+</ul>
+<p>The AWS cost for running this for 24 hours is around &ldquo;$45&rdquo; according to my info on the AWS Billing console.</p>
+<h3 id="creating-our-etl-container">Creating our ETL container</h3>
+<p><strong>Creating our ETL script</strong></p>
+<p>First up we need to create our Python code that will do our ETL magic. For the sake of simplicity, I have created a simple script that takes some parameters and then runs a query, and uploads the results to Amazon S3.</p>
+<p><a href="https://github.com/094459/blogpost-airflow-hybrid/blob/main/docker/app/read-data-q.py">read-data-q.py</a></p>
+<pre><code>from copy import copy
+from mysql.connector import MySQLConnection, Error
+from python_mysql_dbconfig import read_db_config
+import sys
+import csv
+import boto3
+import json
+import socket
+def query_with_fetchone(query2run,secret,region):
+    try:
+        # Grab MySQL connection and database settings. We areusing AWS Secrets Manager 
+        # but you could use another service like Hashicorp Vault
+        # We cannot use Apache Airflow to store these as this script runs stand alone
+        secret_name = secret
+        region_name = region
+        session = boto3.session.Session()
+        client = session.client(
+            service_name='secretsmanager',
+            region_name=region_name
+        )
+        get_secret_value_response = client.get_secret_value(SecretId=secret_name)
+        info=json.loads(get_secret_value_response['SecretString'])
+        pw=info['password']
+        un=info['username']
+        hs=info['host']
+        db=info['database']
+        # Output to the log so we can see and confirm WHERE we are running and WHAT
+        # we are connecting to
+        
+        print(&quot;Connecting to &quot;,str(hs),&quot; database &quot;, str(db), &quot; as user &quot;, str(un))
+        print(&quot;Database host IP is :&quot;, socket.gethostbyname(hs))
+        print(&quot;Source IP is &quot;, socket.gethostname())
+
+        conn = MySQLConnection(user=un, password=pw, host=hs, database=db)
+        cursor = conn.cursor()
+        query=query2run
+        print(&quot;Query is&quot;, str(query))
+        cursor.execute(query)
+        records = cursor.fetchall()
+        c = csv.writer(open(&quot;temp.csv&quot;,&quot;w&quot;))
+        c.writerows(records)
+        print(&quot;Records exported:&quot;)
+        for row in records:
+            print(row[0],&quot;,&quot;,row[1],&quot;,&quot;,row[2],&quot;,&quot;,row[3],&quot;,&quot;,row[4],&quot;,&quot;,row[5], &quot;,&quot;,row[6],&quot;,&quot;,row[7] )
+
+    except Error as e:
+        print(e)
+
+    finally:
+        cursor.close()
+        conn.close()
+def upload_to_s3(s3bucket,s3folder,region):
+    # We will upload the temp (temp.csv) file and copy it based on the input params of the script (bucket and dir/file)
+    try:
+        s3 = boto3.client('s3', region_name=region)
+        s3.upload_file('temp.csv',s3bucket,s3folder)
+    except FileNotFoundError:
+        print(&quot;The file was not found&quot;)
+        return False
+    except Error as e:
+        print(e)
+
+if __name__ == '__main__':
+    try:
+        arg = sys.argv[2]
+    except IndexError:
+        raise SystemExit(f&quot;Usage: {sys.argv[0]} &lt;s3 bucket&gt;&lt;s3 file&gt;&lt;query&gt;&lt;secret&gt;&lt;region&gt;&quot;)
+    # The script needs the following arguments to run
+    # 1. Target S3 bucket where the output of the SQL script will be copied
+    # 2. Target S3 folder/filename 
+    # 3. The query to execute
+    # 4. The parameter store (we use AWS Secrets) which holds the values on where to find the MySQL database
+    # 5. The AWS region
+    s3bucket=sys.argv[1]
+    s3folder=sys.argv[2]
+    query2run=sys.argv[3]
+    secret=sys.argv[4]
+    region=sys.argv[5]
+    query_with_fetchone(query2run,secret,region)
+    upload_to_s3(s3bucket,s3folder,region)
+    
+</code></pre>
+<p><strong>AWS Secrets</strong></p>
+<p>This script takes a number of arguments (documented above in the script) and you may see that the 4th argument is a value we have not yet mentioned, the parameter store. When putting a solution like this, we need a central store that our containers will be able to access some key information in a secure way, where ever they might be running. It felt wrong to include credential information in files when using this approach (it is an option, and you can do that with the code in the repo if you wish). I decided I would use AWS Secrets to store the credentials and connection details for the MySQL databases. You could of course use other services such as HashiCorp&rsquo;s Vault to do a similar thing. All we need is a way of being able to 1/store important credentials, 2/access them where ever our container needs to run.</p>
+<p>Our script needs four pieces of information: database host, database name, user to connect to the database and password for the user.</p>
+<p>Create a json file (I called my tmp-elt.json) as follows, and then change the values for the ones you need:</p>
+<pre><code>{
+      &quot;username&quot;: &quot;app&quot;,
+      &quot;password&quot;: &quot;{secure password}&quot;,
+      &quot;host&quot;: &quot;localmysql-airflow-hybrid&quot;,
+      &quot;database&quot; : &quot;localdemo&quot;
+}
+</code></pre>
+<pre><code>aws secretsmanager create-secret --name localmysql-airflow-hybrid --description &quot;Used by Apache Airflow ELT container&quot; --secret-string file://tmp-elt.json --region={your region}
+
+</code></pre>
+<p>Which gives me this output.</p>
+<pre><code>{
+    &quot;ARN&quot;: &quot;arn:aws:secretsmanager:eu-west-2:xxxxx:secret:localmysql-airflow-hybrid-XXXXXX&quot;,
+    &quot;Name&quot;: &quot;localmysql-airflow-hybrid&quot;,
+    &quot;VersionId&quot;: &quot;45ff7ccf-2b10-4c0e-bbbc-9fb161a65ecd&quot;
+}
+</code></pre>
+<p>And we can check that this has stored everything by trying to retrieve the secret.</p>
+<blockquote>
+<p><strong>Note!</strong> this will display the secret values, so be careful when using this command to ensure you do not accidentally disclose those values.</p>
+</blockquote>
+<pre><code>aws secretsmanager get-secret-value --secret-id localmysql-airflow-hybrid --region={your region}
+</code></pre>
+<p>And if successful, you will see your values. The Python script we have created does the same as this step, except it uses the boto3 library in order to interact with and obtain these values.</p>
+<p>You should now have defined AWS Secrets for your MySQL databases. In my specific case, the two that I created are:</p>
+<ul>
+<li>localmysql-airflow-hybrid - this is configured to look for a database on my &ldquo;local&rdquo; network via a host of localmysql.beachgeek.co.uk</li>
+<li>rds-airflow-hybrid - this is configured to point to my MySQL database configured within Amazon RDS</li>
+</ul>
+<p>We are now ready to connect to these databases and start extracting some valuable insights&hellip;</p>
+<p><strong>Testing our Script</strong></p>
+<p>To make sure everything is working before we package up and containerise it, we can run this from the command line. You can run the following command:</p>
+<p>(from the docker folder)</p>
+<pre><code>python app/read-data-q.py
+</code></pre>
+<p>Which gives us this informational message</p>
+<pre><code>Usage: app/read-data-q.py &lt;s3 bucket&gt;&lt;s3 file&gt;&lt;query&gt;&lt;secret&gt;&lt;region&gt;
+</code></pre>
+<p>This is expected, as we have not provided any arguments. Now we can try with some arguments.</p>
+<pre><code>python app/read-data-q.py ricsue-airflow-hybrid customer/regional-001.csv &quot;select * from customers WHERE country = 'Spain' &quot; rds-airflow-hybrid eu-west-2
+</code></pre>
+<p>and a couple of things should happen. First, you should see some out like the following:</p>
+<pre><code>Connecting to  demords.cidws7o4yy7e.eu-west-2.rds.amazonaws.com  database  demo  as user  admin
+Database host IP is : 18.169.169.151
+Source IP is  a483e7ab1cb5.ant.amazon.com
+Query is select * from customers WHERE country = 'Spain'
+Records exported:
+171 , 2021-06-21 18:24:25 , Wiatt , Revell , wrevell4q@umn.edu , Female , 26.6.23.83 , Spain
+632 , 2021-11-14 18:44:25 , Sheppard , Rylett , sryletthj@java.com , Genderfluid , 50.1.207.70 , Spain
+783 , 2021-03-29 18:05:12 , Sloane , Maylour , smaylourlq@1und1.de , Female , 194.84.247.201 , Spain
+</code></pre>
+<p>the second is that if you go to your Amazon S3 bucket, you should now have a folder and file called (using the example above) customer/regional-001.csv.</p>
+<p>Assuming you have success, we are now ready to move to the next stage which is packaging up this so we can run it via a container.</p>
+<p><strong>Containerising our ETL script</strong></p>
+<blockquote>
+<p>Most organisations will have their own workflow for containerising applications, and so feel free to adopt/use those if you want.</p>
+</blockquote>
+<p>In order to containerise our application, we need to create a Docker file. As we are using Python, I am going to select a Python base image for this container (public.ecr.aws/docker/library/python:latest).</p>
+<p>The script we created in the previous step is in an app folder, so we set this with the WORKDIR. We then copy to and run PIP to install our Python dependencies (mysql-connector-python and boto3). We then copy the files and specify how we want this container to start when it is run (executing &ldquo;python3 app/read-data.py&rdquo; )</p>
+<pre><code>FROM  public.ecr.aws/docker/library/python:latest
+
+WORKDIR /app
+
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
+
+COPY . .
+
+CMD [ &quot;python3&quot;, &quot;app/read-data.py&quot;]
+</code></pre>
+<p>To build/package our container, we need to 1/ Build our image using docker build, 2/ Tag the image and then 3/ Push the image to a container repository. To simplify this part of the process, you will find a script (setup.sh) which takes our Python script and create our container repository (in Amazon ECR), builds and then tag&rsquo;s before pushing the image to that repo.</p>
+<p>Before running the script you just need to change the variables AWS_DEFAULT_REGION, AWS_ACCOUNT and then if you want to customise for your own purposes, change AWS_ECR_REPO and COMMIT_HASH.</p>
+<pre><code>#!/usr/bin/env bash
+
+# Change these values for your own environment
+# it should match what values you use in the CDK app
+# if you are using this script together to deploy
+# the multi-arch demo
+
+AWS_DEFAULT_REGION=eu-west-2
+AWS_ACCOUNT=704533066374
+AWS_ECR_REPO=hybrid-airflow
+COMMIT_HASH=&quot;airflw&quot;
+
+# You can alter these values, but the defaults will work for any environment
+
+IMAGE_TAG=${COMMIT_HASH:=latest}
+AMD_TAG=${COMMIT_HASH}-amd64
+DOCKER_CLI_EXPERIMENTAL=enabled
+REPOSITORY_URI=$AWS_ACCOUNT.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$AWS_ECR_REPO
+
+# Login to ECR
+
+$(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
+
+# create AWS ECR Repo
+
+if (aws ecr describe-repositories --repository-names $AWS_ECR_REPO ) then
+	echo &quot;Skipping the create repo as already exists&quot;
+else
+	echo &quot;Creating repos as it does not exists&quot;
+	aws ecr create-repository --region $AWS_DEFAULT_REGION --repository-name $AWS_ECR_REPO
+fi
+
+# Build initial image and upload to ECR Repo
+
+docker build -t $REPOSITORY_URI:latest .
+docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$AMD_TAG
+docker push $REPOSITORY_URI:$AMD_TAG
+
+# Create the image manifests and upload to ECR
+
+docker manifest create $REPOSITORY_URI:$COMMIT_HASH $REPOSITORY_URI:$AMD_TAG
+docker manifest annotate --arch amd64 $REPOSITORY_URI:$COMMIT_HASH $REPOSITORY_URI:$AMD_TAG
+docker manifest inspect $REPOSITORY_URI:$COMMIT_HASH
+docker manifest push $REPOSITORY_URI:$COMMIT_HASH
+</code></pre>
+<p>When you run the script, you should see output similar to the following. From my home broadband connection, this took around 10-15 minutes to complete, so the amount it will take will vary depending on how good your internet speed (upload) is:</p>
+<pre><code>Login Succeeded
+
+An error occurred (RepositoryNotFoundException) when calling the DescribeRepositories operation: The repository with name 'hybrid-airflow' does not exist in the registry with id '704533066374'
+Creating repos as it does not exists
+{
+    &quot;repository&quot;: {
+        &quot;repositoryArn&quot;: &quot;arn:aws:ecr:eu-west-1:704533066374:repository/hybrid-airflow&quot;,
+        &quot;registryId&quot;: &quot;704533066374&quot;,
+        &quot;repositoryName&quot;: &quot;hybrid-airflow&quot;,
+        &quot;repositoryUri&quot;: &quot;704533066374.dkr.ecr.eu-west-1.amazonaws.com/hybrid-airflow&quot;,
+        &quot;createdAt&quot;: 1646401450.0,
+        &quot;imageTagMutability&quot;: &quot;MUTABLE&quot;,
+        &quot;imageScanningConfiguration&quot;: {
+            &quot;scanOnPush&quot;: false
+        },
+        &quot;encryptionConfiguration&quot;: {
+            &quot;encryptionType&quot;: &quot;AES256&quot;
+        }
+    }
+}
+[+] Building 1.1s (10/10) FINISHED
+ =&gt; [internal] load build definition from Dockerfile                                                                         0.2s
+ =&gt; =&gt; transferring dockerfile: 43B                                                                                          0.0s
+ =&gt; [internal] load .dockerignore                                                                                            0.1s
+ =&gt; =&gt; transferring context: 2B                                                                                              0.0s
+ =&gt; [internal] load metadata for public.ecr.aws/docker/library/python:latest                                                 0.0s
+ =&gt; [internal] load build context                                                                                            0.1s
+ =&gt; =&gt; transferring context: 6.51kB                                                                                          0.0s
+ =&gt; [1/5] FROM public.ecr.aws/docker/library/python:latest                                                                   0.0s
+ =&gt; CACHED [2/5] WORKDIR /app                                                                                                0.0s
+ =&gt; CACHED [3/5] COPY requirements.txt requirements.txt                                                                      0.0s
+ =&gt; CACHED [4/5] RUN pip3 install -r requirements.txt                                                                        0.0s
+ =&gt; [5/5] COPY . .                                                                                                           0.3s
+ =&gt; exporting to image                                                                                                       0.2s
+ =&gt; =&gt; exporting layers                                                                                                      0.1s
+ =&gt; =&gt; writing image sha256:3a8c17fca355a08ac805d91484b2c40a221e66538bde05d541ce4c63889a420f                                 0.0s
+ =&gt; =&gt; naming to 704533066374.dkr.ecr.eu-west-1.amazonaws.com/hybrid-airflow:latest                                          0.0s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+The push refers to repository [704533066374.dkr.ecr.eu-west-1.amazonaws.com/hybrid-airflow]
+79b32f350172: Pushed
+d2495859a48d: Pushing [=&gt;                                                 ]  6.078MB/236.4MB
+251a457ff355: Pushed
+0ff6b99009cb: Pushed
+6da81147b608: Pushed
+3a12cc54983b: Pushed
+9018eb0987e9: Pushing [=========&gt;                                         ]  11.09MB/56.36MB
+ccfb32241621: Pushing [=================================================&gt; ]  18.36MB/18.48MB
+204e42b3d47b: Pushing [=&gt;                                                 ]  14.71MB/528.4MB
+613ab28cf833: Pushing [==&gt;                                                ]  7.124MB/151.9MB
+bed676ceab7a: Waiting
+6398d5cccd2c: Waiting
+0b0f2f2f5279: Waiting
+..
+..
+
+airflw-amd64: digest: sha256:4012f734f03c125e2dfd97977aafba07232bd3e91936759b6045f764bc948d15 size: 3052
+Created manifest list 704533066374.dkr.ecr.eu-west-2.amazonaws.com/hybrid-airflow:airflw
+{
+   &quot;schemaVersion&quot;: 2,
+   &quot;mediaType&quot;: &quot;application/vnd.docker.distribution.manifest.list.v2+json&quot;,
+   &quot;manifests&quot;: [
+      {
+         &quot;mediaType&quot;: &quot;application/vnd.docker.distribution.manifest.v2+json&quot;,
+         &quot;size&quot;: 3052,
+         &quot;digest&quot;: &quot;sha256:4012f734f03c125e2dfd97977aafba07232bd3e91936759b6045f764bc948d15&quot;,
+         &quot;platform&quot;: {
+            &quot;architecture&quot;: &quot;amd64&quot;,
+            &quot;os&quot;: &quot;linux&quot;
+         }
+      }
+   ]
+}
+sha256:9b97129b993f94ffb9699a2ea75cce9dae6c541a3f81bc5433c12f6825d71a18
+</code></pre>
+<p>If you open the Amazon ECR console, you should now see your new container repository and image. The container image should now be available via the following resource uri</p>
+<pre><code>704533066374.dkr.ecr.eu-west-2.amazonaws.com/hybrid-airflow:airflw
+</code></pre>
+<p><strong>Testing our containerised ETL script</strong></p>
+<p>Now that we have this script containerised, lets see how it works. First of all we can try the following</p>
+<pre><code>docker run 704533066374.dkr.ecr.eu-west-2.amazonaws.com/hybrid-airflow:airflw
+</code></pre>
+<p>Which should provide you the following output</p>
+<pre><code>Unable to find image '704533066374.dkr.ecr.eu-west-2.amazonaws.com/hybrid-airflow:airflw' locally
+airflw: Pulling from hybrid-airflow
+Digest: sha256:9b97129b993f94ffb9699a2ea75cce9dae6c541a3f81bc5433c12f6825d71a18
+Status: Downloaded newer image for 704533066374.dkr.ecr.eu-west-2.amazonaws.com/hybrid-airflow:airflw
+Usage: app/read-data-q.py &lt;s3 bucket&gt;&lt;s3 file&gt;&lt;query&gt;&lt;secret&gt;&lt;region&gt;
+</code></pre>
+<blockquote>
+<p><strong>Note!</strong> If you get an error such as:</p>
+<pre><code>docker: Error response from daemon: pull access denied for 704533066374.dkr.ecr.eu-west-2.amazonaws.com/hybrid-airflow, repository does not exist or may require 'docker login': denied: Your authorization token has expired. Reauthenticate and try again.
+</code></pre>
+<p>then you can re login to your Amazon ECR environment. This is the command I use, yours will be different based on the region you are in</p>
+<pre><code>$(aws ecr get-login --region eu-west-2 --no-include-email)
+</code></pre>
+</blockquote>
+<p>We know this would generate an error as we have not supplied the correct parameters, but we can see that it is providing the expected behavior. Now lets try with this command:</p>
+<pre><code>docker run 704533066374.dkr.ecr.eu-west-2.amazonaws.com/hybrid-airflow:airflw ricsue-airflow-hybrid customer/regional-001.csv &quot;select * from customers WHERE country = 'Spain' &quot; rds-airflow-hybrid eu-west-2
+</code></pre>
+<p>This time I get a different error. The end part of the error gives us some clues..</p>
+<pre><code>...
+...
+botocore.exceptions.NoCredentialsError: Unable to locate credentials
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &quot;/app/app/read-data-q.py&quot;, line 79, in &lt;module&gt;
+    query_with_fetchone(query2run,secret,region)
+  File &quot;/app/app/read-data-q.py&quot;, line 50, in query_with_fetchone cursor.close()
+UnboundLocalError: local variable 'cursor' referenced before assignment
+</code></pre>
+<p>The reason for the error is that there are no AWS credentials that this container has in order to interact with AWS. We can easily fix that.</p>
+<p>We could add our AWS credentials in our Container but I would NOT recommend that, and it is generally a very bad idea to do so. Instead, we can create two environment variables (AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY) which we will pass into Docker when we run the container as environment variables.</p>
+<blockquote>
+<p><strong>Note</strong> Please do not disclose the values of thsee publicly, or store them where others might be able to copy them.</p>
+</blockquote>
+<pre><code>export AWS_ACCESS_KEY_ID=XXXXXXXXX
+export AWS_SECRET_ACCESS_KEY=XXXXXXX
+</code></pre>
+<p>We can now change our Docker run command slightly and try again</p>
+<pre><code>docker run -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY 704533066374.dkr.ecr.eu-west-2.amazonaws.com/hybrid-airflow:airflw ricsue-airflow-hybrid customer/regional-001.csv &quot;select * from customers WHERE country = 'Spain' &quot; rds-airflow-hybrid eu-west-2
+</code></pre>
+<p>And this time, success!</p>
+<pre><code>Connecting to  demords.cidws7o4yy7e.eu-west-2.rds.amazonaws.com  database  demo  as user  admin
+Database host IP is : 18.169.169.151
+Source IP is  e8d3ffa8e4a2
+Query is select * from customers WHERE country = 'Spain'
+Records exported:
+171 , 2021-06-21 18:24:25 , Wiatt , Revell , wrevell4q@umn.edu , Female , 26.6.23.83 , Spain
+632 , 2021-11-14 18:44:25 , Sheppard , Rylett , sryletthj@java.com , Genderfluid , 50.1.207.70 , Spain
+783 , 2021-03-29 18:05:12 , Sloane , Maylour , smaylourlq@1und1.de , Female , 194.84.247.201 , Spain
+</code></pre>
+<p>For the eagled eyed, you can see the output is the same (which is re-assuring) but the Source IP is different. This is because this time, the source host was the Docker container running this script.</p>
+<p>What about testing this against our local MySQL server which is running a similar data set. I run this command, with the only difference being the AWS Secret which determines which MySQL database to try and connect to.</p>
+<pre><code>docker run -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY 704533066374.dkr.ecr.eu-west-2.amazonaws.com/hybrid-airflow:airflw ricsue-airflow-hybrid customer/regional-002.csv &quot;select * from customers WHERE country = 'Spain' &quot; localmysql-airflow-hybrid eu-west-2
+</code></pre>
+<p>We get an error.</p>
+<pre><code>Traceback (most recent call last):
+  File &quot;/app/app/read-data-q.py&quot;, line 31, in query_with_fetchone
+    print(&quot;Database host IP is :&quot;, socket.gethostbyname(hs))
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+</code></pre>
+<p>This is to be expected. At the beginning of this walk through I explained we were using /etc/hosts to do resolution of the database host. Again Docker allows us to enable Host based lookups with a command line options, &ndash;network=host so we can retry with this command:</p>
+<pre><code>docker run --network=host -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY 704533066374.dkr.ecr.eu-west-2.amazonaws.com/hybrid-airflow:airflw ricsue-airflow-hybrid customer/regional-002.csv &quot;select * from customers WHERE country = 'Spain' &quot; localmysql-airflow-hybrid eu-west-2
+</code></pre>
+<p>Success! This time we get a different set of data (the sample data for the two regions is not the same) and we can see the connection details are updated to reflect we are accessing a local database. In a real world scenario these would be local DNS resolvable addresses you use to connect to your resources.</p>
+<pre><code>Connecting to  localmysql.beachgeek.co.uk  database  localdemo  as user  root
+Database host IP is : 127.0.1.1
+Source IP is  28d3faa8e331
+Query is select * from customers WHERE country = 'Spain'
+Records exported:
+164 , 2021-04-02 , Dag , Delacourt , ddelacourt4j@nydailynews.com , Male , 200.12.59.159 , Spain
+</code></pre>
+<p>To recap what we have done so far is to containerise our ETL script, and successfully run this against both local and remote instances of our MySQL databases. The next stage is to move these onto a container orchestrator. I am going to be using Amazon ECS, which is my favourite way to run my container applications. Right, let&rsquo;s get straight to it.</p>
+<h3 id="running-our-etl-container-on-amazon-ecs">Running our ETL container on Amazon ECS</h3>
+<p><strong>Creating our ECS Cluster</strong></p>
+<p>We are now going to set up an Amazon ECS cluster on AWS, in the same region as where we have been working so far. We could do this manually, but to simplify this part of the setup, within the GitHub repo you will find the cdk/cdk-ecs folder which contains a CDK stack that will deploy and configure an Amazon ECS cluster, and then create an ECS Task Definition which will container all the bits of our ETL container we did above. I have tested this on both v1 and v2 CDK and it works fine with both. This will create a VPC and deploy a new ECS Cluster and an ECS node within that cluster.</p>
+<p>We first need to update the app.py and update some of the properties. You will need to update the AWS and Region account for your own environment. The values for ecr-repo and image-tag need to be the same as what we used in the setup of the Amazon ECR repository (the previous steps, where we ran the setup.sh script - the default values used are the same used here). Once updated save the file.</p>
+<p>The value for s3 is the target Amazon S3 bucket you will upload files to. This is used to create permissions in this bucket to copy files. If you set this incorrectly, the ETL script will fail to upload because of a lack of permissions.</p>
+<pre><code>from aws_cdk import core
+
+from ecs_anywhere.ecs_anywhere_vpc import EcsAnywhereVPCStack
+from ecs_anywhere.ecs_anywhere_taskdef import EcsAnywhereTaskDefStack
+
+env_EU=core.Environment(region=&quot;eu-west-2&quot;, account=&quot;704533066374&quot;)
+props = {
+    'ecsclustername':'hybrid-airflow',
+    'ecr-repo': 'hybrid-airflow',
+    'image-tag' : 'airflw',
+    'awsvpccidr':'10.0.0.0/16',
+    's3':'ricsue-airflow-hybrid'
+    }
+
+app = core.App()
+
+mydc_vpc = EcsAnywhereVPCStack(
+    scope=app,
+    id=&quot;ecs-anywhere-vpc&quot;,
+    env=env_EU,
+    props=props
+)
+
+mydc_ecs_cicd = EcsAnywhereTaskDefStack(
+    scope=app,
+    id=&quot;ecs-anywhere-taskdef&quot;,
+    env=env_EU,
+    vpc=mydc_vpc.vpc,
+    props=props  
+)
+
+app.synth()
+
+</code></pre>
+<p>From the command line, when you type:</p>
+<pre><code>cdk ls
+</code></pre>
+<p>You should get something like the following:</p>
+<pre><code>ecs-anywhere-vpc
+ecs-anywhere-taskdef
+</code></pre>
+<p>We create our Amazon ECS VPC by running:</p>
+<pre><code>cdk deploy ecs-anywhere-vpc
+</code></pre>
+<blockquote>
+<p><strong>Note!</strong> Typically an AWS account is limited to 5 VPCs, so check your AWS account to see how many you have configured before running this otherwise running this stack will generate an error.</p>
+</blockquote>
+<p>And when completed, we can deploy our Amazon ECS Cluster by running:</p>
+<pre><code>cdk deploy  ecs-anywhere-taskdef
+</code></pre>
+<p>(answer Y to any prompts you might get) which should result in output similar to the following:</p>
+<pre><code> ✅  ecs-anywhere-taskdef
+
+Outputs:
+ecs-anywhere-taskdef.ECSClusterName = hybrid-airflow-cluster
+ecs-anywhere-taskdef.ECSRoleName = hybrid-airflow-ECSInstanceRole
+ecs-anywhere-taskdef.ECSAnywhereRoleName = hybrid-airflow-ExternalECSAnywhereRole
+
+
+Stack ARN:
+arn:aws:cloudformation:eu-west-2:704533066374:stack/ecs-anywhere-taskdef/28b05150-9b9c-11ec-a2db-02449e7c3502
+</code></pre>
+<p>We will need some of the values that this CDK app has output, so take note of these.</p>
+<p>We can validate that everything has been setup by going to the AWS console and viewing the Amazon ECS console. Alternatively we can run the following command:</p>
+<pre><code>aws ecs list-clusters --region={your region}
+</code></pre>
+<p>Which should display something like the following (depending on how many other ECS Clusters you might already have setup) and we can see that we have our new ECS Cluster - the name is defined in the variables in the app.py of ecsclustername (&ldquo;hybrid-airflow&rdquo;) following by &ldquo;-cluster&rdquo;.</p>
+<pre><code>{
+    &quot;clusterArns&quot;: [
+        &quot;arn:aws:ecs:eu-west-2:704533066374:cluster/hybrid-airflow-cluster&quot;
+    ]
+}
+</code></pre>
+<p><strong>Exploring the ECS CDK stack</strong></p>
+<p>Before continuing it is worth covering what exactly we just did by exploring the CDK file. The CDK file that deployed this ECS Cluster and configured our Task Definition (the thing that will run our application) is &ldquo;ecs_anywhere_taskdef.py&rdquo;. As we can see from the beginning of the file, we import the values from the app.py (&ldquo;props&rdquo;) which we will use to define things like the name of the ECS Cluster, the Container image, permissions and so on.</p>
+<pre><code>class EcsAnywhereTaskDefStack(core.Stack):
+
+    def __init__(self, scope: core.Construct, id: str, vpc, props, **kwargs) -&gt; None:
+        super().__init__(scope, id, **kwargs)
+
+</code></pre>
+<p>We create variables for the container image of our ETL application, by referencing the container repository (here we are using Amazon ECR, but you could use others).</p>
+<pre><code>        airflow_repo = ecr.Repository.from_repository_name(self, &quot;Hybrid-ELT-Repo&quot;, repository_name=f&quot;{props['ecr-repo']}&quot;)
+        airflow_image = ecs.ContainerImage.from_ecr_repository(airflow_repo, f&quot;{props['image-tag']}&quot;)
+</code></pre>
+<p>When we create the ECS Cluster, it will create an EC2 instance and this instance will need an IAM Role to give it the needed permissions. This is the ECS Task Execution Role. Here we only need to define it and give it a name &ldquo;role_name&rdquo;</p>
+<pre><code>        ecscluster_role = iam.Role(
+            self,
+            f&quot;{props['ecsclustername']}-ecsrole&quot;,
+            role_name=f&quot;{props['ecsclustername']}-ECSInstanceRole&quot;,
+            assumed_by=iam.ServicePrincipal(&quot;ssm.amazonaws.com&quot;),
+            managed_policies=[iam.ManagedPolicy.from_aws_managed_policy_name(&quot;AmazonSSMManagedInstanceCore&quot;)]
+        )
+        ecscluster_role.add_managed_policy(iam.ManagedPolicy.from_aws_managed_policy_name(&quot;service-role/AmazonEC2ContainerServiceforEC2Role&quot;))
+</code></pre>
+<p>We then create our ECS Cluster, give it a name and then provision some EC2 resources using the IAM Role we just created</p>
+<pre><code>        ecscluster = ecs.Cluster(
+            self,
+            f&quot;{props['ecsclustername']}-ecscluster&quot;,
+            cluster_name=f&quot;{props['ecsclustername']}-cluster&quot;,
+            vpc=vpc
+        )
+
+        ecscluster.add_capacity(
+            &quot;x86AutoScalingGroup&quot;,
+            instance_type=ec2.InstanceType(&quot;t2.xlarge&quot;),
+            desired_capacity=1
+        )
+</code></pre>
+<p>We now need to create a Role for the ECS Task definition. This will be the IAM Role that our application will use, so we define here the different permissions scoped as low as possible. We pass in some of those variables such as the S3 bucket and the ECS Cluster name.</p>
+<p>First we create the policy.</p>
+<pre><code>
+				data_lake = s3.Bucket.from_bucket_name(self, &quot;DataLake&quot;, f&quot;{props['s3']}&quot;)
+        data_lake_arn = data_lake.bucket_arn
+
+        task_def_policy_document = iam.PolicyDocument(
+            statements=[
+                iam.PolicyStatement(
+                    actions=[ &quot;s3:*&quot; ],
+                    effect=iam.Effect.ALLOW,
+                    resources=[
+                        f&quot;{data_lake_arn}/*&quot;,
+                        f&quot;{data_lake_arn}&quot;
+                    ],
+                ),
+                iam.PolicyStatement(
+                    actions=[
+                        &quot;ecs:RunTask&quot;,
+                        &quot;ecs:DescribeTasks&quot;,
+                        &quot;ecs:RegisterTaskDefinition&quot;,
+                        &quot;ecs:DescribeTaskDefinition&quot;,
+                        &quot;ecs:ListTasks&quot;
+                    ],
+                    effect=iam.Effect.ALLOW,
+                    resources=[
+                        &quot;*&quot;
+                        ],
+                    ),
+                iam.PolicyStatement(
+                    actions=[
+                        &quot;iam:PassRole&quot;
+                    ],
+                    effect=iam.Effect.ALLOW,
+                    resources=[ &quot;*&quot; ],
+                    conditions= { &quot;StringLike&quot;: { &quot;iam:PassedToService&quot;: &quot;ecs-tasks.amazonaws.com&quot; } },
+                    ),
+                iam.PolicyStatement(    
+                    actions=[
+                        &quot;logs:CreateLogStream&quot;,
+                        &quot;logs:CreateLogGroup&quot;,
+                        &quot;logs:PutLogEvents&quot;,
+                        &quot;logs:GetLogEvents&quot;,
+                        &quot;logs:GetLogRecord&quot;,
+                        &quot;logs:GetLogGroupFields&quot;,
+                        &quot;logs:GetQueryResults&quot;
+                    ],
+                    effect=iam.Effect.ALLOW,
+                    resources=[
+                        f&quot;arn:aws:logs:*:*:log-group:/ecs/{props['ecsclustername']}:log-stream:/ecs/*&quot;
+                        ]           
+                )
+            ]
+        )
+</code></pre>
+<p>And then we create the IAM Roles, and attach any managed policies we might need (in this case, we want to use the Secrets Manager managed policy so we can read our secrets)</p>
+<pre><code>        task_def_policy_document_role = iam.Role(
+            self,
+            &quot;ECSTaskDefRole&quot;,
+            role_name=f&quot;{props['ecsclustername']}-ECSTaskDefRole&quot;,
+            assumed_by=iam.ServicePrincipal(&quot;ecs-tasks.amazonaws.com&quot;),
+            inline_policies={&quot;ECSTaskDefPolicyDocument&quot;: task_def_policy_document}
+        )
+
+        managed_secret_manager_policy = iam.ManagedPolicy.from_aws_managed_policy_name(&quot;SecretsManagerReadWrite&quot;)
+        task_def_policy_document_role.add_managed_policy(managed_secret_manager_policy)
+</code></pre>
+<p>The final bit is to actually create our Task Definition, defining the actual container image, the command override, the resources, etc. We also need to define and then create the AWS CloudWatch logging group so we can view the logs in AWS CloudWatch. You can configure other logging targets if you want.</p>
+<pre><code>        log_group = log.LogGroup(
+            self,
+            &quot;LogGroup&quot;,
+            log_group_name=f&quot;/ecs/{props['ecsclustername']}&quot;
+        )
+        ec2_task_definition = ecs.Ec2TaskDefinition(
+            self,
+            f&quot;{props['ecsclustername']}-ApacheAirflowTaskDef&quot;,
+            family=&quot;apache-airflow&quot;,
+            network_mode=ecs.NetworkMode.HOST,
+            task_role=task_def_policy_document_role
+            )
+    
+        ec2_task_definition.add_container(
+            &quot;Hybrid-ELT-TaskDef&quot;,
+            image=airflow_image,
+            memory_limit_mib=1024,
+            cpu=100,
+            # Configure CloudWatch logging
+            logging=ecs.LogDrivers.aws_logs(stream_prefix=f&quot;{props['ecsclustername']}&quot;,log_group=log_group),
+            essential=True,
+            command= [ &quot;ricsue-airflow-hybrid&quot;, &quot;period1/hq-data.csv&quot;, &quot;select * from customers WHERE country = \&quot;Spain\&quot;&quot;, &quot;rds-airflow-hybrid&quot;, &quot;eu-west-2&quot; ],
+            )
+</code></pre>
+<p>And that is it, once deployed, in around 5 minutes we have our new ECS Cluster, with an EC2 resource up and running and our Task Definition defined and ready to run. In theory, we can now just run this and it should be the same as when we ran it locally using Docker.</p>
+<p><strong>Running our ELT Container (Amazon ECS Task Definition)</strong></p>
+<p>From a command line, you can kick off this Task by running the following command.</p>
+<pre><code>export ECS_CLUSTER=&quot;hybrid-airflow-cluster&quot;
+export TASK_DEF=&quot;apache-airflow&quot;
+export DEFAULT_REGION=&quot;eu-west-2&quot;
+
+aws ecs run-task --cluster $ECS_CLUSTER --launch-type EC2 --task-definition $TASK_DEF --region=$DEFAULT_REGION
+</code></pre>
+<p>Which should create output like this:</p>
+<pre><code>{
+    &quot;tasks&quot;: [
+        {
+            &quot;attachments&quot;: [],
+            &quot;attributes&quot;: [
+                {
+                    &quot;name&quot;: &quot;ecs.cpu-architecture&quot;,
+                    &quot;value&quot;: &quot;x86_64&quot;
+                }
+            ],
+            &quot;availabilityZone&quot;: &quot;eu-west-2b&quot;,
+            &quot;clusterArn&quot;: &quot;arn:aws:ecs:eu-west-2:704533066374:cluster/hybrid-airflow-cluster&quot;,
+            &quot;containerInstanceArn&quot;: &quot;arn:aws:ecs:eu-west-2:704533066374:container-instance/hybrid-airflow-cluster/c7550837cbcb4a19a1fdcd79cb600062&quot;,
+            &quot;containers&quot;: [
+                {
+                    &quot;containerArn&quot;: &quot;arn:aws:ecs:eu-west-2:704533066374:container/hybrid-airflow-cluster/b357bc55e60b4557a2eccb3619a8ec64/a30c90c7-25f8-4091-8532-69cdf6d8c3ce&quot;,
+                    &quot;taskArn&quot;: &quot;arn:aws:ecs:eu-west-2:704533066374:task/hybrid-airflow-cluster/b357bc55e60b4557a2eccb3619a8ec64&quot;,
+                    &quot;name&quot;: &quot;Hybrid-ELT-TaskDef&quot;,
+                    &quot;image&quot;: &quot;704533066374.dkr.ecr.eu-west-2.amazonaws.com/hybrid-airflow:airflw&quot;,
+                    &quot;lastStatus&quot;: &quot;PENDING&quot;,
+                    &quot;networkInterfaces&quot;: [],
+                    &quot;cpu&quot;: &quot;100&quot;,
+                    &quot;memory&quot;: &quot;1024&quot;
+                }
+            ],
+            &quot;cpu&quot;: &quot;100&quot;,
+            &quot;createdAt&quot;: 1646582727.378,
+            &quot;desiredStatus&quot;: &quot;RUNNING&quot;,
+            &quot;enableExecuteCommand&quot;: false,
+            &quot;group&quot;: &quot;family:apache-airflow&quot;,
+            &quot;lastStatus&quot;: &quot;PENDING&quot;,
+            &quot;launchType&quot;: &quot;EC2&quot;,
+            &quot;memory&quot;: &quot;1024&quot;,
+            &quot;overrides&quot;: {
+                &quot;containerOverrides&quot;: [
+                    {
+                        &quot;name&quot;: &quot;Hybrid-ELT-TaskDef&quot;
+                    }
+                ],
+                &quot;inferenceAcceleratorOverrides&quot;: []
+            },
+            &quot;tags&quot;: [],
+            &quot;taskArn&quot;: &quot;arn:aws:ecs:eu-west-2:704533066374:task/hybrid-airflow-cluster/b357bc55e60b4557a2eccb3619a8ec64&quot;,
+            &quot;taskDefinitionArn&quot;: &quot;arn:aws:ecs:eu-west-2:704533066374:task-definition/apache-airflow:6&quot;,
+            &quot;version&quot;: 1
+        }
+    ],
+    &quot;failures&quot;: []
+}
+</code></pre>
+<p>We have configured AWS CloudWatch logging, so we can go here to see the output of this. From the CDK stack we defined our logging group &ldquo;/ecs/hybrid-airflow&rdquo; so we can open up this log group and we can see an entry in the format of</p>
+<pre><code>hybrid-airflow/Hybrid-ELT-TaskDef/b357bc55e60b4557a2eccb3619a8ec64
+</code></pre>
+<p>When we open up this stream we can see that the output is exactly what we expected, and matches what we can when we ran this container locally.</p>
+<pre><code>Connecting to  demords.cidws7o4yy7e.eu-west-2.rds.amazonaws.com  database  demo  as user  admin
+Database host IP is : 18.169.169.151
+Source IP is  ip-10-0-3-129.eu-west-2.compute.internal
+Query is select * from customers WHERE country = &quot;Spain&quot;
+Records exported:
+171 , 2021-06-21 18:24:25 , Wiatt , Revell , wrevell4q@umn.edu , Female , 26.6.23.83 , Spain
+632 , 2021-11-14 18:44:25 , Sheppard , Rylett , sryletthj@java.com , Genderfluid , 50.1.207.70 , Spain
+783 , 2021-03-29 18:05:12 , Sloane , Maylour , smaylourlq@1und1.de , Female , 194.84.247.201 , Spain
+</code></pre>
+<p>We have now successfully run our containerised ETL script in the Cloud. Next step, running this anywhere with ECS Anywhere&hellip;</p>
+<h3 id="deploying-ecs-anywhere">Deploying ECS Anywhere</h3>
+<p>Before we can run our containerised ETL script in our local environment, we need to install the Amazon ECS Anywhere agent. This extends the Amazon ECS control plane and allows you to integrate external resources that allow you to run your Task Definitions (your apps) wherever the ECS Anywhere agent is running. These appear as a new ECS launch type of &ldquo;EXTERNAL&rdquo; (whereas when you run your Task Definitions you might typically be using EC2 or FARGATE).</p>
+<blockquote>
+<p><strong>Note!</strong> If you want to dive deeper that I suggest you check out the <a href="https://www.ecsworkshop.com/ecsanywhere/">ECS Workshop</a> where they have a dedicated section on ECS Anywhere.</p>
+</blockquote>
+<p>To deploy ECS Anywhere, we will need to do the following:</p>
+<ul>
+<li>Create a new IAM Role that will be used by ECS Anywhere (the control plane)</li>
+<li>Install the ECS Anywhere Agent and integrating into an existing ECS Cluster</li>
+</ul>
+<p>Before diving in though, which kinds of hosts can you deploy the ECS Anywhere agent onto? You can check the latest OSs supported by visiting <a href="https://aws.amazon.com/ecs/anywhere/faqs/">the FAQ page</a>. As of writing, this includes Amazon Linux 2, Bottlerocket, Ubuntu, RHEL, SUSE, Debian, CentOS, and Fedora. You should also consider the host resources, as the CPU and Memory available will dictate how Tasks are executed on which hosts. Which ever distribution you use, you will need to have the AWS cli installed and configured so make sure this has been done before proceeding.</p>
+<blockquote>
+<p><strong>NEWS FLASH</strong> Announced this week, you can now run the ECS Anywhere agent on Windows. I am very excited about this, and I will try and find a Windows machine on which to try this out as an addendum in the future.</p>
+</blockquote>
+<p>For the purposes of this walkthrough, I have used two different hosts. The first is my local Ubuntu 18.04 box which is sat next to me. It has an Intel i5 CPU (quad core) and 8 GB of ram. The second is an EC2 instance, an m6i.large which has 2vCPUs and 8GB ram. This is running Amazon Linux 2. As you will recall from the pre-req&rsquo;s, on BOTH of these instances, I have installed MySQL and amended the /etc/hosts to add a local hosts entry to the name &ldquo;localmysql.beachgeek.co.uk&rdquo;.</p>
+<blockquote>
+<p>The EC2 instance is ip-10-0-0-207.eu-west-2.compute.internal, and we will see this later as confirmation that this &ldquo;local&rdquo; ECS Anywhere agent is running our ETL scripts.</p>
+</blockquote>
+<p><strong>Creating the IAM Role</strong></p>
+<p>Before we install the ECS Anywhere agent, we need to create an IAM Role which will be used by the agent. This will have been created by the ECS CDK stack, and we can look at the code that creates this:</p>
+<pre><code>
+        external_task_def_policy_document_role = iam.Role(
+            self,
+            &quot;ExternalECSAnywhereRole&quot;,
+            role_name=f&quot;{props['ecsclustername']}-ExternalECSAnywhereRole&quot;,
+            assumed_by=iam.ServicePrincipal(&quot;ecs-tasks.amazonaws.com&quot;)
+        )
+
+        external_managed_SSM_policy = iam.ManagedPolicy.from_aws_managed_policy_name(&quot;AmazonSSMManagedInstanceCore&quot;)
+        external_managed_ECS_policy = iam.ManagedPolicy.from_aws_managed_policy_name(&quot;service-role/AmazonEC2ContainerServiceforEC2Role&quot;)
+        external_task_def_policy_document_role.add_managed_policy(external_managed_SSM_policy)
+        external_task_def_policy_document_role.add_managed_policy(external_managed_ECS_policy)
+        
+</code></pre>
+<p>As we can see it adds to AWS IAM Managed policies (&ldquo;AmazonSSMManagedInstanceCore&rdquo; and &ldquo;AmazonEC2ContainerServiceforEC2Role&rdquo;) which will provide the ECS Anywhere agent everything it needs to connect to and register as an external managed instance in the ECS Cluster. The output of this will be displayed when you deployed the script:</p>
+<pre><code>ecs-anywhere-taskdef.ECSAnywhereRoleName = hybrid-airflow-ExternalECSAnywhereRole
+</code></pre>
+<p>We will need this when we install the ECS Anywhere agent.</p>
+<p><strong>Installing &amp; integration of ECS Anywhere</strong></p>
+<p>There are two ways you can do this. Via a script that is generated via the Amazon ECS Console, or via the cli.</p>
+<p><em>Via the Amazon ECS Console</em></p>
+<p>From the Amazon ECS Console, there is an easy way to add an external resource via the ECS Anywhere agent. If you click on the ECS Cluster, you will see a button that allows you to &ldquo;Register External Instances&rdquo;.</p>
+<p><img src="https://raw.githubusercontent.com/094459/blogpost-airflow-hybrid/main/images/ecs-reg-1.png" alt="external"></p>
+<p>When you click on it, you will need to select the name of the IAM Role we just created. In the example above, it will be &ldquo;hybrid-airflow-ExternalECSAnywhereRole&rdquo; but it may be different if you are following along.</p>
+<p><img src="https://raw.githubusercontent.com/094459/blogpost-airflow-hybrid/main/images/ecs-reg-2.png" alt="external"></p>
+<p>When you click on NEXT, you will see some text. You will use this to install the ECS Anywhere agent. Copy this and then paste it into a terminal of the system you want to install the ECS Anywhere agent.</p>
+<p><img src="https://raw.githubusercontent.com/094459/blogpost-airflow-hybrid/main/images/ecs-reg-3.png" alt="external"></p>
+<blockquote>
+<p><strong>Note!</strong> Be careful as this activation script is time bound and will expire after a period of time. Do not share this and make it public. I have changed the details in the screenshot, so this is for illustration purposes only.</p>
+</blockquote>
+<p>The installation process will take 5-10 minutes, and you will get confirmation if successful.</p>
+<p>You can confirm that you now have a new resource in your ECS Cluster, by clicking on the ECS Cluster and checking for External Instances (highlighted in red, you can see here I have two registered)</p>
+<p><img src="https://raw.githubusercontent.com/094459/blogpost-airflow-hybrid/main/images/ecs-reg-4.png" alt="external"></p>
+<p><em>Via the Amazon ECS Console</em></p>
+<p>To install via the command line, first open up a terminal session in the machine you want to install the agent. First I create some environment variables:</p>
+<ul>
+<li>ECS_CLUSTER={the name of the ECS cluster}</li>
+<li>ROLE={the name of the ECS Anywhere Role}</li>
+<li>DEFAULT_REGION={the AWS region you are working in}</li>
+</ul>
+<p>Using my example above, I create the following</p>
+<pre><code>export ECS_CLUSTER=&quot;hybrid-airflow-cluster&quot;
+export ROLE_NAME=&quot;hybrid-airflow-ExternalECSAnywhereRole&quot;
+export DEFAULT_REGION=&quot;eu-west-2&quot;
+
+</code></pre>
+<p>Now run this command on the machine</p>
+<pre><code>aws ssm create-activation --iam-role $ROLE_NAME | tee ssm-activation.json
+</code></pre>
+<p>Which will given you output similar to. A file will be created (ssm-activation.json) which contains this info.</p>
+<pre><code>{
+    &quot;ActivationCode&quot;: &quot;sAsr8ZpOktv/hFnytAWS&quot;,
+    &quot;ActivationId&quot;: &quot;b9dbd803-3b67-4719-b23e-d6f849722007&quot;
+}
+</code></pre>
+<p>We will now create a couple of new environment variables with these values:</p>
+<pre><code>export ACTIVATION_ID=&quot;b9dbd803-3b67-4719-b23e-d6f849722007&quot;
+export ACTIVATION_CODE=&quot;sAsr8ZpOktv/hFnytAWS&quot;
+</code></pre>
+<p>Next we download the agent installation script</p>
+<pre><code>curl -o &quot;ecs-anywhere-install.sh&quot; &quot;https://amazon-ecs-agent.s3.amazonaws.com/ecs-anywhere-install-latest.sh&quot; &amp;&amp; sudo chmod +x ecs-anywhere-install.sh
+</code></pre>
+<p>And then finally, we run the script passing in the environment variables we have already created</p>
+<pre><code>sudo ./ecs-anywhere-install.sh \
+    --cluster $ECS_CLUSTER \
+    --activation-id $ACTIVATION_ID \
+    --activation-code $ACTIVATION_CODE \
+    --region $DEFAULT_REGION 
+</code></pre>
+<p>The script will now start to install, connect and then register the AWS SSM and ECS agents. If successful, you will see something like this:</p>
+<pre><code># Trying to wait for ECS agent to start ...
+
+Ping ECS Agent registered successfully! Container instance arn: &quot;arn:aws:ecs:eu-west-2:704533066374:container-instance/hybrid-airflow-cluster/6863489c26b24c27ad2f91c458b3bd82&quot;
+
+You can check your ECS cluster here https://console.aws.amazon.com/ecs/home?region=eu-west-2#/clusters/hybrid-airflow-cluster
+
+# ok
+
+</code></pre>
+<p>As with the Console installation, you can check that this has worked by checking the AWS ECS Console. You can also use the command line:</p>
+<pre><code>aws ecs list-container-instances --cluster $ECS_CLUSTER
+</code></pre>
+<p>Which should provide you something similar to the following:</p>
+<pre><code>{
+    &quot;containerInstanceArns&quot;: [
+        &quot;arn:aws:ecs:eu-west-2:704533066374:container-instance/hybrid-airflow-cluster/6863489c26b24c27ad2f91c458b3bd82&quot;,
+        &quot;arn:aws:ecs:eu-west-2:704533066374:container-instance/hybrid-airflow-cluster/c7550837cbcb4a19a1fdcd79cb600062&quot;
+    ]
+}
+</code></pre>
+<p>As you can see, the first instance there is the one we have just integrated into the ECS Cluster. Now that we have this installed, we can test running our ETL container via Amazon ECS.</p>
+<p><strong>Troubleshooting</strong></p>
+<blockquote>
+<p><strong>Note!</strong> I have previously covered installation of the ECS Anywhere on a previous blog post (<a href="https://dev.to/aws/creating-a-multi-architecture-ci-cd-deployment-for-amazon-ecs-and-ecs-anywhere-15o3">most viewed blog post</a>) which provides some additional details that you can refer to if you get stuck!</p>
+</blockquote>
+<h3 id="running-our-etl-script-locally">Running our ETL script &ldquo;locally&rdquo;</h3>
+<p>We now have &ldquo;EXTERNAL&rdquo; resources within our ECS Cluster, which enable us to determine where we want to run our Task Definitions (our containerised ETL script in this case). We can try this out next.</p>
+<p><strong>Running our Task locally</strong></p>
+<p>From a command line, you can kick off running our containerised ETL script by running the following command. You will notice it is exactly the same command, the only difference is that the launch-type parameter has changed to EXTERNAL.</p>
+<pre><code>export ECS_CLUSTER=&quot;hybrid-airflow-cluster&quot;
+export TASK_DEF=&quot;apache-airflow&quot;
+export DEFAULT_REGION=&quot;eu-west-2&quot;
+
+aws ecs run-task --cluster $ECS_CLUSTER --launch-type EXTERNAL --task-definition $TASK_DEF --region=$DEFAULT_REGION
+</code></pre>
+<p>When we kick this off, we get a similar output. Notice the &ldquo;launchType&rdquo; this time, we shows up as &ldquo;EXTERNAL&rdquo;.</p>
+<pre><code>{
+    &quot;tasks&quot;: [
+        {
+            &quot;attachments&quot;: [],
+            &quot;attributes&quot;: [
+                {
+                    &quot;name&quot;: &quot;ecs.cpu-architecture&quot;,
+                    &quot;value&quot;: &quot;x86_64&quot;
+                }
+            ],
+            &quot;clusterArn&quot;: &quot;arn:aws:ecs:eu-west-2:704533066374:cluster/hybrid-airflow-cluster&quot;,
+            &quot;containerInstanceArn&quot;: &quot;arn:aws:ecs:eu-west-2:704533066374:container-instance/hybrid-airflow-cluster/6863489c26b24c27ad2f91c458b3bd82&quot;,
+            &quot;containers&quot;: [
+                {
+                    &quot;containerArn&quot;: &quot;arn:aws:ecs:eu-west-2:704533066374:container/hybrid-airflow-cluster/fc43322ecb55404fa086c266329b3a4c/8e387f3d-aa7d-4878-adfd-194866d35e25&quot;,
+                    &quot;taskArn&quot;: &quot;arn:aws:ecs:eu-west-2:704533066374:task/hybrid-airflow-cluster/fc43322ecb55404fa086c266329b3a4c&quot;,
+                    &quot;name&quot;: &quot;Hybrid-ELT-TaskDef&quot;,
+                    &quot;image&quot;: &quot;704533066374.dkr.ecr.eu-west-2.amazonaws.com/hybrid-airflow:airflw&quot;,
+                    &quot;lastStatus&quot;: &quot;PENDING&quot;,
+                    &quot;networkInterfaces&quot;: [],
+                    &quot;cpu&quot;: &quot;100&quot;,
+                    &quot;memory&quot;: &quot;1024&quot;
+                }
+            ],
+            &quot;cpu&quot;: &quot;100&quot;,
+            &quot;createdAt&quot;: 1646652352.003,
+            &quot;desiredStatus&quot;: &quot;RUNNING&quot;,
+            &quot;enableExecuteCommand&quot;: false,
+            &quot;group&quot;: &quot;family:apache-airflow&quot;,
+            &quot;lastStatus&quot;: &quot;PENDING&quot;,
+            &quot;launchType&quot;: &quot;EXTERNAL&quot;,
+            &quot;memory&quot;: &quot;1024&quot;,
+            &quot;overrides&quot;: {
+                &quot;containerOverrides&quot;: [
+                    {
+                        &quot;name&quot;: &quot;Hybrid-ELT-TaskDef&quot;
+                    }
+                ],
+                &quot;inferenceAcceleratorOverrides&quot;: []
+            },
+            &quot;tags&quot;: [],
+            &quot;taskArn&quot;: &quot;arn:aws:ecs:eu-west-2:704533066374:task/hybrid-airflow-cluster/fc43322ecb55404fa086c266329b3a4c&quot;,
+            &quot;taskDefinitionArn&quot;: &quot;arn:aws:ecs:eu-west-2:704533066374:task-definition/apache-airflow:6&quot;,
+            &quot;version&quot;: 1
+        }
+    ],
+    &quot;failures&quot;: []
+}
+</code></pre>
+<p>As we did before, we can check in the CloudWatch logs and we can see this worked. We can see that the Source IP is our &ldquo;local&rdquo; ECS Anywhere instance.</p>
+<pre><code>Connecting to  demords.cidws7o4yy7e.eu-west-2.rds.amazonaws.com  database  demo  as user  admin
+Database host IP is : 18.169.169.151
+Source IP is  ip-10-0-0-207.eu-west-2.compute.internal
+Query is select * from customers WHERE location = &quot;Spain&quot;
+Records exported:
+171 , 2021-06-21 18:24:25 , Wiatt , Revell , wrevell4q@umn.edu , Female , 26.6.23.83 , Spain
+632 , 2021-11-14 18:44:25 , Sheppard , Rylett , sryletthj@java.com , Genderfluid , 50.1.207.70 , Spain
+783 , 2021-03-29 18:05:12 , Sloane , Maylour , smaylourlq@1und1.de , Female , 194.84.247.201 , Spain
+</code></pre>
+<p><strong>Accessing local resources</strong></p>
+<p>The previous example showed us running our containerised ETL script but accessing resources in the Cloud. For the specific use case we are looking at (hybrid orchestration) we really need to show this accessing local resources. We will do that in the next section, as we move to how we can orchestrate these via Apache Airflow.</p>
+<h3 id="creating-and-running-our-hybrid-workflow-using-apache-airflow">Creating and running our hybrid workflow using Apache Airflow</h3>
+<p>Up until now, we have validated that we can take our ETL script, containerise it and then run it anywhere: Cloud, locally and even our developer setup. The next stage is to incorporate this as part of our data pipeline, using Apache Airflow.</p>
+<p><strong>Setting up Apache Airflow</strong></p>
+<p>To start off with we need an Apache Airflow environment. I have put together a post on how you can get this up and running on AWS using Managed Workflows for Apache Airflow (MWAA), which you <a href="https://dev.to/aws/using-aws-cdk-to-deploy-your-amazon-managed-workflows-for-apache-airflow-environment-12cf">can check out here</a>. I have included the code within the code repo.</p>
+<p><strong>ECSOperator</strong></p>
+<p>Apache Airflow has a number Operators, which you can think of as templates that make it easier to perform tasks. These Operators are used when you define tasks, and you pass in various details and the code behind the Operators does the heavy lifting. There are a number of Operators that enable you to work with AWS services (these are packaged into what is called the Amazon provider package) and the one we are interested in is the ECS Operator, which allows us to define and run ECS Tasks - i.e. our ETL container script.</p>
+<p>MWAA uses dedicated workers to execute the tasks, and in order to govern what these worker nodes can do, they have an IAM Role. The IAM Role (known as the MWAA Execution Policy) governs what resources your workflows have access to. We need to add some additional permissions if we want our workflows (and therefore, the worker nodes) to be able to create and run ECS Tasks. The required permissions have been added to the CDK script, but are here for reference:</p>
+<pre><code>                iam.PolicyStatement(
+                    actions=[
+                        &quot;ecs:RunTask&quot;,
+                        &quot;ecs:DescribeTasks&quot;,
+                        &quot;ecs:RegisterTaskDefinition&quot;,
+                        &quot;ecs:DescribeTaskDefinition&quot;,
+                        &quot;ecs:ListTasks&quot;
+                    ],
+                    effect=iam.Effect.ALLOW,
+                    resources=[
+                        &quot;*&quot;
+                        ],
+                    ),
+                iam.PolicyStatement(
+                    actions=[
+                        &quot;iam:PassRole&quot;
+                    ],
+                    effect=iam.Effect.ALLOW,
+                    resources=[ &quot;*&quot; ],
+                    conditions= { &quot;StringLike&quot;: { &quot;iam:PassedToService&quot;: &quot;ecs-tasks.amazonaws.com&quot; } },
+                    ),
+</code></pre>
+<p><strong>Creating our Workflow</strong></p>
+<p>Withe the foundational stuff now done, we can create our workflow. It starts off like any other typical DAG by importing the Python libraries we are going to use. As you can see, we import the ECSOperator.</p>
+<pre><code>from airflow import DAG
+from datetime import datetime, timedelta
+from airflow.providers.amazon.aws.operators.ecs import ECSOperator
+
+default_args = {
+    'owner': 'ubuntu',
+    'start_date': datetime(2022, 3, 9),
+    'retry_delay': timedelta(seconds=60*60)
+}
+</code></pre>
+<p>We now create our task, using the ECSOperator and supplying configuration details. In the example below I have hard coded some of the values (for example the ECS Cluster name and Task Definitions, but you could either store these as variables within Apache Airflow, a centralised store like AWS Secrets, or event use a parameter file when triggering the DAG.</p>
+<pre><code>with DAG('hybrid_airflow_dag', catchup=False, default_args=default_args, schedule_interval=None) as dag:
+
+    cloudquery = ECSOperator(
+        task_id=&quot;cloudquery&quot;,
+        dag=dag,
+        cluster=&quot;hybrid-airflow-cluster&quot;,
+        task_definition=&quot;apache-airflow&quot;,
+        overrides={ },
+        launch_type=&quot;EC2&quot;,
+        awslogs_group=&quot;/ecs/hybrid-airflow&quot;,
+        awslogs_stream_prefix=&quot;ecs/Hybrid-ELT-TaskDef&quot;,
+        reattach = True
+    )
+    
+    cloudquery
+</code></pre>
+<p>And that is it. We have not defined a schedule, we will just make this an on demand workflow for testing. We save this (<a href="https://github.com/094459/blogpost-airflow-hybrid/blob/main/dag/ecs-hybrid-ec2.py">the code is in the repo</a>) and upload it into the Apache Airflow DAGs folder and in a few seconds the workflow should appear in the Apache Airflow UI.</p>
+<p><img src="https://raw.githubusercontent.com/094459/blogpost-airflow-hybrid/main/images/airflow-dag-1.png" alt="external"></p>
+<p><strong>Running our Workflow - Cloud</strong></p>
+<p>We can enable the workflow by unpausing it, and then we can trigger it to test. Once triggered, Apache Airflow will submit this task to the scheduler which will queue the task via the executor to a MWAA worker node. The task will execute on there, running the ECS Task Definition using the parameters above. These are the same that we used when we ran this via the command line.</p>
+<p>After about 2-3 minutes, the task should complete. The colour of the task in the Apache Airflow UI will change from light green (running) to dark green (complete). We can now view the log by clicking on the task and click on Log. You will see something similar to the following (I have omitted some of the log for brevity):</p>
+<pre><code>...
+--------------------------------------------------------------------------------
+[2022-03-06, 21:05:07 UTC] {{taskinstance.py:1242}} INFO - Starting attempt 1 of 1
+[2022-03-06, 21:05:07 UTC] {{taskinstance.py:1243}} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-06, 21:05:08 UTC] {{taskinstance.py:1262}} INFO - Executing &lt;Task(ECSOperator): cloudquery&gt; on 2022-03-06 21:05:06.837966+00:00
+[2022-03-06, 21:05:08 UTC] {{standard_task_runner.py:52}} INFO - Started process 13324 to run task
+[2022-03-06, 21:05:08 UTC] {{standard_task_runner.py:52}} INFO - Started process 13324 to run task
+[2022-03-06, 21:05:08 UTC] {{standard_task_runner.py:77}} INFO - Job 346: Subtask cloudquery
+[2022-03-06, 21:05:08 UTC] {{base_aws.py:401}} INFO - Airflow Connection: aws_conn_id=aws_default
+[2022-03-06, 21:05:08 UTC] {{base_aws.py:190}} INFO - No credentials retrieved from Connection
+[2022-03-06, 21:05:08 UTC] {{base_aws.py:93}} INFO - Creating session with aws_access_key_id=None region_name=eu-west-2
+[2022-03-06, 21:05:08 UTC] {{base_aws.py:168}} INFO - role_arn is None
+[2022-03-06, 21:05:08 UTC] {{logging_mixin.py:109}} INFO - Running &lt;TaskInstance: hybrid_airflow_ec2_dag.cloudquery manual__2022-03-06T21:05:06.837966+00:00 [running]&gt; on host ip-10-192-20-189.eu-west-2.compute.internal
+[2022-03-06, 21:05:08 UTC] {{taskinstance.py:1429}} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=ubuntu
+AIRFLOW_CTX_DAG_ID=hybrid_airflow_ec2_dag
+AIRFLOW_CTX_TASK_ID=cloudquery
+AIRFLOW_CTX_EXECUTION_DATE=2022-03-06T21:05:06.837966+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-03-06T21:05:06.837966+00:00
+[2022-03-06, 21:05:08 UTC] {{ecs.py:300}} INFO - Running ECS Task - Task definition: apache-airflow - on cluster hybrid-airflow-cluster
+[2022-03-06, 21:05:08 UTC] {{ecs.py:302}} INFO - ECSOperator overrides: {}
+
+[2022-03-06, 21:05:08 UTC] {{ecs.py:418}} INFO - No active previously launched task found to reattach
+[2022-03-06, 21:05:08 UTC] {{ecs.py:375}} INFO - ECS Task started: 
+[2022-03-06, 21:05:08 UTC] {{ecs.py:379}} INFO - ECS task ID is: 42a9f08a68ce46f985a3177e9aca3bce
+[2022-03-06, 21:05:08 UTC] {{ecs.py:313}} INFO - Starting ECS Task Log Fetcher
+
+[2022-03-06, 21:06:09 UTC] {{ecs.py:328}} INFO - ECS Task has been successfully executed
+[2022-03-06, 21:06:09 UTC] {{taskinstance.py:1280}} INFO - Marking task as SUCCESS. dag_id=hybrid_airflow_ec2_dag, task_id=cloudquery, execution_date=20220306T210506, start_date=20220306T210507, end_date=20220306T210609
+[2022-03-06, 21:06:09 UTC] {{local_task_job.py:154}} INFO - Task exited with return code 0
+[2022-03-06, 21:06:09 UTC] {{local_task_job.py:264}} INFO - 0 downstream tasks scheduled from follow-on schedule check
+</code></pre>
+<p>If we look at the logs in our AWS CloudWatch group.</p>
+<p><img src="https://raw.githubusercontent.com/094459/blogpost-airflow-hybrid/main/images/airflow-dag-3.png" alt="external"></p>
+<p>We can see the following:</p>
+<pre><code>Connecting to  demords.cidws7o4yy7e.eu-west-2.rds.amazonaws.com  database  demo  as user  admin
+Database host IP is : 18.169.169.151
+Source IP is  ip-10-0-3-129.eu-west-2.compute.internal
+Query is select * from customers WHERE country = &quot;Spain&quot;
+Records exported:
+171 , 2021-06-21 18:24:25 , Wiatt , Revell , wrevell4q@umn.edu , Female , 26.6.23.83 , Spain
+632 , 2021-11-14 18:44:25 , Sheppard , Rylett , sryletthj@java.com , Genderfluid , 50.1.207.70 , Spain
+783 , 2021-03-29 18:05:12 , Sloane , Maylour , smaylourlq@1und1.de , Female , 194.84.247.201 , Spain
+</code></pre>
+<p>Success! We have now triggered our workflow via Apache Airflow. The Task Definition ran on our EC2 instance that is in the Cloud (we can see that from the Source IP and by checking this against the EC2 instance that is running containers for the ECS Cluster). Now see how to trigger the task locally.</p>
+<p><strong>Running our Workflow - Local</strong></p>
+<p>To run our task on our local node, all we need to do is change the &ldquo;launch_type&rdquo; from &ldquo;EC2&rdquo; to &ldquo;EXTERNAL&rdquo;. When the ECS Cluster receives the request to run this task, it will take a look at which nodes are running the ECS Anywhere agent, and then select on to run the task on there.</p>
+<pre><code>
+    remotequery = ECSOperator(
+        task_id=&quot;remotequery&quot;,
+        dag=dag,
+        cluster=&quot;hybrid-airflow-cluster&quot;,
+        task_definition=&quot;apache-airflow&quot;,
+        overrides={ },
+        launch_type=&quot;EXTERNAL&quot;,
+        awslogs_group=&quot;/ecs/hybrid-airflow&quot;,
+        awslogs_stream_prefix=&quot;ecs/Hybrid-ELT-TaskDef&quot;,
+        reattach = True
+    )
+    
+    remotequery
+</code></pre>
+<p>When we create a new DAG that does this and upload it (<a href="https://github.com/094459/blogpost-airflow-hybrid/blob/main/dag/ecs-hybrid-external.py">the code is in the repo</a>) we can trigger this in exactly the same way. Once triggered, like before we need to wait 2-3 minutes. Once finished, we can check the Logs within the Apache Airflow UI, or via the CloudWatch log stream.</p>
+<pre><code>Connecting to  demords.cidws7o4yy7e.eu-west-2.rds.amazonaws.com  database  demo  as user  admin
+Database host IP is : 18.169.169.151
+Source IP is  ip-10-0-0-207.eu-west-2.compute.internal
+Query is select * from customers WHERE country = &quot;Spain&quot;
+Records exported:
+171 , 2021-06-21 18:24:25 , Wiatt , Revell , wrevell4q@umn.edu , Female , 26.6.23.83 , Spain
+632 , 2021-11-14 18:44:25 , Sheppard , Rylett , sryletthj@java.com , Genderfluid , 50.1.207.70 , Spain
+783 , 2021-03-29 18:05:12 , Sloane , Maylour , smaylourlq@1und1.de , Female , 194.84.247.201 , Spain
+</code></pre>
+<p>We can see that this time the source IP is our local machine where we have the ECS Anywhere agent running.</p>
+<p><strong>Running our Workflow - Local and accessing local resources</strong></p>
+<p>In the previous example, we were still accessing the Cloud based MySQL database (&ldquo;Connecting to  demords.cidws7o4yy7e.eu-west-2.rds.amazonaws.com&hellip;&rdquo;) but what we really want to do is to connect to our local resources when orchestrating these kinds of hybrid tasks. Lets do that now.</p>
+<p>If you can recall, the ETL script uses parameters stored in AWS Secrets (you could use a different repository if you wanted) to know which MySQL database to connect to. We can see this in the command we pass into the containerised ETL script</p>
+<pre><code>&quot;command&quot; : [ &quot;ricsue-airflow-hybrid&quot;,&quot;period1/region-data.csv&quot;, &quot;select * from customers WHERE country = \&quot;Spain\&quot;&quot;, &quot;rds-airflow-hybrid&quot;,&quot;eu-west-2&quot; ]} 
+</code></pre>
+<p>The value of &ldquo;rds-airflow-hybrid&rdquo; points to an AWS Secrets record that stores the database host, database, username and password. At the beginning of this walkthrough we created another record that points to our local MySQL database, which is &ldquo;localmysql-airflow-hybrid&rdquo; so we can create a new task that looks like the following:</p>
+<pre><code>with DAG('hybrid_airflow_dag', catchup=False, default_args=default_args, schedule_interval=None) as dag:
+
+    localquery = ECSOperator(
+        task_id=&quot;localquery&quot;,
+        dag=dag,
+        cluster=&quot;hybrid-airflow-cluster&quot;,
+        task_definition=&quot;apache-airflow&quot;,
+        overrides={ &quot;containerOverrides&quot;: [
+            { 
+                &quot;name&quot;: &quot;Hybrid-ELT-TaskDef&quot;,
+                &quot;command&quot; : [ &quot;ricsue-airflow-hybrid&quot;,&quot;period1/region-data.csv&quot;, &quot;select * from customers WHERE country = \&quot;Spain\&quot;&quot;, &quot;localmysql-airflow-hybrid&quot;,&quot;eu-west-2&quot; ]} 
+            ] },
+        launch_type=&quot;EC2&quot;,
+        awslogs_group=&quot;/ecs/hybrid-airflow&quot;,
+        awslogs_stream_prefix=&quot;ecs/Hybrid-ELT-TaskDef&quot;,
+        reattach = True
+    )
+    
+    localquery
+
+</code></pre>
+<p>As before, after creating this new DAG and uploading it (<a href="https://github.com/094459/blogpost-airflow-hybrid/blob/main/dag/ecs-hybrid-local.py">the code is in the repo</a>) we can trigger this in exactly the same way. Once triggered, like before we need to wait 2-3 minutes. Once finished, we can check the Logs within the Apache Airflow UI, or via the CloudWatch log stream.</p>
+<pre><code>Connecting to  localmysql.beachgeek.co.uk  database  localdemo  as user  root
+Database host IP is : 127.0.0.1
+Source IP is  ip-10-0-0-207.eu-west-2.compute.internal
+Query is select * from customers WHERE country = &quot;Spain&quot;
+Records exported:
+164 , 2021-04-02 , Dag , Delacourt , ddelacourt4j@nydailynews.com , Male , 200.12.59.159 , Spain
+</code></pre>
+<p>We can see that the source IP is our local machine where we have the ECS Anywhere agent running, AND we are now connecting to our local MySQL instance.</p>
+<blockquote>
+<p><strong>Note!</strong> The reason why we have a different set of results this time is that we are using a different set of sample data. In all the previous queries, we were running them against the Amazon RDS MySQL instance</p>
+</blockquote>
+<p>Congratulations! We have now orchestrated running a local ETL script via ECS Anywhere accessing local resources, and uploaded the results back up to our data lake on Amazon S3.</p>
+<p><strong>Doing more with your Workflow</strong></p>
+<p>Now that you have the basics, you can extend this and play around with how you can create re-usable workflows. Some of the things you can do include:</p>
+<ul>
+<li>Over-ride the default ETL script parameters we defined in the Task Defintion - for example, we can change the query or any of the other parameters for our ETL script</li>
+</ul>
+<pre><code>with DAG('hybrid_airflow_dag', catchup=False, default_args=default_args, schedule_interval=None) as dag:
+
+    cloudquery = ECSOperator(
+        task_id=&quot;cloudquery&quot;,
+        dag=dag,
+        cluster=&quot;hybrid-airflow-cluster&quot;,
+        task_definition=&quot;apache-airflow&quot;,
+        overrides={ &quot;containerOverrides&quot;: [
+            { 
+                &quot;name&quot;: &quot;airflow-hybrid-demo&quot;,
+                &quot;command&quot; : [ &quot;ricsue-airflow-hybrid&quot;,&quot;period1/region-data.csv&quot;, &quot;select * from customers WHERE country = \&quot;Poland\&quot;&quot;, &quot;rds-airflow-hybrid&quot;,&quot;eu-west-2&quot; ]} 
+            ] },
+        launch_type=&quot;EC2&quot;,
+        awslogs_group=&quot;/ecs/hybrid-airflow&quot;,
+        awslogs_stream_prefix=&quot;ecs/Hybrid-ELT-TaskDef&quot;,
+        reattach = True
+    )
+    
+    cloudquery
+
+</code></pre>
+<ul>
+<li>Create new Task Defintions, using the PythonOperator and boto3 to create a new Task Definition and then run it via the ECSOperator. This is an example of how you would do that.</li>
+</ul>
+<pre><code>from airflow import DAG
+from datetime import datetime, timedelta
+from airflow.providers.amazon.aws.operators.ecs import ECSOperator
+from airflow.operators.python import PythonOperator
+import boto3
+
+default_args = {
+    'owner': 'ubuntu',
+    'start_date': datetime(2019, 8, 14),
+    'retry_delay': timedelta(seconds=60*60)
+}
+
+def create_task():
+    client = boto3.client(&quot;ecs&quot;, region_name=&quot;eu-west-2&quot;)
+    response = client.register_task_definition(
+        containerDefinitions=[
+            {
+                &quot;name&quot;: &quot;Hybrid-ELT-TaskDef&quot;,
+                &quot;image&quot;: &quot;704533066374.dkr.ecr.eu-west-2.amazonaws.com/hybrid-airflow:airflw&quot;,
+                &quot;cpu&quot;: 0,
+                &quot;portMappings&quot;: [],
+                &quot;essential&quot;: True,
+                &quot;environment&quot;: [],
+                &quot;mountPoints&quot;: [],
+                &quot;volumesFrom&quot;: [],
+                &quot;command&quot;: [&quot;ricsue-airflow-hybrid&quot;,&quot;period1/hq-data.csv&quot;, &quot;select * from customers WHERE country = \&quot;England\&quot;&quot;, &quot;rds-airflow-hybrid&quot;,&quot;eu-west-2&quot;],
+                &quot;logConfiguration&quot;: {&quot;logDriver&quot;: &quot;awslogs&quot;,
+                    &quot;options&quot;: {
+                        &quot;awslogs-group&quot;: &quot;/ecs/hybrid-airflow&quot;,
+                        &quot;awslogs-region&quot;: &quot;eu-west-2&quot;, 
+                        &quot;awslogs-stream-prefix&quot;:&quot;ecs/Hybrid-ELT-TaskDef&quot; }
+                    }
+            }
+        ],
+        taskRoleArn=&quot;arn:aws:iam::704533066374:role/hybrid-airflow-ECSTaskDefRole&quot;,
+        executionRoleArn=&quot;arn:aws:iam::704533066374:role/ecs-anywhere-taskdef-hybridairflowApacheAirflowTas-1QL1K5RWWCUTD&quot;,
+        family= &quot;apache-airflow&quot;,
+        networkMode=&quot;host&quot;,
+        requiresCompatibilities= [
+            &quot;EXTERNAL&quot;
+        ],
+        cpu= &quot;256&quot;,
+        memory= &quot;512&quot;)
+    print(response)
+
+with DAG('hybrid_airflow_dag_taskdef', catchup=False, default_args=default_args, schedule_interval=None) as dag:
+    create_taskdef = PythonOperator(
+        task_id='create_taskdef',
+        provide_context=True,
+        python_callable=create_task,
+        dag=dag
+    )
+
+    cloudquery = ECSOperator(
+        task_id=&quot;cloudquery&quot;,
+        dag=dag,
+        cluster=&quot;hybrid-airflow-cluster&quot;,
+        task_definition=&quot;apache-airflow&quot;,
+        overrides={ },
+        launch_type=&quot;EC2&quot;,
+        awslogs_group=&quot;/ecs/hybrid-airflow&quot;,
+        awslogs_stream_prefix=&quot;ecs/Hybrid-ELT-TaskDef&quot;,
+        reattach = True
+    )
+    
+    create_taskdef &gt;&gt; cloudquery
+</code></pre>
+<h3 id="conclusion">Conclusion</h3>
+<p><strong>What did we learn?</strong></p>
+<p>In this walk through we saw how we can take some of the steps you might typically use when creating a data pipeline, containerise those, and then create workflows in Apache Airflow that allow you to orchestrate hybrid data pipelines to run where ever we need them - in the Cloud or in a remote data centre or network.</p>
+<p><strong>How can you improve this?</strong></p>
+<p>There are lots of ways you could use an approach like this, and I would love to hear from you.</p>
+<p>I would love to get your feedback on this post. What did you like, what do you think needs improving? If you could <a href="https://eventbox.dev/survey/BLNPRVF">complete this very very short</a> survey, I will use this information to improve future posts.</p>
+<p>Many thanks!</p>
+<p>Before you go, make sure you think about removing/cleaning up the AWS resources (and local ones) you might have setup.</p>
+<p><strong>Cleaning up</strong></p>
+<p>If you have followed this walk through, then before leaving make sure you remove/delete any resources you created to ensure you do not keep any recurring costs. Review and clean up the following resources you may have provisioned as you followed along</p>
+<ul>
+<li>Delete the DAGs that run the hybrid workflow</li>
+<li>Delete the Amazon ECS cluster and tasks</li>
+<li>Delete the Amazon ECR container repository and images</li>
+<li>Delete the files you have copied to the Amazon S3 bucket</li>
+<li>Delete the sample customer databases (and if you created them, MySQL instances)</li>
+<li>Uninstall the ECS Anywhere agent and purge any local container images</li>
+<li>Delete any CloudWatch log groups that were created</li>
+</ul>
+<h3 id="troubleshooting">Troubleshooting</h3>
+<p>As with all of my blogging adventures, I often come across things that I did not expect, and plenty of mistakes I make which will hopefully save you the time. So here is a few of the gotcha&rsquo;s I found during the setting up of this.</p>
+<ul>
+<li>Troubleshooting ECS Anywhere - as mentioned else where, you can run into some issues which I have comprehensively <a href="https://dev.to/aws/creating-a-multi-architecture-ci-cd-deployment-for-amazon-ecs-and-ecs-anywhere-15o3">outlined in another blog post</a>,</li>
+<li>Permissions - as I was putting this walk through together, I encountered many IAM related permissions issues. This is because I do not want to start off with broad access and resource privileges, which means trial and error to identify the needed permissions. Here are some of the errors that I encountered that were permissions related. These have all been incorporated in the CDK stack above, and is included for reference.</li>
+</ul>
+<p><strong>Apache Airflow Worker Tasks</strong></p>
+<ul>
+<li>When using the ECSOperator, I ran into permissions when trying to execute the ECS Operator task. This is the error I encountered.</li>
+</ul>
+<pre><code>botocore.errorfactory.AccessDeniedException: An error occurred (AccessDeniedException) when calling the RunTask operation: User: arn:aws:sts::704533066374:assumed-role/AmazonMWAA-hybrid-demo-kwZCZS/AmazonMWAA-airflow is not authorized to perform: ecs:RunTask on resource: arn:aws:ecs:eu-west-2:704533066374:task-definition/airflow-hybrid-ecs-task because no identity-based policy allows the ecs:RunTask action
+[2022-02-01, 13:02:29 UTC] {{taskinstance.py:1280}} INFO - Marking task as FAILED. dag_id=airflow_dag_test, task_id=airflow-hybrid-ecs-task-query, execution_date=20220201T130226, start_date=20220201T130227, end_date=20220201T130229
+[2022-02-01, 13:02:29 UTC] {{standard_task_runner.py:91}} ERROR - Failed to execute job 3 for task airflow-hybrid-ecs-task-query
+</code></pre>
+<p>I needed to amend my MWAA Execution policy, to enable these permissions. This is the policy that I added</p>
+<pre><code>{
+    &quot;Version&quot;: &quot;2012-10-17&quot;,
+    &quot;Statement&quot;: [
+        {
+            &quot;Sid&quot;: &quot;VisualEditor0&quot;,
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;ecs:RunTask&quot;,
+                &quot;ecs:DescribeTasks&quot;
+            ],
+            &quot;Resource&quot;: &quot;*&quot;
+        },
+        {
+            &quot;Action&quot;: &quot;iam:PassRole&quot;,
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Resource&quot;: [
+                &quot;*&quot;
+            ],
+            &quot;Condition&quot;: {
+                &quot;StringLike&quot;: {
+                    &quot;iam:PassedToService&quot;: &quot;ecs-tasks.amazonaws.com&quot;
+                }
+            }
+        }
+    ]
+}
+</code></pre>
+<p>And I needed to update the Trust relationship of the MWAA Execution role as follows</p>
+<pre><code>{
+  &quot;Version&quot;: &quot;2008-10-17&quot;,
+  &quot;Statement&quot;: [
+    {
+      &quot;Sid&quot;: &quot;&quot;,
+      &quot;Effect&quot;: &quot;Allow&quot;,
+      &quot;Principal&quot;: {
+        &quot;Service&quot;: &quot;ecs-tasks.amazonaws.com&quot;
+      },
+      &quot;Action&quot;: &quot;sts:AssumeRole&quot;
+    }
+  ]
+}
+</code></pre>
+<ul>
+<li>When using boto3 to create a new Task Definition we encountered another error:</li>
+</ul>
+<pre><code>botocore.errorfactory.AccessDeniedException: An error occurred (AccessDeniedException) when calling the RegisterTaskDefinition operation: User: arn:aws:sts::704533066374:assumed-role/AmazonMWAA-hybrid-demo-kwZCZS/AmazonMWAA-airflow is not authorized to perform: ecs:RegisterTaskDefinition on resource: * because no identity-based policy allows the ecs:RegisterTaskDefinition action
+[2022-02-03, 15:43:01 UTC] {{taskinstance.py:1280}} INFO - Marking task as FAILED. dag_id=airflow_ecsanywhere_boto3, task_id=create_taskdef, execution_date=20220203T154259, start_date=20220203T154301, end_date=20220203T154301
+[2022-02-03, 15:43:01 UTC] {{standard_task_runner.py:91}} ERROR - Failed to execute job 36 for task create_taskdef
+</code></pre>
+<p>We just needed to add a further ECS action,  &ldquo;ecs:RegisterTaskDefinition&rdquo;</p>
+<ul>
+<li>One of the features of the ECSOperator is the &ldquo;attach=True&rdquo; switch. Enabling this generated permissions error.</li>
+</ul>
+<pre><code>botocore.errorfactory.AccessDeniedException: An error occurred (AccessDeniedException) when calling the DescribeTaskDefinition operation: User: arn:aws:sts::704533066374:assumed-role/AmazonMWAA-hybrid-demo-kwZCZS/AmazonMWAA-airflow is not authorized to perform: ecs:DescribeTaskDefinition on resource: * because no identity-based policy allows the ecs:DescribeTaskDefinition action
+[2022-03-03, 11:41:16 UTC] {{taskinstance.py:1280}} INFO - Marking task as FAILED. dag_id=hybrid_airflow_dag_test, task_id=cloudquery, execution_date=20220303T114110, start_date=20220303T114114, end_date=20220303T114116
+
+</code></pre>
+<p>Adding the following additional permissions resolve this</p>
+<pre><code>            &quot;ecs:DescribeTaskDefinition&quot;,
+            &quot;ecs:ListTasks&quot;
+</code></pre>
+<ul>
+<li>Updating the Trust relationships on the ECS Cluster Task Execution role, to resolve a number of not allowed to pass Role error messages. Edit the Trust Relationship of the ECS Execution Role so that the MWAA Workers are allowed to execute these tasks on our behalf.</li>
+</ul>
+<pre><code>{
+  &quot;Version&quot;: &quot;2008-10-17&quot;,
+  &quot;Statement&quot;: [
+    {
+      &quot;Sid&quot;: &quot;&quot;,
+      &quot;Effect&quot;: &quot;Allow&quot;,
+      &quot;Principal&quot;: {
+        &quot;Service&quot;: [
+          &quot;ecs-tasks.amazonaws.com&quot;
+        ]
+      },
+      &quot;Action&quot;: &quot;sts:AssumeRole&quot;
+    }
+  ]
+}
+</code></pre>
+<p>and change to add the Apache Airflow service (which will allow the workers/schedulers to kick this off)</p>
+<pre><code>{
+  &quot;Version&quot;: &quot;2008-10-17&quot;,
+  &quot;Statement&quot;: [
+    {
+      &quot;Sid&quot;: &quot;&quot;,
+      &quot;Effect&quot;: &quot;Allow&quot;,
+      &quot;Principal&quot;: {
+        &quot;Service&quot;: [
+          &quot;airflow-env.amazonaws.com&quot;,
+          &quot;airflow.amazonaws.com&quot;,
+          &quot;ecs-tasks.amazonaws.com&quot;
+        ]
+      },
+      &quot;Action&quot;: &quot;sts:AssumeRole&quot;
+    }
+  ]
+}
+</code></pre>
+<ul>
+<li>The workflow ran into permissions issues when copying the files to the Amazon S3 bucket. I needed to amend my MWAA Execution policy, so I created a new policy that allows you to copy files to the S3 bucket and attached it. This is what it looked like (the Resource will be different depending on where you want to copy your files to)</li>
+</ul>
+<pre><code>{
+    &quot;Version&quot;: &quot;2012-10-17&quot;,
+    &quot;Statement&quot;: [
+        {
+            &quot;Sid&quot;: &quot;VisualEditor0&quot;,
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;s3:PutObject&quot;,
+                &quot;s3:GetObject&quot;,
+                &quot;s3:ListBucket&quot;,
+                &quot;s3:DeleteObject&quot;
+            ],
+            &quot;Resource&quot;: [
+                &quot;arn:aws:s3:::ricsue-airflow-hybrid*&quot;
+            ]
+        }
+    ]
+}
+</code></pre>
+<ul>
+<li>The workflows were not generating any CloudWatch logs, and this was because I had not added the correct permissions. To fix this, I amended the policy to include (and match) the AWS CloudWatch logging group that was created during the ECS Cluster creation.</li>
+</ul>
+<p>and also make it so that we can do the necessary logging</p>
+<pre><code>{
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;logs:CreateLogStream&quot;,
+                &quot;logs:CreateLogGroup&quot;,
+                &quot;logs:PutLogEvents&quot;,
+                &quot;logs:GetLogEvents&quot;,
+                &quot;logs:GetLogRecord&quot;,
+                &quot;logs:GetLogGroupFields&quot;,
+                &quot;logs:GetQueryResults&quot;
+            ],
+            &quot;Resource&quot;: [
+                &quot;arn:aws:logs:*:*:log-group:/ecs/hyrid-airflow:log-stream:/ecs/*&quot;
+            ]
+        }
+</code></pre>
+<h3 id="setting-up-the-mysql-test-data">Setting up the MySQL test data</h3>
+<p><strong>How I set up my MySql database machine locally - Ubuntu</strong></p>
+<p>This is the procedure I used. I assume you have some basic knowledge of MySQL. This is ok for a test/demo setup, but absolutely not ok for anything else. As root user you will need to run the following commands:</p>
+<pre><code>sudo apt update
+sudo apt install mysql-server
+sudo mysql_secure_installation
+</code></pre>
+<p>Follow the prompts to enable local access. I did have to run &ldquo;sudo mysql -uroot -p&rdquo; to login in order to be able to setup permissions. Create mysql users and update permissions so it can connect/query databases (I create a user called admin which has access to all databases from any hosts)</p>
+<p>On the machine you have just install MySQL, update bind to 0.0.0.0 on /etc/mysql/mysql.conf.d/mysqld.cnf and then &ldquo;sudo systemctl restart mysql&rdquo;
+Update your local /etc/hosts to add the host name for the local database that will be used by the ETL script to connect to. You use this value when defining the connection details in AWS Secrets. We use /etc/hosts as this is a simple demo setup. I used &ldquo;127.0.1.1	localmysql.beachgeek.co.uk&rdquo; in my setup.
+Test connectivity to that and make sure it resolves to 127.0.0.1.
+Now login to MySQL and create your demo database and then create a table using the following</p>
+<pre><code>create database localdemo;
+use localdemo;
+create table customers ( id INT, date DATE, first_name VARCHAR(50), last_name VARCHAR(50), email VARCHAR(50), gender VARCHAR(50), ip_address VARCHAR(20), country VARCHAR(50), consent VARCHAR(50) );
+</code></pre>
+<p>Copy the sample customer data in the repo, and you can now import the data using the following command&gt;</p>
+<pre><code>mysql -u {user} -p localdemo &lt; customer-reg-2.sql
+</code></pre>
+<p><strong>How I set up my MySql database machine locally - Amazon Linux 2</strong></p>
+<p>A similar process was used to install MySQL on Amazon Linux 2. Run the following commands to install and configure MySQL.</p>
+<pre><code>sudo yum install https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm
+sudo amazon-linux-extras install epel -y
+sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
+sudo yum install mysql-community-server
+sudo systemctl enable --now mysqld
+</code></pre>
+<p>You will now need to change the root password. To find the current temporary password, run &ldquo;sudo grep &rsquo;temporary password&rsquo; /var/log/mysqld.log&rdquo; which will show you the password. Something like this:</p>
+<pre><code>you will see: 022-01-26T17:27:51.108997Z 6 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: F+lFfe*QG8qX
+</code></pre>
+<p>And then set new root password with</p>
+<pre><code>sudo mysql_secure_installation -p'F+lFfe*QG8qX'
+</code></pre>
+<p>Update your local /etc/hosts to add the host name for the local database that will be used by the ETL script to connect to. You use this value when defining the connection details in AWS Secrets. We use /etc/hosts as this is a simple demo setup. I used &ldquo;127.0.1.1	localmysql.beachgeek.co.uk&rdquo; in my setup.
+Test connectivity to that and make sure it resolves to 127.0.0.1.
+Now login to MySQL and create your demo database and then create a table using the following</p>
+<pre><code>create database localdemo;
+use localdemo;
+create table customers ( id INT, date DATE, first_name VARCHAR(50), last_name VARCHAR(50), email VARCHAR(50), gender VARCHAR(50), ip_address VARCHAR(20), country VARCHAR(50), consent VARCHAR(50) );
+</code></pre>
+<p>Copy the sample customer data in the repo, and you can now import the data using the following command&gt;</p>
+<pre><code>mysql -u {user} -p localdemo &lt; customer-reg-2.sql
+</code></pre>
+
+  </main>
+
+          <div class="social-heading">
+            <div class="footer-social">
+  
+    <div class="social-icon">
+      <a href="https://twitter.com/094459" target="_blank" title="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Twitter" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://github.com/094459" target="_blank" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="GitHub" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+      </a>
+    </div>
+  
+  
+    <div class="social-icon">
+      <a href="https://www.linkedin.com/in/ricardosueiras" target="_blank" title="Linkedin">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="LinkedIn" role="img"
+viewBox="0 0 512 512"
+fill="#fff"><rect
+width="512" height="512"
+rx="15%"
+fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://www.reddit.com/r/aws" target="_blank" title="Reddit">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Reddit" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+      </a>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="social-icon">
+      <a href="mailto:ricsue@amazon.com" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Email" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="teal"/><rect width="356" height="256" x="78" y="128" fill="#fff" rx="8%"/><path fill="none" stroke="teal" stroke-width="20" d="M434 128L269 292c-7 8-19 8-26 0L78 128m0 256l129-128m227 128L305 256"/></svg>
+      </a>
+    </div>
+  
+  
+</div>
+
+          </div>
+          <footer role="contentinfo">
+  <div class="social-footer">
+    <div class="footer-social">
+  
+    <div class="social-icon">
+      <a href="https://twitter.com/094459" target="_blank" title="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Twitter" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://github.com/094459" target="_blank" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="GitHub" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+      </a>
+    </div>
+  
+  
+    <div class="social-icon">
+      <a href="https://www.linkedin.com/in/ricardosueiras" target="_blank" title="Linkedin">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="LinkedIn" role="img"
+viewBox="0 0 512 512"
+fill="#fff"><rect
+width="512" height="512"
+rx="15%"
+fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://www.reddit.com/r/aws" target="_blank" title="Reddit">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Reddit" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+      </a>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="social-icon">
+      <a href="mailto:ricsue@amazon.com" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Email" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="teal"/><rect width="356" height="256" x="78" y="128" fill="#fff" rx="8%"/><path fill="none" stroke="teal" stroke-width="20" d="M434 128L269 292c-7 8-19 8-26 0L78 128m0 256l129-128m227 128L305 256"/></svg>
+      </a>
+    </div>
+  
+  
+</div>
+
+    <label for="themer">
+      dark theme: <input type="checkbox" id="themer" class="vh">
+      <span aria-hidden="true"></span>
+    </label>
+  </div>
+  
+    <p class="margin-top-none">Copyright &copy; <span id="copyright-year"></span> - Ricardo Sueiras</p>
+  
+  
+    <p class="margin-top-none">
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cupper-hugo-theme">Cupper</a>.
+    </p>
+  
+</footer>
+<script>
+    var year = new Date().getFullYear()
+    document.getElementById("copyright-year").innerHTML = year;
+</script>
+
+        </div>
+      </div>
+    </div>
+    <script src="https://blog.beachgeek.co.uk/js/prism.js"></script>
+
+
+
+<script src="https://blog.beachgeek.co.uk/js/dom-scripts.js"></script>
+
+
+
+<script src="/js/search.7aef046a0cc8b0c532f1d20087b920459bc868c936bb48a6ae221eceefca2d07.js"></script>
+
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  </body>
+</html>

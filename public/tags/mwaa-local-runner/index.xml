@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mwaa-local-runner on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/mwaa-local-runner/</link>
+    <description>Recent content in mwaa-local-runner on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/mwaa-local-runner/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #154</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-154/</link>
+      <pubDate>Mon, 24 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-154/</guid>
+      <description>April 24th, 2023 - Instalment #154 Welcome&#xA;Hello and welcome to the AWS open source newsletter, #154, the newsletter that just keeps on giving&amp;hellip;.in this case, keeps giving you brand new open source projects to practice your four freedoms on. We have another great selection of projects for you as always, starting off with &amp;ldquo;cfn-teleport&amp;rdquo; an essential cli tool for Cloudformation users, &amp;ldquo;aither&amp;rdquo; an interesting collaborative development tool using virtualised desktops on containers, &amp;ldquo;tabular-column-semantic-search&amp;rdquo; a tool to help you find similar types of data in your data lakes, &amp;ldquo;resource-lister&amp;rdquo; and &amp;ldquo;komiser&amp;rdquo; tools that help you manage your AWS resources, &amp;ldquo;resource-utilization&amp;rdquo; helps you track your AWS resource utilisation, &amp;ldquo;iot-network-traffic-control-and-load-testing-simulator&amp;rdquo; an interesting load and chaos testing example, and more!</description>
+    </item>
+    <item>
+      <title>Exploring Shell Launch Scripts on Managed Workflows for Apache Airflow (MWAA) and mwaa-local-runner</title>
+      <link>https://blog.beachgeek.co.uk/mwaa-startup-scripts/</link>
+      <pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/mwaa-startup-scripts/</guid>
+      <description>Managed Workflows for Apache Airflow (MWAA) recently launched a new feature that a lot of folk had been asking for, which was the ability to add additional libraries, binaries, or environment variables when launching Airflow workers. If you missed the announcement, Amazon MWAA now supports Shell Launch Scripts, this new capability allows you to easily do this by creating a script and then configuring your MWAA environments to use that script during the start-up phase.</description>
+    </item>
+    <item>
+      <title>Getting mwaa-local-runner up on AWS Cloud9</title>
+      <link>https://blog.beachgeek.co.uk/mwaa-local-runner-on-c9/</link>
+      <pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/mwaa-local-runner-on-c9/</guid>
+      <description>Here is a quick recipe if you are looking to get mwaa-local-runner up and running on your Cloud9 developer setup. This might not be the most optimised way, so I am very happy to received suggestions on how to improve this. What I will cover here is how to deploy mwaa-local-runner onto a standard Cloud9 IDE, deployed in a default VPC.&#xA;Updating my AWS Cloud9 environment&#xA;The first thing I needed to do was to increase the size of my local disk as Cloud9 only provides 10gb of storage.</description>
+    </item>
+    <item>
+      <title>VSCode and Apache Airflow</title>
+      <link>https://blog.beachgeek.co.uk/using-vscode-with-airflow/</link>
+      <pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/using-vscode-with-airflow/</guid>
+      <description>VSCode and Apache Airflow In this short post, I wanted to highlight how you can use a VSCode plugin to work with a local running instance of Apache Airflow to improve the developer experience. This post was inspired by a tweet from Kaxil Naik who was asking about what features developers are looking for when using VSCode and Pycharm and Apache Airflow.&#xA;In this post I will show you how you can configure mwaa-local-runner, an open source project that provides you with an easy way to get a local Apache Airflow environment up and running (that is configuration wide, aligned to the Amazon Managed Workflows for Apache Airflow service MWAA), together with some VSCode plugins.</description>
+    </item>
+  </channel>
+</rss>

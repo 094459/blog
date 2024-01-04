@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Amazon Redshift on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/amazon-redshift/</link>
+    <description>Recent content in Amazon Redshift on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/amazon-redshift/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #152</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-152/</link>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-152/</guid>
+      <description>April 10th, 2023 - Instalment #152 Welcome&#xA;Hello and welcome to the AWS open source newsletter, #152 an Easter special. This week sees more great new projects including, &amp;ldquo;redshift-test-drive&amp;rdquo; a set of essential tools for Amazon Redshift users, &amp;ldquo;simple-database-archival-solution&amp;rdquo; a nice tool to help you archive your data, &amp;ldquo;attribution-gen&amp;rdquo; a Go tool to help you build open source attribution documents, &amp;ldquo;aws-glue-data-catalog-federation&amp;rdquo; a library to help you federate your Glue catalog, &amp;ldquo;subnet-utilization-monitor-for-amazon-vpc&amp;rdquo; a handy tool to keep on top of your IP address allocation, &amp;ldquo;AlexaGPT&amp;rdquo; a demo of integrating Alexa with you know what, and more!</description>
+    </item>
+    <item>
+      <title>Working with Managed Workflows for Apache Airflow (MWAA) and Amazon Redshift </title>
+      <link>https://blog.beachgeek.co.uk/using-redshift-with-mwaa/</link>
+      <pubDate>Fri, 07 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/using-redshift-with-mwaa/</guid>
+      <description>Working with Managed Workflows for Apache Airflow (MWAA) and Amazon Redshift I was recently looking at some Stack Overflow questions from the AWS Collective and saw a number of folk having questions about the integration between Amazon Redshift and Managed Workflows for Apache Airflow (MWAA). I thought I would put together a quick post that might help folk address what I saw were some of the common challenges.&#xA;There is some code that accompanies this post, which you can find at the GitHub repository cdk-mwaa-redshift.</description>
+    </item>
+    <item>
+      <title>Working with the RedshiftToS3Transfer operator and Amazon Managed Workflows for Apache Airflow</title>
+      <link>https://blog.beachgeek.co.uk/working-with-the-redshifttos3transfer-operator-and-amazon-managed-workflows-for-apache-airflow/</link>
+      <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/working-with-the-redshifttos3transfer-operator-and-amazon-managed-workflows-for-apache-airflow/</guid>
+      <description>Introduction Inspired by a recent conversation within the Apache Airflow open source slack community, I decided to channel the inner terrier within me to tackle this particular issue, around getting an Apache Airflow operator (the protagonist for this post) to work.&#xA;I found the perfect catalyst in the way of the original launch post of Amazon Managed Workflows for Apache Airflow (MWAA). As is often the way, diving into that post (creating a workflow to take some source files, transform them and then move them into Amazon Redshift) led me down some unexpected paths to here, this post.</description>
+    </item>
+  </channel>
+</rss>

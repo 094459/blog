@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/security/</link>
+    <description>Recent content in Security on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reading and writing data across different AWS accounts with Amazon Managed Workflows for Apache Airflow v2.x</title>
+      <link>https://blog.beachgeek.co.uk/reading-and-writing-data-across-different-aws-accounts-with-amazon-managed-workflows-for-apache-airflow-v2x/</link>
+      <pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/reading-and-writing-data-across-different-aws-accounts-with-amazon-managed-workflows-for-apache-airflow-v2x/</guid>
+      <description>Reading and writing data across different AWS accounts in you Apache Airflow DAGs&#xA;As regular readers will know, I sometimes lurk in the Apache Airflow slack channel to see what is going on. If you are new to Apache Airflow, or want to get a deeper understanding then I highly recommend spending some time here. The community is super welcoming and eager to help new participants.&#xA;It was during a recent session I came across an interesting problem that one of the builders was having, which was how to access (read/write) data in an S3 bucket which was in a different account to the one hosting Amazon Managed Workflows for Apache Airflow (MWAA).</description>
+    </item>
+    <item>
+      <title>Working with permissions in Amazon Managed Workflows for Apache Airflow</title>
+      <link>https://blog.beachgeek.co.uk/working-with-permissions-in-amazon-managed-workflows-for-apache-airflow/</link>
+      <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/working-with-permissions-in-amazon-managed-workflows-for-apache-airflow/</guid>
+      <description>Part of a series of posts to support an up-coming online event, the Innovate AI/ML on February 24th, from 9:00am GMT - you can sign up here&#xA;Part 1 - Installation and configuration of Managed Workflows for Apache Airflow Part 2 - Working with Permissions &amp;lt;- this post Part 3 - Accessing Amazon Managed Workflows for Apache Airflow environments Part 4 - Interacting with Amazon Managed Workflows for Apache Airflow via the command line Part 5 - A simple CI/CD system for your development workflow Part 6 - Monitoring and logging Part 7 - Automating a simple AI/ML pipeline with Apache Airflow In this post I will be covering Part 2, how to ensure that you control access to Apache Airflow following best practices such as default no access/least privilege.</description>
+    </item>
+  </channel>
+</rss>

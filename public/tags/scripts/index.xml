@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>scripts on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/scripts/</link>
+    <description>Recent content in scripts on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 27 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/scripts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Working with parameters and variables in Amazon Managed Workflows for Apache Airflow</title>
+      <link>https://blog.beachgeek.co.uk/working-with-parameters-and-variables-in-amazon-managed-workflows-for-apache-airflow/</link>
+      <pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/working-with-parameters-and-variables-in-amazon-managed-workflows-for-apache-airflow/</guid>
+      <description>Maximising the re-use of your DAGs in MWAA&#xA;During some recently conversations with customers, one of the topics that they were interested in was how to create re-usable, parameterised Apache Airflow workflows (DAGs) that could be executed dynamically through the use variables and/or parameters (either submitted via the UI or the command line). This makes a lot of sense, as you may find that you repeat similar tasks in your workflows, and so this approach allows you to maximise the re-use of that work.</description>
+    </item>
+  </channel>
+</rss>

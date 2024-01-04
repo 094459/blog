@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS CodeWhisperer on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/aws-codewhisperer/</link>
+    <description>Recent content in AWS CodeWhisperer on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 04 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/aws-codewhisperer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using Amazon CodeWhisperer as my scripting sidekick</title>
+      <link>https://blog.beachgeek.co.uk/code-whisperer-my-trusted-sidekick/</link>
+      <pubDate>Mon, 04 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/code-whisperer-my-trusted-sidekick/</guid>
+      <description>How are you using these new AI coding assistants like Amazon CodeWhisperer? I want to share a quick story about how I am finding some success with using these tools, which I hope will encourage you to experiment for yourselves.&#xA;As I work on new projects, demos, blog posts, I often need to do supporting activities such as creating or cleaning up AWS environments, which I sometimes do by hand but mostly do via the AWS CLI or via Python scripts and boto3.</description>
+    </item>
+  </channel>
+</rss>

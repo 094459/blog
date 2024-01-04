@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Amazon ECS on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/amazon-ecs/</link>
+    <description>Recent content in Amazon ECS on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/amazon-ecs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #173</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-173/</link>
+      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-173/</guid>
+      <description>September 11th, 2023 - Instalment #173 Welcome to #173 of the AWS open source newsletter, bringing you all the news and latest projects for AWS developers. This weeks new projects include a Golang based SDK for kernel eBPF operations, a project that helps you to optimise your network performance, a couple of projects for Apache Flink users, as well as a handful of different tools and demos featuring open source technologies helping to drive innovation in generative AI.</description>
+    </item>
+    <item>
+      <title>Orchestrating hybrid workflows using Amazon Managed Workflows for Apache Airflow (MWAA)</title>
+      <link>https://blog.beachgeek.co.uk/orchestrating-hybrid-workflows-with-apache-airflow/</link>
+      <pubDate>Mon, 07 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/orchestrating-hybrid-workflows-with-apache-airflow/</guid>
+      <description>Using Apache Airflow to orchestrate hybrid workflows In some recent discussions with customers, the topic of how open source is increasingly being used as a common mechanisms to help build re-usable solutions that can protect investments in engineering and development time, skills and that work across on premises and Cloud environment. In 2021 my most viewed blog post talked about how you can build and deploy containerised applications, anywhere (Cloud, your data centre, other Clouds) and on anything (Intel and Arm).</description>
+    </item>
+    <item>
+      <title>Creating a multi architecture CI/CD solution with Amazon ECS and ECS Anywhere</title>
+      <link>https://blog.beachgeek.co.uk/creating-a-multi-architecture-cicd-solution-with-amazon-ecs-and-ecs-anywhere/</link>
+      <pubDate>Fri, 16 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/creating-a-multi-architecture-cicd-solution-with-amazon-ecs-and-ecs-anywhere/</guid>
+      <description>Please let me know how I can improve posts such as this one, by completing this very short survey. $25 AWS credits will be provided for the first 20 completed - take the survey&#xA;Organisations are moving their workloads to the cloud as quickly as they can. While most applications can be easily migrated to the cloud, some applications need to remain on-premises due to low-latency or data sovereignty requirements.</description>
+    </item>
+  </channel>
+</rss>

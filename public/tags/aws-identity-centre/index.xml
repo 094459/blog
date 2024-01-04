@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS Identity Centre on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/aws-identity-centre/</link>
+    <description>Recent content in AWS Identity Centre on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/aws-identity-centre/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Integrating Keycloak as my Identity Provider for IAM Identity Centre: Part two, configuring Keycloak as my Identity provider</title>
+      <link>https://blog.beachgeek.co.uk/keycloak-on-aws-part-two/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/keycloak-on-aws-part-two/</guid>
+      <description>This is the follow up post to Integrating Keycloak as my Identity Provider for IAM Identity Centre: Part one, deploying Keycloak on AWS, where I looked at how to deploy Keycloak on AWS in order to have an Identity Provider to use when configuring AWS Identity Centre. In this post, I am going to use that setup, and show you how I configured it to integrate with AWS Identity Centre to provide access to my AWS resources.</description>
+    </item>
+    <item>
+      <title>Integrating Keycloak as my Identity Provider for IAM Identity Centre: Part one, deploying Keycloak on AWS</title>
+      <link>https://blog.beachgeek.co.uk/keycloak-on-aws-part-one/</link>
+      <pubDate>Tue, 06 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/keycloak-on-aws-part-one/</guid>
+      <description>Integrating Keycloak as my Identity Provider for IAM Identity Centre: Part one, deploying Keycloak on AWS &amp;ldquo;It was the best of times, it was the worst of times&amp;hellip;&amp;rdquo; A Tale of Two Cities&#xA;It started out innocently enough. As part of working on a new blog post, I needed a way to use an open source tool called saml2aws that generates AWS short lived credentials that you can use to access your AWS resources.</description>
+    </item>
+  </channel>
+</rss>

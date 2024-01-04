@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>serverless-website-analytics on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/serverless-website-analytics/</link>
+    <description>Recent content in serverless-website-analytics on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 29 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/serverless-website-analytics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploying a serverless web analytics solution for your websites</title>
+      <link>https://blog.beachgeek.co.uk/deploying-open-source-clickstream-analytics/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/deploying-open-source-clickstream-analytics/</guid>
+      <description>Update, August 1st&#xA;I have been running this project for five weeks now, so have a better understanding of costs. My bill in July was $0.85, and I suspect this will be reasonably stable over the coming months. I think this represents great value! I will report back at the end of the year and update this&#xA;Like many folk, I run a personal blog. This blog runs Hugo and turns my markdown pages into static content, which I then deploy on Netlify.</description>
+    </item>
+  </channel>
+</rss>

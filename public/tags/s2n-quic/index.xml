@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>s2n-quic on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/s2n-quic/</link>
+    <description>Recent content in s2n-quic on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 29 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/s2n-quic/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source news and updates #122</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-122/</link>
+      <pubDate>Fri, 29 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-122/</guid>
+      <description>July 29th, 2022 - Instalment #122 Welcome&#xA;Welcome back to my regular readers and hello to new readers, I hope you will enjoy and come back again to the AWS open source newsletter episode #122.&#xA;This week we have another great collection of community and AWS related open source tools, demos and samples for you to practice your open source four freedoms. &amp;ldquo;rds_auto_encrypt&amp;rdquo; helps you encrypt your Amazon RDS databases, &amp;ldquo;middy-profiler&amp;rdquo; is an interesting looking tool to help you understand performance characteristics of your AWS Lambda functions, &amp;ldquo;simpleiot&amp;rdquo; is a very nice looking IoT framework to help simplify how you can onboard devices into AWS IoT, &amp;ldquo;aws-secrets-manager-hybrid-secret-replication-from-hashicorp-vault&amp;rdquo; (bit of a mouthful to say that one) helps you synchronise your secrets across different secret providers, &amp;ldquo;automated-forensic-orchestrator-for-amazon-ec2&amp;rdquo; is a very nice reference solution for automating some of your operational security activities, and we have several other projects for you to dive deep into.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #101</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-101/</link>
+      <pubDate>Mon, 21 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-101/</guid>
+      <description>Feb 21st, 2022 - Instalment #101 Newsletter #101.&#xA;There is nothing basic and fundamental about edition 101 of the AWS open source newsletter, with another great round up of new open source projects including eks-creation-engine from the folks at Lightspin helping you all to stay safer with this handy tool you should check out, idp-scim-sync to help users of AWS SSO who want to synchronise with their Google Workspace Directory, typecart an analysis tool for proof evolution and many other great projects and sample code.</description>
+    </item>
+  </channel>
+</rss>

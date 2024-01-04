@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SPDX on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/spdx/</link>
+    <description>Recent content in SPDX on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/spdx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>sbomqs, an open source tool to quality check your SBOMS</title>
+      <link>https://blog.beachgeek.co.uk/sbomqs-an-open-source-tool-to-qa-sboms/</link>
+      <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/sbomqs-an-open-source-tool-to-qa-sboms/</guid>
+      <description>When putting together a previous post on how to use open source tools to create a software bill of materials (SBOM), Ritesh Noronha alerted me to another project, sbomqs that aims to simplify the evaluation of SBOM quality for both producers and consumers. A quality SBOM is one that is accurate, complete, and up-to-date. It should accurately reflect the components and dependencies used in the software application, including their version and optionally any known vulnerabilities.</description>
+    </item>
+  </channel>
+</rss>

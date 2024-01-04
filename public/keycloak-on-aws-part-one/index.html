@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="generator" content="Hugo 0.121.1">
+  
+  
+    <link rel="canonical" href="https://blog.beachgeek.co.uk/keycloak-on-aws-part-one/">
+  
+
+  
+
+  
+    
+    
+    
+    
+    
+
+  
+    <link rel="webmention" href="https://webmention.io/username.co.uk/webmention" />
+    <link rel="pingback" href="https://webmention.io/username.co.uk/xmlrpc" />
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://blog.beachgeek.co.uk/css/syntax.css" media="none" onload="this.media='all';">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://blog.beachgeek.co.uk/css/styles.css">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://blog.beachgeek.co.uk/style.main.css">
+
+  
+
+  <link rel="alternate" rel="canonical" href="https://blog.beachgeek.co.uk/index.xml" >
+  
+  <style id="inverter" media="none">
+    .intro-and-nav, .main-and-footer { filter: invert(100%) }
+    * { background-color: inherit }
+    img:not([src*=".svg"]), .colors, iframe, .demo-container { filter: invert(100%) }
+  </style>
+
+  
+  
+  <title>Integrating Keycloak as my Identity Provider for IAM Identity Centre: Part one, deploying Keycloak on AWS | Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Integrating Keycloak as my Identity Provider for IAM Identity Centre: Part one, deploying Keycloak on AWS"/>
+<meta name="twitter:description" content="Integrating Keycloak as my Identity Provider for IAM Identity Centre: Part one, deploying Keycloak on AWS &ldquo;It was the best of times, it was the worst of times&hellip;&rdquo; A Tale of Two Cities
+It started out innocently enough. As part of working on a new blog post, I needed a way to use an open source tool called saml2aws that generates AWS short lived credentials that you can use to access your AWS resources."/>
+<meta name="twitter:site" content="@094459"/>
+
+  <meta name="twitter:card" content="summary" />
+</head>
+
+  <body>
+    <a href="#main">skip to content</a>
+    <svg style="display: none">
+  <symbol id="bookmark" viewBox="0 0 40 50">
+   <g transform="translate(2266 3206.2)">
+    <path style="stroke:currentColor;stroke-width:3.2637;" d="m-2262.2-3203.4-.2331 42.195 16.319-16.318 16.318 16.318.2331-42.428z"/>
+   </g>
+  </symbol>
+
+  <symbol id="w3c" viewBox="0 0 127.09899 67.763">
+   <text font-size="83" style="font-size:83px;font-family:Trebuchet;letter-spacing:-12;fill-opacity:0" letter-spacing="-12" y="67.609352" x="-26.782778">W3C</text>
+   <text font-size="83" style="font-size:83px;font-weight:bold;font-family:Trebuchet;fill-opacity:0" y="67.609352" x="153.21722" font-weight="bold">SVG</text>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m33.695.377 12.062 41.016 12.067-41.016h8.731l-19.968 67.386h-.831l-12.48-41.759-12.479 41.759h-.832l-19.965-67.386h8.736l12.061 41.016 8.154-27.618-3.993-13.397h8.737z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m91.355 46.132c0 6.104-1.624 11.234-4.862 15.394-3.248 4.158-7.45 6.237-12.607 6.237-3.882 0-7.263-1.238-10.148-3.702-2.885-2.47-5.02-5.812-6.406-10.022l6.82-2.829c1.001 2.552 2.317 4.562 3.953 6.028 1.636 1.469 3.56 2.207 5.781 2.207 2.329 0 4.3-1.306 5.909-3.911 1.609-2.606 2.411-5.738 2.411-9.401 0-4.049-.861-7.179-2.582-9.399-1.995-2.604-5.129-3.912-9.397-3.912h-3.327v-3.991l11.646-20.133h-14.062l-3.911 6.655h-2.493v-14.976h32.441v4.075l-12.31 21.217c4.324 1.385 7.596 3.911 9.815 7.571 2.22 3.659 3.329 7.953 3.329 12.892z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.21 0 1.414 8.6-5.008 9.583s-1.924-4.064-5.117-6.314c-2.693-1.899-4.447-2.309-7.186-1.746-3.527.73-7.516 4.938-9.258 10.13-2.084 6.21-2.104 9.218-2.178 11.978-.115 4.428.58 7.043.58 7.043s-3.04-5.626-3.011-13.866c.018-5.882.947-11.218 3.666-16.479 2.404-4.627 5.954-7.404 9.114-7.728 3.264-.343 5.848 1.229 7.841 2.938 2.089 1.788 4.213 5.698 4.213 5.698l4.94-9.837z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.82 48.674s-2.208 3.957-3.589 5.48c-1.379 1.524-3.849 4.209-6.896 5.555-3.049 1.343-4.646 1.598-7.661 1.306-3.01-.29-5.807-2.032-6.786-2.764-.979-.722-3.486-2.864-4.897-4.854-1.42-2-3.634-5.995-3.634-5.995s1.233 4.001 2.007 5.699c.442.977 1.81 3.965 3.749 6.572 1.805 2.425 5.315 6.604 10.652 7.545 5.336.945 9.002-1.449 9.907-2.031.907-.578 2.819-2.178 4.032-3.475 1.264-1.351 2.459-3.079 3.116-4.108.487-.758 1.276-2.286 1.276-2.286l-1.276-6.644z"/>
+  </symbol>
+
+  <symbol id="tag" viewBox="0 0 177.16535 177.16535">
+    <g transform="translate(0 -875.2)">
+     <path style="fill-rule:evenodd;stroke-width:0;fill:currentColor" d="m159.9 894.3-68.79 8.5872-75.42 77.336 61.931 60.397 75.429-76.565 6.8495-69.755zm-31.412 31.835a10.813 10.813 0 0 1 1.8443 2.247 10.813 10.813 0 0 1 -3.5174 14.872l-.0445.0275a10.813 10.813 0 0 1 -14.86 -3.5714 10.813 10.813 0 0 1 3.5563 -14.863 10.813 10.813 0 0 1 13.022 1.2884z"/>
+    </g>
+  </symbol>
+
+  <symbol id="balloon" viewBox="0 0 141.73228 177.16535">
+   <g transform="translate(0 -875.2)">
+    <g>
+     <path style="fill:currentColor" d="m68.156 882.83-.88753 1.4269c-4.9564 7.9666-6.3764 17.321-5.6731 37.378.36584 10.437 1.1246 23.51 1.6874 29.062.38895 3.8372 3.8278 32.454 4.6105 38.459 4.6694-.24176 9.2946.2879 14.377 1.481 1.2359-3.2937 5.2496-13.088 8.886-21.623 6.249-14.668 8.4128-21.264 10.253-31.252 1.2464-6.7626 1.6341-12.156 1.4204-19.764-.36325-12.93-2.1234-19.487-6.9377-25.843-2.0833-2.7507-6.9865-7.6112-7.9127-7.8436-.79716-.20019-6.6946-1.0922-6.7755-1.0248-.02213.0182-5.0006-.41858-7.5248-.22808l-2.149-.22808h-3.3738z"/>
+     <path style="fill:currentColor" d="m61.915 883.28-3.2484.4497c-1.7863.24724-3.5182.53481-3.8494.63994-2.4751.33811-4.7267.86957-6.7777 1.5696-.28598 0-1.0254.20146-2.3695.58589-5.0418 1.4418-6.6374 2.2604-8.2567 4.2364-6.281 7.6657-11.457 18.43-12.932 26.891-1.4667 8.4111.71353 22.583 5.0764 32.996 3.8064 9.0852 13.569 25.149 22.801 37.517 1.3741 1.841 2.1708 2.9286 2.4712 3.5792 3.5437-1.1699 6.8496-1.9336 10.082-2.3263-1.3569-5.7831-4.6968-21.86-6.8361-33.002-.92884-4.8368-2.4692-14.322-3.2452-19.991-.68557-5.0083-.77707-6.9534-.74159-15.791.04316-10.803.41822-16.162 1.5026-21.503 1.4593-5.9026 3.3494-11.077 6.3247-15.852z"/>
+     <path style="fill:currentColor" d="m94.499 885.78c-.10214-.0109-.13691 0-.0907.0409.16033.13489 1.329 1.0675 2.5976 2.0723 6.7003 5.307 11.273 14.568 12.658 25.638.52519 4.1949.24765 14.361-.5059 18.523-2.4775 13.684-9.7807 32.345-20.944 53.519l-3.0559 5.7971c2.8082.76579 5.7915 1.727 8.9926 2.8441 11.562-11.691 18.349-19.678 24.129-28.394 7.8992-11.913 11.132-20.234 12.24-31.518.98442-10.02-1.5579-20.876-6.7799-28.959-.2758-.4269-.57803-.86856-.89617-1.3166-3.247-6.13-9.752-12.053-21.264-16.131-2.3687-.86369-6.3657-2.0433-7.0802-2.1166z"/>
+     <path style="fill:currentColor" d="m32.52 892.22c-.20090-.13016-1.4606.81389-3.9132 2.7457-11.486 9.0476-17.632 24.186-16.078 39.61.79699 7.9138 2.4066 13.505 5.9184 20.562 5.8577 11.77 14.749 23.219 30.087 38.74.05838.059.12188.1244.18052.1838 1.3166-.5556 2.5965-1.0618 3.8429-1.5199-.66408-.32448-1.4608-1.3297-3.8116-4.4602-5.0951-6.785-8.7512-11.962-13.051-18.486-5.1379-7.7948-5.0097-7.5894-8.0586-13.054-6.2097-11.13-8.2674-17.725-8.6014-27.563-.21552-6.3494.13041-9.2733 1.775-14.987 2.1832-7.5849 3.9273-10.986 9.2693-18.07 1.7839-2.3656 2.6418-3.57 2.4409-3.7003z"/>
+     <path style="fill:currentColor" d="m69.133 992.37c-6.2405.0309-12.635.76718-19.554 2.5706 4.6956 4.7759 9.935 10.258 12.05 12.625l4.1272 4.6202h11.493l3.964-4.4516c2.0962-2.3541 7.4804-7.9845 12.201-12.768-8.378-1.4975-16.207-2.6353-24.281-2.5955z"/>
+     <rect style="stroke-width:0;fill:currentColor" ry="2.0328" height="27.746" width="22.766" y="1017.7" x="60.201"/>
+    </g>
+   </g>
+  </symbol>
+
+  <symbol id="info" viewBox="0 0 41.667 41.667">
+   <g transform="translate(-37.035 -1004.6)">
+    <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m76.25 1030.2a18.968 18.968 0 0 1 -23.037 13.709 18.968 18.968 0 0 1 -13.738 -23.019 18.968 18.968 0 0 1 23.001 -13.768 18.968 18.968 0 0 1 13.798 22.984"/>
+    <g transform="matrix(1.1146 0 0 1.1146 -26.276 -124.92)">
+     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m75.491 1039.5v-8.7472"/>
+     <path style="stroke-width:0;fill:currentColor" transform="scale(-1)" d="m-73.193-1024.5a2.3719 2.3719 0 0 1 -2.8807 1.7142 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
+    </g>
+   </g>
+  </symbol>
+
+  <symbol id="warning" viewBox="0 0 48.430474 41.646302">
+    <g transform="translate(-1.1273 -1010.2)">
+     <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:4.151;fill:none" d="m25.343 1012.3-22.14 37.496h44.28z"/>
+     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:4.1512;fill:none" d="m25.54 1027.7v8.7472"/>
+     <path style="stroke-width:0;fill:currentColor" d="m27.839 1042.8a2.3719 2.3719 0 0 1 -2.8807 1.7143 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
+    </g>
+  </symbol>
+
+  <symbol id="menu" viewBox="0 0 50 50">
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="0" x="0"/>
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="20" x="0"/>
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="40" x="0"/>
+   </symbol>
+
+   <symbol id="link" viewBox="0 0 50 50">
+    <g transform="translate(0 -1002.4)">
+     <g transform="matrix(.095670 0 0 .095670 2.3233 1004.9)">
+      <g>
+       <path style="stroke-width:0;fill:currentColor" d="m452.84 192.9-128.65 128.65c-35.535 35.54-93.108 35.54-128.65 0l-42.881-42.886 42.881-42.876 42.884 42.876c11.845 11.822 31.064 11.846 42.886 0l128.64-128.64c11.816-11.831 11.816-31.066 0-42.9l-42.881-42.881c-11.822-11.814-31.064-11.814-42.887 0l-45.928 45.936c-21.292-12.531-45.491-17.905-69.449-16.291l72.501-72.526c35.535-35.521 93.136-35.521 128.64 0l42.886 42.881c35.535 35.523 35.535 93.141-.001 128.66zm-254.28 168.51-45.903 45.9c-11.845 11.846-31.064 11.817-42.881 0l-42.884-42.881c-11.845-11.821-11.845-31.041 0-42.886l128.65-128.65c11.819-11.814 31.069-11.814 42.884 0l42.886 42.886 42.876-42.886-42.876-42.881c-35.54-35.521-93.113-35.521-128.65 0l-128.65 128.64c-35.538 35.545-35.538 93.146 0 128.65l42.883 42.882c35.51 35.54 93.11 35.54 128.65 0l72.496-72.499c-23.956 1.597-48.092-3.784-69.474-16.283z"/>
+      </g>
+     </g>
+    </g>
+  </symbol>
+
+  <symbol id="doc" viewBox="0 0 35 45">
+   <g transform="translate(-147.53 -539.83)">
+    <path style="stroke:currentColor;stroke-width:2.4501;fill:none" d="m149.38 542.67v39.194h31.354v-39.194z"/>
+    <g style="stroke-width:25" transform="matrix(.098003 0 0 .098003 133.69 525.96)">
+     <path d="m220 252.36h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+     <path style="stroke:currentColor;stroke-width:25;fill:none" d="m220 409.95h200"/>
+     <path d="m220 488.74h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+     <path d="m220 331.15h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+    </g>
+   </g>
+ </symbol>
+
+ <symbol id="tick" viewBox="0 0 177.16535 177.16535">
+  <g transform="translate(0 -875.2)">
+   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="155" width="40" y="702.99" x="556.82"/>
+   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="40" width="90.404" y="817.99" x="506.42"/>
+  </g>
+ </symbol>
+</svg>
+
+    <div class="wrapper">
+      <header class="intro-and-nav" role="banner">
+  <div>
+    <div class="intro">
+      <a class="logo" href="https://blog.beachgeek.co.uk/" aria-label="Beachgeek blog - a refuge for pineapple on pizza lovers home page">
+        <img src="https://blog.beachgeek.co.uk/images/logo.svg" alt="My site icon">
+      </a>
+      <p class="library-desc">
+         Technologist and Maker specialising in Cloud, Open Source and Innovation. 
+      </p>
+    </div>
+    <nav id="patterns-nav" class="patterns" role="navigation">
+  <h2 class="vh">Main navigation</h2>
+  <button id="menu-button" aria-expanded="false">
+    <svg viewBox="0 0 50 50" aria-hidden="true" focusable="false">
+      <use xlink:href="#menu"></use>
+    </svg>
+    Menu
+  </button>
+  
+  <ul id="patterns-list">
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Home</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/post/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Blog posts</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/newsletter/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Newsletter</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/tags/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Tags</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/about/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">About</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/index.xml" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">RSS</span>
+      </a>
+    </li>
+  
+  </ul>
+</nav>
+  </div>
+</header>
+
+      <div class="main-and-footer">
+        <div>
+          
+  <main id="main">
+    <h1>
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+        <use xlink:href="#bookmark"></use>
+      </svg>
+      Integrating Keycloak as my Identity Provider for IAM Identity Centre: Part one, deploying Keycloak on AWS
+    </h1>
+
+    <div class="date">
+      <p>
+        
+        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" aria-labelledby="calendarIconTitle" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#111"> <title id="calendarIconTitle">Calendar</title> <path d="M3 5H21V21H3V5Z"/> <path d="M21 9H3"/> <path d="M7 5V3"/> <path d="M17 5V3"/> </svg> Published Jun 6, 2023
+      </p>
+      
+      <p><svg role="img" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" aria-labelledby="stopwatchIconTitle" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#111"> <title id="stopwatchIconTitle">Stopwatch</title> <circle cx="12" cy="13" r="8"/> <path d="M12 9L12 13M18 7L20 5M15 2L9 2"/> </svg> Reading time 15&nbsp;minutes</p>
+      
+    </div>
+
+    
+      <div class="tags">
+        <strong>Tags: </strong>
+        <ul aria-label="tags">
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/aws-open-source">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                aws open source
+              </a>
+            </li>
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/keycloak">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                Keycloak
+              </a>
+            </li>
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/cdk">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                CDK
+              </a>
+            </li>
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/cloudformation">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                Cloudformation
+              </a>
+            </li>
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/saml2.0">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                SAML2.0
+              </a>
+            </li>
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/aws-identity-centre">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                AWS Identity Centre
+              </a>
+            </li>
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/aws-sso">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                AWS SSO
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    
+    
+    
+      
+
+  <nav class="toc" aria-labelledby="toc-heading">
+    <h2 id="toc-heading">Table of contents</h2>
+    <ol>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#part-one-installing-keycloak">
+            Part One: Installing Keycloak
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#next-steps">
+            Next steps
+          </a>
+        </li>
+      
+    </ol>
+  </nav>
+
+
+    
+
+    <h3 id="integrating-keycloak-as-my-identity-provider-for-iam-identity-centre-part-one-deploying-keycloak-on-aws">Integrating Keycloak as my Identity Provider for IAM Identity Centre: Part one, deploying Keycloak on AWS</h3>
+<blockquote>
+<p>&ldquo;It was the best of times, it was the worst of times&hellip;&rdquo; A Tale of Two Cities</p>
+</blockquote>
+<p>It started out innocently enough. As part of working on a new blog post, I needed a way to use an open source tool called <a href="https://aws-oss.beachgeek.co.uk/2uv">saml2aws</a> that generates AWS short lived credentials that you can use to access your AWS resources. This is a pretty common pattern, and a good practice to do and for many organisations this means they integrate with their &ldquo;user directory&rdquo; - sometimes this might be something like Active Directory, or an LDAP server. AWS IAM Identity Centre (which is the new name for AWS Single Sign-On) allows you to integrate those identity providers into your AWS Account, allowing your users to authenticate against that user directory and then get access to AWS resources.</p>
+<p>So I needed to set up an Identity Provider (IdP), and decided to use an open source Identity and Access Management solution called Keycloak rather than the usual suspects of Active Directory or something like Auth0. What I thought would be a simple deployment ended up being less than straightforward. This post outlines how you can get your own Keycloak IAM service up and running on AWS.</p>
+<p>Why was it less than straightforward? As it turns out, that was down to some significant changes introduced in later versions of Keycloak that impacted how many tools created to simplify the deployment of Keycloak, worked. Or as I found, did not!</p>
+<p>In this post I will share how you can get both the older versions of Keycloak (v16.1) as well as the latest versions (I am running v21.0.1)  up and running on AWS. In a future post, I will use the Keycloak service that this post helps you deploy, and integrate this into AWS Identity Centre as our SSO.</p>
+<p><strong>Pre-reqs</strong></p>
+<ul>
+<li>An AWS account to which you have the right level of access to configure a new Identity Provider</li>
+<li>An available VPC in the region you will be deploying Keycloak</li>
+<li>The AWS cli (I am using version aws-cli/2.7.7 Python/3.9.11 Darwin/21.6.0 exe/x86_64 prompt/off) as well as AWS CDKv2 (I am running 2.82.0 (build 3a8648a))</li>
+<li>A domain that you have that allows you to create public certificates (I have a domain called ricsue.dev that is managed by Route53)</li>
+<li>Code resources used within the post,  located at <a href="https://aws-oss.beachgeek.co.uk/2v1">keycloak-aws</a></li>
+</ul>
+<p>I checked how much it cost to run this on my AWS bill for 24 hours, and it was less than £10.</p>
+<p><strong>Grabbing a public certificate</strong></p>
+<p>A requirement of deploying Keycloak is to have a public certificate available. You need to use Amazon Certificate Manager (ACM) to create a certificate. You will use the Arn for this certificate in the provisioning tool.</p>
+<blockquote>
+<p><strong>Note!</strong> A pre-req here is that I had a domain name managed by Route53. This allowed me to easily register the certificates.</p>
+</blockquote>
+<p>These are the steps I followed:</p>
+<ol>
+<li>Within the ACM, I created a new public certificate (keycloak.ricsue.dev) for a domain that I have setup previously to be managed by Route53 (ricsue.dev, whilst I registered this via my preferred domain registrar, I configured it to be managed by Route53)</li>
+<li>When creating the certificate within ACM, the request contains a link that allows you to automatically create the Route53 verification entries, so I used this to update the domain records. This reduced the time to validate the certificate</li>
+<li>After about 5 minutes, ACM issued me my new certificate, and I was able to extract the Certificate Arn running the following command</li>
+</ol>
+<pre><code>aws acm list-certificates
+
+{
+    &quot;CertificateSummaryList&quot;: [
+        {
+            &quot;CertificateArn&quot;: &quot;arn:aws:acm:eu-west-1:xxxxxxx:certificate/aec6b1ac-df36-449b-a2e2-xxxxxx&quot;,
+            &quot;DomainName&quot;: &quot;keycloak.ricsue.dev&quot;
+        }
+    ]
+}
+</code></pre>
+<p>So with our certificate created, we are now ready to go.</p>
+<h2 id="part-one-installing-keycloak">Part One: Installing Keycloak</h2>
+<p>There are a number of ways you can deploy Keycloak into your AWS account. I did not want to do this manually, so I wanted to see what options I had when it came to automating the deployment. I found a few options that were open to me based on which ever infrastructure as code tooling I preferred.</p>
+<ul>
+<li>Using CDK via the <a href="https://aws-oss.beachgeek.co.uk/2uw">cdk-keycloak</a> construct</li>
+<li>Using CDK via the <a href="https://aws-oss.beachgeek.co.uk/2ux">ecs-keycloak</a> construct</li>
+<li>Using Terraform via a number of different third party modules such as <a href="https://aws-oss.beachgeek.co.uk/2uy">terraform-keycloak-aws</a> or <a href="https://aws-oss.beachgeek.co.uk/2uz">ecs-keycloak</a></li>
+<li>Using CloudFormation via this deployment guide, <a href="https://aws-oss.beachgeek.co.uk/2v0">keycloak-on-aws</a></li>
+</ul>
+<p>Exploring and trying these different options out made me realised something important, and something that I think will save you a lot of time and frustration. Many of the resources above help you deploy older versions of Keycloak, and do not work for the latest versions. So in this part of the blog, I have split it out into two parts: how you can install the older (v16) versions of Keycloak, and how you can install the later versions (v17 on newer).</p>
+<blockquote>
+<p><strong>Which Version?</strong> Now you might be wondering which version should I be using. I think for most cases, you will probably want to use the latest versions. However, there may be some use cases where you need to get an older version up and running so am including that in this post. (to be completely honest, I did the work to review the different ways, and rather than throw that all away to &gt;dev/null, I thought I would keep it as a timely reminder for why maintaining these tools and documentation is so important!</p>
+</blockquote>
+<p><strong>Keycloak version v16 or older</strong></p>
+<p>As you can see from the list above, I had a few options to get my Keycloak v16.1 server up and running. After going through the documentation of each, and looking at how much work/effort was required for each, and finally trying a few out, I ended up settling for the CloudFormation solution. You will find the template I used in the <a href="https://aws-oss.beachgeek.co.uk/2vs">GitHub repo</a> in the cf folder. The file is called &ldquo;keycloak-aurora-serverless-from-new-vpc.template&rdquo; which is the template I used, and is slightly modified from the origin repo of the resources I shared above. You can see what it will deploy by <a href="https://aws-oss.beachgeek.co.uk/2v0">checking out the documentation here</a></p>
+<p><img src="https://aws-samples.github.io/keycloak-on-aws/en/images/architecture/01-keycloak-on-aws-architecture.png" alt="overview of keycloak architecture using cloudformation"></p>
+<p>To deploy the CloudFormation stack, I needed to pass into the CloudFormation template the CertificateArn. We are providing a stack-name (keycloak-sso-provider) which you can change if you want, and we then provide the certificate Arn via the parameter-overrides.</p>
+<pre><code>aws cloudformation deploy --template-file keycloak-aurora-serverless-from-new-vpc.template --stack-name keycloak-sso-provider --parameter-overrides CertificateArn=&quot;arn:aws:acm:eu-west-1:xxxxxx:certificate/aec6b1ac-df36-449b-a2e2-xxxxxxx&quot; --capabilities CAPABILITY_IAM --tags keycloak=demo
+</code></pre>
+<p>This will kick of the creation of your Keycloak environment, configuring and then deploying all the AWS services needed (you can track these in the CloudFormation console).</p>
+<pre><code>aws cloudformation deploy --template-file keycloak-aurora-serverless-from-new-vpc.template --stack-name keycloak-sso-provider --parameter-overrides CertificateArn=&quot;arn:aws:acm:eu-west-1:xxxxxx:certificate/aec6b1ac-df36-449b-a2e2-xxxxxx&quot; --capabilities CAPABILITY_IAM --tags keycloak=demo
+
+Waiting for changeset to be created..
+Waiting for stack create/update to complete
+
+</code></pre>
+<p>It was simple and quick, and within 10-15 minutes I had my Keycloak environment up and running.</p>
+<pre><code>Successfully created/updated stack - keycloak-sso-provider
+</code></pre>
+<p>Before we access our Keycloak service however, there are a couple of things we need to do.</p>
+<ol>
+<li>The initial login credential for Keycloak (the Admin user) is stored in AWS Secrets Manager. To grab the password, we can use the following command to grab the Arn of the AWS Secret which contains that password, and then use another command to display that password.</li>
+</ol>
+<pre><code>aws cloudformation describe-stack-resource  --stack-name keycloak-sso-provider --logical-resource-id KeyCloakKCSecretF8498E5C --query StackResourceDetail.PhysicalResourceId
+
+&quot;arn:aws:secretsmanager:eu-west-1:xxxxxxx:secret:KeyCloakKCSecretF8498E5C-1ZI9SjZjDsmJ-xxxxx&quot;
+</code></pre>
+<p>Will display the arn, which we can then use in the following command to grab the password (in the below I have redacted it as XXXXX)</p>
+<pre><code>aws secretsmanager get-secret-value  --secret-id arn:aws:secretsmanager:eu-west-1:xxxxxxx:secret:KeyCloakKCSecretF8498E5C-1ZI9SjZjDsmJ-xxxxxx
+
+{
+    &quot;ARN&quot;: &quot;arn:aws:secretsmanager:eu-west-1:xxxxxxxxx:secret:KeyCloakKCSecretF8498E5C-1ZI9SjZjDsmJ-xxxxx&quot;,
+    &quot;Name&quot;: &quot;KeyCloakKCSecretF8498E5C-1ZI9SjZjDsmJ&quot;,
+    &quot;VersionId&quot;: &quot;33c86cd0-f3ec-81ed-0d34-afdea36b69f2&quot;,
+    &quot;SecretString&quot;: &quot;{\&quot;password\&quot;:\&quot;XXXXXXXXX\&quot;,\&quot;username\&quot;:\&quot;keycloak\&quot;}&quot;,
+    &quot;VersionStages&quot;: [
+        &quot;AWSCURRENT&quot;
+    ],
+    &quot;CreatedDate&quot;: &quot;2023-06-01T14:15:34.876000+01:00&quot;
+}
+
+</code></pre>
+<p>We now have our username (keycloak) and our password, we now need to login to Keycloak.</p>
+<ol start="2">
+<li>The actual URL you need to use will to login to Keycloak is provided as an OUTPUT when CloudFormation completes. We can access these values using the following command:</li>
+</ol>
+<pre><code>aws cloudformation describe-stacks --stack-name keycloak-sso-provider --query &quot;Stacks[*].Outputs[0].{OutputKey: OutputKey, OutputValue: OutputValue}&quot;
+
+[
+    {
+        &quot;OutputKey&quot;: &quot;KeyCloakKeyCloakContainerSerivceEndpointURL9C81E19A&quot;,
+        &quot;OutputValue&quot;: &quot;https://keycl-KeyCl-STKX4W34C61Y-756053114.eu-west-1.elb.amazonaws.com&quot;
+    }
+]
+
+</code></pre>
+<p>The value of OutputValue is the URL of an AWS Load Balancer that routes traffic to the Keycloak services running on Amazon ECS. If we use this URL in a browser we  will generate errors as the URL does not match the name of the ACM generated certificate (which in this example was keycloak.ricsue.dev). To fix the issue around mismatch of the certificate and the load balancer URL, you need to create a CNAME record in your DNS to point to the Load Balancer URL. This is what mine looks like in Route53.</p>
+<p><img src="https://ricsuepublicresources.s3.eu-west-1.amazonaws.com/images/blog/keycloak-dns.png" alt="screenshot of Route53 CNAME record"></p>
+<p>I can now use the address of <a href="https://keycloak.ricsue.dev">https://keycloak.ricsue.dev</a> to access my newly deployed Keycloak service, logging in as the admin user (keycloak) using the password I obtained via AWS Secrets Manager.</p>
+<p><img src="https://ricsuepublicresources.s3.eu-west-1.amazonaws.com/images/blog/keycloak-admin.png" alt="screenshot of keycloak home page"></p>
+<p>The final part of my setup, which is optional, is to create a user that I will use to log in. From the Admin screen, it is easy to create a new user, set a password under Credentials, and then assign it to the admin role under Role Mapping. I then logout of the Keycloak console and log back in with these new credentials, to check it works and that I still have admin access.</p>
+<p>Congrats, you now have a Keycloak v16.1 server up and running. If this is what you needed, then great you are done. Before leaving though, check out the next section to see how to clean up/remove resources created if you need to delete Keycloak from your AWS account.</p>
+<p><em>Cleaning up and removing all resources</em></p>
+<p>If you need to delete/clean up your Keycloak v16 installation, then you can do this using the following command</p>
+<pre><code>aws cloudformation delete-stack  --stack-name keycloak-sso-provider
+</code></pre>
+<p>The command will not generate any output, and you will need to go to the AWS CloudFormation console to check progress of your resources being cleaned up. When I ran this, it took around 10-15 minutes to complete.</p>
+<blockquote>
+<p><strong>Note!</strong> When I used the original templates, some resources (the Aurora MySQL database) had deletion protection enabled. So if you do get an error when trying to clean up/delete the stack, make sure you check and remove the deletion protection and then try again.</p>
+</blockquote>
+<p><strong>Keycloak version v21</strong></p>
+<p>So I kind of left the details of how to deploy older versions of Keycloak for reference in case anyone finds themselves needing to do that. For most installations however,  you will most likely want to deploy newer (newest) versions of Keycloak. This is where I ran into a spot of bother, and spent three days trying to figure out how to do this. The approaches outlined above just didn&rsquo;t work, and I spent a lot of time trying to troubleshoot and find a solution. In the end, it was down to a bit of luck and the excellence of <a href="https://aws-oss.beachgeek.co.uk/2vr">Alexander Widera</a> that I got something working.</p>
+<p>In the end what worked was using the <a href="https://aws-oss.beachgeek.co.uk/2uw">CDKv2 construct</a> with a bit of tweaking which I will go through now. Again, all the code is in the<a href="https://aws-oss.beachgeek.co.uk/2v1"> GitHub repo</a>. We still need the ACM certificate, so that has not changed. However, what we need to do to get this working is create a customer Keycloak container image that provides some additional configuration values that are critical to getting Keycloak to work, and provide some additional Java library files that Keycloak needs which are also missing.</p>
+<p><em>Building our custom Keycloak container image</em></p>
+<p>To help you build your container image, there is a script in the docker directory called <strong><a href="https://github.com/094459/keycloak-aws/blob/main/docker/build.sh">build.sh</a></strong>. Review this script and <strong>UPDATE</strong> it, replacing {yourawsregion} and {replacewithyourawsaccount} to reflect your AWS account details. You can optionally change the name of the Elastic Container Registery that will be created and version number.</p>
+<pre><code>#!/usr/bin/env bash
+
+AWS_DEFAULT_REGION={yourawsregion}
+AWS_ACCOUNT={replacewithyourawsaccount}
+AWS_ECR_REPO=keycloak
+COMMIT_HASH=&quot;21.1.1&quot;
+...
+</code></pre>
+<p>Once updated, and BEFORE you run this script, you need to download and copy into the &ldquo;providers&rdquo; folder a bunch of jar files. There is a <a href="https://github.com/094459/keycloak-aws/blob/main/docker/providers/README.required.md">README</a> file in the providers folder has helpful links.</p>
+<p>Once you have downloaded the jar files into the providers folder, it should look something like this</p>
+<pre><code>├── LICENSE
+├── README.md
+├── app.py
+├── cdk.json
+├── docker
+│   ├── Dockerfile
+│   ├── build.sh
+│   └── providers
+│       ├── README.required.md
+│       ├── aws-java-sdk-core-1.12.410.jar
+│       ├── aws-java-sdk-s3-1.12.410.jar
+│       ├── jgroups-aws-2.0.1.Final.jar
+│       └── joda-time-2.12.2.jar
+├── requirements.txt
+</code></pre>
+<p>Finally, you should review the Docker file and make sure it fits your needs (for example, the version of Keycloak you want to use - in the example in the rep, I am using v21.1.1 but you can get <a href="https://aws-oss.beachgeek.co.uk/2vt">newer versions by tracking the images</a> on the Keycloak documentation)</p>
+<pre><code>FROM quay.io/keycloak/keycloak:21.1.1 as builder
+
+# Enable health and metrics support
+ENV KC_HEALTH_ENABLED=true
+ENV KC_METRICS_ENABLED=true
+
+# Configure a database vendor
+ENV KC_DB=mysql
+
+WORKDIR /opt/keycloak
+
+COPY /providers /opt/keycloak/providers/
+RUN /opt/keycloak/bin/kc.sh build
+
+FROM quay.io/keycloak/keycloak:21.1.1
+COPY --from=builder /opt/keycloak/ /opt/keycloak/
+COPY --from=builder /opt/keycloak/providers/ /opt/keycloak/providers/
+
+ENTRYPOINT [&quot;/opt/keycloak/bin/kc.sh&quot;]
+</code></pre>
+<p>You are now ready to run the build script. Running the script will build, tag and then push a container image to your Amazon ECR repo. This  might take a while depending on the speed of your internet.</p>
+<pre><code>Login Succeeded
+
+An error occurred (RepositoryNotFoundException) when calling the DescribeRepositories operation: The repository with name 'keycloak' does not exist in the registry with id 'xxxxxx'
+Creating repos as it does not exists
+
+[+] Building 7.6s (6/7)                                                                                                                                             
+ =&gt; [internal] load build definition from Dockerfile                                                                                                           0.1s
+ =&gt; =&gt; transferring dockerfile: 424B                                                                                                                           0.0s
+ =&gt; [internal] load .dockerignore                                                                                                                              0.0s
+ =&gt; =&gt; transferring context: 2B                                                                                                                                0.0s
+ =&gt; [internal] load metadata for quay.io/keycloak/keycloak:21.1.1                                                                                              2.9s
+ =&gt; [builder 1/3] FROM quay.io/keycloak/keycloak:21.1.1@sha256:8ebb3930c41e8a066c4246eaf351ac09cdc984e11b1f607d6ff4ce10d69dc808                                0.1s
+ =&gt; [builder 2/3] WORKDIR /opt/keycloak                                                                                                                        0.1s
+..
+..
+The push refers to repository [xxxxxx.dkr.ecr.eu-west-1.amazonaws.com/keycloak]
+2c490c92cb93: Pushed 
+f23a3cabd8b8: Pushed 
+83254a336a6f: Pushed 
+2cd74f3c77b5: Pushed 
+a4d3d498fdcc: Pushed 
+21.1.1-amd64: digest: sha256:cbbe23c22adb37c12442d0fff2c1c94e165a0589bddf179f04fa75fb85a209ac size: 1373
+Created manifest list xxxxxx.dkr.ecr.eu-west-1.amazonaws.com/keycloak:21.1.1
+{
+   &quot;schemaVersion&quot;: 2,
+   &quot;mediaType&quot;: &quot;application/vnd.docker.distribution.manifest.list.v2+json&quot;,
+   &quot;manifests&quot;: [
+      {
+         &quot;mediaType&quot;: &quot;application/vnd.docker.distribution.manifest.v2+json&quot;,
+         &quot;size&quot;: 1373,
+         &quot;digest&quot;: &quot;sha256:cbbe23c22adb37c12442d0fff2c1c94e165a0589bddf179f04fa75fb85a209ac&quot;,
+         &quot;platform&quot;: {
+            &quot;architecture&quot;: &quot;amd64&quot;,
+            &quot;os&quot;: &quot;linux&quot;
+         }
+      }
+   ]
+}
+sha256:a08cb293aeb968c9f0b83bc13a28677c619b3c0ae857be50bd9ff5a6ebc13370
+
+</code></pre>
+<p>(Your output will be different, but you should get similar-ish text)</p>
+<p>Once this has completed, make sure you grab the URI for the image you just uploaded. You can use this command, which will output the images based on the default ECR name of keycloak</p>
+<pre><code>aws ecr describe-images --repository-name keycloak  --query 'imageDetails[*].imageTags[0]' --output json | jq --arg v `aws ecr describe-repositories --repository-name keycloak  --query 'repositories[0].repositoryUri' --output text` '.[] | ($v + &quot;:&quot; + .)'
+
+&quot;xxxxxxx.dkr.ecr.eu-west-1.amazonaws.com/keycloak:21.1.1-amd64&quot;
+&quot;xxxxxxx.dkr.ecr.eu-west-1.amazonaws.com/keycloak:21.1.1&quot;
+</code></pre>
+<p><em>Updating and running our CDK app</em></p>
+<p>Before we can use our CDK app to deploy Keycloak, we need to install the custom construct. The repo has an updated <a href="https://github.com/094459/keycloak-aws/blob/main/requirements.txt">requirements.txt</a>, so you can use that otherwise you just need to:</p>
+<pre><code>pip install cdk-keycloak==2.7.1
+</code></pre>
+<p>You will now need to review and update the <strong><a href="https://github.com/094459/keycloak-aws/blob/main/app.py">app.py</a></strong> in the root folder.</p>
+<pre><code>#!/usr/bin/env python3
+import os
+
+import aws_cdk as cdk
+import aws_cdk.aws_rds as rds 
+import aws_cdk.aws_ecs as ecs
+from cdk_keycloak import KeyCloak, KeycloakVersion
+from aws_cdk import CfnOutput
+
+app = cdk.App()
+env = cdk.Environment(region=&quot;{replacewithyourawsregion}&quot;, account=&quot;{replacewithyourawsaccount}&quot;)
+
+stack = cdk.Stack(app, &quot;keycloak-demo&quot;, env=env)
+
+mysso = KeyCloak(stack, &quot;KeyCloak&quot;,
+    certificate_arn=&quot;{replacewithyourcertificatearn}&quot;,
+    keycloak_version=KeycloakVersion.V21_0_1,
+    cluster_engine = rds.DatabaseClusterEngine.aurora_mysql(version=rds.AuroraMysqlEngineVersion.VER_2_11_2),
+    hostname = &quot;{replacewithyourcustomdns}&quot;,
+    env = { &quot;KEYCLOAK_FRONTEND_URL&quot; : &quot;{replacewithyourcustomdns}&quot;},
+    container_image = ecs.ContainerImage.from_registry(&quot;{replacewithyourecrcontainerimage}&quot;),
+    database_removal_policy=cdk.RemovalPolicy.DESTROY
+)
+
+CfnOutput(
+            stack,
+            id=&quot;KeyCloakSecret&quot;,
+            value=mysso.keycloak_secret.secret_full_arn,
+            description=&quot;Keycloak admin username and password&quot;
+        )
+app.synth()
+</code></pre>
+<p>You will need to update a few lines:</p>
+<ul>
+<li>update {replacewithyourawsregion} and {replacewithyourawsaccount} to reflect your AWS Account</li>
+<li>update {replacewithyourcertificatearn} with the Certificate Arn you created at the beginning</li>
+<li>update {replacewithyourcustomdns} with the domain name you used for your certificate (for example, my-keycloak.demo.com)</li>
+<li>update {replacewithyourecrcontainerimage} with the URI for your custom Keycloak container image you creatd in step 4</li>
+</ul>
+<p>Once you have updated, save the file.</p>
+<p>You can now deploy the stack using the following command:</p>
+<pre><code>cdk deploy keycloak-demo
+</code></pre>
+<p>You will be asked to confirm security details. Review and if happy, proceed to deploy by answering Y. The stack will take around 20-25 minutes to complete, and once finished you will be presented with some details of the resources that were created.</p>
+<pre><code>keycloak-demo: creating CloudFormation changeset...
+
+ ✅  keycloak-demo
+
+✨  Deployment time: 1012.98s
+
+Outputs:
+keycloak-demo.KeyCloakDatabaseDBSecretArn28BEB641 = arn:aws:secretsmanager:eu-west-1:xxxxx:secret:keycloakdemoKeyCloakDatabas-xxxxxx-1TosEJ
+keycloak-demo.KeyCloakDatabaseclusterEndpointHostname38FB0D1E = keycloak-demo-keycloakdatabasedbcluster06e9c0e1-hzjlnplxzu6i.cluster-ceinb9vexcbc.eu-west-1.rds.amazonaws.com
+keycloak-demo.KeyCloakDatabaseclusterIdentifierF00C290B = keycloak-demo-keycloakdatabasedbcluster06e9c0e1-hzjlnplxzu6i
+keycloak-demo.KeyCloakKeyCloakContainerSerivceEndpointURL9C81E19A = https://keycl-KeyCl-7Y47664RLHT5-2141835688.eu-west-1.elb.amazonaws.com
+keycloak-demo.KeyCloakSecret = arn:aws:secretsmanager:eu-west-1:xxxxx:secret:KeyCloakKCSecretF8498E5C-BmrYOayqQBmd-xxxx
+Stack ARN:
+arn:aws:cloudformation:eu-west-1:xxxxxx:stack/keycloak-demo/9a6e8260-045c-11ee-bb15-062703c4f3a7
+
+✨  Total time: 1025.66s
+</code></pre>
+<p>Keycloak is now deployed but before we access it, we need to use the info from the output to update the DNS record for the certificate you created. We need to grab the URL from the load balancer, which you should be able to easily see as it will be the only resource which has a URL reference. In the above output, this is the line &ldquo;keycloak-demo.KeyCloakKeyCloakContainerSerivceEndpointURL9C81E19A = <a href="https://keycl-KeyCl-7Y47664RLHT5-2141835688.eu-west-1.elb.amazonaws.com">https://keycl-KeyCl-7Y47664RLHT5-2141835688.eu-west-1.elb.amazonaws.com</a>&rdquo;.</p>
+<p>You will need to create a CNAME record pointing to the ELB to the domain record. This will allow you to access Keycloak via a simple link  &ldquo;<a href="https://my-keycloak.demo.com">https://my-keycloak.demo.com</a>&rdquo;</p>
+<p>The final step is obtaining the admin username and password, which the CDK construct configures AWS Secrets Manager to manage. The admin username is &ldquo;keycloak&rdquo; and we can find out the password by running the following command, passing in the value of the AWS Secret resource that was output by CDK. In the above, we can see this as &quot; arn:aws:secretsmanager:eu-west-1:xxxxx&#x3299;&#xfe0f;KeyCloakKCSecretF8498E5C-BmrYOayqQBmd-xxxx&quot; (your value will be different, but similar looking)</p>
+<pre><code>aws secretsmanager get-secret-value --secret-id &quot;arn:aws:secretsmanager:eu-west-1:xxxxxx:secret:KeyCloakKCSecretF8498E5C-BmrYOayqQBmd-xxxx&quot;
+</code></pre>
+<p>Which will output something like (password redacted)</p>
+<pre><code>{
+    &quot;ARN&quot;: &quot;arn:aws:secretsmanager:eu-west-1:xxxxxxx:secret:KeyCloakKCSecretF8498E5C-BmrYOayqQBmd-xxxxx&quot;,
+    &quot;Name&quot;: &quot;KeyCloakKCSecretF8498E5C-BmrYOayqQBmd&quot;,
+    &quot;VersionId&quot;: &quot;3c9a0c39-00a3-15a2-7712-97a7f8980ca2&quot;,
+    &quot;SecretString&quot;: &quot;{\&quot;password\&quot;:\&quot;xxxxxxx\&quot;,\&quot;username\&quot;:\&quot;keycloak\&quot;}&quot;,
+    &quot;VersionStages&quot;: [
+        &quot;AWSCURRENT&quot;
+    ],
+    &quot;CreatedDate&quot;: &quot;2023-06-06T12:24:05.939000+01:00&quot;
+}
+</code></pre>
+<p>Open up a browser, enter your domain name and you should see the following screen. Click on the admin link, you should now be able to use the admin and password to log in.</p>
+<p><img src="https://ricsuepublicresources.s3.eu-west-1.amazonaws.com/images/blog/keycloak-v21-info.png" alt="screenshot of keycloak home page"></p>
+<p><img src="https://ricsuepublicresources.s3.eu-west-1.amazonaws.com/images/blog/keycloak-v21-screen.png" alt="screenshot of keycloak home page"></p>
+<p>Congratulations, you now have a Keycloak service up and running.</p>
+<p><em>Cleaning up and removing all resources</em></p>
+<p>If you need to delete/clean up your Keycloak installation, then CDK makes that very easy to do. However, you will first need to remove the Deletion protection from your RDS database configuration before running this command. If you do not, the deletion process will fail.</p>
+<pre><code>aws rds describe-db-clusters  --query 'DBClusters[].{DBClusterIdentifier: DBClusterIdentifier}' --output text
+
+keycloak-demo-keycloakdatabasedbcluster06e9c0e1-hzjlnplxzu6i
+</code></pre>
+<p>The output will provide you with the Keycloak DB cluster resource, which you can then use to disable deletion protection using the following command:</p>
+<pre><code>aws rds modify-db-cluster --db-cluster-identifier keycloak-demo-keycloakdatabasedbcluster06e9c0e1-hzjlnplxzu6i --no-deletion-protection
+</code></pre>
+<p>You can then run the cdk destroy command to remove your Keycloak resources.</p>
+<pre><code>cdk destroy keycloak-demo
+</code></pre>
+<p>You will be asked to confirm, so review and respond appropriately. It will take approx 15-20 minutes to complete the deletion.</p>
+<pre><code>Are you sure you want to delete: keycloak-demo (y/n)? y
+keycloak-demo: destroying... [1/1]
+9:05:04 AM | DELETE_IN_PROGRESS   | AWS::CloudFormation::Stack                  | keycloak-demo
+9:05:07 AM | DELETE_IN_PROGRESS   | Custom::VpcRestrictDefaultSG                | KeyCloak/Vpc/Restr...omResource/Default
+9:05:07 AM | DELETE_IN_PROGRESS   | AWS::ECS::Service                           | KeyCloak/KeyCloakC...ce/Service/Service
+...
+...
+
+ ✅  keycloak-demo: destroyed
+</code></pre>
+<h2 id="next-steps">Next steps</h2>
+<p>In this post I shared how you can install the open source identity and access management project Keycloak in AWS. We looked at how you can use the CDKv2 construct with a few tweaks to make it easier to deploy this project. We are now ready for the next part, integrating Keycloak into AWS Identity Centre as your Idp for SSO. I am writing this post as we speak, so stay tuned as this to drop soon.</p>
+<p>If you have found this blog post helpful, please give me some feedback by <a href="https://pulse.buildon.aws/survey/D4L9Y3II">completing this very short survey here</a>.</p>
+
+  </main>
+
+          <div class="social-heading">
+            <div class="footer-social">
+  
+    <div class="social-icon">
+      <a href="https://twitter.com/094459" target="_blank" title="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Twitter" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://github.com/094459" target="_blank" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="GitHub" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+      </a>
+    </div>
+  
+  
+    <div class="social-icon">
+      <a href="https://www.linkedin.com/in/ricardosueiras" target="_blank" title="Linkedin">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="LinkedIn" role="img"
+viewBox="0 0 512 512"
+fill="#fff"><rect
+width="512" height="512"
+rx="15%"
+fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://www.reddit.com/r/aws" target="_blank" title="Reddit">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Reddit" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+      </a>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="social-icon">
+      <a href="mailto:ricsue@amazon.com" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Email" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="teal"/><rect width="356" height="256" x="78" y="128" fill="#fff" rx="8%"/><path fill="none" stroke="teal" stroke-width="20" d="M434 128L269 292c-7 8-19 8-26 0L78 128m0 256l129-128m227 128L305 256"/></svg>
+      </a>
+    </div>
+  
+  
+</div>
+
+          </div>
+          <footer role="contentinfo">
+  <div class="social-footer">
+    <div class="footer-social">
+  
+    <div class="social-icon">
+      <a href="https://twitter.com/094459" target="_blank" title="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Twitter" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://github.com/094459" target="_blank" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="GitHub" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+      </a>
+    </div>
+  
+  
+    <div class="social-icon">
+      <a href="https://www.linkedin.com/in/ricardosueiras" target="_blank" title="Linkedin">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="LinkedIn" role="img"
+viewBox="0 0 512 512"
+fill="#fff"><rect
+width="512" height="512"
+rx="15%"
+fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://www.reddit.com/r/aws" target="_blank" title="Reddit">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Reddit" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+      </a>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="social-icon">
+      <a href="mailto:ricsue@amazon.com" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Email" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="teal"/><rect width="356" height="256" x="78" y="128" fill="#fff" rx="8%"/><path fill="none" stroke="teal" stroke-width="20" d="M434 128L269 292c-7 8-19 8-26 0L78 128m0 256l129-128m227 128L305 256"/></svg>
+      </a>
+    </div>
+  
+  
+</div>
+
+    <label for="themer">
+      dark theme: <input type="checkbox" id="themer" class="vh">
+      <span aria-hidden="true"></span>
+    </label>
+  </div>
+  
+    <p class="margin-top-none">Copyright &copy; <span id="copyright-year"></span> - Ricardo Sueiras</p>
+  
+  
+    <p class="margin-top-none">
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cupper-hugo-theme">Cupper</a>.
+    </p>
+  
+</footer>
+<script>
+    var year = new Date().getFullYear()
+    document.getElementById("copyright-year").innerHTML = year;
+</script>
+
+        </div>
+      </div>
+    </div>
+    <script src="https://blog.beachgeek.co.uk/js/prism.js"></script>
+
+
+
+<script src="https://blog.beachgeek.co.uk/js/dom-scripts.js"></script>
+
+
+
+<script src="/js/search.7aef046a0cc8b0c532f1d20087b920459bc868c936bb48a6ae221eceefca2d07.js"></script>
+
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  </body>
+</html>

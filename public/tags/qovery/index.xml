@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Qovery on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/qovery/</link>
+    <description>Recent content in Qovery on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/qovery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source news and updates #105</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-105/</link>
+      <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-105/</guid>
+      <description>March 21st, 2022 - Instalment #105 Newsletter #105.&#xA;Welcome to edition #105 of the AWS open source news and updates, where we bring you the latest open source projects, posts, events, and much more. This weeks new projects include the latest work in progress from AWS Hero Ian Mckay, &amp;ldquo;iamfast&amp;rdquo; is an AWS IAM policy generation tool that is in early stages but promises to be very useful indeed. &amp;ldquo;iasql-engine&amp;rdquo; is a tool that models cloud infrastructure as data, &amp;ldquo;ssm-patch-portal&amp;rdquo; provides a nice gui front end to simplify patching with AWS System Manager, a new crowdsource guide that contains learning resources for AWS, a business intelligence platform built using open source technologies from the NHS, and many more.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS Session Manager on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/aws-session-manager/</link>
+    <description>Recent content in AWS Session Manager on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/aws-session-manager/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Long running data import jobs with AWS Session Manager</title>
+      <link>https://blog.beachgeek.co.uk/long-running-data-import-jobs-with-aws-session-manager/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/long-running-data-import-jobs-with-aws-session-manager/</guid>
+      <description>Yesterday I was looking to import the TPC-H dataset (some 600 or so million rows) into Amazon Aurora from a workstation that I connect to using AWS Session Manager.&#xA;AWS Session Manager is a great way to simplify your life by allowing you to connect to a machine via the AWS console and not worry about having to manage ssh keys or remembering to lock down external public access from the net.</description>
+    </item>
+  </channel>
+</rss>

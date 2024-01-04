@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS Deep Racer on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/aws-deep-racer/</link>
+    <description>Recent content in AWS Deep Racer on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 04 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/aws-deep-racer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Innovate Machine Learning and AI - learn how to kick start your journey</title>
+      <link>https://blog.beachgeek.co.uk/innovate-machine-learning-and-ai---learn-how-to-kick-start-your-journey/</link>
+      <pubDate>Fri, 04 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/innovate-machine-learning-and-ai---learn-how-to-kick-start-your-journey/</guid>
+      <description>On October 17th we have a free, online event covering several tracks on Machine Learning. Whether you are a complete beginner or seasoned data scientist, we have gentle introductions to deep dives.&#xA;What I am most excited about however, is that we will have an AWS DeepRacer racing challenge. You will learn how to create your first reinforcement learning model that will race a virtual car, with prizes for the fastest times.</description>
+    </item>
+  </channel>
+</rss>

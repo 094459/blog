@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="generator" content="Hugo 0.121.1">
+  
+  
+    <link rel="canonical" href="https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-117/">
+  
+
+  
+
+  
+    
+    
+    
+    
+    
+
+  
+    <link rel="webmention" href="https://webmention.io/username.co.uk/webmention" />
+    <link rel="pingback" href="https://webmention.io/username.co.uk/xmlrpc" />
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://blog.beachgeek.co.uk/css/syntax.css" media="none" onload="this.media='all';">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://blog.beachgeek.co.uk/css/styles.css">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://blog.beachgeek.co.uk/style.main.css">
+
+  
+
+  <link rel="alternate" rel="canonical" href="https://blog.beachgeek.co.uk/index.xml" >
+  
+  <style id="inverter" media="none">
+    .intro-and-nav, .main-and-footer { filter: invert(100%) }
+    * { background-color: inherit }
+    img:not([src*=".svg"]), .colors, iframe, .demo-container { filter: invert(100%) }
+  </style>
+
+  
+  
+  <title>AWS open source news and updates #117 | Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="AWS open source news and updates #117"/>
+<meta name="twitter:description" content="June 17th, 2022 - Instalment #117 Welcome to regular and new readers alike, to the AWS open source newsletter episode #117.
+A little behind schedule this week, as I have been speaking at a couple of events this week. It has been good to get back on the stage and to talk and engage with real people. It seems that things are quickly returning back to normal. So this week we have some great new projects for you."/>
+<meta name="twitter:site" content="@094459"/>
+
+  <meta name="twitter:card" content="summary" />
+</head>
+
+  <body>
+    <a href="#main">skip to content</a>
+    <svg style="display: none">
+  <symbol id="bookmark" viewBox="0 0 40 50">
+   <g transform="translate(2266 3206.2)">
+    <path style="stroke:currentColor;stroke-width:3.2637;" d="m-2262.2-3203.4-.2331 42.195 16.319-16.318 16.318 16.318.2331-42.428z"/>
+   </g>
+  </symbol>
+
+  <symbol id="w3c" viewBox="0 0 127.09899 67.763">
+   <text font-size="83" style="font-size:83px;font-family:Trebuchet;letter-spacing:-12;fill-opacity:0" letter-spacing="-12" y="67.609352" x="-26.782778">W3C</text>
+   <text font-size="83" style="font-size:83px;font-weight:bold;font-family:Trebuchet;fill-opacity:0" y="67.609352" x="153.21722" font-weight="bold">SVG</text>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m33.695.377 12.062 41.016 12.067-41.016h8.731l-19.968 67.386h-.831l-12.48-41.759-12.479 41.759h-.832l-19.965-67.386h8.736l12.061 41.016 8.154-27.618-3.993-13.397h8.737z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m91.355 46.132c0 6.104-1.624 11.234-4.862 15.394-3.248 4.158-7.45 6.237-12.607 6.237-3.882 0-7.263-1.238-10.148-3.702-2.885-2.47-5.02-5.812-6.406-10.022l6.82-2.829c1.001 2.552 2.317 4.562 3.953 6.028 1.636 1.469 3.56 2.207 5.781 2.207 2.329 0 4.3-1.306 5.909-3.911 1.609-2.606 2.411-5.738 2.411-9.401 0-4.049-.861-7.179-2.582-9.399-1.995-2.604-5.129-3.912-9.397-3.912h-3.327v-3.991l11.646-20.133h-14.062l-3.911 6.655h-2.493v-14.976h32.441v4.075l-12.31 21.217c4.324 1.385 7.596 3.911 9.815 7.571 2.22 3.659 3.329 7.953 3.329 12.892z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.21 0 1.414 8.6-5.008 9.583s-1.924-4.064-5.117-6.314c-2.693-1.899-4.447-2.309-7.186-1.746-3.527.73-7.516 4.938-9.258 10.13-2.084 6.21-2.104 9.218-2.178 11.978-.115 4.428.58 7.043.58 7.043s-3.04-5.626-3.011-13.866c.018-5.882.947-11.218 3.666-16.479 2.404-4.627 5.954-7.404 9.114-7.728 3.264-.343 5.848 1.229 7.841 2.938 2.089 1.788 4.213 5.698 4.213 5.698l4.94-9.837z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.82 48.674s-2.208 3.957-3.589 5.48c-1.379 1.524-3.849 4.209-6.896 5.555-3.049 1.343-4.646 1.598-7.661 1.306-3.01-.29-5.807-2.032-6.786-2.764-.979-.722-3.486-2.864-4.897-4.854-1.42-2-3.634-5.995-3.634-5.995s1.233 4.001 2.007 5.699c.442.977 1.81 3.965 3.749 6.572 1.805 2.425 5.315 6.604 10.652 7.545 5.336.945 9.002-1.449 9.907-2.031.907-.578 2.819-2.178 4.032-3.475 1.264-1.351 2.459-3.079 3.116-4.108.487-.758 1.276-2.286 1.276-2.286l-1.276-6.644z"/>
+  </symbol>
+
+  <symbol id="tag" viewBox="0 0 177.16535 177.16535">
+    <g transform="translate(0 -875.2)">
+     <path style="fill-rule:evenodd;stroke-width:0;fill:currentColor" d="m159.9 894.3-68.79 8.5872-75.42 77.336 61.931 60.397 75.429-76.565 6.8495-69.755zm-31.412 31.835a10.813 10.813 0 0 1 1.8443 2.247 10.813 10.813 0 0 1 -3.5174 14.872l-.0445.0275a10.813 10.813 0 0 1 -14.86 -3.5714 10.813 10.813 0 0 1 3.5563 -14.863 10.813 10.813 0 0 1 13.022 1.2884z"/>
+    </g>
+  </symbol>
+
+  <symbol id="balloon" viewBox="0 0 141.73228 177.16535">
+   <g transform="translate(0 -875.2)">
+    <g>
+     <path style="fill:currentColor" d="m68.156 882.83-.88753 1.4269c-4.9564 7.9666-6.3764 17.321-5.6731 37.378.36584 10.437 1.1246 23.51 1.6874 29.062.38895 3.8372 3.8278 32.454 4.6105 38.459 4.6694-.24176 9.2946.2879 14.377 1.481 1.2359-3.2937 5.2496-13.088 8.886-21.623 6.249-14.668 8.4128-21.264 10.253-31.252 1.2464-6.7626 1.6341-12.156 1.4204-19.764-.36325-12.93-2.1234-19.487-6.9377-25.843-2.0833-2.7507-6.9865-7.6112-7.9127-7.8436-.79716-.20019-6.6946-1.0922-6.7755-1.0248-.02213.0182-5.0006-.41858-7.5248-.22808l-2.149-.22808h-3.3738z"/>
+     <path style="fill:currentColor" d="m61.915 883.28-3.2484.4497c-1.7863.24724-3.5182.53481-3.8494.63994-2.4751.33811-4.7267.86957-6.7777 1.5696-.28598 0-1.0254.20146-2.3695.58589-5.0418 1.4418-6.6374 2.2604-8.2567 4.2364-6.281 7.6657-11.457 18.43-12.932 26.891-1.4667 8.4111.71353 22.583 5.0764 32.996 3.8064 9.0852 13.569 25.149 22.801 37.517 1.3741 1.841 2.1708 2.9286 2.4712 3.5792 3.5437-1.1699 6.8496-1.9336 10.082-2.3263-1.3569-5.7831-4.6968-21.86-6.8361-33.002-.92884-4.8368-2.4692-14.322-3.2452-19.991-.68557-5.0083-.77707-6.9534-.74159-15.791.04316-10.803.41822-16.162 1.5026-21.503 1.4593-5.9026 3.3494-11.077 6.3247-15.852z"/>
+     <path style="fill:currentColor" d="m94.499 885.78c-.10214-.0109-.13691 0-.0907.0409.16033.13489 1.329 1.0675 2.5976 2.0723 6.7003 5.307 11.273 14.568 12.658 25.638.52519 4.1949.24765 14.361-.5059 18.523-2.4775 13.684-9.7807 32.345-20.944 53.519l-3.0559 5.7971c2.8082.76579 5.7915 1.727 8.9926 2.8441 11.562-11.691 18.349-19.678 24.129-28.394 7.8992-11.913 11.132-20.234 12.24-31.518.98442-10.02-1.5579-20.876-6.7799-28.959-.2758-.4269-.57803-.86856-.89617-1.3166-3.247-6.13-9.752-12.053-21.264-16.131-2.3687-.86369-6.3657-2.0433-7.0802-2.1166z"/>
+     <path style="fill:currentColor" d="m32.52 892.22c-.20090-.13016-1.4606.81389-3.9132 2.7457-11.486 9.0476-17.632 24.186-16.078 39.61.79699 7.9138 2.4066 13.505 5.9184 20.562 5.8577 11.77 14.749 23.219 30.087 38.74.05838.059.12188.1244.18052.1838 1.3166-.5556 2.5965-1.0618 3.8429-1.5199-.66408-.32448-1.4608-1.3297-3.8116-4.4602-5.0951-6.785-8.7512-11.962-13.051-18.486-5.1379-7.7948-5.0097-7.5894-8.0586-13.054-6.2097-11.13-8.2674-17.725-8.6014-27.563-.21552-6.3494.13041-9.2733 1.775-14.987 2.1832-7.5849 3.9273-10.986 9.2693-18.07 1.7839-2.3656 2.6418-3.57 2.4409-3.7003z"/>
+     <path style="fill:currentColor" d="m69.133 992.37c-6.2405.0309-12.635.76718-19.554 2.5706 4.6956 4.7759 9.935 10.258 12.05 12.625l4.1272 4.6202h11.493l3.964-4.4516c2.0962-2.3541 7.4804-7.9845 12.201-12.768-8.378-1.4975-16.207-2.6353-24.281-2.5955z"/>
+     <rect style="stroke-width:0;fill:currentColor" ry="2.0328" height="27.746" width="22.766" y="1017.7" x="60.201"/>
+    </g>
+   </g>
+  </symbol>
+
+  <symbol id="info" viewBox="0 0 41.667 41.667">
+   <g transform="translate(-37.035 -1004.6)">
+    <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m76.25 1030.2a18.968 18.968 0 0 1 -23.037 13.709 18.968 18.968 0 0 1 -13.738 -23.019 18.968 18.968 0 0 1 23.001 -13.768 18.968 18.968 0 0 1 13.798 22.984"/>
+    <g transform="matrix(1.1146 0 0 1.1146 -26.276 -124.92)">
+     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m75.491 1039.5v-8.7472"/>
+     <path style="stroke-width:0;fill:currentColor" transform="scale(-1)" d="m-73.193-1024.5a2.3719 2.3719 0 0 1 -2.8807 1.7142 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
+    </g>
+   </g>
+  </symbol>
+
+  <symbol id="warning" viewBox="0 0 48.430474 41.646302">
+    <g transform="translate(-1.1273 -1010.2)">
+     <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:4.151;fill:none" d="m25.343 1012.3-22.14 37.496h44.28z"/>
+     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:4.1512;fill:none" d="m25.54 1027.7v8.7472"/>
+     <path style="stroke-width:0;fill:currentColor" d="m27.839 1042.8a2.3719 2.3719 0 0 1 -2.8807 1.7143 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
+    </g>
+  </symbol>
+
+  <symbol id="menu" viewBox="0 0 50 50">
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="0" x="0"/>
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="20" x="0"/>
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="40" x="0"/>
+   </symbol>
+
+   <symbol id="link" viewBox="0 0 50 50">
+    <g transform="translate(0 -1002.4)">
+     <g transform="matrix(.095670 0 0 .095670 2.3233 1004.9)">
+      <g>
+       <path style="stroke-width:0;fill:currentColor" d="m452.84 192.9-128.65 128.65c-35.535 35.54-93.108 35.54-128.65 0l-42.881-42.886 42.881-42.876 42.884 42.876c11.845 11.822 31.064 11.846 42.886 0l128.64-128.64c11.816-11.831 11.816-31.066 0-42.9l-42.881-42.881c-11.822-11.814-31.064-11.814-42.887 0l-45.928 45.936c-21.292-12.531-45.491-17.905-69.449-16.291l72.501-72.526c35.535-35.521 93.136-35.521 128.64 0l42.886 42.881c35.535 35.523 35.535 93.141-.001 128.66zm-254.28 168.51-45.903 45.9c-11.845 11.846-31.064 11.817-42.881 0l-42.884-42.881c-11.845-11.821-11.845-31.041 0-42.886l128.65-128.65c11.819-11.814 31.069-11.814 42.884 0l42.886 42.886 42.876-42.886-42.876-42.881c-35.54-35.521-93.113-35.521-128.65 0l-128.65 128.64c-35.538 35.545-35.538 93.146 0 128.65l42.883 42.882c35.51 35.54 93.11 35.54 128.65 0l72.496-72.499c-23.956 1.597-48.092-3.784-69.474-16.283z"/>
+      </g>
+     </g>
+    </g>
+  </symbol>
+
+  <symbol id="doc" viewBox="0 0 35 45">
+   <g transform="translate(-147.53 -539.83)">
+    <path style="stroke:currentColor;stroke-width:2.4501;fill:none" d="m149.38 542.67v39.194h31.354v-39.194z"/>
+    <g style="stroke-width:25" transform="matrix(.098003 0 0 .098003 133.69 525.96)">
+     <path d="m220 252.36h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+     <path style="stroke:currentColor;stroke-width:25;fill:none" d="m220 409.95h200"/>
+     <path d="m220 488.74h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+     <path d="m220 331.15h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+    </g>
+   </g>
+ </symbol>
+
+ <symbol id="tick" viewBox="0 0 177.16535 177.16535">
+  <g transform="translate(0 -875.2)">
+   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="155" width="40" y="702.99" x="556.82"/>
+   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="40" width="90.404" y="817.99" x="506.42"/>
+  </g>
+ </symbol>
+</svg>
+
+    <div class="wrapper">
+      <header class="intro-and-nav" role="banner">
+  <div>
+    <div class="intro">
+      <a class="logo" href="https://blog.beachgeek.co.uk/" aria-label="Beachgeek blog - a refuge for pineapple on pizza lovers home page">
+        <img src="https://blog.beachgeek.co.uk/images/logo.svg" alt="My site icon">
+      </a>
+      <p class="library-desc">
+         Technologist and Maker specialising in Cloud, Open Source and Innovation. 
+      </p>
+    </div>
+    <nav id="patterns-nav" class="patterns" role="navigation">
+  <h2 class="vh">Main navigation</h2>
+  <button id="menu-button" aria-expanded="false">
+    <svg viewBox="0 0 50 50" aria-hidden="true" focusable="false">
+      <use xlink:href="#menu"></use>
+    </svg>
+    Menu
+  </button>
+  
+  <ul id="patterns-list">
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Home</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/post/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Blog posts</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/newsletter/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Newsletter</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/tags/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Tags</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/about/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">About</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/index.xml" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">RSS</span>
+      </a>
+    </li>
+  
+  </ul>
+</nav>
+  </div>
+</header>
+
+      <div class="main-and-footer">
+        <div>
+          
+  <main id="main">
+    <h1>AWS open source news and updates #117</h1>
+    <h2 id="june-17th-2022---instalment-117">June 17th, 2022 - Instalment #117</h2>
+<p>Welcome to regular and new readers alike, to the AWS open source newsletter episode #117.</p>
+<p>A little behind schedule this week, as I have been speaking at a couple of events this week. It has been good to get back on the stage and to talk and engage with real people. It seems that things are quickly returning back to normal. So this week we have some great new projects for you. Starting off with &ldquo;cdklightbox&rdquo; which helps you visualise your AWS CDK stacks (I have already tried it, and this has already helped me spot something in one of my stacks that didn&rsquo;t look right). We have &ldquo;glue-data-sanitization&rdquo; which is a nifty tool to help you sanitise your data as you move it between environments. &ldquo;automated-security-helper&rdquo; is a tool to help you quickly test your setup against some quick security checks using some nice open source security tools, and I can see this one quickly being adopted by folk. We have many more projects and demos covering data streaming, generating AppSync compliant schemas from PostgreSQL tables, large file size S3 tools and more.</p>
+<p>Also featured this week is content on Apache Cassandra, PostgreSQL, Bottlerocket, Apache APISIX, PostGraphile, OpenSearch, Apache Iceberg, Kubernetes, Yocto Project, Flutter, and many more. We have a couple of videos featuring Karpenter and OpenSearch, so don&rsquo;t miss those and of course we finish up with events.</p>
+<p>As always, if you have anything you want me to include in this weekly round up, please drop me a mail or reply to this post.</p>
+<h3 id="celebrating-open-source-contributors">Celebrating open source contributors</h3>
+<p>The articles and projects shared in this newsletter are only possible thanks to the many contributors in open source. I would like to shout out and thank those folks who really do power open source and enable us all to learn and build on top of what they have created.</p>
+<p>So thank you to the following open source heroes: Mikael Vesavuori, Brice Pellé, Luke Harvey, Marcio da Ros Gomes, Sebastian Goscik, Sakti Mishra, Daniel Doubrovkine, Juan Lamadrid, Rob Solomon, Saravanan G, Johannes Koch, Carlo Mencarelli, Brian Caffey, Juan Lamadrid, Rob Solomon, Nirmal Mehta, Bret Fisher, Charlotte Henkle, Sean Neumann and Yubo Wang.</p>
+<h3 id="latest-open-source-projects">Latest open source projects</h3>
+<p><em>The great thing about open source projects is that you can review the source code. If you like the look of these projects, make sure you that take a look at the code, and if it is useful to you, get in touch with the maintainer to provide feedback, suggestions or even submit a contribution.</em></p>
+<h4 id="tools">Tools</h4>
+<p><strong>cdklightbox</strong></p>
+<p><a href="https://aws-oss.beachgeek.co.uk/1t8">cdklightbox</a> this project from the Open Construct Foundation is The CDK Lightbox, a tool for visualising your CDK applications. I downloaded this from the releases link and quickly tried it on one of my stacks. It was nice to see my CDK application presented in this way. I was able to change the level of constructs shown, and zoom in/out and move things around.</p>
+<p><img src="https://github.com/the-ocf/cdklightbox/blob/main/screenshot.png?raw=true" alt="demo of cdk lightbox"></p>
+<p><strong>glue-data-sanitization</strong></p>
+<p><a href="https://aws-oss.beachgeek.co.uk/1t6">glue-data-sanitization-from-production-s3-bucket-to-lower-environment-s3-bucket-apg-example</a> is winner of this weeks longest GitHub repo name award. This repo contains code that you can build upon to help you create solutions that perform data sanitisation (remove of PII and regulated contents) as part of moving data from production to non production (dev/testing for example) environments.</p>
+<p><img src="https://github.com/aws-samples/glue-data-sanitization-from-production-s3-bucket-to-lower-environment-s3-bucket-apg-example/blob/main/images/glue_data_santalization.png?raw=true" alt="architecture of solution"></p>
+<p><strong>amazon-aggregation-query-proxy</strong></p>
+<p><a href="https://aws-oss.beachgeek.co.uk/1ta">amazon-aggregation-query-proxy</a> this repo is a scalable sidecar application that sits between a customer application and Amazon Keyspaces/DynamoDB. It allows you to run bounded aggregation queries against Amazon Keyspaces and DynamoDB services. The aggregation-query-proxy (AQP) consists of a scalable proxy layer that sits between your application and Amazon Keyspaces/DynamoDB. It provides intermediate aggregation logic which allows existing application to execute aggregation queries against Amazon DynamoDB/Keyspaces. This project then converts the provided aggregation query (SQL-92) to a plain request (CQL/DDBPartiQL). After the plain response (json) has been received the AQP uses IonEngine to aggregate the plain response into the final result set in json format.</p>
+<p><img src="https://github.com/aws-samples/amazon-aggregation-query-proxy/blob/main/diagram.png?raw=true" alt="flow of how aqp works"></p>
+<p><strong>check-aws-resources-for-org-conditions</strong></p>
+<p><a href="https://aws-oss.beachgeek.co.uk/1tb">check-aws-resources-for-org-conditions</a> This repository provides the automation to check for references to Organisational resources in policies across some or all the accounts in an AWS Organisation. Specifically, the tool looks for aws:PrincipalOrgID and PrincipalOrgPaths. This is used in analysing the dependencies when AWS Accounts are migrated from one AWS Organisation to another.</p>
+<p><img src="https://github.com/aws-samples/check-aws-resources-for-org-conditions/blob/main/media/archdiag.jpg?raw=true" alt="example flow of org conditions tool"></p>
+<p><strong>automated-security-helper</strong></p>
+<p><a href="https://aws-oss.beachgeek.co.uk/1td">automated-security-helper</a> this security helper tool was created to help you reduce the probability of a security violation in a new code, infrastructure or IAM configuration by providing a fast and easy tool to conduct preliminary security check as early as possible within your development process. It is not a replacement of a human review nor standards and it uses light, open source tools to maintain its flexibility and ability to run from anywhere. Very nice tool indeed.</p>
+<h3 id="demos-samples-solutions-and-workshops">Demos, Samples, Solutions and Workshops</h3>
+<p><strong>appsync-with-postgraphile-rds</strong></p>
+<p><a href="https://aws-oss.beachgeek.co.uk/1te">appsync-with-postgraphile-rds</a> this repo provides a CDK-based solution that allows you to create an AWS AppSync API from a defined Postgres database in AWS RDS. This solution leverages PostGraphile to automatically generate an AppSync compliant schema from PostgreSQL tables, and uses Lambda functions to resolve GraphQL queries against a PostgreSQL database in Amazon RDS. To help you get started, check out the blog post <a href="https://aws-oss.beachgeek.co.uk/1tf">Creating serverless GraphQL APIs from RDS databases with AWS AppSync and PostGraphile</a> from Brice Pellé. Very cool post.</p>
+<p><img src="https://d2908q01vomqb2.cloudfront.net/0a57cb53ba59c46fc4b692527a38a87c78d84028/2022/06/15/mobile_1703_1.png" alt="Overview of appsync with postgraphite architecture"></p>
+<p><strong>example-aws-stream-data-to-events</strong></p>
+<p><a href="https://aws-oss.beachgeek.co.uk/1t7">example-aws-stream-data-to-events</a> this repo from Mikael Vesavuori contains a complete, working architecture on AWS that will take in streaming data, store it in S3 and DynamoDB, and then emit events with their contents. You can easily deploy thanks to Terraform, and this is what the project will build:</p>
+<p><img src="https://github.com/mikaelvesavuori/example-aws-stream-data-to-events/blob/main/diagrams/data-to-events-diagram.png?raw=true" alt="architecture for data streaming project from MV"></p>
+<p><strong>aws-cdk-support-s3-large-deployments</strong></p>
+<p><a href="https://aws-oss.beachgeek.co.uk/1t9">aws-cdk-support-s3-large-deployments</a> this project demonstrate how to upload large file to S3 Bucket using CDK using the inbuilt CDK Assets Bucket and Custom Resource. Assets are local files, directories, or Docker images that can be bundled into AWS CDK libraries and apps; for example, a directory that contains the handler code for an AWS Lambda function. Assets can represent any artefact that the app needs to operate. You can define local files and directories as assets, and the AWS CDK packages and uploads them to Amazon S3 through the aws-s3-assets module. Nicely documented and easy to follow along, and its in Python, so of course that made me very happy indeed.</p>
+<p><strong>multi-cluster-allocation-demo-for-agones-on-eks</strong></p>
+<p><a href="https://aws-oss.beachgeek.co.uk/1tc">multi-cluster-allocation-demo-for-agones-on-eks</a> This project uses Terraform to deploy an Agones (an open source, batteries-included, multiplayer dedicated game server) multi-cluster configuration to Amazon EKS, one routing cluster and two DGS clusters, with multi-cluster allocation feature enabled.</p>
+<p><img src="https://github.com/aws-samples/multi-cluster-allocation-demo-for-agones-on-eks/blob/main/imgs/overview.png?raw=true" alt="architecture of agones on eks"></p>
+<h3 id="aws-and-community-blog-posts">AWS and Community blog posts</h3>
+<p><strong>Apache APISIX</strong></p>
+<p><a href="https://aws-oss.beachgeek.co.uk/1t3">Apache APISIX</a> is an open source dynamic, real-time, high-performance API Gateway. My colleague Yubo Wang has put together this great post, <a href="https://aws-oss.beachgeek.co.uk/1t2">Installation and performance testing of API Gateway Apache APISIX on AWS Graviton3</a> where he shares how you can deploy this project using AWS Graviton3 instance types, and then takes a look at some of the performance characteristics. I don&rsquo;t want to spoil the ending, so make sure you check out this weeks must read post.</p>
+<p><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ETuJiJbD--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xpuiz1h5px4q3ncvrof0.png" alt="architecture of Apache APISIX"></p>
+<p><strong>OpenSearch</strong></p>
+<p>Want to know what it is like to work on an open source project at Amazon? Open source builder Daniel Doubrovkine has put together this blog post, <a href="https://aws-oss.beachgeek.co.uk/1ss">A Year Working on OpenSearch</a> where he shares a frank and honest summary of working on the OpenSearch project over the past year. Well worth a read I think.</p>
+<p><strong>Django</strong></p>
+<p>Brian Caffey has put together this comprehensive post, <a href="https://aws-oss.beachgeek.co.uk/1sy">Setting up ad hoc development environments for Django applications with AWS ECS, Terraform and GitHub Actions</a> adopting 12Factor application methodology to show you how you can combine AWS services, open source to deploy a sample microblogging application that uses the Python Django framework. Adaptable to your own use case, this is a nice deep dive. [hands on]</p>
+<p><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--RrjEhfl8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/320yfb4i8vl22ptr6m2r.png" alt="architecture of deploying Django on AWS"></p>
+<p><strong>Apache Iceberg</strong></p>
+<p>Apache Iceberg is an open table format originally developed at Netflix. It’s designed to support ACID transactions and UPSERT on petabyte-scale data lakes, and is getting popular because of its flexible SQL syntax for CDC-based MERGE, full schema evolution, and hidden partitioning features. In the post <a href="https://aws-oss.beachgeek.co.uk/1sv">Implement a CDC-based UPSERT in a data lake using Apache Iceberg and AWS Glue</a> Sakti Mishra guides you through a solution to implement CDC-based UPSERT or MERGE in an S3 data lake using Apache Iceberg and AWS Glue. [hands on]</p>
+<p><img src="https://d2908q01vomqb2.cloudfront.net/b6692ea5df920cad691c20319a6fffd7a4a766b8/2022/06/08/BDB-2164-image015.png" alt="architecture for apache iceberg post"></p>
+<p><strong>Kubernetes</strong></p>
+<p>In the post <a href="https://aws-oss.beachgeek.co.uk/1t0">A quick path to Amazon EKS single sign-on using AWS SSO</a>, Juan Lamadrid and Rob Solomon share with you a quick and direct procedure to implement single sign-on to access Kubernetes resources running on your Amazon Elastic Kubernetes Service (Amazon EKS) clusters. You can then use this SSO in combination with Kubernetes Role Based Access Control (RBAC) via the AWS Command Line Interface (CLI) or Kubernetes CLI tools. [hands on]</p>
+<p><strong>Yocto Project</strong></p>
+<p>In 2021 Arm, AWS, and other founding members announced the Scalable Open Architecture for Embedded Edge (SOAFEE) Special Interest Group, which brings together automakers, semiconductor, and cloud technology leaders to define a new open-standards based architecture to implement the lowest levels of a software-defined vehicle stack. In the post, <a href="https://aws-oss.beachgeek.co.uk/1t5">Building an Automotive Embedded Linux Image for Edge and Cloud Using Arm-based Graviton Instances, Yocto Project, and SOAFEE</a> Luke Harvey, Marcio da Ros Gomes, and Sebastian Goscik introduce a building block toward a novel automotive-software development concept that helps developers create, test, and debug natively compiled software using the cloud.</p>
+<p><img src="https://d2908q01vomqb2.cloudfront.net/c5b76da3e608d34edb07244cd9b875ee86906328/2022/06/15/arm-automotive-1.png" alt="workflow for embedded devices for automotive"></p>
+<p>Following the post you will create a custom Linux distribution using the Yocto Project, an open-source collaboration project that helps developers create custom Linux-based systems regardless of the hardware. It is used by many embedded projects, including the Automotive Grade Linux initiative that is part of the Linux Foundation as well as the SOAFEE reference implementation. Very cool post, so make sure you check this out. [hands on]</p>
+<p><img src="https://d2908q01vomqb2.cloudfront.net/c5b76da3e608d34edb07244cd9b875ee86906328/2022/06/15/arm-automotive-4.png" alt="architecture of solution"></p>
+<p><strong>Other posts you might like from the past week</strong></p>
+<ul>
+<li><a href="https://aws-oss.beachgeek.co.uk/1st">Amazon Aurora PostgreSQL backups and long-term data retention methods</a> explores the primary tools focusing on backups, backup storage, and restore, and discuss some best practices related to applying these tools [hands on]</li>
+<li><a href="https://aws-oss.beachgeek.co.uk/1t1">Optimize Federated Query Performance using EXPLAIN and EXPLAIN ANALYZE in Amazon Athena</a> demonstrates how to use and interpret EXPLAIN and EXPLAIN ANALYZE statements to improve Athena query performance when querying multiple data sources</li>
+<li><a href="https://aws-oss.beachgeek.co.uk/1t4">How to centrally manage AWS IoT Greengrass devices using AWS Systems Manager</a> shows you how you can simplify and centralise how you manage your AWS IoT Greengrass devices [hands on]</li>
+<li><a href="https://aws-oss.beachgeek.co.uk/1su">Text summarization with Amazon SageMaker and Hugging Face</a> walks you through how to implement one of the most downloaded Hugging Face pre-trained models used for text summarisation, DistilBART-CNN-12-6, within a Jupyter notebook using Amazon SageMaker and the SageMaker Hugging Face Inference Toolkit [hands on]</li>
+<li><a href="https://aws-oss.beachgeek.co.uk/1sx">Create, train, and deploy a billion-parameter language model on terabytes of data with TensorFlow and Amazon SageMaker</a> covers two main approaches data parallelisation and model parallelisation in how you can tackle large scale model training [hands on]</li>
+</ul>
+<h3 id="aws-community-builder-and-hero-picks">AWS Community Builder and Hero picks</h3>
+<p>Here are some posts from the AWS Hero and AWS Community Builders that are worth checking out.</p>
+<ul>
+<li><a href="https://aws-oss.beachgeek.co.uk/1sz">Getting started with Python based IaC using AWS CDK</a> (Saravanan G) - if you are a Python developer and want to start understanding and using AWS CDK, this is the post for you</li>
+<li><a href="https://aws-oss.beachgeek.co.uk/1tg">Building a Flutter application for Web, iOS and Android using a CI/CD pipeline on CodeBuild</a> (Johannes Koch) – part of a series of posts where you will build a Flutter application for Web and use AWS CDK to help you</li>
+<li><a href="https://aws-oss.beachgeek.co.uk/1th">Linux’s Cloud Init — Benefits, Quirks, and Drawbacks</a> (Carlo Mencarelli) - if you are using Linux instances on AWS, check out these deep dive and learn more about Cloud Init</li>
+</ul>
+<h3 id="quick-updates">Quick updates</h3>
+<p><strong>Bottlerocket</strong></p>
+<p>Bottlerocket has added a variant that supports NVIDIA GPU-based Amazon EC2 instance types on Amazon Elastic Container Services (Amazon ECS). Bottlerocket is a Linux-based operating system that is purpose-built to run container workloads. Customers can now benefit from using the same container-focused host operating system for both their non-GPU and GPU workloads while using ECS, including machine learning, video encoding, and streaming workloads. This helps customers standardise on a single operating system that utilises the underlying specialised compute hardware.</p>
+<p>Back in March, another Bottlerocket variant was released, for Amazon Elastic Kubernetes Service (Amazon EKS) supporting NVIDIA GPU-accelerated workloads. With the availability of the Bottlerocket ECS variant, customers can now use Bottlerocket with NVIDIA GPUs on two popular orchestration services, Amazon EKS and ECS. The new Bottlerocket AMI includes the necessary software components required to run containerised accelerated workloads built into the base image, while using ECS as their container orchestration service. This configuration enables secure, seamless installation of required NVIDIA drivers and its updates, improves time to node-ready state, and reduces dependencies on external tools and repositories.</p>
+<p>Read more and get hands on by checking out the post from Maish Saidel-Keesing, <a href="https://aws-oss.beachgeek.co.uk/1sw">Announcing NVIDIA GPU support for Bottlerocket on Amazon ECS</a></p>
+<p><strong>Apache Cassandra</strong></p>
+<p>Amazon Keyspaces (for Apache Cassandra), a scalable, highly available, and fully managed Apache Cassandra-compatible database service, now helps you monitor your table-level storage costs through Amazon CloudWatch. You can now use the BillableTableSizeInBytes CloudWatch metric to monitor and track your table storage costs over time. The BillableTableSizeInBytes metric provides the billable storage size of a table by summing up the encoded size of all the rows in the table.</p>
+<p><strong>PostgreSQL</strong></p>
+<p>A few of updates this week.</p>
+<p>First is that Amazon Aurora PostgreSQL-Compatible Edition now supports the Large Objects (LO) module. The LO module provides support for managing Large Objects (also called LOs or BLOBs).</p>
+<p>Following that is news that Amazon Aurora PostgreSQL-compatible edition now supports zero-downtime patching (ZDP). With ZDP, customers can upgrade to a new PostgreSQL version and apply patches to their Aurora cluster without any downtime. ZDP preserves client connections while the database engine restarts. This feature allows you to more frequently upgrade your clusters to newer PostgreSQL minor versions while maintaining business continuity. ZDP is enabled on all Aurora clusters running supported database versions in all regions when you upgrade database minor versions or apply patches. Please review the Aurora documentation for more details.</p>
+<p>Finally we have the announcement of updates to the PostgreSQL database by the open source community, we have updated Amazon Aurora PostgreSQL-Compatible Edition to support PostgreSQL 13.7, 12.11, 11.16, and 10.21. These releases contain bug fixes and improvements by the PostgreSQL community. Refer to the Aurora version policy to help you to decide how often to upgrade and how to plan your upgrade process.</p>
+<p>This release also includes updates to pglogical and wal2json extensions. pglogical is an open source PostgreSQL extension that helps customers replicate data between independent PostgreSQL databases while maintaining consistent read-write access and a mix of private and common data in each database. Amazon Aurora pglogical uses logical replication to copy data changes between independent PostgreSQL databases, optionally resolving conflicts based on standard algorithms. Customers can enable pglogical from within their PostgreSQL instances, and pay only for the additional clusters and cross-region traffic needed, with no upfront costs or software purchases required. Fully integrated, pglogical requires no triggers or external programs. This alternative to physical replication is a highly efficient method of replicating data using a publish/subscribe model for selective replication.</p>
+<p>wal2json is an output plugin for logical decoding. Logical decoding is the process of extracting all persistent changes to a database’s tables into a coherent, easy to understand format which can be interpreted without detailed knowledge of the database’s internal state. Customers can use the extension to export the output of the PostgreSQL write-ahead log (WAL) into JSON objects.</p>
+<h3 id="videos-of-the-week">Videos of the week</h3>
+<p><strong>OpenSearch</strong></p>
+<p>The OpenSearch Project is a community-driven, open source search and analytics suite. It consists of a search engine daemon, OpenSearch, and a visualisation and user interface, OpenSearch Dashboards. OpenSearch enables people to ingest, secure, search, aggregate, view, and analyse data. Our goal is to build great software together with a strong and vibrant community. In this talk Sean Neumann and Charlotte Henkle share more about what has been launched so far, what’s coming in the future, and the challenges of stewarding an open-source project while also being associated with a large corporation.</p>
+<p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/FVUMBuExo5E" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+{% youtube FVUMBuExo5E %}</p>
+<p><strong>Karpenter</strong></p>
+<p>Nirmal Mehta, a Principal Specialist Solution Architect at AWS, and a Docker Captain, joins Bret Fisher to discuss and demo Karpenter. Karpenter is an autoscaling solution that aims to simplify Kubernetes infrastructure by automating node scaling up and down, with the &ldquo;the right nodes at the right time.&rdquo;</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/n45qPlYk7ps" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p><strong>Open Source in Public Sector</strong></p>
+<p>Interesting session from the AWS Summit DC, taking a look at how open-source solutions and the cloud become force multipliers for enabling and accelerating that transformation. Reusing a proven open-source solution reduces lengthy and expensive procurement activities, while the cloud enables rapid deployment. This session looks at some of the case studies from around the world of successful use of open-source applications that have enabled and accelerated digital transformation within the public sector.</p>
+<p>Some very interesting data points in this session. Public money, public code. What are your thoughts?</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/y7Tl9yMSR0A" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="events-for-your-diary">Events for your diary</h3>
+<p><strong>Observability: Open Source Solutions</strong>
+<strong>June 28th, 10:00am - 2:15pm PDT</strong></p>
+<p>The AWS Monitoring and Observability Team invites you to participate in a hands on session with Amazon Managed Service for Prometheus, Amazon Managed Service for Grafana and AWS Distro for Open Telemetry. During this session you will use these services in creating workspaces, ingesting/querying metrics, logs and trace data and viewing in a dashboard you will set up. The afternoon will close with demo of what you have done and highlighting the value in MTTD, MTTI, MTTR and application performance.</p>
+<p>This event is designed for those looking to implement AWS Observability using open-source services to visualize their data with native or 3rd party tools. Site reliability engineers, operations engineers, systems engineers, and DevOps. Familiarity with monitoring concepts such as logs, metrics, traces, alarms, and the dashboard is recommended, but not required.</p>
+<p>Register <a href="https://aws-oss.beachgeek.co.uk/1qt">via this page</a>.</p>
+<p><strong>BOSC 2022</strong>
+<strong>July 13-14, Madison, Wisconsin, USA</strong></p>
+<p>The Bioinformatics Open Source Conference (BOSC) has been held annually since 2000, and this year AWS is proud to be a platinum sponsor for this event. BOSC covers all aspects of open source bioinformatics software and open science, including (but not limited to) these topics, Open Science and Reproducible Research, Open Biomedical Data, Citizen/Participatory Science, Standards and Interoperability, Data Science Workflows, Open Approaches to Translational Bioinformatics, Developer Tools and Libraries, Inclusion, and Outreach and Training. This is a hybrid event (in person/virtual) and you find out more by checking out the event page, <a href="https://aws-oss.beachgeek.co.uk/1li">BOSC 2022</a></p>
+<p><strong>OpenSearch</strong>
+<strong>Every other Tuesday, 3pm GMT</strong></p>
+<p>This regular meet-up is for anyone interested in OpenSearch &amp; Open Distro. All skill levels are welcome and they cover and welcome talks on topics including: search, logging, log analytics, and data visualisation.</p>
+<p>Sign up to the next session, <a href="https://aws-oss.beachgeek.co.uk/1az">OpenSearch Community Meeting</a></p>
+<p><strong>OpenSearchCon 2022</strong>
+<strong>Sept 21st, 2022 Seattle</strong></p>
+<p>Come to the first annual OpenSearchCon!</p>
+<p>This day-long conference will be packed with presenters who build and innovate with OpenSearch. It doesn’t matter if you’re just getting started on your OpenSearch journey, running giant clusters, or contributing tons of code; the event is for everyone. Join us to celebrate the progress and look into the future of the project. Admission is free, and registration will be open in the next few weeks. All you will need to do is sign up, and get to Seattle!</p>
+<p>Check out the full details, including signing up and location, at the <a href="https://aws-oss.beachgeek.co.uk/1n1">meetup page here</a>.</p>
+<h3 id="stay-in-touch-with-open-source-at-aws">Stay in touch with open source at AWS</h3>
+<p>I hope this summary has been useful. Remember to check out the <a href="https://aws.amazon.com/opensource/?opensource-all.sort-by=item.additionalFields.startDate&amp;opensource-all.sort-order=asc">Open Source homepage</a> to keep up to date with all our activity in open source by following us on <a href="https://twitter.com/AWSOpen">@AWSOpen</a></p>
+
+  </main>
+
+          <div class="social-heading">
+            <div class="footer-social">
+  
+    <div class="social-icon">
+      <a href="https://twitter.com/094459" target="_blank" title="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Twitter" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://github.com/094459" target="_blank" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="GitHub" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+      </a>
+    </div>
+  
+  
+    <div class="social-icon">
+      <a href="https://www.linkedin.com/in/ricardosueiras" target="_blank" title="Linkedin">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="LinkedIn" role="img"
+viewBox="0 0 512 512"
+fill="#fff"><rect
+width="512" height="512"
+rx="15%"
+fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://www.reddit.com/r/aws" target="_blank" title="Reddit">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Reddit" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+      </a>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="social-icon">
+      <a href="mailto:ricsue@amazon.com" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Email" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="teal"/><rect width="356" height="256" x="78" y="128" fill="#fff" rx="8%"/><path fill="none" stroke="teal" stroke-width="20" d="M434 128L269 292c-7 8-19 8-26 0L78 128m0 256l129-128m227 128L305 256"/></svg>
+      </a>
+    </div>
+  
+  
+</div>
+
+          </div>
+          <footer role="contentinfo">
+  <div class="social-footer">
+    <div class="footer-social">
+  
+    <div class="social-icon">
+      <a href="https://twitter.com/094459" target="_blank" title="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Twitter" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://github.com/094459" target="_blank" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="GitHub" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+      </a>
+    </div>
+  
+  
+    <div class="social-icon">
+      <a href="https://www.linkedin.com/in/ricardosueiras" target="_blank" title="Linkedin">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="LinkedIn" role="img"
+viewBox="0 0 512 512"
+fill="#fff"><rect
+width="512" height="512"
+rx="15%"
+fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://www.reddit.com/r/aws" target="_blank" title="Reddit">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Reddit" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+      </a>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="social-icon">
+      <a href="mailto:ricsue@amazon.com" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Email" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="teal"/><rect width="356" height="256" x="78" y="128" fill="#fff" rx="8%"/><path fill="none" stroke="teal" stroke-width="20" d="M434 128L269 292c-7 8-19 8-26 0L78 128m0 256l129-128m227 128L305 256"/></svg>
+      </a>
+    </div>
+  
+  
+</div>
+
+    <label for="themer">
+      dark theme: <input type="checkbox" id="themer" class="vh">
+      <span aria-hidden="true"></span>
+    </label>
+  </div>
+  
+    <p class="margin-top-none">Copyright &copy; <span id="copyright-year"></span> - Ricardo Sueiras</p>
+  
+  
+    <p class="margin-top-none">
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cupper-hugo-theme">Cupper</a>.
+    </p>
+  
+</footer>
+<script>
+    var year = new Date().getFullYear()
+    document.getElementById("copyright-year").innerHTML = year;
+</script>
+
+        </div>
+      </div>
+    </div>
+    <script src="https://blog.beachgeek.co.uk/js/prism.js"></script>
+
+
+
+<script src="https://blog.beachgeek.co.uk/js/dom-scripts.js"></script>
+
+
+
+<script src="/js/search.7aef046a0cc8b0c532f1d20087b920459bc868c936bb48a6ae221eceefca2d07.js"></script>
+
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  </body>
+</html>

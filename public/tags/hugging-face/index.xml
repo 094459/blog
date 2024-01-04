@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugging Face on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/hugging-face/</link>
+    <description>Recent content in Hugging Face on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/hugging-face/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS open source newsletter #160</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-160/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-160/</guid>
+      <description>June 12th, 2023 - Instalment #160 Welcome to #160 of the AWS open source newsletter, where we try and share all the important open source news, projects, events, and content that open source builders want. This week we have new projects that include tools to help you build data workflows, Terraform modules to help you incorporate temporary elevated access controls, integrating Tailscale to change your traffic flows, a neat AWS Lambda debugging tool, Go bindings for Cedar, and more.</description>
+    </item>
+    <item>
+      <title>AWS open source newsletter #155</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-155/</link>
+      <pubDate>Sat, 29 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-155/</guid>
+      <description>May 1st, 2023 - Instalment #155 Welcome&#xA;Hello and welcome to the AWS open source newsletter, #155, the newsletter that just keeps on giving&amp;hellip;.in this case, keeps giving you brand new open source projects to practice your four freedoms on. This week&amp;rsquo;s new projects include&#xA;&amp;ldquo;aws-cloudformation-controller-for-flux&amp;rdquo; provides a way to use flux to orchestrate your CloudFormation deployments, &amp;ldquo;threat-composer&amp;rdquo; is a nice React based tool to help you create Threat Models for your systems and applications, &amp;ldquo;cdk-integ-tests-sample&amp;rdquo; a tool to allow you to do integration tests with your CDK stacks (these three were all featured in the latest episode of Build on Open Source, you can watch it here), &amp;ldquo;iam-access-key-report&amp;rdquo; generates reports from your AWS accounts about your AWS access keys, &amp;ldquo;personalize-kafka-connector&amp;rdquo; provides an integration into Apache Kafka for this AWS service, and more!</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #119</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-119/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-119/</guid>
+      <description>July 1st, 2022 - Instalment #119 Welcome to regular and new readers alike, to the AWS open source newsletter episode #119.&#xA;This week we feature more new open source projects, such as &amp;ldquo;cdk-bill-bot&amp;rdquo;, a tool that can help you reduce AWS bill surprises, &amp;ldquo;steampipe-mod-aws-perimeter&amp;rdquo; helps you look for resources that are publicly accessible, &amp;ldquo;aws-cloudformation-diagrams&amp;rdquo; is a nice visualisation tool for CloudFormation users, &amp;ldquo;aws-swagger-ui&amp;rdquo; a project to help you set up Swagger UI for API Gateway, &amp;ldquo;kinesis-hot-shard-advisor&amp;rdquo; a handy tool that helps you identify whether you have hot key or hot shard issues on your Kinesis data streams, and many more.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #115</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-115/</link>
+      <pubDate>Fri, 03 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-115/</guid>
+      <description>June 3rd, 2022 - Instalment #115 Welcome to regular and new readers alike, to the AWS open source newsletter episode #115.&#xA;This week we have another great selection of brand new open source projects for you to explore, including &amp;ldquo;firec&amp;rdquo; a Rust client library for interacting with Firecracker, &amp;ldquo;sfn-cli&amp;rdquo; a tool that helps you quickly build StepFunctions definitions, &amp;ldquo;ssm-cloner&amp;rdquo; a tool to help you replicate across AWS regions your AWS System Manager documents, &amp;ldquo;amazon-lambda-compute-tuning&amp;rdquo; an AWS Lambda function benchmarking tool, &amp;ldquo;aws-iam-root-user-activity-monitor&amp;rdquo; a sample project to help you keep track of your root user, &amp;ldquo;hpc-cost-simulator&amp;rdquo; a tool to help estimate costs running your HPC workloads on AWS, and many more.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #110</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-110/</link>
+      <pubDate>Fri, 29 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-110/</guid>
+      <description>April 29th, 2022 - Instalment #110 Newsletter #110.&#xA;Welcome to edition #110 of the AWS open source newsletter. It has been a busy week, with the AWS Summit London happening this week (where I was lucky enough to do a session on Apache Airflow) meaning I am publishing this a little later than I had planned. We have more great new projects this week, including a project that helps make it easier to deploy your static and dynamic applications, a tool that provides help in managing the long term health of your AWS Data Lake, a cool project to help you replicate data from a Kinesis Data Stream across regions, a nice CloudWatch dashboard widget that summarises your CloudFormation stacks, and many more - so check them out.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #106</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-106/</link>
+      <pubDate>Mon, 28 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-106/</guid>
+      <description>March 28th, 2022 - Instalment #106 Newsletter #106.&#xA;Welcome to the AWS open source newsletter, and this week we have more great new open source projects to tell you about. We have &amp;ldquo;access-undenied-aws&amp;rdquo;, a tool that helps you better understand your CloudTrail logs and suggest remediation. &amp;ldquo;aws-slack-clickoops-watcher&amp;rdquo; provides you with a way to alert you when changes are made to your AWS environment. &amp;ldquo;kronicle&amp;rdquo; provides a way of illustrating your tech stack automagically, and we have many more tools, demos and sample projects to help get you started on a number of topics.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #105</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-105/</link>
+      <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-105/</guid>
+      <description>March 21st, 2022 - Instalment #105 Newsletter #105.&#xA;Welcome to edition #105 of the AWS open source news and updates, where we bring you the latest open source projects, posts, events, and much more. This weeks new projects include the latest work in progress from AWS Hero Ian Mckay, &amp;ldquo;iamfast&amp;rdquo; is an AWS IAM policy generation tool that is in early stages but promises to be very useful indeed. &amp;ldquo;iasql-engine&amp;rdquo; is a tool that models cloud infrastructure as data, &amp;ldquo;ssm-patch-portal&amp;rdquo; provides a nice gui front end to simplify patching with AWS System Manager, a new crowdsource guide that contains learning resources for AWS, a business intelligence platform built using open source technologies from the NHS, and many more.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #104</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-104/</link>
+      <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no-104/</guid>
+      <description>March 14th, 2022 - Instalment #104 Newsletter #104.&#xA;Welcome to #104 of the AWS open source news and updates newsletter, bringing you the latest updates from around the AWS and Communities. This week we have yet more great new open source projects, including a Deno runtime for your Lambda functions, data lineage and data testing tools, a performance testing tool for Apache Kafka, an ELT tool for Amazon Redshift, an Amazon S3 archive tool, and many more.</description>
+    </item>
+    <item>
+      <title>AWS open source news and updates #97</title>
+      <link>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-97/</link>
+      <pubDate>Sat, 22 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-97/</guid>
+      <description>Jan 22nd, 2022 - Instalment #97 Newsletter #97.&#xA;Welcome to another edition of the AWS open source newsletter, packed with more great new open source projects, content, and events. This week, we have new projects that help you improve security by de-obfuscating strings, a library to help you automate the configuration of your build pipelines, a new Terraform module, a nice new VSCode plugin that will help you when working with IAM, and several more.</description>
+    </item>
+  </channel>
+</rss>

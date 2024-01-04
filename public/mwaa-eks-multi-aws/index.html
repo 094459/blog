@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="generator" content="Hugo 0.121.1">
+  
+  
+    <link rel="canonical" href="https://blog.beachgeek.co.uk/mwaa-eks-multi-aws/">
+  
+
+  
+
+  
+    
+    
+    
+    
+    
+
+  
+    <link rel="webmention" href="https://webmention.io/username.co.uk/webmention" />
+    <link rel="pingback" href="https://webmention.io/username.co.uk/xmlrpc" />
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://blog.beachgeek.co.uk/css/syntax.css" media="none" onload="this.media='all';">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://blog.beachgeek.co.uk/css/styles.css">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://blog.beachgeek.co.uk/style.main.css">
+
+  
+
+  <link rel="alternate" rel="canonical" href="https://blog.beachgeek.co.uk/index.xml" >
+  
+  <style id="inverter" media="none">
+    .intro-and-nav, .main-and-footer { filter: invert(100%) }
+    * { background-color: inherit }
+    img:not([src*=".svg"]), .colors, iframe, .demo-container { filter: invert(100%) }
+  </style>
+
+  
+  
+  <title>Running the KubernetesPodOperator in different AWS accounts when using Amazon Managed Workflows for Apache Airflow v2.x | Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Running the KubernetesPodOperator in different AWS accounts when using Amazon Managed Workflows for Apache Airflow v2.x"/>
+<meta name="twitter:description" content="Running KubernetesPodOperator in different AWS accounts update August, 14th
+I wanted to update to newer version of MWAA, so I have tested the original blog post against EKS 1.24 and MWAA version 2.4.3. I also had a few messages about whether this would work across different AWS regions. The good news is that it does. I have also put together a repo for this here
+I thought that I would also check/update that it works for newer versions of MWAA, so I had 2."/>
+<meta name="twitter:site" content="@094459"/>
+
+  <meta name="twitter:card" content="summary" />
+</head>
+
+  <body>
+    <a href="#main">skip to content</a>
+    <svg style="display: none">
+  <symbol id="bookmark" viewBox="0 0 40 50">
+   <g transform="translate(2266 3206.2)">
+    <path style="stroke:currentColor;stroke-width:3.2637;" d="m-2262.2-3203.4-.2331 42.195 16.319-16.318 16.318 16.318.2331-42.428z"/>
+   </g>
+  </symbol>
+
+  <symbol id="w3c" viewBox="0 0 127.09899 67.763">
+   <text font-size="83" style="font-size:83px;font-family:Trebuchet;letter-spacing:-12;fill-opacity:0" letter-spacing="-12" y="67.609352" x="-26.782778">W3C</text>
+   <text font-size="83" style="font-size:83px;font-weight:bold;font-family:Trebuchet;fill-opacity:0" y="67.609352" x="153.21722" font-weight="bold">SVG</text>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m33.695.377 12.062 41.016 12.067-41.016h8.731l-19.968 67.386h-.831l-12.48-41.759-12.479 41.759h-.832l-19.965-67.386h8.736l12.061 41.016 8.154-27.618-3.993-13.397h8.737z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m91.355 46.132c0 6.104-1.624 11.234-4.862 15.394-3.248 4.158-7.45 6.237-12.607 6.237-3.882 0-7.263-1.238-10.148-3.702-2.885-2.47-5.02-5.812-6.406-10.022l6.82-2.829c1.001 2.552 2.317 4.562 3.953 6.028 1.636 1.469 3.56 2.207 5.781 2.207 2.329 0 4.3-1.306 5.909-3.911 1.609-2.606 2.411-5.738 2.411-9.401 0-4.049-.861-7.179-2.582-9.399-1.995-2.604-5.129-3.912-9.397-3.912h-3.327v-3.991l11.646-20.133h-14.062l-3.911 6.655h-2.493v-14.976h32.441v4.075l-12.31 21.217c4.324 1.385 7.596 3.911 9.815 7.571 2.22 3.659 3.329 7.953 3.329 12.892z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.21 0 1.414 8.6-5.008 9.583s-1.924-4.064-5.117-6.314c-2.693-1.899-4.447-2.309-7.186-1.746-3.527.73-7.516 4.938-9.258 10.13-2.084 6.21-2.104 9.218-2.178 11.978-.115 4.428.58 7.043.58 7.043s-3.04-5.626-3.011-13.866c.018-5.882.947-11.218 3.666-16.479 2.404-4.627 5.954-7.404 9.114-7.728 3.264-.343 5.848 1.229 7.841 2.938 2.089 1.788 4.213 5.698 4.213 5.698l4.94-9.837z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.82 48.674s-2.208 3.957-3.589 5.48c-1.379 1.524-3.849 4.209-6.896 5.555-3.049 1.343-4.646 1.598-7.661 1.306-3.01-.29-5.807-2.032-6.786-2.764-.979-.722-3.486-2.864-4.897-4.854-1.42-2-3.634-5.995-3.634-5.995s1.233 4.001 2.007 5.699c.442.977 1.81 3.965 3.749 6.572 1.805 2.425 5.315 6.604 10.652 7.545 5.336.945 9.002-1.449 9.907-2.031.907-.578 2.819-2.178 4.032-3.475 1.264-1.351 2.459-3.079 3.116-4.108.487-.758 1.276-2.286 1.276-2.286l-1.276-6.644z"/>
+  </symbol>
+
+  <symbol id="tag" viewBox="0 0 177.16535 177.16535">
+    <g transform="translate(0 -875.2)">
+     <path style="fill-rule:evenodd;stroke-width:0;fill:currentColor" d="m159.9 894.3-68.79 8.5872-75.42 77.336 61.931 60.397 75.429-76.565 6.8495-69.755zm-31.412 31.835a10.813 10.813 0 0 1 1.8443 2.247 10.813 10.813 0 0 1 -3.5174 14.872l-.0445.0275a10.813 10.813 0 0 1 -14.86 -3.5714 10.813 10.813 0 0 1 3.5563 -14.863 10.813 10.813 0 0 1 13.022 1.2884z"/>
+    </g>
+  </symbol>
+
+  <symbol id="balloon" viewBox="0 0 141.73228 177.16535">
+   <g transform="translate(0 -875.2)">
+    <g>
+     <path style="fill:currentColor" d="m68.156 882.83-.88753 1.4269c-4.9564 7.9666-6.3764 17.321-5.6731 37.378.36584 10.437 1.1246 23.51 1.6874 29.062.38895 3.8372 3.8278 32.454 4.6105 38.459 4.6694-.24176 9.2946.2879 14.377 1.481 1.2359-3.2937 5.2496-13.088 8.886-21.623 6.249-14.668 8.4128-21.264 10.253-31.252 1.2464-6.7626 1.6341-12.156 1.4204-19.764-.36325-12.93-2.1234-19.487-6.9377-25.843-2.0833-2.7507-6.9865-7.6112-7.9127-7.8436-.79716-.20019-6.6946-1.0922-6.7755-1.0248-.02213.0182-5.0006-.41858-7.5248-.22808l-2.149-.22808h-3.3738z"/>
+     <path style="fill:currentColor" d="m61.915 883.28-3.2484.4497c-1.7863.24724-3.5182.53481-3.8494.63994-2.4751.33811-4.7267.86957-6.7777 1.5696-.28598 0-1.0254.20146-2.3695.58589-5.0418 1.4418-6.6374 2.2604-8.2567 4.2364-6.281 7.6657-11.457 18.43-12.932 26.891-1.4667 8.4111.71353 22.583 5.0764 32.996 3.8064 9.0852 13.569 25.149 22.801 37.517 1.3741 1.841 2.1708 2.9286 2.4712 3.5792 3.5437-1.1699 6.8496-1.9336 10.082-2.3263-1.3569-5.7831-4.6968-21.86-6.8361-33.002-.92884-4.8368-2.4692-14.322-3.2452-19.991-.68557-5.0083-.77707-6.9534-.74159-15.791.04316-10.803.41822-16.162 1.5026-21.503 1.4593-5.9026 3.3494-11.077 6.3247-15.852z"/>
+     <path style="fill:currentColor" d="m94.499 885.78c-.10214-.0109-.13691 0-.0907.0409.16033.13489 1.329 1.0675 2.5976 2.0723 6.7003 5.307 11.273 14.568 12.658 25.638.52519 4.1949.24765 14.361-.5059 18.523-2.4775 13.684-9.7807 32.345-20.944 53.519l-3.0559 5.7971c2.8082.76579 5.7915 1.727 8.9926 2.8441 11.562-11.691 18.349-19.678 24.129-28.394 7.8992-11.913 11.132-20.234 12.24-31.518.98442-10.02-1.5579-20.876-6.7799-28.959-.2758-.4269-.57803-.86856-.89617-1.3166-3.247-6.13-9.752-12.053-21.264-16.131-2.3687-.86369-6.3657-2.0433-7.0802-2.1166z"/>
+     <path style="fill:currentColor" d="m32.52 892.22c-.20090-.13016-1.4606.81389-3.9132 2.7457-11.486 9.0476-17.632 24.186-16.078 39.61.79699 7.9138 2.4066 13.505 5.9184 20.562 5.8577 11.77 14.749 23.219 30.087 38.74.05838.059.12188.1244.18052.1838 1.3166-.5556 2.5965-1.0618 3.8429-1.5199-.66408-.32448-1.4608-1.3297-3.8116-4.4602-5.0951-6.785-8.7512-11.962-13.051-18.486-5.1379-7.7948-5.0097-7.5894-8.0586-13.054-6.2097-11.13-8.2674-17.725-8.6014-27.563-.21552-6.3494.13041-9.2733 1.775-14.987 2.1832-7.5849 3.9273-10.986 9.2693-18.07 1.7839-2.3656 2.6418-3.57 2.4409-3.7003z"/>
+     <path style="fill:currentColor" d="m69.133 992.37c-6.2405.0309-12.635.76718-19.554 2.5706 4.6956 4.7759 9.935 10.258 12.05 12.625l4.1272 4.6202h11.493l3.964-4.4516c2.0962-2.3541 7.4804-7.9845 12.201-12.768-8.378-1.4975-16.207-2.6353-24.281-2.5955z"/>
+     <rect style="stroke-width:0;fill:currentColor" ry="2.0328" height="27.746" width="22.766" y="1017.7" x="60.201"/>
+    </g>
+   </g>
+  </symbol>
+
+  <symbol id="info" viewBox="0 0 41.667 41.667">
+   <g transform="translate(-37.035 -1004.6)">
+    <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m76.25 1030.2a18.968 18.968 0 0 1 -23.037 13.709 18.968 18.968 0 0 1 -13.738 -23.019 18.968 18.968 0 0 1 23.001 -13.768 18.968 18.968 0 0 1 13.798 22.984"/>
+    <g transform="matrix(1.1146 0 0 1.1146 -26.276 -124.92)">
+     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m75.491 1039.5v-8.7472"/>
+     <path style="stroke-width:0;fill:currentColor" transform="scale(-1)" d="m-73.193-1024.5a2.3719 2.3719 0 0 1 -2.8807 1.7142 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
+    </g>
+   </g>
+  </symbol>
+
+  <symbol id="warning" viewBox="0 0 48.430474 41.646302">
+    <g transform="translate(-1.1273 -1010.2)">
+     <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:4.151;fill:none" d="m25.343 1012.3-22.14 37.496h44.28z"/>
+     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:4.1512;fill:none" d="m25.54 1027.7v8.7472"/>
+     <path style="stroke-width:0;fill:currentColor" d="m27.839 1042.8a2.3719 2.3719 0 0 1 -2.8807 1.7143 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
+    </g>
+  </symbol>
+
+  <symbol id="menu" viewBox="0 0 50 50">
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="0" x="0"/>
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="20" x="0"/>
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="40" x="0"/>
+   </symbol>
+
+   <symbol id="link" viewBox="0 0 50 50">
+    <g transform="translate(0 -1002.4)">
+     <g transform="matrix(.095670 0 0 .095670 2.3233 1004.9)">
+      <g>
+       <path style="stroke-width:0;fill:currentColor" d="m452.84 192.9-128.65 128.65c-35.535 35.54-93.108 35.54-128.65 0l-42.881-42.886 42.881-42.876 42.884 42.876c11.845 11.822 31.064 11.846 42.886 0l128.64-128.64c11.816-11.831 11.816-31.066 0-42.9l-42.881-42.881c-11.822-11.814-31.064-11.814-42.887 0l-45.928 45.936c-21.292-12.531-45.491-17.905-69.449-16.291l72.501-72.526c35.535-35.521 93.136-35.521 128.64 0l42.886 42.881c35.535 35.523 35.535 93.141-.001 128.66zm-254.28 168.51-45.903 45.9c-11.845 11.846-31.064 11.817-42.881 0l-42.884-42.881c-11.845-11.821-11.845-31.041 0-42.886l128.65-128.65c11.819-11.814 31.069-11.814 42.884 0l42.886 42.886 42.876-42.886-42.876-42.881c-35.54-35.521-93.113-35.521-128.65 0l-128.65 128.64c-35.538 35.545-35.538 93.146 0 128.65l42.883 42.882c35.51 35.54 93.11 35.54 128.65 0l72.496-72.499c-23.956 1.597-48.092-3.784-69.474-16.283z"/>
+      </g>
+     </g>
+    </g>
+  </symbol>
+
+  <symbol id="doc" viewBox="0 0 35 45">
+   <g transform="translate(-147.53 -539.83)">
+    <path style="stroke:currentColor;stroke-width:2.4501;fill:none" d="m149.38 542.67v39.194h31.354v-39.194z"/>
+    <g style="stroke-width:25" transform="matrix(.098003 0 0 .098003 133.69 525.96)">
+     <path d="m220 252.36h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+     <path style="stroke:currentColor;stroke-width:25;fill:none" d="m220 409.95h200"/>
+     <path d="m220 488.74h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+     <path d="m220 331.15h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+    </g>
+   </g>
+ </symbol>
+
+ <symbol id="tick" viewBox="0 0 177.16535 177.16535">
+  <g transform="translate(0 -875.2)">
+   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="155" width="40" y="702.99" x="556.82"/>
+   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="40" width="90.404" y="817.99" x="506.42"/>
+  </g>
+ </symbol>
+</svg>
+
+    <div class="wrapper">
+      <header class="intro-and-nav" role="banner">
+  <div>
+    <div class="intro">
+      <a class="logo" href="https://blog.beachgeek.co.uk/" aria-label="Beachgeek blog - a refuge for pineapple on pizza lovers home page">
+        <img src="https://blog.beachgeek.co.uk/images/logo.svg" alt="My site icon">
+      </a>
+      <p class="library-desc">
+         Technologist and Maker specialising in Cloud, Open Source and Innovation. 
+      </p>
+    </div>
+    <nav id="patterns-nav" class="patterns" role="navigation">
+  <h2 class="vh">Main navigation</h2>
+  <button id="menu-button" aria-expanded="false">
+    <svg viewBox="0 0 50 50" aria-hidden="true" focusable="false">
+      <use xlink:href="#menu"></use>
+    </svg>
+    Menu
+  </button>
+  
+  <ul id="patterns-list">
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Home</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/post/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Blog posts</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/newsletter/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Newsletter</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/tags/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Tags</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/about/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">About</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/index.xml" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">RSS</span>
+      </a>
+    </li>
+  
+  </ul>
+</nav>
+  </div>
+</header>
+
+      <div class="main-and-footer">
+        <div>
+          
+  <main id="main">
+    <h1>
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+        <use xlink:href="#bookmark"></use>
+      </svg>
+      Running the KubernetesPodOperator in different AWS accounts when using Amazon Managed Workflows for Apache Airflow v2.x
+    </h1>
+
+    <div class="date">
+      <p>
+        
+        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" aria-labelledby="calendarIconTitle" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#111"> <title id="calendarIconTitle">Calendar</title> <path d="M3 5H21V21H3V5Z"/> <path d="M21 9H3"/> <path d="M7 5V3"/> <path d="M17 5V3"/> </svg> Published Jan 9, 2023
+      </p>
+      
+      <p><svg role="img" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" aria-labelledby="stopwatchIconTitle" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#111"> <title id="stopwatchIconTitle">Stopwatch</title> <circle cx="12" cy="13" r="8"/> <path d="M12 9L12 13M18 7L20 5M15 2L9 2"/> </svg> Reading time 18&nbsp;minutes</p>
+      
+    </div>
+
+    
+      <div class="tags">
+        <strong>Tags: </strong>
+        <ul aria-label="tags">
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/apache-airflow">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                Apache Airflow
+              </a>
+            </li>
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/mwaa">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                mwaa
+              </a>
+            </li>
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/amazon-eks">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                Amazon EKS
+              </a>
+            </li>
+          
+            <li>
+              <a href="https://blog.beachgeek.co.uk/tags/kubernetes">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                Kubernetes
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    
+    
+    
+      
+
+
+    
+
+    <h3 id="running-kubernetespodoperator-in-different-aws-accounts">Running KubernetesPodOperator in different AWS accounts</h3>
+<blockquote>
+<p><strong>update August, 14th</strong></p>
+</blockquote>
+<p>I wanted to update to newer version of MWAA, so I have tested the original blog post against EKS 1.24 and MWAA version 2.4.3. I also had a few messages about whether this would work across different AWS regions. The good news is that it does. I have also put together a repo for this <a href="https://github.com/094459/mwaa-eks">here</a></p>
+<p>I thought that I would also check/update that it works for newer versions of MWAA, so I had 2.4.3 up and running so thought I would use that. I did have to update the requirements.txt from the original post below so that it is compatible with Airflow 2.4.3. If you are using newer versions, you will need to make suitable changes. Check your constraints files for the right versions.</p>
+<pre><code>--constraint &quot;https://raw.githubusercontent.com/apache/airflow/constraints-2.4.3/constraints-3.10.txt&quot;
+
+apache-airflow-providers-cncf-kubernetes==4.4.0
+kubernetes==23.6.0
+</code></pre>
+<p>In my quick test, I had my MWAA 2.4.3 environment up and running in eu-central-1 (Frankfurt), and I had my EKS Cluster 1.24 running in eu-west-2 (London). When I triggered the DAG from Frankfurt.</p>
+<pre><code>[2023-08-15, 19:27:45 UTC] {{kubernetes_pod.py:380}} INFO - Found matching pod mwaa-pod-test-4e7bc9fc53b84c048a45ba0dabef35b8 with labels {'airflow_kpo_in_cluster': 'False', 'airflow_version': '2.4.3', 'dag_id': 'kubernetes_pod_example', 'foo': 'bar', 'kubernetes_pod_operator': 'True', 'run_id': 'manual__2023-08-15T192740.4169940000-5bfe34873', 'task_id': 'pod-task', 'try_number': '1'}
+[2023-08-15, 19:27:45 UTC] {{kubernetes_pod.py:381}} INFO - `try_number` of task_instance: 1
+[2023-08-15, 19:27:45 UTC] {{kubernetes_pod.py:382}} INFO - `try_number` of pod: 1
+[2023-08-15, 19:27:45 UTC] {{pod_manager.py:180}} WARNING - Pod not yet started: mwaa-pod-test-4e7bc9fc53b84c048a45ba0dabef35b8
+[2023-08-15, 19:27:46 UTC] {{pod_manager.py:180}} WARNING - Pod not yet started: mwaa-pod-test-4e7bc9fc53b84c048a45ba0dabef35b8
+[2023-08-15, 19:27:47 UTC] {{pod_manager.py:180}} WARNING - Pod not yet started: mwaa-pod-test-4e7bc9fc53b84c048a45ba0dabef35b8
+[2023-08-15, 19:27:48 UTC] {{pod_manager.py:180}} WARNING - Pod not yet started: mwaa-pod-test-4e7bc9fc53b84c048a45ba0dabef35b8
+[2023-08-15, 19:27:49 UTC] {{pod_manager.py:180}} WARNING - Pod not yet started: mwaa-pod-test-4e7bc9fc53b84c048a45ba0dabef35b8
+[2023-08-15, 19:27:50 UTC] {{pod_manager.py:180}} WARNING - Pod not yet started: mwaa-pod-test-4e7bc9fc53b84c048a45ba0dabef35b8
+[2023-08-15, 19:27:51 UTC] {{pod_manager.py:180}} WARNING - Pod not yet started: mwaa-pod-test-4e7bc9fc53b84c048a45ba0dabef35b8
+[2023-08-15, 19:27:52 UTC] {{pod_manager.py:180}} WARNING - Pod not yet started: mwaa-pod-test-4e7bc9fc53b84c048a45ba0dabef35b8
+[2023-08-15, 19:27:53 UTC] {{pod_manager.py:180}} WARNING - Pod not yet started: mwaa-pod-test-4e7bc9fc53b84c048a45ba0dabef35b8
+[2023-08-15, 19:27:54 UTC] {{pod_manager.py:228}} INFO - 665240076514
+[2023-08-15, 19:27:54 UTC] {{pod_manager.py:228}} INFO - eu-west-2
+[2023-08-15, 19:27:56 UTC] {{pod_manager.py:275}} INFO - Pod mwaa-pod-test-4e7bc9fc53b84c048a45ba0dabef35b8 has phase Running
+[2023-08-15, 19:27:58 UTC] {{kubernetes_pod.py:478}} INFO - skipping deleting pod: mwaa-pod-test-4e7bc9fc53b84c048a45ba0dabef35b8
+[2023-08-15, 19:27:58 UTC] {{taskinstance.py:1401}} INFO - Marking task as SUCCESS. dag_id=kubernetes_pod_example, task_id=pod-task, execution_date=20230815T192740, start_date=20230815T192743, end_date=20230815T192758
+[2023-08-15, 19:27:58 UTC] {{local_task_job.py:159}} INFO - Task exited with return code 0
+</code></pre>
+<p>&ndash;end of update</p>
+<p>I got a mail from Apurav Sharma who was looking to find out about how MWAA supported using the KubernetesPodOperator to kick off tasks in Amazon EKS Containers in any AWS account. This post reveals how you can do that, using a very simple task that displays the AWS account number.</p>
+<p><img src="https://ricsuepublicresources.s3.eu-west-1.amazonaws.com/images/eks-multi.png" alt="sample architecture for multi account eks"></p>
+<p><strong>Pre-requisites</strong></p>
+<ul>
+<li>You will need admin access to two AWS Accounts, with local AWS Cli tools setup and</li>
+<li>eksctl version 0.124.0</li>
+<li>kubectl version at least v1.24.1</li>
+<li>A MWAA environment up and running (I am using MWAA with Apache Airflow 2.2.2)</li>
+</ul>
+<p>As I have two different AWS accounts, I am using profiles in my local .aws/credentials file to enable me to ensure I access the specific AWS account. Any references to &ldquo;&ndash;profile personal&rdquo; is referring to the second AWS account, and where it is omitted, the first AWS account.</p>
+<p><strong>Creating a new Amazon EKS cluster</strong></p>
+<p>I used the same steps that were in my original blog post, <a href="https://dev.to/aws/working-with-amazon-eks-and-amazon-managed-workflows-for-apache-airflow-v2-x-k12">Working with Amazon EKS and Amazon Managed Workflows for Apache Airflow v2.x</a>. I will repeat those steps here to make it easier to follow along. I have used the latest version of Kubernetes in this post, that Amazon EKS supports (1.24).</p>
+<p>To create the Amazon EKS Cluster on the first AWS account I run the following command</p>
+<pre><code>eksctl create cluster \
+--name mwaa-eks \
+--region eu-central-1 \
+--version 1.24 \
+--nodegroup-name linux-nodes \
+--nodes 3 \
+--nodes-min 1 \
+--nodes-max 4 \
+--with-oidc \
+--ssh-access \
+--ssh-public-key frank-open-distro \
+--managed \
+--vpc-public-subnets &quot;subnet-0a6787dd2777c1897, subnet-0b10b70867384b67e&quot; \
+--vpc-private-subnets &quot;subnet-05b6e2630d8f2d555, subnet-0fdcca6496460b7e6&quot;
+</code></pre>
+<p>output similar to</p>
+<pre><code>2023-01-06 14:21:45 [ℹ]  eksctl version 0.124.0-dev+ac917eb50.2022-12-23T08:09:21Z
+2023-01-06 14:21:45 [ℹ]  using region eu-central-1
+2023-01-06 14:21:47 [✔]  using existing VPC (vpc-05733622960d2fa38) and subnets (private:map[eu-central-1a:{subnet-0fdcca6496460b7e6 eu-central-1a 10.192.20.0/24 0 } eu-central-1b:{subnet-05b6e2630d8f2d555 eu-central-1b 10.192.21.0/24 0 }] public:map[eu-central-1a:{subnet-0a6787dd2777c1897 eu-central-1a 10.192.10.0/24 0 } eu-central-1b:{subnet-0b10b70867384b67e eu-central-1b 10.192.11.0/24 0 }])
+2023-01-06 14:21:47 [!]  custom VPC/subnets will be used; if resulting cluster doesn't function as expected, make sure to review the configuration of VPC/subnets
+2023-01-06 14:21:47 [ℹ]  nodegroup &quot;linux-nodes&quot; will use &quot;&quot; [AmazonLinux2/1.24]
+2023-01-06 14:21:47 [ℹ]  using EC2 key pair %!q(*string=&lt;nil&gt;)
+2023-01-06 14:21:47 [ℹ]  using Kubernetes version 1.24
+2023-01-06 14:21:47 [ℹ]  creating EKS cluster &quot;mwaa-eks&quot; in &quot;eu-central-1&quot; region with managed nodes
+2023-01-06 14:21:47 [ℹ]  will create 2 separate CloudFormation stacks for cluster itself and the initial managed nodegroup
+2023-01-06 14:21:47 [ℹ]  if you encounter any issues, check CloudFormation console or try 'eksctl utils describe-stacks --region=eu-central-1 --cluster=mwaa-eks'
+2023-01-06 14:21:47 [ℹ]  Kubernetes API endpoint access will use default of {publicAccess=true, privateAccess=false} for cluster &quot;mwaa-eks&quot; in &quot;eu-central-1&quot;
+2023-01-06 14:21:47 [ℹ]  CloudWatch logging will not be enabled for cluster &quot;mwaa-eks&quot; in &quot;eu-central-1&quot;
+2023-01-06 14:21:47 [ℹ]  you can enable it with 'eksctl utils update-cluster-logging --enable-types={SPECIFY-YOUR-LOG-TYPES-HERE (e.g. all)} --region=eu-central-1 --cluster=mwaa-eks'
+2023-01-06 14:21:47 [ℹ]
+2 sequential tasks: { create cluster control plane &quot;mwaa-eks&quot;,
+    2 sequential sub-tasks: {
+        4 sequential sub-tasks: {
+            wait for control plane to become ready,
+            associate IAM OIDC provider,
+            2 sequential sub-tasks: {
+                create IAM role for serviceaccount &quot;kube-system/aws-node&quot;,
+                create serviceaccount &quot;kube-system/aws-node&quot;,
+            },
+            restart daemonset &quot;kube-system/aws-node&quot;,
+        },
+        create managed nodegroup &quot;linux-nodes&quot;,
+    }
+}
+2023-01-06 14:21:47 [ℹ]  building cluster stack &quot;eksctl-mwaa-eks-cluster&quot;
+2023-01-06 14:21:49 [ℹ]  deploying stack &quot;eksctl-mwaa-eks-cluster&quot;
+</code></pre>
+<p>check cloudformation and come back in 10-15 mins</p>
+<pre><code>2023-01-06 14:27:56 [ℹ]  waiting for CloudFormation stack &quot;eksctl-mwaa-eks-cluster&quot;
+2023-01-06 14:28:57 [ℹ]  waiting for CloudFormation stack &quot;eksctl-mwaa-eks-cluster&quot;
+</code></pre>
+<p>when it finishes you should see something similar to</p>
+<pre><code>2023-01-06 14:40:48 [ℹ]  waiting for the control plane to become ready
+2023-01-06 14:40:50 [✔]  saved kubeconfig as &quot;/Users/ricsue/.kube/config&quot;
+2023-01-06 14:40:50 [ℹ]  no tasks
+2023-01-06 14:40:50 [✔]  all EKS cluster resources for &quot;mwaa-eks&quot; have been created
+2023-01-06 14:40:51 [ℹ]  nodegroup &quot;linux-nodes&quot; has 3 node(s)
+2023-01-06 14:40:51 [ℹ]  node &quot;ip-10-192-10-251.eu-central-1.compute.internal&quot; is ready
+2023-01-06 14:40:51 [ℹ]  node &quot;ip-10-192-10-57.eu-central-1.compute.internal&quot; is ready
+2023-01-06 14:40:51 [ℹ]  node &quot;ip-10-192-11-142.eu-central-1.compute.internal&quot; is ready
+2023-01-06 14:40:51 [ℹ]  waiting for at least 1 node(s) to become ready in &quot;linux-nodes&quot;
+2023-01-06 14:40:51 [ℹ]  nodegroup &quot;linux-nodes&quot; has 3 node(s)
+2023-01-06 14:40:51 [ℹ]  node &quot;ip-10-192-10-251.eu-central-1.compute.internal&quot; is ready
+2023-01-06 14:40:51 [ℹ]  node &quot;ip-10-192-10-57.eu-central-1.compute.internal&quot; is ready
+2023-01-06 14:40:51 [ℹ]  node &quot;ip-10-192-11-142.eu-central-1.compute.internal&quot; is ready
+2023-01-06 14:40:56 [ℹ]  kubectl command should work with &quot;/Users/ricsue/.kube/config&quot;, try 'kubectl get nodes'
+2023-01-06 14:40:56 [✔]  EKS cluster &quot;mwaa-eks&quot; in &quot;eu-central-1&quot; region is ready
+</code></pre>
+<p>Check its configured correctly</p>
+<pre><code>eksctl utils associate-iam-oidc-provider \
+--region eu-central-1 \
+--cluster mwaa-eks \
+--approve
+</code></pre>
+<p>which will output</p>
+<pre><code>2023-01-06 15:03:17 [ℹ]  IAM Open ID Connect provider is already associated with cluster &quot;mwaa-eks&quot; in &quot;eu-central-1&quot;
+</code></pre>
+<p><strong>Creating a new Kubernetes namespace</strong></p>
+<p>Create a new Kubernetes namespace where we will run our DAG</p>
+<pre><code>kubectl create namespace mwaa
+</code></pre>
+<p>which will output</p>
+<pre><code>namespace/mwaa created
+</code></pre>
+<p>and we can check by running</p>
+<pre><code>kubectl get ns
+</code></pre>
+<p>which should list our new namespace</p>
+<pre><code>NAME              STATUS   AGE
+default           Active   37m
+kube-node-lease   Active   37m
+kube-public       Active   37m
+kube-system       Active   37m
+mwaa              Active   62s
+</code></pre>
+<p><strong>Create a role for the mwaa namespace</strong></p>
+<p>Now you need to create a new Kubernetes manifest file that will create a role for the MWAA namespace.</p>
+<p>If you run the following command:</p>
+<pre><code>kubectl get pods -n mwaa --as mwaa-service
+</code></pre>
+<p>You will probably get the following error message:</p>
+<pre><code>Error from server (Forbidden): pods is forbidden: User &quot;mwaa-service&quot; cannot list resource &quot;pods&quot; in API group &quot;&quot; in the namespace &quot;mwaa&quot;
+</code></pre>
+<p>So lets fix that. First we are going to create and apply a new role for the MWAA namespace.</p>
+<pre><code>cat &lt;&lt; EOF | kubectl apply -f - -n mwaa
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: mwaa-role
+rules:
+  - apiGroups:
+      - &quot;&quot;
+      - &quot;apps&quot;
+      - &quot;batch&quot;
+      - &quot;extensions&quot;
+    resources:      
+      - &quot;jobs&quot;
+      - &quot;pods&quot;
+      - &quot;pods/attach&quot;
+      - &quot;pods/exec&quot;
+      - &quot;pods/log&quot;
+      - &quot;pods/portforward&quot;
+      - &quot;secrets&quot;
+      - &quot;services&quot;
+    verbs:
+      - &quot;create&quot;
+      - &quot;delete&quot;
+      - &quot;describe&quot;
+      - &quot;get&quot;
+      - &quot;list&quot;
+      - &quot;patch&quot;
+      - &quot;update&quot;
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: mwaa-role-binding
+subjects:
+- kind: User
+  name: mwaa-service
+roleRef:
+  kind: Role
+  name: mwaa-role
+  apiGroup: rbac.authorization.k8s.io
+EOF
+
+</code></pre>
+<p>When you run this, you should get the following</p>
+<pre><code>role.rbac.authorization.k8s.io/mwaa-role created
+rolebinding.rbac.authorization.k8s.io/mwaa-role-binding created
+</code></pre>
+<p>Now if we try again the command (&ldquo;kubectl get pods -n mwaa &ndash;as mwaa-service&rdquo;) that generated the error above, we should get a new output</p>
+<pre><code>No resources found in mwaa namespace.
+</code></pre>
+<p><strong>Modifying the MWAA Worker Execution policy</strong></p>
+<p>You now need to create a new MWAA Worker Execution role with an updated policy. The steps are 1/ Create a new IAM policy, 2/ Create a new IAM Role and attach the policy you created in Step 1, and 3/ Reconfigure your MWAA environment to use this new IAM Role.</p>
+<p>When creating a new IAM policy, copy the existing policy statements you have in your MWAA Execution policy, but add the following (replacing {AWS ACCOUNT NUMBER} with your AWS account):</p>
+<pre><code>        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;eks:DescribeCluster&quot;
+            ],
+            &quot;Resource&quot;: &quot;arn:aws:eks:eu-central-1:{AWS ACCOUNT NUMBER}:cluster/mwaa-eks&quot;
+        } 
+</code></pre>
+<p>This is the complete new role that I created</p>
+<pre><code>{
+    &quot;Version&quot;: &quot;2012-10-17&quot;,
+    &quot;Statement&quot;: [
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: &quot;airflow:PublishMetrics&quot;,
+            &quot;Resource&quot;: &quot;arn:aws:airflow:eu-central-1:{AWS ACCOUNT NUMBER}:environment/EKSMultiAccount&quot;
+        },
+        {
+            &quot;Effect&quot;: &quot;Deny&quot;,
+            &quot;Action&quot;: &quot;s3:ListAllMyBuckets&quot;,
+            &quot;Resource&quot;: [
+                &quot;arn:aws:s3:::airflow-eks-multi-account&quot;,
+                &quot;arn:aws:s3:::airflow-eks-multi-account/*&quot;
+            ]
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;s3:GetObject*&quot;,
+                &quot;s3:GetBucket*&quot;,
+                &quot;s3:List*&quot;
+            ],
+            &quot;Resource&quot;: [
+                &quot;arn:aws:s3:::airflow-eks-multi-account&quot;,
+                &quot;arn:aws:s3:::airflow-eks-multi-account/*&quot;
+            ]
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;logs:CreateLogStream&quot;,
+                &quot;logs:CreateLogGroup&quot;,
+                &quot;logs:PutLogEvents&quot;,
+                &quot;logs:GetLogEvents&quot;,
+                &quot;logs:GetLogRecord&quot;,
+                &quot;logs:GetLogGroupFields&quot;,
+                &quot;logs:GetQueryResults&quot;
+            ],
+            &quot;Resource&quot;: [
+                &quot;arn:aws:logs:eu-central-1:{AWS ACCOUNT NUMBER}:log-group:airflow-EKSMultiAccount-*&quot;
+            ]
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;logs:DescribeLogGroups&quot;
+            ],
+            &quot;Resource&quot;: [
+                &quot;*&quot;
+            ]
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: &quot;cloudwatch:PutMetricData&quot;,
+            &quot;Resource&quot;: &quot;*&quot;
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;sqs:ChangeMessageVisibility&quot;,
+                &quot;sqs:DeleteMessage&quot;,
+                &quot;sqs:GetQueueAttributes&quot;,
+                &quot;sqs:GetQueueUrl&quot;,
+                &quot;sqs:ReceiveMessage&quot;,
+                &quot;sqs:SendMessage&quot;
+            ],
+            &quot;Resource&quot;: &quot;arn:aws:sqs:eu-central-1:*:airflow-celery-*&quot;
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;kms:Decrypt&quot;,
+                &quot;kms:DescribeKey&quot;,
+                &quot;kms:GenerateDataKey*&quot;,
+                &quot;kms:Encrypt&quot;
+            ],
+            &quot;NotResource&quot;: &quot;arn:aws:kms:*:{AWS ACCOUNT NUMBER}:key/*&quot;,
+            &quot;Condition&quot;: {
+                &quot;StringLike&quot;: {
+                    &quot;kms:ViaService&quot;: [
+                        &quot;sqs.eu-central-1.amazonaws.com&quot;
+                    ]
+                }
+            }
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;eks:DescribeCluster&quot;
+            ],
+            &quot;Resource&quot;: &quot;arn:aws:eks:eu-central-1:{AWS ACCOUNT NUMBER}:cluster/mwaa-eks&quot;
+        }
+    ]
+}
+</code></pre>
+<p>Once you have updated your MWAA Worker Execution role with this new role, the MWAA environment will take 20-30 minutes to update. However, we need to make one more change that will also require a restart, so complete the next step so we only have to do this once.</p>
+<p><strong>Deploying the Kubernetes operators into Apache Airflow</strong></p>
+<p>Create a new requirements.txt file with the following:</p>
+<pre><code>kubernetes==11.0.0
+apache-airflow[cncf.kubernetes]
+</code></pre>
+<p>And then in the S3 bucket that you are using for your MWAA environment, create a folder and upload this file. You will then need to edit your environment to point to this requirements.txt file. Once updated, the MWAA environment will need to update which may take 20-25 minutes to complete.</p>
+<blockquote>
+<p>Tip! You can track and debug Python library loading and import issues by reviewing the CloudWatch logs for the MWAA Worker nodes. There will be a &ldquo;requirements_install_***&rdquo; log file which you can view and this will help you troubleshoot issues.</p>
+</blockquote>
+<p><strong>Creating a new identity mapping</strong></p>
+<p>Use the following command to create a new identity mapping for Amazon EKS (replacing {AWS ACCOUNT NUMBER} with your AWS account number)</p>
+<pre><code>eksctl create iamidentitymapping \
+--region eu-central-1 \
+--cluster mwaa-eks \
+--arn arn:aws:iam::{AWS ACCOUNT NUMBER}:role/mwaa-eks-multi-account-role \
+--username mwaa-service
+</code></pre>
+<p>which should output something like</p>
+<pre><code>2023-01-06 16:21:17 [ℹ]  checking arn arn:aws:iam::{AWS ACCOUNT NUMBER}:role/mwaa-eks-multi-account-role against entries in the auth ConfigMap
+2023-01-06 16:21:17 [ℹ]  adding identity &quot;arn:aws:iam::{AWS ACCOUNT NUMBER}:role/mwaa-eks-multi-account-role&quot; to auth ConfigMap
+</code></pre>
+<p><strong>Creating your kubeconfig file</strong></p>
+<p>When we use the KubernetesPodOperator we need to provide a kube_config.yaml file which we will upload into the same folder as our DAG. To create this, we use the following command.</p>
+<pre><code>aws eks update-kubeconfig \
+--region eu-central-1 \
+--kubeconfig ./kube_config.yaml \
+--name mwaa-eks \
+--alias aws
+</code></pre>
+<p>Which will display the following output</p>
+<pre><code>Added new context aws to /Users/ricsue/Projects/keys/ssh-keygen-keys/kube_config.yaml
+</code></pre>
+<p>You should now have your kube_config.yaml file in the same folder (where {AWS ACCOUNT NUMBER} is your AWS Account number).</p>
+<pre><code>apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....REDACTED....==
+    server: https://REDACTED.gr7.eu-central-1.eks.amazonaws.com
+  name: arn:aws:eks:eu-central-1:{AWS ACCOUNT NUMBER}:cluster/mwaa-eks
+contexts:
+- context:
+    cluster: arn:aws:eks:eu-central-1:{AWS ACCOUNT NUMBER}:cluster/mwaa-eks
+    user: arn:aws:eks:eu-central-1:{AWS ACCOUNT NUMBER}:cluster/mwaa-eks
+  name: aws
+current-context: aws
+kind: Config
+preferences: {}
+users:
+- name: arn:aws:eks:eu-central-1:{AWS ACCOUNT NUMBER}:cluster/mwaa-eks
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1beta1
+      args:
+      - --region
+      - eu-central-1
+      - eks
+      - get-token
+      - --cluster-name
+      - mwaa-eks
+      command: aws
+</code></pre>
+<p><strong>Creating your Apache Airflow DAG</strong></p>
+<p>Create your DAG, using the following sample code. This DAG uses the aws-cli public container and runs a simple aws cli command to output the AWS account number.</p>
+<blockquote>
+<p>Note! You will notice the path to the kube_config.yaml file is /usr/local/airflow/dags/kube_config.yaml - you do not need to edit/change this (as long as your config file was not renamed from kube_config.yaml)</p>
+</blockquote>
+<pre><code>from airflow import DAG
+from datetime import datetime
+from airflow.providers.cncf.kubernetes.operators.kubernetes_pod import KubernetesPodOperator
+
+default_args = {
+   'owner': 'aws',
+   'depends_on_past': False,
+   'start_date': datetime(2019, 2, 20),
+   'provide_context': True
+}
+
+dag = DAG(
+   'kubernetes_pod_example', default_args=default_args, schedule_interval=None)
+
+kube_config_path = '/usr/local/airflow/dags/kube_config.yaml'
+
+podRun = KubernetesPodOperator(
+                       namespace=&quot;mwaa&quot;,
+                       #image=&quot;ubuntu:18.04&quot;,
+                       image=&quot;public.ecr.aws/aws-cli/aws-cli&quot;,
+                       cmds=[&quot;bash&quot;],
+                       arguments=[&quot;-c&quot;, &quot;aws sts get-caller-identity --query 'Account' --output text&quot;],
+                       labels={&quot;foo&quot;: &quot;bar&quot;},
+                       name=&quot;mwaa-pod-test&quot;,
+                       task_id=&quot;pod-task&quot;,
+                       get_logs=True,
+                       dag=dag,
+                       is_delete_operator_pod=False,
+                       config_file=kube_config_path,
+                       in_cluster=False,
+                       cluster_context='aws'
+                       )
+</code></pre>
+<blockquote>
+<p><strong>Error and Debugging</strong></p>
+<p>When I initially ran this, I got the following error</p>
+<pre><code>kubernetes.client.rest.ApiException: (401)
+Reason: Unauthorized
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '2c8f0848-1506-44ec-92a8-772c8756e1ee', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Date': 'Fri, 06 Jan 2023 17:05:51 GMT', 'Content-Length': '129'})
+HTTP response body: {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;Unauthorized&quot;,&quot;reason&quot;:&quot;Unauthorized&quot;,&quot;code&quot;:401}
+</code></pre>
+<p>If you get this, then I suggest waiting a few moments. When I initially triggered the DAG I got this error. When I then went for a short lunch break and tried again, it worked.</p>
+</blockquote>
+<p>When you trigger this, it should output the AWS account number where the Kubernetes Pod is running. This is what I get when I run this:</p>
+<pre><code>[2023-01-09, 10:41:30 UTC] {{logging_mixin.py:109}} INFO - Running &lt;TaskInstance: kubernetes_pod_example.pod-task manual__2023-01-09T10:41:21.080681+00:00 [running]&gt; on host ip-10-192-20-19.eu-central-1.compute.internal
+[2023-01-09, 10:41:30 UTC] {{taskinstance.py:1429}} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=aws
+AIRFLOW_CTX_DAG_ID=kubernetes_pod_example
+AIRFLOW_CTX_TASK_ID=pod-task
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-09T10:41:21.080681+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-09T10:41:21.080681+00:00
+[2023-01-09, 10:41:30 UTC] {{kubernetes_pod.py:566}} INFO - Creating pod mwaa-pod-test.0de50f0e9f0f44a788cc15dadc0052e7 with labels: {'dag_id': 'kubernetes_pod_example', 'task_id': 'pod-task', 'execution_date': '2023-01-09T104121.0806810000-b4d079a05', 'try_number': '1'}
+[2023-01-09, 10:41:31 UTC] {{pod_manager.py:157}} WARNING - Pod not yet started: mwaa-pod-test.0de50f0e9f0f44a788cc15dadc0052e7
+[2023-01-09, 10:41:32 UTC] {{pod_manager.py:157}} WARNING - Pod not yet started: mwaa-pod-test.0de50f0e9f0f44a788cc15dadc0052e7
+[2023-01-09, 10:41:33 UTC] {{pod_manager.py:197}} INFO - {AWS ACCOUNT NUMBER}
+[2023-01-09, 10:41:33 UTC] {{pod_manager.py:215}} WARNING - Pod mwaa-pod-test.0de50f0e9f0f44a788cc15dadc0052e7 log read interrupted but container base still running
+[2023-01-09, 10:41:34 UTC] {{pod_manager.py:197}} INFO - {AWS ACCOUNT NUMBER}
+[2023-01-09, 10:41:34 UTC] {{pod_manager.py:234}} INFO - Pod mwaa-pod-test.0de50f0e9f0f44a788cc15dadc0052e7 has phase Running
+[2023-01-09, 10:41:36 UTC] {{kubernetes_pod.py:462}} INFO - skipping deleting pod: mwaa-pod-test.0de50f0e9f0f44a788cc15dadc0052e7
+[2023-01-09, 10:41:37 UTC] {{taskinstance.py:1280}} INFO - Marking task as SUCCESS. dag_id=kubernetes_pod_example, task_id=pod-task, execution_date=20230109T104121, start_date=20230109T104130, end_date=20230109T104137
+[2023-01-09, 10:41:37 UTC] {{local_task_job.py:154}} INFO - Task exited with return code 0
+[2023-01-09, 10:41:37 UTC] {{local_task_job.py:264}} INFO - 0 downstream tasks scheduled from follow-on schedule check
+</code></pre>
+<p>You should be able to see your account number where I have shown {AWS ACCOUNT NUMBER} above.</p>
+<p>We have now completed the first step which is configuring MWAA to execute within an Amazon EKS cluster in the SAME account as MWAA is running.</p>
+<p>The next step is to get MWAA to execute a task on an Amazon EKS cluster in a different AWS account.</p>
+<blockquote>
+<p>Note!, whilst I will be using a different AWS account,  I will stick within the same AWS Region</p>
+</blockquote>
+<p><strong>Setting up my EKS Cluster in a new Account</strong></p>
+<p>As I am not going to have a MWAA environment in this new AWS Account, I need to setup the Amazon EKS environment a little differently.</p>
+<p>In my second AWS account I have set up a new VPC with public/private subnets in the same AWS Region, and I have also created a new keypair which is used when we create the new EKS Cluster. You will notice here that I am using the &ldquo;&ndash;profile personal&rdquo; which I have configured in my local .aws/credentials to point to an IAM user in the new account.</p>
+<p>I create my new EKS Cluster (called mwaa-eks2) using this command:</p>
+<pre><code>eksctl create cluster \
+--name mwaa-eks2 \
+--region eu-central-1 \
+--version 1.24 \
+--nodegroup-name linux-nodes \
+--nodes 3 \
+--nodes-min 1 \
+--nodes-max 4 \
+--with-oidc \
+--ssh-access \
+--ssh-public-key mwaa-eks \
+--managed \
+--vpc-public-subnets &quot;subnet-081d77fe5ceb5ae90, subnet-0b9b3a80c1f5d046b&quot; \
+--vpc-private-subnets &quot;subnet-014a24745c5edbbbd, subnet-0d9dc9f06d773243b&quot; \
+--profile personal
+</code></pre>
+<p>Configure IAM</p>
+<pre><code>eksctl utils associate-iam-oidc-provider \
+--region eu-central-1 \
+--cluster mwaa-eks2 \
+--approve \
+--profile personal
+</code></pre>
+<p>Create a Kubernetes namespace called mwaa2</p>
+<pre><code>kubectl create namespace mwaa2
+</code></pre>
+<p>Create the mwaa-role and service mapping</p>
+<pre><code>cat &lt;&lt; EOF | kubectl apply -f - -n mwaa2
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: mwaa-role
+rules:
+  - apiGroups:
+      - &quot;&quot;
+      - &quot;apps&quot;
+      - &quot;batch&quot;
+      - &quot;extensions&quot;
+    resources:      
+      - &quot;jobs&quot;
+      - &quot;pods&quot;
+      - &quot;pods/attach&quot;
+      - &quot;pods/exec&quot;
+      - &quot;pods/log&quot;
+      - &quot;pods/portforward&quot;
+      - &quot;secrets&quot;
+      - &quot;services&quot;
+    verbs:
+      - &quot;create&quot;
+      - &quot;delete&quot;
+      - &quot;describe&quot;
+      - &quot;get&quot;
+      - &quot;list&quot;
+      - &quot;patch&quot;
+      - &quot;update&quot;
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: mwaa-role-binding
+subjects:
+- kind: User
+  name: mwaa-service
+roleRef:
+  kind: Role
+  name: mwaa-role
+  apiGroup: rbac.authorization.k8s.io
+EOF
+</code></pre>
+<p>We can make sure this all looks good by typing this command, and we should get the same output as we did when we ran it above.</p>
+<pre><code>kubectl get pods -n mwaa2 --as mwaa-service
+</code></pre>
+<p><strong>EKS Role and Permissions</strong></p>
+<p>We now need to create and attach an IAM role that will allow the MWAA execution workers to access this new EKS Cluster. We are going to keep this policy simple, but you should scope down the IAM Actions if you are doing this in production.</p>
+<p>Create a new IAM Policy and Role. Create the policy first as follows</p>
+<pre><code>{ 
+  &quot;Version&quot;: &quot;2012-10-17&quot;,
+   &quot;Statement&quot;: [
+      {
+          &quot;Effect&quot;: &quot;Allow&quot;,
+          &quot;Action&quot;: [
+            &quot;eks:*&quot;
+            ],
+          &quot;Resource&quot;: &quot;arn:aws:eks:eu-central-1:{2ND AWS ACCOUNT NUMBER}:cluster/mwaa-eks2&quot;
+       }
+     ]
+}
+</code></pre>
+<p>Now create a new role, and then attach this to the Role you create. You will need to change the TRUST ASSOCIATION of the Role so that the MWAA execution worker can assume this role:</p>
+<pre><code>{
+	&quot;Version&quot;: &quot;2012-10-17&quot;,
+	&quot;Statement&quot;: [
+		{
+			&quot;Effect&quot;: &quot;Allow&quot;,
+			&quot;Principal&quot;: {
+				&quot;AWS&quot;: &quot;arn:aws:iam::{AWS ACCOUNT NUMBER}:role/mwaa-eks-multi-account-role&quot;
+			},
+			&quot;Action&quot;: &quot;sts:AssumeRole&quot;,
+			&quot;Condition&quot;: {}
+		}
+	]
+}
+</code></pre>
+<p>The final step is to attach this to the new EKS Cluster we have running in the second account.</p>
+<pre><code>eksctl create iamidentitymapping \
+--region eu-central-1 \
+--cluster mwaa-eks2 \
+--arn arn:aws:iam::{2ND AWS ACCOUNT NUMBER}:role/mwaa-eks-access \
+--username mwaa-service \
+--profile personal
+</code></pre>
+<p>which should generate the following:</p>
+<pre><code>2023-01-09 14:35:15 [ℹ]  checking arn arn:aws:iam::{2ND AWS ACCOUNT NUMBER}:role/mwaa-eks-access against entries in the auth ConfigMap
+2023-01-09 14:35:15 [ℹ]  adding identity &quot;arn:aws:iam::{2ND AWS ACCOUNT NUMBER}:role/mwaa-eks-access&quot; to auth ConfigMap
+</code></pre>
+<p><strong>Updating the MWAA Execution permissions</strong></p>
+<p>Now we add the following to the MWAA Execution policy of the first AWS Account where we have MWAA running. All we need to do is append this to the permissions:</p>
+<pre><code>        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;sts:AssumeRole&quot;
+            ],
+            &quot;Resource&quot;: &quot;arn:aws:iam::{2ND AWS ACCOUNT NUMBER}:role/mwaa-eks-access&quot;
+       }
+</code></pre>
+<p>the complete policy now looks like this:</p>
+<pre><code>{
+    &quot;Version&quot;: &quot;2012-10-17&quot;,
+    &quot;Statement&quot;: [
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: &quot;airflow:PublishMetrics&quot;,
+            &quot;Resource&quot;: &quot;arn:aws:airflow:eu-central-1:{AWS ACCOUNT NUMBER}:environment/EKSMultiAccount&quot;
+        },
+        {
+            &quot;Effect&quot;: &quot;Deny&quot;,
+            &quot;Action&quot;: &quot;s3:ListAllMyBuckets&quot;,
+            &quot;Resource&quot;: [
+                &quot;arn:aws:s3:::airflow-eks-multi-account&quot;,
+                &quot;arn:aws:s3:::airflow-eks-multi-account/*&quot;
+            ]
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;s3:GetObject*&quot;,
+                &quot;s3:GetBucket*&quot;,
+                &quot;s3:List*&quot;
+            ],
+            &quot;Resource&quot;: [
+                &quot;arn:aws:s3:::airflow-eks-multi-account&quot;,
+                &quot;arn:aws:s3:::airflow-eks-multi-account/*&quot;
+            ]
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;logs:CreateLogStream&quot;,
+                &quot;logs:CreateLogGroup&quot;,
+                &quot;logs:PutLogEvents&quot;,
+                &quot;logs:GetLogEvents&quot;,
+                &quot;logs:GetLogRecord&quot;,
+                &quot;logs:GetLogGroupFields&quot;,
+                &quot;logs:GetQueryResults&quot;
+            ],
+            &quot;Resource&quot;: [
+                &quot;arn:aws:logs:eu-central-1:{AWS ACCOUNT NUMBER}:log-group:airflow-EKSMultiAccount-*&quot;
+            ]
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;logs:DescribeLogGroups&quot;
+            ],
+            &quot;Resource&quot;: [
+                &quot;*&quot;
+            ]
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: &quot;cloudwatch:PutMetricData&quot;,
+            &quot;Resource&quot;: &quot;*&quot;
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;sqs:ChangeMessageVisibility&quot;,
+                &quot;sqs:DeleteMessage&quot;,
+                &quot;sqs:GetQueueAttributes&quot;,
+                &quot;sqs:GetQueueUrl&quot;,
+                &quot;sqs:ReceiveMessage&quot;,
+                &quot;sqs:SendMessage&quot;
+            ],
+            &quot;Resource&quot;: &quot;arn:aws:sqs:eu-central-1:*:airflow-celery-*&quot;
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;kms:Decrypt&quot;,
+                &quot;kms:DescribeKey&quot;,
+                &quot;kms:GenerateDataKey*&quot;,
+                &quot;kms:Encrypt&quot;
+            ],
+            &quot;NotResource&quot;: &quot;arn:aws:kms:*:{AWS ACCOUNT NUMBER}:key/*&quot;,
+            &quot;Condition&quot;: {
+                &quot;StringLike&quot;: {
+                    &quot;kms:ViaService&quot;: [
+                        &quot;sqs.eu-central-1.amazonaws.com&quot;
+                    ]
+                }
+            }
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;eks:DescribeCluster&quot;
+            ],
+            &quot;Resource&quot;: &quot;arn:aws:eks:eu-central-1:{AWS ACCOUNT NUMBER}:cluster/mwaa-eks&quot;
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;sts:AssumeRole&quot;
+            ],
+            &quot;Resource&quot;: &quot;arn:aws:iam::{2ND AWS ACCOUNT NUMBER}:role/mwaa-eks-access&quot;
+        }
+    ]
+}
+</code></pre>
+<p><strong>Creating a new kube_config.yaml</strong></p>
+<p>Once we have done this, we can create a new kube_config.yaml file to include details of the new EKS Cluster in the second AWS account.</p>
+<pre><code>aws eks update-kubeconfig \
+--region eu-central-1 \
+--kubeconfig ./kube_config_2.yaml \
+--name mwaa-eks2 \
+--alias aws \
+--profile personal
+
+</code></pre>
+<p>We need to modify to add this to add the IAM Role details to the user section</p>
+<pre><code>      - --role       
+      - arn:aws:iam::{2ND AWS ACCOUNT NUMBER}:role/mwaa-eks-access
+</code></pre>
+<p>so the full config file now looks like</p>
+<pre><code>apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: REDACTED....REDACTED....==
+    server: https://ENDPOINT.gr7.eu-central-1.eks.amazonaws.com
+  name: arn:aws:eks:eu-central-1:{2nd AWS ACCOUNT}:cluster/mwaa-eks2
+contexts:
+- context:
+    cluster: arn:aws:eks:eu-central-1:{2nd AWS ACCOUNT}:cluster/mwaa-eks2
+    user: arn:aws:eks:eu-central-1:{2nd AWS ACCOUNT}:cluster/mwaa-eks2
+  name: aws
+current-context: aws
+kind: Config
+preferences: {}
+users:
+- name: arn:aws:eks:eu-central-1:{2nd AWS ACCOUNT}:cluster/mwaa-eks2
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1beta1
+      args:
+      - --region
+      - eu-central-1
+      - eks
+      - get-token
+      - --cluster-name
+      - mwaa-eks2
+      - --role       
+      - arn:aws:iam::{2nd AWS ACCOUNT}:role/mwaa-eks-access
+      command: aws
+
+</code></pre>
+<p><strong>Updating the DAG</strong></p>
+<p>I create a new DAG file based on the original, changing a few details to point to both the new kube_config file as well as the different Kubernetes namespace.</p>
+<pre><code>from airflow import DAG
+from datetime import datetime
+from airflow.providers.cncf.kubernetes.operators.kubernetes_pod import KubernetesPodOperator
+
+default_args = {
+   'owner': 'aws',
+   'depends_on_past': False,
+   'start_date': datetime(2019, 2, 20),
+   'provide_context': True
+}
+
+dag = DAG(
+   'kubernetes_pod_example2', default_args=default_args, schedule_interval=None)
+
+#use a kube_config stored in s3 dags folder for now
+kube_config_path = '/usr/local/airflow/dags/kube_config_2.yaml'
+
+podRun = KubernetesPodOperator(
+                       namespace=&quot;mwaa2&quot;,
+                       #image=&quot;ubuntu:18.04&quot;,
+                       image=&quot;public.ecr.aws/aws-cli/aws-cli&quot;,
+                       cmds=[&quot;bash&quot;],
+                       arguments=[&quot;-c&quot;, &quot;aws sts get-caller-identity --query 'Account' --output text&quot;],
+                       labels={&quot;foo&quot;: &quot;bar&quot;},
+                       name=&quot;mwaa-pod-test&quot;,
+                       task_id=&quot;pod-task&quot;,
+                       get_logs=True,
+                       dag=dag,
+                       is_delete_operator_pod=False,
+                       config_file=kube_config_path,
+                       in_cluster=False,
+                       cluster_context='aws'
+                       )
+</code></pre>
+<p>And that should be it. When we upload the new DAG and Kube Config files, and then trigger the new DAG. We see the following output:</p>
+<pre><code>[2023-01-09, 14:39:10 UTC] {{kubernetes_pod.py:566}} INFO - Creating pod mwaa-pod-test.2b6eb7ab07a44b5f99c7fcef440b783b with labels: {'dag_id': 'kubernetes_pod_example2', 'task_id': 'pod-task', 'execution_date': '2023-01-09T143906.4245000000-ca84eb319', 'try_number': '1'}
+[2023-01-09, 14:39:11 UTC] {{pod_manager.py:157}} WARNING - Pod not yet started: mwaa-pod-test.2b6eb7ab07a44b5f99c7fcef440b783b
+[2023-01-09, 14:39:12 UTC] {{pod_manager.py:157}} WARNING - Pod not yet started: mwaa-pod-test.2b6eb7ab07a44b5f99c7fcef440b783b
+[2023-01-09, 14:39:13 UTC] {{pod_manager.py:157}} WARNING - Pod not yet started: mwaa-pod-test.2b6eb7ab07a44b5f99c7fcef440b783b
+[2023-01-09, 14:39:14 UTC] {{pod_manager.py:157}} WARNING - Pod not yet started: mwaa-pod-test.2b6eb7ab07a44b5f99c7fcef440b783b
+[2023-01-09, 14:39:15 UTC] {{pod_manager.py:157}} WARNING - Pod not yet started: mwaa-pod-test.2b6eb7ab07a44b5f99c7fcef440b783b
+[2023-01-09, 14:39:16 UTC] {{pod_manager.py:157}} WARNING - Pod not yet started: mwaa-pod-test.2b6eb7ab07a44b5f99c7fcef440b783b
+[2023-01-09, 14:39:17 UTC] {{pod_manager.py:157}} WARNING - Pod not yet started: mwaa-pod-test.2b6eb7ab07a44b5f99c7fcef440b783b
+[2023-01-09, 14:39:18 UTC] {{pod_manager.py:157}} WARNING - Pod not yet started: mwaa-pod-test.2b6eb7ab07a44b5f99c7fcef440b783b
+[2023-01-09, 14:39:19 UTC] {{pod_manager.py:197}} INFO - {2nd AWS ACCOUNT}
+[2023-01-09, 14:39:22 UTC] {{pod_manager.py:234}} INFO - Pod mwaa-pod-test.2b6eb7ab07a44b5f99c7fcef440b783b has phase Running
+[2023-01-09, 14:39:24 UTC] {{kubernetes_pod.py:462}} INFO - skipping deleting pod: mwaa-pod-test.2b6eb7ab07a44b5f99c7fcef440b783b
+[2023-01-09, 14:39:24 UTC] {{taskinstance.py:1280}} INFO - Marking task as SUCCESS. dag_id=kubernetes_pod_example2, task_id=pod-task, execution_date=20230109T143906, start_date=20230109T143909, end_date=20230109T143924
+[2023-01-09, 14:39:25 UTC] {{local_task_job.py:154}} INFO - Task exited with return code 0
+[2023-01-09, 14:39:25 UTC] {{local_task_job.py:264}} INFO - 0 downstream tasks scheduled from follow-on schedule check
+</code></pre>
+<p>We can see the output has changed, and we now see the {2nd AWS ACCOUNT} number listed. Congratulations, you have now run your task on an EKS Cluster in a different AWS account.</p>
+<p><strong>Cleaning up</strong></p>
+<p>Once you have gone through this, be sure to clean up and delete these resources that you have created. The quickest way is to go to the CloudFormation and delete the stacks that have been created. It will take around 30-40 minutes for the cleanup to complete.</p>
+<p><strong>Conclusion</strong></p>
+<p>In this short walk through, we built upon a previous blog post <a href="https://dev.to/aws/working-with-amazon-eks-and-amazon-managed-workflows-for-apache-airflow-v2-x-k12">Working with Amazon EKS and Amazon Managed Workflows for Apache Airflow v2.x</a> and extended this to show how you can run those tasks on other AWS Accounts.</p>
+
+  </main>
+
+          <div class="social-heading">
+            <div class="footer-social">
+  
+    <div class="social-icon">
+      <a href="https://twitter.com/094459" target="_blank" title="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Twitter" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://github.com/094459" target="_blank" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="GitHub" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+      </a>
+    </div>
+  
+  
+    <div class="social-icon">
+      <a href="https://www.linkedin.com/in/ricardosueiras" target="_blank" title="Linkedin">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="LinkedIn" role="img"
+viewBox="0 0 512 512"
+fill="#fff"><rect
+width="512" height="512"
+rx="15%"
+fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://www.reddit.com/r/aws" target="_blank" title="Reddit">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Reddit" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+      </a>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="social-icon">
+      <a href="mailto:ricsue@amazon.com" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Email" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="teal"/><rect width="356" height="256" x="78" y="128" fill="#fff" rx="8%"/><path fill="none" stroke="teal" stroke-width="20" d="M434 128L269 292c-7 8-19 8-26 0L78 128m0 256l129-128m227 128L305 256"/></svg>
+      </a>
+    </div>
+  
+  
+</div>
+
+          </div>
+          <footer role="contentinfo">
+  <div class="social-footer">
+    <div class="footer-social">
+  
+    <div class="social-icon">
+      <a href="https://twitter.com/094459" target="_blank" title="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Twitter" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://github.com/094459" target="_blank" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="GitHub" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+      </a>
+    </div>
+  
+  
+    <div class="social-icon">
+      <a href="https://www.linkedin.com/in/ricardosueiras" target="_blank" title="Linkedin">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="LinkedIn" role="img"
+viewBox="0 0 512 512"
+fill="#fff"><rect
+width="512" height="512"
+rx="15%"
+fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://www.reddit.com/r/aws" target="_blank" title="Reddit">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Reddit" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+      </a>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="social-icon">
+      <a href="mailto:ricsue@amazon.com" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Email" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="teal"/><rect width="356" height="256" x="78" y="128" fill="#fff" rx="8%"/><path fill="none" stroke="teal" stroke-width="20" d="M434 128L269 292c-7 8-19 8-26 0L78 128m0 256l129-128m227 128L305 256"/></svg>
+      </a>
+    </div>
+  
+  
+</div>
+
+    <label for="themer">
+      dark theme: <input type="checkbox" id="themer" class="vh">
+      <span aria-hidden="true"></span>
+    </label>
+  </div>
+  
+    <p class="margin-top-none">Copyright &copy; <span id="copyright-year"></span> - Ricardo Sueiras</p>
+  
+  
+    <p class="margin-top-none">
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cupper-hugo-theme">Cupper</a>.
+    </p>
+  
+</footer>
+<script>
+    var year = new Date().getFullYear()
+    document.getElementById("copyright-year").innerHTML = year;
+</script>
+
+        </div>
+      </div>
+    </div>
+    <script src="https://blog.beachgeek.co.uk/js/prism.js"></script>
+
+
+
+<script src="https://blog.beachgeek.co.uk/js/dom-scripts.js"></script>
+
+
+
+<script src="/js/search.7aef046a0cc8b0c532f1d20087b920459bc868c936bb48a6ae221eceefca2d07.js"></script>
+
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  </body>
+</html>

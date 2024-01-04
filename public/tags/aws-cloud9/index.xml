@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS Cloud9 on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/aws-cloud9/</link>
+    <description>Recent content in AWS Cloud9 on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 17 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/aws-cloud9/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting mwaa-local-runner up on AWS Cloud9</title>
+      <link>https://blog.beachgeek.co.uk/mwaa-local-runner-on-c9/</link>
+      <pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/mwaa-local-runner-on-c9/</guid>
+      <description>Here is a quick recipe if you are looking to get mwaa-local-runner up and running on your Cloud9 developer setup. This might not be the most optimised way, so I am very happy to received suggestions on how to improve this. What I will cover here is how to deploy mwaa-local-runner onto a standard Cloud9 IDE, deployed in a default VPC.&#xA;Updating my AWS Cloud9 environment&#xA;The first thing I needed to do was to increase the size of my local disk as Cloud9 only provides 10gb of storage.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>airflowctl on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/airflowctl/</link>
+    <description>Recent content in airflowctl on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/airflowctl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A look at airflowctl, a tool to help you manage Apache Airflow projects</title>
+      <link>https://blog.beachgeek.co.uk/airflowctl-first-look/</link>
+      <pubDate>Mon, 14 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/airflowctl-first-look/</guid>
+      <description>I have written in the past about setting up developer environments and tools when working with Apache Airflow. Today I came across a new tool from Kaxil Naik, directory of engineering at Astronomer and all round Apache Airflow good guy. Kaxil has put together airflowctl, a command-line tool for managing Apache Airflow™ projects, and making it super easy to get up and running. What does it do? Well, it helps you install and use different versions of Apache Airflow, work with Variables and Connections, provide live logs, and more.</description>
+    </item>
+  </channel>
+</rss>

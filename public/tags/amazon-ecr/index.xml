@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Amazon ECR on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/amazon-ecr/</link>
+    <description>Recent content in Amazon ECR on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/amazon-ecr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>sbomqs, an open source tool to quality check your SBOMS</title>
+      <link>https://blog.beachgeek.co.uk/sbomqs-an-open-source-tool-to-qa-sboms/</link>
+      <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/sbomqs-an-open-source-tool-to-qa-sboms/</guid>
+      <description>When putting together a previous post on how to use open source tools to create a software bill of materials (SBOM), Ritesh Noronha alerted me to another project, sbomqs that aims to simplify the evaluation of SBOM quality for both producers and consumers. A quality SBOM is one that is accurate, complete, and up-to-date. It should accurately reflect the components and dependencies used in the software application, including their version and optionally any known vulnerabilities.</description>
+    </item>
+    <item>
+      <title>Building a software bill of materials (SBOM) using open source tools</title>
+      <link>https://blog.beachgeek.co.uk/building-sbom-with-syft/</link>
+      <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/building-sbom-with-syft/</guid>
+      <description>This is the second post exploring how you can use open source tools to help you build a stronger defence against common software supply chain attacks. In this blog post, I look at syft, an open source CLI tool and Go library for generating a Software Bill of Materials (SBOM) from container images and filesystems. We will use examples and build on the previous post, Getting hands on with Sigstore Cosign on AWS.</description>
+    </item>
+    <item>
+      <title>Getting hands on with Sigstore Cosign on AWS</title>
+      <link>https://blog.beachgeek.co.uk/getting-hands-on-with-sigstore-cosign-on-aws/</link>
+      <pubDate>Tue, 31 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/getting-hands-on-with-sigstore-cosign-on-aws/</guid>
+      <description>Getting hands on with Sigstore Cosign on AWS I am currently putting together some content around how you can use a number of open source tools to help build a stronger defence against common software supply chain attacks. In this blog post, I look at emerging tools from Sigstore, and focus in this post on Cosign, a tool that supports container image signing, verification, and storage in an Open Container Initiative (OCI) registry.</description>
+    </item>
+  </channel>
+</rss>

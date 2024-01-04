@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/blog/</link>
+    <description>Recent content in blog on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Contributing to the Apache Airflow project - Part Two</title>
+      <link>https://blog.beachgeek.co.uk/contributing-to-the-apache-airflow-project-part-two/</link>
+      <pubDate>Fri, 11 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/contributing-to-the-apache-airflow-project-part-two/</guid>
+      <description>This is the second and concluding post providing an overview of the experience and journey contributing to the Apache Airflow project. You can catch Part One here.&#xA;Contributing to Apache Airflow - Part Deux In Part One of this series, we took our first steps in contributing to the Apache Airflow project. With a little bit more knowledge and experience, our first interactions with the Airflow community, we are ready to start exploring how the code works and see how we might go about fixing this.</description>
+    </item>
+    <item>
+      <title>Contributing to the Apache Airflow project - Part One</title>
+      <link>https://blog.beachgeek.co.uk/contributing-to-the-apache-airflow-project-part-one/</link>
+      <pubDate>Thu, 10 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/contributing-to-the-apache-airflow-project-part-one/</guid>
+      <description>Contributing to Apache Airflow Introduction In this series of posts, I am going to share what I learn as embark on my first upstream contribution to the Apache Airflow project. The purpose is to show you how typical open source projects like Apache Airflow work, how you engage with the community to orchestrate change and hopefully inspire more people to contribute to this open source project. I will post regular updates as a series of posts, as the journey unfolds.</description>
+    </item>
+    <item>
+      <title>Running my dev.to blog using Hugo on Netlify</title>
+      <link>https://blog.beachgeek.co.uk/hugo-site-migraiton/</link>
+      <pubDate>Fri, 07 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/hugo-site-migraiton/</guid>
+      <description>Running my dev.to blog using Hugo on Netlify I am a big fan of dev.to, and the work that the team do to foster a great community of builders is something that keeps me there. I have always maintained another blog (running on Netlify, which is also super awesome), kind of like a mirror. Up until last year, I was able to publish to dev.to and it would take care of publishing to that mirror.</description>
+    </item>
+  </channel>
+</rss>

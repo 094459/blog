@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>aws on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/aws/</link>
+    <description>Recent content in aws on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using CDK to deploy AWS managed Active Directory</title>
+      <link>https://blog.beachgeek.co.uk/active-directory-using-cdk/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/active-directory-using-cdk/</guid>
+      <description>CIFS (Common Internet File System) and SMB (Server Message Block) are both Windows file-sharing protocols used in storage systems. As part of a new demo/blog post that looks at how to use data stored on SMB/CIF file shares with Apache Airflow, I have been exploring the various options of creating SMB/CIF compatible resources. (There are LOTS of ways you could do this, so there is plenty for me to play around with!</description>
+    </item>
+    <item>
+      <title>Working with Amazon EKS and Amazon Managed Workflows for Apache Airflow v2.x</title>
+      <link>https://blog.beachgeek.co.uk/working-with-amazon-eks-and-amazon-managed-workflows-for-apache-airflow-v2x/</link>
+      <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/working-with-amazon-eks-and-amazon-managed-workflows-for-apache-airflow-v2x/</guid>
+      <description>Introduction The Apache Airflow slack channel is a vibrant community of open source builders that is a great source of feedback, knowledge and answers to problems and use cases you might have when trying to do stuff with Apache Airflow. This week I picked up on someone seeing errors with Amazon EKS, and so I thought what better time to try out the new Apache Airflow 2.x version that was recently launched in Amazon Managed Workflows for Apache Airflow (MWAA).</description>
+    </item>
+  </channel>
+</rss>

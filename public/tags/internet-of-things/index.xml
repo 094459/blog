@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Internet of Things on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/internet-of-things/</link>
+    <description>Recent content in Internet of Things on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 May 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/internet-of-things/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Experimenting with digital lanyards - introducing the Badger2040</title>
+      <link>https://blog.beachgeek.co.uk/creating-digital-lanyards/</link>
+      <pubDate>Mon, 09 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/creating-digital-lanyards/</guid>
+      <description>Experimenting with digital lanyards As someone who attends events on a regular basis, I have spent a fair bit of time over the years looking at interesting ways to engage with attendees. One of the problems I was looking to solve was how do I share useful information with attendees without having to interrupt the conversations (something that typically happens as I try and find those links on my mobile phone).</description>
+    </item>
+  </channel>
+</rss>

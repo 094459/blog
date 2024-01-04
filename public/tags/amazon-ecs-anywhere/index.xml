@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Amazon ECS Anywhere on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/amazon-ecs-anywhere/</link>
+    <description>Recent content in Amazon ECS Anywhere on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/amazon-ecs-anywhere/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating a multi architecture CI/CD solution with Amazon ECS and ECS Anywhere</title>
+      <link>https://blog.beachgeek.co.uk/creating-a-multi-architecture-cicd-solution-with-amazon-ecs-and-ecs-anywhere/</link>
+      <pubDate>Fri, 16 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/creating-a-multi-architecture-cicd-solution-with-amazon-ecs-and-ecs-anywhere/</guid>
+      <description>Please let me know how I can improve posts such as this one, by completing this very short survey. $25 AWS credits will be provided for the first 20 completed - take the survey&#xA;Organisations are moving their workloads to the cloud as quickly as they can. While most applications can be easily migrated to the cloud, some applications need to remain on-premises due to low-latency or data sovereignty requirements.</description>
+    </item>
+  </channel>
+</rss>

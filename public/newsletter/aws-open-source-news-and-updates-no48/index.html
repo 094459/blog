@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="generator" content="Hugo 0.121.1">
+  
+  
+    <link rel="canonical" href="https://blog.beachgeek.co.uk/newsletter/aws-open-source-news-and-updates-no48/">
+  
+
+  
+
+  
+    
+    
+    
+    
+    
+
+  
+    <link rel="webmention" href="https://webmention.io/username.co.uk/webmention" />
+    <link rel="pingback" href="https://webmention.io/username.co.uk/xmlrpc" />
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://blog.beachgeek.co.uk/css/syntax.css" media="none" onload="this.media='all';">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://blog.beachgeek.co.uk/css/styles.css">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://blog.beachgeek.co.uk/style.main.css">
+
+  
+
+  <link rel="alternate" rel="canonical" href="https://blog.beachgeek.co.uk/index.xml" >
+  
+  <style id="inverter" media="none">
+    .intro-and-nav, .main-and-footer { filter: invert(100%) }
+    * { background-color: inherit }
+    img:not([src*=".svg"]), .colors, iframe, .demo-container { filter: invert(100%) }
+  </style>
+
+  
+  
+  <title>AWS open source news and updates No.48 | Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="AWS open source news and updates No.48"/>
+<meta name="twitter:description" content="December 13th - Instalment #48 Week No.48 going into the final week of re:Invent this year (don&rsquo;t worry, we still have more sessions in the 2nd week of 2021) we have another great selection of posts. This week a favourite project of mine gets a lot of love, as well as a roundup of the second week of re:Invent. If that was not enough for you, then I throw in some new open source projects which you will definitely need to check out, with some really great ones including the latest project from Netflix that might make you Weep!"/>
+<meta name="twitter:site" content="@094459"/>
+
+  <meta name="twitter:card" content="summary" />
+</head>
+
+  <body>
+    <a href="#main">skip to content</a>
+    <svg style="display: none">
+  <symbol id="bookmark" viewBox="0 0 40 50">
+   <g transform="translate(2266 3206.2)">
+    <path style="stroke:currentColor;stroke-width:3.2637;" d="m-2262.2-3203.4-.2331 42.195 16.319-16.318 16.318 16.318.2331-42.428z"/>
+   </g>
+  </symbol>
+
+  <symbol id="w3c" viewBox="0 0 127.09899 67.763">
+   <text font-size="83" style="font-size:83px;font-family:Trebuchet;letter-spacing:-12;fill-opacity:0" letter-spacing="-12" y="67.609352" x="-26.782778">W3C</text>
+   <text font-size="83" style="font-size:83px;font-weight:bold;font-family:Trebuchet;fill-opacity:0" y="67.609352" x="153.21722" font-weight="bold">SVG</text>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m33.695.377 12.062 41.016 12.067-41.016h8.731l-19.968 67.386h-.831l-12.48-41.759-12.479 41.759h-.832l-19.965-67.386h8.736l12.061 41.016 8.154-27.618-3.993-13.397h8.737z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m91.355 46.132c0 6.104-1.624 11.234-4.862 15.394-3.248 4.158-7.45 6.237-12.607 6.237-3.882 0-7.263-1.238-10.148-3.702-2.885-2.47-5.02-5.812-6.406-10.022l6.82-2.829c1.001 2.552 2.317 4.562 3.953 6.028 1.636 1.469 3.56 2.207 5.781 2.207 2.329 0 4.3-1.306 5.909-3.911 1.609-2.606 2.411-5.738 2.411-9.401 0-4.049-.861-7.179-2.582-9.399-1.995-2.604-5.129-3.912-9.397-3.912h-3.327v-3.991l11.646-20.133h-14.062l-3.911 6.655h-2.493v-14.976h32.441v4.075l-12.31 21.217c4.324 1.385 7.596 3.911 9.815 7.571 2.22 3.659 3.329 7.953 3.329 12.892z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.21 0 1.414 8.6-5.008 9.583s-1.924-4.064-5.117-6.314c-2.693-1.899-4.447-2.309-7.186-1.746-3.527.73-7.516 4.938-9.258 10.13-2.084 6.21-2.104 9.218-2.178 11.978-.115 4.428.58 7.043.58 7.043s-3.04-5.626-3.011-13.866c.018-5.882.947-11.218 3.666-16.479 2.404-4.627 5.954-7.404 9.114-7.728 3.264-.343 5.848 1.229 7.841 2.938 2.089 1.788 4.213 5.698 4.213 5.698l4.94-9.837z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.82 48.674s-2.208 3.957-3.589 5.48c-1.379 1.524-3.849 4.209-6.896 5.555-3.049 1.343-4.646 1.598-7.661 1.306-3.01-.29-5.807-2.032-6.786-2.764-.979-.722-3.486-2.864-4.897-4.854-1.42-2-3.634-5.995-3.634-5.995s1.233 4.001 2.007 5.699c.442.977 1.81 3.965 3.749 6.572 1.805 2.425 5.315 6.604 10.652 7.545 5.336.945 9.002-1.449 9.907-2.031.907-.578 2.819-2.178 4.032-3.475 1.264-1.351 2.459-3.079 3.116-4.108.487-.758 1.276-2.286 1.276-2.286l-1.276-6.644z"/>
+  </symbol>
+
+  <symbol id="tag" viewBox="0 0 177.16535 177.16535">
+    <g transform="translate(0 -875.2)">
+     <path style="fill-rule:evenodd;stroke-width:0;fill:currentColor" d="m159.9 894.3-68.79 8.5872-75.42 77.336 61.931 60.397 75.429-76.565 6.8495-69.755zm-31.412 31.835a10.813 10.813 0 0 1 1.8443 2.247 10.813 10.813 0 0 1 -3.5174 14.872l-.0445.0275a10.813 10.813 0 0 1 -14.86 -3.5714 10.813 10.813 0 0 1 3.5563 -14.863 10.813 10.813 0 0 1 13.022 1.2884z"/>
+    </g>
+  </symbol>
+
+  <symbol id="balloon" viewBox="0 0 141.73228 177.16535">
+   <g transform="translate(0 -875.2)">
+    <g>
+     <path style="fill:currentColor" d="m68.156 882.83-.88753 1.4269c-4.9564 7.9666-6.3764 17.321-5.6731 37.378.36584 10.437 1.1246 23.51 1.6874 29.062.38895 3.8372 3.8278 32.454 4.6105 38.459 4.6694-.24176 9.2946.2879 14.377 1.481 1.2359-3.2937 5.2496-13.088 8.886-21.623 6.249-14.668 8.4128-21.264 10.253-31.252 1.2464-6.7626 1.6341-12.156 1.4204-19.764-.36325-12.93-2.1234-19.487-6.9377-25.843-2.0833-2.7507-6.9865-7.6112-7.9127-7.8436-.79716-.20019-6.6946-1.0922-6.7755-1.0248-.02213.0182-5.0006-.41858-7.5248-.22808l-2.149-.22808h-3.3738z"/>
+     <path style="fill:currentColor" d="m61.915 883.28-3.2484.4497c-1.7863.24724-3.5182.53481-3.8494.63994-2.4751.33811-4.7267.86957-6.7777 1.5696-.28598 0-1.0254.20146-2.3695.58589-5.0418 1.4418-6.6374 2.2604-8.2567 4.2364-6.281 7.6657-11.457 18.43-12.932 26.891-1.4667 8.4111.71353 22.583 5.0764 32.996 3.8064 9.0852 13.569 25.149 22.801 37.517 1.3741 1.841 2.1708 2.9286 2.4712 3.5792 3.5437-1.1699 6.8496-1.9336 10.082-2.3263-1.3569-5.7831-4.6968-21.86-6.8361-33.002-.92884-4.8368-2.4692-14.322-3.2452-19.991-.68557-5.0083-.77707-6.9534-.74159-15.791.04316-10.803.41822-16.162 1.5026-21.503 1.4593-5.9026 3.3494-11.077 6.3247-15.852z"/>
+     <path style="fill:currentColor" d="m94.499 885.78c-.10214-.0109-.13691 0-.0907.0409.16033.13489 1.329 1.0675 2.5976 2.0723 6.7003 5.307 11.273 14.568 12.658 25.638.52519 4.1949.24765 14.361-.5059 18.523-2.4775 13.684-9.7807 32.345-20.944 53.519l-3.0559 5.7971c2.8082.76579 5.7915 1.727 8.9926 2.8441 11.562-11.691 18.349-19.678 24.129-28.394 7.8992-11.913 11.132-20.234 12.24-31.518.98442-10.02-1.5579-20.876-6.7799-28.959-.2758-.4269-.57803-.86856-.89617-1.3166-3.247-6.13-9.752-12.053-21.264-16.131-2.3687-.86369-6.3657-2.0433-7.0802-2.1166z"/>
+     <path style="fill:currentColor" d="m32.52 892.22c-.20090-.13016-1.4606.81389-3.9132 2.7457-11.486 9.0476-17.632 24.186-16.078 39.61.79699 7.9138 2.4066 13.505 5.9184 20.562 5.8577 11.77 14.749 23.219 30.087 38.74.05838.059.12188.1244.18052.1838 1.3166-.5556 2.5965-1.0618 3.8429-1.5199-.66408-.32448-1.4608-1.3297-3.8116-4.4602-5.0951-6.785-8.7512-11.962-13.051-18.486-5.1379-7.7948-5.0097-7.5894-8.0586-13.054-6.2097-11.13-8.2674-17.725-8.6014-27.563-.21552-6.3494.13041-9.2733 1.775-14.987 2.1832-7.5849 3.9273-10.986 9.2693-18.07 1.7839-2.3656 2.6418-3.57 2.4409-3.7003z"/>
+     <path style="fill:currentColor" d="m69.133 992.37c-6.2405.0309-12.635.76718-19.554 2.5706 4.6956 4.7759 9.935 10.258 12.05 12.625l4.1272 4.6202h11.493l3.964-4.4516c2.0962-2.3541 7.4804-7.9845 12.201-12.768-8.378-1.4975-16.207-2.6353-24.281-2.5955z"/>
+     <rect style="stroke-width:0;fill:currentColor" ry="2.0328" height="27.746" width="22.766" y="1017.7" x="60.201"/>
+    </g>
+   </g>
+  </symbol>
+
+  <symbol id="info" viewBox="0 0 41.667 41.667">
+   <g transform="translate(-37.035 -1004.6)">
+    <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m76.25 1030.2a18.968 18.968 0 0 1 -23.037 13.709 18.968 18.968 0 0 1 -13.738 -23.019 18.968 18.968 0 0 1 23.001 -13.768 18.968 18.968 0 0 1 13.798 22.984"/>
+    <g transform="matrix(1.1146 0 0 1.1146 -26.276 -124.92)">
+     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m75.491 1039.5v-8.7472"/>
+     <path style="stroke-width:0;fill:currentColor" transform="scale(-1)" d="m-73.193-1024.5a2.3719 2.3719 0 0 1 -2.8807 1.7142 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
+    </g>
+   </g>
+  </symbol>
+
+  <symbol id="warning" viewBox="0 0 48.430474 41.646302">
+    <g transform="translate(-1.1273 -1010.2)">
+     <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:4.151;fill:none" d="m25.343 1012.3-22.14 37.496h44.28z"/>
+     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:4.1512;fill:none" d="m25.54 1027.7v8.7472"/>
+     <path style="stroke-width:0;fill:currentColor" d="m27.839 1042.8a2.3719 2.3719 0 0 1 -2.8807 1.7143 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
+    </g>
+  </symbol>
+
+  <symbol id="menu" viewBox="0 0 50 50">
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="0" x="0"/>
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="20" x="0"/>
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="40" x="0"/>
+   </symbol>
+
+   <symbol id="link" viewBox="0 0 50 50">
+    <g transform="translate(0 -1002.4)">
+     <g transform="matrix(.095670 0 0 .095670 2.3233 1004.9)">
+      <g>
+       <path style="stroke-width:0;fill:currentColor" d="m452.84 192.9-128.65 128.65c-35.535 35.54-93.108 35.54-128.65 0l-42.881-42.886 42.881-42.876 42.884 42.876c11.845 11.822 31.064 11.846 42.886 0l128.64-128.64c11.816-11.831 11.816-31.066 0-42.9l-42.881-42.881c-11.822-11.814-31.064-11.814-42.887 0l-45.928 45.936c-21.292-12.531-45.491-17.905-69.449-16.291l72.501-72.526c35.535-35.521 93.136-35.521 128.64 0l42.886 42.881c35.535 35.523 35.535 93.141-.001 128.66zm-254.28 168.51-45.903 45.9c-11.845 11.846-31.064 11.817-42.881 0l-42.884-42.881c-11.845-11.821-11.845-31.041 0-42.886l128.65-128.65c11.819-11.814 31.069-11.814 42.884 0l42.886 42.886 42.876-42.886-42.876-42.881c-35.54-35.521-93.113-35.521-128.65 0l-128.65 128.64c-35.538 35.545-35.538 93.146 0 128.65l42.883 42.882c35.51 35.54 93.11 35.54 128.65 0l72.496-72.499c-23.956 1.597-48.092-3.784-69.474-16.283z"/>
+      </g>
+     </g>
+    </g>
+  </symbol>
+
+  <symbol id="doc" viewBox="0 0 35 45">
+   <g transform="translate(-147.53 -539.83)">
+    <path style="stroke:currentColor;stroke-width:2.4501;fill:none" d="m149.38 542.67v39.194h31.354v-39.194z"/>
+    <g style="stroke-width:25" transform="matrix(.098003 0 0 .098003 133.69 525.96)">
+     <path d="m220 252.36h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+     <path style="stroke:currentColor;stroke-width:25;fill:none" d="m220 409.95h200"/>
+     <path d="m220 488.74h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+     <path d="m220 331.15h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+    </g>
+   </g>
+ </symbol>
+
+ <symbol id="tick" viewBox="0 0 177.16535 177.16535">
+  <g transform="translate(0 -875.2)">
+   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="155" width="40" y="702.99" x="556.82"/>
+   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="40" width="90.404" y="817.99" x="506.42"/>
+  </g>
+ </symbol>
+</svg>
+
+    <div class="wrapper">
+      <header class="intro-and-nav" role="banner">
+  <div>
+    <div class="intro">
+      <a class="logo" href="https://blog.beachgeek.co.uk/" aria-label="Beachgeek blog - a refuge for pineapple on pizza lovers home page">
+        <img src="https://blog.beachgeek.co.uk/images/logo.svg" alt="My site icon">
+      </a>
+      <p class="library-desc">
+         Technologist and Maker specialising in Cloud, Open Source and Innovation. 
+      </p>
+    </div>
+    <nav id="patterns-nav" class="patterns" role="navigation">
+  <h2 class="vh">Main navigation</h2>
+  <button id="menu-button" aria-expanded="false">
+    <svg viewBox="0 0 50 50" aria-hidden="true" focusable="false">
+      <use xlink:href="#menu"></use>
+    </svg>
+    Menu
+  </button>
+  
+  <ul id="patterns-list">
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Home</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/post/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Blog posts</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/newsletter/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Newsletter</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/tags/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Tags</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/about/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">About</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/index.xml" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">RSS</span>
+      </a>
+    </li>
+  
+  </ul>
+</nav>
+  </div>
+</header>
+
+      <div class="main-and-footer">
+        <div>
+          
+  <main id="main">
+    <h1>AWS open source news and updates No.48</h1>
+    <h2 id="december-13th---instalment-48">December 13th - Instalment #48</h2>
+<p>Week No.48 going into the final week of re:Invent this year (don&rsquo;t worry, we still have more sessions in the 2nd week of 2021) we have another great selection of posts. This week a favourite project of mine gets a lot of love, as well as a roundup of the second week of re:Invent. If that was not enough for you, then I throw in some new open source projects which you will definitely need to check out, with some really great ones including the latest project from Netflix that might make you Weep! Next week will be the last edition of the newsletter this year as I go away for the holidays but I will be back in January to pick up where I left off.</p>
+<p>If you missed this last week, we joined a new  GitHub program that will let companies directly fund open-source projects and software developers that are key to their businesses. Read the blog post here - <a href="https://www.bloomberg.com/news/articles/2020-12-08/amazon-amex-to-fund-software-developers-in-new-github-program">Amazon, Amex to Fund Software Developers in New GitHub Program</a></p>
+<p>Not AWS related, but last week the Linux Foundation shared their <a href="https://www.linuxfoundation.org/wp-content/uploads/2020/12/2020FOSSContributorSurveyReport_V7.pdf">Report on the 2020 FOSS Contributor Survey</a> which is well worth a read as it has some interesting data points to think about, including:</p>
+<ul>
+<li>The top three motivations for contributors are non-monetary</li>
+<li>There is a clear need to dedicate more effort to the security of FOSS, but the burden should not fall solely on contributors</li>
+<li>As more contributors are paid by their employer to contribute, stakeholders need to balance corporate and project interests</li>
+<li>Enhance the positive trend of corporate support for employees’ contribution to FOSS</li>
+</ul>
+<p>No spoilers though, read the report.</p>
+<p><strong>re:Invent 2020</strong></p>
+<p>The final week of re:Invent in 2020 (we still have more session&rsquo;s in January 2021) and with the Open Source track sessions all finished, I wanted to share some of the other open source sessions this week that are worth while you checking out. I have listed these in chronological order and sessions are typically repeated three times to accommodate the different time zones you might be in. These are all in CET so remember to add or subtract time depending on where you are.</p>
+<p><strong>DEC 15th</strong></p>
+<ul>
+<li>ARC307 Going global in minutes: Multi-Region expansion simplified (7:30pm CET)</li>
+<li>IOT303 Developing and deploying modern edge applications at scale (8:30pm CET)</li>
+<li>*AIM313 Scaling MLOps on Kubernetes with Amazon SageMaker Operators (10:45pm CET)</li>
+</ul>
+<p><strong>DEC 16th</strong></p>
+<ul>
+<li>ARC307 Going global in minutes: Multi-Region expansion simplified (repeat, 3:30am/11:30am CET)</li>
+<li>IOT303 Developing and deploying modern edge applications at scale (repeat, 4:30am/12:30pm CET)</li>
+<li>AIM313 Scaling MLOps on Kubernetes with Amazon SageMaker Operators (repeat, 6:45am/2:45pm CET)</li>
+<li>FMW306 Best practices to securely operate GraphQL at scale with AWS AppSync (8pm CET)</li>
+</ul>
+<p><strong>DEC 17th</strong></p>
+<ul>
+<li>FMW306 Best practices to securely operate GraphQL at scale with AWS AppSync (repeat, 4am/12pm CET)</li>
+</ul>
+<p><strong>DEC 18th</strong></p>
+<ul>
+<li>FMW304 Unify access to siloed data with AWS AppSync GraphQL resolvers (12am/8am/4pm CET)</li>
+</ul>
+<h3 id="celebrate-open-source-contributors">Celebrate open source contributors</h3>
+<p>The articles posted in this series are only possible thanks to contributors and project maintainers and so I would like to shout out and thank those folks who really do power open source and enable us all to build on top of what they have created.</p>
+<p>So thank you to Istvan Szukacs, Trivikram Kamat, Rene Brandel, Jonathan Shapiro-Ward, Andy Hopper, Viraj Phanse, Curtis Castrapel, Efe Karakus, Channy Yun, Justin Garrison, David Boyne, Jeremy Warrick, Justin Garrison,  Matt Muller, Darryl Osborne, George Karypis, Dave Bechberger, Karthik Bharathy, Julien Simon, Gillian Armstrong, Brett Andrews, Tim Wagner, Adrian Hornsby, Varun Jewalikar,  Tod Golding, Antje Barth, Steffen Hausman, Ben Smith, Michael Hausenblas, Alolita Sharma, Zhi Chen, Lokesh Gupta, Trevor Morris, Wei Xiao, Akshat Vig, Almann Goo, Arturo Hinojosa, Mihir Desai, Jon Handler and Sajeev Attiyil Bhaskaran.</p>
+<p>Make sure you find and follow these builders and keep up to date with their open source projects and contributions.</p>
+<h3 id="latest-from-open-source-projects">Latest from open source projects</h3>
+<p><strong>consoleme</strong></p>
+<p><a href="https://github.com/Netflix/consoleme">consoleme</a> a new open source project from Netflix that looks to simplify IAM permissions management. ConsoleMe consolidates the management of multiple AWS accounts into a single interface. It allows your end-users and administrators to get credentials for your different accounts, and allows your users/administrators to manage or request cloud permissions. If you want to know more, check out this post <a href="https://www.linkedin.com/pulse/consoleme-now-open-source-curtis-castrapel/">Introducing ConsoleMe!</a> from Curtis Castrapel to find out more about this exciting new project. You can also check out the talk at re:Invent, <a href="https://virtual.awsevents.com/media/1_2f1bnhai">Untangling multi-account management with ConsoleMe</a></p>
+<p><strong>weep</strong></p>
+<p><a href="https://github.com/Netflix/weep">weep</a> this is another fresh open source project from the folks at Netflix, weep is the command line tool that you can use with consoleme (See previous) and this utility is for retrieving AWS credentials from ConsoleMe. Weep can run a local instance metadata service proxy, or export credentials as environmental variables for your AWS needs.</p>
+<p><strong>superwerker</strong></p>
+<p><a href="https://github.com/superwerker/superwerker">superwerker</a> great new open source project from AWS Advanced Partners kreuzwerker and superluminar that automates the setup of an AWS Cloud environment with prescriptive best practises. If you check out their other OSS project, <a href="https://github.com/superwerker/aws-organizations-vending-machine">aws-organizations-vending-machine</a> which provides a too still in development that makes managing an AWS organisation, including multi-account, easier. Nice!</p>
+<p><strong>soto</strong></p>
+<p><a href="https://github.com/soto-project/soto">soto</a> Soto is a Swift language SDK for Amazon Web Services (AWS), working on Linux, macOS and iOS. This library provides access to all AWS services. The service APIs it provides are a direct mapping of the REST APIs Amazon publishes for each of its services. Soto is a community supported project and is in no way affiliated with AWS.</p>
+<p><strong>eks-distro-build-tooling</strong></p>
+<p><a href="https://github.com/aws/eks-distro-build-tooling">eks-distro-build-tooling</a> This repository contains tooling used to build the EKS Distro, and all the projects contained in <a href="https://github.com/aws/eks-distro">https://github.com/aws/eks-distro</a>. The <strong>builder-base</strong> contains a Dockerfile and install scripting for building a container image used to run prow jobs in our prow cluster, <strong>eks-distro-base</strong> contains a Dockerfile used to build an up-to-date Amazon Linux 2 base image and will be updated whenever there are any security updates to RPMs contained in the base image and <strong>helm-charts</strong> contains Helm charts used to operate Prow and supporting tooling on the Prow EKS clusters. Check out the repo for more info.</p>
+<p><strong>awstools</strong></p>
+<p><a href="https://awstools.dev/">awstools</a> another fantastic resource from David Boyne, this time a site to help you find resources to help you with your AWS Services, listing open source projects (many of which I have talked/shared about here) which you can easily search as well as add your own. Really nice!</p>
+<p><strong>ness</strong></p>
+<p><a href="https://github.com/nessjs/ness">ness</a> is a new open source tool to help you deploy static websites on AWS. Using some simple command line options to deploy and remove your assets, this has some nice features such as AWS CloudFront support, custom domains, security headers that follow best practices and much more.</p>
+<h3 id="workshop">Workshop</h3>
+<p><a href="https://github.com/dabit3/next.js-cdk-amplify-workshop">CDK with Next.js and AWS Amplify Workshop</a> is a brand new workshop from Nader Dabit. In this workshop he will walk you through building a full stack cloud application with Next.js, AWS CDK, AWS AppSync, &amp; AWS Amplify.</p>
+<h3 id="aws-open-source-posts">AWS open source posts</h3>
+<p><strong>Kedro</strong></p>
+<p><a href="https://aws.amazon.com/blogs/opensource/using-kedro-pipelines-to-train-amazon-sagemaker-models/">Using Kedro pipelines to train Amazon SageMaker models</a> Jeremy Warrick shows you how to build a Kedro pipeline that trains your model on Amazon SageMaker that will help you create reproducible models and save time in the process. Kedro is an Apache 2.0 licensed open source Python framework that applies software engineering best practices to data and machine learning pipelines. You can use it, for example, to optimize the process of taking a machine learning model into a production environment. You can use Kedro to organise a single-user project running on a local environment, or collaborate in a team on an enterprise-level project. This is a great deep dive post that walks you through creating your first Kedro pipeline.</p>
+<p><img src="https://d2908q01vomqb2.cloudfront.net/ca3512f4dfa95a03169c5a670a4c91a19b3077b4/2020/11/20/jewarric_kedro_f2.png" alt="kedro"></p>
+<p><strong>Amazon EKS Distro</strong></p>
+<p>First up we have a round up of the AWS Partner network that can help you with Amazon EKS Distro. <a href="https://aws.amazon.com/blogs/opensource/how-aws-partners-can-help-you-get-started-with-eks-d/">How AWS Partners can help you get started with EKS-D</a> from my good self shares over twenty AWS Partner capabilities and specialisms with links to blog posts sharing their excitement of this launch as well as how they are supporting Amazon EKS Distro.</p>
+<p>Following that we have <a href="https://www.youtube.com/watch?v=YUS_LrlctHI&amp;feature=emb_logo">Unboxing EKS Distro!</a> Justin Garrison takes a first look at EKS Distro - the open source EKS operating system that allows you to run EKS with the same tools as AWS. Warning gratuitous use of Oreo&rsquo;s, liquorish and gummy bears in what might be the most controversial food combination after pineapple on pizza.</p>
+<p>{% youtube YUS_LrlctHI %}</p>
+<p><strong>Open Distro for OpenTelemtry</strong></p>
+<p>Michael Hausenblas, Alolita Sharma and Aman from the AWS Observability team join the usual crew of the Containers from the couch crew and got some &ldquo;couch time&rdquo; as they took a look at the AWS Distro for Open Telemetry. If you want to know more about observability, our open source work in the observability community as well as a closer look at what AWS Distro for Open Telemtry and how you can get boot-strapped. This is a really good session, so check it out.</p>
+<p>{% youtube tnlJeb0rTkw %}</p>
+<p><strong>Open Distro for Elasticsearch</strong></p>
+<p>This week we have a couple of posts. First up we have <a href="https://aws.amazon.com/blogs/security/get-started-with-fine-grained-access-control-in-amazon-elasticsearch-service/">Get started with fine-grained access control in Amazon Elasticsearch Service</a> and like a superhero duo, Jon Handler and Sajeev Attiyil Bhaskaran combine to thwart the baddies and make sure only the folk you want to access your Amazon Elasticsearch domains are able to. In this post, you will see how to leverage fine-grained access control, powered by the Open Distro for Elasticsearch security plugin. The security plugin adds Kibana authentication and access control at the cluster, index, document, and field levels that can help you secure your data. You now have many different ways to configure your Amazon ES domain to provide access control.</p>
+<p><img src="https://d2908q01vomqb2.cloudfront.net/22d200f8670dbdb3e253a90eee5098477c95c23d/2020/12/04/Fine-grained-access-control-Figure-1.png" alt="security"></p>
+<p>Following that Viraj Phanse writes <a href="https://aws.amazon.com/blogs/big-data/using-pipes-to-explore-discover-and-find-data-in-amazon-es-with-piped-processing-language/">Using pipes to explore, discover and find data in Amazon ES with Piped Processing Language</a> where he shares the newly supported Piped Processing Language (PPL) feature, powered by Open Distro for Elasticsearch, which enables you to form complex queries and quickly explore and discover data with the help of pipes.</p>
+<p><strong>Amazon SageMaker JumpStart</strong></p>
+<p><a href="https://aws.amazon.com/sagemaker/getting-started/">Amazon SageMaker JumpStart</a> helps you easily and quickly bring machine learning (ML) applications to market using pre-built solutions for common use cases and open source models from popular model zoos. This new capability provides a set of solutions for the most common use cases, such as fraud detection, predictive maintenance, and demand forecasting, that can be deployed readily with just a few clicks. The solutions are fully customisable and showcase the use of AWS CloudFormation templates and reference architectures so you can accelerate your ML journey. Amazon SageMaker JumpStart also provides one-click deployment and fine-tuning of more than 150 pre-trained models from popular model zoos, including PyTorch Hub and TensorFlow Hub. One-click deployment and fine-tuning features are available for natural language processing, object detection, and image classification models, so you can minimise the time to deploy open source models for your own use case. This is a really handy new resource and makes it super easy to get started.</p>
+<p><strong>Amazon SageMaker NEO</strong></p>
+<p>A great selection this week on posts covering Amazon SageMaker NEO. <strong>neo-ai</strong> is the open source project that enables developers to optimise machine learning (ML) models for inference on SageMaker in the cloud and supported devices at the edge. Neo automatically optimises machine learning models for inference on cloud instances and edge devices to run faster with no loss in accuracy. You start with a machine learning model already built with DarkNet, Keras, MXNet, PyTorch, TensorFlow, TensorFlow-Lite, ONNX, or XGBoost and trained in Amazon SageMaker or anywhere else. Then you choose your target hardware platform, which can be a SageMaker hosting instance or an edge device based on processors from Ambarella, Apple, ARM, Intel, MediaTek, Nvidia, NXP, Qualcomm, RockChip, Texas Instruments, or Xilinx.</p>
+<p>A good first post to start this week is <a href="https://aws.amazon.com/blogs/machine-learning/model-dynamism-support-in-amazon-sagemaker-neo/">Model dynamism Support in Amazon SageMaker Neo</a> from Zhi Chen which provides a nice intro as well as going into how Neo supports model dynamism. The perfect follow up from Tingwei Huang and Vin Sharma is <a href="https://aws.amazon.com/blogs/machine-learning/new-amazon-sagemaker-neo-features-to-run-more-models-faster-and-more-efficiently-on-more-hardware-platforms/">New Amazon SageMaker Neo features to run more models faster and more efficiently on more hardware platforms</a> where you can keep up to date with the latest improvements as well as supported hardware/edge devices.</p>
+<p>A big one for mobile developers next, in <a href="https://aws.amazon.com/blogs/machine-learning/optimizing-ml-models-for-ios-and-macos-devices-with-amazon-sagemaker-neo-and-core-ml/">Optimizing ML models for iOS and MacOS devices with Amazon SageMaker Neo and Core ML</a> Lokesh Gupta shows you how to set up automatic model conversion, add a model to your app, and then deploy and test your new model. Core ML is a machine learning (ML) model format created and supported by Apple that compiles, deploys, and runs on Apple devices. Developers who train their models in popular frameworks such as TensorFlow and PyTorch convert models to Core ML format to deploy them on Apple devices. In this post, Lokesh shows how AWS has automated the model conversion to Core ML in the cloud using Amazon SageMaker Neo.</p>
+<p>Next up is <a href="https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-neo-makes-it-easier-to-get-faster-inference-for-more-ml-models-with-nvidia-tensorrt/">Amazon SageMaker Neo makes it easier to get faster inference for more ML models with NVIDIA TensorRT</a> with Trevor Morris covering how Amazon SageMaker Neo now uses the NVIDIA TensorRT acceleration library to increase the speedup of machine learning (ML) models on NVIDIA Jetson devices at the edge and AWS g4dn and p3 instances in the AWS Cloud. <a href="https://github.com/NVIDIA/TensorRT">NVIDIA TensorRT</a> is an open source library that supports a subset of operators commonly used in deep learning models, and Trevor shows how Neo automatically takes advantage of TensorRT to accelerate computation-heavy operations, such as convolutions supported by the accelerator library, while generating highly performant CUDA code for all other operations using Apache TVM.</p>
+<p>Finally we have <a href="https://aws.amazon.com/blogs/machine-learning/speeding-up-tensorflow-mxnet-and-pytorch-inference-with-amazon-sagemaker-neo/">Speeding up TensorFlow, MXNet, and PyTorch inference with Amazon SageMaker Neo</a> from Wei Xiao in a post that shares the resulting model performance improvements in Neo that came from the support more operators and expanded model coverage for TensorFlow, PyTorch, and Apache MXNet (incubating). Neo can now compile nearly all ML models from TensorFlow, PyTorch, and MXNet frameworks for SageMaker CPU and GPU instances.</p>
+<p><strong>AWS Amplify</strong></p>
+<p><a href="https://aws.amazon.com/blogs/mobile/zero-effort-container-deployment-for-graphql-and-rest-apis-and-web-hosting-with-amplify-cli/">Zero-effort Container deployment for GraphQL and REST APIs and Web Hosting with Amplify CLI</a> Rene Brandel writes about one of my favourite announcements last week which perhaps didn&rsquo;t get the noise it deserved. In this post Rene goes into more details about how this new capability in the Amplify CLI enables customers to deploy their API (GraphQL &amp; REST) or host their web apps using containers. You can bring your own Dockerfile or Docker Compose and Amplify CLI will automatically build, package and deploy your containers using AWS Fargate. The post demonstrates how you can deploy single and multiple containers using Amplify CLI and the offers up some potential use cases that this opens up for you.</p>
+<p><strong>AWS SDK&rsquo;s</strong></p>
+<p>A couple of posts this week. First up we have <a href="https://aws.amazon.com/blogs/developer/introducing-new-features-for-the-aws-sdk-rails-gem/">Introducing new features for the aws-sdk-rails gem</a>. Matt Muller provides an update from the Ruby SDK team, announcing new features that have been added and sharing how consolidated existing gems into the aws-sdk-rails gem works to make developing Rails applications using AWS easier than ever. The aws-sdk-rails gem is available now on <a href="http://rubygems.org/">rubygems.org</a>. As always, we’d love to hear your feedback, and welcome any Issues or Pull Requests at the <a href="http://github.com/aws/aws-sdk-rails">aws-sdk-rails GitHub repo.</a></p>
+<p>Trivikram Kamat follows that with <a href="https://aws.amazon.com/blogs/developer/first-class-typescript-support-in-modular-aws-sdk-for-javascript/">First-class TypeScript support in modular AWS SDK for JavaScript</a> where he takes a look at why the team decided to use TypeScript for building version 3 of JavaScript SDK, providing examples of how TypeScript helped development and debugging.</p>
+<p><strong>HyperLedger Fabric</strong></p>
+<p><a href="https://aws.amazon.com/blogs/database/automating-hyperledger-fabric-chaincode-deployment-on-amazon-managed-blockchain-using-aws-codepipeline/">Automating Hyperledger Fabric chaincode deployment on Amazon Managed Blockchain using AWS CodePipeline</a> Jonathan Shapiro-Ward takes you through how you can use tools such as AWS CodePipeline, AWS CodeBuild, and AWS Lambda to perform automated testing and deployment of chaincode to Managed Blockchain. Chaincode is a program that typically handles business logic agreed to by members of the network and is sometimes called a smart contract. Find out more by reading the post&hellip;</p>
+<p><img src="https://d2908q01vomqb2.cloudfront.net/887309d048beef83ad3eabf2a79a64a389ab1c9f/2020/11/25/Automating-Hyperledger-Fabric-1.jpg" alt="chaincode"></p>
+<h3 id="reinvent">re:Invent</h3>
+<p><strong>Launches</strong></p>
+<p>There were a number of new launches this week, including some exciting AI and Machine Learning launches that had some great open source technologies and projects for you to experiment and get to know.</p>
+<p><strong>Amazon Neptune ML</strong></p>
+<p><a href="https://aws.amazon.com/blogs/database/announcing-amazon-neptune-ml-easy-fast-and-accurate-predictions-on-graphs/">Announcing Amazon Neptune ML: Easy, fast, and accurate predictions on graphs</a> George Karypis, Dave Bechberger, and Karthik Bharathy announced this new capability which provides an easy, fast, and accurate approach for predictions on graphs. Neptune ML is a new capability that uses graph neural networks (GNNs), a machine learning (ML) technique purpose-built for graphs. Neptune ML uses the Deep Graph Library (DGL), an open-source library to which AWS contributes that makes it easy to develop and apply GNN models on graph data. As a result, you can now create, train, and apply ML on Neptune data in hours instead of weeks without the need to learn new tools and ML technologies. Now, any developer with data in Neptune can easily use ML on their graphs.</p>
+<p><img src="https://d2908q01vomqb2.cloudfront.net/887309d048beef83ad3eabf2a79a64a389ab1c9f/2020/12/07/DBBLOG-1378-A-2.jpg" alt="arch-graph"></p>
+<p>Now you know more about Amazon Neptune ML and the Deep Graph Library, time to see how easy it actually is to get started. In
+<a href="https://aws.amazon.com/blogs/database/how-to-get-started-with-neptune-ml/">How to get started with Neptune ML</a>, they show you how you can easily set up Neptune ML and infer properties of vertices within a graph. Last week I mentioned a new open source project from the Amazon Neptune team, graph-notebooks. Well in this post you will actually use them as part of the walk through.</p>
+<p><img src="https://d2908q01vomqb2.cloudfront.net/887309d048beef83ad3eabf2a79a64a389ab1c9f/2020/12/08/Screen-Shot-2020-12-08-at-13.53.58.png" alt="notebook"></p>
+<p><strong>Amazon SageMaker Edge Manager</strong></p>
+<p><a href="https://aws.amazon.com/blogs/aws/amazon-sagemaker-edge-manager-simplifies-operating-machine-learning-models-on-edge-devices/">Amazon SageMaker Edge Manager Simplifies Operating Machine Learning Models on Edge Devices</a> another post from Julien, this time taking a look at this new service that makes it easier to optimise, secure, monitor, and maintain machine learning models on a fleet of edge devices. If you read above you will see a bunch of new posts around Amazon SageMaker NEO. Starting from a model that you trained or imported in Amazon SageMaker, SageMaker Edge Manager first optimises it for your hardware platform using Amazon SageMaker Neo. Then, SageMaker Edge Manager packages the model, and stores it in Amazon Simple Storage Service (S3), where it can be deployed to your devices. In fact, you can deploy multiple models, loading and predicting with a runtime optimised for your hardware of choice. Make sure you read the post for the full low down on this, including the customer story from Lenovo.</p>
+<p><strong>Amazon SageMaker Clarify</strong></p>
+<p><a href="https://aws.amazon.com/blogs/aws/new-amazon-sagemaker-clarify-detects-bias-and-increases-the-transparency-of-machine-learning-models/">New – Amazon SageMaker Clarify Detects Bias and Increases the Transparency of Machine Learning Models</a> this post from Julien Simon introduces this new capability within Amazon SageMaker that helps customers detect bias in machine learning (ML) models, and increase transparency by helping explain model behaviour to stakeholders and customers. As part of this we have open sourced a key part of this capability so that you can use the same approach when you are doing local development.</p>
+<p><a href="https://github.com/aws/amazon-sagemaker-clarify/">amazon-sagemaker-clarify</a> is the GitHub repository for the open source project. Julien has also put together a short video that shows you how to compute bias metrics on your datasets, using this amazon-sagemaker-clarify open source package in Python, running a simple example on his local machine</p>
+<p>{% youtube xrGcy6rL9mw %}</p>
+<p>or see his demo of how you can use this within Amazon SageMaker too.</p>
+<p>Later last week we also had a follow up post on the Amazon Science blog, <a href="https://www.amazon.science/latest-news/how-clarify-helps-machine-learning-developers-detect-unintended-bias">How Clarify helps machine learning developers detect unintended bias</a> that provided further info on how this works. Well worth a read to get a good grounding in this subject.</p>
+<p><strong>Amazon EMR on Amazon EKS</strong></p>
+<p><a href="https://aws.amazon.com/blogs/aws/new-amazon-emr-on-amazon-elastic-kubernetes-service-eks/">New – Amazon EMR on Amazon Elastic Kubernetes Service (EKS)</a> in this post, Channy Yun announces the general availability of Amazon EMR on Amazon EKS, a new deployment option in EMR that allows customers to automate the provisioning and management of open-source big data frameworks on EKS. With EMR on EKS, customers can now run Spark applications alongside other types of applications on the same EKS cluster to improve resource utilisation and simplify infrastructure management.</p>
+<p><img src="https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2020/12/02/2020-emr-on-eks-diagram-1.png" alt="arch"></p>
+<p><strong>Sessions</strong></p>
+<p>A recap of the sessions last week incase you missed them, all sessions from the Open Source track.</p>
+<p><a href="https://virtual.awsevents.com/media/1_gg7st54o">The serverless LAMP stack</a> a firm favorite in my newsletter has been the series of posts from Ben Smith where he takes the LAMP (Linux, Apache, MySQL and PHP) and helps you through a number of modernisation approaches you can take on AWS. One of those modernisation techniques involves the adoption of Serverless, and in this session you will learn about the serverless LAMP stack and how to use your favorite open-source frameworks like Laravel to build modern, serverless PHP apps.</p>
+<p><a href="https://virtual.awsevents.com/media/1_zawy3w1x">Building real-time applications using Apache Flink</a> Steffen Hausman&rsquo;s session shared how to build real-time applications using Apache Flink with Apache Kafka and Amazon Kinesis Data Streams. Apache Flink is a framework and engine for building streaming applications for use cases such as real-time analytics and complex event processing. He covered best practices for building low-latency applications with Apache Flink when reading data from either Amazon MSK or Amazon Kinesis Data Streams, as well as how to run low-latency Apache Flink applications using Amazon Kinesis Data Analytics and discusses AWS’s open-source contributions to this use case.</p>
+<p><a href="https://virtual.awsevents.com/media/1_p3js9wfp">Building end-to-end ML workflows with Kubeflow Pipelines</a> my colleague Antje Barth did a great session on Kubeflow, a popular open-source machine learning (ML) toolkit for Kubernetes users. In this session she talks about Kubeflow Pipelines, an add-on to Kubeflow that lets you build and deploy portable and scalable end-to-end ML workflows. She covered how to get started with Kubeflow Pipelines and how you can integrate powerful Amazon SageMaker features such as data labelling, large-scale hyperparameter tuning, distributed training jobs, and secure and scalable model deployment using SageMaker Components for Kubeflow Pipelines.</p>
+<p><a href="https://virtual.awsevents.com/media/1_qg3dkb6g">Open source meets SaaS: Accelerating the path to SaaS adoption</a> Tod Golding introduces you to this new open source solution that was announced last week during the AWS Partner keynote. He shared with you the underlying architecture of this solution as well as how it enables you to leverage the power of an open-source environment to accelerate your path to a SaaS delivery model.</p>
+<p><a href="https://virtual.awsevents.com/media/1_rvr6ika5">Open-source failure injection on AWS</a> colleague Adrian Hornsby and Varun Jewalikar from the Amazon Prime Video shared with you an open-source approach to failure injection on Amazon EC2 and Amazon ECS using AWS Systems Manager and discusses how Prime Video combines this approach with load testing for higher levels of resiliency. Great session, and Adrian&rsquo;s demo&rsquo;s really bring this to life. Make sure you view this as this is an increasingly important topic and priority for business who increasingly depend on their digital systems.</p>
+<p>Next up was the session on <a href="https://virtual.awsevents.com/media/1_8j6trb97">Running Apache Cassandra workloads with Amazon Keyspaces</a> where Arturo Hinojosa and Mihir Desai dive into what is Apache Cassandra, a look at Amazon Keyspaces (for Apache Cassandra) looking at the architecture and key features, including data encryption by default, continuous backups using point-in-time recovery, and serverless throughput and storage management. Finally they share how to design and visualise Amazon Keyspaces data models easily by using NoSQL Workbench.</p>
+<p>If you are using AWS Copilot, an open source command line tool that makes building, developing, and operating containerized applications on AWS a breeze then you will enjoy <a href="https://virtual.awsevents.com/media/1_ehfd1geq">AWS Copilot: Simplifying container development</a>. Efe Karakus does a great job through the scenario of deploying a new voting application on how AWS Copilot works and how it might help you. Awesome stuff and a great session.</p>
+<p><strong>Other sessions</strong></p>
+<p>In <a href="https://virtual.awsevents.com/media/1_s3k0eprp">Deep dive on AWS Glue Elastic Views</a> Akshat Vig and Almann Goo introduce this new capability in AWS Glue that makes use of the open source project <a href="https://aws.amazon.com/blogs/opensource/announcing-partiql-one-query-language-for-all-your-data/">PartiQL</a> a SQL-compatible query language that makes it easy to efficiently query data, regardless of where or in what format it is stored. This is a great session and I can see a lot of developers finding these new capabilities really helpful.</p>
+<p><a href="https://aws.amazon.com/blogs/storage/supercharge-your-compute-workloads-with-amazon-fsx-for-lustre-and-amazon-s3/">AWS re:Invent recap: Deep dive on Amazon FSx for Lustre + Amazon S3</a> Darryl Osborne provides more info from <a href="https://virtual.awsevents.com/media/1_tso2jrc1">his session</a> last week. If you missed it and want to know more about how fast, shared file systems can help your compute workloads achieve peak performance and reduce costs. Amazon FSx for Lustre is a fully managed, POSIX-compliant shared file system that provides high-performance storage for Amazon EC2 compute resources without the overhead and complexity of a self-managed file system.</p>
+<p><img src="https://d2908q01vomqb2.cloudfront.net/e1822db470e60d090affd0956d743cb0e7cdf113/2020/12/07/High-performance-storage-prevents-these-system-bottlenecks-so-you-can-reduce-workload-runtimes-accelerate-business-insights-and-save-compute-costs..png" alt="arch"></p>
+<p>If you are looking to modernise your existing .NET Framework applications, then Andy Hopper did a great session last week that will help you to take your .NET Framework applications and through the power of the Porting Assistant for .NET, be guided on how to approach this task. <a href="https://virtual.awsevents.com/media/1_sf86nv88">Porting .NET Framework applications to .NET Core on Linux</a> introduces the open source tool and then Andy walks you through modernising a simple example application to show you how this can really simplify and make the process more straight forward.</p>
+<h3 id="other-open-source-blog-posts">Other open source blog posts</h3>
+<p><strong>Firecracker</strong></p>
+<p><a href="https://dev.l1x.be/posts/2020/12/13/diving-into-firecracker-with-alpine/">Diving into Firecracker with Alpine</a> Istvan Szukacs brings you the follow up post on getting Firecracker up and running on a Raspberry Pi running Alpine Linux. His first post, <a href="https://dev.l1x.be/posts/2020/11/22/getting-started-with-firecracker-on-raspberry-pi/">Getting started with Firecracker on Raspberry Pi</a> is where you should start.</p>
+<p><strong>serverless-express</strong></p>
+<p><a href="https://vendia.net/blog/serverless-express-finds-home-at-vendia">AWS Serverless Express Finds a Loving Home at Vendia</a> I mentioned this last week but this nice blog post from Vendia&rsquo;s  Brett Andrews and Tim Wagner provide a few more details on the &ldquo;graduation&rdquo; of this project from AWS Labs and how this is now being actively supported and sponsored by Vendia.</p>
+<p><strong>AWS re:Invent Machine Learning keynote</strong></p>
+<p><a href="https://medium.com/libertyit/all-the-machine-learning-announcements-at-aws-re-invent-2020-ce3b9f917599">All the Machine Learning Announcements at AWS re:Invent 2020</a> AWS Hero Gillian Armstrong put together this very nice summary of all the announcements, both during Andy Jassy&rsquo;s and Shwami Sivasubramanian&rsquo;s keynotes. Plenty of open source stuff in there that I have mentioned above, but take a look at the broader context which this post does a great job in highlighting.</p>
+<p><strong>Kubernetes</strong></p>
+<p><a href="https://acloudguru.com/blog/engineering/whats-new-for-kubernetes-and-eks-at-aws-reinvent">What’s new for Kubernetes and EKS at AWS re:Invent</a> Justin Garrison writes up this great summary of the important Kubernetes and Amazon EKS related updates from pre:Invent and re:Invent. If you are into your containers, a must read this week.</p>
+<p><strong>ROS</strong></p>
+<p><a href="https://blog.hadabot.com/ros2-nav2-go-to-goal-low-cost-robot-kit.html">ROS2 Nav2 Go-To-Goal using the low-cost Hadabot Turtle robot kit</a> Jack over from the Hadabot team has put together this blog post to talk about a low-cost robot kit for students, software engineers, makers to learn ROS2 and robotics in a hands-on manner. If you are looking to get started but have been put off some of the higher price entry level robots, then check this out.</p>
+<p>{% youtube goSqLnv6jhE %}</p>
+<h3 id="quick-updates">Quick updates</h3>
+<p><strong>AWS Amplify</strong></p>
+<p>Amplify CLI helps front-end web &amp; mobile developers provision APIs and host websites. Released last week was the ability to deploy the GraphQL &amp; REST APIs and host websites using AWS Fargate in addition to existing AppSync, API Gateway and Amplify console options. The enables you to deploy REST APIs &amp; GraphQL APIs based on Amplify-provided container templates; bring your own containers from other projects - all you need is a Dockerfile or a Docker Compose configuration; and use the out-of-the-box build &amp; deploy pipeline or configure your own custom pipeline.</p>
+<p>Amplify’s container-based deployment option is designed to help you focus on your business logic instead of the infrastructure setup as well as the build &amp; deployment pipeline. Run “amplify add api” to create your first container-based API. Just edit the API source code and run “amplify push”. Amplify CLI automatically packages, builds and deploys your container-based API.
+One of the key benefits of containers is portability. Amplify CLI also allows you to bring your own containers. The build &amp; deployment options are automatically inferred through your Docker Compose configuration and provides you an escape hatch to do detailed tweaks throughout the build and deployment process. Builds can be completely managed via the Amplify CLI - without requiring Docker to be installed locally - or they can be decoupled and connected to a GitHub repo as source control in team workflows. Multiple environments for development team collaboration are also included.</p>
+<p>Amplify libraries can be used to interact with your Fargate-backed APIs when using Amazon Cognito User Pools, giving mobile and web applications secure connectivity and access controls to resources in your VPC. Additionally, existing GraphQL and REST services such as AWS AppSync and Amazon API Gateway can be used in the same project along with Fargate APIs giving flexibility to mix and match for cost optimisation and operational needs.</p>
+<h3 id="tweet-of-the-week">Tweet of the week</h3>
+<p>If you missed these tweets last week from <a href="https://twitter.com/bala_eswar">Eswar Bala</a> and <a href="https://twitter.com/micahhausler">Micah Hausler</a> and want to get some great snippets of extra info about Amazon EKS Distro, then check them out. <a href="https://twitter.com/micahhausler/status/1334279812752424960">What is in it? What does that mean? Why might you use it?</a> and <a href="https://twitter.com/bala_eswar/status/1333833318924619776">Amazon EKS goodies</a></p>
+<h3 id="stay-in-touch-with-open-source-at-aws">Stay in touch with open source at AWS</h3>
+<p>I hope this summary has been useful. Remember to check out the <a href="https://aws.amazon.com/opensource/?opensource-all.sort-by=item.additionalFields.startDate&amp;opensource-all.sort-order=asc">Open Source homepage</a> to keep up to date with all our activity in open source by following us on <a href="https://twitter.com/AWSOpen">@AWSOpen</a>.</p>
+<h3 id="your-feedback-matters">Your feedback matters!</h3>
+<p>I have put together a short feedback survey, which I would ask you to take - it will take no more than 2 minutes. You can access <a href="https://amazonmr.au1.qualtrics.com/jfe/form/SV_8BsYTwgVY6E6WZn">here</a>. Many thanks!</p>
+<p><a href="https://amazonmr.au1.qualtrics.com/jfe/form/SV_8BsYTwgVY6E6WZn">Take the survey</a></p>
+
+  </main>
+
+          <div class="social-heading">
+            <div class="footer-social">
+  
+    <div class="social-icon">
+      <a href="https://twitter.com/094459" target="_blank" title="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Twitter" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://github.com/094459" target="_blank" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="GitHub" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+      </a>
+    </div>
+  
+  
+    <div class="social-icon">
+      <a href="https://www.linkedin.com/in/ricardosueiras" target="_blank" title="Linkedin">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="LinkedIn" role="img"
+viewBox="0 0 512 512"
+fill="#fff"><rect
+width="512" height="512"
+rx="15%"
+fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://www.reddit.com/r/aws" target="_blank" title="Reddit">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Reddit" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+      </a>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="social-icon">
+      <a href="mailto:ricsue@amazon.com" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Email" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="teal"/><rect width="356" height="256" x="78" y="128" fill="#fff" rx="8%"/><path fill="none" stroke="teal" stroke-width="20" d="M434 128L269 292c-7 8-19 8-26 0L78 128m0 256l129-128m227 128L305 256"/></svg>
+      </a>
+    </div>
+  
+  
+</div>
+
+          </div>
+          <footer role="contentinfo">
+  <div class="social-footer">
+    <div class="footer-social">
+  
+    <div class="social-icon">
+      <a href="https://twitter.com/094459" target="_blank" title="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Twitter" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://github.com/094459" target="_blank" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="GitHub" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+      </a>
+    </div>
+  
+  
+    <div class="social-icon">
+      <a href="https://www.linkedin.com/in/ricardosueiras" target="_blank" title="Linkedin">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="LinkedIn" role="img"
+viewBox="0 0 512 512"
+fill="#fff"><rect
+width="512" height="512"
+rx="15%"
+fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+      </a>
+    </div>
+  
+  
+  
+    <div class="social-icon">
+      <a href="https://www.reddit.com/r/aws" target="_blank" title="Reddit">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Reddit" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#f40"/><g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/><circle cx="106" cy="256" r="42"/><circle cx="407" cy="256" r="42"/><circle cx="375" cy="114" r="32"/></g><g stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m256 196 23-101 73 15" stroke="#fff" stroke-width="16"/><path d="m191 359c33 25 97 26 130 0" stroke="#f40" stroke-width="13"/></g><g fill="#f40"><circle cx="191" cy="287" r="31"/><circle cx="321" cy="287" r="31"/></g></svg>
+      </a>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="social-icon">
+      <a href="mailto:ricsue@amazon.com" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Email" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="teal"/><rect width="356" height="256" x="78" y="128" fill="#fff" rx="8%"/><path fill="none" stroke="teal" stroke-width="20" d="M434 128L269 292c-7 8-19 8-26 0L78 128m0 256l129-128m227 128L305 256"/></svg>
+      </a>
+    </div>
+  
+  
+</div>
+
+    <label for="themer">
+      dark theme: <input type="checkbox" id="themer" class="vh">
+      <span aria-hidden="true"></span>
+    </label>
+  </div>
+  
+    <p class="margin-top-none">Copyright &copy; <span id="copyright-year"></span> - Ricardo Sueiras</p>
+  
+  
+    <p class="margin-top-none">
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cupper-hugo-theme">Cupper</a>.
+    </p>
+  
+</footer>
+<script>
+    var year = new Date().getFullYear()
+    document.getElementById("copyright-year").innerHTML = year;
+</script>
+
+        </div>
+      </div>
+    </div>
+    <script src="https://blog.beachgeek.co.uk/js/prism.js"></script>
+
+
+
+<script src="https://blog.beachgeek.co.uk/js/dom-scripts.js"></script>
+
+
+
+<script src="/js/search.7aef046a0cc8b0c532f1d20087b920459bc868c936bb48a6ae221eceefca2d07.js"></script>
+
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  </body>
+</html>

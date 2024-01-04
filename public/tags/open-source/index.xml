@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>open source on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/open-source/</link>
+    <description>Recent content in open source on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 29 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploying a serverless web analytics solution for your websites</title>
+      <link>https://blog.beachgeek.co.uk/deploying-open-source-clickstream-analytics/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/deploying-open-source-clickstream-analytics/</guid>
+      <description>Update, August 1st&#xA;I have been running this project for five weeks now, so have a better understanding of costs. My bill in July was $0.85, and I suspect this will be reasonably stable over the coming months. I think this represents great value! I will report back at the end of the year and update this&#xA;Like many folk, I run a personal blog. This blog runs Hugo and turns my markdown pages into static content, which I then deploy on Netlify.</description>
+    </item>
+    <item>
+      <title>Building a culture of security in open source software development</title>
+      <link>https://blog.beachgeek.co.uk/building-a-culture-of-security-in-open-source-software-development/</link>
+      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/building-a-culture-of-security-in-open-source-software-development/</guid>
+      <description>Updated on Jan 18th to remove broken link to report&#xA;According to a number of recent studies, the use and adoption of open source software continues to rise. From studies such as the State of Enterprise Open Source by Red Hat (in which nearly 70% of respondents stated that open source software is either extremely or very important) or TideLift’s April 2019 survey report (that found more than 90% of professional developers use open source in building their applications) it is clear that developers from startups to highly regulated enterprises have embraced open source solutions.</description>
+    </item>
+  </channel>
+</rss>

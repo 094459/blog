@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Netlify on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/netlify/</link>
+    <description>Recent content in Netlify on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/netlify/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Running my dev.to blog using Hugo on Netlify</title>
+      <link>https://blog.beachgeek.co.uk/hugo-site-migraiton/</link>
+      <pubDate>Fri, 07 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/hugo-site-migraiton/</guid>
+      <description>Running my dev.to blog using Hugo on Netlify I am a big fan of dev.to, and the work that the team do to foster a great community of builders is something that keeps me there. I have always maintained another blog (running on Netlify, which is also super awesome), kind of like a mirror. Up until last year, I was able to publish to dev.to and it would take care of publishing to that mirror.</description>
+    </item>
+  </channel>
+</rss>

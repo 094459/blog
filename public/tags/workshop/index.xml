@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>workshop on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/workshop/</link>
+    <description>Recent content in workshop on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/workshop/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>reInvent 2019 workshop list</title>
+      <link>https://blog.beachgeek.co.uk/reinvent-2019-workshop-list/</link>
+      <pubDate>Mon, 09 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/reinvent-2019-workshop-list/</guid>
+      <description>So here is a list scraped from Twitter and following various other folk, of just a small taster of the workshops that ran during reInvent. As I find more I will update, and feel free to add yours in the comments (oh, and let me know if any of these are dead links)&#xA;Serverless - https://github.com/aws-samples/aws-serverless-workshop-innovator-island/ Serverless image process workshop - https://image-processing.serverlessworkshops.io/ Amplify preductions workshop - https://github.com/mlabieniec/IonicPredictions Full stack serverless Amplify lab - https://github.</description>
+    </item>
+  </channel>
+</rss>

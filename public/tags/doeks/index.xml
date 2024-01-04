@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>doeks on Beachgeek blog - a refuge for pineapple on pizza lovers</title>
+    <link>https://blog.beachgeek.co.uk/tags/doeks/</link>
+    <description>Recent content in doeks on Beachgeek blog - a refuge for pineapple on pizza lovers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.beachgeek.co.uk/tags/doeks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Self managed Apache Airflow with Data on EKS</title>
+      <link>https://blog.beachgeek.co.uk/self-managed-apache-airflow-using-doeks/</link>
+      <pubDate>Wed, 22 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.beachgeek.co.uk/self-managed-apache-airflow-using-doeks/</guid>
+      <description>I have written in the past about how you can get started with Apache Airflow using the AWS managed service, Managed Workflows for Apache Airflow. But what if you want to self managed Apache Airflow? When I speak with developers, there are sometimes reasons why a managed service might not fit their needs. Some of the common things that come up include:&#xA;whether you need the increase level of access, a greater level of control of the configuration of Apache Airflow have the need to have the very latest versions or features of Apache Airflow if you have the need to run workflows that use more resources that managed services provide (for example, need significant compute) Total Cost Ownership One thing to consider when assessing managed vs self managed is the cost of the managed service against the total costs of you having to do the same thing.</description>
+    </item>
+  </channel>
+</rss>
